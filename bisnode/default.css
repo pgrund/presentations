@@ -1,0 +1,642 @@
+/*
+  --- BISNODE impress.js 
+*/
+/*
+@font-face{font-family:HelveticaNeueW02-55Roma;src:url(fonts/0b3a3fca-0fad-402b-bd38-fdcbad1ef776.eot?#iefix);src:url(fonts/0b3a3fca-0fad-402b-bd38-fdcbad1ef776.eot?#iefix) format("eot"),url(fonts/d5af76d8-a90b-4527-b3a3-182207cc3250.woff) format("woff"),url(fonts/1d238354-d156-4dde-89ea-4770ef04b9f9.ttf) format("truetype"),url(fonts/b68875cb-14a9-472e-8177-0247605124d7.svg#b68875cb-14a9-472e-8177-0247605124d7) format("svg");font-weight:400}
+@font-face{font-family:HelveticaNeueW02-75Bold;src:url(fonts/db853e0e-929b-4272-b420-c946c954cf3a.eot?#iefix);src:url(fonts/db853e0e-929b-4272-b420-c946c954cf3a.eot?#iefix) format("eot"),url(fonts/4a9c62ab-b359-4081-8383-a0d1cdebd111.woff) format("woff"),url(fonts/db5f9ba6-05a4-433a-9461-0a6f257a0c3a.ttf) format("truetype"),url(fonts/25e09910-ffc3-4fc4-b0d1-db9a95dface8.svg#25e09910-ffc3-4fc4-b0d1-db9a95dface8) format("svg");font-weight:400}
+@font-face{font-family:HelveticaNeueW02-87HvCn;src:url(fonts/5afb945e-e2c1-4a0e-aa10-07c774467403.eot?#iefix);src:url(fonts/5afb945e-e2c1-4a0e-aa10-07c774467403.eot?#iefix) format("eot"),url(fonts/b28cd111-4e51-40c4-8ab7-f20722f5aee1.woff) format("woff"),url(fonts/90675842-aa22-4c92-8d33-5b9adb155a84.ttf) format("truetype"),url(fonts/50295452-0109-4587-9fbd-703f8074deba.svg#50295452-0109-4587-9fbd-703f8074deba) format("svg");font-weight:400}
+@font-face{font-family:"Adobe Garamond Pro";src:url(fonts/4c83158e-1435-42b3-9577-b2b30ca41519.eot?#iefix);src:url(fonts/4c83158e-1435-42b3-9577-b2b30ca41519.eot?#iefix) format("eot"),url(fonts/6d0c45bd-b627-4868-942a-91b2f83580f2.woff) format("woff"),url(fonts/6334af5a-f301-4a6a-bbe1-2f3f58d3a799.ttf) format("truetype"),url(fonts/f00e2b8d-55bd-4f31-b5ae-e6230f2c8481.svg#f00e2b8d-55bd-4f31-b5ae-e6230f2c8481) format("svg")}
+@font-face{font-family:Conv_HelveticaNeueLTStd-HvCn;src:url(fonts/HelveticaNeueLTStd-HvCn.eot);src:local("☺"),url(fonts/helveticaneueltstd-hvcn-webfont.ttf) format("truetype"),url(fonts/HelveticaNeueLTStd-HvCn.svg) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:'Conv_Adobe Garamond Pro';src:url("../../fonts/Adobe Garamond Pro.eot");src:local("☺"),url("../../fonts/Adobe Garamond Pro.ttf") format("truetype"),url("../../fonts/Adobe Garamond Pro.svg") format("svg");font-weight:400;font-style:normal}
+*/
+body{
+    width:1024px;
+    font-size: 28px;
+    font-family: Arial, sans-serif;
+    background: white;
+    color: black;
+    text-shadow: 1px 1px 2px #000;
+
+    counter-reset: slideIdx;
+}
+
+.float-right {
+    float: right;
+}
+.right {
+    float: right;
+    width: 50%;
+}
+.float-left {
+    float: left;
+}
+.left {
+    float: left;
+    width: 50%;
+}
+
+.blank {
+    background-color: white;
+}
+
+#break {     
+  top: 30%;
+}
+#break .modal-header {
+    background-color: black;
+    color: white;
+    text-shadow: 2px 2px darkgray;    
+    min-width: 400px;   
+}
+#break .modal-header button {
+    color:white;
+}
+#break  .modal-content {
+    background-image: url(./img/break.png);
+    background-size: cover;    
+    min-height: 200px;
+    min-width: 400px;  
+}
+#final:before {
+    content: url(./img/bisnode-final.png);
+}
+
+.slide.title header{
+    
+    margin-left: -60px;
+    margin-right: -60px;
+
+    background: url(./img/bisnode-title.png);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 100% auto;
+    -o-background-size:  100% auto;
+    -webkit-background-size:  100% auto;
+    -moz-background-size:  100% auto;
+
+    color: white;
+    text-align: left;
+
+    position: relative;
+    top: 150px;
+}
+
+.slide.title.alternative header{
+  color: rgb(7, 77,24);
+}
+
+
+.slide.title header h2 {     
+    position:relative;
+    top: 50px;
+
+    min-height: 50%;
+    padding-left: 50px;
+
+    font-size: 62px;
+    line-height: 70px;
+
+    text-transform: uppercase;
+}
+
+.slide.title header .subtitle{    
+    position: relative;
+    top: 80px;
+
+    padding-left: 50px;
+
+    font-size: 32px; 
+    
+}
+.slide header > .subtitle {
+    color: lightgray;
+    font-family: serif;
+    font-style: italic;
+    font-weight: normal;
+    text-transform: none;    
+}
+.slide.title.alternative header .subtitle{   
+    color: rgb(7, 77,24);
+}
+
+.slide header {
+    
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+    color: rgb(0,0,0);
+    font-size: 28px;
+    font-weight: bold;
+    
+    text-align: left;
+    text-transform: uppercase;
+
+    background-origin: border-box;
+    background-size: 50% Auto; 
+    -o-background-size: 50% Auto;
+    -webkit-background-size: 50% Auto; 
+    -moz-background-size: 50% Auto;    
+}
+
+.slide header h2 {
+    color: white
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+.slide p {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.slide p.second {
+    text-transform: none;
+}
+
+.slide ul li, .slide ol li {
+    list-style: none;
+    margin-left: -1.1em;
+}
+.slide ul li::before {
+    content: "\002022";
+    padding-right: 0.7em;
+    color: rgb(132, 214, 57);
+}
+.slide ol {
+    counter-reset: olli;
+}
+.slide ol li {
+    list-style: none;
+    counter-increment: olli;
+}
+.slide ol li::before {
+    content: counter(olli);
+    padding-right: 0.7em;
+    color: rgb(132, 214, 57);
+}
+.slide ol ul li::before {
+    content: "\002022";
+}
+.slide footer {
+    position: absolute;
+    bottom: 35px;
+   
+    height: 85px;
+    width: 1105px;
+    
+    background:   url(./img/bisnode-logo-black.png), url(./img/bisnode-divider-lightgreen.png);
+    background-repeat: no-repeat;
+    background-position: 850px top, 10px 45px;
+    background-origin: border-box;
+    background-size: 150px auto, 1024px auto;
+    -o-background-size: 150px auto, 1024px auto;
+    -webkit-background-size: 150px auto, 1024px auto;
+    -moz-background-size: 150px auto, 1024px auto;
+
+    padding-left: 40px;
+    padding-top: 60px;
+    padding-bottom: 0px;
+    
+    margin-top: 20px;
+    margin-left: -70px;
+    margin-bottom: -35px;
+    
+    font-size: 14px;
+    color: rgb(7, 77, 24);
+    text-align: left;
+    vertical-align: middle;
+    text-transform: uppercase;
+    white-space: pre;
+}
+
+.slide footer:before {
+    content: counter(slideIdx) "          ";    
+}
+
+.slide.columns {
+
+}
+
+.slide.chapter header{
+    
+    position: relative;
+    top: 40%;
+    left: -60px;
+
+    width: 1024px;
+
+
+    color: rgb(196,206,0);
+    text-align: left;
+
+    padding-bottom: 50px;
+    padding-left: 110px;
+    
+}
+
+.slide.chapter header::after {
+    content: ".";
+    
+    width: 1024px;
+    height: 59px;
+
+    margin-left: -110px;
+    display: inline-block;
+    
+    background-image: url(./img/divider-sprites.png);
+    background-position: 0 2px;
+}
+.slide.chapter.lightgreen header {
+    /* default */
+}
+
+.slide.chapter.green header{
+    color: darkgreen;
+}
+.slide.chapter.green header::after{
+    background-position: 0 -56px;
+}
+.slide.chapter.orange header{
+    color: orange;    
+}
+.slide.chapter.orange header::after{
+    background-position: 0 -116px;
+}
+.slide.chapter.blue header{
+    color: #149bdf;      
+}
+.slide.chapter.blue header::after{
+    background-position: 0 -175px ;
+}
+.slide.chapter.gray header{
+    color: gray;   
+}
+.slide.chapter.gray header::after{
+    background-position: 0 -234px ;
+}
+.slide.chapter.lightgray header{
+    color: lightgray;   
+}
+.slide.chapter.lightgray header::after{
+    background-position: 0 -294px ;
+}
+
+.slide.chapter footer {
+    background: none;
+    color: lightgray;
+}
+
+.slide a:hover, a:focus {
+    background: gray;
+    color:white;
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}
+
+.slide a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0 0.1em;
+    background: whitesmoke;
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
+    border-radius: 0.2em;
+    -webkit-transition: 0.5s; 
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+
+    line-height: inherit;
+    background-clip: border-box;
+}
+code, pre {
+    font-size: 24px;
+}
+pre.code {
+    background-image: url(./img/code-paper.jpg), url(./img/code-paper-x.jpg);
+    background-repeat: repeat-y, repeat;
+    background-clip: border-box;;
+}
+blockquote {
+    font-size: inherit;
+}
+pre.shell {
+    font-size: 18px;
+    line-height: 20px;
+    
+    color: forestgreen;
+    
+    background-color: black;
+}
+.slide {
+    display: block;
+
+    width: 1024px;
+    height: 650px;
+     
+    padding: 20px 60px;
+    margin-top: 20px;
+
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .3);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, .1);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+    text-align: left;
+
+    font-family:  Arial, sans-serif;
+    letter-spacing: -1px;
+
+    counter-increment: slideIdx;
+}
+
+.step{
+    width:1024px;
+}
+.impress-enabled .step { 
+    opacity: 0.3; 
+    z-index: -1;
+}
+.impress-enabled .step.active { 
+    opacity: 1.0; 
+    z-index: 99;
+}
+
+.hint_text{
+    margin-top: 120px;
+    font-size:30px;
+    background-color:#282a2f;
+    padding:15px;
+    border: 1px solid #484d52;
+    border-radius: 5px;
+    font-size: 18px;
+
+}
+
+.fallback-message {
+    color: #eee;
+    line-height: 1.3;
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+em{
+    font-style: normal;
+    border-bottom: 1px solid #484d52;
+    padding-bottom: 2px;
+    color: #d5a830;
+}
+.table td.text-center {
+    text-align: center;
+    vertical-align: middle;
+}
+.box { width: 75px; }
+.nav ul li {
+    line-height: 24px;
+}
+.navbar {
+    font-size: 14px;
+}
+quote, span, dd, dt {
+    line-height: 36px;
+    font-size: 24px;
+}
+table { font-size: 24px; }
+
+.step.under-construction::after {
+  content: "";
+  background: url(./img/under-construction.png);
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+/* ======= new Bisnode design ===== */
+
+.hintegrund1 {
+    background-color: rgb(255,255,255);
+}
+.hintegrund2 {
+    background-color: rgb(238,236,225);
+}
+.akzent1 {
+    background-color: rgb(189,207,49);
+}
+.akzent2 {
+    background-color: rgb(54,111,54);
+}
+.akzent3 {
+    background-color: rgb(251,195,17);
+}
+.akzent4 {
+    background-color: rgb(57,187,236);
+}
+.akzent5 {
+    background-color: rgb(204,204,204);
+}
+.akzent6 {
+    background-color: rgb(127,127,127);
+}
+.text1 {
+    color: rgb(0,0,0);
+}
+.text2 {
+    color: rgb(189,207,49);
+}
+
+ul.agenda {
+    list-style: none;
+    counter-reset: li;    
+}
+ul.agenda li {
+        height: 48px;
+        width: 90%;
+        counter-increment: li;
+        display: list-item;
+        margin: 5px 0px 5px 0px;  
+        
+        background-color: rgb(242,242,242);
+}
+
+
+ul.agenda li::before {
+  content: counter(li);
+
+  width: 50px;
+  height: 53px;
+
+  margin-right: 5px;
+  margin-left: -20px;
+  display: inline-block;
+
+  color: white;
+  text-align: center;
+ 
+  background-image: url("./img/agenda-sprites.png");
+  background-repeat: no-repeat;
+  background-position:  0px -2px;         
+}
+
+ul.agenda li::after {
+  content: '.';
+  float:right;
+  color: rgb(242,242,242);
+  width: 55px;
+  height: 53px;
+  display: inline-block;
+  margin-right:-45px;
+ 
+  background-image: url("./img/agenda-sprites.png");
+  background-repeat: no-repeat;
+  background-position: -70px -4px;        
+}
+
+ul.agenda li:nth-child(1):before {
+  
+}
+ul.agenda li:nth-child(1):after {
+   
+}
+.agenda li:nth-child(2):before {
+    background-position:  0px -55px;      
+}
+.agenda li:nth-child(2):after {
+    background-position:  -70px -57px;  
+}
+.agenda li:nth-child(3):before {
+    background-position:  0px -110px;      
+}
+.agenda li:nth-child(3):after {
+    background-position:  -70px -112px;  
+}
+.agenda li:nth-child(4):before {
+    background-position:  0px -165px;      
+}
+.agenda li:nth-child(4):after {
+    background-position:  -70px -167px;  
+}
+.agenda li:nth-child(5):before {
+    background-position:  0px -218px;      
+}
+.agenda li:nth-child(5):after {
+    background-position:  -70px -222px;  
+}
+.agenda li:nth-child(6):before {
+    background-position:  0px -273px;      
+}
+.agenda li:nth-child(6):after {
+    background-position:  -70px -277px;  
+}
+
+table.table {
+    table-layout: fixed;
+}
+table, table.table-striped, tr {
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+}
+table thead tr {
+    background-color: rgb(189,207,49);
+    color: white;
+}
+table tbody tr {
+    color: black;
+}
+td, th {
+    white-space: nowrap;
+    min-height: 100%;
+}
+/* ==== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * { 
+        background: transparent !important;      
+        box-shadow:none !important; 
+        text-shadow: none !important; 
+    } /* Black prints faster: h5bp.com/s */
+    a, a:visited { 
+        text-decoration: underline; 
+    }
+    a[href]:after { 
+        content: " (" attr(href) ")"; 
+    }
+    abbr[title]:after { 
+        content: " (" attr(title) ")"; 
+    }
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+         content: ""; 
+    } /* Don't show links for images, or javascript/internal links */
+    thead { 
+        display: table-header-group; 
+    } /* h5bp.com/t */
+    tr { 
+        page-break-inside: avoid; 
+    }
+    img {
+        max-width: 100% !important; 
+    }
+    
+  .panel-collapse {
+    display:block;
+  }
+  
+  .collapse {
+    display: block;
+  }  
+    
+    @page { margin: 0.5cm; }
+    p { orphans: 3; widows: 3; }
+    h2, h3 { page-break-after: avoid; }
+
+    /* Impress.js specific */
+    .fallback-message { display: none; }
+    
+    @page land {size: landscape;}
+    
+   
+    table {
+        page-break-inside: avoid;
+    }
+   .step, .slide { 
+        page-break-inside: avoid; 
+        page-break-after: always; 
+        page-break-before: auto;
+        border: none; 
+        margin-top: 20px; 
+        display: block;       
+        clear: both;
+        z-index: 1;
+    }
+    
+    .step img { 
+        max-height: 100%; 
+        max-width: 100%;
+    }
+
+    #final, #print, footer {
+        display:none;
+    }
+    /* plus some more step specific styles of your own
+    #htop2 { display: none }
+    */
+}

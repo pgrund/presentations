@@ -1,0 +1,1335 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- using http://twitter.github.io/bootstrap/ -->    
+        <link rel="stylesheet" href="../impress/bootstrap.min.css" />
+        <!--link rel="stylesheet" href="backup/bootstrap.min.3.1.1.css"-->
+
+        <!-- using fontaweseome for icons as well -->
+        <link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.min.css" />
+
+        <!-- own stylesheet, bases on impress.js -->
+        <link href="./css/rest.css" rel="stylesheet" />
+
+        <!-- since impress.js and bootstrap are not 100% compatible, 
+             we need to supply a "bootstrap / impress.js - FIX" -->
+        <!--link href="css/bootstrap-fix.css" rel="stylesheet"/-->
+
+        <title>RESTful HTTP</title> 
+        <!--meta name="date" content="2013-05-02"/-->
+    </head>
+    <body>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#rest-menu">                    
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>   
+                    <a href="#/start" class="navbar-brand">Start</a>
+                </div>                
+                <div class="navbar-collapse collapse" id="rest-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">HTTP Basics<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/http">Overview</a></li>
+                                <li><a href="#/httprequest">Request</a></li>
+                                <li><a href="#/httpresponse">Response</a></li>
+                                <li><a href="#/statuscodes">Statuscodes</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">REST Overview<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/fielding">Overview</a></li>
+                                <li><a href="#/resources">Resources</a></li>
+                                <li><a href="#/methods">Standardized Methods</a></li>
+                                <li><a href="#/presentation">Representation</a></li>
+                                <li><a href="#/hypermedia">Hypermedia</a></li>
+                                <li><a href="#/stateless">Being Stateless</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Richardson Maturity Model<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/richardson">Overview</a></li>
+                                <li><a href="#/level0">Level 0</a></li>
+                                <li><a href="#/level1">Level 1</a></li>
+                                <li><a href="#/level2">Level 2</a></li>
+                                <li><a href="#/level3">Level 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">H-Factor<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/hfactoroverview">Overview</a></li>
+                                <li><a href="#/hfactorlink">link support</a></li>
+                                <li><a href="#/hfactorcontrol">control data support</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="?print" target="_blank" title="print"><i class="icon-print"></i></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a id="breakbutton" title="break" data-toggle="modal" data-target="#break"><i class="icon-coffee"></i></a>                            
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div id="break" class="modal fade center-block" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-header">                   
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title">Break</h3>
+                </div>
+                <div class="modal-content">
+                    <div id="counter"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="impress">
+            <div id="start" class="step slide title" >
+                <header>
+                    <h2>REST - an introduction</h2>
+                    <p class="subtitle">Representational State Transfer</p>
+                </header>
+            </div>
+
+            <!-- ### GEEK ### -->
+            <div id="geek-1" class="step" data-x="-1200">
+                <img src="./img/geek-rest-1.png" width="800"><br/>
+                <span class="geek-title">Geek For Dummies</span>
+            </div>
+            <div id="geek-2" class="step" data-x="-1200" data-y="-400" data-rotate-y="90">  
+                <img src="./img/geek-rest-2.png" width="800">
+            </div>
+            <div id="geek-3" class="step" data-x="-1400" data-y="-800" data-rotate-x="90">  
+                <img src="./img/geek-rest-3.png" width="800">
+            </div>
+            <div id="geek-4" class="step" data-x="-1200" data-y="-2000" data-rotate-z="270">  
+                <img src="./img/geek-rest-4.png" width="800">
+            </div>
+            <div id="geek-conclusion" class="step" data-x="-1200" data-y="1200" data-z="-1600">
+                <span class="geek-title">Be Aware That Not Everybody Shares<br/>Your Enthusiasm About <strong>RESTFUL API</strong>s</span>
+            </div>
+
+            <!-- #### HTTP ### -->
+
+            <div id="httpbasics" class="slide step chapter" data-x="1200">
+                <header>HTTP Basics</header>
+                <footer></footer>
+            </div>
+
+            <div id="http" class="slide step" data-x="1200" data-y="1000">
+                <header>HTTP protocol</header>
+                <blockquote id="httpprotocol">... is an application-level
+                    protocol for <em>distributed, collaborative, hypermedia information
+                        systems</em>. It is a <em>generic, stateless</em>, protocol which can be used for
+                    many tasks beyond its use for hypertext, such as name servers and
+                    distributed object management systems, through extension of its
+                    request methods, error codes and headers ... <br/>
+                    A feature of HTTP is the <em>typing and negotiation of data representation</em>, allowing systems
+                    to be built <em>independently of the data being transferred</em> ...
+                    <small class="text-right">from the abstract of <cite title="RFC2616"><a href="http://tools.ietf.org/html/rfc2616" target="_blank">HTTP/1.1</a></cite></small>
+                </blockquote>
+                <br/>
+                <ul class="unstyled">
+                    <li>communication usually done via port 80 and TCP:
+                        <dl class="dl-horizontal">
+                            <dt>Request</dt>
+                            <dd>from client to server ('<em>asking</em>')</dd>
+                            <dt>Response</dt>
+                            <dd>from server to client ('<em>answering</em>')</dd>
+                        </dl>
+                    </li>
+                </ul>
+                <footer></footer>
+            </div>
+
+            <div id="httpversion" class="slide step" data-x="1200" data-y="685" data-z="-450" data-rotate-x="90" data-rotate-z="90">
+                <header>HTTP versions</header>               
+                <table class="table table-condensed" id="httpversiontable">
+                    <thead>
+                        <tr>
+                            <th>version</th>
+                            <th>content/changes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="4">HTTP/0.9</td>
+                            <td>simple protocol, easy to be implemented</td>
+                        </tr>
+                        <tr>
+                            <td>just text (mainly HTML)</td>
+                        </tr>
+                        <tr>
+                            <td>for each link an own TCP connection used</td>
+                        </tr>
+                        <tr>
+                            <td>not standardardized</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">HTTP/1.0</td>
+                            <td>any <a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-types</a> <code>(e.g.: image/jpg, application/pdf, text/plain, ...)</code> can be transmitted</td>
+                        </tr>
+                        <tr>
+                            <td>meta data for request and response <code>(e.g.: Content-Type: text/html )</code></td>
+                        </tr>
+                        <tr>
+                            <td>basics for security by access and user authentication</td>
+                        </tr>
+                        <tr>
+                            <td>for each link an own TCP connection</td>
+                        </tr>
+                        <tr class="success">
+                            <td rowspan="2">
+                                <a href="http://tools.ietf.org/html/rfc2616" target="_blank">HTTP/1.1</a>
+                                <br/><small class="pull-right">( latest )</small>
+                            </td>
+                            <td>more regulations, result in more stabilit of implementations</td>
+                        </tr>
+                        <tr class="success">
+                            <td>persistent connections possible (save resources, not an own TCP connection for each request)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+
+            <div id="httprequest" class="slide step" data-x="1650" data-y="1000" data-z="-450" data-rotate-y="90">
+                <header>HTTP Request</header>                
+                <h3>structure</h3>
+                <blockquote class="definition">
+                    method SP request-uri SP http-version CRLF<br/>
+                    *(( general-header | request-header | entity-header ) CRLF )<br/>
+                    CRLF<br/>
+                    [message-body]
+                </blockquote>
+
+                <h3>methods</h3>
+                <ul class="list-inline">
+                    <li>OPTIONS</li>
+                    <li>GET</li>
+                    <li>HEAD</li>
+                    <li>POST</li>
+                    <li>PUT</li>
+                    <li>DELETE</li>
+                    <li>TRACE</li>
+                    <li>CONNECT</li>
+                    <li>PATCH</li>
+                </ul>
+                <footer></footer>
+            </div>
+
+            <div id="httpresponse" class="slide step" data-x="750" data-y="1000" data-z="-450" data-rotate-y="-90">
+                <header>HTTP Response</header>
+
+                <h3>structure</h3>
+                <blockquote class="definition">
+                    HTTP-Version SP Status-Code SP Reason-Phrase CRLF <br/>
+                    *(( general-header | request-header | entity-header ) CRLF ) <br/>
+                    CRLF<br/>
+                    [message-body]
+                </blockquote>
+                <h3>messages according to request</h3>
+                <ul class="unstyled">
+                    <li>status line instead of request line</li>
+                    <li>control info via status code</li>
+                </ul>                
+                <footer></footer>
+            </div>
+
+            <div id="statuscodes" class="slide step" data-x="1200" data-y="1315" data-z="-450" data-rotate-x="-90" data-rotate-z="-90">
+                <header>HTTP Statuscodes</header>                
+                <dl class="pull-right">
+                    <dt>1XX - information</dt>
+                    <dd>processing of request is still ongoing</dd>
+                    <dt>2XX - sucess</dt>
+                    <dd>processing of request can be done</dd>
+                    <dt>3XX - redirect</dt>
+                    <dd>in order to sucessfully process request, client action is needed</dd>
+                    <dt>4XX - client error</dt>
+                    <dd>tough to seperate from server erros. It's likely, that the cause of error can be found on the client side</dd>
+                    <dt>5XX - server error</dt>
+                    <dd>tough to seperate from client erros. It's likely, that the cause of error can be found on the server side</dd>
+                </dl>
+                <a class="pull-right" href="http://www.ietf.org/assignments/http-status-codes/http-status-codes.xml" target="_blank">... see complete list at ietf.org</a>
+                <footer></footer>
+            </div>
+
+            <!-- #### Fielding RESTful ### -->
+
+            <div id="rest" class="step slide chapter dark" data-x="2400">
+                <header>REST Overview</header>
+                <footer></footer>
+            </div>
+
+            <div id="fielding" class="step slide" data-x="2400" data-y="1000">
+                <header>Overview</header>	
+                <ul>
+                    <li>architectural style based on web standards of HTTP protocol</li>
+                    <li>described Roy Fielding in his <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm" target="_blank">dissertation</a> in <strong>2000</strong></li>                
+                    <li><p>basic principles of RESTul HTTP:<br/><br/></p>
+                        <ol>
+                            <li>resources and their unique identification</li>
+                            <li>standardized methods</li>
+                            <li>representation of resources</li>
+                            <li><strong>H</strong>ypermedia <strong>A</strong>s <strong>T</strong>he <strong>E</strong>ngine <strong>O</strong>f <strong>A</strong>pplication <strong>S</strong>tate</li>
+                            <li>stateless communication</li>
+                        </ol>
+                    </li>
+                </ul>                                  
+                <footer></footer>
+            </div>
+            <div id="resources" class="step slide" data-x="2400" data-y="2000">
+                <header>Resources</header>
+                <blockquote>The key <strong>abstraction</strong> of information in REST is a resource.<br/>
+                    Any information that <strong>can be named</strong> can be a resource: a document or image, a temporal service (e.g. "today's weather in Los Angeles"), a collection of other resources, a non-virtual object (e.g. a person), and so on.<br/>
+                    In other words, any concept that might be the target of an author's hypertext reference must fit within the definition of a resource.<br/>
+                    A resource is a <strong>conceptual mapping to a set of entities</strong>, not the entity that corresponds to the mapping at any particular point in time.
+                    <small class="text-right"><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_2_1_1" target="_blank">Fieldings definition</a></small>
+                </blockquote>       
+                <footer></footer>
+            </div>
+            <div id="resourcetypes" class="step slide" data-x="3400" data-y="2000" data-z="-500" data-rotate-y="45">
+                <h1 class="header">Entity Resource</h1>
+                <ul class="list-unstyled">
+                    <li>also called <strong>Item Resource</strong></li>
+                    <li>independent, adressable information unit with its own lifecycle</li>
+                    <li><code class="example">http://localhost:8080/orders/1234</code></li>
+                </ul>
+                <h1 class="header">Collection Resource</h1>
+                <ul class="list-unstyled">
+                    <li>collection of entity resources of the same kind</li>
+                    <li>usually supply actions for searching, creating or adding items to the collection</li>
+                    <li><code class="example">http://localhost:8080/orders</code></li>
+                </ul>
+                <h1 class="header">Activity Resource</h1>
+                <ul class="list-unstyled">
+                    <li>actions and activities can also be designed as resources, by making <strong>nouns</strong> from <strong>actions</strong></li>
+                </ul>
+                <footer></footer>
+            </div> 
+            <div id="actUC1" class="step" data-x="3900" data-y="2000" data-z="-2500" data-rotate-y="90" data-rotate-x="90">
+                <h2>Use Case:</h2>
+                <blockquote>
+                    As a bank, I want to <em>transfer</em> <em>500&euro;</em> from <em>account A</em> to <em>account B</em>.<br/>
+                </blockquote>
+                <div id="actUC1a">
+                    &nbsp;
+                    <h2 class="text-center">Can you find possible resources ?</h2>
+                </div>
+            </div>            
+            <div id="actUC2" class="step" data-x="5300" data-y="2000" data-z="-2500" data-rotate-y="90" data-rotate-x="-180">
+                <h3>accounts</h3>
+                <ul class="inline">
+                    <li><code>/accounts</code></li>
+                    <li><code>/accounts/A</code></li>
+                    <li><code>/accounts/B</code></li>
+                </ul>
+                <br/>
+                <img src="./img/accounts.png" alt="account class and resources" title="account class and resources"/>
+                <br/>  
+                <div id="actUC2a">
+                    &nbsp;
+                    <h2>And how about <em>transfer</em> ?</h2> 
+                </div>
+            </div>
+            <div id="actUC3" class="step" data-x="5300" data-y="1750" data-z="-2500" data-rotate-y="90" data-rotate-x="-180">                
+                <h3>transactions</h3>
+                <ul class="inline">
+                    <li><code>/transactions</code></li>
+                    <li><code>/transactions/1</code></li>
+                </ul>
+                <br clear="all"/>
+                <img src="./img/transaction.png" alt="transactions, class and resources" title="transactions, class and resources"/>
+            </div>
+            <div id="identifiers" class="step slide" data-x="2400" data-y="3000">                
+                <header>Uniform Resource Identifier (URI)</header>
+                <blockquote>
+                    A Uniform Resource Identifier (URI) is a compact string of characters for identifying an abstract or physical resource.
+                    <small class="text-right"><cite title="RFC2396"> <a href="http://tools.ietf.org/html/rfc2396" target="_blank">IETF specification</a></cite></small>
+                </blockquote>
+                <p class="text-center">one <a href="http://tools.ietf.org/html/rfc2396" target="_blank">URI</a> identifies exactly one resource,<br/>
+                    one resource can be identified by multiple URIs<br/>
+                    <br/>
+                    <img src="./img/URI-Resource.png" title="relation"/>
+                </p>
+                <footer></footer>
+            </div>
+            <div id="url" class="step slide" data-x="3900" data-y="3000">
+                <header>Uniform Resource Locator (URL)</header>
+                <blockquote>
+                    ... identify resources via a representation of their primary access
+                    mechanism (e.g., their network "location"), rather than identifying
+                    the resource by name or by some other attribute(s) of that resource
+                    <small class="text-right"><cite title="RFC2396"><a href="http://tools.ietf.org/html/rfc2396#section-1.2" target="_blank">differences of URI, URL, URN,..</a></cite></small>
+                </blockquote><br/>
+                <code class="example">
+                    &lt;protocol&gt;//[&lt;user&gt;:&lt;password&gt;@]&lt;host&gt;:&lt;port&gt;/</code><br/>
+                <code class="example">&nbsp;&nbsp;&nbsp;&lt;path&gt;/&lt;resource&gt;[#&lt;fragment&gt;]?&lt;query&gt;
+                </code>
+                <footer></footer>
+            </div>
+            <div id="exampleresource" class="step" data-x="3400" data-y="3000" data-rotate-y='-60' data-rotate-x="-60" data-rotate-z="60">
+                <h1>Can you guess what's behind these resources ?</h1>
+                <ul class="unstyled">
+                    <li>&nbsp;</li>
+                    <li>
+                        <code>http://starbucks.com/orders/2007/11</code>
+                    </li>
+                    <li>&nbsp;</li>
+                    <li>
+                        <code>
+                            http://bisnode.com/europe/dach/d/products?color=green
+                        </code>
+                    </li>
+                    <li>&nbsp;</li>
+                    <li>
+                        <code>
+                            http://car-seller.eu/cars;brand=BMW/tires;supplier=pneuhage;season=summer
+                        </code>
+                    </li>
+                    <li>&nbsp;</li>
+                    <li>
+                        <code>
+                            http://10.4.21.100/432010/an/
+                        </code>
+                    </li>
+                </ul>
+            </div>
+            <div id="methods" class="step slide" data-x="2400" data-y="4000">
+                <header>Methods</header>
+                <p>Each resource has a fixed set of possible operations (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">HTTP methods</a>):</p>
+                <dl>
+                    <dt>GET</dt>
+                    <dd>
+                        <ul class="unstyled">
+                            <li>read only access on the resource</li>
+                            <li><em>safe</em> : causes no change in state</li>
+                            <li><em>idempotent</em> : multiple calls have the same result</li>
+                        </ul>
+                    </dd>
+                    <dt>PUT</dt>
+                    <dd>
+                        <ul class="unstyled">
+                            <li>create a resource (client-side) or replace a resource</li>
+                            <li>data provided must be complete (e.g. id)</li>
+                            <li><em>idempotent</em> as well</li>
+                        </ul>
+                    </dd>                   
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="methodscont1" class="step slide" data-x="3450" data-y="4000" data-z="-500" data-rotate-y="45">
+                <header>Methods (cont.)</header>
+                <dl>
+                    <dt>DELETE</dt>
+                    <dd>
+                        <ul class="unstyled">
+                            <li>delete a resource</li>
+                            <li><em>idempotent</em> as well</li>
+                        </ul>
+                    </dd>
+                    <dt>POST</dt>
+                    <dd>
+                        <ul class="unstyled">
+                            <li>create a resource (server-side) or (partial) update an existing resource</li>
+                            <li>neither <em>safe</em> ...</li>
+                            <li>... nor <em>idempotent</em></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="methodscont2" class="step slide"  data-x="3950" data-y="4000" data-z="-1500" data-rotate-y="90">
+                <header>Methods (cont.)</header>
+                <dl>
+                    <dt>HEAD</dt>
+                    <dd>
+                        <ul class="unstyled">
+                            <li>metadata (headers) of resource</li>
+                            <li>similiar to <a href="#/methods">GET</a> but without content data</li>
+                            <li><em>safe</em> ...</li>
+                            <li> ... and <em>idempotent</em> as well</li>
+                        </ul>
+                    </dd>
+                    <dt>OPTIONS</dt>
+                    <dd>
+                        <ul class="unstyled">
+                            <li>metadata (subset of headers) of resource</li>
+                            <li>especially all supported HTTP verbs of this resource</li>
+                            <li><em>safe</em> and <em>idempotent</em> as well</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="methodssum" class="step slide" data-x="3450" data-y="4000" data-z="-2500" data-rotate-y="135">
+                <header>Summary</header>
+                <table class="table table-bordered table-hover">
+                    <caption>HTTP verbs and their usage</caption>
+                    <thead>
+                        <tr>
+                            <th>method</th>
+                            <th>safe</th>
+                            <th>idempotent</th>
+                            <th>typically used for</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">GET</td>
+                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td>get a representation of a resource: <em>READ</em></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">PUT</td>
+                            <td class="text-center red"><i class="icon-check-empty icon-2x"></i></td>
+                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td>create or replace a resource: <em>CREATE</em>/<em>UPDATE</em></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">POST</td>
+                            <td class="text-center red"><i class="icon-check-empty icon-2x"></i></td>
+                            <td class="text-center red"><i class="icon-check-empty icon-2x"></i></td>
+                            <td>create or update a resource: <em>CREATE</em>/<em>UPDATE</em></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">DELETE</td>
+                            <td class="text-center red"><i class="icon-check-empty icon-2x"></i></td>
+                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td>delete a resource: <em>DELETE</em>/<em>UPDATE</em></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">HEAD</td>
+                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td>only metadata (headers) of a resource</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">OPTIONS</td>
+                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td>actions (HTTP verbs) of a resource</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="putvspost" class="step slide" data-x="2400" data-y="4000" data-z="-3000" data-rotate-y="180">
+                <header>PUT vs. POST</header>
+                <p>In general ...</p>
+                <dl>
+                    <dt><em>POST</em> is used ... </dt>
+                    <dd>
+                        <ul>
+                            <li>to create a new resource with server-side managed (auto generated) identifier</li>
+                            <li>to perform partial updates to a resource</li>
+                            <li>to execute an action resource</li>
+                        </ul>
+                    </dd>
+                    <dt><em>PUT</em> is used ... </dt>
+                    <dd>
+                        <ul>
+                            <li>to create a new resource with client-side managed identifier (client defines URI)</li>
+                            <li>to replace a resource</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="presentation" class="step slide" data-x="2400" data-y="5000">
+                <header>Representation of Resources</header>
+                <ul>
+                    <li>resources are abstract, they get never transported outside the server</li>
+                    <li>to interact with resources use their representation</li>
+                    <li>client and server use <a href="http://de.wikipedia.org/wiki/Content_Negotiation">Content Negotiation</a> to decide about the representation of requested resource</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="presexample" class="step" data-x="3450" data-y="5000" data-z="-500" data-rotate-y="45" data-rotate-x="-45">
+                <h1>example</h1> 
+                <ul class="list-unstyled">
+                    <li><code class="example">http://restbuck.pgrund.cloudbees.net/order/1234</code></li>
+                    <li>&nbsp;</li>
+                    <li>
+                        <em>Content-Type: application/xml</em>
+                        <br/>
+                        <pre class="code">&lt;?xml version="1.0"?&gt;
+&lt;order xmlns="urn:restbucks" id="1234"&gt;
+   &lt;drink&gt;latte&lt;/drink&gt;
+&lt;/order&gt;</pre>
+                        <em>Content-Type: text/html</em>
+                        <pre class="code">&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Restbucks Order&lt;/h1&gt;
+    &lt;p&gt;Your current &lt;span id="1234"&gt;order&lt;/span&gt;&lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;Latte Macchiatto&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                    </li>
+                </ul>
+            </div>
+            <div id="contentheaders" class="step slide"  data-x="3950" data-y="5000" data-z="-1500" data-rotate-y="90">
+                <header>Accept</header>
+                <ul>
+                    <li>HTTP request header <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1" target="_blank">Accept</a></li>
+                    <li><a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-Type</a> client is requesting</li>
+                    <li>may be a list with priority</li>
+                </ul>
+                <br/>
+                <header>Content-Type</header>
+                <ul>
+                    <li>HTTP response header <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17" target="_blank">Content-Type</a></li>
+                    <li><a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-Type</a> of content issued by server</li>
+                    <li><a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-Type</a> o content transmitted by client (e.g.: <em>POST</em>)</li>
+                </ul>
+            </div>
+            <div id="contentexample" class="step" data-x="3450" data-y="5000" data-z="-2500" data-rotate-y="135" data-rotate-x="45">
+                <h1>example</h1>
+                <pre class="shell pull-left"><i class="icon-chevron-right"></i>  GET /order/1 HTTP\1.1
+<i class="fa fa-chevron-right"></i>  Host: restbuck.pgrund.cloudbees.net
+<i class="fa fa-chevron-right"></i>  <em>Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</em>
+<i class="fa fa-chevron-right"></i>  Accept-Charset:ISO-8859-1,utf-8;q=0.7,*;q=0.3
+<i class="fa fa-chevron-right"></i>  Accept-Encoding:gzip,deflate,sdch
+<i class="fa fa-chevron-right"></i>  Accept-Language:de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+<i class="fa fa-chevron-right"></i> User-Agent:Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
+                </pre>
+                <pre class="shell pull-right"><i class="icon-chevron-left"></i>  HTTP/1.1 200 OK
+<i class="fa fa-chevron-left"></i>  Server: nginx/1.3.13
+<i class="fa fa-chevron-left"></i>  Date: Tue, 07 May 2013 06:54:15 GMT
+<i class="fa fa-chevron-left"></i>  <em>Content-Type: text/html</em>
+<i class="fa fa-chevron-left"></i>  &lt;!DOCTYPE html SYSTEM "about:legacy-compat"&gt;
+<i class="fa fa-chevron-left"></i>  &lt;html lang="en" xmlns:dap="http://schemas.restbucks.com/dap" xmlns:rb="http://schemas.restbucks.com"&gt;
+<i class="fa fa-chevron-left"></i>    &lt;head&gt;
+<i class="fa fa-chevron-left"></i>      &lt;META http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+<i class="fa fa-chevron-left"></i>      &lt;title&gt;RESTBucks - RESTful Coffee Ordering&lt;/title&gt;
+<i class="fa fa-chevron-left"></i>      &lt;meta name="description" content="information about single RESTBucks order"&gt;
+<i class="fa fa-chevron-left"></i>      &lt;meta name="author" content="RESTBucks system"&gt;
+<i class="fa fa-chevron-left"></i>    &lt;/head&gt;
+<i class="fa fa-chevron-left"></i>    &lt;body&gt;
+<i class="fa fa-chevron-left"></i>  ...
+<i class="fa fa-chevron-left"></i>    &lt;/body&gt;
+<i class="fa fa-chevron-left"></i>  &lt;/html&gt;</pre>
+                <br clear="all"/>
+            </div>
+            <div id="contentdefault" class="step slide" data-x="2400" data-y="5000" data-z="-3000" data-rotate-y="180">
+                <header>default media types</header>
+                <ul class="unstyled">
+                    <li><a href="http://iana.org" target="_blank"><abbr title="Internet_Assigned_Numbers_Authority">IANA</abbr></a> manages the <a href="http://www.iana.org/assignments/media-types/" target="_blank">official registry of media types</a></li>                    
+                    <li><code>application/xml</code> - XML</li>
+                    <li><code>application/atom+xml</code> - Atom Feed/Entry</li>
+                    <li><code>application/json</code> - JSON</li>
+                    <li><code>application/pdf</code> - PDF</li>
+                    <li><code>message/rfc822</code> - Email EML</li>
+                    <li><code>multipart/mixed</code> - Email MIME</li>
+                    <li><code>text/html</code> - HTML</li>
+                    <li><code>text/plain</code> - Textual data</li>
+                    <li><code>image/png</code> - PNG images</li>
+                    <li>in order to create a new type, you need to <a href="http://www.iana.org/cgi-bin/mediatypes.pl" target="_blank">apply at IANA</a></li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="contentvnd" class="step slide" data-x="1350" data-y="5000" data-z="-2500" data-rotate-y="225">
+                <header>vendor specific types</header>    
+                <ul>
+                    <li>vendor specific types are not managed by IANA</li>
+                    <li>free to choose, not as stable as default types</li>
+                    <li>usually as <code>application/vnd.<em>&lt;vendortype&gt;</em>[+<em>&lt;subtype&gt;</em>]</code></li>
+                    <li><em>vendortype</em> - free of choice</li>
+                    <li><em>subtype</em> - optional, usually existing type (IANA)</li>
+                    <li>examples:<br/>
+                        <dl class="pull-left">
+                            <dt>Microsoft</dt>
+                            <dd><code>application/vnd.ms-excel</code></dd>
+                            <dd><code>application/vnd.ms-powerpoint</code></dd>
+                            <dt>Google Earth</dt>
+                            <dd><code>application/vnd.google-earth.kmz</code></dd>
+                            <dd><code>application/vnd.google-earth.kml+xml</code></dd>                            
+                        </dl>
+                        <dl class="pull-right">
+                            <dt>sandbox</dt>
+                            <dd><code>application/vnd.sandbox-v1+xml</code></dd>
+                            <dd><code>application/vnd.sandbox-v2+xml</code></dd>
+                            <dd><code>application/vnd.sandbox-v3+xml</code></dd>
+                        </dl>
+                    </li>
+                </ul>
+                <footer></footer>            
+            </div>
+            <div id="vndexample" class="step" data-x="850" data-y="5000" data-z="-1500" data-rotate-z="60" data-rotate-y="270">
+                <h1>example: <code>http://localhost:8080/orders</code></h1>
+
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#v1response" data-toggle="tab">
+                            <pre class="shell" data-toggle="tab"><i class="icon-chevron-right"></i>  GET /orders HTTP\1.1
+<i class="icon-chevron-right"></i>  Host: localhost:8080
+<i class="icon-chevron-right"></i>  <em>Accept:application/vnd.sandbox-v1+xml</em>
+                            </pre></a></li>
+                    <li><a href="#v2response" data-toggle="tab">
+                            <pre class="shell" data-toggle="tab"><i class="icon-chevron-right"></i>  GET /orders HTTP\1.1
+<i class="icon-chevron-right"></i>  Host: localhost:8080
+<i class="icon-chevron-right"></i>  <em>Accept:application/vnd.sandbox-v2+xml</em>
+                            </pre></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="v1response" class="tab-pane active fade in">
+                        <pre class="shell"><i class="icon-chevron-left"></i>  HTTP/1.1 200 OK
+<i class="icon-chevron-left"></i>  <em>Content-Type: application/vnd.sandbox-v1+xml</em>
+<i class="icon-chevron-left"></i>  Date: Tue, 07 May 2013 10:38:59 GMT
+<i class="icon-chevron-left"></i>  Server: Jetty(8.1.10.v20130312)
+<i class="icon-chevron-left"></i>  
+<i class="icon-chevron-left"></i>  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<i class="icon-chevron-left"></i>  &lt;v1&gt;
+<i class="icon-chevron-left"></i>    &lt;auftrag href="http://localhost:8080/orders/1234"&gt;test1&lt;/auftrag&gt;
+<i class="icon-chevron-left"></i>    &lt;auftrag href="http://localhost:8080/orders/5678"&gt;test2&lt;/auftrag&gt;
+<i class="icon-chevron-left"></i>    &lt;auftrag href="http://localhost:8080/orders/9012"&gt;test3&lt;/auftrag&gt;
+<i class="icon-chevron-left"></i>  &lt;/v1&gt;
+                        </pre>
+                    </div>
+                    <div id="v2response" class="tab-pane fade"> 
+                        <pre class="shell"><i class="icon-chevron-left"></i>  HTTP/1.1 200 OK
+<i class="icon-chevron-left"></i>  <em>Content-Type: application/vnd.sandbox-v2+xml</em>
+<i class="icon-chevron-left"></i>  Date: Tue, 07 May 2013 10:38:59 GMT
+<i class="icon-chevron-left"></i>  Server: Jetty(8.1.10.v20130312)
+<i class="icon-chevron-left"></i>  
+<i class="icon-chevron-left"></i>  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<i class="icon-chevron-left"></i>  &lt;sb:v2 xmlns:dap="http://sandbox.bisnode.com/dap" 
+<i class="icon-chevron-left"></i>       xmlns:sb="http://sandbox.bisnode.com"&gt;
+<i class="icon-chevron-left"></i>      &lt;sb:auftrag href="http://localhost:8080/orders/1234"&gt;
+<i class="icon-chevron-left"></i>          &lt;sb:name&gt;test1&lt;/sb:name&gt;
+<i class="icon-chevron-left"></i>          &lt;sb:description&gt;description for first test&lt;/sb:description&gt;
+<i class="icon-chevron-left"></i>      &lt;/sb:auftrag&gt;
+<i class="icon-chevron-left"></i>      &lt;sb:auftrag href="http://localhost:8080/orders/5678"&gt;
+<i class="icon-chevron-left"></i>          &lt;sb:name&gt;test2&lt;/sb:name&gt;
+<i class="icon-chevron-left"></i>          &lt;sb:description/&gt;
+<i class="icon-chevron-left"></i>      &lt;/sb:auftrag&gt;
+<i class="icon-chevron-left"></i>      &lt;sb:auftrag href="http://localhost:8080/orders/9012"&gt;
+<i class="icon-chevron-left"></i>          &lt;sb:name&gt;test3&lt;/sb:name&gt;
+<i class="icon-chevron-left"></i>          &lt;sb:description&gt;last test entry&lt;/sb:description&gt;
+<i class="icon-chevron-left"></i>      &lt;/sb:auftrag&gt;
+<i class="icon-chevron-left"></i>  &lt;/sb:v2&gt;</pre>
+                    </div>
+                </div>
+            </div>
+            <div id="hypermedia" class="step slide" data-x="2400" data-y="6000">
+                <header>Hypermedia</header>
+                <blockquote>
+                    The <em>next control state</em> of an application resides in the representation of the ﬁrst requested resource, … The application state is controlled and stored by the user agent ...
+                    ... anticipate changes to that state (e.g., link maps and prefetching of representations) ...
+                    ... The model application is therefore an engine that moves from one state to the next by <em>examining and choosing from among the alternative state transitions in the current set of representations</em>. 
+                    <small class="text-right"><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_3_3" target="_blank">Roy Fielding</a>
+                    </small>
+                </blockquote>            
+                <h1 class="text-center">
+                    HATEOAS = <em>H</em>ypermedia <em>A</em>s <em>T</em>he <em>E</em>ngine <em>O</em>f <em>A</em>pplication <em>S</em>tate
+                </h1>
+                <footer></footer>
+            </div>
+            <div id="dap" class="step slide" data-x="3550" data-y="6000">
+                <header>Domain Application Protocol (DAP)</header>
+                <br/>
+                <ul>
+                    <li>Model applications in terms of <em>application state machine</em></li>
+                    <li><p>Implement them in terms of <em>resource lifecycles</em> and the rules that <em>associate resources</em></p></li>
+                    <li>Advertise and execute them using <em>media types</em>, <em>link relation values</em> and <em>HTTP idioms</em></li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="dapexample" class="step" data-x="4700" data-y="6000">                
+                <h1>example</h1>               
+                <p>application state machine
+                    <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine"/>                
+                    <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine"/>
+                </p>
+            </div>
+            <div id="dapexampleresources" class="step" data-x="5850" data-y="6000">            
+                <h1>example (cont.)</h1>
+                <br/>             
+                <p class="pull-left">resource <code>quote</code> lifecycle<br/>
+                    <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
+                </p>
+                <span class="box pull-left">&nbsp;</span>
+                <div class="pull-left text-center">
+                    <ul class="list-unstyled">
+                        <li>&nbsp;</li>
+                        <li>resources</li>
+                        <li><code>quote</code></li>
+                        <li><code>order</code></li>
+                        <li><code>payment</code>(?)</li>
+                    </ul>
+                    <br/><br/>
+                    <p>relations</p>
+                    <ul class="list-unstyled">
+                        <li>rel = <code>/linkrels/quote/create</code></li>
+                        <li>&nbsp;</li>
+                        <li>rel = <code>/linkrels/order/confirm</code></li>
+                        <li>rel = <code>/linkrels/order/pay</code></li>
+                        <li>rel = <code>/linkrels/order/cancel</code></li>
+                        <li>rel = <code>/linkrels/order/reopen</code></li>
+                    </ul>
+                </div>
+                <span class="box pull-left">&nbsp;</span>
+                <p>resource <code>order</code> lifecycle<br/>
+                    <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
+                </p>
+                <br clear="all"/>  
+            </div>
+            <div id="stateless" class="step slide" data-x="2400" data-y="7000">
+                <header>Stateless</header>
+                <blockquote>... communication must be stateless in nature, ... such that each request from client to server must contain all of the <em>information necessary</em> to understand the request, and cannot take advantage of any <em>stored context on the server</em>. 
+                    <small class="text-right"><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_1_3" target="_blank">Roy Fielding</a></small></blockquote>
+                <ul>
+                    <li>session state entirely on the client</li>
+                    <li><em>visibility</em>: monitoring system need just a single request</li>
+                    <li><em>reliability</em>: eases task of recovery from partial failures</li>
+                    <li><em>scalability</em>: free server resources (not storing state) and easily manage resource usage across requests</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <!-- ########## Richardson Maturity Model #### -->
+            <div id="richardsonmaturity" class="step slide chapter orange" data-x="3600">
+                <header>Richardson Maturity Model</header>               
+                <footer></footer>
+            </div>
+
+            <div id="richardson" class="step slide" data-x="3600" data-y="1000">
+                <header>Overview</header>
+                <p>model providing a good step by step way to understand the basic ideas behind restful thinking</p>
+                <ul id="rmm" class="list-unstyled">
+                    <li id="restglory">Glory of REST <i class="icon-flag icon-2x"></i> </li>
+                    <li>Level 3: Hypermedia Controls</li>
+                    <li>Level 2: HTTP Verbs</li>
+                    <li>Level 1: Resources</li>
+                    <li>Level 0: The Swamp of POX</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="level0" class="step slide" data-x="4650" data-y="1000" data-rotate-z="90">
+                <header>Level 0: The swamp of POX</header>
+                <blockquote>... using HTTP as <em>transport system</em> for remote interactions, but <em>without using any of the mechanism of the web</em>.
+                    <small class="text-right"><a href="http://martinfowler.com/articles/richardsonMaturityModel.html#level0" target="_blank">Martin Fowler</a></small>
+                </blockquote>
+                <br/>
+                <p>One URI, one HTTP method</p>
+                <ul>
+                    <li>one resource (URI)</li>
+                    <li>one method (usually POST)</li>
+                    <li>multiple messages - <em>Plain old xml</em> (POX)</li>
+                    <li><em>Remote Procedure Call</em>(RPC) style</li>
+                    <li>like SOAP or XML-RPC, wrapping in HTTP envelope</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="level0sequence" class="step" data-x="4650" data-y="1000" data-z="-600" data-rotate-y="90">
+                <h1>example (Level 0)</h1>    
+                <img src='./img/level0sequence.png' alt='sequence diagramm for level 0' title='sequence diagramm for level 0'/>
+            </div>                 
+            <div id="level0example" class="step" data-x="4050" data-y="1000" data-z="-1500" data-rotate-y="90">
+                <pre class="shell pull-left"><em>POST</em> <em>/appointmentService</em> HTTP/1.1
+[various other headers]
+
+&lt;openSlotRequest date = "2010-01-04" doctor = "mjones"/&gt;</pre>
+                <pre class="shell pull-right">HTTP/1.1 200 OK
+[various headers]
+
+&lt;openSlotList&gt;
+  &lt;slot start = "1400" end = "1450"&gt;
+    &lt;doctor id = "mjones"/&gt;
+  &lt;/slot&gt;
+  &lt;slot start = "1600" end = "1650"&gt;
+    &lt;doctor id = "mjones"/&gt;
+  &lt;/slot&gt;
+&lt;/openSlotList&gt;</pre>
+                <br clear="all"/>                
+                <pre class="shell pull-left"><em>POST</em> <em>/appointmentService</em> HTTP/1.1
+[various other headers]
+
+&lt;appointmentRequest&gt;
+  &lt;slot doctor = "mjones" start = "1400" end = "1450"/&gt;
+  &lt;patient id = "jsmith"/&gt;
+&lt;/appointmentRequest&gt;</pre>
+                <div class="tabbable tabs-left pull-right">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a class="text-success" href="#l0sucess" data-toggle="tab"><i class="fa fa-check-circle-o fa-2x"></i> success</a></li>
+                        <li><a class="text-error" href="#l0error" data-toggle="tab"><i class="fa fa-ban fa-2x"></i> error</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="l0sucess" class="tab-pane active">
+                            <pre class="shell">HTTP/1.1 200 OK
+[various headers]
+
+&lt;appointment&gt;
+  &lt;slot doctor = "mjones" start = "1400" end = "1450"/&gt;
+  &lt;patient id = "jsmith"/&gt;
+&lt;/appointment&gt;</pre>
+                        </div>
+                        <div id="l0error" class="tab-pane">
+                            <pre class="shell">HTTP/1.1 <em>200 OK</em>
+[various headers]
+
+<em>&lt;appointmentRequestFailure&gt;</em>
+  &lt;slot doctor = "mjones" start = "1400" end = "1450"/&gt;
+  &lt;patient id = "jsmith"/&gt;
+  <em>&lt;reason&gt;Slot not available&lt;/reason&gt;</em>
+&lt;/appointmentRequestFailure&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+                <br clear="all"/>
+            </div>
+            <div id="level1" class="step slide" data-x="5000" data-y="2000">
+                <header>Level 1: Resources</header>
+                <blockquote>... <em>introduce resources</em>. So now rather than making all our requests to a singular service endpoint, we now <em>start talking to individual resources</em>.
+                    <small class="text-right"><a href="http://martinfowler.com/articles/richardsonMaturityModel.html#level1" target="_blank">Martin Fowler</a></small>
+                </blockquote>
+                <p>Many URIs, one HTTP verb</p>                
+                <ul>
+                    <li>URI Tunneling</li>
+                    <li>multiple resources</li>
+                    <li>one method (usually POST)</li>
+                    <li>same messages than at <a href="#/level0">Level 0</a></li>
+                    <li>notion of object identity</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="level1sequence" class="step" data-x="4500" data-y="2000" data-z="-600" data-rotate-y="90">
+                <h1>example (Level 1)</h1>
+                <img src='./img/level1sequence.png' alt='sequence diagramm for level 1' title='sequence diagramm for level 1'/>
+            </div>
+            <div id="level1example" class="step" data-x="4400" data-y="2000" data-z="-1500" data-rotate-y="90">
+                <pre class="shell pull-left">POST <em>/doctors/mjones</em> HTTP/1.1
+[various other headers]
+
+&lt;openSlotRequest date = "2010-01-04"/&gt;</pre>
+                <pre class="shell pull-right">HTTP/1.1 200 OK
+[various headers]
+
+&lt;openSlotList&gt;
+  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"/&gt;
+  &lt;slot id = "5678" doctor = "mjones" start = "1600" end = "1650"/&gt;
+&lt;/openSlotList&gt;</pre>
+                <br clear="all"/>
+                <pre class="shell pull-left">POST <em>/slots/1234</em> HTTP/1.1
+[various other headers]
+
+&lt;appointmentRequest&gt;  
+  &lt;patient id = "jsmith"/&gt;
+&lt;/appointmentRequest&gt;</pre>
+                <pre class="shell pull-right">HTTP/1.1 200 OK
+[various headers]
+
+&lt;appointment&gt;
+  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"/&gt;
+  &lt;patient id = "jsmith"/&gt;
+&lt;/appointment&gt;</pre>
+                <br clear="all"/>
+            </div>
+            <div id="level2" class="step slide" data-x="5650" data-y="1000" data-rotate-z="-90">
+                <header>Level 2: HTTP verbs</header>
+                <blockquote>... using the <em>HTTP verbs</em> as closely as possible to <em>how they are used in HTTP</em> itself.
+                    <small class="text-right"><a href="http://martinfowler.com/articles/richardsonMaturityModel.html#level2" target="_blank">Martin Fowler</a></small>
+                </blockquote>                
+                <p>Many URIs, many verbs, statuscodes</p>                
+                <ul>
+                    <li>consider <em>safety</em> and <em>idempotency</em> of <a href="#/methodssum">HTTP methods</a></li>
+                    <li>introducing <a href="#/statuscodes">HTTP statuscodes</a> for responses</li>
+                    <li><em>CRUD</em> operations on resources</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="level2sequence" class="step" data-x="5650" data-y="1000" data-z="-600" data-rotate-x="90" data-rotate-z="-90">
+                <h1>example (Level 2)</h1>
+                <img src='./img/level2sequence.png' alt='sequence diagramm for level 2' title='sequence diagramm for level 2'/>
+            </div>
+            <div id="level2example" class="step" data-x="5650" data-y="1000" data-z="-1600" data-rotate-x="90" data-rotate-z="-90">
+                <pre class="shell pull-left"><em>GET</em> /doctors/mjones/slots<em>?date=20100104&amp;status=open</em> HTTP/1.1
+Host: royalhope.nhs.uk</pre>
+                <pre class="shell pull-right">HTTP/1.1 200 OK
+[various headers]
+
+&lt;openSlotList&gt;
+  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"/&gt;
+  &lt;slot id = "5678" doctor = "mjones" start = "1600" end = "1650"/&gt;
+&lt;/openSlotList&gt;</pre>
+                <br clear="all"/>   
+                <pre class="shell pull-left">POST /slots/1234 HTTP/1.1
+[various other headers]
+
+&lt;appointmentRequest&gt;  
+  &lt;patient id = "jsmith"/&gt;
+&lt;/appointmentRequest&gt;</pre>
+                <div class="tabbable tabs-left pull-right">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a class="text-success" href="#l2sucess" data-toggle="tab"><i class="fa fa-check-circle-o fa-2x"></i> success</a></li>
+                        <li><a class="text-error" href="#l2error" data-toggle="tab"><i class="fa fa-ban fa-2x"></i> error</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="l2sucess" class="tab-pane active">
+                            <pre class="shell pull-right">HTTP/1.1 <em>201 Created</em>
+Location: slots/1234/appointment
+[various headers]
+
+&lt;appointment&gt;
+  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"/&gt;
+  &lt;patient id = "jsmith"/&gt;
+&lt;/appointment&gt;</pre>
+                        </div>
+                        <div id="l2error" class="tab-pane">
+                            <pre class="shell">HTTP/1.1 <em>409 Conflict</em>
+[various headers]
+
+&lt;openSlotList&gt;
+  &lt;slot id = "5678" doctor = "mjones" start = "1600" end = "1650"/&gt;  
+&lt;/openSlotList&gt;</pre>
+                        </div>
+                    </div>
+                </div>         
+                <br clear="all"/>
+            </div>
+            <div id="level3" class="step slide" data-x="6200" data-y="2000">
+                <header>Level 3: Hypermedia Controls</header>
+                <blockquote>... ugly acronym of <em>HATEOAS</em> (<em>H</em>ypertext <em>A</em>s <em>T</em>he <em>E</em>ngine <em>O</em>f <em>A</em>pplication <em>S</em>tate)<br/>
+                    It adresses the question of how to get from a list open slots to knowing what to do to book an appointment.
+                    <small class="text-right"><a href="http://martinfowler.com/articles/richardsonMaturityModel.html#level3" target="_blank">Martin Fowler</a></small></blockquote>
+                <ul>
+                    <li>additionally using <a href="#/hypermedia">Hypermedia</a></li>
+                    <li>resource itself shows what to do </li>
+                    <li>client doesn't need to know about state machine</li>
+                    <li>coupling via <a href='http://www.iana.org/assignments/link-relations/link-relations.xml' target='_blank'>link relations</a>, just follow provided URL</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="level3sequence" class="step" data-x="6200" data-y="2000" data-z="-500" data-rotate-y="90">
+                <h1>example (Level 3)</h1>
+                <img src='./img/level3sequence.png' alt='sequence diagramm for level 3' title='sequence diagramm for level 3'/>
+            </div>
+            <div id="level3example" class="step" data-x="6000" data-y="2000" data-z="-1500" data-rotate-y="90">
+                <br/>
+                <pre class="shell pull-left">GET /doctors/mjones/slots?date=20100104&amp;status=open HTTP/1.1
+Host: royalhope.nhs.uk</pre>
+                <pre class="shell pull-right">HTTP/1.1 200 OK
+[various headers]
+
+&lt;openSlotList&gt;
+  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"&gt;
+    <em>&lt;link rel = "/linkrels/slot/book" uri = "/slots/1234" /&gt;</em>
+  &lt;/slot&gt;
+  ...
+&lt;/openSlotList&gt;</pre>
+                <br clear="all"/>   
+                <pre class="shell pull-left">POST /slots/1234 HTTP/1.1
+[various other headers]
+
+&lt;appointmentRequest&gt;  
+  &lt;patient id = "jsmith"/&gt;
+&lt;/appointmentRequest&gt;</pre>
+                <pre class="shell pull-right">HTTP/1.1 201 Created
+Location: slots/1234/appointment
+[various headers]
+
+&lt;appointment&gt;
+  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"/&gt;
+  &lt;patient id = "jsmith"/&gt;
+  <em>&lt;link rel = "/linkrels/appointment/cancel" 
+    uri = "/slots/1234/appointment" /&gt;</em>
+  <em>&lt;link rel = "/linkrels/appointment/addTest" 
+    uri = "/slots/1234/appointment/tests" /&gt;</em>
+  <em>&lt;link rel = "/linkrels/appointment/changeTime" 
+    uri = "/doctors/mjones/slots?date=20100104&amp;status=open" /&gt;</em>
+  <em>&lt;link rel = "/linkrels/appointment/updateContactInfo" 
+    uri = "/patients/jsmith/contactInfo" /&gt;</em>
+  ...
+&lt;/appointment&gt;</pre>
+                <br clear="all"/>
+            </div>
+            <!-- ##### H Factor #### -->
+            <div id="hfactor" class="step slide chapter blue" data-x="4800">
+                <header>H-Factor</header>   
+                <footer></footer>
+            </div>
+            <div id="hfactoroverview" class="step slide" data-x="4800" data-y="-900">
+                <header>Overview</header>
+                <blockquote>The H Factor of a media-type is a <em>measurement of the level of hypermedia support</em> and sophistication of a media-type. H Factor values can be used to <em>compare and contrast media types</em> in order to aid in selecting the proper media-type(s) for your implementation.
+                    <small class="text-right"><a href="http://amundsen.com/hypermedia/hfactor/" target="_blank">Mike Amundsen</a></small>
+                </blockquote>
+                <br/>
+                <table id="hfactortable" class="hfactor">
+                    <caption>H Factor table<br/></caption>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="control"><abbr title="Control data for data links">CL</abbr></td>
+                            <td></td>
+                            <td></td>
+                            <th rowspan="2" class="control">control</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="control"><abbr title="Control data for read requests">CR</abbr></td>
+                            <td class="control"><abbr title="Control data for update requests">CU</abbr></td>
+                            <td class="control"><abbr title="Control data for interface methods">CM</abbr></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="link"><abbr title="Embedding links">LE</abbr></td>
+                            <td class="link"><abbr title="Outbound links">LO</abbr></td>
+                            <td class="link"><abbr title="Templated links">LT</abbr></td>
+                            <td class="link"><abbr title="Non-Idempotent updates">LN</abbr></td>
+                            <td class="link"><abbr title="Idempotent updates">LI</abbr></td>
+                            <th class="link">link</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="hfactorlink" class="step slide" data-x="4800" data-y="-1800">
+                <header>Link Support</header>
+                <dl class="dl-horizontal">
+                    <dt>LE</dt>
+                    <dd>Support for <em>embedded</em> links ( <code>HTTP GET</code> )<br/>
+                        <code><em>&lt;img</em> src="http://example.org/images/logo" title="logo" <em>/&gt;</em></code>
+                    </dd>
+                    <dt>LO</dt>
+                    <dd>Support for <em>outbound navigational</em> links ( <code>HTTP GET</code> )<br/>
+                        <code><em>&lt;a</em> href="http:/example.org/search"&gt;Search<em>&lt;/a&gt;</em></code>
+                    </dd>
+                    <dt>LT</dt>
+                    <dd>Support for <em>templated queries</em> ( <code>HTTP GET</code> )<br/>
+                        <code><em>&lt;form</em> method="<em>get</em>"&gt;<br/>
+                            &nbsp;&lt;input name="query" type="text" value="" /&gt;<br/>
+                            &nbsp;&lt;input type="submit" /&gt;<br/>
+                            <em>&lt;/form&gt;</em></code>
+                    </dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="hfactorlinkcont" class="step slide" data-x="6000" data-y="-1800">
+                <header>Link Support (cont.)</header>
+                <dl class="dl-horizontal">
+                    <dt>LN</dt>
+                    <dd>Support for <em>non-idempotent updates</em> ( <code>HTTP POST</code> )<br/>
+                        <code><em>&lt;form</em> method="<em>post</em>" action="http://example.org/my-keywords"&gt;<br/>
+                            &nbsp;&lt;input name="keywords" type="text" value="" /&gt;<br/>
+                            &nbsp;&lt;input type="submit" /&gt;<br/>
+                            <em>&lt;/form&gt;</em></code>
+                    </dd>
+                    <dt>LI</dt>
+                    <dd>Support for <em>idempotent updates</em> ( <code>HTTP PUT</code>, <code>HTTP DELETE</code> )<br/>
+                        <code><em>function</em> delete(id)<br/>
+                            {<br/>
+                            &nbsp;var client = new XMLHttpRequest();<br/>
+                            &nbsp;client.open("<em>DELETE</em>", "/records/" + id );<br/>
+                            }</code>
+                    </dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="hfactorcontrol" class="step slide" data-x="4800" data-y="-2700">
+                <header>Control Data Support</header>
+                <dl class="dl-horizontal">
+                    <dt>CR</dt>
+                    <dd>Support for modifying control data for <em>read requests</em> ( e.g. <code>HTTP Accept-*</code> headers )<br/>
+                        <code>&lt;xsl:include href="http://example.org/newsfeed" <em>accept="application/rss"</em> /&gt;</code>
+                    </dd>
+                    <dt>CU</dt>
+                    <dd>Support for modifying control data for <em>update requests</em> ( e.g. <code>HTTP Content-*</code> headers )<br/>
+                        <code>&lt;form method="post" action="http://example.org/my-keywords"<br/>
+                            &nbsp;&nbsp;&nbsp;<em>enctype="application/x-www-form-urlencoded"</em> &gt;<br/>
+                            &nbsp;&lt;input name="keywords" type="text" value="" /&gt;<br/>
+                            &nbsp;&lt;input type="submit" /&gt;<br/>
+                            &lt;/form&gt;</code>
+                    </dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="hfactorcontrolcont" class="step slide" data-x="6000" data-y="-2700">
+                <header>Control Data Support (cont.)</header>
+                <dl class="dl-horizontal">
+                    <dt>CM</dt>
+                    <dd>Support for indicating the <em>interface method</em> for requests ( e.g. HTTP <code>GET, PUT, POST, DELETE</code> )<br/>
+                        <code>&lt;form <em>method="post"</em> action="http://example.org/my-keywords" &gt;<br/>
+                            &nbsp;&lt;input name="keywords" type="text" value="" /&gt;<br/>
+                            &nbsp;&lt;input type="submit" /&gt;<br/>
+                            &lt;/form&gt;</code>
+                    </dd>
+                    <dt>CL</dt>
+                    <dd>Support for adding <em>semantic meaning</em> to link elements using <em>link relation</em> (e.g. <code>HTML rel</code> attribute )<br/>
+                        <code>&lt;entry xmlns="http://www.w3.org/2005/Atom"&gt;<br/>
+                            &nbsp;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt; ...<br/>
+                            &nbsp;&lt;link <em>rel="edit"</em> href="http://example.org/edit/first-post.atom"/&gt;<br/>
+                            &lt;/entry&gt;</code> 
+                    </dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="hfactorexample" class="step" data-x="5500" data-y="-1800" data-z="-500" data-rotate-y="90" data-rotate-x="90">
+                <h1>examples</h1>
+                <div id="hfactorHTML" class="pull-left">
+                    <h3>Hypermedia Factor <a href="http://amundsen.com/hypermedia/html/" target="_blank">HTML</a></h3>
+                    <table id="hfactorhtml" class="hfactor">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="control"><abbr title="Control data for data links">CL</abbr></td>
+                                <td></td>
+                                <td></td>                            
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="empty"><abbr title="Control data for read requests">CR</abbr></td>
+                                <td class="control"><abbr title="Control data for update requests">CU</abbr></td>
+                                <td class="control"><abbr title="Control data for interface methods">CM</abbr></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="link"><abbr title="Embedding links">LE</abbr></td>
+                                <td class="link"><abbr title="Outbound links">LO</abbr></td>
+                                <td class="link"><abbr title="Templated links">LT</abbr></td>
+                                <td class="link"><abbr title="Non-Idempotent updates">LN</abbr></td>
+                                <td class="empty"><abbr title="Idempotent updates">LI</abbr></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <span class="box pull-left">&nbsp;</span>
+                <div id="hfactorAtom" class="pull-left">
+                    <h3>Hypermedia Factor <a href="http://amundsen.com/hypermedia/atom/" target="_blank">Atom</a></h3>
+                    <table id="hfactoratom" class="hfactor">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="control"><abbr title="Control data for data links">CL</abbr></td>
+                                <td></td>
+                                <td></td>                            
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="empty"><abbr title="Control data for read requests">CR</abbr></td>
+                                <td class="empty"><abbr title="Control data for update requests">CU</abbr></td>
+                                <td class="empty"><abbr title="Control data for interface methods">CM</abbr></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="link"><abbr title="Embedding links">LE</abbr></td>
+                                <td class="link"><abbr title="Outbound links">LO</abbr></td>
+                                <td class="empty"><abbr title="Templated links">LT</abbr></td>
+                                <td class="link"><abbr title="Non-Idempotent updates">LN</abbr></td>
+                                <td class="link"><abbr title="Idempotent updates">LI</abbr></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br clear="all"/>
+                <div id="hfactorSVG" class="pull-left">
+                    <h3>Hypermedia Factor <a href="http://amundsen.com/hypermedia/svg/" target="_blank">SVG</a></h3>
+                    <table id="hfactorsvg" class="hfactor">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="empty"><abbr title="Control data for data links">CL</abbr></td>
+                                <td></td>
+                                <td></td>                            
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="empty"><abbr title="Control data for read requests">CR</abbr></td>
+                                <td class="empty"><abbr title="Control data for update requests">CU</abbr></td>
+                                <td class="empty"><abbr title="Control data for interface methods">CM</abbr></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="link"><abbr title="Embedding links">LE</abbr></td>
+                                <td class="link"><abbr title="Outbound links">LO</abbr></td>
+                                <td class="empty"><abbr title="Templated links">LT</abbr></td>
+                                <td class="empty"><abbr title="Non-Idempotent updates">LN</abbr></td>
+                                <td class="empty"><abbr title="Idempotent updates">LI</abbr></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br clear="all"/>
+            </div>
+
+            <div id="final" data-x="2000" data-y="-800" data-z="8000" class="step">                
+            </div>
+        </div> <!-- end of impress -->
+
+        <div class="fallback-message">
+            <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+            <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+        </div>
+
+        <script type="text/javascript" src="../impress/jquery.js"></script>
+        <!--http://code.jquery.com/jquery-1.10.2.min.js-->
+        <!--script type="text/javascript" src="backup/jquery-1.10.2.min.js"></script-->
+        <script src="../impress/bootstrap.min.js"></script>
+        <!--script type="text/javascript" src="backup/bootstrap.min.3.1.1.js"></script-->
+
+        <script type="text/javascript" src="../impress/impress.js"></script>
+        <!--script type="text/javascript" src="backup/impress.js"></script-->     
+
+        
+        <script src="../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>        
+
+        <script type="text/javascript">
+            if (!window.location.toString().match(/\?print$/i)) {
+                impress().init();
+            } else {
+                window.print();
+                //self.close();
+            }
+
+            var footerDate = new Date().getFullYear() + "-"
+                    + ((new Date().getMonth() + 1) < 10 ? "0" + (new Date().getMonth() + 1) : new Date().getMonth()) + "-"
+                    + (new Date().getDate() < 10 ? "0" + new Date().getDate() : new Date().getDate());
+
+            if ($("meta[name=date]") && $("meta[name=date]").attr("content")) {
+                footerDate = $("meta[name=date]").attr("content");
+            }
+            $("footer").prepend("       " + footerDate + "          ");
+
+
+            $("#break").modal("show").modal("hide");
+            $("#breakbutton").click(function() {
+                $('#counter').html("");
+                $('#counter').countdown({
+                    step: 5,
+                    format: 'mm:ss',
+                    startTime: '05:00',
+                    timerEnd: function() {
+                        $("#break").modal("hide");
+                    },
+                    image: "../bisnode/img/digits.png"
+                });
+                $("#break").modal("show");
+            });
+        </script>        
+
+    </body>
+</html>
+
+

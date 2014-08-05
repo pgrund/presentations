@@ -1,0 +1,140 @@
+@import url(../../bisnode/default.css);/*
+@import url(http://dev-uat-03/presentation/css/bisnode-default.css);
+/*@import url(http://fonts.googleapis.com/css?family=Rock+Salt);*/
+
+body{
+    width:1024px;
+    font-size: 28px;
+    font-family: 'Armata', sans-serif;
+    background: white;
+    color: black;
+    text-shadow: 1px 1px 2px #000;
+    
+    counter-reset: slideIdx;
+}
+
+.nav .active a.text-error { color:red; }
+.nav .active a.text-success { color:green; }
+.red { color: red; }
+.green { color: darkgreen; }
+
+pre.code {
+    font-size: 28px;
+    line-height: 30px;   
+}
+
+
+ul.nav li pre.shell {
+   opacity: 0.4;    
+}
+ul.nav li.active pre.shell {
+   opacity: 1;    
+}
+
+span.tag, code span.tag, pre span.tag{
+    color: blue;
+}
+span.tag:after {
+    content:">";
+}
+span.tag:before {
+    content:"<";
+}
+span.tag.closing:before {
+    content:"</";
+}
+
+
+.slide footer:after {
+    content: "        Peter Grund"; 
+}
+
+
+code.example {
+    margin-left: 30px;
+    padding: 2px 30px 2px 30px;
+    font-size: 32px;    
+}
+#ranges {
+    width: 50%;
+}
+.folder-list li i {
+    color: orange;   
+}
+
+#rangesUC1 {
+    color: blue;
+}
+#rangesUC2{
+    color:orange;
+}
+
+#rangesUC3{
+    color:green;
+}
+#rangesUC4{
+    color:black;
+}
+#rangesUC5{
+    color:red;
+}
+rangesUC1, rangesUC2, rangesUC3, rangesUC4, rangesUC5{}
+
+#wordcloud {
+    height:1200px;
+    width:1200px;
+    left: -500px;
+}
+
+#depMgt {
+    padding-left: 50px;
+    line-height: 1em;
+}
+#depMgt > span.tag {
+    line-height: 1em;
+}
+
+#coordpanel div{
+    line-height: 1em;
+    font-size: 18px;
+}
+#coordFourDL, #coordFourDL dt, #coordFourDL dd{
+    font-size: 18px;
+    line-height: 1em;
+}
+
+#trans00, #trans00 span {
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+#artifactoryPic {
+    width: 55%;
+    transform: rotateY(-45deg);
+    -webkit-transform: rotateY(-45deg); 
+    -moz-transform: rotateY(-45deg);
+    -o-transform: rotateY(-45deg);    
+}
+
+#defaultlifecycle th,
+#defaultlifecycle td {
+    font-size: 18px;
+}
+
+#project-site-pic {
+    width:50%;
+    transform: rotateY(-45deg);
+    -webkit-transform: rotateY(-45deg); 
+    -moz-transform: rotateY(-45deg);
+    -o-transform: rotateY(-45deg);
+}
+
+@media print {
+  #lexocomp {
+    visibility: visible;
+    display: block;
+  }
+  #buzzwords {   
+    display: none;
+  }
+}

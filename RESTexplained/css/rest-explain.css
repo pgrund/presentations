@@ -1,0 +1,224 @@
+
+body{
+    width:1024px;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    background: white;
+    color: black;
+    text-shadow: 1px 1px 2px #000;
+
+    counter-reset: slideIdx;
+     
+    background-image: url(../img/red-talking.png), url(../img/green-talking.png);
+    background-repeat: no-repeat;
+    background-position: right bottom, left bottom;
+    background-size: auto 75%, auto 75%;
+}
+
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+
+.step{
+    margin-top: 10px;
+    width:900px;
+    height:800px;   
+ }
+.impress-enabled .step { 
+    opacity: 0; 
+    z-index: -1;
+}
+.impress-enabled .step.active { 
+    opacity: 1.0; 
+    z-index: 99;
+}
+
+.hint_text{
+    margin-top: 120px;
+    font-size:30px;
+    background-color:#282a2f;
+    padding:15px;
+    border: 1px solid #484d52;
+    border-radius: 5px;
+    font-size: 18px;
+
+}
+
+.fallback-message {
+    color: #eee;
+    line-height: 1.3;
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+.title > header {
+    margin-top: 30px;
+    font-size: 3em;
+}
+
+#ryan, #wife {
+    font-size: inherit;
+    font-weight: bold;
+    text-shadow: 5px 5px darkgray;
+}
+#ryan {
+    color: red;
+}
+#wife {
+    color: #33ff00;
+}
+
+
+/* speech bubbles */
+.Wife:before, .Ryan:before {}
+.Wife, .Ryan {
+   position: relative;
+   padding:5px;   
+ 
+   max-width: 60%;
+   min-width: 10%; 
+}
+
+.Wife {
+    left:100px;  
+}
+.Ryan {
+    right:-300px;
+    text-align: right;
+}
+.speech:before
+{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 30px;      
+        
+	bottom: -50px;
+	border: 25px solid;
+	border-color: green transparent transparent green;
+}
+.Ryan .speech:before {
+    left: 450px;
+    border-color: darkred darkred transparent transparent;
+}
+.Ryan .speech {    
+    border-color:darkred;
+}
+.speech
+{    
+	position: relative;
+	padding: 20px 50px 20px 50px;
+	
+	background-color: #fff;
+        
+	border: 3px solid green;	 
+	border-radius: 30px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;	
+	box-shadow: 2px 2px 4px #888;
+            -webkit-box-shadow: 2px 2px 4px #888;
+            -moz-box-shadow: 2px 2px 4px #888;
+      
+}
+
+.Ryan .speech:after {
+    left: 447px;
+    border-color: #fff #fff transparent transparent;
+}
+.speech:after
+{
+	content: '';
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	left: 33px;
+        bottom: -43px;
+        
+        border: 25px solid;
+        border-color: #fff transparent transparent #fff;
+}
+
+#final {
+  text-align: center;
+  color:lightgrey;
+  background-color: black;
+  height: 500px;
+}
+#final a {
+    color:white;
+}
+
+
+@media print {    
+    
+     a[href]:after { 
+        content: " (" attr(href) ")"; 
+    }
+    
+    header {
+        font-style: normal;
+        color: black;
+    }
+
+    .Wife:before {
+        content: "Myself:  ";
+    }
+    .Ryan:before {
+        content: "Rafael:";
+    }
+        
+    .Ryan, .Wife{
+        width:auto;
+        position: relative;
+        top: 0;
+    } 
+    .speech, .speech:before, .speech:after {
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        border-color: none;
+    }
+    
+    .step {
+        page-break-after: auto;
+        page-break-before: auto;
+        page-break-inside: avoid;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;       
+        width:100%;
+        height:auto;   
+        background-color: gray;
+    }
+    .title > header {
+        margin: 10px;
+        font-size: 32px;
+        border-bottom: double thin gray;
+    }
+    #ryan, #wife {
+        color: black;
+        font-size: 1em;   
+        text-decoration: none;
+        text-shadow: none;
+    }
+}

@@ -1,0 +1,247 @@
+@import url(../../bisnode/default.css);
+
+body{
+    width:1024px;
+    font-size: 28px;
+    font-family: 'Armata', sans-serif;
+    background: white;
+    color: black;
+    text-shadow: 1px 1px 2px #000;
+    
+    counter-reset: slideIdx;
+}
+
+.nav .active a.text-error { color:red; }
+.nav .active a.text-success { color:green; }
+.red { color: red; }
+.green { color: darkgreen; }
+
+pre.code {
+    font-size: 28px;
+    line-height: 30px;
+    
+    background-image: url(../img/code-paper.jpg), url(../img/code-paper-x.jpg);
+    background-repeat: repeat-y, repeat;
+    background-clip: border-box;;
+}
+
+pre.shell {
+    font-size: 18px;
+    line-height: 20px;
+    
+    color: lightgray;
+    
+    background-color: black;
+}
+
+
+ul.nav li pre.shell {
+   opacity: 0.4;    
+}
+ul.nav li.active pre.shell {
+   opacity: 1;    
+}
+
+.geek-title {
+    font-family: 'Rock Salt', cursive;
+    color: black;
+    text-shadow: 3px 3px lightgrey;
+}
+
+.geek-title strong {
+    font-size: larger;
+    color: darkblue;
+    text-shadow: 3px 3px lightgrey;
+
+}
+
+#geek-conclusion{
+    border-radius: 15px;
+     -o-background-radius:  15px;
+     -webkit-background-radius: 15px;
+     -moz-border-radius: 15px;
+    
+    border: solid thin black;
+    box-shadow:8px 8px 8px #666;
+
+    text-align: center;
+    line-height: 50px;
+}
+#actUC1a h2, #actUC2a h2{
+  visibility: hidden;
+}
+.active #actUC1a:hover h2, .active #actUC2a:hover h2 {
+  visibility: visible;
+}
+#actUC3 {
+    opacity: 0;
+    z-index: -1;
+}
+#actUC3.active {
+    opacity: 1;
+    z-index: 99;
+}
+#httpversiontable {
+    font-size: 18px;
+}
+
+#hfactortable {
+    width: 480px;
+}
+table.hfactor td, th  {
+   text-align: center;
+   color: black;
+   text-shadow: 2px 2px lightgray;
+   min-width: 40px;
+}
+#hfactortable th {
+  border-right: solid thick;
+}
+#hfactortable th.control, .hfactor th.control {
+    color: #ff9999;
+    border-top: solid thick;
+    border-color: #ff9999 ;
+    border-bottom: solid thin black;
+}
+#hfactortable th.link {
+    color: #6666ff;
+    border-bottom: solid thick;
+    border-color: #6666ff ;
+}
+h1.header {
+    text-transform: uppercase;    
+    color: rgb(7, 77,24);
+}
+table.hfactor td.link {
+    border: solid thin black;
+    background-color: #6666ff;
+}
+table.hfactor td.control {
+    border: solid thin black;
+    background-color: #ff9999;
+}
+
+table.hfactor td.empty {
+    border: solid thin black;
+}
+
+#glory {    
+    color: #ffcc00;
+    text-shadow: 2px 2px darkgray;
+}
+
+#rmm {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    
+    width: 770px;
+    
+    background-image: url(../img/improve.png);
+    background-repeat: no-repeat;
+    background-position: 95% 40px;
+    background-size: 180px auto;
+     -o-background-size:  180px auto;
+     -webkit-background-size: 180px auto;
+     -moz-background-size: 180px auto;
+}
+
+#rmm li {
+    text-align: left;
+
+    color: white;
+    text-shadow: 2px 2px black;
+    
+    padding-left: 30px;
+    
+    margin-bottom: 15px;
+    margin-top: 15px;
+    
+    border-left: 200px;
+    
+    background-origin: padding-box;
+    background-repeat: repeat-y;
+   
+}
+
+#rmm li:nth-child(5) {
+   background-image: url(../../bisnode/img/bisnode-divider-blue.png);
+    background-size: 450px auto;
+    -o-background-size:  450px auto;
+    -webkit-background-size: 450px auto;
+    -moz-background-size: 450px auto;
+    
+   padding-right: 150px;
+}
+
+#rmm li:nth-child(4) {
+   background-image: url(../../bisnode/img/bisnode-divider-orange.png);
+   background-size: 450px auto;
+    -o-background-size:  450px auto;
+    -webkit-background-size: 450px auto;
+    -moz-background-size: 450px auto;
+    
+   margin-left: 50px;
+   padding-right: 100px;
+}
+#rmm li:nth-child(3) {
+   background-image: url(../../bisnode/img/bisnode-divider-lightgreen.png);
+   background-size: 450px auto;
+    -o-background-size:  450px auto;
+    -webkit-background-size: 450px auto;
+    -moz-background-size: 450px auto;
+    
+   margin-left: 100px;
+   padding-right: 50px;
+}
+#rmm li:nth-child(2) {
+   background-image: url(../../bisnode/img/bisnode-divider-darkgreen.png);
+   background-size: 450px, auto;
+    -o-background-size:  450px auto;
+    -webkit-background-size: 450px auto;
+    -moz-background-size: 450px auto;
+    
+   margin-left: 150px;
+}
+
+#rmm li:nth-child(1) {
+    margin-bottom: 30px;
+    padding-left: 300px;
+   
+    text-align: right;
+       
+    color: #ffcc00;
+    text-shadow: 3px 3px gray;
+    font-weight: bold;    
+}
+
+.slide footer:after {
+    content: "        Peter Grund"; 
+}
+.present .showup10 {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 10s; 
+    -webkit-transition-delay:  10s;
+    -moz-transition-delay:  10s;
+    -ms-transition-delay:  10s;
+    -o-transition-delay:  10s;
+}
+
+blockquote.definition {
+    color: #ffcc00;
+    text-shadow:  -1px -1px 2px gray;
+}
+code.example {
+    margin-left: 30px;
+    padding: 2px 30px 2px 30px;
+    font-size: inherit;    
+}
+@media print {    
+    #actUC3 {
+        opacity: 1;
+    }
+     #actUC1a, #actUC2a , .navbar {
+        display: none;
+    }
+}

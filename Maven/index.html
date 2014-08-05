@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <!-- local -->        
+        <link rel="stylesheet" href="../impress/bootstrap.min.css" /> 
+        <link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.min.css" />
+        <!-- -->
+        <!-- remote - ->
+        <link href="http://dev-uat-03/presentation/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+        <!- - -->
+        
+
+    <!-- own stylesheet, bases on impress.js -->
+    <link href="./css/maven.css" rel="stylesheet" />
+
+    <title>Apache Maven</title> 
+    <meta name="date" content="2014-02-20"/>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">            
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#maven-menu">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>        
+                <a class="navbar-brand" href="#/start">Apache Maven</a>
+            </div>
+            <div class="navbar-collapse collapse" id="maven-menu">
+                <ul class="nav navbar-nav">                            
+                    <li class="dropdown">
+                        <a href="#/overview">Overview</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Basics<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="#/artifact">Artifact</a></li>
+                            <li role="presentation"><a href="#/version">Version</a></li>
+                            <li role="presentation"><a href="#/pom">Project Object Model</a></li>
+                            <li role="presentation"><a href="#/strutcture">Directory Structure</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inside<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="#/dependency">Dependency Management</a></li>
+                            <li role="presentation"><a href="#/repository">Repositories</a></li>
+                            <li role="presentation"><a href="#/lifecycle">Build Lifecycle</a></li>
+                            <li role="presentation"><a href="#/pomrelations">Inheritance vs. Submodules</a></li>                                    
+                        </ul>
+                    </li>       
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Going further<b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#/site">Project Site</a></li>
+                            <li role="presentation"><a href="#/archetype">Archetypes</a></li>
+                            <li role="presentation"><a href="#/settings">Further Project Configuration</a></li> 
+                            <li role="presentation" class="dropdown-header">Dependencies</li>
+                            <li role="presentation"><a href="#/exclusion">Dependency Exclusion</a></li>
+                            <li role="presentation"><a href="#/moreScopes">Special Scopes</a></li>  
+                            <li role="presentation" class="dropdown-header">Useful Plugins</li>
+                            <li role="presentation"><a href="#/assemblies">Assembly plugin</a></li>
+                            <li role="presentation"><a href="#/releases">Release plugin</a></li>
+                            <li role="presentation"><a href="#/dependencyplugin">Dependency plugin</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="?print" target="_blank" title="print"><i class="icon-print"></i></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a id="breakbutton" title="break" data-toggle="modal" data-target="#break"><i class="icon-coffee"></i></a>                            
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div id="break" class="modal fade center-block" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-header">                   
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Break</h3>
+            </div>
+            <div class="modal-content">
+                <div id="counter"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="impress">
+        <div id="start" class="step slide title" >
+            <header>
+                <h2>Apache Maven</h2>
+                <p class="subtitle">an introduction</p>                  
+            </header>
+        </div>
+
+        <!-- #### General ### -->
+
+        <div id="overview" class="slide step chapter" data-x="1200">
+            <header>Overview</header>
+            <footer></footer>
+        </div>
+
+        <div id="definition" class="slide step" data-x="1200" data-y="-1000">
+            <header>Definition</header>             
+            <blockquote class="blockquote-reverse">
+                <p>... an attempt to apply patterns to a project's build infrastructure
+                    in order to promote comprehension and productivity by providing a clear path in the use of best practices ...</p>
+                <footer><cite title="Apache Maven"><a href="http://maven.apache.org" target="_blank">Apache Maven</a></cite></footer>
+            </blockquote>
+            <br/>
+            <div class="list-group"> 
+                <a href="http://maven.apache.org/guides/getting-started/index.html" class="list-group-item" target="_blank">
+                    <h3 class="list-group-item-heading bg-success">Getting Started Guide</h3>
+                    <p class="list-group-item-text small"><i>reference for those working with Maven for the first time, but is also intended to serve as a cookbook with self-contained references and solutions for common use cases</i></p>                   
+                </a>
+                <a href="http://maven.apache.org/background/philosophy-of-maven.html" class="list-group-item" target="_blank">
+                    <h3 class="list-group-item-heading bg-success">Philosophy of Maven</h3>
+                    <p class="list-group-item-text small"><i>What is the intention of Maven? What does it want to address?</i></p>                   
+                </a>
+                <a href="http://books.sonatype.com/mvnref-book/reference/index.html" class="list-group-item" target="_blank">
+                    <h3 class="list-group-item-heading bg-success">Maven: The Definitive Guide</h3>
+                    <p class="list-group-item-text small"><i>reference book by http://www.sonatype.com</i></p>                   
+                </a>
+            </div>
+            <footer></footer>
+        </div>
+
+        <div id="allabout" class="slide step" data-x="1200" data-y="-685" data-z="-450" data-rotate-x="90" data-rotate-z="90">
+            <header>What is Maven all about ?</header>   
+            <p>Tool for build management of software, supports ...</p>
+            <ul class="list-unstyled">
+                <li>Build</li>
+                <li>Software Lifecycle</li>
+                <li>Documentation</li>
+                <li>Reports</li>
+                <li>Dependencies</li>
+                <li>Sourcecodemanagement</li>
+                <li>Release</li>
+                <li>Distribution</li>
+            </ul>
+            <footer></footer>
+        </div>
+
+        <div id="buzzwords" class=" step" data-x="1650" data-y="-1000" data-z="-1450" data-rotate-y="90">
+            <div id="wordcloud">
+                <span data-weight="14">standard</span>
+                <span data-weight="15">lifecycle</span>
+                <span data-weight="20">dependencies</span>
+                <span data-weight="25">convention over configuration</span>
+                <span data-weight="10">inheritence</span>
+                <span data-weight="10">submoduls</span>
+                <span data-weight="14">archetype</span>
+                <span data-weight="17">reusability</span>
+                <span data-weight="8">site</span>
+                <span data-weight="10">scalability</span>
+                <span data-weight="10">best practice</span>
+                <span data-weight="8">plugins</span>
+                <span data-weight="10">phase</span>
+                <span data-weight="10">goal</span>
+                <span data-weight="12">pom</span>
+                <span data-weight="12">settings</span>
+                <span data-weight="18">repository</span>
+                <canvas id="awesomeCloudwordcloud" class="hidden-print"></canvas>
+            </div>
+
+        </div>
+
+        <!-- #### Basics ### -->
+
+        <div id="basics" class="step slide chapter dark" data-x="2400">
+            <header>Basics</header>
+            <footer></footer>
+        </div>
+
+        <div id="artifact" class="step slide" data-x="2400" data-y="1000">
+            <header>Artifact</header>
+            <ul>
+                <li>each maven project results in an <b>artifact</b></li>
+                <li>an artifact is a runnable/deployable package</li>
+                <li><p>artifact gets uniquely identified by <b>coordinates</b></p>
+                    <div class="panel-group" id="coordpanel">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#coordpanel" href="#coordOne">
+                                        <code><span class="tag">groupId</span>com.bisnode.sandbox<span class="tag closing">groupId</span></code>
+                                    </a>
+                                </h4> 
+                            </div>
+                            <div id="coordOne" class="panel-collapse collapse">                                    
+                                <ul class="panel-body">
+                                    <li>groups artifacts in <i>family</i></li>
+                                    <li>similiar to <i>package</i> in Java</li>
+                                </ul>                                     
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#coordpanel" href="#coordTwo">
+                                        <code><span class="tag">artifactId</span>project<span class="tag closing">artifactId</span></code>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="coordTwo" class="panel-collapse collapse">
+                                <ul class="panel-body">
+                                    <li>name of artifact</li>
+                                    <li>corresponds to root directory of project in filesystem</li>
+                                </ul>  
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#coordpanel" href="#coordThree">
+                                        <code><span class="tag">version</span>1.0-SNAPSHOT<span class="tag closing">version</span></code>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="coordThree" class="panel-collapse collapse">
+                                <p class="panel-body">... see <a href="#/version">following slides</a></p>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#coordpanel" href="#coordFour">
+                                        <code><span class="tag">packaging</span>jar<span class="tag closing">packaging</span></code>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="coordFour" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>type of artifact, predefined:</p>
+                                    <dl id="coordFourDL" class="dl-horizontal">
+                                        <dt>jar</dt>
+                                        <dd>java archive according to <a href="#" target="_blank">specification</a></dd>
+                                        <dt>war</dt>
+                                        <dd>java web archive according to <a href="#" target="_blank">specification</a></dd>
+                                        <dt>ear</dt>
+                                        <dd>enterprise application archive (JBoss)</dd>
+                                        <dt>...</dt>
+                                        <dd>further package types, own extensions possible as well</dd>
+                                    </dl>
+                                </div>      
+                            </div>
+                        </div>
+                    </div>      
+                </li>
+            </ul>
+            <footer></footer>
+        </div>            
+        <div id="version" class="step slide" data-x="2400" data-y="2000">
+            <header>Version</header>
+            <pre>
+<span class="tag">version</span>1.0-SNAPSHOT<span class="tag closing">version</span></pre>
+            <ul>
+                <li><code>&lt;major&gt;.&lt;minor&gt;.&lt;incremental&gt;-&lt;qualifier&gt;</code></li>
+                <li>
+                    <b>Examples</b> 1.3.5, 1.3-beta-01
+                </li>
+                <li>
+                    <b>Compare versions</b>
+                    <ul class="list-unstyled">
+
+                        <li>1.2.3 <i class="fa fa-chevron-right"></i> 1.0.2</li>
+                        <li>1.2.3-alpha-2 <button type="button" class="btn-warning" data-toggle="collapse" data-target="#lexocomp">
+                            <i class="icon-question-circle"></i>
+                            <i class="fa fa-question-circle"></i>
+                            </button> 1.2.3-alpha-10</li>
+                    </ul>
+                    <div class="panel panel-danger collapse" id="lexocomp">
+                        <div class="panel-heading">
+                            <b>CAUTION!!</b> one character and everything gets compared lexographical !!
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-unstyled">    
+                                <li class="text-danger">1.2.3-alpha-2 <span class="glyphicon glyphicon-chevron-right"></span> 1.2.3-alpha-10</li>
+                                <li class="text-success">1.2.3-alpha-02 <span class="glyphicon glyphicon-chevron-left"></span> 1.2.3-alpha-10</li>
+                            </ul>
+                        </div>     
+                    </div>
+                </li>
+            </ul>
+            <footer></footer>
+        </div>
+        <div id="snapshot" class="step slide" data-x="3450" data-y="2000" data-z="-500" data-rotate-y="45">
+            <header>SNAPSHOT Version</header>
+            <p>1.0-<b class="bg-success">SNAPSHOT</b> has to be read as</p>
+            <p class="well well-lg"><i class="text-warning">...currently under development ...</i></p>
+            <p>remote/local repository resolves SNAPSHOT for uniqness</p>
+            <ul class="list-unstyled">
+                <li><code>1.0-20140220-120003-1</code></li>
+                <li>... which means ... <p  class="well well-lg">
+                        <i>...deployed to repository shortly after 12:00 on februray 20th of 2014, first snapshot deployment...</i></p>
+                </li>
+            </ul>  
+
+            <footer></footer>
+        </div> 
+        <div id="namedversion" class="step slide" data-x="3950" data-y="2000" data-z="-1500" data-rotate-y="90">
+            <header>Named Version</header>
+            <dl class="dl-horizontal">
+                <dt>LATEST</dt>
+                <dd>last version (snapshot AND releases) deployed to repository - date comparison</dd>
+                <dt>RELEASE</dt>
+                <dd>last deployed NON-SNAPSHOT version</dd>
+            </dl>    
+            <div class="panel panel-warning">
+                <div class="panel-heading text-center">
+                    <b>!! USE WITH CAUTION !!</b>           
+                </div>
+            </div>
+            <header>Ranges</header>
+            <p>define acceptable ranges, let the repository decide which version to take</p> 
+            <footer></footer>
+        </div>            
+        <div id="rangesEx" class="step" data-x="3450" data-y="2000" data-z="-2450" data-rotate-y="13-5" data-rotate-x="-60">
+            <h2>Can you guess, which version will be resolved ?</h2>                    
+            <br/>
+            <div class="pull-right" id="ranges">
+                <ul>
+                    <li id="rangesUC1">[1.0.0,1.0.999]</li>
+                    <li id="rangesUC2">[1.1.0,1.1.999)</li>
+                    <li id="rangesUC3">[1.1.0,1.2.4)</li>
+                    <li id="rangesUC4">[,1.2.3)</li>
+                    <li id="rangesUC5">[1.0.0,)</li>
+                </ul>
+            </div>
+            <ul class="folder-list list-unstyled pull-left">
+                <li><i class="icon-folder-open"></i>1.0.0</li>
+                <li><i class="icon-folder-open"></i>1.0.1</li>
+                <li><i class="icon-folder-open"></i>1.0.2</li>
+                <li class="rangesUC1"><i class="icon-folder-open"></i>1.0.999</li>
+                <li class="rangesUC2"><i class="icon-folder-open"></i>1.1.0</li>
+                <li><i class="icon-folder-open"></i>1.1.999</li>
+                <li class="rangesUC4"><i class="icon-folder-open"></i>1.2.0</li>
+                <li class="rangesUC3"><i class="icon-folder-open"></i>1.2.3</li>
+                <li><i class="icon-folder-open"></i>1.2.3-alpha1</li>
+                <li class="rangesUC5"><i class="icon-folder-open"></i>1.2.4</li>
+            </ul>
+            <span class="clearfix"></span>
+        </div>
+
+        <div id="pom" class="step slide" data-x="2400" data-y="3000">
+            <header>Project Object Model</header>   
+            <ul class="list-unstyled">
+                <li>
+                    <p>using <b>ONE</b> configuration file <code>pom.xml</code></p>                       
+                </li>
+                <li>identified by <a href="#/artifact">coordinates</a></li>
+            </ul>   
+            <h1>effective pom</h1>
+            <p>effective pom is at runtime, multiple infos get aggregated</p>
+            <dl class="dl-horizontal">
+                <dt>global</dt>
+                <dd>{maven.home}<code>/conf/settings.xml</code></dd>
+                <dt>user</dt>
+                <dd>{user.home}<code>/.m2/settings.xml</code></dd>
+                <dt>project</dt>
+                <dd>{project.home}<code>/pom.xml</code> ... including project inheritance</dd>
+                <dt>profiles</dt>
+                <dd>{project.home}<code>/pom.xml</code> ... <code><span class="tag">profiles</span></code></dd>
+                <dt>command line</dt>
+                <dd><kbd>mvn ... -DskipTests=true ...</kbd></dd>
+            </dl>
+            <p><span class="glyphicon glyphicon-arrow-right"></span> <kbd>mvn help:effective-pom</kbd> .... see <a href="http://maven.apache.org/pom.html" target="_blank">online reference</a> for further details</p>
+            <footer></footer>
+        </div>
+        <div id="structure" class="step slide" data-x="3450" data-y="3000" data-z="-500" data-rotate-y="45">               
+            <header>Directory Structure</header>     
+            <img src="./img/project-structure.png" class="pull-right img-responsive" alt="maven project structure"/>
+            <h2 class="text-danger"><i>convention over configuration</i></h2>
+            <br/>
+            <p>configurable via pom, default values are:</p>                
+            <dl class="dl-horizontal">
+                <dt>sources</dt>
+                <dd>
+                    <ul class="list-unstyled">
+                        <li><code>./src/main</code></li>
+                        <li><b>java code</b> <code>./src/main/java</code></li>
+                        <li><b>resources</b> <code>./src/main/resources</code></li>   
+                    </ul>
+                </dd>                    
+                <dt>testing</dt>
+                <dd><code>./src/test/..</code></dd>
+                <dt>compiled code</dt>
+                <dd><code>./target/classes</code></dd>
+                <dt>package</dt>
+                <dd><code>./target</code></dd>
+            </dl>                 
+            <footer></footer>
+        </div>                   
+
+        <!-- #### Inside ### -->
+
+        <div id="inside" class="step slide chapter orange" data-x="3600">
+            <header>Inside Maven</header>
+            <footer></footer>
+        </div>            
+
+        <div id="dependency" class="step slide" data-x="3600" data-y="-1000">
+            <header>Dependencies</header>                
+            <pre class="pull-right code">
+<span class="tag">dependencies</span>
+  ...
+  <span class="tag">dependency</span>
+    <span class="tag">groupId</span>org.junit<span class="tag closing">groupId</span>
+    <span class="tag">artifactId</span>junit<span class="tag closing">artifactId</span>
+    <span class="tag">version</span>4.8.11<span class="tag closing">version</span>
+    <span class="tag">scope</span>test<span class="tag closing">scope</span>
+  <span class="tag closing">dependency</span>
+  ...
+<span class="tag closing">dependencies</span></pre>
+            <p>... other software artifacts, this project <b>depends</b> on (<i>runtime</i>, <i>compile</i>, <i>test</i>, ...)</p>
+            <ul>
+                <li>dependencies are artifacts as well, identified via <a href="#/artifact">coordinates</a></li>
+                <li><a href="#/version">versions</a> fully managed</li>
+                <li><a href="#/repository">repositories</a> take care of resolution</li>
+            </ul>
+            <footer></footer>
+        </div>
+        <div id="dependencyMgt" class="step slide" data-x="4650" data-y="-1000" data-z="-500" data-rotate-y="45">       
+            <header>Dependency Management</header>
+            <p>... manage versions and configuration of <b>optional</b> dependencies, often used together with inheritance (<i>parent project</i>)</p>
+            <pre id="depMgt" class="code">
+    <span class="tag">dependencyManagement</span> ...
+        <span class="tag">dependencies</span> ...
+          <span class="tag">dependency</span>
+            <span class="tag">groupId</span>org.junit<span class="tag closing">groupId</span>
+            <span class="tag">artifactId</span>junit<span class="tag closing">artifactId</span>
+            <span class="tag">version</span>4.8.11<span class="tag closing">version</span>
+          <span class="tag">dependency</span>
+    ... <span class="tag">dependencies</span>
+    <span class="tag">dependencyManagement</span> ...
+    <span class="tag">dependencies</span> ...
+        <span class="tag">dependency</span>
+         <span class="tag">groupId</span>org.junit<span class="tag closing">groupId</span>
+         <span class="tag">artifactId</span>junit<span class="tag closing">artifactId</span>
+    ... <span class="tag">dependency</span>
+... <span class="tag">dependencies</span></pre> 
+            <span class="clearfix"></span>
+            <footer></footer>               
+        </div>
+        <div id="scopes" class="step slide" data-x="5150" data-y="-1000" data-z="-1500" data-rotate-y="90">
+            <header>Scopes</header>
+
+            <p><i>... type of dependency ...</i></p>
+            <div class="panel-group" id="scopepanel">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <a data-toggle="collapse" data-parent="#scopepanel" href="#scopeOne">
+                                <code><span class="tag">scope</span>compile<span class="tag closing">scope</span></code>                                
+                            </a>    
+                        </div>
+                    </div>
+                    <div id="scopeOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul>
+                                <li>default, dependency (<i>artifact</i>) available in all classpaths</li>
+                                <li>part of result package, is included (e.g. <i>war</i>)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <a data-toggle="collapse" data-parent="#scopepanel" href="#scopeTwo">
+                                <code><span class="tag">scope</span>test<span class="tag closing">scope</span></code>
+                            </a>    
+                        </div>
+                    </div>    
+                    <div id="scopeTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul>
+                                <li>available only in test classpath</li>
+                                <li>not part of resulting package (e.g. <i>war</i>)</li>
+                            </ul> 
+                        </div>   
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#scopepanel" href="#scopeThree">
+                                <code><span class="tag">scope</span>provided<span class="tag closing">scope</span></code>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="scopeThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul>
+                                <li>provided by JDK or container</li>
+                                <li>no <a href="#/transitiv">transitive</a> resolution</li>
+                                <li>not part of resulting package (e.g. <i>war</i>)</li>
+                            </ul>    
+                        </div>    
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#scopepanel" href="#scopeMore">
+                                <code><span class="tag">scope</span>...<span class="tag closing">scope</span></code>
+                            </a>
+                        </h4>      
+                    </div>
+                    <div id="scopeMore" class="panel-collapse collapse">
+                        <p class="panel-body">more scopes available: <code>runtime</code>, <code>system</code> ...see <a href="http://maven.apache.org/" target="_blank">Apache Maven documentation</a></p>
+                    </div>
+                </div>
+            </div>
+            <footer></footer>
+        </div>   
+        <div id="transitiv" class="step slide" data-x="2550" data-y="-1000" data-z="-500" data-rotate-y="-45">
+            <header>Transitive Dependencies</header>
+            <p>... to deal with <i>jar hell</i></p>
+            <p>since a <code>&lt;dependency&gt;</code> is an artifact as well, with an own <code>pom.xml</code> including a <code>&lt;dependencies&gt;</code> section, it is possible to calculate transitive dependencies.</p>                                 
+            <pre class="code pull-right" id="trans00">
+<span class="tag">dependency</span>
+  <span class="tag">groupId</span>org.hibernate<span class="tag closing">groupId</span>
+  <span class="tag">artifactId</span>hibernate<span class="tag closing">artifactId</span>
+  <span class="tag">version</span>3.2.7.GA<span class="tag closing">version</span>
+<span class="tag closing">dependency</span></pre>
+            <kbd data-toggle="collapse" data-target="#trans01">mvn dependency:tree <i>-Dverbose=true</i></kbd>                              
+            <pre id="trans01" class="shell collapse">
+com.bisnode.sandbox:project:jar:1.0-SNAPSHOT
++- ...
+\- org.hibernate:hibernate:jar:3.2.7.GA
+   +- net.sf.ehcache:ehcache:jar:1.2.3
+   +- javax.transaction:jta:jar:1.0.1B
+   +- commons-logging:commons-logging:jar:1.0.4
+   +- asm:asm-attrs:jar:1.5.3
+   +- dom4j:dom4j:jar:1.6.1
+   +- antlr:antlr:jar:2.7.6
+   +- cglib:cglib:jar:2.1_3
+   +- asm:asm:jar:1.5.3
+   \- commons-collections:commons-collections:jar:2.1.1</pre>  
+            <footer></footer>
+        </div>
+        <div id="repository" class="step slide" data-x="3600" data-y="-2000">
+            <header>Repositories</header>
+            <p>after packaging an artifact, it needs to be <i>published</i> in order for others to use it</p>
+            <h1>local repository</h1>
+            <ul>
+                <li>usually specific to user</li>
+                <li>offers published artifact to other artifacts <i>(same system, same user)</i></li>
+                <li><b>local</b> development</li>
+            </ul>
+            <h1>remote repository</h1>
+            <ul>
+                <li>company wide (<i>e.g. <a href="http://www.jfrog.com/home/v_artifactory_opensource_overview" target="_blank">artifactory</a></i>)</li>
+                <li>offers published artifact to other developers/systems</li>
+                <li>usually separation between RELEASE and SNAPSHOT <a href="#/version">versions</a></li>
+            </ul>
+            <footer></footer>
+        </div>
+        <div id="artdevservice01" class="step slide" data-x="4650" data-y="-2000" data-z="-500" data-rotate-y="45">
+            <header>Bisnode Repository</header> 
+            <img id="artifactoryPic" src="./img/artdevservice01.PNG" class="img-responsive pull-right" alt="Bisnode Artifactory"/>                                
+            <ul class="list-unstyled">
+                <li><a href="http://www.jfrog.com/home/v_artifactory_opensource_overview" target="_blank">artifactory opensource version</a></li>
+                <li><b>ONE</b> repository, no additional <code><span class="tag">repository</span></code> entries in <code>pom.xml</code></li>
+                <li><br/></li>
+                <li><a href="http://art-dev-service-01/artifactory/" target="_blank">our repository</a> structure:
+                    <dl class="dl-horizontal">
+                        <dt>libs-release</dt>
+                        <dd>releases only, no snapshots</dd>
+                        <dt>libs-snapshot</dt>
+                        <dd>snapshots only, no releases</dd>
+                        <dt>proxies</dt>
+                        <dd>other external repositories, proxied by artifactory</dd>
+                    </dl>
+                </li>
+            </ul>                
+            <footer></footer>
+        </div>
+
+        <div id="lifecycle" class="step slide" data-x="3600" data-y="-3000">
+            <header>Build Lifecycle</header>
+            <ul>
+                <li>every project has same abstract phases of software build lifecycle</li>
+                <li>one <b>phase</b> corresponds to an abstract part of a build scenario</li>
+                <li>default lifecycles (<code>clean</code>, <code>default</code> and <code>site</code>)</li>
+                <li>usually lifecycle is defined by projects <a href="#/artifact">package</a></li>
+                <li>calling a phase executes all phases <b>including</b> specified one</li>
+            </ul>
+            <p>
+                <small>see <a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html" target="_blank">Maven documentation</a></small>
+            </p>
+            <div class="panel panel-info">
+                <div class="panel-heading text-center">
+                    What is done in which phase ?
+                </div>
+            </div>                
+            <footer></footer>
+        </div>
+        <div id="phases" class="step slide" data-x="4750" data-y="-3000" data-z="-500" data-rotate-y="45">
+            <header>Phases of default lifecycle</header>
+            <table id="defaultlifecycle" class="table table-striped table-condensed">
+                <caption class="text-right"><small>see <a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference" target="_blank">maven lifecycle reference</a></small></caption>
+                <tbody>
+                    <tr>
+                        <th>validate</th>
+                        <td>validate the project is correct and all necessary information is available to complete a build</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">...</th>                        
+                    </tr>
+                    <tr>
+                        <th>generate-source</th>
+                        <td>generate any source code for inclusion in compilation (e.g. out of xsd schema)</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">...</th>                        
+                    </tr>
+                    <tr>
+                        <th>compile</th>
+                        <td>compile the source code</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">...</th>                        
+                    </tr>
+                    <tr>
+                        <th>test-compile</th>
+                        <td>compile test sourcecode to test target directory</td>
+                    </tr>
+                    <tr>
+                        <th>test</th>
+                        <td>run compiled test sourcecode, using unit test framework</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">...</th>                        
+                    </tr>
+                    <tr>
+                        <th>package</th>
+                        <td>packaging in a distributable artifact (jar, war, ear, pom, ..)</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">...</th>                        
+                    </tr>
+                    <tr>
+                        <th>install</th>
+                        <td>publish packaged artifact to <b>local repository</b></td>
+                    </tr>
+                    <tr>
+                        <th>deploy</th>
+                        <td>publish packaged artifact to <b>remote repository</b></td>
+                    </tr>
+                </tbody>                   
+            </table>
+            <footer></footer>
+        </div>
+        <div id="plugins" class="step slide" data-x="5150" data-y="-3000" data-z="-1500" data-rotate-y="90"> 
+            <header>Plugins and Goals</header>                             
+            <p>
+                <a href="http://maven.apache.org/plugins" target="_blank">Maven Plugins</a>
+                <br/> ... do the actual work !
+            </p>            
+            <img class="img-responsive center-block" src="./img/phase-plugin-goal.png" alt="how phases, plugins and goals work together"/>                
+            <ul>
+                <li>define <b>goals</b>: functional working packages</li>
+                <li>binds goal to specific phase</li>
+                <li>additional binding via configuration <code>pom.xml</code></li>
+            </ul>
+
+            <kbd>mvn jar:jar</kbd> <i class="fa fa-arrow-right"></i> convention over configuration, compare to <a href="#/plugingroups">pluginGroups</a>                
+            <footer></footer>
+        </div>
+        <div id="defaultbindings" class="step slide" data-x="4750" data-y="-3000" data-z="-2500" data-rotate-y="135">
+            <header>default bindings</header>
+            <img src="./img/default-goal-binding.PNG" class="img-responsive center-block" alt="part of default goal binding"/>
+            <p>see <a href="http://maven.apache.org/ref/3.1.1/maven-core/default-bindings.html" target="_blank">Maven 3.1.1 - default bindings</a></p>
+        </div>
+        <div id="pomrelations" class="step slide" data-x="3600" data-y="-4000">
+            <header>Inheritance vs. Submodules</header>
+            <img src="./img/pom_real_multi.png" class="img-responsive center-block" alt="example of pom relations"/>
+            <p  class="text-right"><small>see <a href="http://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-pom-best-practice.html" target="_blank">Maven: The Complete Reference</a></small></p>
+            <footer></footer>
+        </div>
+        <div id="parent" class="step slide" data-x="4650" data-y="-4000" data-z="-500" data-rotate-y="45">
+            <header>Inheritance</header>
+            <img class="pull-right" src="./img/pom_parent.png" alt="parent relations"/>
+            <h1>child <i class="fa fa-arrow-right"></i> parent relation</h1>                
+            <ul>
+                <li>child inherits <i>(some, not all)</i> configurations from parent</li>
+                <li>parent <b>DOES NOT</b> know about the child</li>
+            </ul>
+            <pre class="code">
+ <span class="tag">parent</span>
+   <span class="tag">groupId</span>com.bisnode<span class="tag closing">groupId</span>
+   <span class="tag">groupId</span>informatics-parent<span class="tag closing">groupId</span>
+   <span class="tag">groupId</span>0.0.2<span class="tag closing">groupId</span>
+ <span class="tag closing">parent</span></pre>
+            <span class="clearfix"></span>
+            <p class="text-right">
+                <small>see also <a href="http://maven.apache.org/pom.html#Inheritance" target="_blank">POM Inheritance</a></small>
+            </p>
+            <footer></footer>
+        </div>
+        <div id="submodules" class="step slide" data-x="5150" data-y="-4000" data-z="-1500" data-rotate-y="90">
+            <header>Submodules</header>
+            <h1>parent <i class="fa fa-arrow-right"></i> child relation</h1>
+            <p class="pull-right text-right">
+                <img src="./img/pom_multi.png" class="img-responsive" alt="pom relations - multi modules"/>
+                <small> see also <a href="http://maven.apache.org/pom.html#aggregation" target="_blank">POM Aggregation</a></small>                
+            </p>
+            <ul>
+                <li>reactor build: parent delegates each phase/goal to each child (<i>module</i>)</li>
+                <li>child <b>DOES NOT</b> know about the aggregation (<i>parent</i>)</li>
+            </ul>
+            <pre class="code">
+ <span class="tag">modules</span>
+   <span class="tag">module</span>server-side<span class="tag closing">module</span>
+   <span class="tag">module</span>client-side<span class="tag closing">module</span>
+ <span class="tag closing">modules</span></pre>
+
+            <footer></footer>
+        </div>
+
+        <!-- #### Going further #### -->
+        <div id="further" class="step slide chapter blue" data-x="4800">
+            <header>Going further ...</header>            
+            <footer></footer>
+        </div>
+
+        <div id="site" class="step slide" data-x="4800" data-y="1000">
+            <header>Project Site</header>               
+            <a href="http://dev-uat-03/maven-sites/simplerest/project-info.html" class="pull-right" target="_blank" id="project-site-pic">
+                <img src="./img/project-site.png" class="img-responsive" alt="example of a project site"/>
+            </a>
+            <p>
+                <a href="http://maven.apache.org/plugins/maven-site/" target="_blank">maven site plugin</a> ... <kbd>mvn site</kbd>
+            </p>
+            <ul>
+                <li>i18n, custom css, add manual pages (<i>apt, docbook, fml, ...</i>)</li>
+                <li>reporting plugins <span class="glyphicon glyphicon-arrow-right"></span> reports
+                    <ul>
+                        <li>javadoc</li>
+                        <li>project infos</li>
+                        <li>checkstyle, pmd, findbugs</li>
+                        <li>release changes, SCM changes</li>
+                        <li>...</li>
+                    </ul>
+                </li>                
+            </ul>                
+            <footer></footer>
+        </div>
+
+        <div id="archetype" class="step slide under-construction" data-x="4800" data-y="2000">
+            <header>Archetype</header>
+        
+            <p>Do you need to start from scratch ?</p>
+            <kbd>mvn archetype:generate</kbd>
+            <p>Do you want to define your own archetype ?</p>
+            <footer></footer>
+        </div>
+        <div id="settings" class="step slide" data-x="4800" data-y="3500">
+            <header>Settings</header>
+            <dl class="dl-horizontal">
+                <dt>global settings</dt>
+                <dd><code><span class="text-muted">{maven.home}</span>/conf/settings.xml</code>: system wide configuration - actually maven instance (3.1.1, 3.0.4, 2.2.10, ...) </dd>
+                <dt>user settings</dt>
+                <dd><code><span class="text-muted">{user.home}</span>/.m2/settings.xml</code>: user specific, independent of maven version</dd>
+            </dl>
+            <p>What should be configured in <code>settings</code> and <b>NOT</b> in <code>pom</code> ?<br/>
+            .... those which should not be bundled to any specific project, or distributed to an audience</p>
+            <ul class="list-unstyled">
+                <li>
+                    <code><span class="tag">server</span></code> <i class="fa fa-arrow-right"></i>
+                    credentials for server access
+                </li>
+                <li>
+                    <code><span class="tag">mirror</span></code> <i class="fa fa-arrow-right"></i>
+                    global remote repository proxy
+                </li>
+                <li>
+                    <code><span class="tag">activeProfiles</span></code> <i class="fa fa-arrow-right"></i>
+                    global profile activation
+                </li>
+            </ul>
+            <p class="text-center">
+                <small>see also <a href="http://maven.apache.org/settings.html" target="_blank">settings reference</a></small>
+            </p>
+            <footer></footer>
+        </div>
+        
+        <div id="profiles" class="step slide" data-x="6000" data-y="3500">
+            <header>Profiles</header>  
+            <blockquote>... change settings dependening on the environment it is built.
+                <small>see <a href="http://maven.apache.org/pom.html#Profiles" target="_blank">profile in maven reference</a></small>
+            </blockquote>
+            <dl class="dl-horizontal">
+                <dt>changes</dt>
+                <dd><i>almost</i> all entries in <code>pom</code> (<i>build, modules, repositories, dependencies, reporting, distributionManagement, ...</i>)</dd>
+                <dt>activation</dt>
+                <dd>circumstances under which profile is active.<br/>
+                    <b>Implicitly</b> triggered via values of <i>jdk, os, property, file</i> or just their presence/absence.<br/>
+                    <b>Explicitly</b> triggered via commandlin <kbd>mvn <span class="text-muted">clean package</span> -PprofileA</kbd></dd>
+            </dl>
+            <footer></footer>
+        </div>
+        
+        <div id="plugingroups" class="step slide" data-x="7200" data-y="3500">
+            <header>Plugin Groups</header>
+            <ul>
+                <li>calling a plugin without specifying <code>groupId</code></li>
+                <li>defined in <a href="#/settings">settings file</a></li>
+                <li>default entries: <code> org.apache.maven.plugins</code> and <code>org.codehaus.mojo</code></li>
+            </ul>
+            <h2>example</h2>
+            <pre><span class="tag">settings</span> ...
+  <span class="tag">pluginGroups</span>
+    <span class="tag">pluginGroup</span>org.mortbay.jetty<span class="tag">/pluginGroup</span>
+  <span class="tag">/pluginGroups</span> ...
+<span class="tag">/settings</span></pre>            
+            <kbd>mvn <span class="text-muted">org.mortbay.jetty:</span>jetty<span class="text-muted">-maven-plugin</span>:run</kbd>           
+            <footer></footer>
+        </div>
+        
+        <div id="exclusion" class="step slide under-construction" data-x="4800" data-y="4750">
+            <header>Dependency exclusion</header>
+            <p>excluding dependencies of your dependency</p>
+            <footer></footer>
+        </div>
+        
+        <div id="assemblies" class="step slide" data-x="4800" data-y="6000"> 
+            <header>Assembly plugin</header>
+            <blockquote class="blockquote-reverse">...  intended to allow users to aggregate the project output <b>along</b> with its dependencies, modules, site documentation, and other files into a single distributable archive.
+                <small>see <a href="http://maven.apache.org/plugins/maven-assembly-plugin/index.html" target="_blank">assembly plugin documentation</a></small>
+            </blockquote>
+            <ul>
+                <li>assemble files, directories and/or dependencies into an archive format and publish <b>along</b> (<i>same coordinates</i>) with the artifact<br/>
+                  added <code><span class="tag">classifier</span>{descriptor id}<span class="tag closing">classifier</span></code></li>
+                <li>predefined assembly descriptors(e.g. <code>jar-with-dependencies</code>) or write your own descriptor (<a href="http://maven.apache.org/plugins/maven-assembly-plugin/assembly.html" target="_blank">Assembly Descriptor format</a>)</li>
+            </ul>
+            <p>example: <a href="http://v-svn01/repositories/bi/bi/yukon/platform/yukon-service/branches/v2.3.3/pom.xml" target="_blank">yukon 2.0 application server</a></p>
+            <footer></footer>
+        </div>    
+        <div id="releases" class="step slide" data-x="4800" data-y="7000">
+            <header>Release plugin</header>
+            <blockquote class="blockquote-reverse">
+                ... is used to release a project with Maven,<br/>
+                saving a lot of repetitive, manual work. 
+                <small>see <a href="http://maven.apache.org/maven-release/maven-release-plugin/" target="_blank">release plugin documentation</a></small>
+            </blockquote>
+            <ul>
+                <li>create <i>(release)</i> branches</li>
+                <li>create a release<ol> <li><a href="#/releaseprepare"><code>release:prepare</code></a></li>
+                        <li><a href="#/releaseperform"><code>release:perform</code></a></li></ol></li>
+                <li>cleanup, rollback releases</li>
+                <li>versions update</li>
+            </ul>
+            <footer></footer>
+        </div>          
+        <div id="releaseprepare" class="step" data-x="5800" data-y="7000" data-rotate-y="90">
+            <header><kbd>mvn release:prepare</kbd></header>
+            <ol>
+                <li>Check that there are no uncommitted changes in the sources</li>
+                <li>Check that there are no SNAPSHOT dependencies</li>
+                <li>Change the version in the POMs from x-SNAPSHOT to a new version (you will be prompted for the versions to use)</li>
+                <li>Transform the SCM information in the POM to include the final destination of the tag</li>
+                <li>Run the project tests against the modified POMs to confirm everything is in working order</li>
+                <li>Commit the modified POMs</li>
+                <li>Tag the code in the SCM with a version name (this will be prompted for)</li>
+                <li>Bump the version in the POMs to a new value y-SNAPSHOT (these values will also be prompted for)</li>
+                <li>Commit the modified POMs</li>
+            </ol>
+        </div>
+        <div id="releaseperform" class="step" data-x="6800" data-y="7000" data-rotate-x="90">
+            <header><kbd>mvn release:perform</kbd></header>
+            <ol>
+                <li>Checkout from an SCM URL with optional tag</li>
+                <li>Run the predefined Maven phases/goals to release the project<br/>
+                    (by default: <code>deploy site-deploy</code>)</li>
+            </ol>
+        </div>
+
+        <div id="dependencyplugin" class="step slide" data-x="4800" data-y="5000">
+            <header>Dependency plugin</header>                
+            <dl>
+                <dt><kbd>mvn dependency:analyze</kbd></dt>
+                <dd>analyzes the dependencies of this project and determines which are:<ul><li>used and declared</li><li>used and undeclared</li><li>unused and declared</li></ul></dd>
+                <dt><kbd>mvn dependency:purge-local-repository</kbd></dt>
+                <dd>tells Maven to clear dependency artifact files out of the local repository, and optionally re-resolve them.</dd>
+                <dt><kbd>mvn dependency:tree</kbd></dt>
+                <dd>displays the dependency tree for this project.
+            </dl>
+            <p class="text-right">... see <a href="http://maven.apache.org/plugins/maven-dependency-plugin/" target="_blank">plugin page</a> for more</p>
+            <footer></footer>
+        </div>
+
+        <div id="final" data-x="2000" data-y="-800" data-z="8000" class="step">                
+        </div>
+    </div> <!-- end of impress -->
+
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+
+    <!-- remote - ->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://dev-uat-03/presentation/js/impress.js"></script>        
+    <!- - -->
+    <!-- local -->
+    <script type="text/javascript" src="../impress/jquery.js"></script>
+    <script type="text/javascript" src="../impress/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../impress/impress.js"></script>     
+    <!-- -->
+    <script src="../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../impress/jquery.awesomeCloud-0.2.js"></script>
+
+    <script type="text/javascript">
+        /* ###### printer page ##### */
+        if (!window.location.toString().match(/\?print$/i)) {
+            impress().init();
+        } else {
+            window.print();
+            //self.close();
+        }
+
+        /* ###### Date and footer ##### */
+        var date = new Date();// document.lastModified;
+        var footerDate = "" + date.getFullYear() + "-"
+                + ((date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : date.getMonth()) + "-"
+                + (date.getDate() < 10 ? "0" + date.getDate() : date.getDate());
+
+        if ($("meta[name=date]") && $("meta[name=date]").attr("content")) {
+            footerDate = $("meta[name=date]").attr("content");
+        }
+        $("footer").prepend("       " + footerDate + "          " + window.document.title);
+
+        /* ###### Modal: coffee break ##### */
+        // workaround for eventhandler of modal
+        $("#break").modal("show").modal("hide");
+        $("#breakbutton").click(function() {
+            $('#counter').html("");
+            $('#counter').countdown({
+                step: 5,
+                format: 'mm:ss',
+                startTime: '05:00',
+                timerEnd: function() {
+                    $("#break").modal("hide");
+                },
+                image: "../bisnode/img/digits.png"
+            });
+            $("#break").modal("show");
+        });
+
+        /* ###### Action for ranges example ##### */
+        $("#rangesUC1").click(function() {
+            $(".rangesUC1").css("border", "solid thick blue");
+        });
+        $("#rangesUC2").click(function() {
+            $(".rangesUC2").css("border", "solid thick orange");
+        });
+        $("#rangesUC3").click(function() {
+            $(".rangesUC3").css("border", "solid thick green");
+        });
+        $("#rangesUC4").click(function() {
+            $(".rangesUC4").css("border", "solid thick black");
+        });
+        $("#rangesUC5").click(function() {
+            $(".rangesUC5").css("border", "solid thick red");
+        });
+
+        /* ###### word cloud ##### */
+        // see https://github.com/indyarmy/jQuery.awesomeCloud.plugin
+        var settings = {
+          
+            "size": {
+                "grid": 5,
+                "normalize": true
+            },
+            "color": {
+                "start": "#cd3",
+                "end": "#343"
+            },
+            "options": {
+                "color": "gradient",
+                "printMultiplier": 3,
+                "sort": "highest"
+            },
+            "font": "Futura, Helvetica, sans-serif",
+            "shape": "circle"
+            
+        };
+        $("#wordcloud").awesomeCloud(settings);
+
+    </script>          
+
+</body>
+</html>
+
+
