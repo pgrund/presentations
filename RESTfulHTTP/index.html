@@ -12,7 +12,7 @@
         <!--link rel="stylesheet" href="backup/bootstrap.min.3.1.1.css"-->
 
         <!-- using fontawacteseome for icons as well -->
-        <link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.css" />
 
         <!-- own stylesheet, bases on impress.js -->
         <link href="./css/rest.css" rel="stylesheet" />
@@ -501,10 +501,10 @@
                     <caption>HTTP verbs and their usage</caption>
                     <thead>
                         <tr>
-                            <th>method</th>
-                            <th>safe</th>
-                            <th>idempotent</th>
-                            <th>typically used for</th>
+                            <th class="col-sm-1">method</th>
+                            <th class="col-sm-1">safe</th>
+                            <th class="col-sm-1">idempotent</th>
+                            <th class="col-sm-4">typically used for</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -774,16 +774,12 @@
                 <h1>example</h1>               
                 <p>application state machine
                     <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine"/>                
-                    <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine"/>
+                    <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine" data-jmpress="fade"/>
                 </p>
             </div>
             <div id="dapexampleresources" class="step" data-x="5850" data-y="6000">            
                 <h1>example (cont.)</h1>
                 <br/>             
-                <p class="pull-left">resource <code>quote</code> lifecycle<br/>
-                    <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
-                </p>
-                <span class="box pull-left">&nbsp;</span>
                 <div class="pull-left text-center">
                     <ul class="list-unstyled">
                         <li>&nbsp;</li>
@@ -792,9 +788,18 @@
                         <li><code>order</code></li>
                         <li><code>payment</code>(?)</li>
                     </ul>
-                    <br/><br/>
+                </div>
+                 <span class="box pull-left">&nbsp;</span>
+                <p class="pull-left" data-jmpress="fade">resource <code>quote</code> lifecycle<br/>
+                    <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
+                </p>
+                <span class="box pull-left">&nbsp;</span>
+                <p data-jmpress="fade">resource <code>order</code> lifecycle<br/>
+                    <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
+                </p>
+                <div class="pull-right text-center" data-jmpress="fade">
                     <p>relations</p>
-                    <ul class="list-unstyled">
+                    <ul class="pull-right list-unstyled">
                         <li>rel = <code>/linkrels/quote/create</code></li>
                         <li>&nbsp;</li>
                         <li>rel = <code>/linkrels/order/confirm</code></li>
@@ -803,10 +808,8 @@
                         <li>rel = <code>/linkrels/order/reopen</code></li>
                     </ul>
                 </div>
-                <span class="box pull-left">&nbsp;</span>
-                <p>resource <code>order</code> lifecycle<br/>
-                    <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
-                </p>
+               
+                
                 <br clear="all"/>  
             </div>
             <div id="stateless" class="step slide" data-x="2400" data-y="7000">
@@ -831,7 +834,7 @@
                 <header>Overview</header>
                 <p>model providing a good step by step way to understand the basic ideas behind restful thinking</p>
                 <ul id="rmm" class="list-unstyled">
-                    <li id="restglory">Glory of REST <i class="icon-flag icon-2x"></i> </li>
+                    <li id="restglory">Glory of REST <i class="fa fa-flag fa-2x"></i> </li>
                     <li>Level 3: Hypermedia Controls</li>
                     <li>Level 2: HTTP Verbs</li>
                     <li>Level 1: Resources</li>
