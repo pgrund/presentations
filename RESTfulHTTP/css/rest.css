@@ -67,12 +67,7 @@ ul.nav li.active pre.shell {
     text-align: center;
     line-height: 50px;
 }
-#actUC1a h2, #actUC2a h2{
-  visibility: hidden;
-}
-.active #actUC1a:hover h2, .active #actUC2a:hover h2 {
-  visibility: visible;
-}
+
 #actUC3 {
     opacity: 0;
     z-index: -1;
@@ -83,6 +78,7 @@ ul.nav li.active pre.shell {
 }
 #httpversiontable {
     font-size: 18px;
+    table-layout: inherit;
 }
 
 #hfactortable {

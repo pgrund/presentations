@@ -51,12 +51,13 @@ body{
 #break .modal-header button {
     color:white;
 }
-#break  .modal-content {
+#break .modal-content {
     background-image: url(./img/break.png);
     background-size: cover;    
     min-height: 200px;
     min-width: 400px;  
 }
+
 #final:before {
     content: url(./img/bisnode-final.png);
 }
@@ -351,13 +352,11 @@ pre.shell {
 }
 
 .step{
-    width:1024px;
-}
-.impress-enabled .step { 
+    width:1024px; 
     opacity: 0.3; 
     z-index: -1;
 }
-.impress-enabled .step.active { 
+.step.active { 
     opacity: 1.0; 
     z-index: 99;
 }
@@ -386,12 +385,13 @@ pre.shell {
 
 .fallback-message p {
     margin-bottom: 10px;
-}
-
-.impress-supported .fallback-message {
     display: none;
 }
 
+ul.list-inline>li::before {
+    /* ignore bisnode list items for bootstrap list-inline */
+    content: '';
+}
 em{
     font-style: normal;
     border-bottom: 1px solid #484d52;
@@ -460,24 +460,30 @@ table { font-size: 24px; }
     color: rgb(189,207,49);
 }
 
-ul.agenda {
-    list-style: none;
-    counter-reset: li;    
+ul.agenda , ol.agenda {
+    list-style: none; 
+    counter-reset: li;
 }
-ul.agenda li {
+ul.agenda li , ol.agenda li{
         height: 48px;
         width: 90%;
-        counter-increment: li;
         display: list-item;
         margin: 5px 0px 5px 0px;  
-        
+        counter-increment: li;
         background-color: rgb(242,242,242);
+        border-top-right-radius: 130px 50px;
+        border-bottom-right-radius: 130px 50px ;
 }
 
 
-ul.agenda li::before {
-  content: counter(li);
+ul.agenda li::before, ol.agenda li::before {
+  
+  font-family: 'FontAwesome';
+  font-size: 32px;
+  content: '\f0c8';
 
+  margin: -10px 5px 0 -15px;
+  
   width: 50px;
   height: 53px;
 
@@ -485,69 +491,54 @@ ul.agenda li::before {
   margin-left: -20px;
   display: inline-block;
 
-  color: white;
-  text-align: center;
- 
-  background-image: url("./img/agenda-sprites.png");
-  background-repeat: no-repeat;
-  background-position:  0px -2px;         
+  text-align: center; 
+}
+ol.agenda li::before {
+   content: counter(li);      
 }
 
-ul.agenda li::after {
-  content: '.';
+ul.agenda li::after , ol.agenda li::after {
+   
+  font-family: 'FontAwesome';
+  font-size: 48px;
+  content: '\f101';
+  
+  margin: -10px 0px -45px 0px;
   float:right;
-  color: rgb(242,242,242);
+  
   width: 55px;
   height: 53px;
-  display: inline-block;
-  margin-right:-45px;
- 
-  background-image: url("./img/agenda-sprites.png");
-  background-repeat: no-repeat;
-  background-position: -70px -4px;        
-}
-
-ul.agenda li:nth-child(1):before {
+  display: inline;
   
 }
-ul.agenda li:nth-child(1):after {
-   
+
+ul.list-unstyled li::before , ol.list-unstyled li::before {
+    content:'';
 }
-.agenda li:nth-child(2):before {
-    background-position:  0px -55px;      
+
+ul.agenda li:nth-child(1):before , ul.agenda li:nth-child(1):after {
+   color: rgb(189,207,49);
 }
-.agenda li:nth-child(2):after {
-    background-position:  -70px -57px;  
+.agenda li:nth-child(2):before , .agenda li:nth-child(2):after  {    
+    color: rgb(54,111,54);
 }
-.agenda li:nth-child(3):before {
-    background-position:  0px -110px;      
+.agenda li:nth-child(3):before , .agenda li:nth-child(3):after {
+    color: rgb(251,195,17);
 }
-.agenda li:nth-child(3):after {
-    background-position:  -70px -112px;  
+.agenda li:nth-child(4):before, .agenda li:nth-child(4):after {
+    color:rgb(57,187,236);
 }
-.agenda li:nth-child(4):before {
-    background-position:  0px -165px;      
+.agenda li:nth-child(5):before, .agenda li:nth-child(5):after {
+    color: rgb(204,204,204);
 }
-.agenda li:nth-child(4):after {
-    background-position:  -70px -167px;  
-}
-.agenda li:nth-child(5):before {
-    background-position:  0px -218px;      
-}
-.agenda li:nth-child(5):after {
-    background-position:  -70px -222px;  
-}
-.agenda li:nth-child(6):before {
-    background-position:  0px -273px;      
-}
-.agenda li:nth-child(6):after {
-    background-position:  -70px -277px;  
+.agenda li:nth-child(6):before , .agenda li:nth-child(6):after {
+    color:rgb(127,127,127);
 }
 
 table.table {
     table-layout: fixed;
 }
-table, table.table-striped, tr {
+table, table.table-striped, table.table-bordered, tr , tr.success , tr.warning , tr.info {
     -moz-box-shadow:    inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow:         inset 0 0 10px #000000;

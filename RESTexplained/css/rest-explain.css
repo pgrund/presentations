@@ -8,8 +8,9 @@ body{
     text-shadow: 1px 1px 2px #000;
 
     counter-reset: slideIdx;
-     
-    background-image: url(../img/red-talking.png), url(../img/green-talking.png);
+ 
+
+    background-image: url(../img/red-talking.png), url(../img/green-talking.png);    
     background-repeat: no-repeat;
     background-position: right bottom, left bottom;
     background-size: auto 75%, auto 75%;
@@ -28,13 +29,13 @@ body{
 .step{
     margin-top: 10px;
     width:900px;
-    height:800px;   
+    height:800px; 
  }
-.impress-enabled .step { 
+ .step { 
     opacity: 0; 
     z-index: -1;
 }
-.impress-enabled .step.active { 
+.step.active { 
     opacity: 1.0; 
     z-index: 99;
 }
@@ -120,9 +121,6 @@ body{
     left: 450px;
     border-color: darkred darkred transparent transparent;
 }
-.Ryan .speech {    
-    border-color:darkred;
-}
 .speech
 {    
 	position: relative;
@@ -139,7 +137,15 @@ body{
             -moz-box-shadow: 2px 2px 4px #888;
       
 }
-
+.Ryan .speech {    
+    border-color:darkred;
+}
+.Ryan .speech a, .Ryan .speech a:visited, .Ryan .speech em {
+    color: red;
+}
+.Wife .speech a, .Wife .speech a:visited, .Wife .speech em {
+    color:  #33ff00;
+}
 .Ryan .speech:after {
     left: 447px;
     border-color: #fff #fff transparent transparent;

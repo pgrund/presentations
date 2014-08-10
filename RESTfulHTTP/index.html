@@ -3,21 +3,32 @@
     <head>
         <meta charset="utf-8" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="expires" content="0">
 
         <!-- using http://twitter.github.io/bootstrap/ -->    
         <link rel="stylesheet" href="../impress/bootstrap.min.css" />
         <!--link rel="stylesheet" href="backup/bootstrap.min.3.1.1.css"-->
 
-        <!-- using fontaweseome for icons as well -->
+        <!-- using fontawacteseome for icons as well -->
         <link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.min.css" />
 
         <!-- own stylesheet, bases on impress.js -->
         <link href="./css/rest.css" rel="stylesheet" />
 
-        <!-- since impress.js and bootstrap are not 100% compatible, 
-             we need to supply a "bootstrap / impress.js - FIX" -->
-        <!--link href="css/bootstrap-fix.css" rel="stylesheet"/-->
+        <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
+
+        <script type="text/javascript" src="../impress/jquery.js"></script>
+        <!--http://code.jquery.com/jquery-1.10.2.min.js-->
+        <!--script type="text/javascript" src="backup/jquery-1.10.2.min.js"></script-->
+        <script src="../impress/bootstrap.min.js"></script>
+        <!--script type="text/javascript" src="backup/bootstrap.min.3.1.1.js"></script-->
+
+        <!--script type="text/javascript" src="../impress/impress.js"></script-->
+        
+        <script src="../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>        
+        <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>
 
         <title>RESTful HTTP</title> 
         <!--meta name="date" content="2013-05-02"/-->
@@ -35,7 +46,7 @@
                     </button>   
                     <a href="#/start" class="navbar-brand">Start</a>
                 </div>                
-                <div class="navbar-collapse collapse" id="rest-menu">
+                <div class="collapse navbar-collapse" id="rest-menu">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">HTTP Basics<b class="caret"></b></a>
@@ -78,11 +89,15 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="?print" target="_blank" title="print"><i class="fa fa-print"></i></a>
+                            <a target="_blank" id="print" title="print">
+                                <i class="fa fa-print"></i>
+                            </a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a id="breakbutton" title="break" data-toggle="modal" data-target="#break"><i class="fa fa-coffee"></i></a>                            
+                            <a id="breakbutton" title="break">
+                                <i class="fa fa-coffee"></i>
+                            </a>                            
                         </li>
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -102,7 +117,7 @@
         </div>
 
         <div id="impress">
-            <div id="start" class="step slide title" >
+            <div id="start" class="step slide title" data-nav-group="start">
                 <header>
                     <h2>REST - an introduction</h2>
                     <p class="subtitle">Representational State Transfer</p>
@@ -134,7 +149,7 @@
                 <footer></footer>
             </div>
 
-            <div id="http" class="slide step" data-x="1200" data-y="1000">
+            <div id="http" class="slide step" data-x="1200" data-y="1000" data-nav-group="HTTP Basics">
                 <header>HTTP protocol</header>
                 <blockquote id="httpprotocol">... is an application-level
                     protocol for <em>distributed, collaborative, hypermedia information
@@ -162,7 +177,7 @@
 
             <div id="httpversion" class="slide step" data-x="1200" data-y="685" data-z="-450" data-rotate-x="90" data-rotate-z="90">
                 <header>HTTP versions</header>               
-                <table class="table table-condensed" id="httpversiontable">
+                <table class="table table-bordered" id="httpversiontable">
                     <thead>
                         <tr>
                             <th>version</th>
@@ -171,47 +186,45 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td rowspan="4">HTTP/0.9</td>
-                            <td>simple protocol, easy to be implemented</td>
-                        </tr>
-                        <tr>
-                            <td>just text (mainly HTML)</td>
-                        </tr>
-                        <tr>
-                            <td>for each link an own TCP connection used</td>
-                        </tr>
-                        <tr>
-                            <td>not standardardized</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="4">HTTP/1.0</td>
-                            <td>any <a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-types</a> <code>(e.g.: image/jpg, application/pdf, text/plain, ...)</code> can be transmitted</td>
-                        </tr>
-                        <tr>
-                            <td>meta data for request and response <code>(e.g.: Content-Type: text/html )</code></td>
-                        </tr>
-                        <tr>
-                            <td>basics for security by access and user authentication</td>
-                        </tr>
-                        <tr>
-                            <td>for each link an own TCP connection</td>
-                        </tr>
-                        <tr class="success">
-                            <td rowspan="2">
-                                <a href="http://tools.ietf.org/html/rfc2616" target="_blank">HTTP/1.1</a>
-                                <br/><small class="pull-right">( latest )</small>
+                            <td>HTTP/0.9</td>
+                            <td>
+                              <ul>
+                                <li>simple protocol, easy to be implemented</li>
+                                <li>just text (mainly HTML)</li>
+                                <li>for each link an own TCP connection used</li>
+                                <li>not standardized</li>
+                              </ul>
                             </td>
-                            <td>more regulations, result in more stabilit of implementations</td>
                         </tr>
-                        <tr class="success">
-                            <td>persistent connections possible (save resources, not an own TCP connection for each request)</td>
+                        <tr>
+                            <td>HTTP/1.0</td>
+                            <td>
+                              <ul>
+                                <li class="text-overflow">any <a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-types</a><code>(e.g.: image/jpg, application/pdf, ...)</code> can be transmitted</li>                        
+                                <li>meta data for request and response <code>(e.g.: Content-Type: text/html )</code></li>
+                                <li>basics for security by access and user authentication</li>
+                                <li>for each link an own TCP connection</li>
+                             </ul>
+                            </td>
                         </tr>
-                    </tbody>
+                        <tr>
+                            <td>
+                                <a href="http://tools.ietf.org/html/rfc2616" target="_blank">HTTP/1.1</a>
+                                <br/><small class="pull-right red">( latest )</small>
+                            </td>
+                            <td>
+                              <ul>
+                                <li>more regulations, result in more stabilit of implementations</li>
+                                <li>persistent connections possible (save resources, not an own TCP connection for each request)</li>
+                              </ul>
+                            </td>
+                        </tr>
+                    </tbody data-nav-group="HTTP Basics">
                 </table>
                 <footer></footer>
             </div>
 
-            <div id="httprequest" class="slide step" data-x="1650" data-y="1000" data-z="-450" data-rotate-y="90">
+            <div id="httprequest" class="slide step" data-x="1650" data-y="1000" data-z="-450" data-rotate-y="90" data-nav-group="HTTP Basics">
                 <header>HTTP Request</header>                
                 <h3>structure</h3>
                 <blockquote class="definition">
@@ -236,7 +249,7 @@
                 <footer></footer>
             </div>
 
-            <div id="httpresponse" class="slide step" data-x="750" data-y="1000" data-z="-450" data-rotate-y="-90">
+            <div id="httpresponse" class="slide step" data-x="750" data-y="1000" data-z="-450" data-rotate-y="-90" data-nav-group="HTTP Basics">
                 <header>HTTP Response</header>
 
                 <h3>structure</h3>
@@ -254,7 +267,7 @@
                 <footer></footer>
             </div>
 
-            <div id="statuscodes" class="slide step" data-x="1200" data-y="1315" data-z="-450" data-rotate-x="-90" data-rotate-z="-90">
+            <div id="statuscodes" class="slide step" data-x="1200" data-y="1315" data-z="-450" data-rotate-x="-90" data-rotate-z="-90" data-nav-group="HTTP Basics">
                 <header>HTTP Statuscodes</header>                
                 <dl class="pull-right">
                     <dt>1XX - information</dt>
@@ -284,15 +297,17 @@
                 <ul>
                     <li>architectural style based on web standards of HTTP protocol</li>
                     <li>described Roy Fielding in his <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm" target="_blank">dissertation</a> in <strong>2000</strong></li>                
-                    <li><p>basic principles of RESTul HTTP:<br/><br/></p>
-                        <ol>
+                </ul>
+                <br/>
+                 <p>basic principles of RESTful HTTP:</p>
+                        <ul class="agenda">
                             <li>resources and their unique identification</li>
                             <li>standardized methods</li>
                             <li>representation of resources</li>
                             <li><strong>H</strong>ypermedia <strong>A</strong>s <strong>T</strong>he <strong>E</strong>ngine <strong>O</strong>f <strong>A</strong>pplication <strong>S</strong>tate</li>
                             <li>stateless communication</li>
-                        </ol>
-                    </li>
+                        </ul>
+                 
                 </ul>                                  
                 <footer></footer>
             </div>
@@ -330,7 +345,7 @@
                 <blockquote>
                     As a bank, I want to <em>transfer</em> <em>500&euro;</em> from <em>account A</em> to <em>account B</em>.<br/>
                 </blockquote>
-                <div id="actUC1a">
+                <div id="actUC1a" data-jmpress="fade">
                     &nbsp;
                     <h2 class="text-center">Can you find possible resources ?</h2>
                 </div>
@@ -345,12 +360,12 @@
                 <br/>
                 <img src="./img/accounts.png" alt="account class and resources" title="account class and resources"/>
                 <br/>  
-                <div id="actUC2a">
+                <div id="actUC2a" data-jmpress="fade">
                     &nbsp;
                     <h2>And how about <em>transfer</em> ?</h2> 
                 </div>
             </div>
-            <div id="actUC3" class="step" data-x="5300" data-y="1750" data-z="-2500" data-rotate-y="90" data-rotate-x="-180">                
+            <div id="actUC3" class="step" data-x="5300" data-y="1500" data-z="-2500" data-rotate-y="90" data-rotate-x="-180">                
                 <h3>transactions</h3>
                 <ul class="inline">
                     <li><code>/transactions</code></li>
@@ -495,38 +510,38 @@
                     <tbody>
                         <tr>
                             <td class="text-center">GET</td>
-                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
-                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
                             <td>get a representation of a resource: <em>READ</em></td>
                         </tr>
                         <tr>
                             <td class="text-center">PUT</td>
-                            <td class="text-center red"><i class="icon-check-empty icon-2x"></i></td>
-                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td class="text-center red"><i class="fa fa-ban fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
                             <td>create or replace a resource: <em>CREATE</em>/<em>UPDATE</em></td>
                         </tr>
                         <tr>
                             <td class="text-center">POST</td>
-                            <td class="text-center red"><i class="icon-check-empty icon-2x"></i></td>
-                            <td class="text-center red"><i class="icon-check-empty icon-2x"></i></td>
+                            <td class="text-center red"><i class="fa fa-ban fa-2x"></i></td>
+                            <td class="text-center red"><i class="fa fa-ban fa-2x"></i></td>
                             <td>create or update a resource: <em>CREATE</em>/<em>UPDATE</em></td>
                         </tr>
                         <tr>
                             <td class="text-center">DELETE</td>
-                            <td class="text-center red"><i class="icon-check-empty icon-2x"></i></td>
-                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td class="text-center red"><i class="fa fa-ban fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
                             <td>delete a resource: <em>DELETE</em>/<em>UPDATE</em></td>
                         </tr>
                         <tr>
                             <td class="text-center">HEAD</td>
-                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
-                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
                             <td>only metadata (headers) of a resource</td>
                         </tr>
                         <tr>
                             <td class="text-center">OPTIONS</td>
-                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
-                            <td class="text-center green"><i class="icon-check icon-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
                             <td>actions (HTTP verbs) of a resource</td>
                         </tr>
                     </tbody>
@@ -1274,7 +1289,7 @@ Location: slots/1234/appointment
                 <br clear="all"/>
             </div>
 
-            <div id="final" data-x="2000" data-y="-800" data-z="8000" class="step">                
+            <div id="final" data-x="2000" data-y="-800" data-z="8000" class="step">               
             </div>
         </div> <!-- end of impress -->
 
@@ -1283,50 +1298,68 @@ Location: slots/1234/appointment
             <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
         </div>
 
-        <script type="text/javascript" src="../impress/jquery.js"></script>
-        <!--http://code.jquery.com/jquery-1.10.2.min.js-->
-        <!--script type="text/javascript" src="backup/jquery-1.10.2.min.js"></script-->
-        <script src="../impress/bootstrap.min.js"></script>
-        <!--script type="text/javascript" src="backup/bootstrap.min.3.1.1.js"></script-->
-
-        <script type="text/javascript" src="../impress/impress.js"></script>
-        <!--script type="text/javascript" src="backup/impress.js"></script-->     
-
         
-        <script src="../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>        
-
         <script type="text/javascript">
-            if (!window.location.toString().match(/\?print$/i)) {
-                impress().init();
-            } else {
-                window.print();
-                //self.close();
-            }
+        $.jmpress('register', 'rest', function() {
+            
+            var jmpress = this;
+            // our main configuration
+            var config = {       
+                presentationMode: {
+                    notesUrl: 'index.notes.html'
+                }
+            };
 
-            var footerDate = new Date().getFullYear() + "-"
-                    + ((new Date().getMonth() + 1) < 10 ? "0" + (new Date().getMonth() + 1) : new Date().getMonth()) + "-"
-                    + (new Date().getDate() < 10 ? "0" + new Date().getDate() : new Date().getDate());
-
-            if ($("meta[name=date]") && $("meta[name=date]").attr("content")) {
-                footerDate = $("meta[name=date]").attr("content");
-            }
-            $("footer").prepend("       " + footerDate + "          ");
-
-
-            $("#break").modal("show").modal("hide");
-            $("#breakbutton").click(function() {
-                $('#counter').html("");
-                $('#counter').countdown({
+           
+            $("#breakbutton").click(function() {     
+                var c = $("#counter");
+                var b = $("#break");
+                c.html("");              
+                c.countdown({
                     step: 5,
                     format: 'mm:ss',
                     startTime: '05:00',
                     timerEnd: function() {
-                        $("#break").modal("hide");
+                        b.modal("hide");
                     },
                     image: "../bisnode/img/digits.png"
-                });
-                $("#break").modal("show");
+                });     
+                b.modal("show");
             });
+
+
+            // enable ESC to toggle jmpress
+            $(this).jmpress('toggle', 27, config, true);
+
+            // print button
+            $("#print").click(function(){
+                var j = $(jmpress);
+                if (j.jmpress("initialized")) {
+                   j.jmpress("deinit");                
+                   window.print();                  
+                   j.jmpress(config);
+                } else {
+                    window.print();
+                }
+
+            });
+
+            var d = new Date();
+            var m = $("meta[name=date]");
+            var footerDate = d.getFullYear() + "-"
+                    + ((d.getMonth() + 1) < 10 ? "0" + (d.getMonth() + 1) : d.getMonth()) + "-"
+                    + ((d.getDate() < 10) ? "0" + d.getDate() : d.getDate());
+
+            if ( m && m.attr("content")) {
+                footerDate = m.attr("content");
+            }
+            
+            $("footer").prepend("       " + footerDate + "          ");
+ 
+        });
+
+        // start the presentation!
+        $('#impress').jmpress('rest');
         </script>        
 
     </body>
