@@ -1,14 +1,7 @@
 /*
-  --- BISNODE impress.js 
+  --- BISNODE impress.js stylesheet
 */
-/*
-@font-face{font-family:HelveticaNeueW02-55Roma;src:url(fonts/0b3a3fca-0fad-402b-bd38-fdcbad1ef776.eot?#iefix);src:url(fonts/0b3a3fca-0fad-402b-bd38-fdcbad1ef776.eot?#iefix) format("eot"),url(fonts/d5af76d8-a90b-4527-b3a3-182207cc3250.woff) format("woff"),url(fonts/1d238354-d156-4dde-89ea-4770ef04b9f9.ttf) format("truetype"),url(fonts/b68875cb-14a9-472e-8177-0247605124d7.svg#b68875cb-14a9-472e-8177-0247605124d7) format("svg");font-weight:400}
-@font-face{font-family:HelveticaNeueW02-75Bold;src:url(fonts/db853e0e-929b-4272-b420-c946c954cf3a.eot?#iefix);src:url(fonts/db853e0e-929b-4272-b420-c946c954cf3a.eot?#iefix) format("eot"),url(fonts/4a9c62ab-b359-4081-8383-a0d1cdebd111.woff) format("woff"),url(fonts/db5f9ba6-05a4-433a-9461-0a6f257a0c3a.ttf) format("truetype"),url(fonts/25e09910-ffc3-4fc4-b0d1-db9a95dface8.svg#25e09910-ffc3-4fc4-b0d1-db9a95dface8) format("svg");font-weight:400}
-@font-face{font-family:HelveticaNeueW02-87HvCn;src:url(fonts/5afb945e-e2c1-4a0e-aa10-07c774467403.eot?#iefix);src:url(fonts/5afb945e-e2c1-4a0e-aa10-07c774467403.eot?#iefix) format("eot"),url(fonts/b28cd111-4e51-40c4-8ab7-f20722f5aee1.woff) format("woff"),url(fonts/90675842-aa22-4c92-8d33-5b9adb155a84.ttf) format("truetype"),url(fonts/50295452-0109-4587-9fbd-703f8074deba.svg#50295452-0109-4587-9fbd-703f8074deba) format("svg");font-weight:400}
-@font-face{font-family:"Adobe Garamond Pro";src:url(fonts/4c83158e-1435-42b3-9577-b2b30ca41519.eot?#iefix);src:url(fonts/4c83158e-1435-42b3-9577-b2b30ca41519.eot?#iefix) format("eot"),url(fonts/6d0c45bd-b627-4868-942a-91b2f83580f2.woff) format("woff"),url(fonts/6334af5a-f301-4a6a-bbe1-2f3f58d3a799.ttf) format("truetype"),url(fonts/f00e2b8d-55bd-4f31-b5ae-e6230f2c8481.svg#f00e2b8d-55bd-4f31-b5ae-e6230f2c8481) format("svg")}
-@font-face{font-family:Conv_HelveticaNeueLTStd-HvCn;src:url(fonts/HelveticaNeueLTStd-HvCn.eot);src:local("☺"),url(fonts/helveticaneueltstd-hvcn-webfont.ttf) format("truetype"),url(fonts/HelveticaNeueLTStd-HvCn.svg) format("svg");font-weight:400;font-style:normal}
-@font-face{font-family:'Conv_Adobe Garamond Pro';src:url("../../fonts/Adobe Garamond Pro.eot");src:local("☺"),url("../../fonts/Adobe Garamond Pro.ttf") format("truetype"),url("../../fonts/Adobe Garamond Pro.svg") format("svg");font-weight:400;font-style:normal}
-*/
+
 body{
     width:1024px;
     font-size: 28px;
@@ -245,7 +238,7 @@ body{
     display: inline-block;
     
     background-image: url(./img/divider-sprites.png);
-    background-position: 0 2px;
+    background-position: 0 0px;
 }
 .slide.chapter.lightgreen header {
     /* default */
@@ -255,7 +248,7 @@ body{
     color: darkgreen;
 }
 .slide.chapter.green header::after{
-    background-position: 0 -56px;
+    background-position: 0 -57px;
 }
 .slide.chapter.orange header{
     color: orange;    
