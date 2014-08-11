@@ -12,7 +12,7 @@
         <!--link rel="stylesheet" href="backup/bootstrap.min.3.1.1.css"-->
 
         <!-- using fontawacteseome for icons as well -->
-        <link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.css" />
 
         <!-- own stylesheet, bases on impress.js -->
         <link href="./css/rest.css" rel="stylesheet" />
@@ -145,7 +145,7 @@
 
             <!-- #### HTTP ### -->
 
-            <div id="httpbasics" class="slide step chapter" data-x="1200">
+            <div id="httpbasics" class="slide step chapter green" data-x="1200">
                 <header>HTTP Basics</header>
                 <footer></footer>
             </div>
@@ -502,23 +502,23 @@
                     <caption>HTTP verbs and their usage</caption>
                     <thead>
                         <tr>
-                            <th>method</th>
-                            <th>safe</th>
-                            <th>idempotent</th>
-                            <th>typically used for</th>
+                            <th class="col-sm-1">method</th>
+                            <th class="col-sm-1">safe</th>
+                            <th class="col-sm-1">idempotent</th>
+                            <th class="col-sm-4">typically used for</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="text-center">GET</td>
-                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
-                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-square-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-square-o fa-2x"></i></td>
                             <td>get a representation of a resource: <em>READ</em></td>
                         </tr>
                         <tr>
                             <td class="text-center">PUT</td>
                             <td class="text-center red"><i class="fa fa-ban fa-2x"></i></td>
-                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-square-o fa-2x"></i></td>
                             <td>create or replace a resource: <em>CREATE</em>/<em>UPDATE</em></td>
                         </tr>
                         <tr>
@@ -530,19 +530,19 @@
                         <tr>
                             <td class="text-center">DELETE</td>
                             <td class="text-center red"><i class="fa fa-ban fa-2x"></i></td>
-                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-square-o fa-2x"></i></td>
                             <td>delete a resource: <em>DELETE</em>/<em>UPDATE</em></td>
                         </tr>
                         <tr>
                             <td class="text-center">HEAD</td>
-                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
-                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-square-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-square-o fa-2x"></i></td>
                             <td>only metadata (headers) of a resource</td>
                         </tr>
                         <tr>
                             <td class="text-center">OPTIONS</td>
-                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
-                            <td class="text-center green"><i class="fa fa-check-circle-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-square-o fa-2x"></i></td>
+                            <td class="text-center green"><i class="fa fa-check-square-o fa-2x"></i></td>
                             <td>actions (HTTP verbs) of a resource</td>
                         </tr>
                     </tbody>
@@ -771,45 +771,60 @@
                 </ul>
                 <footer></footer>
             </div>
-            <div id="dapexample" class="step" data-x="4700" data-y="6000">                
-                <h1>example</h1>               
-                <p>application state machine
-                    <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine"/>                
-                    <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine"/>
+            <div id="dapexample" class="step text-center" data-x="4700" data-y="6000">                
+                <h1>example:</h1> 
+                <p><i class="fa fa-shopping-cart"></i> shopping cart </p>
+                <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine"/>      
+                
+            </div>
+            <div id="dapexamplestatemachine" class="step" data-x="5850" data-y="6000">              
+                <p>application state machine        
+                <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine">
                 </p>
             </div>
-            <div id="dapexampleresources" class="step" data-x="5850" data-y="6000">            
-                <h1>example (cont.)</h1>
-                <br/>             
-                <p class="pull-left">resource <code>quote</code> lifecycle<br/>
-                    <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
-                </p>
-                <span class="box pull-left">&nbsp;</span>
+            <div id="dapexampleresources" class="step" data-x="7000" data-y="6000">            
                 <div class="pull-left text-center">
                     <ul class="list-unstyled">
                         <li>&nbsp;</li>
                         <li>resources</li>
-                        <li><code>quote</code></li>
+                        <li><code>quote</code></li>         
                         <li><code>order</code></li>
-                        <li><code>payment</code>(?)</li>
-                    </ul>
-                    <br/><br/>
-                    <p>relations</p>
-                    <ul class="list-unstyled">
-                        <li>rel = <code>/linkrels/quote/create</code></li>
-                        <li>&nbsp;</li>
-                        <li>rel = <code>/linkrels/order/confirm</code></li>
-                        <li>rel = <code>/linkrels/order/pay</code></li>
-                        <li>rel = <code>/linkrels/order/cancel</code></li>
-                        <li>rel = <code>/linkrels/order/reopen</code></li>
+                        <li><code>payment</code><span data-jmpress="fade after #orderlifecycle">(?)</span></li>
                     </ul>
                 </div>
-                <span class="box pull-left">&nbsp;</span>
-                <p>resource <code>order</code> lifecycle<br/>
-                    <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
+                 <span class="box pull-left">&nbsp;</span>
+                <p class="pull-left" data-jmpress="fade">resource <code>quote</code> lifecycle<br/>
+                    <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
                 </p>
-                <br clear="all"/>  
+                <span class="box pull-left">&nbsp;</span>
+                <p data-jmpress="fade" id="orderlifecycle">resource <code>order</code> lifecycle<br/>
+                    <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
+                </p>                                
+                <p data-jmpress="fade">...and how about transitional links ?</p>
+                <br clear="all"/>
             </div>
+
+            <div id="dapexamplerelations" class="step" data-x="8150" data-y="7000">
+                <p>relations</p>
+                <dl>
+                 <dt>quote</dt>
+                 <dd>
+                  <ul class="list-unstyled">
+                    <li data-jmpress="fade after 5s">rel = <code>/linkrels/quote/create</code></li>
+                  </ul>
+                  </dd>
+                  <dt>order</dt>
+                  <dd>
+                   <ul class="list-unstyled">
+                    <li data-jmpress="fade after 3s">rel = <code>/linkrels/order/confirm</code></li>
+                    <li data-jmpress="fade after 3s">rel = <code>/linkrels/order/pay</code></li>
+                    <li data-jmpress="fade after 3s">rel = <code>/linkrels/order/cancel</code></li>
+                    <li data-jmpress="fade after 3s">rel = <code>/linkrels/order/reopen</code></li>
+                   </ul>
+                  </dd>
+                </dl>
+            </div>
+               
             <div id="stateless" class="step slide" data-x="2400" data-y="7000">
                 <header>Stateless</header>
                 <blockquote>... communication must be stateless in nature, ... such that each request from client to server must contain all of the <em>information necessary</em> to understand the request, and cannot take advantage of any <em>stored context on the server</em>. 
@@ -832,7 +847,7 @@
                 <header>Overview</header>
                 <p>model providing a good step by step way to understand the basic ideas behind restful thinking</p>
                 <ul id="rmm" class="list-unstyled">
-                    <li id="restglory">Glory of REST <i class="icon-flag icon-2x"></i> </li>
+                    <li id="restglory">Glory of REST <i class="fa fa-flag fa-2x"></i> </li>
                     <li>Level 3: Hypermedia Controls</li>
                     <li>Level 2: HTTP Verbs</li>
                     <li>Level 1: Resources</li>
@@ -1330,6 +1345,7 @@ Location: slots/1234/appointment
             $("footer").prepend("       " + footerDate + "          ");
  
         });
+ 
 
         // start the presentation!
         $('#impress').jmpress('rest');
