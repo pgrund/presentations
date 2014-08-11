@@ -245,7 +245,7 @@ body{
     display: inline-block;
     
     background-image: url(./img/divider-sprites.png);
-    background-position: 0 2px;
+    background-position: 0 0px;
 }
 .slide.chapter.lightgreen header {
     /* default */
@@ -255,7 +255,7 @@ body{
     color: darkgreen;
 }
 .slide.chapter.green header::after{
-    background-position: 0 -56px;
+    background-position: 0 -57px;
 }
 .slide.chapter.orange header{
     color: orange;    
