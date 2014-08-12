@@ -5,12 +5,17 @@
         <meta charset="utf-8" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
 
+        <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
+
         <!-- own stylesheet, bases on impress.js -->
         <link href="./css/rest-explain.css" rel="stylesheet" />               
 
         <title>How Raf explained REST to me</title> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+        <script type="text/javascript" src="../impress/jquery.js"></script>
+        <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>
+       
         <!--  optional meta tag for presentation date -->
         <!--meta name="date" content="2013-01-01"/-->      
     </head>
@@ -22,7 +27,7 @@
             </div>
             <div id="1" class="step">
                 <div class="Wife"><p class="speech"> Who is <a href="http://www.ics.uci.edu/%7Efielding/">Roy Fielding</a>?</p></div>          
-                <div class="Ryan"><p class="speech"> Some guy. He&#39;s smart.</p></div>          
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> Some guy. He&#39;s smart.</p></div>          
             </div>   
             <div id="2" class="step" data-z="-1000">
                 <div class="Wife"><p class="speech"> Oh? What did he do?</div>
@@ -35,99 +40,99 @@
             </div>
             <div id="4a" class="step" data-z="-4000" data-x="200">
                 <div class="Ryan"><p class="speech"> The web?</p></div>
-                <div class="Wife"><p class="speech"> Yeah.</p></div>
+                <div class="Wife" data-jmpress="fade after 1s step"><p class="speech"> Yeah.</p></div>
             </div>   
             <div id="5" class="step" data-x="2000">
                 <div class="Ryan"><p class="speech"> Hmm. Well, it&#39;s all pretty amazing really. And the funny thing is that it&#39;s all very undervalued. The protocol I was talking about, HTTP, it&#39;s capable of all sorts of neat stuff that people ignore for some reason.</p></div>
             </div>
             <div id="6" class="step" data-x="2000" data-z="-1000">
                 <div class="Wife"><p class="speech"> You mean http like the beginning of what I type into the browser?</p></div>
-                <div class="Ryan"><p class="speech"> Yeah. That first part tells the browser what protocol to use. That stuff you type in there is one of the most important breakthroughs in the history of computing.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1.5s step"><p class="speech"> Yeah. That first part tells the browser what protocol to use. That stuff you type in there is one of the most important breakthroughs in the history of computing.</p></div>
             </div>
             <div id="7" class="step" data-x="2000" data-z="-2000">
                 <div class="Wife"><p class="speech"> Why?</p></div>       
-                <div class="Ryan"><p class="speech"> Because it is capable of describing the location of something anywhere in the world <em>from</em> anywhere in the world. It&#39;s the foundation of the web. You can think of it like GPS coordinates for knowledge and information.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> Because it is capable of describing the location of something anywhere in the world <em>from</em> anywhere in the world. It&#39;s the foundation of the web. You can think of it like GPS coordinates for knowledge and information.</p></div>
             </div>
             <div id="8" class="step" data-x="2000" data-z="-3000">
                 <div class="Wife"><p class="speech"> For web pages?</p></div>
-                <div class="Ryan"><p class="speech"> For anything really. That guy, Roy Fielding, he talks a lot about what those things point to in that research I was talking about. The web is built on an architectural style called <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>. REST provides a definition of a resource, which is what those things point to.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> For anything really. That guy, Roy Fielding, he talks a lot about what those things point to in that research I was talking about. The web is built on an architectural style called <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>. REST provides a definition of a resource, which is what those things point to.</p></div>
             </div>
             <div id="9" class="step" data-x="2000" data-z="-4000">
                 <div class="Wife"><p class="speech"> A web page is a resource?</p></div>
-                <div class="Ryan"><p class="speech"> Kind of. A web page is a representation of a resource. Resources are just concepts. URLs--those things that you type into the browser...</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> Kind of. A web page is a representation of a resource. Resources are just concepts. URLs--those things that you type into the browser...</p></div>
             </div>
             <div id="10" class="step" data-x="2000" data-z="-5000">
                 <div class="Wife"><p class="speech"> I know what a URL is..</p></div>
-                <div class="Ryan"><p class="speech"> Oh, right. Those tell the browser that there&#39;s a concept somewhere. A browser can then go ask for a specific representation of the concept. Specifically, the browser asks for the web page representation of the concept.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> Oh, right. Those tell the browser that there&#39;s a concept somewhere. A browser can then go ask for a specific representation of the concept. Specifically, the browser asks for the web page representation of the concept.</p></div>
             </div>
             <div id="11" class="step"  data-x="2000" data-z="-6000">
                 <div class="Wife"><p class="speech"> What other kinds of representations are there?</p></div>
-                <div class="Ryan"><p class="speech"> Actually, representations is one of these things that doesn&#39;t get used a lot. In most cases, a resource has only a single representation. But we&#39;re hoping that representations will be used more in the future because there&#39;s a bunch of new formats popping up all over the place.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1.5s step"><p class="speech"> Actually, representations is one of these things that doesn&#39;t get used a lot. In most cases, a resource has only a single representation. But we&#39;re hoping that representations will be used more in the future because there&#39;s a bunch of new formats popping up all over the place.</p></div>
             </div>
             <div id="12" class="step" data-x="2000" data-z="-7000">
                 <div class="Wife"><p class="speech"> Like what?</p></div>
-                <div class="Ryan"><p class="speech"> Hmm. Well, there&#39;s this concept that people are calling Web Services. It means a lot of different things to a lot of different people but the basic concept is that machines could use the web just like people do.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> Hmm. Well, there&#39;s this concept that people are calling Web Services. It means a lot of different things to a lot of different people but the basic concept is that machines could use the web just like people do.</p></div>
             </div>
             <div id="13" class="step" data-z="-2000">
                 <div class="Wife"><p class="speech"> Is this another robot thing?</p></div>
-                <div class="Ryan"><p class="speech"> No, not really. I don&#39;t mean that machines will be sitting down at the desk and browsing the web. But computers can use those same protocols to send messages back and forth to each other. We&#39;ve been doing that for a long time but none of the techniques we use today work well when you need to be able to talk to all of the machines in the entire world.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1.5s step"><p class="speech"> No, not really. I don&#39;t mean that machines will be sitting down at the desk and browsing the web. But computers can use those same protocols to send messages back and forth to each other. We&#39;ve been doing that for a long time but none of the techniques we use today work well when you need to be able to talk to all of the machines in the entire world.</p></div>
             </div>
             <div id="14" class="step">
                 <div class="Wife"><p class="speech"> Why not?</p></div>
-                <div class="Ryan"><p class="speech"> Because they weren&#39;t designed to be used like that. When Fielding and his buddies started building the web, being able to talk to any machine anywhere in the world was a primary concern. Most of the techniques we use at work to get computers to talk to each other didn&#39;t have those requirements. You just needed to talk to a small group of machines.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> Because they weren&#39;t designed to be used like that. When Fielding and his buddies started building the web, being able to talk to any machine anywhere in the world was a primary concern. Most of the techniques we use at work to get computers to talk to each other didn&#39;t have those requirements. You just needed to talk to a small group of machines.</p></div>
             </div>
             <div id="15" class="step" data-z="-2000">
                 <div class="Wife"><p class="speech"> And now you need to talk to all the machines?</p></div>
-                <div class="Ryan"><p class="speech"> Yes - and more. We need to be able to talk to all machines about all the stuff that&#39;s on all the other machines. So we need some way of having one machine tell another machine about a resource that might be on yet another machine.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> Yes - and more. We need to be able to talk to all machines about all the stuff that&#39;s on all the other machines. So we need some way of having one machine tell another machine about a resource that might be on yet another machine.</p></div>
             </div>
             <div id="16" class="step">
                 <div class="Wife"><p class="speech"> What?</p></div>
-                <div class="Ryan"><p class="speech"> Let&#39;s say you&#39;re talking to your sister and she wants to borrow the sweeper or something. But you don&#39;t have it - your Mom has it. So you tell your sister to get it from your Mom instead. This happens all the time in real life and it happens all the time when machines start talking too.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> Let&#39;s say you&#39;re talking to your sister and she wants to borrow the sweeper or something. But you don&#39;t have it - your Mom has it. So you tell your sister to get it from your Mom instead. This happens all the time in real life and it happens all the time when machines start talking too.</p></div>
             </div>
             <div id="17" class="step" data-z="-2000">
                 <div class="Wife"><p class="speech"> So how do the machines tell each other where things are?</p></div>
-                <div class="Ryan"><p class="speech"> The URL, of course. If everything that machines need to talk about has a corresponding URL, you&#39;ve created <em>the machine equivalent of a noun</em>. ...</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> The URL, of course. If everything that machines need to talk about has a corresponding URL, you&#39;ve created <em>the machine equivalent of a noun</em>. ...</p></div>
             </div>
             <div id="17a" class="step">
                 <div class="Ryan"><p class="speech"> ... That you and I and the rest of the world have agreed on talking about nouns in a certain way is pretty important, eh?</p></div>
-                <div class="Wife"><p class="speech"> Yeah.</p></div>
+                <div class="Wife" data-jmpress="fade after 1s step"><p class="speech"> Yeah.</p></div>
             </div>
             <div id="18" class="step" data-z="-2000">
                 <div class="Ryan"><p class="speech"> Machines don&#39;t have a universal noun - that&#39;s why they suck. Every programming language, database, or other kind of system has a different way of talking about nouns. That&#39;s why the URL is so important. It let&#39;s all of these systems tell each other about each other&#39;s nouns.</p></div>
-                <div class="Wife"><p class="speech"> But when I&#39;m looking at a web page, I don&#39;t think of it like that.</p></div>            
+                <div class="Wife" data-jmpress="fade after 3s step"><p class="speech"> But when I&#39;m looking at a web page, I don&#39;t think of it like that.</p></div>            
             </div>
             <div id="18a" class="step" data-z="-3000" data-rotate-z="-45">
                 <div class="Ryan"><p class="speech"> Nobody does. Except Fielding and handful of other people.<br/>That&#39;s why machines still suck.</p></div>
             </div>
             <div id="19" class="step" data-z="-2000">
                 <div class="Wife"><p class="speech"> What about verbs and pronouns and adjectives?</p></div>
-                <div class="Ryan"><p class="speech"> Funny you asked because that&#39;s another big aspect of REST. Well, verbs are anyway.</p></div>
-                <div class="Wife"><p class="speech"> I was just joking.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1.5s step"><p class="speech"> Funny you asked because that&#39;s another big aspect of REST. Well, verbs are anyway.</p></div>
+                <div class="Wife" data-jmpress="fade after 2s prev"><p class="speech"> I was just joking.</p></div>
             </div>
             <div id="19a" class="step" data-z="-4000">
                 <div class="Ryan"><p class="speech"> It was a funny joke but it&#39;s actually not a joke at all. Verbs are important. There&#39;s a powerful concept in programming and computer science theory called <em>polymorphism</em>.<br/>
                         That&#39;s a geeky way of saying that different nouns can have the same verb applied to them.</p></div>
-                <div class="Wife"><p class="speech"> I don&#39;t get it.</p></div>
+                <div class="Wife" data-jmpress="fade after 3s step"><p class="speech"> I don&#39;t get it.</p></div>
             </div>
             <div id="20" class="step" data-z="-4000" data-rotate-z="45">               
                 <div class="Ryan"><p class="speech"> Well.. Look at the coffee table. What are the nouns? Cup, tray, newspaper, remote. Now, what are some things you can do to all of these things?</p></div>
-                <div class="Wife"><p class="speech"> I don&#39;t get it...</p></div>
+                <div class="Wife" data-jmpress="fade after 4s step"><p class="speech"> I don&#39;t get it...</p></div>
             </div>
             <div id="21" class="step" data-z="-4000" data-rotate-z="90">
                 <div class="Ryan"><p class="speech"> You can <em>get</em> them, right? You can pick them up. You can knock them over. You can burn them. You can apply those same exact verbs to any of the objects sitting there.</p></div>
-                <div class="Wife"><p class="speech"> Okay... so?</p></div>
+                <div class="Wife" data-jmpress="fade after 5s step"><p class="speech"> Okay... so?</p></div>
             </div>
             <div id="22" class="step" data-z="-4000" data-rotate-z="135">
                 <div class="Ryan"><p class="speech"> Well, that&#39;s important. What if instead of me being able to say to you, &quot;get the cup,&quot; and &quot;get the newspaper,&quot; and &quot;get the remote&quot;; what if instead we needed to come up with different verbs for each of the nouns? I couldn&#39;t use the word &quot;get&quot; universally, but instead had to think up a new word for each verb/noun combination.</p></div>
-                <div class="Wife"><p class="speech"> Wow! That&#39;s weird.</p></div>
+                <div class="Wife" data-jmpress="fade after 6s step"><p class="speech"> Wow! That&#39;s weird.</p></div>
             </div>
             <div id="23" class="step" data-z="-4000" data-rotate-z="180">
                 <div class="Ryan"><p class="speech"> Yes, it is. Our brains are somehow smart enough to know that the same verbs can be applied to many different nouns. Some verbs are more specific than others and apply only to a small set of nouns. For instance, I can&#39;t drive a cup and I can&#39;t drink a car. But some verbs are almost universal like GET, PUT, and DELETE.</p></div>
-                <div class="Wife"><p class="speech"> You can&#39;t DELETE a cup.</p></div>
+                <div class="Wife" data-jmpress="fade after 5s step"><p class="speech"> You can&#39;t DELETE a cup.</p></div>
             </div>
             <div id="23a" class="step" data-z="-4000" data-rotate-z="215">
                 <div class="Ryan"><p class="speech"> Well, okay, but you can throw it away. That was another joke, right?</p></div>
-                <div class="Wife"><p class="speech"> Yeah.</p></div>
+                <div class="Wife" data-jmpress="fade after 2s step"><p class="speech"> Yeah.</p></div>
             </div>
             <div id="24" class="step">
                 <div class="Ryan"><p class="speech"> So anyway, HTTP--this protocol Fielding and his friends created--is all about applying verbs to nouns. For instance, when you go to a web page, the browser does an HTTP GET on the URL you type in and back comes a web page.<br/>
@@ -136,11 +141,11 @@
             <div id="24a" class="step" data-x="-2000">
                 <div class="Ryan">
                     <p class="speech">... Those are separate resources. The web page just specifies the URLs to the images and the browser goes and does more HTTP GETs on them until all the resources are obtained and the web page is displayed. But the important thing here is that very different kinds of nouns can be treated the same. Whether the noun is an image, text, video, an mp3, a slideshow, whatever.<br/> I can GET all of those things the same way given a URL.</p></div>
-                <div class="Wife"><p class="speech"> Sounds like GET is a pretty important verb.</p></div>
+                <div class="Wife" data-jmpress="fade after 6s step"><p class="speech"> Sounds like GET is a pretty important verb.</p></div>
             </div>
             <div id="25" class="step" data-x="-2000" data-y="-1000">
                 <div class="Ryan"><p class="speech"> It is. Especially when you&#39;re using a web browser because browsers pretty much just GET stuff. They don&#39;t do a lot of other types of interaction with resources. This is a problem because it has led many people to assume that HTTP is just for GETing. But HTTP is actually a <em>general purpose protocol for applying verbs to nouns</em>.</p></div>
-                <div class="Wife"><p class="speech"> Cool. But I still don&#39;t see how this changes anything. What kinds of nouns and verbs do you want?</p></div>
+                <div class="Wife" data-jmpress="fade after 5s step"><p class="speech"> Cool. But I still don&#39;t see how this changes anything. What kinds of nouns and verbs do you want?</p></div>
             </div>
             <div id="26" class="step" data-x="-2000" data-y="-2000">
                 <div class="Ryan"><p class="speech"> Well the nouns are there but not in the right format.<br/>
@@ -148,11 +153,11 @@
             </div>
             <div id="26a" class="step" data-x="-2000" data-y="-3000">
                 <div class="Wife"><p class="speech"> Why can&#39;t a machine understand a normal web page?</p></div>
-                <div class="Ryan"><p class="speech"> Because web pages are designed to be understood by people. A machine doesn&#39;t care about layout and styling. Machines basically just need the data. Ideally, every URL would have a human readable and a machine readable representation. When a machine GETs the resource, it will ask for the machine readable one. When a browser GETs a resource for a human, it will ask for the human readable one.</p></div>
+                <div class="Ryan" data-jmpress="fade after 2s step"><p class="speech"> Because web pages are designed to be understood by people. A machine doesn&#39;t care about layout and styling. Machines basically just need the data. Ideally, every URL would have a human readable and a machine readable representation. When a machine GETs the resource, it will ask for the machine readable one. When a browser GETs a resource for a human, it will ask for the human readable one.</p></div>
             </div>
             <div id="27" class="step" data-x="-2000" data-y="-4000">
                 <div class="Wife"><p class="speech"> So people would have to make machine formats for all their pages?</p></div>
-                <div class="Ryan"><p class="speech"> If it were valuable.<br/>
+                <div class="Ryan" data-jmpress="fade after 2s step"><p class="speech"> If it were valuable.<br/>
                     Look, we&#39;ve been talking about this with a lot of abstraction. How about we take a real example....</p>
                 </div>
             </div>
@@ -184,7 +189,7 @@
             </div>
             <div id="28" class="step">
                 <div class="Wife"><p class="speech"> So this is what you and all the computer people are working on now? Deciding what the data should look like?</p></div>
-                <div class="Ryan"><p class="speech">Sadly, no.</p></div>
+                <div class="Ryan" data-jmpress="fade after 2s step"><p class="speech">Sadly<span data-jmpress="fade after 1s prev">, no.</span></p></div>
             </div>
             <div id="28a" class="step" data-y="1000">
                 <div class="Ryan">
@@ -200,11 +205,11 @@
             </div>
             <div id="29" class="step" data-y="3000">
                 <div class="Wife"><p class="speech"> Why?</p></div>
-                <div class="Ryan"><p class="speech"> I have no idea.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> I have no idea.</p></div>
             </div>
             <div id="30" class="step" data-y="4000">
                 <div class="Wife"><p class="speech"> Why don&#39;t you say something?</p></div>
-                <div class="Ryan"><p class="speech"> Maybe I will.</p></div>
+                <div class="Ryan" data-jmpress="fade after 1s step"><p class="speech"> Maybe I will.</p></div>
             </div>  
             <div id="final" class="step" data-y="1000" data-z="10000">
                 <blockquote>
@@ -215,9 +220,6 @@
             </div>   
         </div>       
 
-  
-        <script type="text/javascript" src="../impress/jquery.js"></script>
-        <script type="text/javascript" src="../jmpress/jmpress.js"></script>
         <script type="text/javascript">
         $(function() {
             $('#impress').jmpress();
