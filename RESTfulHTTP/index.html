@@ -7,27 +7,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta http-equiv="expires" content="0">
 
-        <!-- using http://twitter.github.io/bootstrap/ -->    
+        
         <link rel="stylesheet" href="../impress/bootstrap.min.css" />
-        <!--link rel="stylesheet" href="backup/bootstrap.min.3.1.1.css"-->
-
-        <!-- using fontawacteseome for icons as well -->
         <link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.css" />
 
-        <!-- own stylesheet, bases on impress.js -->
-        <link href="./css/rest.css" rel="stylesheet" />
-
         <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
+        
+        <link href="./css/rest.css" rel="stylesheet" />
+        
 
         <script type="text/javascript" src="../impress/jquery.js"></script>
-        <!--http://code.jquery.com/jquery-1.10.2.min.js-->
-        <!--script type="text/javascript" src="backup/jquery-1.10.2.min.js"></script-->
-        <script src="../impress/bootstrap.min.js"></script>
-        <!--script type="text/javascript" src="backup/bootstrap.min.3.1.1.js"></script-->
+        <script src="../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
 
-        <!--script type="text/javascript" src="../impress/impress.js"></script-->
-        
-        <script src="../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>        
+        <script src="../impress/bootstrap.min.js"></script>        
+                
         <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>
         <script type="text/javascript" src="../jmpress/plugins/presentations.navi.js"></script>
 
@@ -145,7 +138,7 @@
 
             <!-- #### HTTP ### -->
 
-            <div id="httpbasics" class="slide step chapter green" data-x="1200">
+            <div id="httpbasics" class="slide step chapter" data-x="1200">
                 <header>HTTP Basics</header>
                 <footer></footer>
             </div>
@@ -762,67 +755,75 @@
                 <footer></footer>
             </div>
             <div id="dap" class="step slide" data-x="3550" data-y="6000">
-                <header>Domain Application Protocol (DAP)</header>
-                <br/>
-                <ul>
+                <header>Domain Application Protocol (DAP)</header>                
+                <ol>
                     <li>Model applications in terms of <em>application state machine</em></li>
-                    <li><p>Implement them in terms of <em>resource lifecycles</em> and the rules that <em>associate resources</em></p></li>
+                    <li>Implement them in terms of <em>resource lifecycles</em> and rules that <em>associate resources</em></li>
                     <li>Advertise and execute them using <em>media types</em>, <em>link relation values</em> and <em>HTTP idioms</em></li>
-                </ul>
-                <footer></footer>
-            </div>
-            <div id="dapexample" class="step text-center" data-x="4700" data-y="6000">                
-                <h1>example:</h1> 
-                <p><i class="fa fa-shopping-cart"></i> shopping cart </p>
-                <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine"/>      
-                
-            </div>
-            <div id="dapexamplestatemachine" class="step" data-x="5850" data-y="6000">              
-                <p>application state machine        
-                <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine">
+                </ol>
+                <p class="text-center">example: <span ><i class="fa fa-shopping-cart"></i> shopping cart</span><br/>
+                    <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine" data-jmpress="appear"/>
                 </p>
+                <footer></footer>
+            </div>          
+            <div id="dapexamplestatemachine" class="step" data-x="4700" data-y="6000">              
+                <header>application state machine</header>
+                <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine">                
             </div>
-            <div id="dapexampleresources" class="step" data-x="7000" data-y="6000">            
+            <div id="dapexampleresources" class="step" data-x="5850" data-y="6000">            
+                <header>resource lifecycles</header>
                 <div class="pull-left text-center">
                     <ul class="list-unstyled">
                         <li>&nbsp;</li>
                         <li>resources</li>
                         <li><code>quote</code></li>         
-                        <li><code>order</code></li>
-                        <li><code>payment</code><span data-jmpress="fade after #orderlifecycle">(?)</span></li>
+                        <li id="resourceorder" data-jmpress="fade"><code>order</code></li>
+                        <li data-jmpress="fade"><code>payment</code><span data-jmpress="zoom after 3s prev"><i class="fa fa-question fa-2x red"></i></span></li>
                     </ul>
                 </div>
                  <span class="box pull-left">&nbsp;</span>
-                <p class="pull-left" data-jmpress="fade">resource <code>quote</code> lifecycle<br/>
+                <p class="pull-left">resource <code>quote</code> lifecycle<br/>
                     <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
                 </p>
                 <span class="box pull-left">&nbsp;</span>
-                <p data-jmpress="fade" id="orderlifecycle">resource <code>order</code> lifecycle<br/>
+                <p data-jmpress="fade after 1ms #resourceorder" id="orderlifecycle">resource <code>order</code> lifecycle<br/>
                     <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
                 </p>                                
                 <p data-jmpress="fade">...and how about transitional links ?</p>
                 <br clear="all"/>
             </div>
 
+            <div id="dapexamplemediatypes" class="step" data-x="7000" data-y="7000">
+                <header>media types</header>                
+            </div>
             <div id="dapexamplerelations" class="step" data-x="8150" data-y="7000">
-                <p>relations</p>
+                <header>link relation</header>
+                <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>                  
                 <dl>
                  <dt>quote</dt>
                  <dd>
                   <ul class="list-unstyled">
-                    <li data-jmpress="fade after 5s">rel = <code>/linkrels/quote/create</code></li>
+                    <li data-jmpress="fade after 1s step">rel = <code>/linkrels/quote/create</code></li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/edit</code></li>
                   </ul>
-                  </dd>
+                 </dd>
+                </dl>   
+                <br clear="all"/>
+                <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>            
+                <dl> 
                   <dt>order</dt>
                   <dd>
                    <ul class="list-unstyled">
-                    <li data-jmpress="fade after 3s">rel = <code>/linkrels/order/confirm</code></li>
-                    <li data-jmpress="fade after 3s">rel = <code>/linkrels/order/pay</code></li>
-                    <li data-jmpress="fade after 3s">rel = <code>/linkrels/order/cancel</code></li>
-                    <li data-jmpress="fade after 3s">rel = <code>/linkrels/order/reopen</code></li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/confirm</code></li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/pay</code></li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/cancel</code></li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/reopen</code></li>
                    </ul>
                   </dd>
-                </dl>
+                </dl>                
+            </div>
+            <div id="dapexamplehttp" class="step" data-x="9300" data-y="7000">
+                <header>HTTP idoms</header>
             </div>
                
             <div id="stateless" class="step slide" data-x="2400" data-y="7000">
