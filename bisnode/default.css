@@ -2,6 +2,8 @@
   --- BISNODE impress.js stylesheet
 */
 
+@import("../jmpress/demo.css");
+
 body{
     width:1024px;
     font-size: 28px;
@@ -344,8 +346,10 @@ pre.shell {
     counter-increment: slideIdx;
 }
 
-.step{
+.step {
     width:1024px; 
+}
+.step:not(.active) {       
     opacity: 0.3; 
     z-index: -1;
 }
@@ -489,9 +493,8 @@ ul.agenda li::before, ol.agenda li::before {
 ol.agenda li::before {
    content: counter(li);      
 }
-
 ul.agenda li::after , ol.agenda li::after {
-   
+    
   font-family: 'FontAwesome';
   font-size: 48px;
   content: '\f101';
@@ -509,25 +512,33 @@ ul.list-unstyled li::before , ol.list-unstyled li::before {
     content:'';
 }
 
-ul.agenda li:nth-child(1):before , ul.agenda li:nth-child(1):after {
+.questions li:nth-child(1):before, .agenda li:nth-child(1):before , .agenda li:nth-child(1):after {
    color: rgb(189,207,49);
 }
-.agenda li:nth-child(2):before , .agenda li:nth-child(2):after  {    
+.questions li:nth-child(2):before, .agenda li:nth-child(2):before, .agenda li:nth-child(2):after  {    
     color: rgb(54,111,54);
 }
-.agenda li:nth-child(3):before , .agenda li:nth-child(3):after {
+.questions li:nth-child(3):before, .agenda li:nth-child(3):before, .agenda li:nth-child(3):before, .agenda li:nth-child(3):after {
     color: rgb(251,195,17);
 }
-.agenda li:nth-child(4):before, .agenda li:nth-child(4):after {
+.questions li:nth-child(4):before, .agenda li:nth-child(4):before, .agenda li:nth-child(4):after {
     color:rgb(57,187,236);
 }
-.agenda li:nth-child(5):before, .agenda li:nth-child(5):after {
+.questions li:nth-child(5):before, .agenda li:nth-child(5):before, .agenda li:nth-child(5):after {
     color: rgb(204,204,204);
 }
-.agenda li:nth-child(6):before , .agenda li:nth-child(6):after {
+.agenda li:nth-child(6):before,.agenda li:nth-child(6):before, .agenda li:nth-child(6):after {
     color:rgb(127,127,127);
 }
 
+ul.questions{
+    list-style: none;
+}
+ul.questions li:before {
+    content: '\f128';/*'\f059';*/
+    font-family: 'FontAwesome';
+    margin-right: 5px;
+}
 table.table {
     table-layout: fixed;
 }
@@ -547,6 +558,7 @@ td, th {
     white-space: nowrap;
     min-height: 100%;
 }
+
 /* ==== print styles =======================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
