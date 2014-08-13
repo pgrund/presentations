@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+        <meta name="viewport" content="width=device-width, maximum-scale=4.0, initial-scale=1.0, user-scalable=yes"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta http-equiv="expires" content="0">
 
@@ -22,7 +22,7 @@
         <script src="../impress/bootstrap.min.js"></script>        
                 
         <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>
-        <script type="text/javascript" src="../jmpress/plugins/presentations.navi.js"></script>
+        <!--script type="text/javascript" src="../jmpress/plugins/presentations.navi.js"></script-->
 
         <title>RESTful HTTP</title> 
         <!--meta name="date" content="2013-05-02"/-->
@@ -316,19 +316,19 @@
                 <footer></footer>
             </div>
             <div id="resourcetypes" class="step slide" data-x="3400" data-y="2000" data-z="-500" data-rotate-y="45">
-                <h1 class="header">Entity Resource</h1>
+                <header>Entity Resource</header>
                 <ul class="list-unstyled">
                     <li>also called <strong>Item Resource</strong></li>
                     <li>independent, adressable information unit with its own lifecycle</li>
                     <li><code class="example">http://localhost:8080/orders/1234</code></li>
                 </ul>
-                <h1 class="header">Collection Resource</h1>
+                <header>Collection Resource</header>
                 <ul class="list-unstyled">
                     <li>collection of entity resources of the same kind</li>
                     <li>usually supply actions for searching, creating or adding items to the collection</li>
                     <li><code class="example">http://localhost:8080/orders</code></li>
                 </ul>
-                <h1 class="header">Activity Resource</h1>
+                <header>Activity Resource</header>
                 <ul class="list-unstyled">
                     <li>actions and activities can also be designed as resources, by making <strong>nouns</strong> from <strong>actions</strong></li>
                 </ul>
@@ -421,6 +421,7 @@
                         </code>
                     </li>
                 </ul>
+                <p data-jmpress="appear">Do you need to know ?</p>
             </div>
             <div id="methods" class="step slide" data-x="2400" data-y="4000">
                 <header>Methods</header>
@@ -666,24 +667,24 @@
                     <li>usually as <code>application/vnd.<em>&lt;vendortype&gt;</em>[+<em>&lt;subtype&gt;</em>]</code></li>
                     <li><em>vendortype</em> - free of choice</li>
                     <li><em>subtype</em> - optional, usually existing type (IANA)</li>
-                    <li>examples:<br/>
-                        <dl class="pull-left">
-                            <dt>Microsoft</dt>
-                            <dd><code>application/vnd.ms-excel</code></dd>
-                            <dd><code>application/vnd.ms-powerpoint</code></dd>
-                            <dt>Google Earth</dt>
-                            <dd><code>application/vnd.google-earth.kmz</code></dd>
-                            <dd><code>application/vnd.google-earth.kml+xml</code></dd>                            
-                        </dl>
-                        <dl class="pull-right">
-                            <dt>sandbox</dt>
-                            <dd><code>application/vnd.sandbox-v1+xml</code></dd>
-                            <dd><code>application/vnd.sandbox-v2+xml</code></dd>
-                            <dd><code>application/vnd.sandbox-v3+xml</code></dd>
-                        </dl>
-                    </li>
                 </ul>
                 <footer></footer>            
+            </div>
+            <div id="contentvndexample" class="step slide" data-x="500" data-y="5000" data-z="-2000">
+                <header>examples</header>
+                <dl>
+                    <dt>Microsoft</dt>
+                    <dd><code>application/vnd.ms-excel</code></dd>
+                    <dd><code>application/vnd.ms-powerpoint</code></dd>
+                    <dt>Google Earth</dt>
+                    <dd><code>application/vnd.google-earth.kmz</code></dd>
+                    <dd><code>application/vnd.google-earth.kml+xml</code></dd>
+                    <dt>sandbox</dt>
+                    <dd><code>application/vnd.sandbox-v1+xml</code></dd>
+                    <dd><code>application/vnd.sandbox-v2+xml</code></dd>
+                    <dd><code>application/vnd.sandbox-v3+xml</code></dd>
+                </dl>
+                <footer></footer>
             </div>
             <div id="vndexample" class="step" data-x="850" data-y="5000" data-z="-1500" data-rotate-z="60" data-rotate-y="270">
                 <h1>example: <code>http://localhost:8080/orders</code></h1>
@@ -754,7 +755,7 @@
                 </h1>
                 <footer></footer>
             </div>
-            <div id="dap" class="step slide" data-x="3550" data-y="6000">
+            <div id="dap" class="step slide" data-x="3550" data-y="6000" data-view-port-zoomable="10" data-view-port-max-scale="4">
                 <header>Domain Application Protocol (DAP)</header>                
                 <ol>
                     <li>Model applications in terms of <em>application state machine</em></li>
@@ -766,45 +767,49 @@
                 </p>
                 <footer></footer>
             </div>          
-            <div id="dapexamplestatemachine" class="step" data-x="4700" data-y="6000">              
+            <div id="dapexamplestatemachine" class="step text-center" data-x="4700" data-y="6000" data-view-port-zoomable="10" data-view-port-max-scale="4">
                 <header>application state machine</header>
                 <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine">                
             </div>
-            <div id="dapexampleresources" class="step" data-x="5850" data-y="6000">            
+            <div id="dapexampleresources" class="step" data-x="5850" data-y="6000"
+                data-view-port-zoomable="10" data-view-port-max-scale="4">
                 <header>resource lifecycles</header>
                 <div class="pull-left text-center">
                     <ul class="list-unstyled">
                         <li>&nbsp;</li>
                         <li>resources</li>
-                        <li><code>quote</code></li>         
-                        <li id="resourceorder" data-jmpress="fade"><code>order</code></li>
-                        <li data-jmpress="fade"><code>payment</code><span data-jmpress="zoom after 3s prev"><i class="fa fa-question fa-2x red"></i></span></li>
+                        <li><code>quote</code> <a href="#/resourcetypes" data-jmpress="fade after 2s step">entity, collection</a></li>
+                        <li id="resourceorder" data-jmpress="fade"><code>order</code> <a href="#/resourcetypes" data-jmpress="fade after 2s prev">entity, collection</a></li>
+                        <li data-jmpress="fade"><code>payment</code> <span data-jmpress="fade after 2s prev">subresource <em>/order</em></span></li>
                     </ul>
                 </div>
                  <span class="box pull-left">&nbsp;</span>
-                <p class="pull-left">resource <code>quote</code> lifecycle<br/>
+                <p class="pull-left"><code>quote</code><br/>
                     <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
                 </p>
                 <span class="box pull-left">&nbsp;</span>
-                <p data-jmpress="fade after 1ms #resourceorder" id="orderlifecycle">resource <code>order</code> lifecycle<br/>
+                <p data-jmpress="fade after 1ms #resourceorder" id="orderlifecycle"><code>order</code><br/>
                     <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
                 </p>                                
-                <p data-jmpress="fade">...and how about transitional links ?</p>
+                <p data-jmpress="fade">...and how about transitions ?</p>
                 <br clear="all"/>
             </div>
-
-            <div id="dapexamplemediatypes" class="step" data-x="7000" data-y="7000">
-                <header>media types</header>                
-            </div>
-            <div id="dapexamplerelations" class="step" data-x="8150" data-y="7000">
-                <header>link relation</header>
+            <div id="dapexamplerelations" class="step" data-x="7000" data-y="7000">
+                <header>associate resources and link relations</header>
                 <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>                  
                 <dl>
                  <dt>quote</dt>
                  <dd>
                   <ul class="list-unstyled">
-                    <li data-jmpress="fade after 1s step">rel = <code>/linkrels/quote/create</code></li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/edit</code></li>
+                    <li data-jmpress="fade after 1s step">rel = <code>/linkrels/quote/create</code>
+                        <em>/quotes <i class="fa fa-arrow-right"></i> /quote</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/edit</code>
+                        <em>/quote <i class="fa fa-arrow-right"></i> /quote</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/confirm</code>
+                        <em>/quote <i class="fa fa-arrow-right green"></i> /order</em>
+                    </li>
                   </ul>
                  </dd>
                 </dl>   
@@ -813,17 +818,84 @@
                 <dl> 
                   <dt>order</dt>
                   <dd>
-                   <ul class="list-unstyled">
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/confirm</code></li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/pay</code></li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/cancel</code></li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/reopen</code></li>
+                   <ul class="list-unstyled">                    
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/pay</code>
+                        <em>/order <i class="fa fa-arrow-right"></i> /order</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/cancel</code>
+                        <em>/order <i class="fa fa-arrow-right"></i> /order</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/reopen</code>
+                        <em>/order <i class="fa fa-arrow-right green"></i> /quote</em>
+                    </li>
                    </ul>
                   </dd>
                 </dl>                
             </div>
-            <div id="dapexamplehttp" class="step" data-x="9300" data-y="7000">
-                <header>HTTP idoms</header>
+            
+            <div id="dapexamplehttp" class="step" data-x="8150" data-y="7000">
+                <header>HTTP idioms</header>
+                <dl class="pull-left">
+                   <dt>
+                    <code>/linkrels/quote/create</code>
+                    <i class="fa fa-long-arrow-right"></i>
+                    <em>/quotes</em></dt>                    
+                    <dd>
+                        <p>add new quote to list of quotes ...</p>
+                        <ul class="questions">
+                            <li><a href="#/methods">idempotent - safe</a></li>
+                            <li><a href="#/methodssum">select verb</a></li>
+                            <li data-jmpress="fade after 5s step"><a href="#/putvspost">PUT vs. POST</a></li>
+                        </ul>    
+                        <p data-jmpress="zoom">
+                            <i class="fa fa-arrow-circle-o-right green fa-2x"></i>
+                            <code class="fa-2x">POST</code>
+                        </p>
+                    </dd>
+                </dl>       
+                <span>&nbsp;</span>
+                <dl data-jmpress="drive-left">
+                   <dt>
+                    <code>/linkrels/order/pay</code>
+                    <i class="fa fa-long-arrow-right"></i>
+                    <em>/order/payment</em></dt>                    
+                    <dd>
+                        <p>status update(paid) of order ...</p>
+                        <ul class="questions">
+                            <li><a href="#/methods">idempotent - safe</a> <i class="fa fa-arrow-circle-o-right green"></i> idempotent</li>
+                            <li><a href="#/methodssum">select verb</a> <i class="fa fa-arrow-circle-o-right green"></i> PUT</li>  
+                            <li>security <i class="fa fa-arrow-circle-o-right green"></i> basic auth/digest/...</li>
+                        </ul>                        
+                    </dd>
+                </dl>
+            </div>
+
+
+            <div id="dapexamplemediatypes" class="step" data-x="9300" data-y="7000">
+                <header>media types</header>
+                <p>How to find needed representations ?</p>
+                <dl class="pull-left">                    
+                    <dt>... asking clients:</dt>
+                    <dd>
+                        <ul>
+                            <li>web frontend? <i class="fa fa-arrow-right"></i> <code>json</code></li>
+                            <li>other services? <i class="fa fa-arrow-right"></i> <code>xml</code></li>
+                        </ul>    
+                    </dd>
+                    <dt>... ask for use cases:</dt>
+                    <dd>
+                        <ul>
+                            <li>human readable <i class="fa fa-arrow-right"></i> <code>text</code>, <code>html</code></li>
+                            <li>hypermedia (links) <i class="fa fa-arrow-right"></i> <code>uri-list</code>, <code><a href="http://stateless.co/hal_specification.html">hal</a></code></li>
+                        </ul>
+                    </dd>
+                </dl>   
+                <dl>
+                    <dt>multiple xml representations ...</dt>
+                    <dd>custom vendor types (including schema) <i class="fa fa-arrow-right"></i> <code>application/vnd.sandbox.order+xml</code>, <br/><code>application/vnd.sandbox.payment+json</code></dd>
+                    <dt>multiple version supported at the same time ...</dt>
+                    <dd>custom vendor types <i class="fa fa-arrow-right"></i> <code>application/vnd.sandbox.order-v1+xml</code></dd>
+                </dl>
             </div>
                
             <div id="stateless" class="step slide" data-x="2400" data-y="7000">
@@ -1321,17 +1393,54 @@ Location: slots/1234/appointment
             
             var jmpress = this;
             // our main configuration
-            var config = {       
+            var config = {    
+                viewPort: {    
+                    width: 900,
+                    maxScale: 4,
+                    initalScale: 1,
+                    zoomable: false
+                    
+                },
                 presentationMode: {
-                    notesUrl: 'index.notes.html'
+                  use: true,
+                  url: "./presentation-screen.html", 
+                  notesUrl: "./index.notes.html"
                 }
             };
 
           
             // enable ESC to toggle jmpress
             $(this).jmpress('toggle', 27, config, true);
-            $(this).jmpress('break', config);
-            $(this).jmpress('print', config);
+           // $(this).jmpress('break', config);
+           // $(this).jmpress('print', config);
+            $("#breakbutton").click(function() {     
+                var c = $("#counter");
+                var b = $("#break");
+                c.html("");              
+                c.countdown({
+                    step: 5,
+                    format: 'mm:ss',
+                    startTime: '05:00',
+                    timerEnd: function() {
+                        b.modal("hide");
+                    },
+                    image: "../bisnode/img/digits.png"
+                });     
+                b.modal("show");
+            });
+
+            // print button
+            $("#print").click(function(){
+                var j = $(jmpress);
+                if (j.jmpress("initialized")) {
+                   j.jmpress("deinit");                
+                   window.print();                  
+                   j.jmpress(config);
+                } else {
+                    window.print();
+                }
+
+            });
 
             var d = new Date();
             var m = $("meta[name=date]");
