@@ -22,8 +22,10 @@
             modal: "#break",
             counter: "#counter"
         },
-        date: {
-            meta: "meta[name=date]"
+        meta: {
+            footerselect: ".slide footer",
+            date: "meta[name=date]",
+            authors: "meta[name=author]"
         }
 	};
 
@@ -59,8 +61,7 @@
     $.jmpress("register", "break", function(config, eleID) {
         var jmpress = this;
 
-        var elementID = getElementID(eleID, $(jmpress).jmpress("settings").presentations.break.button);
-        console.log(elementID);
+        var elementID = getElementID(eleID, $(jmpress).jmpress("settings").presentations.break.button);        
 
         if ($(elementID)) {
             $(elementID).click(function() {
@@ -83,11 +84,13 @@
         }
     });
 
-    $.jmpress("register" , "dateFooter", function(eleID){
+    $.jmpress("register" , "footerHandling", function(){
         var jmpress = this;
 
+        var f = $($(jmpress).jmpress("settings").presentations.meta.footerselect);
+
         var d = new Date();
-        var m = $($(jmpress).jmpress("settings").presentations.date.meta);
+        var m = $($(jmpress).jmpress("settings").presentations.meta.date);        
         
         var footerDate = d.getFullYear() + "-"
                 + ((d.getMonth() + 1) < 10 ? "0" + (d.getMonth() + 1) : d.getMonth()) + "-"
@@ -95,9 +98,19 @@
 
         if ( m && m.attr("content")) {
             footerDate = m.attr("content");
+        }        
+        $(f).prepend("       " + footerDate + "          ");      
+        console.log("footer:date set to '" + footerDate + "'"); 
+
+        var a = $($(jmpress).jmpress("settings").presentations.meta.authors); 
+        var authors = $(a).map(function(idx, e){    
+                    return e.content;
+                }).get().join(",");
+        if(authors != "") {
+            $(f).attr("data-author", authors);
+            console.log("footer:author set to '" + $(".slide footer").attr("data-author")+"'");
         }
         
-        $("footer").prepend("       " + footerDate + "          ");
     });
 
 }(jQuery, document, window));
