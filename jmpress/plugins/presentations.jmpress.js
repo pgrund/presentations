@@ -64,20 +64,33 @@
         var elementID = getElementID(eleID, $(jmpress).jmpress("settings").presentations.break.button);        
 
         if ($(elementID)) {
-            $(elementID).click(function() {
-                var c = $("#counter");
-                var b = $("#break");
-                c.html("");
-                c.countdown({
-                    step: 5,
-                    format: 'mm:ss',
-                    startTime: '05:00',
-                    timerEnd: function() {
-                        b.modal("hide");
-                    },
-                    image: "../bisnode/img/digits.png"
-                });
-                b.modal("show");            
+            $(elementID).click(function() {                
+                var c = $(
+                    $(jmpress).jmpress("settings").presentations.break.counter
+                    );
+                var b = $(
+                    $(jmpress).jmpress("settings").presentations.break.modal
+                    ); 
+                
+                if(c){
+                    c.html("");
+                    c.countdown({
+                        step: 5,
+                        format: 'mm:ss',
+                        startTime: '05:00',
+                        timerEnd: function() {
+                            b.modal("hide");
+                        },
+                        image: "../bisnode/img/digits.png"
+                    });
+                } else {
+                    console.warn("counter not found: " + c);
+                }
+                if(b){
+                    b.modal("show");            
+                } else {
+                    console.warn("modal not found: " + b);
+                }
             });
         }else{
             console.error("no element found for " + elementID + " !!!");
