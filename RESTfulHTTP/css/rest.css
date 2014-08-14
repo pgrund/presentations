@@ -211,9 +211,7 @@ table.hfactor td.empty {
     font-weight: bold;    
 }
 
-.slide footer:after {
-    content: "        Peter Grund"; 
-}
+
 .present .showup10 {
     visibility: visible;
     opacity: 1;
@@ -233,6 +231,7 @@ code.example {
     padding: 2px 30px 2px 30px;
     font-size: inherit;    
 }
+
 @media print {    
     #actUC3 {
         opacity: 1;

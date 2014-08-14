@@ -209,6 +209,10 @@ body{
     content: counter(slideIdx) "          ";    
 }
 
+.slide footer:after {
+    content: attr(data-author);
+}
+
 .slide.columns {
 
 }
@@ -426,10 +430,10 @@ table { font-size: 24px; }
 
 /* ======= new Bisnode design ===== */
 
-.hintegrund1 {
+.hintergrund1 {
     background-color: rgb(255,255,255);
 }
-.hintegrund2 {
+.hintergrund2 {
     background-color: rgb(238,236,225);
 }
 .akzent1 {
