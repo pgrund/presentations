@@ -26,6 +26,8 @@
 
         <title>RESTful HTTP</title> 
         <!--meta name="date" content="2013-05-02"/-->
+        <meta name="author" content="Peter Grund"/>        
+        
     </head>
     <body>
 
@@ -38,7 +40,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>   
-                    <a href="#/start" class="navbar-brand">Start</a>
+                    <a href="#/start" class="navbar-brand"><i class="fa fa-lg fa-home" title="Start"></i></a>
                 </div>                
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav">
@@ -1442,7 +1444,7 @@ Location: slots/1234/appointment
             
             var jmpress = this;
             // our main configuration
-            var config = {    
+            var config = { 
                 viewPort: {    
                     width: 1300,
                     maxScale: 4,
@@ -1469,13 +1471,14 @@ Location: slots/1234/appointment
             // enable print button
             $(this).jmpress('print', config);
             // enable footer date appending
-            $(this).jmpress('dateFooter');
+            $(this).jmpress('footerHandling');
  
         });
  
 
         // start the presentation!
         $('#impress').jmpress('rest');
+        
         </script>        
 
     </body>
