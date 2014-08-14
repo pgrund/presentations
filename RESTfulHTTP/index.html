@@ -22,7 +22,7 @@
         <script src="../impress/bootstrap.min.js"></script>        
                 
         <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>
-        <!--script type="text/javascript" src="../jmpress/plugins/presentations.navi.js"></script-->
+        <script type="text/javascript" src="../jmpress/plugins/presentations.jmpress.js"></script>
 
         <title>RESTful HTTP</title> 
         <!--meta name="date" content="2013-05-02"/-->
@@ -73,11 +73,10 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">H-Factor<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hands On<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#/hfactoroverview">Overview</a></li>
-                                <li><a href="#/hfactorlink">link support</a></li>
-                                <li><a href="#/hfactorcontrol">control data support</a></li>
+                                <li><a href="#/dap">Domain Application Protocol</a></li>
+                                <li><a href="#/hfactoroverview">H-Factor</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -299,7 +298,7 @@
                 </ul>
                 <br/>
                  <p>basic principles of RESTful HTTP:</p>
-                        <ul class="agenda">
+                        <ul class="agenda item">
                             <li>resources and their unique identification</li>
                             <li>standardized methods</li>
                             <li>representation of resources</li>
@@ -760,149 +759,21 @@
                 </h1>
                 <footer></footer>
             </div>
-            <div id="dap" class="step slide" data-x="3550" data-y="6000" data-view-port-zoomable="10" data-view-port-max-scale="4">
-                <header>Domain Application Protocol (DAP)</header>                
-                <ol>
-                    <li>Model applications in terms of <em>application state machine</em></li>
-                    <li>Implement them in terms of <em>resource lifecycles</em> and rules that <em>associate resources</em></li>
-                    <li>Advertise and execute them using <em>media types</em>, <em>link relation values</em> and <em>HTTP idioms</em></li>
-                </ol>
-                <p class="text-center">example: <span ><i class="fa fa-shopping-cart"></i> shopping cart</span><br/>
-                    <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine" data-jmpress="appear"/>
-                </p>
-                <footer></footer>
-            </div>          
-            <div id="dapexamplestatemachine" class="step text-center" data-x="4700" data-y="6000" data-view-port-zoomable="10" data-view-port-max-scale="4">
-                <header>application state machine</header>
-                <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine">                
-            </div>
-            <div id="dapexampleresources" class="step" data-x="5850" data-y="6000"
-                data-view-port-zoomable="10" data-view-port-max-scale="4">
-                <header>resource lifecycles</header>
-                <div class="pull-left text-center">
-                    <ul class="list-unstyled">
-                        <li>&nbsp;</li>
-                        <li>resources</li>
-                        <li><code>quote</code> <a href="#/resourcetypes" data-jmpress="fade after 2s step">entity, collection</a></li>
-                        <li id="resourceorder" data-jmpress="fade"><code>order</code> <a href="#/resourcetypes" data-jmpress="fade after 2s prev">entity, collection</a></li>
-                        <li data-jmpress="fade"><code>payment</code> <span data-jmpress="fade after 2s prev">subresource <em>/order</em></span></li>
-                    </ul>
-                </div>
-                 <span class="box pull-left">&nbsp;</span>
-                <p class="pull-left"><code>quote</code><br/>
-                    <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
-                </p>
-                <span class="box pull-left">&nbsp;</span>
-                <p data-jmpress="fade after 1ms #resourceorder" id="orderlifecycle"><code>order</code><br/>
-                    <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
-                </p>                                
-                <p data-jmpress="fade">...and how about transitions ?</p>
-                <br clear="all"/>
-            </div>
-            <div id="dapexamplerelations" class="step" data-x="7000" data-y="7000">
-                <header>associate resources and link relations</header>
-                <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>                  
-                <dl>
-                 <dt>quote</dt>
-                 <dd>
-                  <ul class="list-unstyled">
-                    <li data-jmpress="fade after 1s step">rel = <code>/linkrels/quote/create</code>
-                        <em>/quotes <i class="fa fa-arrow-right"></i> /quote</em>
-                    </li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/edit</code>
-                        <em>/quote <i class="fa fa-arrow-right"></i> /quote</em>
-                    </li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/confirm</code>
-                        <em>/quote <i class="fa fa-arrow-right green"></i> /order</em>
-                    </li>
-                  </ul>
-                 </dd>
-                </dl>   
-                <br clear="all"/>
-                <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>            
-                <dl> 
-                  <dt>order</dt>
-                  <dd>
-                   <ul class="list-unstyled">                    
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/pay</code>
-                        <em>/order <i class="fa fa-arrow-right"></i> /order</em>
-                    </li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/cancel</code>
-                        <em>/order <i class="fa fa-arrow-right"></i> /order</em>
-                    </li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/reopen</code>
-                        <em>/order <i class="fa fa-arrow-right green"></i> /quote</em>
-                    </li>
-                   </ul>
-                  </dd>
-                </dl>                
-            </div>
             
-            <div id="dapexamplehttp" class="step" data-x="8150" data-y="7000">
-                <header>HTTP idioms</header>
-                <dl class="pull-left">
-                   <dt>
-                    <code>/linkrels/quote/create</code>
-                    <i class="fa fa-long-arrow-right"></i>
-                    <em>/quotes</em></dt>                    
-                    <dd>
-                        <p>add new quote to list of quotes ...</p>
-                        <ul class="questions">
-                            <li><a href="#/methods">idempotent - safe</a></li>
-                            <li><a href="#/methodssum">select verb</a></li>
-                            <li data-jmpress="fade after 5s step"><a href="#/putvspost">PUT vs. POST</a></li>
-                        </ul>    
-                        <p data-jmpress="zoom">
-                            <i class="fa fa-arrow-circle-o-right green fa-2x"></i>
-                            <code class="fa-2x">POST</code>
-                        </p>
-                    </dd>
-                </dl>       
-                <span>&nbsp;</span>
-                <dl data-jmpress="drive-left">
-                   <dt>
-                    <code>/linkrels/order/pay</code>
-                    <i class="fa fa-long-arrow-right"></i>
-                    <em>/order/payment</em></dt>                    
-                    <dd>
-                        <p>status update(paid) of order ...</p>
-                        <ul class="questions">
-                            <li><a href="#/methods">idempotent - safe</a> <i class="fa fa-arrow-circle-o-right green"></i> idempotent</li>
-                            <li><a href="#/methodssum">select verb</a> <i class="fa fa-arrow-circle-o-right green"></i> PUT</li>  
-                            <li>security <i class="fa fa-arrow-circle-o-right green"></i> basic auth/digest/...</li>
-                        </ul>                        
-                    </dd>
-                </dl>
+            <div id="links" class="step slide" data-x="" data-y="">
+                <header>Link Header</header>
+
+                <footer></footer>
+            </div>
+            <div id="structuallinks" class="step slide" data-x="" data-y="">
+                <header>Structural Links</header>
+                <footer></footer>
+            </div>
+            <div id="transitionallinks" class="step slide" data-x="" data-y="">
+                <header>Transitional Links</header>
+                <footer></footer>
             </div>
 
-
-            <div id="dapexamplemediatypes" class="step" data-x="9300" data-y="7000">
-                <header>media types</header>
-                <p>How to find needed representations ?</p>
-                <dl class="pull-left">                    
-                    <dt>... asking clients:</dt>
-                    <dd>
-                        <ul>
-                            <li>web frontend? <i class="fa fa-arrow-right"></i> <code>json</code></li>
-                            <li>other services? <i class="fa fa-arrow-right"></i> <code>xml</code></li>
-                        </ul>    
-                    </dd>
-                    <dt>... ask for use cases:</dt>
-                    <dd>
-                        <ul>
-                            <li>human readable <i class="fa fa-arrow-right"></i> <code>text</code>, <code>html</code></li>
-                            <li>hypermedia (links) <i class="fa fa-arrow-right"></i> <code>uri-list</code>, <code><a href="http://stateless.co/hal_specification.html">hal</a></code></li>
-                        </ul>
-                    </dd>
-                </dl>   
-                <dl>
-                    <dt>multiple xml representations ...</dt>
-                    <dd>custom vendor types (including schema) <i class="fa fa-arrow-right"></i> <code>application/vnd.sandbox.order+xml</code>, <br/><code>application/vnd.sandbox.payment+json</code></dd>
-                    <dt>multiple version supported at the same time ...</dt>
-                    <dd>custom vendor types <i class="fa fa-arrow-right"></i> <code>application/vnd.sandbox.order-v1+xml</code></dd>
-                </dl>
-            </div>
-               
             <div id="stateless" class="step slide" data-x="2400" data-y="7000">
                 <header>Stateless</header>
                 <blockquote>... communication must be stateless in nature, ... such that each request from client to server must contain all of the <em>information necessary</em> to understand the request, and cannot take advantage of any <em>stored context on the server</em>. 
@@ -1171,13 +1042,186 @@ Location: slots/1234/appointment
 &lt;/appointment&gt;</pre>
                 <br clear="all"/>
             </div>
-            <!-- ##### H Factor #### -->
-            <div id="hfactor" class="step slide chapter blue" data-x="4800">
-                <header>H-Factor</header>   
+            
+            <!-- ##### Hands On #### -->
+            
+            <div id="handson" class="step slide chapter blue" data-x="4800">
+                <header>Hands On</header>   
                 <footer></footer>
             </div>
+            <div id="dap" class="step slide" data-x="3550" data-y="6000" data-view-port-zoomable="10" data-view-port-max-scale="4">
+                <header>Domain Application Protocol (DAP)</header>                
+                <ol>
+                    <li>Model applications in terms of <em>application state machine</em></li>
+                    <li>Implement them in terms of <em>resource lifecycles</em> and rules that <em>associate resources</em></li>
+                    <li>Advertise and execute them using <em>media types</em>, <em>link relation values</em> and <em>HTTP idioms</em></li>
+                </ol>
+                <p class="text-center">example: <span ><i class="fa fa-shopping-cart"></i> shopping cart</span><br/>
+                    <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine" data-jmpress="appear"/>
+                </p>
+                <footer></footer>
+            </div>          
+            <div id="dapexamplestatemachine" class="step text-center" data-x="4700" data-y="6000" data-view-port-zoomable="10" data-view-port-max-scale="4">
+                <header>application state machine</header>
+                <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine">                
+            </div>
+            <div id="dapexampleresources" class="step" data-x="5850" data-y="6000"
+                data-view-port-zoomable="10" data-view-port-max-scale="4">
+                <header>resource lifecycles</header>
+                <div class="pull-left text-center">
+                    <ul class="list-unstyled">
+                        <li>&nbsp;</li>
+                        <li>resources</li>
+                        <li><code>quote</code> <a href="#/resourcetypes" data-jmpress="fade after 2s step">entity, collection</a></li>
+                        <li id="resourceorder" data-jmpress="fade"><code>order</code> <a href="#/resourcetypes" data-jmpress="fade after 2s prev">entity, collection</a></li>
+                        <li data-jmpress="fade"><code>payment</code> <span data-jmpress="fade after 2s prev">subresource <em>/order</em></span></li>
+                    </ul>
+                </div>
+                 <span class="box pull-left">&nbsp;</span>
+                <p class="pull-left"><code>quote</code><br/>
+                    <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
+                </p>
+                <span class="box pull-left">&nbsp;</span>
+                <p data-jmpress="fade after 1ms #resourceorder" id="orderlifecycle"><code>order</code><br/>
+                    <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
+                </p>                                
+                <p data-jmpress="fade">...and how about transitions ?</p>
+                <br clear="all"/>
+            </div>
+            <div id="dapexamplerelations" class="step" data-x="7000" data-y="7000">
+                <header>associate resources and link relations</header>
+                <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>                  
+                <dl>
+                 <dt>quote</dt>
+                 <dd>
+                  <ul class="list-unstyled">
+                    <li data-jmpress="fade after 1s step">rel = <code>/linkrels/quote/create</code>
+                        <em>/quotes <i class="fa fa-arrow-right"></i> /quote</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/edit</code>
+                        <em>/quote <i class="fa fa-arrow-right"></i> /quote</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/confirm</code>
+                        <em>/quote <i class="fa fa-arrow-right green"></i> /order</em>
+                    </li>
+                  </ul>
+                 </dd>
+                </dl>   
+                <br clear="all"/>
+                <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>            
+                <dl> 
+                  <dt>order</dt>
+                  <dd>
+                   <ul class="list-unstyled">                    
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/pay</code>
+                        <em>/order <i class="fa fa-arrow-right"></i> /order</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/cancel</code>
+                        <em>/order <i class="fa fa-arrow-right"></i> /order</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/reopen</code>
+                        <em>/order <i class="fa fa-arrow-right green"></i> /quote</em>
+                    </li>
+                   </ul>
+                  </dd>
+                </dl>          
+                <br clear="all"/>      
+            </div>
+            
+            <div id="dapexamplehttp" class="step" data-x="8150" data-y="7000">
+                <header>HTTP idioms</header>
+                
+                <dl class="pull-left">
+                   <dt>
+                    <code>/linkrels/quote/create</code>
+                    <i class="fa fa-long-arrow-right"></i>
+                    <em>/quotes</em>
+                   </dt>                    
+                    
+                   <dd>
+                        <p>add new quote to list of quotes ...</p>
+                        <ul class="questions item">
+                            <li><a href="#/methods">idempotent - safe</a></li>
+                            <li><a href="#/methodssum">select verb</a></li>
+                            <li data-jmpress="fade after 5s step"><a href="#/putvspost">PUT vs. POST</a></li>                            
+                        </ul>    
+                        <p data-jmpress="zoom">
+                            <i class="fa fa-arrow-circle-o-right green fa-2x"></i>
+                            <code class="fa-2x">POST</code>
+                        </p>
+                    </dd>
+                </dl>       
+                <span>&nbsp;</span>
+                <dl data-jmpress="drive-left" class="pull-right">
+                   <dt>
+                    <code>/linkrels/order/pay</code>
+                    <i class="fa fa-long-arrow-right"></i>
+                    <em>/order/payment</em></dt>                    
+                    <dd>
+                        <p>status update(paid) of order ...</p>
+                        <ul class="questions item">
+                            <li><a href="#/methods">idempotent - safe</a> <i class="fa fa-arrow-circle-o-right green"></i> idempotent</li>
+                            <li><a href="#/methodssum">select verb</a> <i class="fa fa-arrow-circle-o-right green"></i> PUT</li>  
+                            <li>security <i class="fa fa-arrow-circle-o-right green"></i> basic auth/digest/...</li>
+                        </ul>                        
+                    </dd>
+                </dl>
+                <br clear="all"/>
+            </div>
+
+
+            <div id="dapexamplemediatypes" class="step" data-x="9300" data-y="7000">
+                <header>media types</header>
+                <p>How to find needed representations ?</p>
+                <div class="left">
+                <dl>                    
+                    <dt class="text1">... asking clients <i class="fa fa-users"></i></dt>
+                    <dd>
+                        <ul>
+                            <li>web frontend? <i class="fa fa-arrow-right"></i> <code>json</code></li>
+                            <li>other services? <i class="fa fa-arrow-right"></i> <code>xml</code></li>
+                        </ul>    
+                    </dd>
+                    <dt class="text2">... ask for use cases <i class="fa fa-female"></i> <i class="fa fa-male"></i></dt>
+                    <dd>
+                        <ul>
+                            <li>human readable</li>
+                            <li>
+                                <i class="fa fa-arrow-right"></i> <code>text</code>, <code>html</code>
+                            </li>
+                            <li>hypermedia (links)</li>
+                            <li>
+                             <i class="fa fa-arrow-right"></i> <code>uri-list</code>, <code><a href="http://stateless.co/hal_specification.html">hal</a></code>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="right">
+                <dl>
+                    <dt class="text3"><i class="fa fa-code"></i> multiple xml representations ...</dt>
+                    <dd>
+                        <ul>
+                            <li>custom vendor types (including schema)</li>
+                            <li>
+                             <i class="fa fa-arrow-right"></i> <code>application/vnd.sandbox.order+xml</code>, <br/><code>application/vnd.sandbox.payment+json</code>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt class="text4"><i class="fa fa-tags"></i> multiple versions (parallel) ...</dt>
+                    <dd>
+                        <ul>
+                            <li>custom vendor types</li>
+                            <li>
+                             <i class="fa fa-arrow-right"></i> <code>application/vnd.sandbox.order-v1+xml</code>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            </div>
             <div id="hfactoroverview" class="step slide" data-x="4800" data-y="-900">
-                <header>Overview</header>
+                <header>H-Factor</header>
                 <blockquote>The H Factor of a media-type is a <em>measurement of the level of hypermedia support</em> and sophistication of a media-type. H Factor values can be used to <em>compare and contrast media types</em> in order to aid in selecting the proper media-type(s) for your implementation.
                     <small class="text-right"><a href="http://amundsen.com/hypermedia/hfactor/" target="_blank">Mike Amundsen</a></small>
                 </blockquote>
@@ -1400,64 +1444,32 @@ Location: slots/1234/appointment
             // our main configuration
             var config = {    
                 viewPort: {    
-                    width: 900,
+                    width: 1300,
                     maxScale: 4,
                     initalScale: 1,
                     zoomable: false
                     
                 },
-                presentationMode: {
-                  use: true,
+                /*presentationMode: {
+                  use: false,
                   url: "./presentation-screen.html", 
                   notesUrl: "./index.notes.html"
+                },*/
+                presentations: {
+                    print: {
+                        button: "print"
+                    }
                 }
             };
 
-          
             // enable ESC to toggle jmpress
             $(this).jmpress('toggle', 27, config, true);
-           // $(this).jmpress('break', config);
-           // $(this).jmpress('print', config);
-            $("#breakbutton").click(function() {     
-                var c = $("#counter");
-                var b = $("#break");
-                c.html("");              
-                c.countdown({
-                    step: 5,
-                    format: 'mm:ss',
-                    startTime: '05:00',
-                    timerEnd: function() {
-                        b.modal("hide");
-                    },
-                    image: "../bisnode/img/digits.png"
-                });     
-                b.modal("show");
-            });
-
-            // print button
-            $("#print").click(function(){
-                var j = $(jmpress);
-                if (j.jmpress("initialized")) {
-                   j.jmpress("deinit");                
-                   window.print();                  
-                   j.jmpress(config);
-                } else {
-                    window.print();
-                }
-
-            });
-
-            var d = new Date();
-            var m = $("meta[name=date]");
-            var footerDate = d.getFullYear() + "-"
-                    + ((d.getMonth() + 1) < 10 ? "0" + (d.getMonth() + 1) : d.getMonth()) + "-"
-                    + ((d.getDate() < 10) ? "0" + d.getDate() : d.getDate());
-
-            if ( m && m.attr("content")) {
-                footerDate = m.attr("content");
-            }
-            
-            $("footer").prepend("       " + footerDate + "          ");
+            // enable break button
+            $(this).jmpress('break', config);
+            // enable print button
+            $(this).jmpress('print', config);
+            // enable footer date appending
+            $(this).jmpress('dateFooter');
  
         });
  
