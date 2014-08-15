@@ -99,7 +99,8 @@
 		/* ANIMATION */
 		,animation: {
 			transformOrigin: 'top left'
-			,transitionProperty: addComma(mapProperty(pfx('transform'))) + addComma(mapProperty(pfx('perspective'))) + 'opacity'
+			// see https://github.com/jmpressjs/jmpress.js/issues/157
+			//,transitionProperty: addComma(mapProperty(pfx('transform'))) + addComma(mapProperty(pfx('perspective'))) + 'opacity'
 			,transitionDuration: '1s'
 			,transitionDelay: '500ms'
 			,transitionTimingFunction: 'ease-in-out'
