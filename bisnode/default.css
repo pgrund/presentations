@@ -2,7 +2,6 @@
   --- BISNODE impress.js stylesheet
 */
 
-@import("../jmpress/demo.css");
 
 body{
     width:1024px;
@@ -149,30 +148,7 @@ body{
     text-transform: none;
 }
 
-.slide ul li, .slide ol li {
-    list-style: none;
-    margin-left: -1.1em;
-}
-.slide ul li::before {
-    content: "\002022";
-    padding-right: 0.7em;
-    color: rgb(132, 214, 57);
-}
-.slide ol {
-    counter-reset: olli;
-}
-.slide ol li {
-    list-style: none;
-    counter-increment: olli;
-}
-.slide ol li::before {
-    content: counter(olli);
-    padding-right: 0.7em;
-    color: rgb(132, 214, 57);
-}
-.slide ol ul li::before {
-    content: "\002022";
-}
+
 .slide footer {
     position: absolute;
     bottom: 35px;
@@ -292,6 +268,13 @@ body{
     text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
 }
 
+li.active a.text-success:hover{
+    color:green;
+}
+li.active a.text-error:hover {
+    color:red;
+}
+
 .slide a {
     color: inherit;
     text-decoration: none;
@@ -308,16 +291,14 @@ body{
     line-height: inherit;
     background-clip: border-box;
 }
-code, pre {
+pre code {
     font-size: 24px;
 }
+/*
 pre.code {
     background-image: url(./img/code-paper.jpg), url(./img/code-paper-x.jpg);
     background-repeat: repeat-y, repeat;
     background-clip: border-box;;
-}
-blockquote {
-    font-size: inherit;
 }
 pre.shell {
     font-size: 18px;
@@ -326,6 +307,21 @@ pre.shell {
     color: forestgreen;
     
     background-color: black;
+}
+
+*/
+blockquote {
+    font-size: inherit;
+}
+blockquote:before {
+    content:"\f10e";
+    font-family: 'FontAwesome';
+    font-size: xx-large;
+    color:lightgray;
+    margin-right: 5px;   
+}
+blockquote.none:before {
+    content:'';
 }
 .slide {
     display: block;
@@ -522,7 +518,7 @@ ul.agenda li::after , ol.agenda li::after {
   
   width: 55px;
   height: 53px;
-  display: inline;
+  display: inline;er
   
 }
 
@@ -530,22 +526,22 @@ ul.list-unstyled li::before , ol.list-unstyled li::before {
     content:'';
 }
 
-.item li:nth-child(1):before, .item dt:nth-child(1):before , .agenda li:nth-child(1):after {
+.item li:nth-child(1):before, .item dt:nth-of-type(1) , .agenda li:nth-child(1):after {
    color: rgb(189,207,49);
 }
-.item li:nth-child(2):before, .item dt:nth-child(2):before, .agenda li:nth-child(2):after  {    
+.item li:nth-child(2):before, .item dt:nth-of-type(2), .agenda li:nth-child(2):after  {    
     color: rgb(54,111,54);
 }
-.item li:nth-child(3):before, .item dt:nth-child(3):before, .agenda li:nth-child(3):before, .agenda li:nth-child(3):after {
+.item li:nth-child(3):before, .item dt:nth-of-type(3), .agenda li:nth-child(3):before, .agenda li:nth-child(3):after {
     color: rgb(251,195,17);
 }
-.item li:nth-child(4):before, .item dt:nth-child(4):before, .agenda li:nth-child(4):after {
+.item li:nth-child(4):before, .item dt:nth-of-type(4), .agenda li:nth-child(4):after {
     color:rgb(57,187,236);
 }
-.item li:nth-child(5):before, .item dt:nth-child(5):before, .agenda li:nth-child(5):after {
+.item li:nth-child(5):before, .item dt:nth-of-type(5), .agenda li:nth-child(5):after {
     color: rgb(204,204,204);
 }
-.item li:nth-child(6):before, .item dt:nth-child(6):before, .agenda li:nth-child(6):after {
+.item li:nth-child(6):before, .item dt:nth-of-type(6), .agenda li:nth-child(6):after {
     color:rgb(127,127,127);
 }
 
