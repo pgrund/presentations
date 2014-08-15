@@ -1,0 +1,1 @@
+(start)confirm->(active)pay->(paid)archive->(end),(active)cancel->(canceled)reopen->(end),(canceled)archive->(end)

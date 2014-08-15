@@ -16,31 +16,6 @@ body{
 .red { color: red; }
 .green { color: darkgreen; }
 
-pre.code {
-    font-size: 28px;
-    line-height: 30px;
-    
-    background-image: url(../img/code-paper.jpg), url(../img/code-paper-x.jpg);
-    background-repeat: repeat-y, repeat;
-    background-clip: border-box;;
-}
-
-pre.shell {
-    font-size: 18px;
-    line-height: 20px;
-    
-    color: lightgray;
-    
-    background-color: black;
-}
-
-
-ul.nav li pre.shell {
-   opacity: 0.4;    
-}
-ul.nav li.active pre.shell {
-   opacity: 1;    
-}
 
 .geek-title {
     font-family: 'Rock Salt', cursive;
@@ -226,10 +201,14 @@ blockquote.definition {
     color: #ffcc00;
     text-shadow:  -1px -1px 2px gray;
 }
-code.example {
-    margin-left: 30px;
-    padding: 2px 30px 2px 30px;
-    font-size: inherit;    
+blockquote.definition:before {
+  content: '';
+  margin-right: 0;
+}
+
+pre code em {
+ border: solid thick orange; 
+ border-radius: 10px;
 }
 
 @media print {    

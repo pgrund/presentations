@@ -1,0 +1,1 @@
+[Transaction|amount:double;from:Account;to:Account|cancel():void]1->2[Account],[List<Transaction>]

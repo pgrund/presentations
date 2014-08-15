@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="viewport" content="width=device-width, maximum-scale=4.0, initial-scale=1.0, user-scalable=yes"/>
+        <meta name="viewport" content="width=device-width"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta http-equiv="expires" content="0">
 
@@ -13,13 +13,15 @@
 
         <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
         
-        <link href="./css/rest.css" rel="stylesheet" />
         
+        <link href="./css/rest.css" rel="stylesheet" />
+        <link href="../highlight/styles/github.css" rel="stylesheet"/>
 
         <script type="text/javascript" src="../impress/jquery.js"></script>
         <script src="../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="../impress/bootstrap.min.js"></script>        
+        <script src="../impress/bootstrap.min.js"></script>       
+        <script src="../highlight/highlight.pack.js"></script>        
                 
         <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>
         <script type="text/javascript" src="../jmpress/plugins/presentations.jmpress.js"></script>
@@ -30,7 +32,6 @@
         
     </head>
     <body>
-
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -75,10 +76,18 @@
                             </ul>
                         </li>
                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">H-Factor<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/hfactoroverview">Overview</a></li>
+                                <li><a href="#/hfactorlink">link support</a></li>
+                                <li><a href="#/hfactorcontrol">control data support</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hands On<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#/dap">Domain Application Protocol</a></li>
-                                <li><a href="#/hfactoroverview">H-Factor</a></li>
+                                <li><a href="#/maze">Maze example</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -161,8 +170,7 @@
                     to be built <em>independently of the data being transferred</em> ...
                     <small class="text-right">from the abstract of <cite title="RFC2616"><a href="http://tools.ietf.org/html/rfc2616" target="_blank">HTTP/1.1</a></cite></small>
                 </blockquote>
-                <br/>
-                <ul class="unstyled">
+                <ul class="list-unstyled">
                     <li>communication usually done via port 80 and TCP:
                         <dl class="dl-horizontal">
                             <dt>Request</dt>
@@ -269,7 +277,8 @@
 
             <div id="statuscodes" class="slide step" data-x="1200" data-y="1315" data-z="-450" data-rotate-x="-90" data-rotate-z="-90" data-nav-group="HTTP Basics">
                 <header>HTTP Statuscodes</header>                
-                <dl class="pull-right">
+                <a class="pull-right" href="http://www.ietf.org/assignments/http-status-codes/http-status-codes.xml" target="_blank">... see complete list at ietf.org</a>
+                <dl class="pull-right item">
                     <dt>1XX - information</dt>
                     <dd>processing of request is still ongoing</dd>
                     <dt>2XX - sucess</dt>
@@ -281,7 +290,6 @@
                     <dt>5XX - server error</dt>
                     <dd>tough to seperate from client erros. It's likely, that the cause of error can be found on the server side</dd>
                 </dl>
-                <a class="pull-right" href="http://www.ietf.org/assignments/http-status-codes/http-status-codes.xml" target="_blank">... see complete list at ietf.org</a>
                 <footer></footer>
             </div>
 
@@ -342,9 +350,9 @@
             </div> 
             <div id="actUC1" class="step" data-x="3900" data-y="2000" data-z="-2500" data-rotate-y="90" data-rotate-x="90">
                 <h2>Use Case:</h2>
-                <blockquote>
+                <p>
                     As a bank, I want to <em>transfer</em> <em>500&euro;</em> from <em>account A</em> to <em>account B</em>.<br/>
-                </blockquote>
+                </p>
                 <div id="actUC1a" data-jmpress="fade">
                     &nbsp;
                     <h2 class="text-center">Can you find possible resources ?</h2>
@@ -358,7 +366,7 @@
                     <li><code>/accounts/B</code></li>
                 </ul>
                 <br/>
-                <img src="./img/accounts.png" alt="account class and resources" title="account class and resources"/>
+                <img src="http://yuml.me/diagram/plain;dir:LR;scale:100;/class/[List%3CAccount%3E][Account%7Cbalance:double%7Cwithdraw(amount:double):void;deposit(amount:double):void].svg" alt="account class and relation" title="account class and relation"/>
                 <br/>  
                 <div id="actUC2a" data-jmpress="fade">
                     &nbsp;
@@ -372,7 +380,7 @@
                     <li><code>/transactions/1</code></li>
                 </ul>
                 <br clear="all"/>
-                <img src="./img/transaction.png" alt="transactions, class and resources" title="transactions, class and resources"/>
+                <img src="http://yuml.me/diagram/plain;dir:LR;scale:100;/class/[Transaction%7Camount:double;from:Account;to:Account%7Ccancel():void]1-%3E2[Account],[List%3CTransaction%3E].svg" alt="transactions, class and relation" title="transactions, class and relation"/>
             </div>
             <div id="identifiers" class="step slide" data-x="2400" data-y="3000">                
                 <header>Uniform Resource Identifier (URI)</header>
@@ -383,7 +391,7 @@
                 <p class="text-center">one <a href="http://tools.ietf.org/html/rfc2396" target="_blank">URI</a> identifies exactly one resource,<br/>
                     one resource can be identified by multiple URIs<br/>
                     <br/>
-                    <img src="./img/URI-Resource.png" title="relation"/>
+                    <img src="http://yuml.me/diagram/plain;dir:LR;scale:100;/class/[Uniform%20Resource%20Identifier]0..*-%3E1[Resource].svg" title="relation"/>
                 </p>
                 <footer></footer>
             </div>
@@ -403,7 +411,7 @@
             </div>
             <div id="exampleresource" class="step" data-x="3400" data-y="3000" data-rotate-y='-60' data-rotate-x="-60" data-rotate-z="60">
                 <h1>Can you guess what's behind these resources ?</h1>
-                <ul class="unstyled">
+                <ul class="list-unstyled">
                     <li>&nbsp;</li>
                     <li>
                         <code>http://starbucks.com/orders/2007/11</code>
@@ -573,10 +581,19 @@
             </div>
             <div id="presentation" class="step slide" data-x="2400" data-y="5000">
                 <header>Representation of Resources</header>
-                <ul>
-                    <li>resources are abstract, they get never transported outside the server</li>
-                    <li>to interact with resources use their representation</li>
-                    <li>client and server use <a href="http://de.wikipedia.org/wiki/Content_Negotiation">Content Negotiation</a> to decide about the representation of requested resource</li>
+                <ul class="fa-ul">
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text1"></i>
+                        resources are abstract, they get never transported outside the server
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text2"></i>
+                        to interact with resources use their representation
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text3"></i>
+                        client and server use <a href="http://de.wikipedia.org/wiki/Content_Negotiation">Content Negotiation</a> to decide about the representation of requested resource
+                    </li>
                 </ul>
                 <footer></footer>
             </div>
@@ -588,12 +605,12 @@
                     <li>
                         <em>Content-Type: application/xml</em>
                         <br/>
-                        <pre class="code">&lt;?xml version="1.0"?&gt;
+                        <pre><code>&lt;?xml version="1.0"?&gt;
 &lt;order xmlns="urn:restbucks" id="1234"&gt;
    &lt;drink&gt;latte&lt;/drink&gt;
-&lt;/order&gt;</pre>
+&lt;/order&gt;</code></pre>
                         <em>Content-Type: text/html</em>
-                        <pre class="code">&lt;html&gt;
+                        <pre><code class="html">&lt;html&gt;
   &lt;body&gt;
     &lt;h1&gt;Restbucks Order&lt;/h1&gt;
     &lt;p&gt;Your current &lt;span id="1234"&gt;order&lt;/span&gt;&lt;/p&gt;
@@ -601,52 +618,62 @@
      &lt;li&gt;Latte Macchiatto&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;</code></pre>
                     </li>
                 </ul>
             </div>
             <div id="contentheaders" class="step slide"  data-x="3950" data-y="5000" data-z="-1500" data-rotate-y="90">
                 <header>Accept</header>
-                <ul>
-                    <li>HTTP request header <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1" target="_blank">Accept</a></li>
-                    <li><a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-Type</a> client is requesting</li>
-                    <li>may be a list with priority</li>
+                <ul class="fa-ul">
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text1"></i>
+                        HTTP request header <a href="http://www.w3.orgfa/Protocols/rfc2616/rfc2616-sec14.html#sec14.1" target="_blank">Accept</a>
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text2"></i>
+                        <a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-Type</a> client is requesting
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text3"></i>
+                        may be a list with priority
+                    </li>
                 </ul>
                 <br/>
                 <header>Content-Type</header>
-                <ul>
-                    <li>HTTP response header <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17" target="_blank">Content-Type</a></li>
-                    <li><a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-Type</a> of content issued by server</li>
-                    <li><a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-Type</a> o content transmitted by client (e.g.: <em>POST</em>)</li>
+                <ul class="fa-ul">
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text4"></i>
+                        HTTP response header <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17" target="_blank">Content-Type</a>
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text5"></i>
+                        <a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-Type</a> of content issued by server
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text6"></i>
+                        <a href="http://www.w3.org/2001/tag/2002/0129-mime#refs" target="_blank">MIME-Type</a> o content transmitted by client (e.g.: <em>POST</em>)
+                    </li>
                 </ul>
             </div>
             <div id="contentexample" class="step" data-x="3450" data-y="5000" data-z="-2500" data-rotate-y="135" data-rotate-x="45">
                 <h1>example</h1>
-                <pre class="shell pull-left"><i class="icon-chevron-right"></i>  GET /order/1 HTTP\1.1
-<i class="fa fa-chevron-right"></i>  Host: restbuck.pgrund.cloudbees.net
-<i class="fa fa-chevron-right"></i>  <em>Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</em>
-<i class="fa fa-chevron-right"></i>  Accept-Charset:ISO-8859-1,utf-8;q=0.7,*;q=0.3
-<i class="fa fa-chevron-right"></i>  Accept-Encoding:gzip,deflate,sdch
-<i class="fa fa-chevron-right"></i>  Accept-Language:de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
-<i class="fa fa-chevron-right"></i> User-Agent:Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
-                </pre>
-                <pre class="shell pull-right"><i class="icon-chevron-left"></i>  HTTP/1.1 200 OK
-<i class="fa fa-chevron-left"></i>  Server: nginx/1.3.13
-<i class="fa fa-chevron-left"></i>  Date: Tue, 07 May 2013 06:54:15 GMT
-<i class="fa fa-chevron-left"></i>  <em>Content-Type: text/html</em>
-<i class="fa fa-chevron-left"></i>  &lt;!DOCTYPE html SYSTEM "about:legacy-compat"&gt;
-<i class="fa fa-chevron-left"></i>  &lt;html lang="en" xmlns:dap="http://schemas.restbucks.com/dap" xmlns:rb="http://schemas.restbucks.com"&gt;
-<i class="fa fa-chevron-left"></i>    &lt;head&gt;
-<i class="fa fa-chevron-left"></i>      &lt;META http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
-<i class="fa fa-chevron-left"></i>      &lt;title&gt;RESTBucks - RESTful Coffee Ordering&lt;/title&gt;
-<i class="fa fa-chevron-left"></i>      &lt;meta name="description" content="information about single RESTBucks order"&gt;
-<i class="fa fa-chevron-left"></i>      &lt;meta name="author" content="RESTBucks system"&gt;
-<i class="fa fa-chevron-left"></i>    &lt;/head&gt;
-<i class="fa fa-chevron-left"></i>    &lt;body&gt;
-<i class="fa fa-chevron-left"></i>  ...
-<i class="fa fa-chevron-left"></i>    &lt;/body&gt;
-<i class="fa fa-chevron-left"></i>  &lt;/html&gt;</pre>
-                <br clear="all"/>
+                <!--pre class="shell pull-left"-->
+                 <pre><code class="http"> GET /order/1 HTTP\1.1
+ Host: restbuck.pgrund.cloudbees.net
+ <em>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</em>
+ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+ Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4</code></pre>
+
+                <pre><code class="http"> HTTP/1.1 200 OK
+ Server: nginx/1.3.13
+ Date: Tue, 07 May 2013 06:54:15 GMT
+ <em>Content-Type: text/html</em>
+
+ &lt;!DOCTYPE html SYSTEM "about:legacy-compat"&gt;
+  &lt;html lang="en"&gt;
+        ...</code></pre>
+
+         <br clear="all"/>
             </div>
             <div id="contentdefault" class="step slide" data-x="2400" data-y="5000" data-z="-3000" data-rotate-y="180">
                 <header>default media types</header>
@@ -676,15 +703,19 @@
                 </ul>
                 <footer></footer>            
             </div>
-            <div id="contentvndexample" class="step slide" data-x="500" data-y="5000" data-z="-2000">
+            <div id="contentvndexample" class="step slide" data-x="500" data-y="5000" data-z="-l000">
                 <header>examples</header>
                 <dl>
                     <dt>Microsoft</dt>
                     <dd><code>application/vnd.ms-excel</code></dd>
                     <dd><code>application/vnd.ms-powerpoint</code></dd>
+                </dl>
+                <dl>
                     <dt>Google Earth</dt>
                     <dd><code>application/vnd.google-earth.kmz</code></dd>
                     <dd><code>application/vnd.google-earth.kml+xml</code></dd>
+                </dl>
+                <dl>
                     <dt>sandbox</dt>
                     <dd><code>application/vnd.sandbox-v1+xml</code></dd>
                     <dd><code>application/vnd.sandbox-v2+xml</code></dd>
@@ -694,59 +725,55 @@
             </div>
             <div id="vndexample" class="step" data-x="850" data-y="5000" data-z="-1500" data-rotate-z="60" data-rotate-y="270">
                 <h1>example: <code>http://localhost:8080/orders</code></h1>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-intervall="10000">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  </ol>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="item active">      
+                             <pre><code>                  GET /orders HTTP\1.1
+                  Host:localhost:8080
+                  <em>Accept:application/vnd.sandbox-v1+xml</em></code></pre>
+                      <pre><code>HTTP\1.1 200 OK
+<em>Content-Type: application/vnd.sandbox-v1+xml</em>
+...</code><code>  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;v1&gt;
+&lt;auftrag href="http://localhost:8080/orders/1234"&gt;test1&lt;/auftrag&gt;
+&lt;auftrag href="http://localhost:8080/orders/5678"&gt;test2&lt;/auftrag&gt;
+&lt;auftrag href="http://localhost:8080/orders/9012"&gt;test3&lt;/auftrag&gt;
+&lt;/v1&gt;</code></pre>
 
-                <ul class="nav nav-pills">
-                    <li class="active"><a href="#v1response" data-toggle="tab">
-                            <pre class="shell" data-toggle="tab"><i class="icon-chevron-right"></i>  GET /orders HTTP\1.1
-<i class="icon-chevron-right"></i>  Host: localhost:8080
-<i class="icon-chevron-right"></i>  <em>Accept:application/vnd.sandbox-v1+xml</em>
-                            </pre></a></li>
-                    <li><a href="#v2response" data-toggle="tab">
-                            <pre class="shell" data-toggle="tab"><i class="icon-chevron-right"></i>  GET /orders HTTP\1.1
-<i class="icon-chevron-right"></i>  Host: localhost:8080
-<i class="icon-chevron-right"></i>  <em>Accept:application/vnd.sandbox-v2+xml</em>
-                            </pre></a></li>
-                </ul>
-                <div class="tab-content">
-                    <div id="v1response" class="tab-pane active fade in">
-                        <pre class="shell"><i class="icon-chevron-left"></i>  HTTP/1.1 200 OK
-<i class="icon-chevron-left"></i>  <em>Content-Type: application/vnd.sandbox-v1+xml</em>
-<i class="icon-chevron-left"></i>  Date: Tue, 07 May 2013 10:38:59 GMT
-<i class="icon-chevron-left"></i>  Server: Jetty(8.1.10.v20130312)
-<i class="icon-chevron-left"></i>  
-<i class="icon-chevron-left"></i>  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-<i class="icon-chevron-left"></i>  &lt;v1&gt;
-<i class="icon-chevron-left"></i>    &lt;auftrag href="http://localhost:8080/orders/1234"&gt;test1&lt;/auftrag&gt;
-<i class="icon-chevron-left"></i>    &lt;auftrag href="http://localhost:8080/orders/5678"&gt;test2&lt;/auftrag&gt;
-<i class="icon-chevron-left"></i>    &lt;auftrag href="http://localhost:8080/orders/9012"&gt;test3&lt;/auftrag&gt;
-<i class="icon-chevron-left"></i>  &lt;/v1&gt;
-                        </pre>
                     </div>
-                    <div id="v2response" class="tab-pane fade"> 
-                        <pre class="shell"><i class="icon-chevron-left"></i>  HTTP/1.1 200 OK
-<i class="icon-chevron-left"></i>  <em>Content-Type: application/vnd.sandbox-v2+xml</em>
-<i class="icon-chevron-left"></i>  Date: Tue, 07 May 2013 10:38:59 GMT
-<i class="icon-chevron-left"></i>  Server: Jetty(8.1.10.v20130312)
-<i class="icon-chevron-left"></i>  
-<i class="icon-chevron-left"></i>  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-<i class="icon-chevron-left"></i>  &lt;sb:v2 xmlns:dap="http://sandbox.bisnode.com/dap" 
-<i class="icon-chevron-left"></i>       xmlns:sb="http://sandbox.bisnode.com"&gt;
-<i class="icon-chevron-left"></i>      &lt;sb:auftrag href="http://localhost:8080/orders/1234"&gt;
-<i class="icon-chevron-left"></i>          &lt;sb:name&gt;test1&lt;/sb:name&gt;
-<i class="icon-chevron-left"></i>          &lt;sb:description&gt;description for first test&lt;/sb:description&gt;
-<i class="icon-chevron-left"></i>      &lt;/sb:auftrag&gt;
-<i class="icon-chevron-left"></i>      &lt;sb:auftrag href="http://localhost:8080/orders/5678"&gt;
-<i class="icon-chevron-left"></i>          &lt;sb:name&gt;test2&lt;/sb:name&gt;
-<i class="icon-chevron-left"></i>          &lt;sb:description/&gt;
-<i class="icon-chevron-left"></i>      &lt;/sb:auftrag&gt;
-<i class="icon-chevron-left"></i>      &lt;sb:auftrag href="http://localhost:8080/orders/9012"&gt;
-<i class="icon-chevron-left"></i>          &lt;sb:name&gt;test3&lt;/sb:name&gt;
-<i class="icon-chevron-left"></i>          &lt;sb:description&gt;last test entry&lt;/sb:description&gt;
-<i class="icon-chevron-left"></i>      &lt;/sb:auftrag&gt;
-<i class="icon-chevron-left"></i>  &lt;/sb:v2&gt;</pre>
-                    </div>
+                    <div class="item">
+                             <pre><code>                  GET /orders HTTP\1.1
+                  Host:localhost:8080
+                  <em>Accept:application/vnd.sandbox-v2+xml</em></code></pre>
+                  <pre><code>HTTP/1.1 200 OK
+<em>Content-Type: application/vnd.sandbox-v2+xml</em>
+...</code><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;sb:v2 xmlns:dap="http://sandbox.bisnode.com/dap" 
+   xmlns:sb="http://sandbox.bisnode.com"&gt;
+  &lt;sb:auftrag href="http://localhost:8080/orders/1234"&gt;
+     &lt;sb:name&gt;test1&lt;/sb:name&gt;
+     &lt;sb:description&gt;description for first test&lt;/sb:description&gt;
+  &lt;/sb:auftrag&gt;    ...
+&lt;/sb:v2&gt;</code></pre>
+                    </div> 
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <!--i class="fa fa-chevron-left"></i-->
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <!--i class="fa fa-chevron-right"></span-->
+                  </a>
                 </div>
             </div>
+
             <div id="hypermedia" class="step slide" data-x="2400" data-y="6000">
                 <header>Hypermedia</header>
                 <blockquote>
@@ -762,17 +789,37 @@
                 <footer></footer>
             </div>
             
-            <div id="links" class="step slide" data-x="" data-y="">
+            <div id="links" class="step slide" data-x="3500" data-y="6000">
                 <header>Link Header</header>
-
+                <blockquote>
+                    Lorem ipsulum...
+                    <small class="text-right"><a href="">blabub</a></small>
+                </blockquote>
                 <footer></footer>
             </div>
-            <div id="structuallinks" class="step slide" data-x="" data-y="">
+            <div id="structuallinks" class="step slide" data-x="4600" data-y="6000" data-rotate-z="90">
                 <header>Structural Links</header>
+                 <blockquote>
+                    Lorem ipsulum...
+                    <small class="text-right"><a href="">blabub</a></small>
+                </blockquote>
+                <img src="http://yuml.me/diagram/plain;dir:LR;scale:100;/class/[Customer%7Cname:String;...]1-%3Econtracts%200..*[Contract].svg" class="center-block" alt="customer relates to contract" title="customer relates to contract">
+<pre><code class="xml">&lt;customer&gt;
+ &lt;name&gt;Peter Grund&lt;/name&gt;
+ &lt;address&gt;...&lt;/address&gt;
+ ...
+ &lt;contracts&gt;
+   &lt;contract <em>href="http://sample.example.org/contracts/12345"</em>&gt;
+   &lt;contract <em>href="http://sample.example.org/contracts/98765"</em>&gt;
+    ...</code></pre>
                 <footer></footer>
             </div>
-            <div id="transitionallinks" class="step slide" data-x="" data-y="">
+            <div id="transitionallinks" class="step slide" data-x="5700" data-y="6000" data-rotate-z="-90">
                 <header>Transitional Links</header>
+                 <blockquote>
+                    Lorem ipsulum...
+                    <small class="text-right"><a href="">blabub</a></small>
+                </blockquote>
                 <footer></footer>
             </div>
 
@@ -788,7 +835,9 @@
                 </ul>
                 <footer></footer>
             </div>
+
             <!-- ########## Richardson Maturity Model #### -->
+
             <div id="richardsonmaturity" class="step slide chapter orange" data-x="3600">
                 <header>Richardson Maturity Model</header>               
                 <footer></footer>
@@ -826,30 +875,30 @@
                 <h1>example (Level 0)</h1>    
                 <img src='./img/level0sequence.png' alt='sequence diagramm for level 0' title='sequence diagramm for level 0'/>
             </div>                 
-            <div id="level0example" class="step" data-x="4050" data-y="1000" data-z="-1500" data-rotate-y="90">
-                <pre class="shell pull-left"><em>POST</em> <em>/appointmentService</em> HTTP/1.1
-[various other headers]
-
-&lt;openSlotRequest date = "2010-01-04" doctor = "mjones"/&gt;</pre>
-                <pre class="shell pull-right">HTTP/1.1 200 OK
-[various headers]
-
+            <div id="level0examplea" class="step" data-x="4050" data-y="1000" data-z="-1500" data-rotate-y="90">
+                <pre class="pull-left"><code class="http"><em>POST</em> <em>/appointmentService</em> HTTP/1.1
+[various other headers]</code>
+<code class="xml">&lt;openSlotRequest date="2010-01-04" doctor="mjones"/&gt;</code></pre>
+                <pre class="pull-right"><code class="http">HTTP/1.1 200 OK
+[various headers]</code>
+<code class="xml">
 &lt;openSlotList&gt;
-  &lt;slot start = "1400" end = "1450"&gt;
-    &lt;doctor id = "mjones"/&gt;
+  &lt;slot start="1400" end "1450"&gt;
+    &lt;doctor id="mjones"/&gt;
   &lt;/slot&gt;
-  &lt;slot start = "1600" end = "1650"&gt;
-    &lt;doctor id = "mjones"/&gt;
+  &lt;slot start="1600" end="1650"&gt;
+    &lt;doctor id="mjones"/&gt;
   &lt;/slot&gt;
-&lt;/openSlotList&gt;</pre>
-                <br clear="all"/>                
-                <pre class="shell pull-left"><em>POST</em> <em>/appointmentService</em> HTTP/1.1
-[various other headers]
-
-&lt;appointmentRequest&gt;
-  &lt;slot doctor = "mjones" start = "1400" end = "1450"/&gt;
-  &lt;patient id = "jsmith"/&gt;
-&lt;/appointmentRequest&gt;</pre>
+&lt;/openSlotList&gt;</code></pre>
+                <br clear="all"/>      
+            </div>
+            <div id="level0exampleb" class="step" data-x="4050" data-y="1000" data-z="-1500" data-rotate-y="270">
+                <pre class="pull-left"><code class="http"><em>POST</em> <em>/appointmentService</em> HTTP/1.1
+[various other headers]</code>
+<code class="xml">&lt;appointmentRequest&gt;
+  &lt;slot doctor="mjones" start="1400" end="1450"/&gt;
+  &lt;patient id="jsmith"/&gt;
+&lt;/appointmentRequest&gt;</code></pre>
                 <div class="tabbable tabs-left pull-right">
                     <ul class="nav nav-tabs">
                         <li class="active"><a class="text-success" href="#l0sucess" data-toggle="tab"><i class="fa fa-check-circle-o fa-2x"></i> success</a></li>
@@ -857,23 +906,21 @@
                     </ul>
                     <div class="tab-content">
                         <div id="l0sucess" class="tab-pane active">
-                            <pre class="shell">HTTP/1.1 200 OK
-[various headers]
-
-&lt;appointment&gt;
-  &lt;slot doctor = "mjones" start = "1400" end = "1450"/&gt;
-  &lt;patient id = "jsmith"/&gt;
-&lt;/appointment&gt;</pre>
+                            <pre><code class="http">HTTP/1.1 200 OK
+[various headers]</code>
+<code class="xml">&lt;appointment&gt;
+  &lt;slot doctor="mjones" start="1400" end="1450"/&gt;
+  &lt;patient id="jsmith"/&gt;
+&lt;/appointment&gt;</code></pre>
                         </div>
                         <div id="l0error" class="tab-pane">
-                            <pre class="shell">HTTP/1.1 <em>200 OK</em>
-[various headers]
-
-<em>&lt;appointmentRequestFailure&gt;</em>
-  &lt;slot doctor = "mjones" start = "1400" end = "1450"/&gt;
-  &lt;patient id = "jsmith"/&gt;
+                            <pre><code class="http">HTTP/1.1 <em>200 OK</em>
+[various headers]</code>
+<code class="xml"><em>&lt;appointmentRequestFailure&gt;</em>
+  &lt;slot doctor="mjones" start="1400" end="1450"/&gt;
+  &lt;patient id="jsmith"/&gt;
   <em>&lt;reason&gt;Slot not available&lt;/reason&gt;</em>
-&lt;/appointmentRequestFailure&gt;</pre>
+&lt;/appointmentRequestFailure&gt;</code></pre>
                         </div>
                     </div>
                 </div>
@@ -898,32 +945,30 @@
                 <h1>example (Level 1)</h1>
                 <img src='./img/level1sequence.png' alt='sequence diagramm for level 1' title='sequence diagramm for level 1'/>
             </div>
-            <div id="level1example" class="step" data-x="4400" data-y="2000" data-z="-1500" data-rotate-y="90">
-                <pre class="shell pull-left">POST <em>/doctors/mjones</em> HTTP/1.1
-[various other headers]
-
-&lt;openSlotRequest date = "2010-01-04"/&gt;</pre>
-                <pre class="shell pull-right">HTTP/1.1 200 OK
-[various headers]
-
-&lt;openSlotList&gt;
-  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"/&gt;
-  &lt;slot id = "5678" doctor = "mjones" start = "1600" end = "1650"/&gt;
-&lt;/openSlotList&gt;</pre>
+            <div id="level1examplea" class="step" data-x="4400" data-y="2000" data-z="-1500" data-rotate-y="90">
+                <pre class="pull-left"><code class="http">POST <em>/doctors/mjones</em> HTTP/1.1
+[various other headers]</code>
+<code class="xml">&lt;openSlotRequest date="2010-01-04"/&gt;</code></pre>
+                <pre class="pull-right"><code class="http">HTTP/1.1 200 OK
+[various headers]</code>
+<code class="xml">&lt;openSlotList&gt;
+  &lt;slot id="1234" doctor="mjones" start="1400" end="1450"/&gt;
+  &lt;slot id="5678" doctor="mjones" start="1600" end="1650"/&gt;
+&lt;/openSlotList&gt;</code></pre>
                 <br clear="all"/>
-                <pre class="shell pull-left">POST <em>/slots/1234</em> HTTP/1.1
-[various other headers]
-
-&lt;appointmentRequest&gt;  
-  &lt;patient id = "jsmith"/&gt;
-&lt;/appointmentRequest&gt;</pre>
-                <pre class="shell pull-right">HTTP/1.1 200 OK
-[various headers]
-
-&lt;appointment&gt;
-  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"/&gt;
-  &lt;patient id = "jsmith"/&gt;
-&lt;/appointment&gt;</pre>
+            </div>
+            <div id="level1exampleb" class="step" data-x="4400" data-y="2600" data-z="-1500" data-rotate-y="90">    
+                <pre class="pull-left"><code class="http">POST <em>/slots/1234</em> HTTP/1.1
+[various other headers]</code>
+<code class="xml">&lt;appointmentRequest&gt;  
+  &lt;patient id="jsmith"/&gt;
+&lt;/appointmentRequest&gt;</code></pre>
+                <pre class="pull-right"><code class="http">HTTP/1.1 200 OK
+[various headers]</code>
+<code class="xml">&lt;appointment&gt;
+  &lt;slot id="1234" doctor="mjones" start="1400" end="1450"/&gt;
+  &lt;patient id="jsmith"/&gt;
+&lt;/appointment&gt;</code></pre>
                 <br clear="all"/>
             </div>
             <div id="level2" class="step slide" data-x="5650" data-y="1000" data-rotate-z="-90">
@@ -943,23 +988,23 @@
                 <h1>example (Level 2)</h1>
                 <img src='./img/level2sequence.png' alt='sequence diagramm for level 2' title='sequence diagramm for level 2'/>
             </div>
-            <div id="level2example" class="step" data-x="5650" data-y="1000" data-z="-1600" data-rotate-x="90" data-rotate-z="-90">
-                <pre class="shell pull-left"><em>GET</em> /doctors/mjones/slots<em>?date=20100104&amp;status=open</em> HTTP/1.1
-Host: royalhope.nhs.uk</pre>
-                <pre class="shell pull-right">HTTP/1.1 200 OK
-[various headers]
-
-&lt;openSlotList&gt;
-  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"/&gt;
-  &lt;slot id = "5678" doctor = "mjones" start = "1600" end = "1650"/&gt;
-&lt;/openSlotList&gt;</pre>
+            <div id="level2examplea" class="step" data-x="5650" data-y="1000" data-z="-1600" data-rotate-x="90" data-rotate-z="-90">
+                <pre class="pull-left"><code class="http"><em>GET</em> /doctors/mjones/slots<em>?date=20100104&amp;status=open</em> HTTP/1.1
+Host: royalhope.nhs.uk</code></pre>
+                <pre class="pull-right"><code class="http">HTTP/1.1 200 OK
+[various headers]</code>
+<code class="xml">&lt;openSlotList&gt;
+  &lt;slot id="1234" doctor="mjones" start="1400" end="1450"/&gt;
+  &lt;slot id="5678" doctor="mjones" start="1600" end="1650"/&gt;
+&lt;/openSlotList&gt;</code></pre>
                 <br clear="all"/>   
-                <pre class="shell pull-left">POST /slots/1234 HTTP/1.1
-[various other headers]
-
-&lt;appointmentRequest&gt;  
-  &lt;patient id = "jsmith"/&gt;
-&lt;/appointmentRequest&gt;</pre>
+            </div>
+            <div id="level2exampleb" class="step" data-x="5050" data-y="1000" data-z="-1600" data-rotate-x="90" data-rotate-z="-90">
+                <pre class="pull-left"><code class="http">POST /slots/1234 HTTP/1.1
+[various other headers]</code>
+<code class="xml">&lt;appointmentRequest&gt;  
+  &lt;patient id="jsmith"/&gt;
+&lt;/appointmentRequest&gt;</code></pre>
                 <div class="tabbable tabs-left pull-right">
                     <ul class="nav nav-tabs">
                         <li class="active"><a class="text-success" href="#l2sucess" data-toggle="tab"><i class="fa fa-check-circle-o fa-2x"></i> success</a></li>
@@ -967,22 +1012,20 @@ Host: royalhope.nhs.uk</pre>
                     </ul>
                     <div class="tab-content">
                         <div id="l2sucess" class="tab-pane active">
-                            <pre class="shell pull-right">HTTP/1.1 <em>201 Created</em>
+                            <pre class="pull-right"><code class="http">HTTP/1.1 <em>201 Created</em>
 Location: slots/1234/appointment
-[various headers]
-
-&lt;appointment&gt;
-  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"/&gt;
-  &lt;patient id = "jsmith"/&gt;
-&lt;/appointment&gt;</pre>
+[various headers]</code>
+<code class="xml">&lt;appointment&gt;
+  &lt;slot id="1234" doctor="mjones" start="1400" end="1450"/&gt;
+  &lt;patient id="jsmith"/&gt;
+&lt;/appointment&gt;</code></pre>
                         </div>
                         <div id="l2error" class="tab-pane">
-                            <pre class="shell">HTTP/1.1 <em>409 Conflict</em>
-[various headers]
-
-&lt;openSlotList&gt;
-  &lt;slot id = "5678" doctor = "mjones" start = "1600" end = "1650"/&gt;  
-&lt;/openSlotList&gt;</pre>
+                            <pre><code clas="http">HTTP/1.1 <em>409 Conflict</em>
+[various headers]</code>
+<code class="xml">&lt;openSlotList&gt;
+  &lt;slot id="5678" doctor="mjones" start="1600" end="1650"/&gt;  
+&lt;/openSlotList&gt;</code></pre>
                         </div>
                     </div>
                 </div>         
@@ -1005,223 +1048,46 @@ Location: slots/1234/appointment
                 <h1>example (Level 3)</h1>
                 <img src='./img/level3sequence.png' alt='sequence diagramm for level 3' title='sequence diagramm for level 3'/>
             </div>
-            <div id="level3example" class="step" data-x="6000" data-y="2000" data-z="-1500" data-rotate-y="90">
+            <div id="level3examplea" class="step" data-x="6000" data-y="2000" data-z="-1500" data-rotate-y="90">
                 <br/>
-                <pre class="shell pull-left">GET /doctors/mjones/slots?date=20100104&amp;status=open HTTP/1.1
-Host: royalhope.nhs.uk</pre>
-                <pre class="shell pull-right">HTTP/1.1 200 OK
-[various headers]
-
-&lt;openSlotList&gt;
-  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"&gt;
-    <em>&lt;link rel = "/linkrels/slot/book" uri = "/slots/1234" /&gt;</em>
+                <pre class="pull-left"><code class="http">GET /doctors/mjones/slots?date=20100104&amp;status=open HTTP/1.1
+Host: royalhope.nhs.uk</code></pre>
+                <pre class="pull-right"><code class="http">HTTP/1.1 200 OK
+[various headers]</code>
+<code class="xml">&lt;openSlotList&gt;
+  &lt;slot id="1234" doctor="mjones" start="1400" end="1450"&gt;
+    <em>&lt;link rel="/linkrels/slot/book" uri="/slots/1234" /&gt;</em>
   &lt;/slot&gt;
   ...
-&lt;/openSlotList&gt;</pre>
+&lt;/openSlotList&gt;</code></pre>
                 <br clear="all"/>   
-                <pre class="shell pull-left">POST /slots/1234 HTTP/1.1
-[various other headers]
-
-&lt;appointmentRequest&gt;  
-  &lt;patient id = "jsmith"/&gt;
-&lt;/appointmentRequest&gt;</pre>
-                <pre class="shell pull-right">HTTP/1.1 201 Created
+            </div>
+            <div id="level3exampleb" class="step" data-x="6000" data-y="2700" data-z="-1500" data-rotate-y="90">
+                <pre class="pull-left"><code class="http">POST /slots/1234 HTTP/1.1
+[various other headers]</code>
+<code class="xml">&lt;appointmentRequest&gt;  
+  &lt;patient id="jsmith"/&gt;
+&lt;/appointmentRequest&gt;</code></pre>
+                <pre class="pull-right"><code class="http">HTTP/1.1 201 Created
 Location: slots/1234/appointment
-[various headers]
-
-&lt;appointment&gt;
-  &lt;slot id = "1234" doctor = "mjones" start = "1400" end = "1450"/&gt;
-  &lt;patient id = "jsmith"/&gt;
-  <em>&lt;link rel = "/linkrels/appointment/cancel" 
-    uri = "/slots/1234/appointment" /&gt;</em>
-  <em>&lt;link rel = "/linkrels/appointment/addTest" 
-    uri = "/slots/1234/appointment/tests" /&gt;</em>
-  <em>&lt;link rel = "/linkrels/appointment/changeTime" 
-    uri = "/doctors/mjones/slots?date=20100104&amp;status=open" /&gt;</em>
-  <em>&lt;link rel = "/linkrels/appointment/updateContactInfo" 
-    uri = "/patients/jsmith/contactInfo" /&gt;</em>
-  ...
-&lt;/appointment&gt;</pre>
+[various headers]</code>
+<code class="xml">&lt;appointment&gt;
+  &lt;slot id="1234" doctor="mjones" start="1400" end="1450"/&gt;
+  &lt;patient id="jsmith"/&gt;
+  <em>&lt;link rel="/linkrels/appointment/cancel" uri="/slots/1234/appointment" /&gt;
+  &lt;link rel="/linkrels/appointment/changeTime" uri="/doctors/mjones/slots?date=20100104&amp;status=open" /&gt;
+  &lt;link rel="/linkrels/appointment/updateContactInfo" uri="/patients/jsmith/contactInfo" /&gt;</em>  ...
+&lt;/appointment&gt;</code></pre>
                 <br clear="all"/>
             </div>
             
-            <!-- ##### Hands On #### -->
-            
-            <div id="handson" class="step slide chapter blue" data-x="4800">
-                <header>Hands On</header>   
+          <!-- #### H-Factor ### -->
+
+            <div id="hfactor" class="step slide chapter blue" data-x="4800">
+                <header>H-Factor</header>
                 <footer></footer>
             </div>
-            <div id="dap" class="step slide" data-x="3550" data-y="6000" data-view-port-zoomable="10" data-view-port-max-scale="4">
-                <header>Domain Application Protocol (DAP)</header>                
-                <ol>
-                    <li>Model applications in terms of <em>application state machine</em></li>
-                    <li>Implement them in terms of <em>resource lifecycles</em> and rules that <em>associate resources</em></li>
-                    <li>Advertise and execute them using <em>media types</em>, <em>link relation values</em> and <em>HTTP idioms</em></li>
-                </ol>
-                <p class="text-center">example: <span ><i class="fa fa-shopping-cart"></i> shopping cart</span><br/>
-                    <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine" data-jmpress="appear"/>
-                </p>
-                <footer></footer>
-            </div>          
-            <div id="dapexamplestatemachine" class="step text-center" data-x="4700" data-y="6000" data-view-port-zoomable="10" data-view-port-max-scale="4">
-                <header>application state machine</header>
-                <img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine">                
-            </div>
-            <div id="dapexampleresources" class="step" data-x="5850" data-y="6000"
-                data-view-port-zoomable="10" data-view-port-max-scale="4">
-                <header>resource lifecycles</header>
-                <div class="pull-left text-center">
-                    <ul class="list-unstyled">
-                        <li>&nbsp;</li>
-                        <li>resources</li>
-                        <li><code>quote</code> <a href="#/resourcetypes" data-jmpress="fade after 2s step">entity, collection</a></li>
-                        <li id="resourceorder" data-jmpress="fade"><code>order</code> <a href="#/resourcetypes" data-jmpress="fade after 2s prev">entity, collection</a></li>
-                        <li data-jmpress="fade"><code>payment</code> <span data-jmpress="fade after 2s prev">subresource <em>/order</em></span></li>
-                    </ul>
-                </div>
-                 <span class="box pull-left">&nbsp;</span>
-                <p class="pull-left"><code>quote</code><br/>
-                    <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
-                </p>
-                <span class="box pull-left">&nbsp;</span>
-                <p data-jmpress="fade after 1ms #resourceorder" id="orderlifecycle"><code>order</code><br/>
-                    <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/>
-                </p>                                
-                <p data-jmpress="fade">...and how about transitions ?</p>
-                <br clear="all"/>
-            </div>
-            <div id="dapexamplerelations" class="step" data-x="7000" data-y="7000">
-                <header>associate resources and link relations</header>
-                <img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>                  
-                <dl>
-                 <dt>quote</dt>
-                 <dd>
-                  <ul class="list-unstyled">
-                    <li data-jmpress="fade after 1s step">rel = <code>/linkrels/quote/create</code>
-                        <em>/quotes <i class="fa fa-arrow-right"></i> /quote</em>
-                    </li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/edit</code>
-                        <em>/quote <i class="fa fa-arrow-right"></i> /quote</em>
-                    </li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/confirm</code>
-                        <em>/quote <i class="fa fa-arrow-right green"></i> /order</em>
-                    </li>
-                  </ul>
-                 </dd>
-                </dl>   
-                <br clear="all"/>
-                <img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>            
-                <dl> 
-                  <dt>order</dt>
-                  <dd>
-                   <ul class="list-unstyled">                    
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/pay</code>
-                        <em>/order <i class="fa fa-arrow-right"></i> /order</em>
-                    </li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/cancel</code>
-                        <em>/order <i class="fa fa-arrow-right"></i> /order</em>
-                    </li>
-                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/reopen</code>
-                        <em>/order <i class="fa fa-arrow-right green"></i> /quote</em>
-                    </li>
-                   </ul>
-                  </dd>
-                </dl>          
-                <br clear="all"/>      
-            </div>
-            
-            <div id="dapexamplehttp" class="step" data-x="8150" data-y="7000">
-                <header>HTTP idioms</header>
-                
-                <dl class="pull-left">
-                   <dt>
-                    <code>/linkrels/quote/create</code>
-                    <i class="fa fa-long-arrow-right"></i>
-                    <em>/quotes</em>
-                   </dt>                    
-                    
-                   <dd>
-                        <p>add new quote to list of quotes ...</p>
-                        <ul class="questions item">
-                            <li><a href="#/methods">idempotent - safe</a></li>
-                            <li><a href="#/methodssum">select verb</a></li>
-                            <li data-jmpress="fade after 5s step"><a href="#/putvspost">PUT vs. POST</a></li>                            
-                        </ul>    
-                        <p data-jmpress="zoom">
-                            <i class="fa fa-arrow-circle-o-right green fa-2x"></i>
-                            <code class="fa-2x">POST</code>
-                        </p>
-                    </dd>
-                </dl>       
-                <span>&nbsp;</span>
-                <dl data-jmpress="drive-left" class="pull-right">
-                   <dt>
-                    <code>/linkrels/order/pay</code>
-                    <i class="fa fa-long-arrow-right"></i>
-                    <em>/order/payment</em></dt>                    
-                    <dd>
-                        <p>status update(paid) of order ...</p>
-                        <ul class="questions item">
-                            <li><a href="#/methods">idempotent - safe</a> <i class="fa fa-arrow-circle-o-right green"></i> idempotent</li>
-                            <li><a href="#/methodssum">select verb</a> <i class="fa fa-arrow-circle-o-right green"></i> PUT</li>  
-                            <li>security <i class="fa fa-arrow-circle-o-right green"></i> basic auth/digest/...</li>
-                        </ul>                        
-                    </dd>
-                </dl>
-                <br clear="all"/>
-            </div>
 
-
-            <div id="dapexamplemediatypes" class="step" data-x="9300" data-y="7000">
-                <header>media types</header>
-                <p>How to find needed representations ?</p>
-                <div class="left">
-                <dl>                    
-                    <dt class="text1">... asking clients <i class="fa fa-users"></i></dt>
-                    <dd>
-                        <ul>
-                            <li>web frontend? <i class="fa fa-arrow-right"></i> <code>json</code></li>
-                            <li>other services? <i class="fa fa-arrow-right"></i> <code>xml</code></li>
-                        </ul>    
-                    </dd>
-                    <dt class="text2">... ask for use cases <i class="fa fa-female"></i> <i class="fa fa-male"></i></dt>
-                    <dd>
-                        <ul>
-                            <li>human readable</li>
-                            <li>
-                                <i class="fa fa-arrow-right"></i> <code>text</code>, <code>html</code>
-                            </li>
-                            <li>hypermedia (links)</li>
-                            <li>
-                             <i class="fa fa-arrow-right"></i> <code>uri-list</code>, <code><a href="http://stateless.co/hal_specification.html">hal</a></code>
-                            </li>
-                        </ul>
-                    </dd>
-                </dl>
-            </div>
-            <div class="right">
-                <dl>
-                    <dt class="text3"><i class="fa fa-code"></i> multiple xml representations ...</dt>
-                    <dd>
-                        <ul>
-                            <li>custom vendor types (including schema)</li>
-                            <li>
-                             <i class="fa fa-arrow-right"></i> <code>application/vnd.sandbox.order+xml</code>, <br/><code>application/vnd.sandbox.payment+json</code>
-                            </li>
-                        </ul>
-                    </dd>
-                    <dt class="text4"><i class="fa fa-tags"></i> multiple versions (parallel) ...</dt>
-                    <dd>
-                        <ul>
-                            <li>custom vendor types</li>
-                            <li>
-                             <i class="fa fa-arrow-right"></i> <code>application/vnd.sandbox.order-v1+xml</code>
-                            </li>
-                        </ul>
-                    </dd>
-                </dl>
-            </div>
-            </div>
             <div id="hfactoroverview" class="step slide" data-x="4800" data-y="-900">
                 <header>H-Factor</header>
                 <blockquote>The H Factor of a media-type is a <em>measurement of the level of hypermedia support</em> and sophistication of a media-type. H Factor values can be used to <em>compare and contrast media types</em> in order to aid in selecting the proper media-type(s) for your implementation.
@@ -1429,6 +1295,204 @@ Location: slots/1234/appointment
                 <br clear="all"/>
             </div>
 
+              <!-- ##### Hands On #### -->
+            
+            <div id="handson" class="step slide chapter gray" data-x="6000">
+                <header>Hands On</header>   
+                <footer></footer>
+            </div>
+
+            <div id="dap" class="step slide" data-x="6000" data-z="-1000" data-rotate-y="90"
+             data-view-port-zoomable="5" data-view-port-max-scale="4">
+                <header>Domain Application Protocol (DAP)</header>                
+                <ul class="fa-ul">
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text1"></i> 
+                        Model applications in terms of <em>application state machine</em>
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text2"></i> 
+                        Implement them in terms of <em>resource lifecycles</em> and rules that <em>associate resources</em>
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-chevron-circle-right text3"></i> 
+                        Advertise and execute them using <em>media types</em>, <em>link relation values</em> and <em>HTTP idioms</em>
+                    </li>
+                </ul>                
+                <footer></footer>
+            </div>     
+            <div id="dapexamle" class="step slide" data-x="6000" data-y="700" data-z="-1000" data-rotate-y="90">
+                <header> DAP Example</header>
+                 <p class="text-center"><i class="fa fa-shopping-cart"></i> shopping cart</p>
+                
+                <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine" width="80%" class="center-block" data-jmpress="appear"/>
+                <footer></footer>
+            </div>
+
+            <div id="dapexamplestatemachine" class="step text-center" data-x="6000" data-z="-2000" data-rotate-y="90" data-view-port-zoomable="10" data-view-port-max-scale="4">
+                <header>application state machine</header>
+                <img src="http://yuml.me/diagram/plain/activity/(start)request->(request quote)order->(goods ordered)confirm->(order confirmed)-><c>pay->(paid)->(end),<c>[cancel]->(order canceled)->(end).svg"/>
+                <!--img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine"-->
+            </div>
+
+            <div id="dapexampleresources" class="step" data-x="6000" data-y="700" data-z="-2000" data-rotate-y="270" data-view-port-zoomable="10" data-view-port-max-scale="4">
+                <header>resource lifecycles</header>
+                <div class="right text-center">
+                    <ul class="list-unstyled">
+                        <li>&nbsp;</li>
+                        <li>resources</li>
+                        <li><code>quote</code> <a href="#/resourcetypes" data-jmpress="fade after 2s step">entity, collection</a></li>
+                        <li id="resourceorder" data-jmpress="fade"><code>order</code> <a href="#/resourcetypes" data-jmpress="fade after 2s prev">entity, collection</a></li>
+                        <li data-jmpress="fade"><code>payment</code> <span data-jmpress="fade after 2s prev">subresource <em>/order</em></span></li>
+                    </ul>
+                </div>
+                 <span class="box pull-left">&nbsp;</span>
+                <p><code>quote</code><br/>
+                    <!--img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/-->
+                    <img src="http://yuml.me/diagram/scruffy;dir:TB/activity/(start)request->(open),(start)reopen->(open)edit->(open)confirm->(end).svg" alt="resource quote lifecycle" title="resource quote lifecycle"/>
+                </p><br/>
+                
+                <p data-jmpress="fade after 1ms #resourceorder" id="orderlifecycle"><code>order</code><br/>
+                    <!--img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/-->
+                    <img src="http://yuml.me/diagram/scruffy;dir:LR;scale:100;/activity/(start)confirm-%3E(active)pay-%3E(paid)archive-%3E(end),(active)cancel-%3E(canceled)reopen-%3E(end),(canceled)archive-%3E(end).png" alt="resource order lifecycle" title="resource order lifecycle"/>
+                </p>                                
+                <p data-jmpress="fade">...and how about transitions ?</p>
+                <br clear="all"/>
+            </div>
+
+            <div id="dapexamplerelations" class="step" data-x="6000"  data-z="-3000" data-rotate-y="270">
+                <header>associate resources and link relations</header>
+                <img src="http://yuml.me/diagram/scruffy;dir:TB/activity/(start)request->(open),(start)reopen->(open)edit->(open)confirm->(end).svg" alt="resource quote lifecycle" title="resource quote lifecycle" class="pull-left"/>                  
+                <dl>
+                 <dt>quote</dt>
+                 <dd>
+                  <ul class="list-unstyled">
+                    <li data-jmpress="fade after 1s step">rel = <code>/linkrels/quote/create</code>
+                        <em>/quotes <i class="fa fa-arrow-right"></i> /quote</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/edit</code>
+                        <em>/quote <i class="fa fa-arrow-right"></i> /quote</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/quote/confirm</code>
+                        <em>/quote <i class="fa fa-arrow-right green"></i> /order</em>
+                    </li>
+                  </ul>
+                 </dd>
+                </dl>   
+                <br clear="all"/>
+                <img src="http://yuml.me/diagram/scruffy;dir:LR;scale:100;/activity/(start)confirm-%3E(active)pay-%3E(paid)archive-%3E(end),(active)cancel-%3E(canceled)reopen-%3E(end),(canceled)archive-%3E(end).png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>            
+                <dl> 
+                  <dt>order</dt>
+                  <dd>
+                   <ul class="list-unstyled">                    
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/pay</code>
+                        <em>/order <i class="fa fa-arrow-right"></i> /order</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/cancel</code>
+                        <em>/order <i class="fa fa-arrow-right"></i> /order</em>
+                    </li>
+                    <li data-jmpress="fade after 1s prev">rel = <code>/linkrels/order/reopen</code>
+                        <em>/order <i class="fa fa-arrow-right green"></i> /quote</em>
+                    </li>
+                   </ul>
+                  </dd>
+                </dl>          
+                <br clear="all"/>      
+            </div>
+            
+            <div id="dapexamplehttp" class="step" data-x="6000" data-z="-3000" data-y="700" data-rotate-y="270" >
+                <header>HTTP idioms</header>
+                
+                <dl class="pull-left">
+                   <dt>
+                    <code>/linkrels/quote/create</code>
+                    <i class="fa fa-long-arrow-right"></i>
+                    <em>/quotes</em>
+                   </dt>                    
+                    
+                   <dd>
+                        <p>add new quote to list of quotes ...</p>
+                        <ul class="questions item">
+                            <li><a href="#/methods">idempotent - safe</a></li>
+                            <li><a href="#/methodssum">select verb</a></li>
+                            <li data-jmpress="fade after 5s step"><a href="#/putvspost">PUT vs. POST</a></li>                            
+                        </ul>    
+                        <p data-jmpress="zoom">
+                            <i class="fa fa-arrow-circle-o-right green fa-2x"></i>
+                            <code class="fa-2x">POST</code>
+                        </p>
+                    </dd>
+                </dl>       
+                <span>&nbsp;</span>
+                <dl data-jmpress="drive-left" class="pull-right">
+                   <dt>
+                    <code>/linkrels/order/pay</code>
+                    <i class="fa fa-long-arrow-right"></i>
+                    <em>/order/payment</em></dt>                    
+                    <dd>
+                        <p>status update(paid) of order ...</p>
+                        <ul class="questions item">
+                            <li><a href="#/methods">idempotent - safe</a> <i class="fa fa-arrow-circle-o-right green"></i> idempotent</li>
+                            <li><a href="#/methodssum">select verb</a> <i class="fa fa-arrow-circle-o-right green"></i> PUT</li>  
+                            <li>security <i class="fa fa-arrow-circle-o-right green"></i> basic auth/digest/...</li>
+                        </ul>                        
+                    </dd>
+                </dl>
+                <br clear="all"/>
+            </div>
+
+
+            <div id="dapexamplemediatypes" class="step" data-x="6000" data-z="-4500" data-rotate-y="270" >
+                <header>media types</header>
+                <p>How to find needed representations ?</p>
+                <div class="left">
+                <dl>                    
+                    <dt class="text1">... asking clients <i class="fa fa-users"></i></dt>
+                    <dd>
+                        <ul>
+                            <li>web frontend? <i class="fa fa-arrow-right"></i> <code>json</code></li>
+                            <li>other services? <i class="fa fa-arrow-right"></i> <code>xml</code></li>
+                        </ul>    
+                    </dd>
+                    <dt class="text2">... ask for use cases <i class="fa fa-female"></i> <i class="fa fa-male"></i></dt>
+                    <dd>
+                        <ul>
+                            <li>human readable</li>
+                            <li>
+                                <i class="fa fa-arrow-right"></i> <code>text</code>, <code>html</code>
+                            </li>
+                            <li>hypermedia (links)</li>
+                            <li>
+                             <i class="fa fa-arrow-right"></i> <code>uri-list</code>, <code><a href="http://stateless.co/hal_specification.html">hal</a></code>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="right">
+                <dl>
+                    <dt class="text3"><i class="fa fa-code"></i> multiple xml representations ...</dt>
+                    <dd>
+                        <ul>
+                            <li>custom vendor types (including schema)</li>
+                            <li>
+                             <i class="fa fa-arrow-right"></i> <code>application/vnd.sandbox.order+xml</code>, <br/><code>application/vnd.sandbox.payment+json</code>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt class="text4"><i class="fa fa-tags"></i> multiple versions (parallel) ...</dt>
+                    <dd>
+                        <ul>
+                            <li>custom vendor types</li>
+                            <li>
+                             <i class="fa fa-arrow-right"></i> <code>application/vnd.sandbox.order-v1+xml</code>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            </div>
+
             <div id="final" data-x="2000" data-y="-800" data-z="8000" class="step">               
             </div>
         </div> <!-- end of impress -->
@@ -1438,6 +1502,7 @@ Location: slots/1234/appointment
             <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
         </div>
 
+        <!--script>hljs.initHighlightingOnLoad();</script-->
         
         <script type="text/javascript">
         $.jmpress('register', 'rest', function() {
@@ -1446,7 +1511,7 @@ Location: slots/1234/appointment
             // our main configuration
             var config = { 
                 viewPort: {    
-                    width: 1300,
+                    width: 1500,
                     maxScale: 4,
                     initalScale: 1,
                     zoomable: false
@@ -1472,6 +1537,10 @@ Location: slots/1234/appointment
             $(this).jmpress('print', config);
             // enable footer date appending
             $(this).jmpress('footerHandling');
+
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
  
         });
  

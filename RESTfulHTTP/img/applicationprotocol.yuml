@@ -1,0 +1,1 @@
+(start)request->(request quote)order->(goods ordered)confirm->(order confirmed)-><c>pay->(paid)->(end),<c>[cancel]->(order canceled)->(end)
