@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="viewport" content="width=device-width"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta http-equiv="expires" content="0">
 
@@ -113,7 +113,7 @@
             </div>
         </nav>
 
-        <div id="break" class="modal fade center-block" role="dialog" aria-hidden="true">
+        <div id="break" class="modal fade" data-show="false" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-header">                   
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -321,10 +321,10 @@
             </div>
             <div id="resources" class="step slide" data-x="2400" data-y="2000">
                 <header>Resources</header>
-                <blockquote>The key <strong>abstraction</strong> of information in REST is a resource.<br/>
-                    Any information that <strong>can be named</strong> can be a resource: a document or image, a temporal service (e.g. "today's weather in Los Angeles"), a collection of other resources, a non-virtual object (e.g. a person), and so on.<br/>
+                <blockquote>The key <em>abstraction</em> of information in REST is a resource.<br/>
+                    Any information that <em>can be named</em> can be a resource: a document or image, a temporal service (e.g. "today's weather in Los Angeles"), a collection of other resources, a non-virtual object (e.g. a person), and so on.<br/>
                     In other words, any concept that might be the target of an author's hypertext reference must fit within the definition of a resource.<br/>
-                    A resource is a <strong>conceptual mapping to a set of entities</strong>, not the entity that corresponds to the mapping at any particular point in time.
+                    A resource is a <em>conceptual mapping to a set of entities</em>, not the entity that corresponds to the mapping at any particular point in time.
                     <small class="text-right"><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_2_1_1" target="_blank">Fieldings definition</a></small>
                 </blockquote>       
                 <footer></footer>
@@ -332,7 +332,7 @@
             <div id="resourcetypes" class="step slide" data-x="3400" data-y="2000" data-z="-500" data-rotate-y="45">
                 <header>Entity Resource</header>
                 <ul class="list-unstyled">
-                    <li>also called <strong>Item Resource</strong></li>
+                    <li>also called <em>Item Resource</em></li>
                     <li>independent, adressable information unit with its own lifecycle</li>
                     <li><code class="example">http://localhost:8080/orders/1234</code></li>
                 </ul>
@@ -344,7 +344,7 @@
                 </ul>
                 <header>Activity Resource</header>
                 <ul class="list-unstyled">
-                    <li>actions and activities can also be designed as resources, by making <strong>nouns</strong> from <strong>actions</strong></li>
+                    <li>actions and activities can also be designed as resources, by making <em>nouns</em> from <em>actions</em></li>
                 </ul>
                 <footer></footer>
             </div> 
@@ -435,7 +435,7 @@
                         </code>
                     </li>
                 </ul>
-                <p data-jmpress="appear">Do you need to know ?</p>
+                <h1 data-jmpress="appear" class="text-right">Do you <em>need</em> to know ?</h1>
             </div>
             <div id="methods" class="step slide" data-x="2400" data-y="4000">
                 <header>Methods</header>
@@ -724,18 +724,25 @@
             </div>
             <div id="vndexample" class="step" data-x="850" data-y="5000" data-z="-1500" data-rotate-z="60" data-rotate-y="270">
                 <h1>example: <code>http://localhost:8080/orders</code></h1>
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-intervall="10000">
-                  <!-- Indicators -->
-                  <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                  </ol>
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner">
-                    <div class="item active">      
-                             <pre><code>                  GET /orders HTTP\1.1
-                  Host:localhost:8080
-                  <em>Accept:application/vnd.sandbox-v1+xml</em></code></pre>
+                
+                <ul class="nav nav-tabs" role="tablist">
+                    <li>
+                        <a href="#v1" role="tab" data-toggle="tab">
+                             <pre><code>GET /orders HTTP\1.1
+Host:localhost:8080
+<em>Accept:application/vnd.sandbox-v1+xml</em></code></pre>
+                        </a>
+                    </li> 
+                    <li><a href="#v2" role="tab" data-toggle="tab">
+                        <pre><code>GET /orders HTTP\1.1
+Host:localhost:8080
+<em>Accept:application/vnd.sandbox-v2+xml</em></code></pre>
+                    </a>
+                    </li>
+                </ul>
+                
+                <div class="tab-content">
+                  <div id="v1" class="tab-pane active">                            
                       <pre><code>HTTP\1.1 200 OK
 <em>Content-Type: application/vnd.sandbox-v1+xml</em>
 ...</code><code>  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -746,10 +753,7 @@
 &lt;/v1&gt;</code></pre>
 
                     </div>
-                    <div class="item">
-                             <pre><code>                  GET /orders HTTP\1.1
-                  Host:localhost:8080
-                  <em>Accept:application/vnd.sandbox-v2+xml</em></code></pre>
+                    <div id="v2" class="tab-pane">                             
                   <pre><code>HTTP/1.1 200 OK
 <em>Content-Type: application/vnd.sandbox-v2+xml</em>
 ...</code><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -761,16 +765,8 @@
   &lt;/sb:auftrag&gt;    ...
 &lt;/sb:v2&gt;</code></pre>
                     </div> 
-                  </div>
-
-                  <!-- Controls -->
-                  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <!--i class="fa fa-chevron-left"></i-->
-                  </a>
-                  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <!--i class="fa fa-chevron-right"></span-->
-                  </a>
                 </div>
+                
             </div>
 
             <div id="hypermedia" class="step slide" data-x="2400" data-y="6000">
@@ -834,14 +830,14 @@
                     </a>
                     <br/>
                     ... find your way out in a maze ...
-                </p>      
-                <br clear="all"/>          
-                <p data-jmpress="appear">Do you need to know the whole maze setup for each step ?</p>    
+                </p>                               
+                <p data-jmpress="appear">Do you need to know the <em>whole maze setup</em> for each <em>step</em> ?</p>    
+                <br clear="all"/>
                 <footer></footer>
             </div>
             <div id="mazestart" class="step" data-x="6800" data-y="6000" data-rotate-z="-90">
               <pre>
-                <code class="http">GET http://cornmaze-grund.rhcloud.com/maze/five-by-five/</code>
+                <code>GET http://cornmaze-grund.rhcloud.com/maze/five-by-five/</code>
                 <code class="xml">&lt;item href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/" total="25" side="5"&gt;
     <em>&lt;link rel="start" href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/0:north" /&gt;</em>
     &lt;link rel="collection" href="http://cornmaze-grund.rhcloud.com/maze/" /&gt;    
@@ -854,7 +850,7 @@
             </div>
             <div id="maze0" class="step" data-x="7900" data-y="6000" data-rotate-z="-90">
               <pre>
-                <code class="http">GET http://cornmaze-grund.rhcloud.com/maze/five-by-five/0:north</code>
+                <code>GET http://cornmaze-grund.rhcloud.com/maze/five-by-five/0:north</code>
                 <code class="xml">&lt;cell href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/0:north" rel="current" debug="1,1,1,0" total="25" side="5"&gt;
     <em>&lt;link href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/5:east" rel="east"/&gt;</em>
     &lt;link href="http://cornmaze-grund.rhcloud.com/maze/" rel="collection" /&gt;
@@ -868,7 +864,7 @@
             </div>
             <div id="maze1" class="step" data-x="9000" data-y="6000" data-rotate-z="-90">
               <pre>
-                <code class="http">GET http://cornmaze-grund.rhcloud.com/maze/five-by-five/5:east</code>
+                <code>GET http://cornmaze-grund.rhcloud.com/maze/five-by-five/5:east</code>
                 <code class="xml">&lt;cell href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/5:east" rel="current" debug="1,0,1,0" total="25" side="5"&gt;
     <em>&lt;link href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/0:west" rel="west"/&gt;</em>
     <em>&lt;link href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/10:east" rel="east"/&gt;</em>    
@@ -951,7 +947,7 @@
 &lt;/openSlotList&gt;</code></pre>
                 <br clear="all"/>      
             </div>
-            <div id="level0exampleb" class="step" data-x="4050" data-y="1000" data-z="-1500" data-rotate-y="270">
+            <div id="level0exampleb" class="step" data-x="4050" data-y="1800" data-z="-1500" data-rotate-y="270">
                 <pre class="pull-left"><code class="http"><em>POST</em> <em>/appointmentService</em> HTTP/1.1
 [various other headers]</code>
 <code class="xml">&lt;appointmentRequest&gt;
@@ -1016,7 +1012,7 @@
 &lt;/openSlotList&gt;</code></pre>
                 <br clear="all"/>
             </div>
-            <div id="level1exampleb" class="step" data-x="4400" data-y="2600" data-z="-1500" data-rotate-y="90">    
+            <div id="level1exampleb" class="step" data-x="4400" data-y="2600" data-z="-1500" data-rotate-y="-90">    
                 <pre class="pull-left"><code class="http">POST <em>/slots/1234</em> HTTP/1.1
 [various other headers]</code>
 <code class="xml">&lt;appointmentRequest&gt;  
@@ -1058,7 +1054,7 @@ Host: royalhope.nhs.uk</code></pre>
 &lt;/openSlotList&gt;</code></pre>
                 <br clear="all"/>   
             </div>
-            <div id="level2exampleb" class="step" data-x="5050" data-y="1000" data-z="-1600" data-rotate-x="90" data-rotate-z="-90">
+            <div id="level2exampleb" class="step" data-x="5050" data-y="1000" data-z="-1600" data-rotate-x="-90" data-rotate-z="-90">
                 <pre class="pull-left"><code class="http">POST /slots/1234 HTTP/1.1
 [various other headers]</code>
 <code class="xml">&lt;appointmentRequest&gt;  
@@ -1080,7 +1076,7 @@ Location: slots/1234/appointment
 &lt;/appointment&gt;</code></pre>
                         </div>
                         <div id="l2error" class="tab-pane">
-                            <pre><code clas="http">HTTP/1.1 <em>409 Conflict</em>
+                            <pre><code class="http">HTTP/1.1 <em>409 Conflict</em>
 [various headers]</code>
 <code class="xml">&lt;openSlotList&gt;
   &lt;slot id="5678" doctor="mjones" start="1600" end="1650"/&gt;  
@@ -1121,7 +1117,7 @@ Host: royalhope.nhs.uk</code></pre>
 &lt;/openSlotList&gt;</code></pre>
                 <br clear="all"/>   
             </div>
-            <div id="level3exampleb" class="step" data-x="6000" data-y="2700" data-z="-1500" data-rotate-y="90">
+            <div id="level3exampleb" class="step" data-x="6000" data-y="2700" data-z="-1500" data-rotate-y="-90">
                 <pre class="pull-left"><code class="http">POST /slots/1234 HTTP/1.1
 [various other headers]</code>
 <code class="xml">&lt;appointmentRequest&gt;  
@@ -1188,18 +1184,18 @@ Location: slots/1234/appointment
                 <dl class="dl-horizontal">
                     <dt>LE</dt>
                     <dd>Support for <em>embedded</em> links ( <code>HTTP GET</code> )<br/>
-                        <code><em>&lt;img</em> src="http://example.org/images/logo" title="logo" <em>/&gt;</em></code>
+                        <pre><code class="html">&lt;img src="http://example.org/images/logo" title="logo"/&gt;</code></pre>
                     </dd>
                     <dt>LO</dt>
                     <dd>Support for <em>outbound navigational</em> links ( <code>HTTP GET</code> )<br/>
-                        <code><em>&lt;a</em> href="http:/example.org/search"&gt;Search<em>&lt;/a&gt;</em></code>
+                        <pre><code class="html">&lt;a href="http:/example.org/search"&gt;Search&lt;/a&gt;</code></pre>
                     </dd>
                     <dt>LT</dt>
                     <dd>Support for <em>templated queries</em> ( <code>HTTP GET</code> )<br/>
-                        <code><em>&lt;form</em> method="<em>get</em>"&gt;<br/>
-                            &nbsp;&lt;input name="query" type="text" value="" /&gt;<br/>
-                            &nbsp;&lt;input type="submit" /&gt;<br/>
-                            <em>&lt;/form&gt;</em></code>
+                        <pre><code class="html">&lt;form method="<em>get</em>"&gt;
+&nbsp;&lt;input name="query" type="text" value="" /&gt;
+&nbsp;&lt;input type="submit" /&gt;
+&lt;/form&gt;</code></pre>
                     </dd>
                 </dl>
                 <footer></footer>
@@ -1209,18 +1205,18 @@ Location: slots/1234/appointment
                 <dl class="dl-horizontal">
                     <dt>LN</dt>
                     <dd>Support for <em>non-idempotent updates</em> ( <code>HTTP POST</code> )<br/>
-                        <code><em>&lt;form</em> method="<em>post</em>" action="http://example.org/my-keywords"&gt;<br/>
-                            &nbsp;&lt;input name="keywords" type="text" value="" /&gt;<br/>
-                            &nbsp;&lt;input type="submit" /&gt;<br/>
-                            <em>&lt;/form&gt;</em></code>
+                        <pre><code class="html">&lt;form method="<em>post</em>" action="http://example.org/test"&gt;
+&nbsp;&lt;input name="keywords" type="text" value="" /&gt;
+&nbsp;&lt;input type="submit" /&gt;
+&lt;/form&gt;</code></pre>
                     </dd>
                     <dt>LI</dt>
                     <dd>Support for <em>idempotent updates</em> ( <code>HTTP PUT</code>, <code>HTTP DELETE</code> )<br/>
-                        <code><em>function</em> delete(id)<br/>
-                            {<br/>
-                            &nbsp;var client = new XMLHttpRequest();<br/>
-                            &nbsp;client.open("<em>DELETE</em>", "/records/" + id );<br/>
-                            }</code>
+                        <pre><code class="javascript">function delete(id)
+{
+ var client = new XMLHttpRequest();
+ client.open("<em>DELETE</em>", "/records/" + id );
+}</code></pre>
                     </dd>
                 </dl>
                 <footer></footer>
@@ -1230,15 +1226,16 @@ Location: slots/1234/appointment
                 <dl class="dl-horizontal">
                     <dt>CR</dt>
                     <dd>Support for modifying control data for <em>read requests</em> ( e.g. <code>HTTP Accept-*</code> headers )<br/>
-                        <code>&lt;xsl:include href="http://example.org/newsfeed" <em>accept="application/rss"</em> /&gt;</code>
+                        <pre><code>&lt;xsl:include href="http://example.org/newsfeed"
+     <em>accept="application/rss"</em> /&gt;</code></pre>
                     </dd>
                     <dt>CU</dt>
                     <dd>Support for modifying control data for <em>update requests</em> ( e.g. <code>HTTP Content-*</code> headers )<br/>
-                        <code>&lt;form method="post" action="http://example.org/my-keywords"<br/>
-                            &nbsp;&nbsp;&nbsp;<em>enctype="application/x-www-form-urlencoded"</em> &gt;<br/>
-                            &nbsp;&lt;input name="keywords" type="text" value="" /&gt;<br/>
-                            &nbsp;&lt;input type="submit" /&gt;<br/>
-                            &lt;/form&gt;</code>
+                        <pre><code>&lt;form method="post" action="http://example.org/test"
+    <em>enctype="application/x-www-form-urlencoded"</em> &gt;
+ &lt;input name="keywords" type="text" value="" /&gt;
+ &lt;input type="submit" /&gt;
+&lt;/form&gt;</code></pre>
                     </dd>
                 </dl>
                 <footer></footer>
@@ -1248,17 +1245,17 @@ Location: slots/1234/appointment
                 <dl class="dl-horizontal">
                     <dt>CM</dt>
                     <dd>Support for indicating the <em>interface method</em> for requests ( e.g. HTTP <code>GET, PUT, POST, DELETE</code> )<br/>
-                        <code>&lt;form <em>method="post"</em> action="http://example.org/my-keywords" &gt;<br/>
-                            &nbsp;&lt;input name="keywords" type="text" value="" /&gt;<br/>
-                            &nbsp;&lt;input type="submit" /&gt;<br/>
-                            &lt;/form&gt;</code>
+                        <pre><code>&lt;form <em>method="post"</em> action="http://example.org/test" &gt;
+ &lt;input name="keywords" type="text" value="" /&gt;
+ &lt;input type="submit" /&gt;
+&lt;/form&gt;</code></pre>
                     </dd>
                     <dt>CL</dt>
                     <dd>Support for adding <em>semantic meaning</em> to link elements using <em>link relation</em> (e.g. <code>HTML rel</code> attribute )<br/>
-                        <code>&lt;entry xmlns="http://www.w3.org/2005/Atom"&gt;<br/>
-                            &nbsp;&lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt; ...<br/>
-                            &nbsp;&lt;link <em>rel="edit"</em> href="http://example.org/edit/first-post.atom"/&gt;<br/>
-                            &lt;/entry&gt;</code> 
+                        <pre><code class="xml">&lt;entry xmlns="http://www.w3.org/2005/Atom"&gt;
+ &lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt; ...
+ &lt;link <em>rel="edit"</em> href="http://example.org/edit/first-post.atom"/&gt;
+&lt;/entry&gt;</code></pre>
                     </dd>
                 </dl>
                 <footer></footer>
@@ -1473,10 +1470,10 @@ Location: slots/1234/appointment
                         <p>add new quote to list of quotes ...</p>
                         <ul class="questions item">
                             <li><a href="#/methods">idempotent - safe</a></li>
-                            <li><a href="#/methodssum">select verb</a></li>
-                            <li data-jmpress="fade after 5s step"><a href="#/putvspost">PUT vs. POST</a></li>                            
+                            <li><a href="#/methodssum">select verb</a>
+                            <span data-jmpress="fade"> <i class="fa fa-arrow-circle-o-right green"></i> <a href="#/putvspost">PUT vs. POST</a></span></li>
                         </ul>    
-                        <p data-jmpress="zoom">
+                        <p data-jmpress="drive-up">
                             <i class="fa fa-arrow-circle-o-right green fa-2x"></i>
                             <code class="fa-2x">POST</code>
                         </p>
@@ -1569,8 +1566,7 @@ Location: slots/1234/appointment
             var jmpress = this;
             // our main configuration
             var config = { 
-                viewPort: {    
-                    width: 1500,
+                viewPort: {                   
                     maxScale: 4,
                     initalScale: 1,
                     zoomable: false
