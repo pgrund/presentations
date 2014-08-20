@@ -186,7 +186,24 @@ table.hfactor td.empty {
     font-weight: bold;    
 }
 
-
+#mazestep0 {
+    padding: 5px;
+    border-left: solid;
+    border-top: solid;
+    border-bottom: solid;
+}
+#mazestep1old {
+    padding: 5px;
+    border-left: solid darkgray;
+    border-top: solid darkgray;
+    border-bottom: solid darkgray;    
+}
+#mazestep1 {
+    padding: 5px;
+    border-left: none;
+    border-top: solid;
+    border-bottom: solid;
+}
 .present .showup10 {
     visibility: visible;
     opacity: 1;
