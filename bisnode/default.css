@@ -4,7 +4,7 @@
 
 
 body{
-    width:1024px;
+    width:100%;
     font-size: 28px;
     font-family: Arial, sans-serif;
     background: white;
@@ -14,15 +14,9 @@ body{
     counter-reset: slideIdx;
 }
 
-.float-right {
-    float: right;
-}
 .right {
     float: right;
     width: 50%;
-}
-.float-left {
-    float: left;
 }
 .left {
     float: left;
@@ -180,17 +174,13 @@ body{
     content: "      " attr(data-author);
 }
 
-.slide.columns {
-
-}
-
 .slide.chapter header{
     
     position: relative;
     top: 40%;
-    left: -60px;
+    left: -9%;
 
-    width: 1024px;
+    width: 116%;
 
 
     color: rgb(196,206,0);
@@ -204,10 +194,10 @@ body{
 .slide.chapter header::after {
     content: ".";
     
-    width: 1024px;
+    width: 110%;
     height: 59px;
 
-    margin-left: -110px;
+    margin-left: -10%;
     display: inline-block;
     
     background-image: url(./img/divider-sprites.png);
@@ -285,22 +275,6 @@ li.active a.text-error:hover {
 pre code {
     font-size: 24px;
 }
-/*
-pre.code {
-    background-image: url(./img/code-paper.jpg), url(./img/code-paper-x.jpg);
-    background-repeat: repeat-y, repeat;
-    background-clip: border-box;;
-}
-pre.shell {
-    font-size: 18px;
-    line-height: 20px;
-    
-    color: forestgreen;
-    
-    background-color: black;
-}
-
-*/
 blockquote {
     font-size: inherit;
 }
@@ -317,8 +291,10 @@ blockquote.none:before {
 .slide {
     display: block;
 
-    width: 1024px;
-    height: 650px;
+    min-width: 800px;
+    min-height: 680px;
+    width: 90%;
+    height: 70%;
      
     padding: 20px 60px;
     margin-top: 20px;
@@ -450,7 +426,7 @@ blockquote.none:before {
     color: rgb(57,187,236);
 }
 .step {
-    width:1024px; 
+    width: 1024px;
 }
 .step:not(.active) {       
     opacity: 0.3; 
@@ -743,6 +719,10 @@ header .akzent1 {
   .collapse {
     display: block;
   }  
+
+  .container-fluid {
+    max-width: 1024px;
+  }
     
     @page { margin: 0.5cm; }
     p { orphans: 3; widows: 3; }
