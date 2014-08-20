@@ -140,15 +140,6 @@ body{
     text-transform: uppercase;
 }
 
-.slide p {
-    text-transform: uppercase;
-    font-weight: bold;
-}
-.slide p.second {
-    text-transform: none;
-}
-
-
 .slide footer {
     position: absolute;
     bottom: 35px;
@@ -186,7 +177,7 @@ body{
 }
 
 .slide footer:after {
-    content: attr(data-author);
+    content: "      " attr(data-author);
 }
 
 .slide.columns {
@@ -345,7 +336,119 @@ blockquote.none:before {
 
     counter-increment: slideIdx;
 }
+.image {
+   display: block;
 
+    width: 1024px;
+    height: 680px;
+     
+    padding: 20px 60px;
+    margin-top: 20px;
+
+    border: 1px solid rgba(0, 0, 0, .3);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, .1);
+
+    background-size: 100% 100%; 
+
+}
+.image footer {
+    
+    position: absolute;
+    bottom: 35px;
+   
+    height: 85px;
+    width: 1105px;
+    
+    background: url(./img/bisnode-logo.png);
+    background-repeat: no-repeat;
+    background-position: 850px top;
+    background-origin: border-box;
+    background-size: 150px auto, 1024px auto;
+    -o-background-size: 150px auto, 1024px auto;
+    -webkit-background-size: 150px auto, 1024px auto;
+    -moz-background-size: 150px auto, 1024px auto;
+
+    padding-left: 40px;
+    padding-top: 60px;
+    padding-bottom: 0px;
+    
+    margin-top: 20px;
+    margin-left: -70px;
+    margin-bottom: -35px;
+    
+    font-size: 14px;
+    color: rgb(7, 77, 24);
+    text-align: left;
+    vertical-align: middle;
+    text-transform: uppercase;
+    white-space: pre;
+}
+.image footer.black {    
+    background: url(./img/bisnode-logo-black.png);
+    background-repeat: no-repeat;
+    background-position: 850px top;
+    background-origin: border-box;
+    background-size: 150px auto, 1024px auto;
+    -o-background-size: 150px auto, 1024px auto;
+    -webkit-background-size: 150px auto, 1024px auto;
+    -moz-background-size: 150px auto, 1024px auto;
+
+}
+
+.image header {
+    text-transform: uppercase;
+    color: white;
+    width: 55%;
+
+    font-size: 28px;
+
+    font-weight: bold;
+    
+    margin-left:-60px;
+    margin-top: 450px;
+    padding: 30px 60px 30px 60px;
+}
+
+.image p.leading {
+    font-size: 24px;
+    font-family: "Times New Roman";
+    text-transform: none;
+    font-style: italic;    
+    margin-bottom: -.3em;
+}
+.image.title>header {
+
+    color: white;
+    width: inherit;
+    height: 20%;
+    font-size: 62px;
+    
+    border-top: 300px;
+    margin-left:-60px;
+    margin-top: 300px;
+    padding-left: 60px;
+
+}
+
+.image.chapter>header {
+    width: 90%;
+    height: 100%;
+
+    font-size: 52px;
+    font-weight: bold;
+
+    margin-top: 50px;
+    padding: 30px 10px 30px 60px;
+}
+.image.chapter.lightgreen>header>em {
+    color: rgb(189,207,49);
+}
+.image.chapter.orange>header>em {
+    /* default */
+}
+.image.chapter.blue>header>em {
+    color: rgb(57,187,236);
+}
 .step {
     width:1024px; 
 }
@@ -435,20 +538,38 @@ table { font-size: 24px; }
 .akzent1 {
     background-color: rgb(189,207,49);
 }
+.akzent1trans {
+    background-color: rgba(189,207,49, 0.7);
+}
 .akzent2 {
     background-color: rgb(54,111,54);
+}
+.akzent2trans {
+    background-color: rgba(54,111,54, 0.7);
 }
 .akzent3 {
     background-color: rgb(251,195,17);
 }
+.akzent3trans {
+    background-color: rgba(251,195,17, 0.7);
+}
 .akzent4 {
     background-color: rgb(57,187,236);
+}
+.akzent4trans {
+    background-color: rgba(57,187,236, 0.7);
 }
 .akzent5 {
     background-color: rgb(204,204,204);
 }
+.akzent5trans {
+    background-color: rgba(204,204,204, 0.7);
+}
 .akzent6 {
     background-color: rgb(127,127,127);
+}
+.akzent6trans {
+    background-color: rgba(127,127,127, 0.7);
 }
 .text0 {
     color: rgb(0,0,0);
@@ -532,7 +653,7 @@ ul.list-unstyled li::before , ol.list-unstyled li::before {
 .item li:nth-child(2):before, .item dt:nth-of-type(2), .agenda li:nth-child(2):after  {    
     color: rgb(54,111,54);
 }
-.item li:nth-child(3):before, .item dt:nth-of-type(3), .agenda li:nth-child(3):before, .agenda li:nth-child(3):after {
+.item li:nth-child(3):before, .item dt:nth-of-type(3), .agenda li:nth-child(3):after {
     color: rgb(251,195,17);
 }
 .item li:nth-child(4):before, .item dt:nth-of-type(4), .agenda li:nth-child(4):after {
@@ -544,7 +665,12 @@ ul.list-unstyled li::before , ol.list-unstyled li::before {
 .item li:nth-child(6):before, .item dt:nth-of-type(6), .agenda li:nth-child(6):after {
     color:rgb(127,127,127);
 }
-
+#li-test {
+    list-style: none;
+}
+#li-test li:before {
+    content: '\f188';
+}
 ul.questions{
     list-style: none;
 }
@@ -571,6 +697,10 @@ table tbody tr {
 td, th {
     white-space: nowrap;
     min-height: 100%;
+}
+
+header .akzent1 {
+    color: #000;
 }
 
 /* ==== print styles =======================================================
