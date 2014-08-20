@@ -1,7 +1,7 @@
 @import url(../../bisnode/default.css);
 
 body{
-    width:1024px;
+  
     font-size: 28px;
     font-family: 'Armata', sans-serif;
     background: white;
@@ -94,6 +94,10 @@ table.hfactor td.control {
 
 table.hfactor td.empty {
     border: solid thin black;
+}
+
+#vndexample .nav pre code, #vndexample .nav pre code * {
+    font-size: 18px;
 }
 
 #glory {    
