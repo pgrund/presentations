@@ -113,7 +113,7 @@
             </div>
         </nav>
 
-        <div id="break" class="modal fade center-block" tabindex="-1" role="dialog" aria-hidden="true">
+        <div id="break" class="modal fade center-block" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-header">                   
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -366,7 +366,7 @@
                     <li><code>/accounts/B</code></li>
                 </ul>
                 <br/>
-                <img src="http://yuml.me/diagram/plain;dir:LR;scale:100;/class/[List%3CAccount%3E][Account%7Cbalance:double%7Cwithdraw(amount:double):void;deposit(amount:double):void].svg" alt="account class and relation" title="account class and relation"/>
+                <img src="./img/accounts.svg" alt="account class and relation" title="account class and relation"/>
                 <br/>  
                 <div id="actUC2a" data-jmpress="fade">
                     &nbsp;
@@ -380,7 +380,7 @@
                     <li><code>/transactions/1</code></li>
                 </ul>
                 <br clear="all"/>
-                <img src="http://yuml.me/diagram/plain;dir:LR;scale:100;/class/[Transaction%7Camount:double;from:Account;to:Account%7Ccancel():void]1-%3E2[Account],[List%3CTransaction%3E].svg" alt="transactions, class and relation" title="transactions, class and relation"/>
+                <img src="./img/transactions.svg" alt="transactions, class and relation" title="transactions, class and relation"/>
             </div>
             <div id="identifiers" class="step slide" data-x="2400" data-y="3000">                
                 <header>Uniform Resource Identifier (URI)</header>
@@ -391,7 +391,7 @@
                 <p class="text-center">one <a href="http://tools.ietf.org/html/rfc2396" target="_blank">URI</a> identifies exactly one resource,<br/>
                     one resource can be identified by multiple URIs<br/>
                     <br/>
-                    <img src="http://yuml.me/diagram/plain;dir:LR;scale:100;/class/[Uniform%20Resource%20Identifier]0..*-%3E1[Resource].svg" title="relation"/>
+                    <img src="./img/URI-Resource.svg" title="relation"/>
                 </p>
                 <footer></footer>
             </div>
@@ -657,7 +657,6 @@
             </div>
             <div id="contentexample" class="step" data-x="3450" data-y="5000" data-z="-2500" data-rotate-y="135" data-rotate-x="45">
                 <h1>example</h1>
-                <!--pre class="shell pull-left"-->
                  <pre><code class="http"> GET /order/1 HTTP\1.1
  Host: restbuck.pgrund.cloudbees.net
  <em>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</em>
@@ -792,35 +791,95 @@
             <div id="links" class="step slide" data-x="3500" data-y="6000">
                 <header>Link Header</header>
                 <blockquote>
-                    Lorem ipsulum...
-                    <small class="text-right"><a href="">blabub</a></small>
+                     A means of <em>indicating the relationships between resources on the Web</em>,
+   as well as <em>indicating the type</em> of those relationships, ...<br/>
+   ...  However, links between resources need not be format specific; it can be useful to have typed links that are independent of their serialisation, especially when a resource has representations in multiple formats.
+        <small class="text-right"><a href="http://tools.ietf.org/html/rfc5988" target="_blank" alt="RFC 5988">RFC 5988 - Web Linking</a></small>
                 </blockquote>
+                <p>
+                    see also 
+                    <a href="http://tools.ietf.org/html/rfc5988#ref-W3C.REC-html401-19991224" alt="W3C.REC-html401-19991224" target="_blank">HTML specification for links</a>
+                    , as well as 
+                    <a href="http://tools.ietf.org/html/rfc4287" target="_blank" alt="RFC4287">Atom specification</a>
+                </p>
+                <pre><code class="http"><em>Link: &lt;http://example.com/TheBook/chapter2&gt;; rel="previous"; title="previous chapter"</em></code></pre>
                 <footer></footer>
             </div>
             <div id="structuallinks" class="step slide" data-x="4600" data-y="6000" data-rotate-z="90">
                 <header>Structural Links</header>
                  <blockquote>
-                    Lorem ipsulum...
-                    <small class="text-right"><a href="">blabub</a></small>
+                   Semantic relations modeled als object links. Usually minified information present but for further infos follow the link ...
                 </blockquote>
-                <img src="http://yuml.me/diagram/plain;dir:LR;scale:100;/class/[Customer%7Cname:String;...]1-%3Econtracts%200..*[Contract].svg" class="center-block" alt="customer relates to contract" title="customer relates to contract">
+                <img src="./img/customer-contract.svg" class="center-block" alt="customer relates to contract" title="customer relates to contract">
 <pre><code class="xml">&lt;customer&gt;
- &lt;name&gt;Peter Grund&lt;/name&gt;
- &lt;address&gt;...&lt;/address&gt;
+ &lt;name&gt;Peter Grund&lt;/name&gt; 
  ...
  &lt;contracts&gt;
    &lt;contract <em>href="http://sample.example.org/contracts/12345"</em>&gt;
-   &lt;contract <em>href="http://sample.example.org/contracts/98765"</em>&gt;
-    ...</code></pre>
+      &lt;name&gt;Simple Data Delivery contract&lt;/name&gt;
+      &lt;created&gt;2013-05-13 12:30:02.445T+01:00&lt;/created&gt;
+   &lt;/contract&gt;  ...</code></pre>
                 <footer></footer>
             </div>
             <div id="transitionallinks" class="step slide" data-x="5700" data-y="6000" data-rotate-z="-90">
                 <header>Transitional Links</header>
-                 <blockquote>
-                    Lorem ipsulum...
-                    <small class="text-right"><a href="">blabub</a></small>
+                <blockquote>
+                    State transitions are modeled as links. Client does not know about state machine, available state transitions from current state of resource indicated via links in representation.                    
                 </blockquote>
+                <h2>example</h2>
+                <img src="./img/maze.png" class="pull-left"/>
+                <p>
+                    <a href="http://cornmaze-grund.rhcloud.com/maze.html" alt="maze example (UI)" title="maze example (UI)">
+                        Maze
+                    </a>
+                    <br/>
+                    ... find your way out in a maze ...
+                </p>      
+                <br clear="all"/>          
+                <p data-jmpress="appear">Do you need to know the whole maze setup for each step ?</p>    
                 <footer></footer>
+            </div>
+            <div id="mazestart" class="step" data-x="6800" data-y="6000" data-rotate-z="-90">
+              <pre>
+                <code class="http">GET http://cornmaze-grund.rhcloud.com/maze/five-by-five/</code>
+                <code class="xml">&lt;item href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/" total="25" side="5"&gt;
+    <em>&lt;link rel="start" href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/0:north" /&gt;</em>
+    &lt;link rel="collection" href="http://cornmaze-grund.rhcloud.com/maze/" /&gt;    
+&lt;/item&gt;   </code>
+              </pre>
+              <p data-jmpress="appear">
+               <i class="fa fa-long-arrow-right fa-3x text1"></i>
+               <button class="btn btn-success btn-lg">Start</button>
+              </p>      
+            </div>
+            <div id="maze0" class="step" data-x="7900" data-y="6000" data-rotate-z="-90">
+              <pre>
+                <code class="http">GET http://cornmaze-grund.rhcloud.com/maze/five-by-five/0:north</code>
+                <code class="xml">&lt;cell href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/0:north" rel="current" debug="1,1,1,0" total="25" side="5"&gt;
+    <em>&lt;link href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/5:east" rel="east"/&gt;</em>
+    &lt;link href="http://cornmaze-grund.rhcloud.com/maze/" rel="collection" /&gt;
+    &lt;link href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/" rel="maze" /&gt;
+&lt;/cell&gt;</code>
+               </pre>  
+               <p data-jmpress="appear">
+                 <i class="fa fa-long-arrow-right fa-3x text1"></i>
+                 <span id="mazestep0"><i class="fa fa-user"></i></span><i class="fa fa-arrow-right"></i>
+                </p>                
+            </div>
+            <div id="maze1" class="step" data-x="9000" data-y="6000" data-rotate-z="-90">
+              <pre>
+                <code class="http">GET http://cornmaze-grund.rhcloud.com/maze/five-by-five/5:east</code>
+                <code class="xml">&lt;cell href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/5:east" rel="current" debug="1,0,1,0" total="25" side="5"&gt;
+    <em>&lt;link href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/0:west" rel="west"/&gt;</em>
+    <em>&lt;link href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/10:east" rel="east"/&gt;</em>    
+    &lt;link href="http://cornmaze-grund.rhcloud.com/maze/" rel="collection" /&gt;
+    &lt;link href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/" rel="maze" /&gt;
+&lt;/cell&gt;</code>
+               </pre>  
+               <p data-jmpress="appear">
+                 <i class="fa fa-long-arrow-right fa-3x text1"></i>
+                 <span id="mazestep1old"><i class="fa fa-arrow-left"></i></span><span id="mazestep1"> <i class="fa fa-user"></i></span><i class="fa fa-arrow-right"></i>
+                </p>                
             </div>
 
             <div id="stateless" class="step slide" data-x="2400" data-y="7000">
