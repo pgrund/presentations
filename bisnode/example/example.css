@@ -1,0 +1,118 @@
+
+ @import url(../default.css);
+
+#start {
+	background-image: url("./img/skyscraper.jpg");	
+	background-position: center;
+
+	transition: background-size 2s ease-in;
+    -moz-transition: background-size 2s ease-in;
+    -web-kit-transition: background-size 2s ease-in
+}
+#start.active {
+	background-size: 150% 150%;	
+}
+#start header {
+	padding-top: 10px;
+}
+
+#questions {
+	background-image: url("./img/Meeting.png");		
+}
+#questions header {
+	width: 75%;   
+}
+
+#link {
+	background-image: url("./img/woods.jpg");	
+}
+#link>header {	
+	width: 100%;
+}
+
+#reality {
+	background-image: url("./img/marketplace.jpg");
+}
+
+#answers {
+	background-image: url("./img/pedestrians.jpg");
+	
+}
+
+#expertise {
+	background-image: url("./img/hands.jpg");
+}
+
+#solution {
+	background-image: url("./img/crossroad.jpg");
+}
+
+#facts {
+	background-image: url("./img/notes.jpg");
+}
+
+#provider {
+	background-image: url("./img/meeting2.jpg");
+}
+
+#germanyff {
+	background-image: url("./img/stairs.jpg");
+}
+
+#germany {
+	background-image: url("./img/umbrella.jpg");
+}
+#germany1 p {
+	text-transform: uppercase;	
+	font-weight: bold;
+	color: rgb(57,187,236);
+}
+#germany1 p.leading {
+	font-size: smaller;
+}
+#germany1 .big {
+	font-size:200px;
+	float: left;
+	
+}
+#germany1 .large {
+	font-size:150px;
+	float: left;
+}
+.ger {
+	font-size: 92px;
+	text-transform: uppercase;
+	color: rgba(57,187,236, 0.6);
+}
+#welist {
+	height: 800px;
+	color: rgb(57,187,236);
+
+	font-weight: bold;
+	text-transform: uppercase;
+
+}
+#welist>li {	
+	width: 70%;	
+	padding-left: 10px;
+	padding-bottom: 20px;
+	background-color: gray;
+}
+#welist>li>i.stack {	
+	margin-bottom : -200px;
+}
+#welist>li>p {	
+
+	background-color: rgb(57,187,236);
+	border: solid thin black;
+	color:white;
+
+	border-radius: 10px;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	margin-left: -80px;
+}
