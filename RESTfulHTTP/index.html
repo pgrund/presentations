@@ -822,7 +822,7 @@ Host:localhost:8080
                 <blockquote>
                     State transitions are modeled as links. Client does not know about state machine, available state transitions from current state of resource indicated via links in representation.                    
                 </blockquote>
-                <h2>example</h2>
+                <header>example</header>
                 <img src="./img/maze.png" class="pull-left"/>
                 <p>
                     <a href="http://cornmaze-grund.rhcloud.com/maze.html" alt="maze example (UI)" title="maze example (UI)">
@@ -846,6 +846,7 @@ Host:localhost:8080
               <p data-jmpress="appear">
                <i class="fa fa-long-arrow-right fa-3x text1"></i>
                <button class="btn btn-success btn-lg">Start</button>
+               ... start the maze
               </p>      
             </div>
             <div id="maze0" class="step" data-x="7900" data-y="6000" data-rotate-z="-90">
@@ -860,6 +861,7 @@ Host:localhost:8080
                <p data-jmpress="appear">
                  <i class="fa fa-long-arrow-right fa-3x text1"></i>
                  <span id="mazestep0"><i class="fa fa-user"></i></span><i class="fa fa-arrow-right"></i>
+                   ... move to the right (east)
                 </p>                
             </div>
             <div id="maze1" class="step" data-x="9000" data-y="6000" data-rotate-z="-90">
@@ -875,6 +877,7 @@ Host:localhost:8080
                <p data-jmpress="appear">
                  <i class="fa fa-long-arrow-right fa-3x text1"></i>
                  <span id="mazestep1old"><i class="fa fa-arrow-left"></i></span><span id="mazestep1"> <i class="fa fa-user"></i></span><i class="fa fa-arrow-right"></i>
+                 ... move to the left(west) <em>OR</em> right (east)
                 </p>                
             </div>
 
@@ -938,7 +941,7 @@ Host:localhost:8080
 [various headers]</code>
 <code class="xml">
 &lt;openSlotList&gt;
-  &lt;slot start="1400" end "1450"&gt;
+  &lt;slot start="1400" end="1450"&gt;
     &lt;doctor id="mjones"/&gt;
   &lt;/slot&gt;
   &lt;slot start="1600" end="1650"&gt;
@@ -1089,7 +1092,7 @@ Location: slots/1234/appointment
             <div id="level3" class="step slide" data-x="6200" data-y="2000">
                 <header>Level 3: Hypermedia Controls</header>
                 <blockquote>... ugly acronym of <em>HATEOAS</em> (<em>H</em>ypertext <em>A</em>s <em>T</em>he <em>E</em>ngine <em>O</em>f <em>A</em>pplication <em>S</em>tate)<br/>
-                    It adresses the question of how to get from a list open slots to knowing what to do to book an appointment.
+                    It adresses the question of how to get from a list of open slots to knowing what to do to book an appointment.
                     <small class="text-right"><a href="http://martinfowler.com/articles/richardsonMaturityModel.html#level3" target="_blank">Martin Fowler</a></small></blockquote>
                 <ul>
                     <li>additionally using <a href="#/hypermedia">Hypermedia</a></li>
@@ -1363,16 +1366,27 @@ Location: slots/1234/appointment
                 <header>Domain Application Protocol (DAP)</header>                
                 <ul class="fa-ul">
                     <li>
-                        <i class="fa-li fa fa-lg fa-chevron-circle-right text1"></i> 
-                        Model applications in terms of <em>application state machine</em>
+                        <i class="fa-li fa fa-lg fa-gears text1"></i> 
+                        Model applications in terms of <em class="text1">application state machine</em>
                     </li>
                     <li>
-                        <i class="fa-li fa fa-lg fa-chevron-circle-right text2"></i> 
-                        Implement them in terms of <em>resource lifecycles</em> and rules that <em>associate resources</em>
+                        <i class="fa-li fa fa-lg fa-cube text2"></i> 
+                        Implement them in terms of <em class="text2">resource lifecycles</em> ...
                     </li>
                     <li>
-                        <i class="fa-li fa fa-lg fa-chevron-circle-right text3"></i> 
-                        Advertise and execute them using <em>media types</em>, <em>link relation values</em> and <em>HTTP idioms</em>
+                        <i class="fa-li fa fa-lg fa-cubes text3"></i>... and rules that <em class="text3">associate resources</em>
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-users text4"></i> 
+                        Advertise and execute them using <em class="text4">link relation values</em>, ...
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-bullhorn text5"></i>
+                        ... <em class="text5">HTTP idioms</em>, ...
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-lg fa-files-o text6"></i>
+                        ... and <em class="text6">media types</em>.  
                     </li>
                 </ul>                
                 <footer></footer>
@@ -1386,13 +1400,12 @@ Location: slots/1234/appointment
             </div>
 
             <div id="dapexamplestatemachine" class="step text-center" data-x="6000" data-z="-2000" data-rotate-y="90" data-view-port-zoomable="10" data-view-port-max-scale="4">
-                <header>application state machine</header>
-                <img src="http://yuml.me/diagram/plain/activity/(start)request->(request quote)order->(goods ordered)confirm->(order confirmed)-><c>pay->(paid)->(end),<c>[cancel]->(order canceled)->(end).svg"/>
-                <!--img src="./img/applicationprotocol2.png" alt="procurement application state machine" title="procurement application state machine"-->
+                <header class="text1"><i class="fa-gears fa"></i> application state machine</header>
+                <img src="./img/applicationstatemachine.svg" alt="procurement application state machine" title="procurement application state machine"-->
             </div>
 
             <div id="dapexampleresources" class="step" data-x="6000" data-y="700" data-z="-2000" data-rotate-y="270" data-view-port-zoomable="10" data-view-port-max-scale="4">
-                <header>resource lifecycles</header>
+                <header class="text2 text-center"><i class="fa fa-cube"></i> resource lifecycles</header>
                 <div class="right text-center">
                     <ul class="list-unstyled">
                         <li>&nbsp;</li>
@@ -1404,21 +1417,19 @@ Location: slots/1234/appointment
                 </div>
                  <span class="box pull-left">&nbsp;</span>
                 <p><code>quote</code><br/>
-                    <!--img src="./img/dap-quotelifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/-->
-                    <img src="http://yuml.me/diagram/scruffy;dir:TB/activity/(start)request->(open),(start)reopen->(open)edit->(open)confirm->(end).svg" alt="resource quote lifecycle" title="resource quote lifecycle"/>
+                    <img src="./img/quote-lifecycle.svg" alt="resource quote lifecycle" title="resource quote lifecycle"/>
                 </p><br/>
                 
                 <p data-jmpress="fade after 1ms #resourceorder" id="orderlifecycle"><code>order</code><br/>
-                    <!--img src="./img/dap-orderlifecycle.png" alt="resource order lifecycle" title="resource order lifecycle"/-->
-                    <img src="http://yuml.me/diagram/scruffy;dir:LR;scale:100;/activity/(start)confirm-%3E(active)pay-%3E(paid)archive-%3E(end),(active)cancel-%3E(canceled)reopen-%3E(end),(canceled)archive-%3E(end).png" alt="resource order lifecycle" title="resource order lifecycle"/>
+                    <img src="./img/order-lifecycle.svg" alt="resource order lifecycle" title="resource order lifecycle"/>
                 </p>                                
                 <p data-jmpress="fade">...and how about transitions ?</p>
                 <br clear="all"/>
             </div>
 
             <div id="dapexamplerelations" class="step" data-x="6000"  data-z="-3000" data-rotate-y="270">
-                <header>associate resources and link relations</header>
-                <img src="http://yuml.me/diagram/scruffy;dir:TB/activity/(start)request->(open),(start)reopen->(open)edit->(open)confirm->(end).svg" alt="resource quote lifecycle" title="resource quote lifecycle" class="pull-left"/>                  
+                <header class="text-center"><span class="text3"><i class="fa fa-cubes"></i> associate resources</span> and <span class="text4"><i class="fa fa-users"></i> link relations</span></header>
+                <img src="./img/quote-lifecycle.svg" alt="resource quote lifecycle" title="resource quote lifecycle" class="pull-left"/>                  
                 <dl>
                  <dt>quote</dt>
                  <dd>
@@ -1436,7 +1447,7 @@ Location: slots/1234/appointment
                  </dd>
                 </dl>   
                 <br clear="all"/>
-                <img src="http://yuml.me/diagram/scruffy;dir:LR;scale:100;/activity/(start)confirm-%3E(active)pay-%3E(paid)archive-%3E(end),(active)cancel-%3E(canceled)reopen-%3E(end),(canceled)archive-%3E(end).png" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>            
+                <img src="./img/order-lifecycle.svg" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>            
                 <dl> 
                   <dt>order</dt>
                   <dd>
@@ -1457,7 +1468,7 @@ Location: slots/1234/appointment
             </div>
             
             <div id="dapexamplehttp" class="step" data-x="6000" data-z="-3000" data-y="700" data-rotate-y="270" >
-                <header>HTTP idioms</header>
+                <header class="text5 text-center"><i class="fa fa-bullhorn"></i> HTTP idioms</header>
                 
                 <dl class="pull-left">
                    <dt>
@@ -1499,8 +1510,8 @@ Location: slots/1234/appointment
 
 
             <div id="dapexamplemediatypes" class="step" data-x="6000" data-z="-4500" data-rotate-y="270" >
-                <header>media types</header>
-                <p>How to find needed representations ?</p>
+                <header class="text6 text-center"><i class="fa fa-files-o"></i> media types</header>
+                <p class="leading">How to find needed representations ?</p>
                 <div class="left">
                 <dl>                    
                     <dt class="text1">... asking clients <i class="fa fa-users"></i></dt>
@@ -1557,8 +1568,6 @@ Location: slots/1234/appointment
             <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
             <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
         </div>
-
-        <!--script>hljs.initHighlightingOnLoad();</script-->
         
         <script type="text/javascript">
         $.jmpress('register', 'rest', function() {
@@ -1593,6 +1602,7 @@ Location: slots/1234/appointment
             // enable footer date appending
             $(this).jmpress('footerHandling');
 
+            // enable highlight.js
             $('pre code').each(function(i, block) {
                 hljs.highlightBlock(block);
             });
