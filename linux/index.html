@@ -62,6 +62,23 @@
                                 <li><a href="#/help">Help</a></li>
                             </ul>
                         </li>
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advanced Commands<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/grep">grep</a></li>
+                                <li><a href="#/sed">sed</a></li>
+                                <li><a href="#/awk">awk</a></li>
+                            </ul>
+                        </li>
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Editors<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/vi">vi</a></li>
+                                <li><a href="#/emacs">emacs</a></li>
+                                <li><a href="#/nano">nano</a></li>
+                                <li><a href="#/pico">pico</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right fa-lg">
                         <li>
@@ -634,7 +651,7 @@
                     <dt>history</dt>
                     <dd>bash saves all commands in a <em>history list</em></dd>
                     <dd>arrow up <i class="fa fa-arrow-circle-o-up"></i> and arrow down <i class="fa fa-arrow-circle-o-down"></i> navigate through the list</dd>
-                    <dd><em>recursive search</em> is available via <kbd>ctrl+r</kbd></dd>
+                    <dd><em>recursive search</em> is available via <kbd>ctrl+shift+r</kbd></dd>
                     <dt>completion</dt>
                     <dd>start typing a command and hit <kbd>tab</kbd>, the bash will try to expand the input until no unique solution is present</dd>
                     <dd>then hit <kbd>tab</kbd> twice to get a list of all available completions</dd>
@@ -707,7 +724,7 @@ user1@server1:~$ help echo</code></pre>
                         change password - <kbd>passwd</kbd>
                     </li>
                     <li>
-                        about myself - <kbd>whoami</kbd>, <kbd>user</kbd>, <kbd>groups</kbd>, ...
+                        about myself - <kbd>whoami</kbd>, <kbd>who am i</kbd>, <kbd>groups</kbd>, <kbd>id</kbd>...
                     </li>
                     <li data-jmpress="zoom">
                         <span class="text1">
@@ -918,7 +935,9 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
             <div id="assignmentRights" class="step assignment" data-x="6000" data-y="3000" data-rotate-z="90" data-rotate-y="180">
                 <header class="akzent3">Assignment #3</header>
                 <ol>
-                    <li>copy file <code>~/one/file1.txt</code> to home directory of your left neighbor</li>
+                    <li>create a new directory <code>training</code> in your home directory</li>
+                    <li>grant <code>read</code>, and <code>write</code> access for this new directory to all participants</li>
+                    <li>copy file <code>~/one/file1.txt</code> to the <code>training</code> directory of your left neighbor</li>
                     <li data-jmpress="zoom">
                         <span class="text1">
                             How does the access rights (<code>ls -l</code>) of the copied file look like <i class="fa fa-lg fa-question-circle"></i>
@@ -930,13 +949,26 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
             </div>
             <div id="config" class="step slide" data-x="7500" data-y="1000">
                 <header>My configuration</header>
+                <p>setting shell options during startup time</p>
+                
                 <ul>
                     <li>.bashrc</li>
                     <li>.profile</li>
-                    <li>.bash_profile</li>
+                    <li>.bash_profile</li>                    
                 </ul>
+                <footer></footer>
+            </div>
+            <div id="substitution" class="step slide" data-x="7500" data-y="2000">
+                <header>Substitution</header>
                 <ul>
-                    <li>alias</li>                    
+                    <li>alias</li>                                                            
+                    <li>substitution</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="variables" class="step slide" data-x="7500" data-y="3000">
+                <header>Variables</header>
+                <ul>
                     <li>PATH</li>
                     <li>env</li>
                 </ul>
@@ -947,10 +979,14 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                 <ul>
                     <li>su</li>
                     <li>sudo</li>
+                    <li>sbit</li>
                 </ul>
                 <footer></footer>
             </div>
-          
+            <div id="inputoutput" class="step slide" data-x="10500" data-y="1000">
+                   <header>Input / Output</header>
+                   <footer></footer>
+               </div>   
             <div id="final" class="step" data-x="3000" data-z="10000"></div>
         </div>
 	
