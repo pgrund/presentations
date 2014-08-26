@@ -118,7 +118,7 @@
         var a = $($(jmpress).jmpress("settings").presentations.meta.authors); 
         var authors = $(a).map(function(idx, e){    
                     return e.content;
-                }).get().join(",");
+                }).get().join(", ");
         if(authors != "") {
             $(f).attr("data-author", authors);
             console.log("footer:author set to '" + $(".slide footer").attr("data-author")+"'");
