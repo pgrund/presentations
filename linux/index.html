@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+        <meta charset="utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="expires" content="0">
+
+        
+        <link rel="stylesheet" href="../impress/bootstrap.min.css" />
+        <link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.css" />
+
+        <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
+        
+        
+        <link href="./css/linux.css" rel="stylesheet" />
+        <link href="../highlight/styles/github.css" rel="stylesheet"/>
+
+        <script type="text/javascript" src="../impress/jquery.js"></script>
+        <script src="../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../impress/bootstrap.min.js"></script>       
+        <script src="../highlight/highlight.pack.js"></script>        
+                
+        <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>
+        <script type="text/javascript" src="../jmpress/plugins/presentations.jmpress.js"></script>
+
+        <title>Linux Introduction</title> 
+        <meta name="date" content="2014-08-27"/>
+        <meta name="author" content="Dominik Schopper"/>
+        <meta name="author" content="Peter Grund"/>        
+        
+    </head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">                    
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>   
+                    <a href="#/start" class="navbar-brand"><i class="fa fa-lg fa-home" title="Start"></i></a>
+                </div>                
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#/chaplinux">Linux</a>                            
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bash<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/explore">Explore the system</a></li>
+                                <li><a href="#/files">File Manipulation</a></li>
+                                <li><a href="#/rights">Access Rights</a></li>
+                                <li><a href="#/config">Configuration</a></li>
+                                <li><a href="#/admin">Administration</a></li>
+                                <li><a href="#/inputoutput">Input/Output</a></li>
+                                <li><a href="#/help">Help</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right fa-lg">
+                        <li>
+                            <a target="_blank" id="print" title="print">
+                                <i class="fa fa-print"></i>
+                            </a>
+                        </li>                       
+                        <li>
+                            <a id="breakbutton" title="break">
+                                <i class="fa fa-coffee"></i>
+                            </a>                            
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="https://github.com/pgrund/presentations" title="source">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>                        
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div id="break" class="modal fade" data-show="false" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-header">                   
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title">Break</h3>
+                </div>
+                <div class="modal-content">
+                    <div id="counter"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="impress">
+            <div id="start" class="step slide title" data-x="-1200">
+                <header>
+                    <h2>Linux - an introduction</h2> 
+                    <p>&nbsp;</p>
+                </header>
+            </div>
+            <div id="linuxmovie" class="step" data-x="-2200" data-rotate-z="90">                
+                <iframe class="youtube-player" type="text/html" width="960" height="720" src="http://www.youtube.com/embed/x7ozaFbqg00?rel=0" frameborder="0">
+</iframe>
+            </div>
+
+            <div id="chaplinux" class="step slide chapter" >
+                <header>Linux OS</header>               
+                <footer></footer>
+            </div>   
+            <div id="unix" class="step" data-z="-1000" data-rotate-x="90" data-view-port-zoomable="10" data-view-port-max-scale="4">
+                <header>Unix Development</header>                
+                <img src="http://upload.wikimedia.org/wikipedia/commons/5/51/Unix_history.svg" />
+            </div>        
+            <div id="linux" class="step slide" data-x="1500">
+                <header>Linux</header>               
+                <i class="fa fa-linux fa-5x pull-right"></i>
+                <blockquote>                    
+                        Linux is a <em>Unix</em>-like and mostly <a href="http://en.wikipedia.org/wiki/POSIX" target="_blank">POSIX-compliant</a> <em>computer operating system</em> assembled under the model of <em>free</em> and <em>open source</em> software development and distribution ...                    
+                    
+                    <small class="text-right">
+                        <a href="http://en.wikipedia.org/wiki/Linux">Wikipedia</a>
+                    </small>
+                </blockquote>     
+                <br class="clearfix"/>
+                <p>main principals:</p>
+                <ul class="agenda item">
+                    <li><em>everything</em> is a file (directories, hardware[-access], ...)</li>
+                    <li><em>One</em> tool for <em>ONE</em> task</li>
+                    <li>... <em>pipe</em> input/output of tools</li>
+                </ul>
+                <footer></footer>
+            </div>            
+            <div id="foss" class="step" data-x="1500" data-z="-1000" data-rotate-x="90">
+                <header class="akzent1">Opensource</header>   
+                <blockquote>
+                        <em>Open-source software</em> (OSS) is computer software with its source code made available with a license in which the copyright holder provides the rights to study, change and distribute the software to anyone and for any purpose.<br/> 
+                        Open-source software is very often <em>developed in a public, collaborative manner</em>.<br/>
+                         Open-source software is the most prominent example of open-source development and often compared to (technically defined) user-generated content or (legally defined) open-content movements.
+                         <small class="text-right">
+                            <a href="http://en.wikipedia.org/wiki/Open_source_software" target="_blank">Wikipedia</a><br/>
+                        </small>
+                </blockquote>   
+                <header class="akzent2">Free</header>
+                <blockquote>
+                         ... is computer software that gives users the freedom to <em>run</em> the software <em>for any purpose as well as to study, modify, and distribute</em> the original software and the adapted versions.<br/>
+                         The rights to study and modify free software imply unfettered <em>access to its source code</em>. For computer programs which are covered by copyright law this is achieved by a software license where the author grants users the aforementioned freedoms. ...<br/>
+                         Free software may be developed <em>collaboratively</em> by volunteer computer programmers or by corporations; as part of a commercial activity or not.
+                    <small class="text-right">
+                        <a href="http://en.wikipedia.org/wiki/Free_software" target="_blank">Wikipedia</a>
+                    </small>
+                </blockquote>                
+            </div>                  
+            <div id="kernel" class="step slide" data-x="1500" data-y="-1000">
+                <header>Kernel</header>
+                <blockquote class="right">
+                    Central part of Linux operating system is the <em>Kernel</em>, it seperates hardware resources from user programs.<br/>
+                    So no (user) program can access hardware resources directly, <em>only via operating system</em>.
+                </blockquote>
+                 <div class="container text-center left">
+                    <div class="row">
+                        <div class="col-md-8 initialism akzent1">user programs</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 text1"><small>system calls</small></div>
+                    </div>
+                    <div class="row text1">
+                        <div class="col-md-2"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 text2"><small>system call interface</small></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 initialism akzent2">Linux Kernel</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 text2"><small>driver interface</small></div>
+                    </div>
+                    <div class="row text3">
+                        <div class="col-md-2"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 text3">driver</div>
+                        <div class="col-md-2 text3 hidden-print">driver</div>
+                        <div class="col-md-2 text3 hidden-print">driver</div>
+                        <div class="col-md-2 text3 hidden-print">driver</div>
+                    </div>
+                    <div class="row text4">
+                        <div class="col-md-2"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2"><i class="fa fa-arrows-v hidden-print"></i></div>
+                        <div class="col-md-2"><i class="fa fa-arrows-v hidden-print"></i></div>
+                        <div class="col-md-2"><i class="fa fa-arrows-v hidden-print"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 initialism akzent4">hardware</div>
+                    </div>
+                </div>      
+                <br class="clearfix"/>               
+                <footer></footer>   
+            </div>  
+            <div id="userprograms" class="step" data-x="1500" data-y="-1200" data-z="-1000" data-rotate-y="-45">
+                <header>What are user programs?</header>
+                 <div data-jmpress="appear after 2s step">
+                    <ul class="fa-ul">
+                        <li><i class="fa fa-chevron-circle-right text1"></i>... started by user (video player, web browser, ...)</li>
+                        <li><i class="fa fa-chevron-circle-right text2"></i>... desktop environment (graphical UI)</li>                    
+                        <li><i class="fa fa-chevron-circle-right text3"></i>... shell (<a href="#/bash">see next slides</a>)</li>
+                    </ul>
+                </div>      
+            </div>
+              <div id="distributions" class="step slide" data-x="1500" data-y="900" data-z="-1000" data-rotate-y="90" data-rotate-z="90">
+                <header>Distributions</header>
+                <blockquote>
+                    ... Linux <em>Kernel</em> packaged together with different <em>software bundles</em>.
+                </blockquote>
+                <p>Want to build your own distribution ? </p>
+                <p data-jmpress="appear" class="pull-right">
+                    <i class="fa fa-long-arrow-right text2"></i>
+                    <a href="http://www.linuxfromscratch.org/" target="_blank"> 
+                        Linux from scratch
+                    </a>                  
+                    <span data-jmpress="zoom after 3s prev">
+                        <i class="fa fa-code"></i> updates ?, <i class="fa fa-cog"></i> patches ? 
+                    </span>    
+                </p>
+                <br class="clearfix"/>
+                <div data-jmpress="appear">
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li class="active">
+                            <a href="#debian" role="tab" data-toggle="tab">
+                                <img src="./img/debian-logo.png"/>
+                            </a>    
+                        </li>
+                        <li>
+                            <a href="#fedora" role="tab" data-toggle="tab">
+                                <img src="./img/fedora-logo.png"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#opensuse" role="tab" data-toggle="tab">
+                                <img src="./img/opensuse-logo.png"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a role="tab" data-toggle="tab">
+                                ...
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ubuntu" role="tab" data-toggle="tab">
+                                <img src="./img/ubuntu-logo.png"/>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="debian">
+                             <a href="http://www.debian.org" target="_blank">Debian</a>
+                             <ul>
+                                <li>
+                                    <em>Debian Social Contract</em> - completely free
+                                </li>
+                                <li>
+                                    <em>giant</em> of all linux distribution
+                                </li>
+                                <li>
+                                    trade-off: long developement time <i class="fa fa-arrows-h"></i> stability
+                                </li>
+                                <li>
+                                    multiple versions (<a href="http://www.debian.org/releases/stable" target="_blank>">stable</a>, <a href="http://www.debian.org/releases/testing" target="_blank>">testing</a>, <a href="http://www.debian.org/releases/unstable" target="_blank>">unstable</a>)
+                                </li>
+                             </ul>
+                             <p class="akzent3 text-center"> <i class="fa fa-lg fa-rotate-270 fa-thumbs-o-down"></i> ... not too easy for beginners ... </p>
+                        </div>
+                        <div id="fedora" class="tab-pane">
+                            <a href="http://www.fedoraproject.org" target="_blank">Fedora</a>
+                            <ul>
+                                <li>successor of commercial <img src="./img/redhat-logo.gif"/><em>Red Hat</em></li>
+                                <li>strict, only completely open licensed software bundles get accepted</li>
+                                <li>very innovative <i class="fa fa-arrows-h"></i> stability</li>
+                            </ul>
+                            <br/>
+                            <p class="bg-danger text-center"> <i class="fa fa-lg fa-thumbs-o-down"></i> ... not so good for beginners ... </p>
+                        </div>
+                        <div id="opensuse" class="tab-pane">
+                            <a href="http://www.opensuse.org" target="_blank">openSUSE</a>
+                            <ul>
+                                <li><em>formerly</em> widely spread around private dekstops</li>
+                                <li>non-commercial version of SUSE distribution bought by Novell</li>
+                            </ul>
+                            <br/><br/>
+                            <p class="akzent4 text-center"> <i class="fa fa-lg fa-thumbs-o-up"></i> ... nice for beginners ... </p>
+                        </div>
+                        <div id="ubuntu" class="tab-pane">
+                            <a href="http://www.ubuntu.com" target="_blank">ubuntu</a>
+                            <ul>
+                                <li><em>derivate</em> of debian, using unstable repositories</li>
+                                <li><em>most common</em> used on desktop</li>
+                                <li>extremely easy to install and use</li>
+                            </ul>
+                            <br/>
+                            <p class="akzent1 text-center"> <i class="fa fa-lg fa-thumbs-o-up"></i> ... best for beginners ... </p>
+                        </div>
+                    </div>
+                </div>
+                <footer></footer>
+            </div>
+            <div id="processes" class="step slide" data-x="2400" data-y="-1000" data-z="-500" data-rotate-y="45">
+                <header>Processes</header>
+                <blockquote>
+                    Linux is a <em>multi tasking</em> operating system: multiple <em>processes</em> - those are programs, after loaded to memory and started - <em>run in parallel</em>.
+                </blockquote>
+                <i class="fa fa-4x fa-clock-o pull-right text2"></i>
+                <p>
+                    This actually means, that the operating system splits available computation time of the processor in small <em>time slots</em> (milliseconds), which are provided to severale processes. This task is accomplished by a central instance - <em>scheduler</em>. He manages which process gets which timeslot.
+                </p>
+                <br/>
+                <i class="fa fa-spinner fa-spin fa-5x pull-left text4"></i>
+                <p>Therefore, no single process gains total control of all computation time and any <em>"freezed"</em> process cannot shutdown the whole system.</p>
+                <footer></footer>
+            </div>
+            <div id="linuxusers" class="step slide" data-x="1500" data-y="-2000">
+                <header>Users</header>               
+                <blockquote>
+                    Linux is also a <em>multi-user operating system</em>, multiple users can operate on the same machine on several <em>terminal</em>s at the same time.
+                </blockquote>     
+                 <i class="fa fa-users fa-5x pull-right"></i>         
+                <p>
+                    A <em>user</em> is identified by its <em>username</em>.<br/>
+                    Internally, all users are managed via their unique <em>userID</em> (<kbd>UID</kbd>).
+                </p>               
+                <p>
+                    Each user is <em>at least</em> member of one <em>group</em>. There might be many different groups in the system - internally handled via <em>groupID</em> (<kbd>GID</kbd>).
+                </p>
+                <br class="clearfix"/>
+                <p>    
+                    Generally speaking, groups are just an opportunity to <em>restrict access</em> in more detailed way (see <a href="#/linuxfiles">file access</a> on the next slides ...).
+                </p>              
+                <footer></footer>
+            </div>
+            <div id="root" class="step slide" data-x="2400" data-y="-2000" data-z="-500" data-rotate-y="45">
+                <header>Root</header>
+
+                <i class="fa fa-user fa-5x text-danger pull-left"></i>
+                <p>
+                    User with <kbd>userID 0</kbd> has a special role - he's <em>root</em>.<br/>
+                    Root has no security constraint by the system - in short - he is allowed to <em class="text-uppercase">do anything</em>.                    
+                </p>
+                <br class="clearfix"/>
+                <span class="fa-stack fa-3x pull-right">
+                  <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                  <i class="fa fa-warning fa-stack-1x text3"></i>
+                </span>
+                <p> 
+                    Root is capable of destroying the whole system with only one command. He can delete all the work of a week, a month ... 
+                    That's the reason, why the system administrator logs on with his regular user - he <em>becomes root</em> only for administrative tasks, which needs special access rights.
+                </p>                
+                <br class="clearfix"/>
+                <p class="text-right">see also <a href="#/admin">being super</a> </p>
+                <footer></footer>
+            </div>
+                        
+            <div id="linuxfiles" class="step slide" data-x="1500" data-y="-3000">
+                <header>files</header>
+                <ul>
+                    <li>
+                        Filenames as well as foldernames can be up to <em>256 character</em> long.
+                    </li>
+                    <li>
+                        Names are case-sensitive: <code>FILE</code>, <code>file</code>, <code>File</code>
+                    </li>
+                    <li>
+                        Names may contain multiple <code>.</code> (dots): <code>File.Part.1.txt</code>
+                    </li>
+                    <li>
+                        Files <em>starting</em> with a dot, are considered to be <em>hidden files</em>: <code>.bashrc</code>
+                    </li>
+                </ul>                   
+                <p>Character <code>/</code> is defined as path separator (e.g. Windows system use: <code>\</code>).</p>
+                <header>filesystem</header>
+                <table class="table">
+                    <thead>
+                        <th>operating system</th>
+                        <th>file system</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Windows</th>
+                            <td>FAT32, NTFS, ...</td>
+                        </tr>
+                        <tr>
+                            <th>Mac OS</th>
+                            <td>HFS, HFS+, ...</td>
+                        </tr>
+                        <tr>
+                            <th>Linux</th>
+                            <td>ext2, ext3, reiserFS, ...</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="linuxfiles1" class="step slide" data-x="2400" data-y="-3000" data-z="-500" data-rotate-y="45">
+                <header>file types</header>
+                <table class="table left text-center">
+                    <thead>
+                        <tr>
+                            <th>type</th>
+                            <th>display</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>regular file</td>
+                            <td class="akzent2">-</td>
+                        </tr>
+                        <tr>
+                            <td>directory</td>
+                            <td class="akzent1">d</td>
+                        </tr>
+                        <tr>
+                            <td>symbolic links</td>
+                            <td class="akzent3">l</td>
+                        </tr>
+                        <tr>
+                            <td class="text5">block oriented</td>
+                            <td class="akzent5">b</td>
+                        </tr>
+                        <tr>
+                            <td class="text5">character oriented</td>
+                            <td class="akzent5">c</td>
+                        </tr>
+                        <tr>
+                            <td class="text5">named pipe</td>
+                            <td class="akzent5">p</td>
+                        </tr>
+                        <tr>
+                            <td class="text5">socket</td>
+                            <td class="akzent5">s</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code><mark class="akzent1">d</mark>rwxr-xr-x  <small>...</small>  <em>.</em>
+<mark class="akzent1">d</mark>rwxr-xr-x  <small>...</small>  <em>..</em>
+<mark class="akzent1">d</mark>rwxr-xr-x  <small>...</small>  <em>.git</em>
+<mark class="akzent2">-</mark>rw-r--r--  <small>...</small>  index.html
+...
+<mark class="akzent2">-</mark>rw-r--r--  <small>...</small>  LICENSE
+<mark class="akzent1">d</mark>rwxr-xr-x  <small>...</small>  linux
+...
+<mark class="akzent3">l</mark>rwxrwxrwx  <small>...</small>  orientdb <em>-></em> orientdb-community-1.6.1/</code></pre>
+<p class="text-right">see <a href="#/explore"><kbd>ls</kbd></a></p>
+                <footer></footer>
+            </div>            
+            <div id="folderstructure" class="step slide" data-x="3000">
+                <header>Structure</header>
+                <div class="left">
+                  <ul class="fa-ul">
+                    <li>
+                        <i class="fa fa-li fa-folder-open"></i> <span data-toggle="tooltip" data-placement="right" title="Tooltip on right">/</span>
+                        <ul class="fa-ul">
+                            <li><i class="fa fa-li fa-folder"></i> bin</li>
+                            <li><i class="fa fa-li fa-folder"></i> etc</li>
+                            <li class="text3">
+                                <i class="fa fa-li fa-folder-open"></i> home
+                                <ul class="fa-ul">
+                                    <li><i class="fa fa-li fa-folder"></i> pgrund</li>
+                                </ul>
+                            </li>                            
+                            <li class="text5"><i class="fa fa-li fa-folder"></i> tmp</li>
+                            <li class="text2">
+                                <i class="fa fa-li fa-folder-open"></i> usr
+                                 <ul class="fa-ul">
+                                    <li><i class="fa fa-li fa-folder"></i> bin</li>
+                                    <li class="text1">
+                                        <i class="fa fa-li fa-folder-open"></i> local
+                                         <ul class="fa-ul">
+                                            <li><i class="fa fa-li fa-folder"></i> bin</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="text4">
+                                <i class="fa fa-li fa-folder-open"></i> var
+                                 <ul class="fa-ul">
+                                    <li><i class="fa fa-li fa-folder"></i> log</li>
+                                </ul>
+                            </li>
+                            <li><i class="fa fa-li fa-folder"></i> ...</li>
+                        </ul>
+                    </li>   
+                  </ul>    
+                </div>  
+                <div class="right">                                    
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                      <li class="active">
+                        <a href="#structRoot" role="tab" data-toggle="tab">/</a>
+                      </li>
+                      <li>
+                        <a href="#structBin" role="tab" data-toggle="tab">/bin</a>
+                      </li>
+                      <li>
+                        <a href="#structEtc" role="tab" data-toggle="tab">/etc</a>
+                      </li>
+                      <li class="text3">
+                        <a href="#structHome" role="tab" data-toggle="tab">/home</a>
+                      </li>
+                      <li class="text5">
+                        <a href="#structTmp" role="tab" data-toggle="tab">/tmp</a>
+                      </li>
+                      <li class="text2">
+                        <a href="#structUsrBin" role="tab" data-toggle="tab">/usr/bin</a>
+                      </li>
+                      <li class="text1">
+                        <a href="#structUsrLocalBin" role="tab" data-toggle="tab">/usr/local/bin</a>
+                      </li>
+                      <li class="text4">
+                        <a href="#structVarLog" role="tab" data-toggle="tab">/var/log</a>
+                      </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="structRoot">
+                        <span class="visible-print-block"><kbd>/</kbd> (root)</span>
+                        <ul>
+                            <li>root of operating system</li>
+                            <li>directories only, except <em>ONE</em> file: <em>kernel</em></li>
+                            <li>all <em>partitions</em> may be <em>mounted</em> anywhere ...</li>
+                        </ul>
+                      </div>
+                      <div class="tab-pane" id="structBin">
+                        <span class="visible-print-block"><kbd>/bin</kbd></span>
+                        <ul>
+                            <li>binary programs (critical for system)</li>
+                            <li>all users may read</li>
+                        </ul>
+                      </div>
+                      <div class="tab-pane" id="structEtc">
+                        <span class="visible-print-block"><kbd>/etc</kbd></span>
+                        <ul>
+                            <li>global configuration files (network, boot, startup, user management, ...)</li>
+                            <li>all users may read</li>
+                        </ul>
+                      </div>
+                      <div class="tab-pane" id="structHome">
+                        <span class="visible-print-block"><kbd>/home</kbd></span>
+                        <ul>
+                            <li>each user known to the system has its own <em>home directory</em> - same name as user</li>
+                            <li>after login, home directory is selected</li>
+                            <li>inside his home directory, a user has all rights (create, read, update, execute, delete, ... )</li>
+                        </ul>
+                      </div>
+                      <div class="tab-pane" id="structTmp">
+                        <span class="visible-print-block"><kbd>/tmp</kbd></span>
+                          <ul>
+                              <li>temporary files</li> 
+                              <li>may be deleted after sytstem restart by system</li>
+                              <li>all users have read/write access</li>
+                          </ul>
+                      </div>
+                      <div class="tab-pane" id="structUsrBin">
+                         <span class="visible-print-block"><kbd>/usr/bin</kbd></span>
+                          <ul>
+                              <li><em>U</em>nix <em>S</em>ystem <em>R</em>esources</li>
+                              <li>binaries, system offers</li>
+                              <li>executabale by all users</li>
+                          </ul>
+                      </div>
+                      <div class="tab-pane" id="structUsrLocalBin">
+                        <span class="visible-print-block"><kbd>/usr/local/bin</kbd></span>
+                          <ul>
+                              <li>binaries not part of distribution</li>
+                              <li>binaries by third-party vendors or installed manually</li>
+                              <li>compiled binaries of users</li>
+                          </ul>
+                      </div>
+                      <div class="tab-pane" id="structVarLog">
+                        <span class="visible-print-block"><kbd>/var/log</kbd></span>
+                        <ul>
+                            <li><em>var</em> hosts files often read and written by programs</li>
+                            <li>log files</li>
+                        </ul>
+                      </div>
+                    </div>            
+                </div>
+                <br class="clearfix"/>
+                <footer></footer>                
+            </div>           
+
+            <div id="chapbash" class="step slide chapter green" data-y="1000">
+                <header>Bash</header>               
+                <footer></footer>
+            </div>
+            <div id="bash" class="step slide" data-x="1500" data-y="1000">
+                <header><em>B</em>ourne <em>A</em>gain <em>Sh</em>ell</header>
+                <p>tasks of a shell:</p>
+                <ul class="agenda item">
+                    <li><em>accept</em> commands and <em>interpret</em> them</li>
+                    <li><em>start processes</em> in the commandline</li>
+                    <li><em>return messages</em> of the process to the user</li>
+                </ul>
+                <br/>
+                <dl class="dl-horizontal">
+                    <dt>shell</dt>
+                    <dd><em>user interface</em> to the system, hand over commands to operating system (process start, process stop, ...)</dd>
+                    <dd>works on textual base, all interactive commands can be <em>scripted</em></dd>
+                    <dt>bash</dt>
+                    <dd>successor of the <em>bourne shell</em></dd>
+                    <dd><em>de-facto standard</em> of all linux distribution</dd>
+                    <dt>other shells</dt>
+                    <dd>erentthere are different shells available: <a>korn</a>, <a>csh</a>, <a>sh</a>, ...</dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="bashtipps" class="step" data-x="1500" data-y="2000" data-z="0" data-rotate-z="90">
+                <header class="akzent6">Tipps</header>
+                <dl class="dl-horizontal item">
+                    <dt>copy/paste</dt>
+                    <dd>modern terminal emulator are capable of <em>copy &amp; paste</em> using the mouse:
+                    </dd>
+                    <dd>left button <i class="fa fa-arrow-right"></i> mark,</dd>
+                    <dd>right button <i class="fa fa-arrow-right"></i> content menu() insert, copy)</dd>
+                    <dt>history</dt>
+                    <dd>bash saves all commands in a <em>history list</em></dd>
+                    <dd>arrow up <i class="fa fa-arrow-circle-o-up"></i> and arrow down <i class="fa fa-arrow-circle-o-down"></i> navigate through the list</dd>
+                    <dd><em>recursive search</em> is available via <kbd>ctrl+r</kbd></dd>
+                    <dt>completion</dt>
+                    <dd>start typing a command and hit <kbd>tab</kbd>, the bash will try to expand the input until no unique solution is present</dd>
+                    <dd>then hit <kbd>tab</kbd> twice to get a list of all available completions</dd>
+                </dl>
+            </div>
+            <div id="help" class="step slide" data-x="10500" data-y="1000">
+                <header>I need Help !!</header>
+                <dl class="dl-horizontal">
+                    <dt>man</dt>
+                    <dd><em>manuals</em> - also called <em>manpages</em> - documentation about nearly every command (can be localized: e.g. <code>manpages-de</code></dd>
+                    <dd><kbd>man &lt;command&gt;</kbd></dd>
+                    <dt>info</dt>
+                    <dd>similar to <code>man</code> ... just type <kbd>info</kbd> to get a list of commands and navigate through them.</dd>
+                    <dd><kbd>info &lt;command&gt;</kbd></dd>
+                    <dt>help</dt>
+                    <dd>a little bit more simpler than the other two ...</dd>
+                    <dd>less commands available, purpose more to <em>remind</em> rather than <em>teach</em></dd>
+                    <dd><kbd>help &lt;command&gt;</kbd></dd>
+                </dl>
+                <pre><code class="shell">user1@server1:~$ man ls
+user1@server1:~$ info cd
+user1@server1:~$ help echo</code></pre>
+                <footer></footer>
+            </div>
+
+            <div id="explore" class="step slide" data-x="3000" data-y="1000">
+                <header>explore the system</header>                
+                <dl class="dl-horizontal">
+                    <dt>pwd</dt>
+                    <dd>
+                        <em>print working directory</em>, tell me the current project
+                    </dd>
+                    <dd>
+                        after login, <code>user1@server1:<em>~</em>$</code> tilde refers to <em>home directory</em> of the user
+                    </dd>
+                    <dt>ls</dt>
+                    <dd>
+                        <em>list</em> content of directory: <kbd>ls [-option] &lt;directory&gt;</kbd>
+                    </dd>
+                    <dd>list a longer, detailed format: <kbd>ls -l</kbd></dd>
+                    <dd>list all directory contents (recursive): <kbd>ls *</kbd></dd>
+                    <dt>cd</dt>
+                    <dd>
+                        <em>change directory</em>: <kbd>cd &lt;directory&gt;</kbd>
+                    </dd>
+                    <dd>go one directory up: <kbd>cd ..</kbd></dd>
+                    <dd>
+                        other common shortcuts: <kbd>cd /</kbd>, <kbd>cd -</kbd>, <kbd>cd ~</kbd>, ...
+                    </dd>
+                    <dt>find</dt>
+                    <dd>
+                        <em>find</em> files: <kbd>find &lt;directory&gt; -name &lt;filename&gt;</kbd>
+                    </dd>
+                    <dt>whoami</dt>
+                    <dd>
+                        <em>current user</em>, tell me my username ...
+                    </dd>
+                    <dt>who</dt>
+                    <dd>which <em>other user</em> are currently on the system ?</dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="assignmentUser" class="step assignment" data-x="3000" data-y="2000" data-rotate-z="90" data-rotate-y="180">
+                <header class="akzent1">Assignment #1</header>
+                <ol>
+                    <li>
+                        login - via <em>putty</em> and credentials mailed ...
+                    </li>
+                    <li>
+                        change password - <kbd>passwd</kbd>
+                    </li>
+                    <li>
+                        about myself - <kbd>whoami</kbd>, <kbd>user</kbd>, <kbd>groups</kbd>, ...
+                    </li>
+                    <li data-jmpress="zoom">
+                        <span class="text1">
+                            Which groups are you member of <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>
+                    <li data-jmpress="appear after 3s prev">about others - <kbd>who</kbd>, ...</li>
+                </ol>
+            </div>
+
+            <div id="files" class="step slide" data-x="4500" data-y="1000">
+                <header>File manipulation</header>
+                <dl class="dl-horizontal">
+                    <dt>touch</dt>
+                    <dd>
+                        <em>create</em> empty files: <kbd>touch &lt;filename&gt;</kbd>
+                    </dd>
+                    <dt>mkdir</dt>
+                    <dd>
+                        <em>create</em> new directory: <kbd>mkdir &lt;directory name&gt;</kbd>
+                    </dd>
+                    <dt>cp</dt>
+                    <dd>
+                        <em>copy</em> files: <kbd>cp &lt;source&gt; &lt;target&gt;</kbd>
+                    </dd>
+                    <dd>
+                        multiple options available: <kbd>cp -i ...</kbd>, <kbd>cp -R ...</kbd>
+                    </dd>
+                    <dt>mv</dt>
+                    <dd>
+                        <em>move</em> and <em>rename</em> files and directories: <kbd>mv &lt;source&gt; &lt;target&gt;</kbd>
+                    </dd>
+                    <dt>rm, rmdir</dt>
+                    <dd>
+                        <em>delete</em> files and directories: <kbd>rm [-options] &lt;filename&gt;</kbd>, <kbd>rmdir &lt;diretory name&gt;</kbd>
+                    </dd>
+                    <dd>
+                        delete recursive, force deletion of non-empty directory: <kbd>rm -rf</kbd>
+                    </dd>
+                    <dt>ln</dt>
+                    <dd>
+                        <em>create (symbolic) links</em>, nake files and directoories available in a different location: <kbd>ln -s &lt;target&gt; &lt;link name&gt;</kbd>
+                    </dd>
+                    <dd>
+                        calling <code>ln</code> without <code>-s</code> option, creates <em>hard links</em>.
+                    </dd>
+                    <dt>cat</dt>
+                    <dd>
+                       <em>concatenate</em> files and <em>print</em> to standard out: <kbd>cat [-options] &lt;files&gt;</kbd>
+                    </dd>
+                    <dd>
+                        using <code>-</code> instead of <code>&lt;filenames&gt;</code> reads from standard input
+                    </dd>
+                    <dt>less</dt>
+                    <dd><em>text viewer</em>: <kbd>less &lt;filename&gt;</kbd></dd>
+                    <dd>
+                        navigation via arrows <i class="fa fa-arrow-up"></i>, <i class="fa fa-arrow-down"></i>, <i class="fa fa-arrow-left"></i>, <i class="fa fa-arrow-right"></i>, ... quit via <kbd>q</kbd>
+                    </dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="assignmentFiles" class="step assignment" data-x="4500" data-y="2000" data-rotate-z="90" data-rotate-y="180">
+                <header class="akzent2">Assignment #2</header>
+                <ol>
+                    <li>create a new directory <code>one</code> and within this directory a file <code>file1.txt</code></li>
+                    <li>change to directory <code>one</code> and create a file named <code>.caution</code></li>
+                    <li data-jmpress="zoom">
+                        <span class="text1">
+                            Who is owner of those new created files <i class="fa fa-lg fa-question-circle"></i>
+                        </span> 
+                        <span class="text2">What are their timestamps <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>
+                    <li data-jmpress="appear after 3s prev">
+                        create (without changing directory) a new directory <code>two</code> as sibling to <code>one</code>
+                    </li>
+                    <li data-jmpress="appear after 1s prev">
+                        copy <code>file1.txt</code> in the new directory <code>two</code>
+                    </li>
+                    <li data-jmpress="appear after 1s prev">
+                        copy <code>file1.txt</code> with new name <code>copied.csv</code> to the new directory <code>two</code>.
+                    </li>
+                    <li data-jmpress="zoom">
+                        <span class="text3">
+                            How can you display the content of <code>.caution</code> <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>
+                </ol>
+            </div>
+            <div id="rights" class="step slide" data-x="6000" data-y="1000">
+                <header>Accessing files</header>
+                <p>
+                    Each file (and directory) has an <em>owner</em> and <em>access rights</em> (<em><mark>r</mark>ead</em>, <em><mark>w</mark>rite</em> and <em>e<mark>x</mark>ecute</em>).
+                </p>
+                <pre><code><em>drwxr-xr-x+ 1 pgrund users     0 22. Aug 13:57 css</em>
+drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
+-rwxr-xr-x  1 pgrund users 47394 26. Aug 10:20 index.html</code></pre>
+                <div class="container">
+                    <div class="row">
+                        <span class="col-md-1"></span>
+                        <span class="col-md-3 text-center"><em>access rights</em></span>
+                        <span class="col-md-5"></span>
+                    </div>
+                    <div class="row">
+                        <span class="col-md-1">type</span>
+                        <span class="col-md-1"><em>owner</em></span>
+                        <span class="col-md-1"><em>group</em></span>
+                        <span class="col-md-1"><em>others</em></span>
+                        <span class="col-md-1">...</span>
+                        <span class="col-md-1">user</span>
+                        <span class="col-md-1">group</span>
+                        <span class="col-md-1">...</span>
+                        <span class="col-md-1">name</span>
+                    </div>
+                    <div class="row">
+                        <span class="col-md-1"><code>d</code></span>
+                        <span class="col-md-1"><code>rwx</code></span>
+                        <span class="col-md-1"><code>r-x</code></span>
+                        <span class="col-md-1"><code>r-x</code></span>
+                        <span class="col-md-1"><code>...</code></span>
+                        <span class="col-md-1"><code>pgrund</code></span>
+                        <span class="col-md-1"><code>users</code></span>
+                        <span class="col-md-1"><code>...</code></span>
+                        <span class="col-md-1"><code>css</code></span>
+                    </div>
+                </div>  
+                <br/>              
+                <dl>
+                    <dt>chown, chgrp</dt>
+                    <dd>change owner and group: <kbd>chown &lt;owner&gt; &lt;filename&gt;</kbd>, <kbd>chgrp &lt;group&gt; &lt;filename&gt;</kbd></dd>
+                    <dd><code>chown</code> can also change group alog with user: <kbd>chown &lt;user&gt;:&lt;group&gt; &lt;filename&gt;</kbd></dd>                    
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="chmod" class="step slide" data-x="6000" data-y="2000">
+                <header>change access rights</header>
+                <p>
+                    <kbd>chmod &lt;mode&gt; &lt;filename&gt;</kbd>
+                </p>
+                <div class="left">                   
+                    <table class="table">
+                        <caption>ugoa</caption>
+                        <thead>
+                            <tr>
+                                <th>abbreviation</th>
+                                <th>description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>u</th>
+                                <td>user</td>
+                            </tr>
+                            <tr>
+                                <th>g</th>
+                                <td>group</td>
+                            </tr>
+                            <tr>
+                                <th>o</th>
+                                <td>others</td>
+                            </tr>
+                            <tr>
+                                <th>a</th>
+                                <td>all</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pre><code>... ~$ chmod go-x,u+w alt.txt</code></pre>
+                </div>
+                <div class="right">                                        
+                    <table class="table">
+                        <caption>numeric</caption>
+                        <thead>
+                            <tr>
+                                <th>number</th>
+                                <th>description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>execute</td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td>write</td>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <td>read</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pre><code>... ~$ chmod 644 alt.txt</code></pre>                    
+                </div>
+                <p class="clearfix">
+                        How would it look like in <em>ugoa</em> ?  
+                        <span data-jmpress="zoom">
+                            <i class="fa fa-lg fa-long-arrow-right text2"></i>
+                            <code>chmod a+r,u+w alt.txt</code>
+                        </span>
+                </p>   
+                <footer></footer>
+            </div>
+            <div id="assignmentRights" class="step assignment" data-x="6000" data-y="3000" data-rotate-z="90" data-rotate-y="180">
+                <header class="akzent3">Assignment #3</header>
+                <ol>
+                    <li>copy file <code>~/one/file1.txt</code> to home directory of your left neighbor</li>
+                    <li data-jmpress="zoom">
+                        <span class="text1">
+                            How does the access rights (<code>ls -l</code>) of the copied file look like <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>
+                    <li data-jmpress="appear after 3s prev">grant all participant of the course access to your <code>~/two</code> directory</li>
+                    <li data-jmpress="appear after 1s prev">concat all the contents of <code>/two/copied.csv</code> of all prticipants and display to standard out</li>
+                </ol>
+            </div>
+            <div id="config" class="step slide" data-x="7500" data-y="1000">
+                <header>My configuration</header>
+                <ul>
+                    <li>.bashrc</li>
+                    <li>.profile</li>
+                    <li>.bash_profile</li>
+                </ul>
+                <ul>
+                    <li>alias</li>                    
+                    <li>PATH</li>
+                    <li>env</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="admin" class="step slide" data-x="9000" data-y="1000">
+                <header>Being super</header>
+                <ul>
+                    <li>su</li>
+                    <li>sudo</li>
+                </ul>
+                <footer></footer>
+            </div>
+          
+            <div id="final" class="step" data-x="3000" data-z="10000"></div>
+        </div>
+	
+	<script type="text/javascript">
+
+        $.jmpress('register', 'linux', function() {
+            
+            var jmpress = this;
+            // our main configuration
+            var config = { 
+                viewPort: {  
+                    height: 1024,                 
+                    maxScale: 4,
+                    initalScale: 1,
+                    zoomable: false
+                    
+                },
+                /*presentationMode: {
+                  use: false,
+                  url: "./presentation-screen.html", 
+                  notesUrl: "./index.notes.html"
+                },*/
+                presentations: {
+                    print: {
+                        button: "print"
+                    }
+                }
+            };
+
+            // enable ESC to toggle jmpress
+            $(this).jmpress('toggle', 27, config, true);
+            // enable break button
+            $(this).jmpress('break', config);
+            // enable print button
+            $(this).jmpress('print', config);
+            // enable footer date appending
+            $(this).jmpress('footerHandling');
+
+            // enable highlight.js
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+ 
+        });
+
+        // start the presentation!
+        $('#impress').jmpress('linux');
+        
+        </script>    
+</body>
+</html>

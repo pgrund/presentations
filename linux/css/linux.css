@@ -1,0 +1,27 @@
+@import url(../../bisnode/default.css);
+
+body{
+  
+    font-size: 28px;
+    font-family: 'Armata', sans-serif;
+    background: white;
+    color: black;
+    text-shadow: 1px 1px 2px #000;
+    
+    counter-reset: slideIdx;
+}
+
+.step.assignment {
+	background-image: url("../../bisnode/img/code-paper-x.jpg");
+}
+
+#kernel .akzent2, #kernel .akzent1, #kernel .akzent4 {
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
+} 
+
+pre code em {
+ border: solid thick orange; 
+ border-radius: 10px;
+ color:inherit;
+}
