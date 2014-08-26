@@ -641,12 +641,7 @@ ul.list-unstyled li::before , ol.list-unstyled li::before {
 .item li:nth-child(6):before, .item dt:nth-of-type(6), .agenda li:nth-child(6):after {
     color:rgb(127,127,127);
 }
-#li-test {
-    list-style: none;
-}
-#li-test li:before {
-    content: '\f188';
-}
+
 ul.questions{
     list-style: none;
 }
@@ -753,6 +748,10 @@ header .akzent1 {
         max-width: 100%;
     }
 
+    .tab-content > .tab-pane {
+        display: block !important; 
+        opacity: 1 !important;
+    }
     #final, #print, footer {
         display:none;
     }
