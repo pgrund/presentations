@@ -755,7 +755,8 @@ header .akzent1 {
     #final, #print, footer {
         display:none;
     }
-    /* plus some more step specific styles of your own
-    #htop2 { display: none }
-    */
+ 
+    .under-construction {
+        display: none;
+    }
 }
