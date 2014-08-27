@@ -487,7 +487,7 @@
             </div>            
             <div id="folderstructure" class="step slide" data-x="3000">
                 <header>Structure</header>
-                <div class="left">
+                <div class="left hidden-print">
                   <ul class="fa-ul">
                     <li>
                         <i class="fa fa-li fa-folder-open"></i> <span data-toggle="tooltip" data-placement="right" title="Tooltip on right">/</span>
@@ -555,7 +555,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                       <div class="tab-pane active" id="structRoot">
-                        <span class="visible-print-block"><kbd>/</kbd> (root)</span>
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/</kbd> (root)</span>
                         <ul>
                             <li>root of operating system</li>
                             <li>directories only, except <em>ONE</em> file: <em>kernel</em></li>
@@ -563,21 +563,21 @@
                         </ul>
                       </div>
                       <div class="tab-pane" id="structBin">
-                        <span class="visible-print-block"><kbd>/bin</kbd></span>
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/bin</kbd></span>
                         <ul>
                             <li>binary programs (critical for system)</li>
                             <li>all users may read</li>
                         </ul>
                       </div>
                       <div class="tab-pane" id="structEtc">
-                        <span class="visible-print-block"><kbd>/etc</kbd></span>
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/etc</kbd></span>
                         <ul>
                             <li>global configuration files (network, boot, startup, user management, ...)</li>
                             <li>all users may read</li>
                         </ul>
                       </div>
                       <div class="tab-pane" id="structHome">
-                        <span class="visible-print-block"><kbd>/home</kbd></span>
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/home</kbd></span>
                         <ul>
                             <li>each user known to the system has its own <em>home directory</em> - same name as user</li>
                             <li>after login, home directory is selected</li>
@@ -585,7 +585,7 @@
                         </ul>
                       </div>
                       <div class="tab-pane" id="structTmp">
-                        <span class="visible-print-block"><kbd>/tmp</kbd></span>
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/tmp</kbd></span>
                           <ul>
                               <li>temporary files</li> 
                               <li>may be deleted after sytstem restart by system</li>
@@ -593,7 +593,7 @@
                           </ul>
                       </div>
                       <div class="tab-pane" id="structUsrBin">
-                         <span class="visible-print-block"><kbd>/usr/bin</kbd></span>
+                         <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/usr/bin</kbd></span>
                           <ul>
                               <li><em>U</em>nix <em>S</em>ystem <em>R</em>esources</li>
                               <li>binaries, system offers</li>
@@ -601,7 +601,7 @@
                           </ul>
                       </div>
                       <div class="tab-pane" id="structUsrLocalBin">
-                        <span class="visible-print-block"><kbd>/usr/local/bin</kbd></span>
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/usr/local/bin</kbd></span>
                           <ul>
                               <li>binaries not part of distribution</li>
                               <li>binaries by third-party vendors or installed manually</li>
@@ -609,7 +609,7 @@
                           </ul>
                       </div>
                       <div class="tab-pane" id="structVarLog">
-                        <span class="visible-print-block"><kbd>/var/log</kbd></span>
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/var/log</kbd></span>
                         <ul>
                             <li><em>var</em> hosts files often read and written by programs</li>
                             <li>log files</li>
