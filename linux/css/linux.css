@@ -13,6 +13,11 @@ body{
 
 .step.assignment {
 	background-image: url("../../bisnode/img/code-paper-x.jpg");
+    padding: 20px;
+}
+
+.assignment>header {
+    padding: 10px;
 }
 
 #kernel .akzent2, #kernel .akzent1, #kernel .akzent4 {
@@ -24,4 +29,12 @@ pre code em {
  border: solid thick orange; 
  border-radius: 10px;
  color:inherit;
+}
+.text0 {
+    color: white;
+    text-shadow: 2px 2px darkgray;   
+}
+
+table.table {
+    min-width: 100px;
 }
