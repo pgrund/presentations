@@ -38,3 +38,9 @@ pre code em {
 table.table {
     min-width: 100px;
 }
+
+@media print {
+    .right, .left {
+        width: 100%;
+    }
+}
