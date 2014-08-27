@@ -679,12 +679,18 @@ header .akzent1 {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 
-@media print {
+@media print {    
     * { 
         background: transparent !important;      
         box-shadow:none !important; 
-        text-shadow: none !important; 
-    } /* Black prints faster: h5bp.com/s */
+        text-shadow: none !important;         
+    } 
+    .step {
+        color:black;
+        opacity: 1.0 !important;
+        z-index: 100;
+    }
+    /* Black prints faster: h5bp.com/s */
     a, a:visited { 
         text-decoration: underline; 
     }
@@ -739,8 +745,7 @@ header .akzent1 {
         border: none; 
         margin-top: 20px; 
         display: block;       
-        clear: both;
-        z-index: 1;
+        clear: both;       
     }
     
     .step img { 
@@ -750,7 +755,7 @@ header .akzent1 {
 
     .tab-content > .tab-pane {
         display: block !important; 
-        opacity: 1 !important;
+        opacity: 1.0 !important;
     }
     #final, #print, footer {
         display:none;
