@@ -69,7 +69,7 @@
                                 <li><a href="#/sed">sed</a></li>
                                 <li><a href="#/awk">awk</a></li>
                             </ul>
-                        </li>
+                        </li>                        
                          <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Editors<b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -77,6 +77,12 @@
                                 <li><a href="#/emacs">emacs</a></li>
                                 <li><a href="#/nano">nano</a></li>
                                 <li><a href="#/pico">pico</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bash Scripting<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/">...</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -623,7 +629,7 @@
                 <header><em>B</em>ourne <em>A</em>gain <em>Sh</em>ell</header>
                 <p>tasks of a shell:</p>
                 <ul class="agenda item">
-                    <li><em>accept</em> commands and <em>interpret</em> them</li>
+                    <li><em>accept</em> commands and <a href="#/interpretation">interpret</a> them</li>
                     <li><em>start processes</em> in the commandline</li>
                     <li><em>return messages</em> of the process to the user</li>
                 </ul>
@@ -636,7 +642,7 @@
                     <dd>successor of the <em>bourne shell</em></dd>
                     <dd><em>de-facto standard</em> of all linux distribution</dd>
                     <dt>other shells</dt>
-                    <dd>erentthere are different shells available: <a>korn</a>, <a>csh</a>, <a>sh</a>, ...</dd>
+                    <dd>here are different shells available: Korn shell<a>ksh</a>, c shell <a>csh</a>, bourne shell <a>sh</a>, ...</dd>
                 </dl>
                 <footer></footer>
             </div>
@@ -655,6 +661,9 @@
                     <dt>completion</dt>
                     <dd>start typing a command and hit <kbd>tab</kbd>, the bash will try to expand the input until no unique solution is present</dd>
                     <dd>then hit <kbd>tab</kbd> twice to get a list of all available completions</dd>
+                    <dt>display</dt>
+                    <dd><kbd>echo</kbd> prints to standard out, very usefull for variables, pipes, ...</dd>
+                    <dd><kbd>cat</kbd> prints content of file to standard out ...</dd>
                 </dl>
             </div>
             <div id="help" class="step slide" data-x="10500" data-y="1000">
@@ -715,7 +724,8 @@ user1@server1:~$ help echo</code></pre>
                 <footer></footer>
             </div>
             <div id="assignmentUser" class="step assignment" data-x="3000" data-y="2000" data-rotate-z="90" data-rotate-y="180">
-                <header class="akzent1">Assignment #1</header>
+                <header class="akzent1"><i class="fa fa-cog fa-spin fa-lg"></i> Assignment #1</header>
+                <p class="lead">... get to know yourself ...</p>
                 <ol>
                     <li>
                         login - via <em>putty</em> and credentials mailed ...
@@ -724,14 +734,13 @@ user1@server1:~$ help echo</code></pre>
                         change password - <kbd>passwd</kbd>
                     </li>
                     <li>
-                        about myself - <kbd>whoami</kbd>, <kbd>who am i</kbd>, <kbd>groups</kbd>, <kbd>id</kbd>...
+                        about myself - <kbd>whoami</kbd>, <kbd>who am i</kbd>, <kbd>groups</kbd>, <kbd>id</kbd>... about others - <kbd>who</kbd>
                     </li>
                     <li data-jmpress="zoom">
                         <span class="text1">
                             Which groups are you member of <i class="fa fa-lg fa-question-circle"></i>
                         </span>
                     </li>
-                    <li data-jmpress="appear after 3s prev">about others - <kbd>who</kbd>, ...</li>
                 </ol>
             </div>
 
@@ -787,7 +796,8 @@ user1@server1:~$ help echo</code></pre>
                 <footer></footer>
             </div>
             <div id="assignmentFiles" class="step assignment" data-x="4500" data-y="2000" data-rotate-z="90" data-rotate-y="180">
-                <header class="akzent2">Assignment #2</header>
+                <header class="akzent2"><i class="fa fa-cog fa-spin fa-lg"></i> Assignment #2</header>
+                <p class="lead">... creating files and directories ...</p>
                 <ol>
                     <li>create a new directory <code>one</code> and within this directory a file <code>file1.txt</code></li>
                     <li>change to directory <code>one</code> and create a file named <code>.caution</code></li>
@@ -933,7 +943,8 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                 <footer></footer>
             </div>
             <div id="assignmentRights" class="step assignment" data-x="6000" data-y="3000" data-rotate-z="90" data-rotate-y="180">
-                <header class="akzent3">Assignment #3</header>
+                <header class="akzent3"><i class="fa fa-cog fa-spin fa-lg"></i> Assignment #3</header>
+                <p class="lead">... play around with access rights ...</p>
                 <ol>
                     <li>create a new directory <code>training</code> in your home directory</li>
                     <li>grant <code>read</code>, and <code>write</code> access for this new directory to all participants</li>
@@ -947,34 +958,250 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                     <li data-jmpress="appear after 1s prev">concat all the contents of <code>/two/copied.csv</code> of all prticipants and display to standard out</li>
                 </ol>
             </div>
-            <div id="config" class="step slide" data-x="7500" data-y="1000">
-                <header>My configuration</header>
-                <p>setting shell options during startup time</p>
-                
-                <ul>
-                    <li>.bashrc</li>
-                    <li>.profile</li>
-                    <li>.bash_profile</li>                    
-                </ul>
-                <footer></footer>
-            </div>
-            <div id="substitution" class="step slide" data-x="7500" data-y="2000">
-                <header>Substitution</header>
-                <ul>
-                    <li>alias</li>                                                            
-                    <li>substitution</li>
-                </ul>
-                <footer></footer>
-            </div>
-            <div id="variables" class="step slide" data-x="7500" data-y="3000">
+            <div id="variables" class="step slide" data-x="7500" data-y="1000">
                 <header>Variables</header>
-                <ul>
-                    <li>PATH</li>
-                    <li>env</li>
-                </ul>
+                <blockquote>
+                    ... defined as <em>key</em> and <em>value</em>. Valid characters for <code>key</code> are <code>0-9a-zA-Z_</code>. Assign a value to a new variable, use <code>year=2014</code>. If you want to access variable value, use <code>$year</code>.
+                </blockquote>
+                <table class="table">
+                    <caption>predefined variables</caption>
+                    <thead>
+                        <th class="col-md-1">variable</th>
+                        <th class="col-md-4">description</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>HOME</th>
+                            <td>absolut path of home directory (same as <code>~</code>)</td>
+                        </tr>
+                        <tr>
+                            <th>PATH</th>
+                            <td>list of directories searched for commands (separator: <code>:</code>)</td>
+                        </tr>
+                        <tr>
+                            <th>USER</th>
+                            <td>name of current user</td>
+                        </tr>
+                        <tr>
+                            <th>PWD</th>
+                            <td>absolut path of current directory</td>
+                        </tr>
+                        <tr>
+                            <th>?</th>
+                            <td>
+                                exit status of last command: <em>0</em> success, <em>!=0</em> failure
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>$</th>
+                            <td>process ID of current shell</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <footer></footer>
             </div>
-            <div id="admin" class="step slide" data-x="9000" data-y="1000">
+            <div id="wildcards" class="step slide" data-x="7500" data-y="1000" data-z="-1000" data-rotate-y="90">
+                <header>Wildcards</header>
+                <blockquote>... placeholders for <em>characters</em>. All files matching wildcard will be used as list input for command.</blockquote>
+                <table class="table">
+                    <caption>wildcards</caption>
+                    <thead>
+                        <tr>
+                            <th class="col-md-1">wildcard</th>
+                            <th class="col-md-3">description</th>
+                            <th class="col-md-2">example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>*</th>
+                            <td>any list of characters</td>
+                            <td><code>cp * ../save</code></td>
+                        </tr>
+                        <tr>
+                            <th>?</th>
+                            <td>any single character</td>
+                            <td><code>cp ??? ../save</code></td>
+                        </tr>
+                        <tr>
+                            <th>[...]</th>
+                            <td>any single character of list</td>
+                            <td><code>cp text[1234] ../save</code></td>
+                        </tr>
+                        <tr>
+                            <th>[!...]</th>
+                            <td>any single character NOT in list</td>
+                            <td><code>cp text[!5-9] ../save</td>
+                        </tr>
+                        <tr>
+                            <th>~</th>
+                            <td>absolute path of home directory</td>
+                            <td><code>cp ~/file1.txt ../save</code></td>
+                        </tr>
+                        <tr>
+                            <th>~&lt;user&gt;</th>
+                            <td>homedirectory of &lt;user&gt;</td>
+                            <td><code>cd ~grund</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="interpretation" class="step slide" data-x="7500" data-y="2000">
+                <header>Command Interpretation</header>
+                <blockquote>As stated at the <a href="#/bash">beginning</a>, a command gets <em>not executed directly</em> by the shell, it <em>interprets</em> the command first according to the following order ...</blockquote>
+                    
+                <ul class="agenda item">
+                    <li><em>seperate</em> command line to words</li>
+                    <li><em>substitute</em> command line</li>
+                    <li><em>redirection</em> of input and output streams</li>
+                    <li><em>search</em> for command  (type and place)</li>
+                    <li><em>execute</em> the command</li>
+                </ul>
+                <p>
+                    Substituion can change a commandline tremendously.<br/>
+                    It is important to understand how this change happens (error messages, side effects, ...).
+                </p>
+                <footer></footer>
+            </div>
+            <div id="substitution1" class="step slide" data-x="9000" data-y="2000">
+                <header>Substitution (Part I)</header>
+                <dl class="item">
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x"></i>
+                          <span class="fa-stack fa-stack-1x text0">1</span>
+                        </span>
+                        bracket substition
+                    </dt>                     
+                    <dd>e.g. create a systematic series of filenames</dd>
+                    <dd>
+                        <pre><code>$ echo /home/{maier,{b,c,f}huber}
+<i class="fa fa-lg fa-long-arrow-right text2"></i>  /home/maier  /home/bhuber  /home/chuber  /home/fhuber</code></pre>
+                    </dd>
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x"></i>
+                          <span class="fa-stack fa-stack-1x text0">2</span>
+                        </span>
+                        tilde substitution
+                    </dt>
+                    <dd>tilde (<mark>~</mark>) gets replaced by <code>home directory</code></dd>
+                    <dd>
+                        <pre><code>$ cp foo ~
+$ cp foo ~bhuber</code></pre>
+                    </dd>                    
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="substitution2" class="step slide" data-x="9000" data-y="2750" data-z="-300" data-rotate-x="-45">
+                <header>Substitution (Part II)</header>
+                <dl class="item">
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x"></i>
+                          <span class="fa-stack fa-stack-1x text0">3</span>
+                        </span>
+                        variable substitution
+                    </dt>
+                    <dd>replace variables/parameter by its value</dd>
+                    <dd>
+                        <pre><code>$ echo $PATH</code></pre>
+                    </dd>                   
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x"></i>
+                          <span class="fa-stack fa-stack-1x text0">4</span>
+                        </span>
+                        command substitution
+                    </dt>
+                    <dd>using <em>output</em> of a command as <em>part</em> of another command line (insert)</dd>
+                    <dd>
+                        <pre><code>$ echo Following users have a home directory: `ls /home`
+Following users have a home directory: grund foo jack</code></pre>
+                    </dd>                   
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="substitution3" class="step slide" data-x="9000" data-y="3000" data-z="-1000" data-rotate-x="-90">
+                <header>Substitution (Part III)</header>
+                <dl class="item">
+                     <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x"></i>
+                          <span class="fa-stack fa-stack-1x text0">5</span>
+                        </span>
+                        arithmetic substitution
+                    </dt>
+                    <dd>bash allows an integer arithmetic</dd>
+                    <dd>
+                        <pre><code>$ echo one plus one: $[1+1]
+one plus one: 2</code></pre>
+                    </dd>
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x"></i>
+                          <span class="fa-stack fa-stack-1x text0">6</span>
+                        </span>
+                        seperate words (again)
+                    </dt>
+                    <dd>only if expression is not within single (<kbd>'...'</kbd>) or double(<kbd>"..."</kbd>) quotes</dd>
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x"></i>
+                          <span class="fa-stack fa-stack-1x text0">7</span>
+                        </span>
+                        wildcard substitution
+                    </dt>
+                    <dd>according to <a href="#/wildcards">wildcards</a> as stated above</dd>
+                    <dd>
+                        <pre><code>$ echo /home/*
+/home/maier  /home/bhuber ....</code></pre>
+                    </dd>                   
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="substitution4" class="step slide" data-x="9000" data-y="2750" data-z="-1700" data-rotate-x="-135">
+                <header>Substitution (Part IV)</header>
+                <dl class="item">
+                     <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x"></i>
+                          <span class="fa-stack fa-stack-1x text0">8</span>
+                        </span>
+                        demasking
+                    </dt>
+                    <dd>drop all masking characters - if not masked on their own (<code>/</code>, <code>'</code>, <code>"</code>)</dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="assignmentSubst" class="step assignment" data-x="9000" data-y="2000" data-z="-1000" data-rotate-x="90">
+                <header class="akzent4"><i class="fa fa-cog fa-spin fa-lg"></i> Assignment #4</header>
+                <p class="lead">... using substitution ...</p>
+                <ol>
+                    <li>create a file <code>myself</code> containing <em>username</em> and all <em>groups</em> (using commands)</li>
+                    <li>copy file <code>myself</code> to <code>training</code> directory of <em>all participants containing an <code>e</code></em> in their username</li>
+                </ol>
+            </div>
+            <div id="config" class="step slide" data-x="7500" data-y="3000">                
+                <header>My configuration</header>
+                <p>setting shell options during initialization time</p>
+                <dl class="item">
+                    <dt>/etc/profile</dt>
+                    <dd>
+                        global file, read first for <a>bash</a> and <a>sh</a>
+                    </dd>
+                    <dd>for <em>all</em> users, managed by system administrator</dd>
+                    <dt>$HOME/.profile</dt>
+                    <dd>custom properties for <em>specific</em> user</dd>
+                    <dd>run on login shells, <em>NOT</em> on subshells</dd>                    
+                    <dt>$HOME/.bashrc</dt>
+                    <dd>custom properties for <em>specific</em> user</dd>
+                    <dd>run for all shells (including subshells)</dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="admin" class="step slide under-construction" data-x="9000" data-y="1000">
                 <header>Being super</header>
                 <ul>
                     <li>su</li>
@@ -983,7 +1210,7 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                 </ul>
                 <footer></footer>
             </div>
-            <div id="inputoutput" class="step slide" data-x="10500" data-y="1000">
+            <div id="inputoutput" class="step slide under-construction" data-x="10500" data-y="1000">
                    <header>Input / Output</header>
                    <footer></footer>
                </div>   
