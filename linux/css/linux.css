@@ -78,4 +78,10 @@ table.table {
     .right, .left {
         width: 100%;
     }
+    #foss>header.akzent2 {
+        page-break-before: always; 
+    }
+    .tab-pane {
+        page-break-inside: avoid; 
+    }
 }
