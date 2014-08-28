@@ -81,7 +81,10 @@ table.table {
     #foss>header.akzent2 {
         page-break-before: always; 
     }
+    #distributions .tab-content>.tab-pane {
+        border-top: solid thick darkgray;
+    }
     .tab-pane {
         page-break-inside: avoid; 
-    }
+    }    
 }
