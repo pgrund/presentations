@@ -128,9 +128,10 @@
                     <p>&nbsp;</p>
                 </header>
             </div>
-            <div id="linuxmovie" class="step" data-x="-2200" data-rotate-z="90">                
-                <iframe class="youtube-player" type="text/html" width="960" height="720" src="http://www.youtube.com/embed/x7ozaFbqg00?rel=0" frameborder="0">
-</iframe>
+            <div id="linuxmovie" class="step" data-x="-2200" data-rotate-z="90">
+                <div id="ytplayer">
+                    <a class="visible-print-block" href="http://www.youtube-nocookie.com/embed/YqqkdgE8RpM">see Youtube</a>
+                </div>
             </div>
 
             <div id="chaplinux" class="step slide chapter" >
@@ -976,7 +977,7 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                 <p class="lead">... play around with access rights ...</p>
                 <ol>
                     <li>create a new directory <code>training</code> in your home directory</li>
-                    <li>grant <code>read</code>, and <code>write</code> access for this new directory to all participants</li>
+                    <li>grant <em>read</em>, and <em>write</em> access for this new directory to all participants</li>
                     <li>copy file <code>~/one/file1.txt</code> to the <code>training</code> directory of your left neighbor</li>
                     <li data-jmpress="zoom">
                         <span class="text1">
@@ -1088,7 +1089,7 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                     <li>delete all files starting with <em>test_p</em>.</li>
                     <li>delete all files ending with <em>3</em>.</li>  
                     <li>copy file <code>test_a9</code> to <code>training</code> directory of <em>all participants containing an <code>e</code></em> in their username as well as <em>rename the file <code>test_a9_&lt;my username&gt;</code></em>, so that we do not get in conflict with other users.</li> 
-                    <li data-jmpress="appear">concat all the contents of <code>/two/copied.csv</code> of <em>all participants</em> and display to standard out</li>
+                    <li>concat all the contents of <code>/two/copied.csv</code> of <em>all participants</em> and display to standard out</li>
                 </ol>
             </div>
             <div id="interpretation" class="step slide" data-x="7500" data-y="2000">
@@ -1221,7 +1222,7 @@ one plus one: 2</code></pre>
             </div>
             <div id="assignmentSubst" class="step assignment" data-x="9000" data-y="2000" data-z="-1000" data-rotate-x="90">
                 <header class="akzent5"><i class="fa fa-cog fa-spin fa-lg"></i> Assignment #5</header>
-                <p class="lead">... using substitution ...</p>
+                <p class="lead">... how does the bash substitute ?</p>
                 <ol>
                     <li>print to standard out the string <code>$figure</code>:<pre><code>$ echo <em>...</em>
 $figure
@@ -1232,7 +1233,7 @@ $ ...</code></pre></li>
                             <i class="fa fa-lg fa-question-circle"></i>
                         </span>
                     </li>
-                    <li data-jmpress="appear after 1s prev">
+                    <li data-jmpress="appear after 2s prev">
                         create an <code>echo</code> command line, which <em>welcomes you</em> on the command line as well as  the <em>current date</em>. Use variables, so that the command line run on your neighbors shell outputs the right username ...
                         <pre><code>$ echo <em>...</em>
 Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:02:46</em>
@@ -1315,6 +1316,7 @@ $ ...</code></pre>
                             <th class="text-info">stdin</th>
                             <td>
                                 command <i class="fa fa-chevron-left text-info"></i> file
+                                <em>(read from file)</em>
                             </td>
                         </tr>
                         <tr>
@@ -1323,7 +1325,7 @@ $ ...</code></pre>
                                 command 
                                 <i class="fa fa-chevron-left text-info"></i>
                                 <i class="fa fa-chevron-left text-info"></i>
-                                EOF <em>(read until)</em>
+                                EOF <em>(read from stdin until ...)</em>
                             </td>
                         </tr>
                         <tr>
@@ -1331,11 +1333,11 @@ $ ...</code></pre>
                             <td>
                                 command 
                                 <i class="fa fa-chevron-right text-success"></i> 
-                                file <em>(replace)</em><br/>
+                                file <em>(write to file, replace)</em><br/>
                                 command
                                 <i class="fa fa-chevron-right text-success"></i> 
                                 <i class="fa fa-chevron-right text-success"></i> 
-                                file <em>(append)</em>
+                                file <em>(write to file, append)</em>
                             </td>
                         </tr>
                         <tr>
@@ -1346,14 +1348,14 @@ $ ...</code></pre>
                                     2
                                     <i class="fa fa-chevron-right"></i> 
                                 </span>    
-                                file <em>(replace)</em><br/>
+                                file <em>(write to file, replace)</em><br/>
                                 command
                                 <span class="text-danger">
                                     2
                                     <i class="fa fa-chevron-right"></i> 
                                     <i class="fa fa-chevron-right"></i> 
                                 </span>    
-                                file <em>(append)</em>
+                                file <em>(write to file, append)</em>
                             </td>
                         </tr>
                     </tbody>
@@ -1420,26 +1422,28 @@ $ ...</code></pre>
                     </li>                   
                 </ol>
             </div>
-            <div id="admin" class="step slide under-construction" data-x="10500" data-y="1000">
+            <div id="admin" class="step slide" data-x="10500" data-y="1000">
                 <header>Being super</header>
                 <p>
                     As already mentioned in <a href="#/root">users section</a>, <code><i class="fa fa-user fa-lg"></i> root</code> usually does not logon directly. Only for tasks requiring <em>root privileges</em> , a regular <i class="fa fa-user fa-lg"></i> user <em>changes</em> temporarily to <code>root</code>.
                 </p>
              
-                <dl class="dl-horizontal left">
+                <dl class="dl-horizontal">
                     <dt>su</dt>
                     <dd><em>s</em>ubstitute <em>u</em>ser identity: <em>switch</em> current user account</dd>
                     <dt>sudo</dt>
                     <dd>run programs with security <em>privileges</em> of another user</dd>
+                </dl>          
+                <dl class="dl-horizontal left">          
                     <dt>SUID, SGID</dt>
                     <dd>special <em>access rights</em> (bits) of a file</dd>
-                    <dd>grant caller of the program rights of owner (SUID) or group (SGID) only <em>during program execution</em></dd>
+                    <dd>grant <em>caller</em> of the program the rights of <em>owner (SUID)</em> or <em>group (SGID)</em> only <em>during program execution</em></dd>
                     <dt>sticky bit</dt>
-                    <dd></dd>
+                    <dd>file access rights <em>priority</em> over directory access rights</dd>
                 </dl>
                    <pre class="right"><code>$ ls -l /usr/bin/passwd
--rw<em>s</em>r-xr-x ... /usr/bin/passwd
-$ ls -l /
+-rw<em>s</em>r-xr-x ... /usr/bin/passwd</code>
+                      <code>$ ls -l /
 drwxrwxrw<em>t</em> ... tmp
 </code></pre>
                 
@@ -1449,7 +1453,23 @@ drwxrwxrw<em>t</em> ... tmp
             <div id="final" class="step" data-x="3000" data-z="10000"></div>
         </div>
 	
-	<script type="text/javascript">
+<script type="text/javascript">
+          // Load the IFrame Player API code asynchronously.
+          var tag = document.createElement('script');
+          tag.src = "https://www.youtube.com/player_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // Replace the 'ytplayer' element with an <iframe> and
+          // YouTube player after the API code downloads.
+          var player;
+          function onYouTubePlayerAPIReady() {
+            player = new YT.Player('ytplayer', {
+              height: '720',
+              width: '960',
+              videoId: 'YqqkdgE8RpM'
+            });
+          }
 
         $.jmpress('register', 'linux', function() {
             
