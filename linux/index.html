@@ -255,7 +255,7 @@
                     <a href="http://www.linuxfromscratch.org/" target="_blank"> 
                         Linux from scratch
                     </a>                  
-                    <span data-jmpress="zoom after 3s prev">
+                    <span data-jmpress="zoom after 3s prev" class="hidden-print">
                         <i class="fa fa-code"></i> updates ?, <i class="fa fa-cog"></i> patches ? 
                     </span>    
                 </p>
@@ -1225,8 +1225,7 @@ one plus one: 2</code></pre>
                 <p class="lead">... how does the bash substitute ?</p>
                 <ol>
                     <li>print to standard out the string <code>$figure</code>:<pre><code>$ echo <em>...</em>
-$figure
-$ ...</code></pre></li>
+$figure</code></pre></li>
                     <li data-jmpress="zoom">
                         <span class="text1">
                             What is the difference between <code>"$figure"</code>, <code>`$figure`</code> and <code>'$figure'</code> if used as parameter 
@@ -1236,8 +1235,7 @@ $ ...</code></pre></li>
                     <li data-jmpress="appear after 2s prev">
                         create an <code>echo</code> command line, which <em>welcomes you</em> on the command line as well as  the <em>current date</em>. Use variables, so that the command line run on your neighbors shell outputs the right username ...
                         <pre><code>$ echo <em>...</em>
-Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:02:46</em>
-$ ...</code></pre>
+Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:02:46</em></code></pre>
                     </li>                        
                 </ol>               
             </div>
@@ -1450,10 +1448,25 @@ drwxrwxrw<em>t</em> ... tmp
                 
                 <footer></footer>
             </div>
+
+            <div id="chapAdvanced" class="step slide chapter orange" data-y="2000">
+                <header>Advanced Commands</header>               
+                <footer></footer>
+            </div>
+
+            <div id="chapEditors" class="step slide chapter blue" data-y="3000">
+                <header>Editors</header>               
+                <footer></footer>
+            </div>
             
+            <div id="chapScripting" class="step slide chapter lightgray" data-y="4000">
+                <header>Bash Scripting</header>               
+                <footer></footer>
+            </div>
+
             <div id="final" class="step" data-x="3000" data-z="10000"></div>
         </div>
-	
+        	
 <script type="text/javascript">
           // Load the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
