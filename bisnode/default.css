@@ -685,8 +685,7 @@ header .akzent1 {
         box-shadow:none !important; 
         text-shadow: none !important;         
     } 
-    .step {
-        color:black;
+    .step {       
         opacity: 1.0 !important;
         z-index: 100;
     }
