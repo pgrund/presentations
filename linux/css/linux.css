@@ -16,6 +16,17 @@ body{
     padding: 20px;
 }
 
+#backslashwarning {    
+    border: solid thick darkred;
+    border-radius: 10px;
+}
+#backslashwarning>header{     
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
+    background-color: darkred;
+    text-align: center;
+}
+
 .assignment>header {
     padding: 10px;
 }
@@ -25,6 +36,30 @@ body{
     text-shadow: 2px 2px 4px #000000;
 } 
 
+.iocommand {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+
+    background-color: rgb(189,207,49);
+
+    padding: 10px 10px 10px 10px;
+    margin: 20px 20px;
+    
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+table.iopic {
+    border: none;
+    box-shadow: none;
+ }
+
+table.table.auto {
+    width: auto;
+}
+
+.pull-left {
+    margin-right: 30px;
+}
 pre code em {
  border: solid thick orange; 
  border-radius: 10px;

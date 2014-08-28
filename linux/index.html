@@ -56,9 +56,10 @@
                                 <li><a href="#/explore">Explore the system</a></li>
                                 <li><a href="#/files">File Manipulation</a></li>
                                 <li><a href="#/rights">Access Rights</a></li>
+                                <li><a href="#/interpretation">Command Substitution</a></li>
+                                <li><a href="#/inputoutput">Input/Output Streams</a></li>
                                 <li><a href="#/config">Configuration</a></li>
                                 <li><a href="#/admin">Administration</a></li>
-                                <li><a href="#/inputoutput">Input/Output</a></li>
                                 <li><a href="#/help">Help</a></li>
                             </ul>
                         </li>
@@ -374,22 +375,24 @@
             <div id="root" class="step slide" data-x="2400" data-y="-2000" data-z="-500" data-rotate-y="45">
                 <header>Root</header>
 
-                <i class="fa fa-user fa-5x text-danger pull-left"></i>
+                <span class="fa-stack fa-3x pull-left">
+                  <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                  <i class="fa fa-user fa-stack-1x text0"></i>
+                </span>
                 <p>
                     User with <kbd>userID 0</kbd> has a special role - he's <em>root</em>.<br/>
                     Root has no security constraint by the system - in short - he is allowed to <em class="text-uppercase">do anything</em>.                    
                 </p>
-                <br class="clearfix"/>
                 <span class="fa-stack fa-3x pull-right">
                   <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                  <i class="fa fa-warning fa-stack-1x text3"></i>
+                  <i class="fa fa-warning fa-stack-1x text0"></i>
                 </span>
                 <p> 
                     Root is capable of destroying the whole system with only one command. He can delete all the work of a week, a month ... 
                     That's the reason, why the system administrator logs on with his regular user - he <em>becomes root</em> only for administrative tasks, which needs special access rights.
                 </p>                
                 <br class="clearfix"/>
-                <p class="text-right">see also <a href="#/admin">being super</a> </p>
+                <p class="text-right">see also <a href="#/admin">being super</a></p>
                 <footer></footer>
             </div>
                         
@@ -403,13 +406,13 @@
                         Names are case-sensitive: <code>FILE</code>, <code>file</code>, <code>File</code>
                     </li>
                     <li>
-                        Names may contain multiple <code>.</code> (dots): <code>File.Part.1.txt</code>
+                        Names may contain multiple (dots): <code>File.Part.1.txt</code>
                     </li>
                     <li>
                         Files <em>starting</em> with a dot, are considered to be <em>hidden files</em>: <code>.bashrc</code>
                     </li>
                 </ul>                   
-                <p>Character <code>/</code> is defined as path separator (e.g. Windows system use: <code>\</code>).</p>
+                <p>Character <code>/</code> is defined as path separator (e.g. Windows system use: <code>\</code>).</p>               
                 <header>filesystem</header>
                 <table class="table">
                     <thead>
@@ -433,6 +436,17 @@
                 </table>
                 <footer></footer>
             </div>
+            <div id="backslashwarning" class="step alert alert-warning" role="alert" data-x="1500" data-y="-3000" data-z="-10" data-rotate-x="180">
+                <header> <span class="fa-stack fa-3x pull-right">
+                  <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                  <i class="fa fa-warning fa-stack-1x text0"></i>
+                </span> Warning!</header> 
+                <p>
+                    backslash (<code>\</code>) is an <em>escaping character</em> in the bash, i.e. <code>touch ..\one\file1.txt</code> will result in a (hidden) file <code>..onefile1.txt</code>
+                </p>
+                
+            </div>
+
             <div id="linuxfiles1" class="step slide" data-x="2400" data-y="-3000" data-z="-500" data-rotate-y="45">
                 <header>file types</header>
                 <table class="table left text-center">
@@ -492,7 +506,7 @@
                     <li>
                         <i class="fa fa-li fa-folder-open"></i> <span data-toggle="tooltip" data-placement="right" title="Tooltip on right">/</span>
                         <ul class="fa-ul">
-                            <li><i class="fa fa-li fa-folder"></i> bin</li>
+                           
                             <li><i class="fa fa-li fa-folder"></i> etc</li>
                             <li class="text3">
                                 <i class="fa fa-li fa-folder-open"></i> home
@@ -519,7 +533,12 @@
                                     <li><i class="fa fa-li fa-folder"></i> log</li>
                                 </ul>
                             </li>
-                            <li><i class="fa fa-li fa-folder"></i> ...</li>
+                            <li>
+                                <i class="fa fa-li fa-folder-open"></i> dev
+                                <ul class="fa-ul">
+                                    <li><i class="fa fa-li fa-folder"></i>null</li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>   
                   </ul>    
@@ -549,6 +568,9 @@
                       </li>
                       <li class="text4">
                         <a href="#structVarLog" role="tab" data-toggle="tab">/var/log</a>
+                      </li>
+                      <li>
+                        <a href="#structDevNull" role="tab" data-toggle="tab">/dev/null</a>
                       </li>
                     </ul>
 
@@ -613,6 +635,13 @@
                         <ul>
                             <li><em>var</em> hosts files often read and written by programs</li>
                             <li>log files</li>
+                        </ul>
+                      </div>
+                      <div class="tab-pane" id="structDevNull">
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/dev/null</kbd></span>
+                        <ul>
+                            <li><em>/dev</em> hosts all devices</li>
+                            <li><em>/dev/null</em> trash bin</li>
                         </ul>
                       </div>
                     </div>            
@@ -839,7 +868,7 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                         <span class="col-md-5"></span>
                     </div>
                     <div class="row">
-                        <span class="col-md-1">type</span>
+                        <span class="col-md-1"><a href="#/linuxfiles1">type</a></span>
                         <span class="col-md-1"><em>owner</em></span>
                         <span class="col-md-1"><em>group</em></span>
                         <span class="col-md-1"><em>others</em></span>
@@ -865,7 +894,7 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                 <dl>
                     <dt>chown, chgrp</dt>
                     <dd>change owner and group: <kbd>chown &lt;owner&gt; &lt;filename&gt;</kbd>, <kbd>chgrp &lt;group&gt; &lt;filename&gt;</kbd></dd>
-                    <dd><code>chown</code> can also change group alog with user: <kbd>chown &lt;user&gt;:&lt;group&gt; &lt;filename&gt;</kbd></dd>                    
+                    <dd><code>chown</code> can also change group along with user: <kbd>chown &lt;user&gt;:&lt;group&gt; &lt;filename&gt;</kbd></dd>                    
                 </dl>
                 <footer></footer>
             </div>
@@ -934,7 +963,7 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                     <pre><code>... ~$ chmod 644 alt.txt</code></pre>                    
                 </div>
                 <p class="clearfix">
-                        How would it look like in <em>ugoa</em> ?  
+                        How would <code>chmod 644 alt.txt</code> look like in <em>ugoa</em> ?  
                         <span data-jmpress="zoom">
                             <i class="fa fa-lg fa-long-arrow-right text2"></i>
                             <code>chmod a+r,u+w alt.txt</code>
@@ -954,8 +983,7 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                             How does the access rights (<code>ls -l</code>) of the copied file look like <i class="fa fa-lg fa-question-circle"></i>
                         </span>
                     </li>
-                    <li data-jmpress="appear after 3s prev">grant all participant of the course access to your <code>~/two</code> directory</li>
-                    <li data-jmpress="appear after 1s prev">concat all the contents of <code>/two/copied.csv</code> of all prticipants and display to standard out</li>
+                    <li data-jmpress="appear after 3s prev">grant all participant of the course <em>read</em> access to your <code>~/two</code> directory</li>         
                 </ol>
             </div>
             <div id="variables" class="step slide" data-x="7500" data-y="1000">
@@ -989,7 +1017,9 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                         <tr>
                             <th>?</th>
                             <td>
-                                exit status of last command: <em>0</em> success, <em>!=0</em> failure
+                                exit status of last command: 
+                                <span class="text-success"><em>0</em> success</span>, 
+                                <span class="text-danger"><em>!=0</em> failure</span>
                             </td>
                         </tr>
                         <tr>
@@ -1046,6 +1076,20 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                     </tbody>
                 </table>
                 <footer></footer>
+            </div>
+            <div id="assignmentWildcards" class="step assignment">
+                <header class="akzent4"><i class="fa fa-cog fa-spin"></i> Assignment #4</header>
+                <p class="lead">... get to know the wildcard handling of bash ...</p>
+                <ol>                    
+                    <li>list all files containing the letter <code>e</code> in your home directory <code>~</code> and all its subdirectories.</li>
+                    <li>change to your <code>~/one</code> directory</li>
+                    <li>create new empty files named <code>test_a</code>, <code>test_b</code>, ... <code>test_z</code>.</li>
+                    <li>create new empty files named <code>test_a1</code>, <code>test_a2</code>, ... <code>test_z9</code>.</li>
+                    <li>delete all files starting with <em>test_p</em>.</li>
+                    <li>delete all files ending with <em>3</em>.</li>  
+                    <li>copy file <code>test_a9</code> to <code>training</code> directory of <em>all participants containing an <code>e</code></em> in their username as well as <em>rename the file <code>test_a9_&lt;my username&gt;</code></em>, so that we do not get in conflict with other users.</li> 
+                    <li data-jmpress="appear">concat all the contents of <code>/two/copied.csv</code> of <em>all participants</em> and display to standard out</li>
+                </ol>
             </div>
             <div id="interpretation" class="step slide" data-x="7500" data-y="2000">
                 <header>Command Interpretation</header>
@@ -1145,7 +1189,7 @@ one plus one: 2</code></pre>
                         </span>
                         seperate words (again)
                     </dt>
-                    <dd>only if expression is not within single (<kbd>'...'</kbd>) or double(<kbd>"..."</kbd>) quotes</dd>
+                    <dd>only if expression is not within single (<kbd>'...'</kbd>) or double (<kbd>"..."</kbd>) quotes</dd>
                     <dt>
                         <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-1x"></i>
@@ -1176,14 +1220,167 @@ one plus one: 2</code></pre>
                 <footer></footer>
             </div>
             <div id="assignmentSubst" class="step assignment" data-x="9000" data-y="2000" data-z="-1000" data-rotate-x="90">
-                <header class="akzent4"><i class="fa fa-cog fa-spin fa-lg"></i> Assignment #4</header>
+                <header class="akzent5"><i class="fa fa-cog fa-spin fa-lg"></i> Assignment #5</header>
                 <p class="lead">... using substitution ...</p>
                 <ol>
-                    <li>create a file <code>myself</code> containing <em>username</em> and all <em>groups</em> (using commands)</li>
-                    <li>copy file <code>myself</code> to <code>training</code> directory of <em>all participants containing an <code>e</code></em> in their username</li>
-                </ol>
+                    <li>print to standard out the string <code>$figure</code>:<pre><code>$ echo <em>...</em>
+$figure
+$ ...</code></pre></li>
+                    <li data-jmpress="zoom">
+                        <span class="text1">
+                            What is the difference between <code>"$figure"</code>, <code>`$figure`</code> and <code>'$figure'</code> if used as parameter 
+                            <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>
+                    <li data-jmpress="appear after 1s prev">
+                        create an <code>echo</code> command line, which <em>welcomes you</em> on the command line as well as  the <em>current date</em>. Use variables, so that the command line run on your neighbors shell outputs the right username ...
+                        <pre><code>$ echo <em>...</em>
+Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:02:46</em>
+$ ...</code></pre>
+                    </li>                        
+                </ol>               
             </div>
-            <div id="config" class="step slide" data-x="7500" data-y="3000">                
+            <div id="inputoutput" class="step slide" data-x="7500" data-y="3000">
+                   <header>Input / Output Streams</header>
+                   <p>For each <em>command execution</em> there always <em>3 channels</em>:</p>
+                   <table class="iopic">
+                       <tbody>
+                           <tr>
+                               <td rowspan="2">
+                                   <span class="fa-stack fa-3x">
+                                    <i class="fa fa-stack fa-stack-1x fa-keyboard-o"></i>
+                                   </span>
+                               </td>
+                               <td rowspan="2">
+                                   <span class="fa-stack fa-lg">
+                                       <i class="fa fa-long-arrow-right fa-stack-2x text5"></i>
+                                       <span class="fa-stack fa-stack-1x text-info">stdin</span>
+                                   </span>
+                               </td>
+                               <td rowspan="2">
+                                   <span class="iocommand">command</span>
+                               </td>
+                               <td>
+                                    <span class="fa-stack fa-lg">
+                                       <i class="fa fa-long-arrow-right fa-stack-2x text5"></i>
+                                       <span class="fa-stack fa-stack-1x text-success">stdout</span>
+                                    </span>
+                                </td>
+                               <td rowspan="2">
+                                   <span class="fa-stack fa-2x">
+                                       <i class="fa fa-square fa-stack-2x text6"></i>
+                                       <i class="fa fa-stack fa-stack-1x fa-terminal text0"></i>
+                                    </span>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td>
+                                   <span class="fa-stack fa-lg">
+                                       <i class="fa fa-long-arrow-right fa-stack-2x text5"></i>
+                                       <span class="fa-stack fa-stack-1x text-danger">stderr</span>
+                                   </span>
+                               </td>
+                           </tr>
+                       </tbody>
+                   </table>                   
+                    
+                   <dl class="dl-horizontal">
+                       <dt class="text-info">stdin</dt>
+                       <dd><em>standard input</em> assigned per default to the keyboard<br/>
+                       <i class="fa fa-arrow-right text-info"></i> channel number <code>0</code></dd>
+                       <dt class="text-success">stdout</dt>
+                       <dd><em>standard output</em> assigned per default to the display <br/>
+                       <i class="fa fa-arrow-right text-success"></i> channel number <code>1</code></dd>
+                       <dt class="text-danger">stderr</dt>
+                       <dd><em>standard error</em> assigned per default to the display as well<br/>
+                       <i class="fa fa-arrow-right text-danger"></i> channel number <code>2</code></dd>
+                   </dl>
+                   <p>
+                    <em>Channel numbers</em> <code>0</code>, <code>1</code> and <code>2</code> are actually special <em>file descriptors</em> (allow programs to access opened files) since they are <em>available all the time</em>.
+                   </p>
+                   <footer></footer>
+               </div>   
+            <div id="redirection1" class="step slide" data-x="7500" data-y="4000" data-rotate-y="90">
+                <header>Redirect to / from file</header>
+                <p>Input as well as output streams can be redirected to files.</p>
+                <table class="table auto">
+                    <thead>
+                        <tr>
+                            <th class="col-md-1">channel</th>
+                            <th class="col-md-2 text-center">syntax</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="text-info">stdin</th>
+                            <td>
+                                command <i class="fa fa-chevron-left text-info"></i> file
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text-info">stdin</th>
+                            <td>
+                                command 
+                                <i class="fa fa-chevron-left text-info"></i>
+                                <i class="fa fa-chevron-left text-info"></i>
+                                EOF <em>(read until)</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text-success">stdout</th>
+                            <td>
+                                command 
+                                <i class="fa fa-chevron-right text-success"></i> 
+                                file <em>(replace)</em><br/>
+                                command
+                                <i class="fa fa-chevron-right text-success"></i> 
+                                <i class="fa fa-chevron-right text-success"></i> 
+                                file <em>(append)</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text-danger">stderr</th>
+                            <td>
+                                command 
+                                <span class="text-danger">
+                                    2
+                                    <i class="fa fa-chevron-right"></i> 
+                                </span>    
+                                file <em>(replace)</em><br/>
+                                command
+                                <span class="text-danger">
+                                    2
+                                    <i class="fa fa-chevron-right"></i> 
+                                    <i class="fa fa-chevron-right"></i> 
+                                </span>    
+                                file <em>(append)</em>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>               
+                <footer></footer>
+            </div>
+            <div id="redirection2" class="step" data-x="7500" data-y="4000" data-z="-1500" data-rotate-y="90">
+                <header>Examples file redirection</header>
+                 <pre><code>$ cd ~/two
+$ ls <em>&gt;</em> two_files
+$ cat two_files
+file1.txt
+copied.csv
+$ ...</code></pre>
+                <pre><code>$ echo "Hello, I am `whoami` !" <em>&gt;</em> thats_me.txt
+$ cat thats_me.txt
+Hello, I am grund !
+$ ...</code></pre>
+                <pre><code>$ cat <em>&lt;&lt;</em> <em>EOF</em>
+&gt; some typed text
+&gt; in multiple lines
+&gt; <em>EOF</em>
+some typed text
+in multiple lines
+$ ...</code></pre>
+            </div>
+            <div id="config" class="step slide" data-x="7500" data-y="5000">
                 <header>My configuration</header>
                 <p>setting shell options during initialization time</p>
                 <dl class="item">
@@ -1201,19 +1398,54 @@ one plus one: 2</code></pre>
                 </dl>
                 <footer></footer>
             </div>
-            <div id="admin" class="step slide under-construction" data-x="9000" data-y="1000">
+            <div id="assignmentBashrc" class="step assignment" data-x="9000" data-y="3000" data-z="-5000p>" data-rotate-x="90">
+                <header class="akzent6"><i class="fa fa-cog fa-lg fa-spin"></i> Assignment #6</header>
+                <p class="lead">... configure my bash and play with redirection ...</p>
+                <ol>
+                    <li>append <code>alias cp='cp -i'</code> and <code>alias rm='rm -i'</code> to end of <code>~/.bashrc</code></li>
+                     <li data-jmpress="zoom">
+                        <span class="text1">
+                            What impact does this have on <code>cp</code> and <code>rm</code> in current shell <i class="fa fa-lg fa-question-circle"></i>
+                        </span>                        
+                    </li>
+                    <li data-jmpress="zoom after 3s prev">
+                        <span class="text2">
+                            In the next login shell <i class="fa fa-lg fa-question-circle"></i> In the next subshell <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>
+                    <li data-jmpress="zoom after 5s prev">
+                        <span class="text3">
+                            Can you do it in a <em>single commandline</em> <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>                   
+                </ol>
+            </div>
+            <div id="admin" class="step slide under-construction" data-x="10500" data-y="1000">
                 <header>Being super</header>
-                <ul>
-                    <li>su</li>
-                    <li>sudo</li>
-                    <li>sbit</li>
-                </ul>
+                <p>
+                    As already mentioned in <a href="#/root">users section</a>, <code><i class="fa fa-user fa-lg"></i> root</code> usually does not logon directly. Only for tasks requiring <em>root privileges</em> , a regular <i class="fa fa-user fa-lg"></i> user <em>changes</em> temporarily to <code>root</code>.
+                </p>
+             
+                <dl class="dl-horizontal left">
+                    <dt>su</dt>
+                    <dd><em>s</em>ubstitute <em>u</em>ser identity: <em>switch</em> current user account</dd>
+                    <dt>sudo</dt>
+                    <dd>run programs with security <em>privileges</em> of another user</dd>
+                    <dt>SUID, SGID</dt>
+                    <dd>special <em>access rights</em> (bits) of a file</dd>
+                    <dd>grant caller of the program rights of owner (SUID) or group (SGID) only <em>during program execution</em></dd>
+                    <dt>sticky bit</dt>
+                    <dd></dd>
+                </dl>
+                   <pre class="right"><code>$ ls -l /usr/bin/passwd
+-rw<em>s</em>r-xr-x ... /usr/bin/passwd
+$ ls -l /
+drwxrwxrw<em>t</em> ... tmp
+</code></pre>
+                
                 <footer></footer>
             </div>
-            <div id="inputoutput" class="step slide under-construction" data-x="10500" data-y="1000">
-                   <header>Input / Output</header>
-                   <footer></footer>
-               </div>   
+            
             <div id="final" class="step" data-x="3000" data-z="10000"></div>
         </div>
 	
