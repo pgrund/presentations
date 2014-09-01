@@ -26,6 +26,9 @@ body{
     background-color: darkred;
     text-align: center;
 }
+#folderstructure .nav.hidden-print>li {
+   font-size: smaller;
+}
 
 .assignment>header {
     padding: 10px;
