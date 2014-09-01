@@ -1381,6 +1381,43 @@ some typed text
 in multiple lines
 $ ...</code></pre>
             </div>
+            <div id="pipe" class="step slide" data-x="7500" data-y="4000" data-z="-3000" data-rotate-y="90">
+                <header>Pipe</header>
+                <p>The <em>pipe</em> symbol (<code>|</code>) connects to commands:</p>
+                <ul>
+                    <li><span class="text-success">stdout</span> for first command gets connected to <span class="text-info">stdin</span> of second command.</li>
+                    <li>only works, if first command <em>writes to channel 1</em> and second command <em>reads from channel 0</em></li>
+                </ul>
+                <p class="right">How many users are currently on the system ?</p>
+                <pre class="left"><code class="bash">$ who > user.dat
+$ <mark>wc -l</mark> user.dat
+6 user.dat
+$ rm user.dat</code>
+                    <code class="bash">$ who <em>|</em> wc -l
+6</code></pre>
+                <footer></footer>
+            </div>
+            <div id="xargs" class="step slide" data-x="7500" data-y="4000" data-z="-4500" data-rotate-y="90">
+                <header>Pipe data stream as argument</header>
+                <p>In order to use piped data stream as arguments to another command:</p>
+                <code>xargs <em>[options]</em> <em>[command]</em> <em>[command option]</em></code>
+                <pre><code class="bash">$ cd /etc/pam.d
+$ ls
+chfn    ftp    other   ppp     rlogin  samba   sshd  sudo  xlock
+chsh    login  passwd  rexec   rsh     squid   su    xdm   xscreensaver
+</code><code class="bash right">
+$ <em>ls | wc -l</em>
+18
+</code><code class="bash">
+$ <em>ls | xargs wc -l</em>
+6 chfn
+6 chsh
+13 ftp
+...
+114 total</code></pre>
+                <br class="clearfix"/>
+                <footer></footer>
+            </div>
             <div id="config" class="step slide" data-x="7500" data-y="5000">
                 <header>My configuration</header>
                 <p>setting shell options during initialization time</p>
