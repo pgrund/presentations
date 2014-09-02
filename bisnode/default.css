@@ -583,6 +583,16 @@ ul.agenda li , ol.agenda li{
         border-bottom-right-radius: 130px 50px ;
 }
 
+.todo {
+    background-color: darkred;
+    color: white;
+}
+.todo:before, .todo:after {
+    content: "\f071";
+    font-family: "FontAwesome";
+    margin: 10px 5px 10px 5px;
+    color:whitesmoke;
+}
 
 ul.agenda li::before, ol.agenda li::before {
   
