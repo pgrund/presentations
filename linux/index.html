@@ -66,14 +66,14 @@
                          <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filtering<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#/moreless">viewer</a></li>                                
-                                <li><a href="#/grep">grep</a></li>
-                                <li><a href="#/sed">sed</a></li>
-                                <li><a href="#/tr">tr</a></li>
-                                <li><a href="#/cut">cut</a></li>
-                                <li><a href="#/awk">awk</a></li>
-                                <li><a href="#/sort">sort</a></li>
-                                <li><a href="#/wc">wc</a></li>
+                                <li><a href="#/moreless">view content</a></li>                                
+                                <li><a href="#/grep">search for content</a></li>
+                                <li><a href="#/sed">search and replace</a></li>
+                                <li><a href="#/tr">transform text</a></li>
+                                <li><a href="#/cut">cut by columns</a></li>
+                                <li><a href="#/awk">complex matching</a></li>
+                                <li><a href="#/sort">sorting</a></li>
+                                <li><a href="#/wc">counting</a></li>
                             </ul>
                         </li>                        
                          <li class="dropdown">
@@ -81,8 +81,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#/vi">vi</a></li>
                                 <li><a href="#/emacs">emacs</a></li>
-                                <li><a href="#/nano">nano</a></li>
-                                <li><a href="#/pico">pico</a></li>
+                                <li><a href="#/otherEditor">smaller ones</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -1442,11 +1441,11 @@ $ ...</code></pre>
 $ cat thats_me.txt
 Hello, I am grund !
 $ ...</code></pre>
-               <pre><code class="bash">$ eclipse <em>></em> output.txt <em>2>&amp;1</em>em> </code></pre>
+               <pre><code class="bash">$ eclipse <em>></em> output.txt <em>2>&amp;1</em></code></pre>
             </div>
             <div id="pipe" class="step slide" data-x="7500" data-y="4000" data-z="-3000" data-rotate-y="90">
                 <header>Pipe</header>
-                <p>The <em>pipe</em> symbol (<code>|</code>) connects to commands:</p>
+                <p>The <em>pipe</em> symbol (<code>|</code>) <em>connects</em> commands:</p>
                 <ul>
                     <li><span class="text-success">stdout</span> for first command gets connected to <span class="text-info">stdin</span> of second command.</li>
                     <li>only works, if first command <em>writes to channel 1</em> and second command <em>reads from channel 0</em></li>
@@ -1468,12 +1467,12 @@ $ ls
 chfn   ftp    other   ppp    rlogin  samba   sshd  sudo  xlock
 chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
 </code></pre>
-                <p>In order to use piped data stream as arguments to another command:<br/>
-                <code>xargs <em>[options]</em> <em>[command]</em> <em>[command option]</em></code>
+                <p class="text-center">Use <em>piped data stream</em> as <em>arguments</em> to another command:<br/>
+                <kbd>xargs <em>[options]</em> <em>[command]</em> <em>[command option]</em></kbd>
                 </p>                
 <pre><code class="bash right">$ <em>ls | wc -l</em>
 18
-</code><code class="bash">$ <em>ls | xargs wc -l</em>
+</code><code class="bash">$ <em>ls | xargs wc -l</em>         <span class="text3"><i class="fa fa-lg fa-arrow-left"></i><i class="fa fa-lg fa-arrow-right"></i></span>
 6 chfn
 6 chsh
 13 ftp
@@ -1571,7 +1570,7 @@ drwxrwxrw<em>t</em> ... tmp
             <div id="filtering" class="step slide" data-x="-1500" data-y="2000">
                 <header>Filter</header>
                 <blockquote>A filter is a unix program, which <em>reads</em> data, <em>manipulates</em> and <em>outputs</em> it again.<br/>
-                That makes it a perfect fit your <em>pipe usage</em> since if no input files are provided via parameters, it reads from <em>stdin</em> and displays to <em>stdout</em>.</blockquote>
+                That makes it a perfect fit for <em>pipe usage</em> since if no input files are provided via parameters, the filter reads from <em>stdin</em> and displays to <em>stdout</em>.</blockquote>
 
                 <p>some examples of filters:</p>
                 <ul class="list-inline">
@@ -1589,8 +1588,47 @@ drwxrwxrw<em>t</em> ... tmp
                 <footer></footer>
             </div>
             <div id="moreless" class="step slide" data-x="-3000" data-y="2000" data-rotate-x="22">
-                <header>viewer</header>
-                <dl class="dl-horizontal">
+                <header>view content</header>
+                <table class="table table-condensed right">
+                    <caption>less key codes</caption>
+                    <thead>
+                        <tr>
+                            <th class="col-md-1">description</th>
+                            <th class="col-md-1">key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>next page</td>
+                            <th><kbd>&lt;space&gt;</kbd>, <kbd>page <i class="fa fa-arrow-down"></i></kbd></th>
+                        </tr>
+                        <tr>
+                            <td>previous page</td>
+                            <th><kbd>b</kbd>, <kbd>page <i class="fa fa-arrow-up"></i></kbd></th>
+                        </tr>
+                        <tr>
+                            <td>next/previous line</td>
+                            <th><kbd><i class="fa fa-arrow-down"></i></kbd> / <kbd><i class="fa fa-arrow-up"></i></kbd></th>
+                        </tr>
+                        <tr>
+                            <td>find next <em>text</em></td>
+                            <th><kbd>/<em>text</em></kbd></th>
+                        </tr>
+                        <tr>
+                           <td>find previous <em>text</em></td>
+                            <th><kbd>?<em>text</em></kbd></th>
+                        </tr>
+                        <tr>
+                            <td>find next/previous</td>
+                            <th><kbd>n</kbd> / <kbd>N</kbd></th>
+                        </tr>
+                        <tr>
+                            <td>quit</td>
+                            <th><kbd>q</kbd></th>
+                        </tr>                      
+                    </tbody>
+                </table> 
+                <dl>
                     <dt>cat</dt>
                     <dd>display content, <em>no navigation</em></dd>
                     <dd><kbd>cat &lt;file&gt;</kbd></dd>
@@ -1601,13 +1639,12 @@ drwxrwxrw<em>t</em> ... tmp
                     <dd>pagination of content per display height, navigation in <em>both direction</em></dd>
                     <dd><kbd>less &lt;file&gt;</kbd></dd>
                 </dl>
-                <pre><code class="bash">$ <em>less</em> help.dat
-  ...
+               <pre class="left"><code class="bash">$ <em>less</em> help.dat
 $ ls -al | <em>more</em></code></pre>
                 <footer></footer>
             </div>
             <div id="grep" class="step slide" data-x="-4500" data-y="2000" data-rotate-x="45">
-                <header>search content</header>
+                <header>search for content</header>
                 <dl class="dl-horizontal">
                     <dt>grep</dt>
                     <dd>find <em>patterns</em> in content of <em>text</em> files</dd>
@@ -1725,16 +1762,89 @@ Methusalix
 Middlesix
 Miraculix</code></pre>                               
             </div>   
-            <div id="assignmentGrep" class="step assignment">
+            <div id="assignmentGrep" class="step assignment" data-x="-4500" data-y="2000" data-z="-750" data-rotate-y="90">
                 <header class="akzent2"><i class="fa fa-cog fa-spin"></i> Assignment #8</header>
                 <p class="lead">... find within files ...</p>
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
             </div>
-                   
+                  
+            <div id="sed" class="step slide" data-x="-6000" data-y="2000" data-rotate-x="67">
+                <header>search and replace</header> 
+                <dl>
+                    <dt>sed</dt>
+                    <dd><em>s</em>tream <em>ed</em>itor: editor useable as filter syntax common to <a href="#/grep">grep</a> or <a href="#/vi">vi</a>.</dd>
+                    <dd>without a <em>file</em> parameter, sed processes standard input, output goes to standard out.</dd>
+                    <dd>If more than one expression argument is passed to sed, sed works from left to right.</dd>
+                    <dd><kbd>sed -e 'expression 1' [ -e 'expression 2' ... ] [ file ]</kbd></dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="tr" class="step slide" data-x="-7500" data-y="2000" data-rotate-x="90">
+                <header>transform text</header>
+                <footer></footer>
+            </div>
+            <div id="cut" class="step slide" data-x="-9000" data-y="2000" data-rotate-x="112">
+                <header>cut by columns</header>
+                <footer></footer>
+            </div>
+            <div id="awk" class="step slide" data-x="-10500" data-y="2000" data-rotate-x="135">
+                <header>complex matching</header>
+                <footer></footer>
+            </div>
+            <div id="sort" class="step slide" data-x="-12000" data-y="2000" data-rotate-x="157">
+                <header>sorting</header>
+                <footer></footer>
+            </div>
+            <div id="wc" class="step slide" data-x="-13500" data-y="2000" data-rotate-x="180">
+                <header>counting</header>
+                <footer></footer>
+            </div>
+            <div id="otherFilter" class="step slide" data-x="-15000" data-y="2000" data-rotate-x="202">
+                <header>more filter</header>
+                <dl class="dl-horizontal">
+                    <dt>unique</dt>
+                    <dd>removes duplicate lines</dd>
+                    <dd><i class="fa fa-warning text-danger"></i> make sure lines are <a href="#/sort">sort</a>ed ... </dd>
+                    <dt></dt>
+                    <dd></dd>
+                    <dt></dt>
+                    <dd></dd>
+                </dl>
+                <footer></footer>
+            </div>
             <div id="chapEditors" class="step slide chapter blue" data-y="3000">
                 <header>Editors</header>               
                 <footer></footer>
             </div>
-            
+            <div id="editors" class="step slide" data-x="1500" data-y="3000">
+                <header>textual editors</header>
+                <footer></footer>
+            </div>
+            <div id="vi" class="step slide" data-x="3000" data-y="3000">
+                <header>vi</header>
+                <footer></footer>
+            </div>
+            <div id="emacs" class="step slide" data-x="4500" data-y="3000">
+                <header>emacs</header>
+                <footer></footer>
+            </div>
+            <div id="otherEditor" class="step slide" data-x="4500" data-y="4000" data-rotate-z="90">
+                <header>others ...</header>
+                <dl class="dl-horizontal">
+                    <dt>nano</dt>
+                    <dd></dd>
+                    <dd></dd>
+                    <dt>pico</dt>
+                    <dd></dd>
+                    <dd></dd>
+                </dl>
+                <footer></footer>
+            </div>
             <div id="chapScripting" class="step slide chapter lightgray" data-y="4000">
                 <header>Bash Scripting</header>               
                 <footer></footer>
