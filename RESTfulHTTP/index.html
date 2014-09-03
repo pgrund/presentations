@@ -958,12 +958,15 @@ Host:localhost:8080
   &lt;patient id="jsmith"/&gt;
 &lt;/appointmentRequest&gt;</code></pre>
                 <div class="tabbable tabs-left pull-right">
-                    <ul class="nav nav-tabs">
+                    <ul class="nav nav-tabs hidden-print">
                         <li class="active"><a class="text-success" href="#l0sucess" data-toggle="tab"><i class="fa fa-check-circle-o fa-2x"></i> success</a></li>
                         <li><a class="text-error" href="#l0error" data-toggle="tab"><i class="fa fa-ban fa-2x"></i> error</a></li>
                     </ul>
                     <div class="tab-content">
                         <div id="l0sucess" class="tab-pane active">
+                            <span class="visible-print">
+                                <i class="fa fa-check-circle-o fa-2x"></i> success</a>
+                            </span>
                             <pre><code class="http">HTTP/1.1 200 OK
 [various headers]</code>
 <code class="xml">&lt;appointment&gt;
@@ -972,6 +975,9 @@ Host:localhost:8080
 &lt;/appointment&gt;</code></pre>
                         </div>
                         <div id="l0error" class="tab-pane">
+                            <span class="visible-print">
+                                <i class="fa fa-ban fa-2x"></i> error
+                            </span>
                             <pre><code class="http">HTTP/1.1 <em>200 OK</em>
 [various headers]</code>
 <code class="xml"><em>&lt;appointmentRequestFailure&gt;</em>
@@ -1064,13 +1070,24 @@ Host: royalhope.nhs.uk</code></pre>
   &lt;patient id="jsmith"/&gt;
 &lt;/appointmentRequest&gt;</code></pre>
                 <div class="tabbable tabs-left pull-right">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a class="text-success" href="#l2sucess" data-toggle="tab"><i class="fa fa-check-circle-o fa-2x"></i> success</a></li>
-                        <li><a class="text-error" href="#l2error" data-toggle="tab"><i class="fa fa-ban fa-2x"></i> error</a></li>
+                    <ul class="nav nav-tabs hidden-print">
+                        <li class="active">
+                            <a class="text-success" href="#l2sucess" data-toggle="tab">
+                                <i class="fa fa-check-circle-o fa-2x"></i> success
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-error" href="#l2error" data-toggle="tab">
+                                <i class="fa fa-ban fa-2x"></i> error
+                            </a>
+                        </li>
                     </ul>
-                    <div class="tab-content">
+                    <div class="tab-content pull-right">
                         <div id="l2sucess" class="tab-pane active">
-                            <pre class="pull-right"><code class="http">HTTP/1.1 <em>201 Created</em>
+                            <span class="visible-print">
+                                <i class="fa fa-check-circle-o fa-2x"></i> success
+                            </span>
+                            <pre><code class="http">HTTP/1.1 <em>201 Created</em>
 Location: slots/1234/appointment
 [various headers]</code>
 <code class="xml">&lt;appointment&gt;
@@ -1079,6 +1096,9 @@ Location: slots/1234/appointment
 &lt;/appointment&gt;</code></pre>
                         </div>
                         <div id="l2error" class="tab-pane">
+                            <span class="visible-print">
+                                <i class="fa fa-ban fa-2x"></i> error
+                            </span>
                             <pre><code class="http">HTTP/1.1 <em>409 Conflict</em>
 [various headers]</code>
 <code class="xml">&lt;openSlotList&gt;

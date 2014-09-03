@@ -236,7 +236,9 @@ pre code em {
     #actUC3 {
         opacity: 1;
     }
-     #actUC1a, #actUC2a , .navbar {
+     #actUC1a, #actUC2a , .navbar, #restglory {
         display: none;
+     }
     }
+
 }
