@@ -16,12 +16,13 @@ body{
 
 .right {
     float: right;
-    width: 50%;
-    margin-left: 10px;
+    width: 49%;
+    margin-left:5px;
 }
 .left {
     float: left;
-    width: 50%;
+    width: 49%;
+    margin-right:5px;
 }
 
 .blank {
@@ -762,20 +763,16 @@ header .akzent1 {
     thead { 
         display: table-header-group; 
     } /* h5bp.com/t */
-    tr { 
-        page-break-inside: avoid; 
+    table, tr, dl {
+        page-break-inside: avoid;
     }
     img {
         max-width: 100% !important; 
     }
     
-  .panel-collapse {
-    display:block;
-  }
-  
-  .collapse {
+  .panel-collapse, .collapse {
     display: block;
-  }  
+    }  
 
   .container-fluid {
     max-width: 1024px;
@@ -785,15 +782,9 @@ header .akzent1 {
     p { orphans: 3; widows: 3; }
     h2, h3 { page-break-after: avoid; }
 
-    /* Impress.js specific */
-    .fallback-message { display: none; }
     
     @page land {size: landscape;}
     
-   
-    table {
-        page-break-inside: avoid;
-    }
    .step, .slide { 
         page-break-inside: avoid; 
         page-break-after: always; 
@@ -813,11 +804,8 @@ header .akzent1 {
         display: block !important; 
         opacity: 1.0 !important;
     }
-    #final, #print, footer {
-        display:none;
-    }
- 
-    .under-construction {
+    #final, #print, footer, .under-construction, 
+    .fallback-message {
         display: none;
     }
 }
