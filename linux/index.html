@@ -72,7 +72,6 @@
                                 <li><a href="#/tr">transform text</a></li>
                                 <li><a href="#/cut">cut by columns</a></li>
                                 <li><a href="#/awk">complex matching</a></li>
-                                <li><a href="#/sort">sorting</a></li>
                                 <li><a href="#/wc">counting</a></li>
                             </ul>
                         </li>                        
@@ -193,7 +192,7 @@
                 </blockquote>
                  <div class="container text-center left">
                     <div class="row">
-                        <div class="col-md-8 initialism akzent1">user programs</div>
+                        <div class="col-md-8 akzent1">user programs</div>
                     </div>
                     <div class="row">
                         <div class="col-md-8 text1"><small>system calls</small></div>
@@ -705,7 +704,7 @@
                 <header>I need Help !!</header>
                 <dl class="dl-horizontal">
                     <dt>man</dt>
-                    <dd><em>manuals</em> - also called <em>manpages</em> - documentation about nearly every command (can be localized: e.g. <code>manpages-de</code></dd>
+                    <dd><em>manuals</em> - also called <em>manpages</em> - documentation about nearly every command (can be localized: e.g. <code>manpages-de</code>)</dd>
                     <dd><kbd>man &lt;command&gt;</kbd></dd>
                     <dt>info</dt>
                     <dd>similar to <code>man</code> ... just type <kbd>info</kbd> to get a list of commands and navigate through them.</dd>
@@ -823,10 +822,7 @@ user1@server1:~$ help echo</code></pre>
                         using <code>-</code> instead of <code>&lt;filenames&gt;</code> reads from standard input
                     </dd>
                     <dt>less</dt>
-                    <dd><em>text viewer</em>: <kbd>less &lt;filename&gt;</kbd></dd>
-                    <dd>
-                        navigation via arrows <i class="fa fa-arrow-up"></i>, <i class="fa fa-arrow-down"></i>, <i class="fa fa-arrow-left"></i>, <i class="fa fa-arrow-right"></i>, ... quit via <kbd>q</kbd>
-                    </dd>
+                    <dd><a href="#/moreless">see text viewers</a>: <kbd>less &lt;filename&gt;</kbd></dd>
                 </dl>
                 <footer></footer>
             </div>
@@ -1170,7 +1166,9 @@ $ cp foo ~bhuber</code></pre>
                     <dd>
                         <pre><code>$ echo Following users have a home directory: `ls /home`
 Following users have a home directory: grund foo jack</code></pre>
-                    </dd>                   
+                    </dd>              
+                    <dd>bash provides an another syntax, capable of <em>nesting</em> as well</dd>     
+                    <dd><pre><code class="bash">$ echo Following users have a home directory: <em>$(</em>ls /home<em>)</em></code></pre></dd>
                 </dl>
                 <footer></footer>
             </div>
@@ -1252,20 +1250,20 @@ one plus one: 2</code></pre>
                           <i class="fa fa-circle fa-stack-1x hidden-print"></i>
                           <span class="fa-stack fa-stack-1x text0">4</span>
                         </span>
-                        command <code>`</code>
+                        command <code>`..`</code> or <code>$(...)</code>                        
                     <i class="fa fa-long-arrow-right"></i>
                         <span class="fa-stack fa-lg text5">
                           <i class="fa fa-circle fa-stack-1x hidden-print"></i>
                           <span class="fa-stack fa-stack-1x text0">5</span>
                         </span>
                         arithmetic <code>$[]</code>
+                    <br/>    
                     <i class="fa fa-long-arrow-right"></i>
                         <span class="fa-stack fa-lg text6">
                           <i class="fa fa-circle fa-stack-1x hidden-print"></i>
                           <span class="fa-stack fa-stack-1x text0">6</span>
                         </span>
-                        words <code>'',""</code>
-                    <br/>
+                        words <code>'',""</code>                    
                     <i class="fa fa-long-arrow-right"></i>
                         <span class="fa-stack fa-lg text1">
                           <i class="fa fa-circle fa-stack-1x hidden-print"></i>
@@ -1294,7 +1292,7 @@ $figure</code></pre></li>
                         </span>
                     </li>
                     <li data-jmpress="appear after 2s prev">
-                        create an <code>echo</code> command line, which <em>welcomes you</em> on the command line as well as  the <em>current date</em>. Use variables, so that the command line run on your neighbors shell outputs the right username ...
+                        create an <code>echo</code> command line, which <em>welcomes you</em> on the command line as well as  the <em>current date</em>. Use variables, so that the command line <em>run on your neighbors shell</em> outputs the right username ...
                         <pre><code>$ echo <em>...</em>
 Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:02:46</em></code></pre>
                     </li>                        
@@ -1369,15 +1367,16 @@ Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:
                         <tr>
                             <th class="col-md-1">channel</th>
                             <th class="col-md-2 text-center">syntax</th>
+                            <th class="col-md-2">description</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th class="text-info">stdin</th>
                             <td>
-                                command <i class="fa fa-chevron-left text-info"></i> file
-                                <em>(read from file)</em>
+                                command <i class="fa fa-chevron-left text-info"></i> file                                
                             </td>
+                            <td>read from file</td>
                         </tr>
                         <tr>
                             <th class="text-info">stdin</th>
@@ -1385,7 +1384,10 @@ Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:
                                 command 
                                 <i class="fa fa-chevron-left text-info"></i>
                                 <i class="fa fa-chevron-left text-info"></i>
-                                EOF <em>(read from stdin until ...)</em>
+                                EOF
+                            </td>
+                            <td>
+                                read from stdin until <em>EOF</em>
                             </td>
                         </tr>
                         <tr>
@@ -1393,11 +1395,15 @@ Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:
                             <td>
                                 command 
                                 <i class="fa fa-chevron-right text-success"></i> 
-                                file <em>(write to file, replace)</em><br/>
+                                file<br/>
                                 command
                                 <i class="fa fa-chevron-right text-success"></i> 
                                 <i class="fa fa-chevron-right text-success"></i> 
-                                file <em>(write to file, append)</em>
+                                file
+                            </td>
+                            <td>
+                                write to file, <em>replace</em><br/>
+                                write to file, <em>append</em>
                             </td>
                         </tr>
                         <tr>
@@ -1408,14 +1414,18 @@ Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:
                                     2
                                     <i class="fa fa-chevron-right"></i> 
                                 </span>    
-                                file <em>(write to file, replace)</em><br/>
+                                file<br/>
                                 command
                                 <span class="text-danger">
                                     2
                                     <i class="fa fa-chevron-right"></i> 
                                     <i class="fa fa-chevron-right"></i> 
                                 </span>    
-                                file <em>(write to file, append)</em>
+                                file
+                            </td>
+                            <td>
+                                write to file, <em>replace</em><br/>
+                                write to file, <em>append</em>
                             </td>
                         </tr>
                     </tbody>
@@ -1431,10 +1441,10 @@ file1.txt
 copied.csv
 $ ...</code></pre>
  <pre><code>$ cat <em>&lt;&lt;</em> <em>EOF</em>
-&gt; some typed text
+&gt; some text typed by myself
 &gt; in multiple lines
 &gt; <em>EOF</em>
-some typed text
+some text typed by myself
 in multiple lines
 $ ...</code></pre>
                 <pre><code>$ echo "Hello, I am `whoami` !" <em>&gt;</em> thats_me.txt
@@ -1447,7 +1457,7 @@ $ ...</code></pre>
                 <header>Pipe</header>
                 <p>The <em>pipe</em> symbol (<code>|</code>) <em>connects</em> commands:</p>
                 <ul>
-                    <li><span class="text-success">stdout</span> for first command gets connected to <span class="text-info">stdin</span> of second command.</li>
+                    <li><em class="text-success">stdout</em> of first command gets connected to <em class="text-info">stdin</em> of second command.</li>
                     <li>only works, if first command <em>writes to channel 1</em> and second command <em>reads from channel 0</em></li>
                 </ul>                
                 <br/>
@@ -1472,7 +1482,7 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                 </p>                
 <pre><code class="bash right">$ <em>ls | wc -l</em>
 18
-</code><code class="bash">$ <em>ls | xargs wc -l</em>         <span class="text3"><i class="fa fa-lg fa-arrow-left"></i><i class="fa fa-lg fa-arrow-right"></i></span>
+</code><code class="bash">$ <em>ls | xargs wc -l</em>         <span class="text3 hidden-print"><i class="fa fa-lg fa-arrow-left"></i><i class="fa fa-lg fa-arrow-right"></i></span>
 6 chfn
 6 chsh
 13 ftp
@@ -1531,7 +1541,7 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                             Can you do it in a <em>single commandline</em> <i class="fa fa-lg fa-question-circle"></i>
                         </span>
                     </li>            
-                    <li data-jmpress="appear after 1s prev">Set global variable <code>JAVA_HOME</code> to directory of <kbd>java</kbd> installation (<code>/usr/java/default</code>), for <em>all users</em>.</li>       
+                    <li data-jmpress="appear after 1s prev">How to set a global variable <code>JAVA_HOME</code> to directory of <kbd>java</kbd> installation (<code>/usr/java/default</code>), for <em>all users</em> ?</li>       
                 </ol>
             </div>
             <div id="admin" class="step slide" data-x="10500" data-y="1000">
@@ -1649,7 +1659,7 @@ $ ls -al | <em>more</em></code></pre>
                     <dt>grep</dt>
                     <dd>find <em>patterns</em> in content of <em>text</em> files</dd>
                     <dd>most used command in unix world</dd>                    
-                    <dd><kbd>grep [options] regular expression [files]</kbd></dd>
+                    <dd><kbd>grep &lt; option ... &gt; regular expression &lt; file ... &gt;</kbd></dd>
                 </dl>
                 <table class="table">
                     <caption>options</caption>
@@ -1753,8 +1763,8 @@ training1:!:1002:grund,jheydel,blaibach,wengel,mkappelar,rwoelflik,...</code></p
                     <p>find <code>passwd</code> entry for user <code>grund</code>:</p>
                     <pre><code class="bash">$ grep '^grund:' /etc/passwd
 grund:x:1003:100:grund:/home/grund:/bin/bash</code></pre>
-                    <p>search for all names within <code>character_list</code> <em>staring</em> with <code>m</code> and <em>ending</em> with <code>ix</code>:<p>
-                    <pre><code class="bash">$ grep '^M.*ix$' asterix/character_list
+                    <p>search for all names within <code>character_list</code> <em>starting</em> with <code>M</code> and <em>ending</em> with <code>ix</code>:<p>
+                    <pre><code class="bash">$ grep '<em>^M</em>.*<em>ix</em>$' asterix/character_list
 Machtnix
 Magnix
 Majestix
@@ -1762,7 +1772,7 @@ Methusalix
 Middlesix
 Miraculix</code></pre>                               
             </div>   
-            <div id="assignmentGrep" class="step assignment" data-x="-4500" data-y="2000" data-z="-750" data-rotate-y="90">
+            <div id="assignmentGrep" class="step assignment under-construction" data-x="-4500" data-y="2000" data-z="-750" data-rotate-y="90">
                 <header class="akzent2"><i class="fa fa-cog fa-spin"></i> Assignment #8</header>
                 <p class="lead">... find within files ...</p>
                 <ol>
@@ -1773,45 +1783,45 @@ Miraculix</code></pre>
                 </ol>
             </div>
                   
-            <div id="sed" class="step slide" data-x="-6000" data-y="2000" data-rotate-x="67">
+            <div id="sed" class="step slide under-construction" data-x="-6000" data-y="2000" data-rotate-x="67">
                 <header>search and replace</header> 
                 <dl>
                     <dt>sed</dt>
                     <dd><em>s</em>tream <em>ed</em>itor: editor useable as filter syntax common to <a href="#/grep">grep</a> or <a href="#/vi">vi</a>.</dd>
                     <dd>without a <em>file</em> parameter, sed processes standard input, output goes to standard out.</dd>
                     <dd>If more than one expression argument is passed to sed, sed works from left to right.</dd>
-                    <dd><kbd>sed -e 'expression 1' [ -e 'expression 2' ... ] [ file ]</kbd></dd>
+                    <dd><kbd>sed -e 'expression 1' &lt; -e 'expression 2' ... &gt; &lt; file &gt;</kbd></dd>
                 </dl>
                 <footer></footer>
             </div>
-            <div id="tr" class="step slide" data-x="-7500" data-y="2000" data-rotate-x="90">
+            <div id="tr" class="step slide under-construction" data-x="-7500" data-y="2000" data-rotate-x="90">
                 <header>transform text</header>
+                <kbd>tr</kbd>    
                 <footer></footer>
             </div>
-            <div id="cut" class="step slide" data-x="-9000" data-y="2000" data-rotate-x="112">
+            <div id="cut" class="step slide under-construction" data-x="-9000" data-y="2000" data-rotate-x="112">
                 <header>cut by columns</header>
+                <kbd>cut</kbd>
                 <footer></footer>
             </div>
-            <div id="awk" class="step slide" data-x="-10500" data-y="2000" data-rotate-x="135">
+            <div id="awk" class="step slide under-construction" data-x="-10500" data-y="2000" data-rotate-x="135">
                 <header>complex matching</header>
+                <kbd>awk</kbd>
                 <footer></footer>
-            </div>
-            <div id="sort" class="step slide" data-x="-12000" data-y="2000" data-rotate-x="157">
-                <header>sorting</header>
-                <footer></footer>
-            </div>
-            <div id="wc" class="step slide" data-x="-13500" data-y="2000" data-rotate-x="180">
+            </div>            
+            <div id="wc" class="step slide under-construction" data-x="-12000" data-y="2000" data-rotate-x="157">
                 <header>counting</header>
+                <kbd>wc</kbd>
                 <footer></footer>
             </div>
-            <div id="otherFilter" class="step slide" data-x="-15000" data-y="2000" data-rotate-x="202">
+            <div id="otherFilter" class="step slide under-construction" data-x="-13500" data-y="2000" data-rotate-x="180">
                 <header>more filter</header>
                 <dl class="dl-horizontal">
+                    <dt>sort</dt>
+                    <dd><kbd>sort &lt;file&gt;</kbd></dd>
                     <dt>unique</dt>
-                    <dd>removes duplicate lines</dd>
-                    <dd><i class="fa fa-warning text-danger"></i> make sure lines are <a href="#/sort">sort</a>ed ... </dd>
-                    <dt></dt>
-                    <dd></dd>
+                    <dd>removes duplicate lines <kbd>unique &lt;file&gt;</kbd></dd>
+                    <dd><i class="fa fa-warning text-danger"></i> make sure lines are <em>sort</em>ed ... </dd>                    
                     <dt></dt>
                     <dd></dd>
                 </dl>
@@ -1821,19 +1831,19 @@ Miraculix</code></pre>
                 <header>Editors</header>               
                 <footer></footer>
             </div>
-            <div id="editors" class="step slide" data-x="1500" data-y="3000">
+            <div id="editors" class="step slide under-construction" data-x="1500" data-y="3000">
                 <header>textual editors</header>
                 <footer></footer>
             </div>
-            <div id="vi" class="step slide" data-x="3000" data-y="3000">
+            <div id="vi" class="step slide under-construction" data-x="3000" data-y="3000">
                 <header>vi</header>
                 <footer></footer>
             </div>
-            <div id="emacs" class="step slide" data-x="4500" data-y="3000">
+            <div id="emacs" class="step slide under-construction" data-x="4500" data-y="3000">
                 <header>emacs</header>
                 <footer></footer>
             </div>
-            <div id="otherEditor" class="step slide" data-x="4500" data-y="4000" data-rotate-z="90">
+            <div id="otherEditor" class="step slide under-construction" data-x="4500" data-y="4000" data-rotate-z="90">
                 <header>others ...</header>
                 <dl class="dl-horizontal">
                     <dt>nano</dt>

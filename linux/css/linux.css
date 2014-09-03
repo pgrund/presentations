@@ -1,4 +1,5 @@
 @import url(../../bisnode/default.css);
+@import url(http://fonts.googleapis.com/css?family=Rock+Salt);
 
 body{
   
@@ -11,9 +12,12 @@ body{
     counter-reset: slideIdx;
 }
 
-.step.assignment {
-	background-image: url("../../bisnode/img/code-paper-x.jpg");
-    padding: 20px;
+.step.assignment {    
+	border-width: 30px 86px 35px 91px;
+    -moz-border-image: url(../../bisnode/img/code-paper.png) 30 86 35 91 repeat;
+    -webkit-border-image: url(../../bisnode/img/code-paper.png) 30 86 35 91 repeat;
+    -o-border-image: url(../../bisnode/img/code-paper.png) 30 86 35 91 repeat;
+    border-image: url(../../bisnode/img/code-paper.png) 30 86 35 91 fill repeat;
 }
 
 #backslashwarning {    
@@ -32,6 +36,8 @@ body{
 
 .assignment>header {
     padding: 10px;
+    font-family: 'Rock Salt', cursive;
+    text-shadow: 3px 3px 5px white;
 }
 
 #kernel .akzent2, #kernel .akzent1, #kernel .akzent4 {
@@ -81,12 +87,13 @@ table.table {
     .right, .left {
         width: 100%;
     }
-    #foss>header.akzent2 {
+    #foss>header.akzent2, #moreless>dl {
         page-break-before: always; 
     }
     #distributions .tab-content>.tab-pane {
         border-top: solid thick darkgray;
     }
+    
     .tab-pane {
         page-break-inside: avoid; 
     }    
