@@ -97,4 +97,7 @@ table.table {
     .tab-pane {
         page-break-inside: avoid; 
     }    
+    .step.assignment {
+        border-image: none;
+    }
 }
