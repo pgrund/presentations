@@ -1579,8 +1579,10 @@ drwxrwxrw<em>t</em> ... tmp
 
             <div id="filtering" class="step slide" data-x="-1500" data-y="2000">
                 <header>Filter</header>
+                <i class="fa fa-filter fa-5x pull-right"></i>
                 <blockquote>A filter is a unix program, which <em>reads</em> data, <em>manipulates</em> and <em>outputs</em> it again.<br/>
-                That makes it a perfect fit for <em>pipe usage</em> since if no input files are provided via parameters, the filter reads from <em>stdin</em> and displays to <em>stdout</em>.</blockquote>
+                That makes it a perfect fit for <em>pipe usage</em>.<br/>
+                If no input files are provided via parameters, the filter reads from <em class="text-info">stdin</em> and displays to <em class="text-success">stdout</em>.</blockquote>
 
                 <p>some examples of filters:</p>
                 <ul class="list-inline">
@@ -1662,7 +1664,6 @@ $ ls -al | <em>more</em></code></pre>
                     <dd><kbd>grep &lt; option ... &gt; regular expression &lt; file ... &gt;</kbd></dd>
                 </dl>
                 <table class="table">
-                    <caption>options</caption>
                     <thead>
                         <tr>
                             <th class="col-md-1">option</th>
@@ -1694,6 +1695,10 @@ $ ls -al | <em>more</em></code></pre>
                             <td><code>-n</code></td>
                             <td>display line including line number</td>
                         </tr>
+                        <tr>
+                            <td><code>-e</code></td>
+                            <td>use POSIX-compliant regular expressions</td>
+                        </tr>
                     </tbody>
                 </table>                
                 <footer></footer>
@@ -1708,8 +1713,7 @@ grund    pts/0        2014-08-27 08:49 (...)</code></pre>
 training1:!:1002:grund,jheydel,blaibach,wengel,mkappelar,rwoelflik,...</code></pre>
                 <footer></footer>
             </div>
-            <div id="regex" class="step slide" data-x="-4500" data-y="2500" data-rotate-x="45" data-z="600">
-            <!--data-x="-6000" data-y="2000" data-rotate-x="67"-->
+            <div id="regex" class="step slide" data-x="-4500" data-y="2500" data-rotate-x="45" data-z="600">            
                 <header>regular expression</header>
                 <p>Regular expressions are the <em>default language for pattern matching</em>, used not only by <kbd>grep</kbd>, but many other commands as well (<kbd>sed</kbd>, <kbd>awk</kbd>, ...).<br/>
                 A regular expression may contain <em>meta characters</em>, which broaden or narrow the search term.</p>
@@ -1757,7 +1761,122 @@ training1:!:1002:grund,jheydel,blaibach,wengel,mkappelar,rwoelflik,...</code></p
                 </table>
                 <footer></footer>
             </div> 
-            
+            <div id="regex2" class="step" data-x="-4500" data-y="3000" data-rotate-x="45" data-z="1300">
+            <table class="table">
+                <caption> regular expression</caption>
+                <thead>
+                    <tr>
+                        <th class="col-md-3">description</th>
+                        <th class="col-md-1">filter</th>
+                        <th class="col-md-1"><a href="http://en.wikipedia.org/wiki/POSIX" target="_blank">POSIX</a></th>
+                        <th class="col-md-3">example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>start of line</td>
+                        <td><code>^</code></td>
+                        <td><code>^</code></td>
+                        <td><kbd>^grund</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>end of line</td>
+                        <td><code>$</code></td>
+                        <td><code>$</code></td>
+                        <td><kbd>ix$</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>any character</td>
+                        <td><code>.</code></td>
+                        <td><code>.</code></td>
+                        <td><kbd>M.a</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>any series of characters</td>
+                        <td><code>.*</code></td>
+                        <td><code>.*</code></td>
+                        <td><kbd>M.*ix</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>one of <em>a</em>,<em>b</em>,<em>c</em></td>
+                        <td><code>[a-c]</code></td>
+                        <td><code>[a-c]</code></td>
+                        <td><kbd>training[1-9]</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>one character, <em>NOT</em> <em>a</em>, <em>b</em> or <em>c</em></td>
+                        <td><code>[^a-c]</code></td>
+                        <td><code>[^a-c]</code></td>
+                        <td><kbd>M[^aei]</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>any amount of <em>x</em> (incl. none)</td>
+                        <td><code>x*</code></td>
+                        <td><code>x*</code></td>
+                        <td><kbd>training[1-9]*</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>one or more of <em>x</em></td>
+                        <td><code>x\+</code></td>
+                        <td><code>x+</code></td>
+                        <td><kbd>training[1-9]+</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>none or one of <em>x</em></td>
+                        <td><code>x\?</code></td>
+                        <td><code>x?</code></td>
+                        <td><kbd>test_?a</kbd></td>
+                    </tr>
+                    <tr>
+                        <td><em>x</em> exactly <em>n</em> times</td>
+                        <td><code>x\{n\}</code></td>
+                        <td><code>x{n}</code></td>
+                        <td><kbd>test_[0-9]{2}</kbd></td>
+                    </tr>
+                    <tr>
+                        <td><em>x</em> at least <em>n</em> times</td>
+                        <td><code>x\{n,\}</code></td>
+                        <td><code>x{n,}</code></td>
+                        <td><kbd>test_[0-9]{2,}</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <em>x</em> at least <em>n</em> times,<br/>
+                            at most <em>m</em> times
+                        </td>
+                        <td><code>x\{n,m\}</code></td>
+                        <td><code>x{n,m}</code></td>
+                        <td><kbd>test_[0-9]{2,3}</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>grouping characters</td>
+                        <td><code>\(...\)</code></td>
+                        <td><code>(...)</code></td>
+                        <td><kbd>test_([a-z][0-9])</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>reuse group <em>n</em> (0-9)</td>
+                        <td><code>\n</code></td>
+                        <td><code>\n</code></td>
+                        <td><kbd>&lt;([a-Z])&gt;.*&lt;/\1&gt;</kbd></td>
+                    </tr>
+                    <tr>
+                        <td><em>OR</em></td>
+                        <td><code>...\|...</code></td>
+                        <td><code>...|...</code></td>
+                        <td><kbd>(GPL|GNU Public License)</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            masking (escaping) character <em>\</em>
+                        </td>
+                        <td><code>\\</code></td>
+                        <td><code>\\</code></td>
+                        <td><kbd>test_a\\7</kbd></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div> 
             <div id="grepexample2" class="step" data-x="-5200" data-y="2500" data-rotate-y="-90" data-rotate-x="45">
                     <header>more examples</header>
                     <p>find <code>passwd</code> entry for user <code>grund</code>:</p>
@@ -1772,14 +1891,17 @@ Methusalix
 Middlesix
 Miraculix</code></pre>                               
             </div>   
-            <div id="assignmentGrep" class="step assignment under-construction" data-x="-4500" data-y="2000" data-z="-750" data-rotate-y="90">
+            <div id="assignmentGrep" class="step assignment" data-x="-4500" data-y="2000" data-z="-750" data-rotate-y="90">
                 <header class="akzent2"><i class="fa fa-cog fa-spin"></i> Assignment #8</header>
-                <p class="lead">... find within files ...</p>
+                <p class="lead">... find with regular expressions ...</p>
                 <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Provide a regular expression matching all <em>valid times of a 24h clock</em> (00:00:00 - 23:59:59).</li>
+                    <li>Find all <em>double typed</em> words in <code>~/asterix/asterix_text.html</code>.</li>
+                    <!-- grep -E "\b(\w+) \1\b" asterix_text.html -->
+                    <li>How many <em>empty lines</em> are in <code>~/asterix/asterix_text.html</code> ?</li>
+                    <!--grep -c "^$" asterix_text.html-->
+                    <li>Find all <em>external links</em> in <code>~/asterix/asterix_text.html</code>.</li>
+                    <!-- sed -n 's/.*href="\(http:[^"]*\)".*$/\1/p' asterix_text.html -->
                 </ol>
             </div>
                   
