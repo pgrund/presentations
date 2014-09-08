@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
          <link rel="stylesheet" href="../../impress/bootstrap.min.css" />
-        <link rel="stylesheet" href="../../font-awesome-4.1.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="../../font-awesome-4.2.0/css/font-awesome.css" />
 
         <link href="../../jmpress/basic-animations.css" rel="stylesheet"/>
         <link href="../../highlight/styles/docco.css" rel="stylesheet"/>
@@ -16,7 +16,9 @@
         
 
         <script src="../../impress/jquery.js" type="text/javascript"></script>
+        <script src="../../highchart/js/highcharts.js"></script>
         <script src="../../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../jmpress/bigtext.js" type="text/javascript"></script>
 
         <script src="../../impress/bootstrap.min.js"></script>       
         <script src="../../highlight/highlight.pack.js"></script>        
@@ -43,9 +45,125 @@
 		 	<footer></footer>
 		 </div>
          <div id="action" class="step slide" data-y="1000" data-z="-1000" data-rotate-y="90">
+            <svg width="900" height="600">
+                <defs>
+                    <g id="shoeprint" transform="translate(220,90),scale(0.1),rotate(90,250,100)" fill="lightgray">
+                        <path
+                           d="m 74.602464,12.753774 c -10.969997,3.887878 -20.656426,6.366973 -34.57123,10.79215 5.455765,69.54683 69.326616,41.819534 34.57123,-10.79215 z M 71.438231,0.13470154 C 71.625067,-9.5285821 71.127219,-18.842525 75.219274,-28.029026 c 4.6484,-9.850659 5.39125,-18.490962 2.81967,-32.796321 -4.67729,-26.019271 -14.56477,-42.241053 -27.91782,-45.803083 -28.48249,-4.2447 -32.01048,24.309246 -32.70088,45.195485 -1.572268,11.688971 8.106701,61.71180093 19.81144,70.1850494 C 48.73402,5.7486058 60.027152,2.8017429 71.438231,0.13470154 z"
+                           />
+                        <path
+                           d="m 109.678,96.545313 c 10.97,3.887877 20.65643,6.366977 34.57123,10.792147 C 138.79347,176.88429 74.922617,149.157 109.678,96.545313 z m 3.16424,-12.619074 c -0.18684,-9.66328 0.31101,-18.977225 -3.78105,-28.163726 -4.6484,-9.850659 -5.39125,-18.490962 -2.81967,-32.796321 4.67729,-26.0192715 14.56477,-42.241055 27.91782,-45.803084 28.48249,-4.2447 32.01048,24.3092468 32.70088,45.195486 1.57227,11.688971 -8.1067,61.711805 -19.81144,70.185049 -11.50233,-3.003494 -22.79547,-5.950364 -34.20654,-8.617404 z"/>
+                    </g>
+                </defs>           
+                <g fill="orange" transform="scale(2.0),translate(-20,-50)">
+                    <path d="M250,200 l-100 -10 a100,100 0 0,1 95,-90 z"/>
+                    <path d="M260,200 l5 -100 a100,100 0 0,1 90,90 z"/>
+
+                    <path d="M255,200 l-105,10 a100,100 0 1,0 205,0 z"/>
+                    
+                    <circle cx="255" cy="200" r="30" fill="white" stroke="khaki"stroke-width="7"/>
+                    <text x="190" y="170">?</text>                  
+                    <text x="290" y="170">!</text>  
+                    <text x="200" y="270" class="action bold text-uppercase">action</text>
+
+                    
+                    <use xlink:href="#shoeprint"/>                    
+                    <use xlink:href="#shoeprint" transform="rotate(15,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(30,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(45,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(60,255,205)"/>                    
+                    <use xlink:href="#shoeprint" transform="rotate(75,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(90,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(105,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(120,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(135,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(150,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(165,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(180,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(195,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(210,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(225,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(240,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(255,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(285,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(300,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(315,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(330,255,205)"/>
+                    <use xlink:href="#shoeprint" transform="rotate(345,255,205)"/>
+
+                    <text x="90" y="200" class="start text-uppercase">start</text>
+                    <text x="90" y="215" class="finish text-uppercase">finish</text>
+
+                </g>
+            </svg>
             <footer></footer>
          </div>
          <div id="sectors" class="step slide" data-y="1000" data-z="-2500" data-rotate-y="90">
+         
+                    <svg  width="800" height="450" class="center-block">
+                      
+                     <defs>
+                      <g id="group">
+                        <circle cx="210" cy="210" r="200" fill="inherit" transform="scale(0.7)"/>
+                        <text id="femaleleft" x="20" y="180" 
+                            class="fa fa-4x">
+                            &#xf182;
+                        </text>
+                        <text id="coupletop" x="75" y="110" 
+                            class="fa fa-4x">
+                            &#xf182;&#xf183;
+                        </text>
+                        <text id="couplebottom" x="75" y="250"
+                            class="fa fa-4x">
+                            &#xf183;&#xf182;
+                        </text>
+                        <text id="maleright" x="210" y="180" 
+                            class="fa fa-4x">
+                            &#xf183;
+                        </text>
+                      </g>  
+                     </defs>
+
+                       <g id="single" transform="scale(0.7),translate(50,100)">
+                         <circle cx="70" cy="90" r="80" class="text3"/> 
+                         <text id="singleMale" x="35" y="130"
+                            class="fa fa-4x">
+                            &#xf183;
+                         </text>
+                         <text x="-20" y="230" class="bold text-uppercase">private</text>
+                         <text x="-18" y="260" class="text-uppercase">individuals</text>
+                       </g>
+
+                       <g transform="scale(0.7),translate(80,100)">
+                        <use xlink:href="#group" x="150" y="0" fill="rgb(251,195,17)"/> 
+                        <text x="100" y="350" class="bold text-uppercase">small and medium</text>
+                        <text x="220" y="380" class="text-uppercase">businesses</text>
+                       </g>
+                        
+                      <g id="multiple" fill="rgb(242,207,94)" transform="translate(140,100),scale(0.7)">
+                        <circle cx="615" cy="195" r="220" fill="rgb(251,195,17)"/>
+                        <use xlink:href="#group" transform="scale(0.7)" x="630"/>
+                        <use xlink:href="#group" transform="scale(0.7)" x="900" y="100"/>
+                        <use xlink:href="#group" transform="scale(0.7)" x="670" y="290"/>
+                        <text x="460" y="450" class="bold text-uppercase">international</text>
+                        <text x="480" y="480" class="text-uppercase">corporate groups</text>
+                      </use>
+                    </svg>
+
+                <div id="sectorslist">
+                  <ul class="list-inline text-uppercase">
+                    <li class="bold">banking and finance</li>
+                    <li>telecoms industry</li>
+                    <li>public sector</li>
+                    <li class="bold">news media</li>
+                    <li>retail sector</li>
+                    <li class="bold">insurance companies</li>
+                    <li>real estate companies</li>
+                    <li>government agencies</li>
+                    <li class="bold">manifacturing industries</li>
+                    <li>professional services</li>
+                  </ul>
+                </div>            
             <footer></footer>
          </div>
          <div id="link" class="step image chapter orange" data-x="2000">
@@ -58,8 +176,50 @@
                 for decision makers.</header>
              <footer></footer>
          </div>
-         <div id="percentages" class="step slide" data-x="2000" data-y="1000" data-z="-1000" data-rotate-y="90">
-             <footer></footer>
+         <div id="percentages" class="step slide" data-x="2000" data-y="1000" data-z="-1000" data-rotate-y="90">        
+            <div id="lefttext" class="pull-left">
+                <div class="bigtext text-uppercase">                
+                     <div class="bold text1">90%</div>
+                     <div>of the data</div>
+                     <div>in the world</div>
+                     <div>has been created</div>
+                     <div>in the last</div>
+                     <div>two years alone</div>
+                </div>              
+                <div class="bigtext text-uppercase">
+                    <div>only</div>
+                    <div class="bold text1">0,5%</div>
+                    <div>of the</div>
+                    <div>world's data</div>
+                    <div>is analyzed</div>
+                </div>
+                <div class="bigtext text-uppercase">
+                    <div class="bold text1">94%</div>
+                    <div>of knowledge workers</div>
+                    <div>have at some point felt</div>
+                    <div>overwhelmed</div>
+                    <div>by information</div>
+                    <div>to the point</div>
+                    <div>of incapacity</div>                
+                  </div>
+              </div>
+               <span class="fa-stack">
+                <i class="fa fa-stack-2x fa-circle text2"></i>
+                <i class="fa fa-stack-1x fa-laptop white"></i>    
+            </span>
+            <span class="fa-stack">
+                <i class="fa fa-stack-2x fa-circle text3"></i>
+                <i class="fa fa-stack-1x fa-laptop white"></i>    
+            </span>
+            <span class="fa-stack">
+                <i class="fa fa-stack-2x fa-circle text9"></i>
+                <i class="fa fa-stack-1x fa-laptop white"></i>    
+            </span>
+            <span class="fa-stack">
+                <i class="fa fa-stack-2x fa-circle text1"></i>
+                <i class="fa fa-stack-1x fa-laptop white"></i>    
+            </span>
+            <footer></footer>
          </div>
          <div id="answers" class="step image chapter lightgreen" data-x="3500">
              <header>With the help of our <em>answers</em> and <em>insights,</em> our customers can <em>stay ahead</em> of competition</header>
@@ -131,6 +291,31 @@
              <footer></footer>
          </div>
          <div id="fact2" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-2500">
+             <div id="numbers"></div>
+             <script>
+               $('#numbers').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'the numbers'
+        },
+        xAxis: {
+            categories: ['2008', '2009', '2010', '2011', '2012']
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [
+        {          
+            data: [.12, .12, .12, .10, .13]
+        }, {
+            data: [530, 565, 520, 504, 460]
+        }]
+    });
+             </script>
              <footer></footer>
          </div>
          <div id="fact3" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-4000">
@@ -182,7 +367,7 @@
         $.jmpress('register', 'example', function() {
             
             var jmpress = this;
-            // our main configuration
+            // our main configurationk
             var config = { 
                 viewPort: {    
                     width: 1300,
@@ -204,12 +389,12 @@
             $('pre code').each(function(i, block) {
                 hljs.highlightBlock(block);
             });
+            $('.bigtext').bigtext();
  
         });
- 
-
         // start the presentation!
         $('#impress').jmpress('example');
+       
      </script>
 	</body>
 </html>

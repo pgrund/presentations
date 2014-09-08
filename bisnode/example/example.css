@@ -79,10 +79,8 @@
 	font-size:150px;
 	float: left;
 }
-.ger {
-	font-size: 92px;
-	text-transform: uppercase;
-	color: rgba(57,187,236, 0.6);
+.white {
+	color: white;
 }
 #welist {
 	height: 800px;
@@ -115,4 +113,55 @@
 	padding-right: 20px;
 
 	margin-left: -80px;
+}
+
+#sectors svg .fa {
+	fill: whitesmoke;
+	font-size: 144;
+}
+
+#sectors li, #sectors text {
+	color: darkgray;
+	fill: darkgray;
+}
+.bold {
+	font-weight: bolder;	
+}
+#sectors text.bold {
+	font-size: 42px;
+}
+#sectorslist {
+	position: absolute;
+	bottom: 150px;
+	width: 550px;
+	line-height: .8em;
+}
+#sectorslist li {
+	font-size: 20px;	
+}
+#action text {
+	font-size: 44px;
+	fill: whitesmoke;
+}
+
+#action text.action {
+	font-size:28px;
+}
+#action text.start {
+	font-size:16px;
+	font-weight: bolder;
+	fill:darkgray;
+}
+#action text.finish {
+	font-size:16px;
+	fill:lightgray;
+}
+#lefttext {	
+	font-size: 10px;
+	width: 220px;
+	height: 600px !important;
+	background-color: red;
+}
+.slide {
+	box-shadow: 10px 10px 5px darkgrey;
 }
