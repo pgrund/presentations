@@ -5,7 +5,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-         <link rel="stylesheet" href="../../impress/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../impress/bootstrap.min.css" />
         <link rel="stylesheet" href="../../font-awesome-4.2.0/css/font-awesome.css" />
 
         <link href="../../jmpress/basic-animations.css" rel="stylesheet"/>
@@ -176,7 +176,7 @@
                 for decision makers.</header>
              <footer></footer>
          </div>
-         <div id="percentages" class="step slide" data-x="2000" data-y="1000" data-z="-1000" data-rotate-y="90">        
+         <div id="percentages" class="step slide" data-x="2000" data-y="1000" data-z="-1000" data-rotate-y="90">
             <div id="lefttext" class="pull-left">
                 <div class="bigtext text-uppercase">                
                      <div class="bold text1">90%</div>
@@ -185,15 +185,15 @@
                      <div>has been created</div>
                      <div>in the last</div>
                      <div>two years alone</div>
-                </div>              
-                <div class="bigtext text-uppercase">
+                </div>
+                <div class="bigtext text-uppercase" data-jmpress="zoom">
                     <div>only</div>
                     <div class="bold text1">0,5%</div>
                     <div>of the</div>
                     <div>world's data</div>
                     <div>is analyzed</div>
                 </div>
-                <div class="bigtext text-uppercase">
+                <div class="bigtext text-uppercase" data-jmpress="zoom">
                     <div class="bold text1">94%</div>
                     <div>of knowledge workers</div>
                     <div>have at some point felt</div>
@@ -202,23 +202,25 @@
                     <div>to the point</div>
                     <div>of incapacity</div>                
                   </div>
-              </div>
-               <span class="fa-stack">
-                <i class="fa fa-stack-2x fa-circle text2"></i>
-                <i class="fa fa-stack-1x fa-laptop white"></i>    
-            </span>
-            <span class="fa-stack">
-                <i class="fa fa-stack-2x fa-circle text3"></i>
-                <i class="fa fa-stack-1x fa-laptop white"></i>    
-            </span>
-            <span class="fa-stack">
-                <i class="fa fa-stack-2x fa-circle text9"></i>
-                <i class="fa fa-stack-1x fa-laptop white"></i>    
-            </span>
-            <span class="fa-stack">
-                <i class="fa fa-stack-2x fa-circle text1"></i>
-                <i class="fa fa-stack-1x fa-laptop white"></i>    
-            </span>
+            </div>
+            <div>
+                <span class="fa-stack">
+                    <i class="fa fa-stack-2x fa-circle text2"></i>
+                    <i class="fa fa-stack-1x fa-laptop white"></i>    
+                </span>
+                <span class="fa-stack">
+                    <i class="fa fa-stack-2x fa-circle text3"></i>
+                    <i class="fa fa-stack-1x fa-laptop white"></i>    
+                </span>
+                <span class="fa-stack">
+                    <i class="fa fa-stack-2x fa-circle text9"></i>
+                    <i class="fa fa-stack-1x fa-laptop white"></i>    
+                </span>
+                <span class="fa-stack">
+                    <i class="fa fa-stack-2x fa-circle text1"></i>
+                    <i class="fa fa-stack-1x fa-laptop white"></i>    
+                </span>
+            </div>
             <footer></footer>
          </div>
          <div id="answers" class="step image chapter lightgreen" data-x="3500">
@@ -232,52 +234,79 @@
              <footer></footer>
          </div>
          <div id="we" class="step slide" data-x="3500" data-y="1000" data-z="-1000" data-rotate-y="90">
-            <ul id="welist" class="fa-ul left">
+            <div id="graphSmart">
+                <div id="smarttext" class="bigtext">
+                    <span>We enable</span>
+                    <span>smart</span>
+                    <span>decisions</span>
+                </div>
+                <svg width="900" height="600">
+                    <circle class="text4" cx="700" cy="275" r="200"/>                    
+                             
+                    <path d="M350,50 l70 0 q10,0 10,10 t0,210 q0,10 10,10 t70,0
+                             M350 160 l40 0 q10,0 10,10 t0,100 q0,10 10,10 t30,0
+                             M350 280 l60 0
+                             M350 400 l60 0 q10,0 10,-10 t0,-100 q0,-10 10,-10 t10,0
+                             M350 500 l20 0 q10,0 10,-10 t0,-200 q0,-10 10,-10 t10,0"
+                             fill="none"
+                             stroke="rgb(57,187,236)" stroke-width="3"/>
+                </svg>
+            </div>
+            <ul id="welist" class="list-unstyled">
                 <li>
-                    <i class="fa-stack fa-lg fa-li">
-                      <i class="fa fa-circle-o fa-stack-2x"></i>
-                      <i class="fa fa-signal fa-stack-1x"></i>
+                    <i class="fa-stack fa-lg">
+                      <i class="fa fa-circle-thin fa-stack-2x"></i>
+                      <i class="fa fa-wifi fa-rotate-90 fa-stack-1x"></i>
                     </i>
-                    <p>we listen</p>
+                    <span>we listen</span>
                 </li>
                 <li>
-                    <i class="fa-stack fa-lg fa-li">
-                        <i class="fa fa-circle-o fa-stack-2x"></i>
+                    <i class="fa-stack fa-lg">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
                       <i class="fa fa-lightbulb-o fa-stack-1x"></i>
                     </i>
-                    <p>we enhance</p>
+                    <span>we enhance</span>
                 </li>
                 <li>
-                     <i class="fa-stack fa-lg fa-li">
-                        <i class="fa fa-circle-o fa-stack-2x"></i>
+                     <i class="fa-stack fa-lg">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
                       <i class="fa fa-eye fa-stack-1x"></i>
                     </i>
-                    <p>we analyse</p>
+                    <span>we analyse</span>
                 </li>
                 <li>
-                     <i class="fa-stack fa-lg fa-li">
-                        <i class="fa fa-circle-o fa-stack-2x"></i>
+                     <i class="fa-stack fa-lg">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
                       <i class="fa fa-cubes fa-stack-1x"></i>
                     </i>
-                    <p>we integrate</p>
+                    <span>we integrate</span>
                 </li>
                 <li>
-                     <i class="fa-stack fa-lg fa-li">
-                        <i class="fa fa-circle-o fa-stack-2x"></i>
+                     <i class="fa-stack fa-lg">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
                       <i class="fa fa-heart fa-stack-1x"></i>
                     </i>
-                    <p>we manage data<br/>with respect</p>
+                    <span>we manage data<br/>with respect</span>
                 </li>
-            </ul>
-            <p class="right">
-                We enable <span>smart</span> decisions
-            </p>
-             <footer></footer>
+            </ul>           
+            <footer></footer>
          </div>
-         <div id="decisionsolution" class="step slide" data-x="3500" data-y="1000" data-z="-2500" data-rotate-y="90">
-             <img src="./img/bisnode-decision-solution.png" class="center-block" width="65%"/>
-             <footer></footer>
-         </div>
+         <div id="decisionsolution" class="step" data-x="3500" data-y="1000" data-z="-2500" data-rotate-y="90">
+            <div id="box">
+             <div id="front">
+                <div id="decisionBG" class="text-center">!</div>
+                <div class="decisionText akzent1trans text-center">
+                 <em>Bisnode</em><br/>
+                 Decision 
+                 Solutions
+                </div>
+             </div>
+             <div id="side">
+              <div class="decisionText akzent1trans"></div>
+             </div> 
+            </div>
+            <footer></footer>
+         </div>         
          <div id="solution" class="step image chapter blue" data-x="5000">
              <header><em>Bisnode decision solution</em> is a combination of services that <em>enables</em> our customers to make <em>smart decisions.</em></header>
              <footer></footer>
