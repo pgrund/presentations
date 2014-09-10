@@ -317,37 +317,151 @@
              <footer></footer>
          </div>
          <div id="fact1" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-1000">
-             <footer></footer>
-         </div>
-         <div id="fact2" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-2500">
-             <div id="numbers"></div>
+             <div id="facttext1" class="bigtext pull-left">
+                 <span><em>3000</em></span>
+                 <span>employees</span>
+                 <span>spread</span>
+                 <span>out in</span> 
+                            
+                    <span><em class="bold">19</em> different</span>                        
+                    <span>countries</span>   
+                 
+                 <div>                                 
+                   <span class="text4"><i class="fa fa-male"></i> 54%&nbsp;</span>
+                   <span class="text3">&nbsp;<i class="fa fa-female"></i> 46%</span>
+                 </div>
+                 <br/><br/>
+                 <span class="bold">10<span class="text-lowercase">x</span></span>
+             </div>
+             <div id="people"></div>
              <script>
-               $('#numbers').highcharts({
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'the numbers'
-        },
-        xAxis: {
-            categories: ['2008', '2009', '2010', '2011', '2012']
-        },
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
-        series: [
-        {          
-            data: [.12, .12, .12, .10, .13]
-        }, {
-            data: [530, 565, 520, 504, 460]
-        }]
-    });
+               var ele = $('#people');
+               for(var j=0 ; j< 162; j++) {
+                 ele.append("<i class='fa fa-male fa-fw text4'></i>");                
+               }
+               for (var i = 0; i < 138; i++) {
+                    ele.append("<i class='fa fa-female fa-fw text3'></i>");               
+               }
              </script>
              <footer></footer>
          </div>
+         <div id="fact2" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-2500">
+             <div id="employee"></div>
+             <script>
+               var ele = $('#employee');
+               // sales 37% = 111
+               for(var j=0 ; j< 55; j++) {
+                 ele.append("<i class='fa fa-male fa-fw text3'></i><i class='fa fa-female fa-fw text3'></i>");
+               }
+               ele.append("<i class='fa fa-male fa-fw text3'></i>");
+
+               // admin 12% = 36
+               for (var i = 0; i < 16; i++) {
+                    ele.append("<i class='fa fa-male fa-fw text1'></i><i class='fa fa-female fa-fw text1'></i>");
+               }
+
+               // support 7% = 21
+               for (var i = 0; i < 10; i++) {
+                    ele.append("<i class='fa fa-male fa-fw text4'></i><i class='fa fa-female fa-fw text4'></i>");
+               }
+               ele.append("<i class='fa fa-male fa-fw text4'></i>");
+
+               // it 10% = 30
+               for (var i = 0; i < 15; i++) {
+                    ele.append("<i class='fa fa-male fa-fw text3'></i><i class='fa fa-female fa-fw text3'></i>");
+               }
+
+               // management 2% = 6
+               for (var i = 0; i < 3; i++) {
+                    ele.append("<i class='fa fa-male fa-fw text4'></i><i class='fa fa-female fa-fw text4'></i>");
+               }
+              
+               // product development 27% = 81
+               for (var i = 0; i < 40; i++) {
+                    ele.append("<i class='fa fa-male fa-fw text2'></i><i class='fa fa-female fa-fw text2'></i>");
+               }
+               ele.append("<i class='fa fa-male fa-fw text2'></i>");
+
+                // marketing 5% = 15
+               for (var i = 0; i < 7; i++) {
+                    ele.append("<i class='fa fa-male fa-fw text1'></i><i class='fa fa-female fa-fw text1'></i>");
+               }
+               ele.append("<i class='fa fa-male fa-fw text1'></i>");
+
+             </script>
+             <svg id="employeeOrga">
+                <g class="text3">
+                    <circle cx="750" cy="20" r="5"/>
+                    <path d="M750,20 l-730 0 0 200 360 0 0 -40 320 0 0 -160 z"
+                        stroke-width="4" class="akzent3trans"/>
+                    <text x="760" y="30">Sales</text>
+                </g>
+                <g class="text1">
+                    <circle cx="750" cy="220" r="5"/>
+                    <path d="M750,220 l-340 0 0 40 -390 0 0 40 80 0 0 -40 610 0 0 -40 z"
+                        stroke-width="4" class="akzent1trans"/>
+                    <text x="760" y="230">Administration</text>
+                </g>
+                <g class="text4">
+                    <circle cx="750" cy="300" r="5"/>
+                    <path d="M750,300 l-625 0 0 40 -110 0 110 0 0 -40 625 0 z"
+                        stroke-width="4" class="akzent4trans"/>
+                    <text x="760" y="310">Support</text>
+                </g>
+                <g class="text3">
+                    <circle cx="750" cy="340" r="5"/>
+                    <path d="M750,340 l-590 0 0 40 -150 0 480 0 0 -40 200 0 z"
+                        stroke-width="4" class="akzent3trans"/>
+                    <text x="760" y="350">IT</text>
+                </g>
+                <g class="text4">
+                    <circle cx="750" cy="380" r="5"/>
+                    <path d="M750,380 l-220 0 z"
+                        stroke-width="4" class="akzent4trans"/>
+                    <text x="760" y="390">Management</text>
+                </g>
+                <g class="text2">
+                    <circle cx="750" cy="420" r="5"/>
+                    <path d="M750,420 l-730 0 0 160 0 -40 680 0 0 -120 z"
+                        stroke-width="4" class="akzent2trans"/>
+                    <text x="760" y="430">Product</text>
+                    <text x="760" y="460">Development</text>
+                </g>
+                <g class="text1">
+                    <circle cx="750" cy="510" r="5"/>
+                    <path d="M750,510 l0 70 -690 0 690 0 0 -70 z"
+                        stroke-width="4" class="akzent1trans"/>
+                    <text x="760" y="520">Marketing</text>
+                </g>
+             </svg>
+             <footer></footer>
+         </div>
          <div id="fact3" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-4000">
+             <div id="numbers"></div>
+                 <script>
+                   $('#numbers').highcharts({
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: 'the numbers'
+                        },
+                        xAxis: {
+                            categories: ['2008', '2009', '2010', '2011', '2012']
+                        },
+                        plotOptions: {
+                            series: {
+                                stacking: 'normal'
+                            }
+                        },
+                        series: [
+                        {          
+                            data: [120, 120, 120, 100, 130]
+                        }, {
+                            data: [530, 565, 520, 504, 460]
+                        }]
+                    });
+             </script>
              <footer></footer>
          </div>
          <div id="fact4" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-5500">

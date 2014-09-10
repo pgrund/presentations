@@ -1,6 +1,6 @@
 
 @import url(../default.css);
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700|Inconsolata:400,700);
+/*@import url(http://fonts.googleapis.com/css?family=Lora:400,700|Inconsolata:400,700);*/
 
 
 #start {
@@ -211,7 +211,7 @@
 	position:relative;
 	width: 100%;
 	height: 110px;
-	color:whitesmoke;
+	color:white;
 	text-transform: uppercase;
 	font-weight: bolder;
 	font-size:larger;
@@ -251,9 +251,50 @@
 	color: whitesmoke;
 	border:none;
 }
+#facttext1 {	
+	width:20%;
+	height:100%;
+	padding-right:30px;
+}
+#facttext1 span {
+	line-height: 0.95em;
+	text-transform: uppercase;
+}
 
+#facttext1>div.bigtext-exempt>em {
+	position:relative;
+	font-size: 52px;
+	margin-top:-80px;
+	
+}
+#exemptText {
+	position:relative;
+	left:40%;
+	margin-top: -60px;
+	font-size:8px;
+	width:200px;
+	
+}
+#people {
+	padding-left: 50px;
+}
+#employee {
+	width: 80%;
+	margin-left: -40px;
+}
+#employeeOrga {
+	position: absolute;
+	top:15px;
+	left: 20px;
+	width: 1024px;
+	height: 600px;
+}
 .slide {
 	-webkit-box-shadow: 10px 10px 5px darkgray;
 	-moz-box-shadow: 10px 10px 5px darkgray;
 	box-shadow: 10px 10px 5px darkgrey;
+}
+
+em {
+	border-bottom: none;
 }
