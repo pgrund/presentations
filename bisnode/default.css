@@ -564,25 +564,28 @@ table { font-size: 24px; }
 }
 .akzent1trans {
     background-color: rgba(189,207,49, 0.7);
+    fill: rgba(189,207,49, 0.3);
 }
 .akzent2 {
     background-color: rgb(54,111,54);
 }
 .akzent2trans {
     background-color: rgba(54,111,54, 0.7);
+    fill: rgba(54,111,54, 0.3);
 }
 .akzent3 {
     background-color: rgb(251,195,17);
 }
 .akzent3trans {
     background-color: rgba(251,195,17, 0.7);
-    fill:rgba(251,195,17, 0.7);
+    fill:rgba(251,195,17, 0.3);
 }
 .akzent4 {
     background-color: rgb(57,187,236);
 }
 .akzent4trans {
     background-color: rgba(57,187,236, 0.7);
+    fill: rgba(57,187,236, 0.3);
 }
 .akzent5 {
     background-color: rgb(204,204,204);
@@ -601,17 +604,23 @@ table { font-size: 24px; }
 }
 .text1 {
     color: rgb(189,207,49);
+    fill: rgb(189,207,49);
+    stroke: rgb(189,207,49);
 }
 .text2 {
     color: rgb(54,111,54);
+    fill: rgb(54,111,54);
+    stroke: rgb(54,111,54);
 }
 .text3 {
     color: rgb(251,195,17);
+    stroke: rgb(251,195,17);
     fill: rgb(251,195,17);
 }
 .text4 {
     color: rgb(57,187,236);
     fill: rgb(57,187,236);
+    stroke: rgb(57,187,236);
 }
 .text5 {
     color: rgb(204,204,204);
