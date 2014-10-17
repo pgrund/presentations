@@ -9,7 +9,7 @@
 
         
         <link rel="stylesheet" href="../impress/bootstrap.min.css" />
-        <link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="../font-awesome-4.2.0/css/font-awesome.css" />
 
         <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
         
@@ -366,6 +366,9 @@
                     <li><code>/accounts/B</code></li>
                 </ul>
                 <br/>
+                <svg>
+                    
+                </svg>
                 <img src="./img/accounts.svg" alt="account class and relation" title="account class and relation"/>
                 <br/>  
                 <div id="actUC2a" data-jmpress="fade">
@@ -905,7 +908,7 @@ Host:localhost:8080
                 <header>Overview</header>
                 <p class="lead">model providing a good step by step way to understand the basic ideas behind restful thinking</p>
                 <ul id="rmm" class="list-unstyled">
-                    <li id="restglory">Glory of REST <i class="fa fa-flag fa-2x"></i> </li>
+                    <li id="restglory">Glory of REST <i class="fa fa-trophy fa-2x"></i> </li>
                     <li>Level 3: Hypermedia Controls</li>
                     <li>Level 2: HTTP Verbs</li>
                     <li>Level 1: Resources</li>
@@ -931,7 +934,37 @@ Host:localhost:8080
             </div>
             <div id="level0sequence" class="step" data-x="4650" data-y="1000" data-z="-600" data-rotate-y="90">
                 <h1>example (Level 0)</h1>    
-                <img src='./img/level0sequence.png' alt='sequence diagramm for level 0' title='sequence diagramm for level 0'/>
+<svg width="800px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                                  
+        <g class="client" fill="blue" stroke="blue">
+
+            <rect x="20" y="10" width="100" height="50" stroke="black"/>
+            <text x="35" y="45" stroke="white" fill="white">Client</text>
+
+            <line x1="70" y1="60" x2="70" y2="310" stroke-dasharray="10,5" stroke="black"/>
+            <rect x="65" y="100" width="10" height="200" stroke="black"/>
+
+            <path d="M75,110 l370,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+            <text x="100" y="95">POST openSlotRequest</text>
+
+            <path d="M75,250 l370,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+            <text x="100" y="235">POST appointmentRequest</text>
+        </g>
+        <g class="server" fill="green" stroke="green" transform="translate(150,0)">
+            <rect x="530" y="10" width="100" height="50" stroke="black"/>
+            <text x="535" y="45" stroke="white" fill="white">Server</text>
+
+            <line x1="580" y1="60" x2="580" y2="310" stroke-dasharray="10,5" stroke="black"/>
+            <rect x="575" y="100" width="10" height="200" stroke="black"/>
+
+            <text x="310" y="120">/appointmentService</text>
+            <path d="M575,150 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
+            <text x="200" y="175">openSlotList</text>
+
+            <text x="310" y="260">/appointmentService</text>
+            <path d="M575,290 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
+            <text x="200" y="315">appointment</text>            
+        </g>
+</svg>                  
             </div>                 
             <div id="level0examplea" class="step" data-x="4050" data-y="1000" data-z="-1500" data-rotate-y="90">
                 <pre class="pull-left"><code class="http"><em>POST</em> <em>/appointmentService</em> HTTP/1.1
@@ -1007,7 +1040,38 @@ Host:localhost:8080
             </div>
             <div id="level1sequence" class="step" data-x="4500" data-y="2000" data-z="-600" data-rotate-y="90">
                 <h1>example (Level 1)</h1>
-                <img src='./img/level1sequence.png' alt='sequence diagramm for level 1' title='sequence diagramm for level 1'/>
+<svg width="800px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                                  
+        <g class="client" fill="blue" stroke="blue">
+
+            <rect x="20" y="10" width="100" height="50" stroke="black"/>
+            <text x="35" y="45" stroke="white" fill="white">Client</text>
+
+            <line x1="70" y1="60" x2="70" y2="310" stroke-dasharray="10,5" stroke="black"/>
+            <rect x="65" y="100" width="10" height="200" stroke="black"/>
+
+            <path d="M75,110 l420,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+            <text x="100" y="95">POST openSlotRequest</text>
+
+            <path d="M75,250 l480,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+            <text x="100" y="235">POST appointmentRequest</text>
+        </g>
+        <g class="server" fill="green" stroke="green" transform="translate(150,0)">
+            <rect x="530" y="10" width="100" height="50" stroke="black"/>
+            <text x="535" y="45" stroke="white" fill="white">Server</text>
+
+            <line x1="580" y1="60" x2="580" y2="310" stroke-dasharray="10,5" stroke="black"/>
+            <rect x="575" y="100" width="10" height="200" stroke="black"/>
+
+            <text x="360" y="120">/doctors/mjones</text>
+            <path d="M575,150 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
+            <text x="200" y="175">openSlotList</text>
+
+            <text x="420" y="260">/slots/1234</text>
+            <path d="M575,290 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
+            <text x="200" y="315">appointment</text>            
+        </g>
+</svg>  
+                <!--img src='./img/level1sequence.png' alt='sequence diagramm for level 1' title='sequence diagramm for level 1'/-->
             </div>
             <div id="level1examplea" class="step" data-x="4400" data-y="2000" data-z="-1500" data-rotate-y="90">
                 <pre class="pull-left"><code class="http">POST <em>/doctors/mjones</em> HTTP/1.1
@@ -1050,7 +1114,42 @@ Host:localhost:8080
             </div>
             <div id="level2sequence" class="step" data-x="5650" data-y="1000" data-z="-600" data-rotate-x="90" data-rotate-z="-90">
                 <h1>example (Level 2)</h1>
-                <img src='./img/level2sequence.png' alt='sequence diagramm for level 2' title='sequence diagramm for level 2'/>
+<svg width="800px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                                  
+        <g class="client" fill="blue" stroke="blue">
+
+            <rect x="20" y="10" width="100" height="50" stroke="black"/>
+            <text x="35" y="45" stroke="white" fill="white">Client</text>
+
+            <line x1="70" y1="60" x2="70" y2="340" stroke-dasharray="10,5" stroke="black"/>
+            <rect x="65" y="100" width="10" height="230" stroke="black"/>
+
+            <path d="M75,110 l360,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+            <text x="100" y="95">GET date=20100104&amp;status=open</text>
+
+            <path d="M75,270 l480,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+            <text x="100" y="255">POST appointmentRequest</text>
+        </g>
+        <g class="server" fill="green" stroke="green" transform="translate(150,0)">
+            <rect x="530" y="10" width="100" height="50" stroke="black"/>
+            <text x="535" y="45" stroke="white" fill="white">Server</text>
+
+            <line x1="580" y1="60" x2="580" y2="340" stroke-dasharray="10,5" stroke="black"/>
+            <rect x="575" y="100" width="10" height="230" stroke="black"/>
+
+            <text x="300" y="120">/doctors/mjones/slots</text>
+            <path d="M575,150 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
+            <text x="150" y="175">200 OK
+                <tspan x="150" y="200">openSlotList</tspan>
+            </text>
+
+            <text x="420" y="280">/slots/1234</text>
+            <path d="M575,310 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
+            <text x="150" y="335">201 Created
+                <tspan x="150" y="360">Location /slots/1234/appointment</tspan>
+            </text>            
+        </g>
+</svg>
+                <!--img src='./img/level2sequence.png' alt='sequence diagramm for level 2' title='sequence diagramm for level 2'/-->
             </div>
             <div id="level2examplea" class="step" data-x="5650" data-y="1000" data-z="-1600" data-rotate-x="90" data-rotate-z="-90">
                 <pre class="pull-left"><code class="http"><em>GET</em> /doctors/mjones/slots<em>?date=20100104&amp;status=open</em> HTTP/1.1
@@ -1124,7 +1223,44 @@ Location: slots/1234/appointment
             </div>
             <div id="level3sequence" class="step" data-x="6200" data-y="2000" data-z="-500" data-rotate-y="90">
                 <h1>example (Level 3)</h1>
-                <img src='./img/level3sequence.png' alt='sequence diagramm for level 3' title='sequence diagramm for level 3'/>
+<svg width="800px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                                  
+        <g class="client" fill="blue" stroke="blue">
+
+            <rect x="20" y="10" width="100" height="50" stroke="black"/>
+            <text x="35" y="45" stroke="white" fill="white">Client</text>
+
+            <line x1="70" y1="60" x2="70" y2="370" stroke-dasharray="10,5" stroke="black"/>
+            <rect x="65" y="100" width="10" height="260" stroke="black"/>
+
+            <path d="M75,110 l360,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+            <text x="100" y="95">GET date=20100104&amp;status=open</text>
+
+            <path d="M75,300 l480,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+            <text x="100" y="285">POST appointmentRequest</text>
+        </g>
+        <g class="server" fill="green" stroke="green" transform="translate(150,0)">
+            <rect x="530" y="10" width="100" height="50" stroke="black"/>
+            <text x="535" y="45" stroke="white" fill="white">Server</text>
+
+            <line x1="580" y1="60" x2="580" y2="370" stroke-dasharray="10,5" stroke="black"/>
+            <rect x="575" y="100" width="10" height="260" stroke="black"/>
+
+            <text x="300" y="120">/doctors/mjones/slots</text>
+            <path d="M575,150 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
+            <text x="150" y="175">200 OK
+                <tspan x="150" y="200">openSlotList</tspan>
+                <tspan x="150" y="230">... link rel="linkrels/slot/book"</tspan>
+                <tspan x="190" y="255"> uri="/slots/1234"</tspan>
+            </text>
+
+            <text x="420" y="310">/slots/1234</text>
+            <path d="M575,340 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
+            <text x="150" y="365">201 Created
+                <tspan x="150" y="390">Location /slots/1234/appointment</tspan>
+            </text>            
+        </g>
+</svg>
+                <!--img src='./img/level3sequence.png' alt='sequence diagramm for level 3' title='sequence diagramm for level 3'/-->
             </div>
             <div id="level3examplea" class="step" data-x="6000" data-y="2000" data-z="-1500" data-rotate-y="90">
                 <br/>
@@ -1413,9 +1549,36 @@ Location: slots/1234/appointment
             </div>     
             <div id="dapexamle" class="step slide" data-x="6000" data-y="700" data-z="-1000" data-rotate-y="90">
                 <header> DAP Example</header>
-                 <p class="text-center"><i class="fa fa-shopping-cart"></i> shopping cart</p>
-                
-                <img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine" width="80%" class="center-block" data-jmpress="appear"/>
+                <p class="text-center"><i class="fa fa-shopping-cart"></i> shopping cart</p>
+<svg width="800px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g class="client" fill="blue" stroke="blue" transform="translate(150,50)">
+        <rect x="10" y="10" width="100" height="300" stroke="black" stroke-width="2"/>
+        <text x="60" y="80" stroke="black" fill="white" style="
+                writing-mode:tb;
+                font-size:2em;"
+        >Client</text>
+
+        <path d="M110,35 l375,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+        <text x="200" y="25">request quote</text>
+        <path d="M110,90 l375,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+        <text x="250" y="85">order</text>
+        <path d="M110,220 l375,0 0,10 10,-10 -10,-10 0,10" stroke-width="3" stroke-dasharray="10,5"/>
+        <text x="250" y="215">cancel</text>
+        <path d="M110,275 l375,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
+        <text x="250" y="270">pay</text>
+    </g>
+    <g class="server" fill="darkgreen" stroke="darkgreen" transform="translate(150,50)">
+        <rect x="500" y="10" width="100" height="300" stroke="black" stroke-width="2"/>
+        <text x="550" y="80" stroke="black" fill="white" style="
+                writing-mode:tb;
+                font-size:2em;"
+        >Server</text>
+
+        <path d="M500,150 l-375,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>       
+        <text x="250" y="145">confirm</text>
+    </g>                               
+</svg>
+                <!--img src="./img/applicationprotocol.png" alt="procurement application state machine" title="procurement application state machine" width="80%" class="center-block" data-jmpress="appear"/-->
                 <footer></footer>
             </div>
 
