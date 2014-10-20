@@ -42,6 +42,24 @@ body{
     text-align: center;
     line-height: 50px;
 }
+#actUC2 .property, #actUC2 .method ,
+#actUC3 .property, #actUC3 .method {
+  font-size: 18px;
+  stroke-width:0.5;
+}
+#actUC2 .property, #actUC3 .property {
+  fill: blue;
+  stroke:none;
+}
+#actUC2 .method, #actUC3 .method {
+  fill: darkgreen;
+  stroke: none;
+}
+#actUC3 path.property {
+  fill:none;
+  stroke: darkblue;
+  stroke-width:2;
+}
 
 #actUC3 {
     opacity: 0;
@@ -50,6 +68,18 @@ body{
 #actUC3.active {
     opacity: 1;
     z-index: 99;
+}
+
+#structuallinks svg text{
+  font-size: 18px;
+}
+#structuallinks svg tspan.property{
+  font-size: 14px;
+}
+#structuallinks svg rect, #structuallinks svg line,
+#structuallinks svg path {
+  fill:none;
+  stroke:black;
 }
 #httpversiontable {
     font-size: 18px;
@@ -227,6 +257,31 @@ blockquote.definition:before {
   margin-right: 0;
 }
 
+text.resource , tspan.resource{
+  fill:red;
+  stroke:black;
+  stroke-width:0.5;
+}
+text.body , tspan.body{  
+  fill:darkblue;
+  stroke:darkgray;
+  stroke-width:0.25;
+}
+text.request , tspan.request{ 
+fill:black;
+stroke:none;
+}
+text.statuscode , tspan.statuscode{
+ fill:cadetblue;
+ stroke:black;
+ stroke-width:0.1;
+}
+#dapexamplestatemachine text, #dapexampleresources text {
+  font-size: 12px;
+}
+#dapexampleresources text.state {
+  font-size: 18px;
+}
 pre code em {
  border: solid thick orange; 
  border-radius: 10px;

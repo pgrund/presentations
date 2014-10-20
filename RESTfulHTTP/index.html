@@ -359,31 +359,61 @@
                 </div>
             </div>            
             <div id="actUC2" class="step" data-x="5300" data-y="2000" data-z="-2500" data-rotate-y="90" data-rotate-x="-180">
+
+                <svg width="500" class="pull-right">
+                  <g id="oo" fill="none" stroke="black" stroke-width="1.5">
+                    <rect x="10" y="10" width="300" height="140"/>
+                    <line x1="10" y1="50" x2="310" y2="50"/>
+                    <line x1="10" y1="80" x2="310" y2="80"/>
+                    <text x="100" y="40">Account
+                        <tspan x="40" y="70" class="property">- balance:double</tspan>
+                        <tspan x="40" y="100" class="method">+ withdraw(amount:double):void</tspan>
+                        <tspan x="40" y="120" class="method">+ deposit(amount:double):void</tspan>
+                    </text>
+                   </g>
+                </svg>
                 <h3>accounts</h3>
                 <ul class="inline">
                     <li><code>/accounts</code></li>
                     <li><code>/accounts/A</code></li>
                     <li><code>/accounts/B</code></li>
                 </ul>
-                <br/>
-                <svg>
-                    
-                </svg>
-                <img src="./img/accounts.svg" alt="account class and relation" title="account class and relation"/>
-                <br/>  
+                <!--img src="./img/accounts.svg" alt="account class and relation" title="account class and relation"/-->
+                <br class="clearfix"/>  
                 <div id="actUC2a" data-jmpress="fade">
                     &nbsp;
                     <h2>And how about <em>transfer</em> ?</h2> 
                 </div>
             </div>
             <div id="actUC3" class="step" data-x="5300" data-y="1500" data-z="-2500" data-rotate-y="90" data-rotate-x="-180">                
+
+                <svg width="500" height="300" class="pull-right">
+                  <g id="oo" fill="none" stroke="black" stroke-width="1.5">
+                    <rect x="10" y="10" width="300" height="150"/>
+                    <line x1="10" y1="50" x2="310" y2="50"/>
+                    <line x1="10" y1="120" x2="310" y2="120"/>                    
+                    <text x="100" y="40">Transaction
+                        <tspan x="40" y="70" class="property">- amount:double</tspan>
+                        <tspan x="40" y="90" class="property">- from:Account</tspan>
+                        <tspan x="40" y="110" class="property">- to:Account</tspan>
+                        <tspan x="40" y="140" class="method">+ cancel():void</tspan>
+                    </text>
+                    <path d="M37,85 l-35,0 0,140 9,0" stroke-dasharray="5,5" class="property"/>
+                    <path d="M140,105 l179,0 0,120 -9,0" stroke-dasharray="5,5" class="property"/>
+                    <text x="5" y="185" class="property">from</text>
+                    <text x="295" y="185" class="property">to</text>
+
+                    <rect x="10" y="200" width="300" height="50"/>
+                    <text x="100" y="230">Account</text>
+                   </g>
+                </svg>
                 <h3>transactions</h3>
                 <ul class="inline">
                     <li><code>/transactions</code></li>
                     <li><code>/transactions/1</code></li>
                 </ul>
                 <br clear="all"/>
-                <img src="./img/transactions.svg" alt="transactions, class and relation" title="transactions, class and relation"/>
+                <!--img src="./img/transactions.svg" alt="transactions, class and relation" title="transactions, class and relation"/-->
             </div>
             <div id="identifiers" class="step slide" data-x="2400" data-y="3000">                
                 <header>Uniform Resource Identifier (URI)</header>
@@ -394,7 +424,18 @@
                 <p class="text-center">one <a href="http://tools.ietf.org/html/rfc2396" target="_blank">URI</a> identifies exactly one resource,<br/>
                     one resource can be identified by multiple URIs<br/>
                     <br/>
-                    <img src="./img/URI-Resource.svg" title="relation"/>
+                    <svg width="800">
+                        <rect x="5" y="5" width="270" height="90" fill="none" stroke="black"/>
+                        <text x="30" y="40">Uniform Resource
+                         <tspan x="90" y="70">Identifier</tspan>
+                        </text>
+                        <rect x="450" y="5" width="270" height="90" fill="none" stroke="black"/>
+                        <text x="525" y="55">Resource</text>
+                        <path d="M275,50 l175,0" stroke="black"/>
+                        <text x="430" y="40">1</text>
+                        <text x="280" y="80">0..*</text>
+                    </svg>
+                    <!--img src="./img/URI-Resource.svg" title="relation"/-->
                 </p>
                 <footer></footer>
             </div>
@@ -809,7 +850,25 @@ Host:localhost:8080
                  <blockquote>
                    Semantic relations modeled als object links. Usually minified information present but for further infos follow the link ...
                 </blockquote>
-                <img src="./img/customer-contract.svg" class="center-block" alt="customer relates to contract" title="customer relates to contract">
+                <svg width="800" height="90">
+                 <g transform="translate(100,0)">
+                    <rect x="5" y="5" width="200" height="80"/>
+                    <line x1="5" y1="35" x2="205" y2="35"/>
+                    <text x="70" y="25">Customer
+                        <tspan x="30" y="50" class="property">contracts:List&lt;Contract&gt;</tspan>
+                        <tspan x="30" y="70" class="property">name:String</tspan>
+                    </text>
+                    <rect x="410" y="10" width="200" height="80"/>
+                    <text x="470" y="50">Contract</text>
+                  
+                     <line x1="170" y1="45" x2="410" y2="45" stroke-width="2"/> 
+                     <text x="210" y="40">1
+                        <tspan x="380" y="60">0..*</tspan>
+                     </text>
+                    
+                 </g>
+                </svg>
+                <!--img src="./img/customer-contract.svg" class="center-block" alt="customer relates to contract" title="customer relates to contract"-->
 <pre><code class="xml">&lt;customer&gt;
  &lt;name&gt;Peter Grund&lt;/name&gt; 
  ...
@@ -846,10 +905,13 @@ Host:localhost:8080
     &lt;link rel="collection" href="http://cornmaze-grund.rhcloud.com/maze/" /&gt;    
 &lt;/item&gt;   </code>
               </pre>
-              <p data-jmpress="appear">
+              <p>
+              <code>rel="start"</code>
+              <span data-jmpress="appear">
                <i class="fa fa-long-arrow-right fa-3x text1"></i>
                <button class="btn btn-success btn-lg">Start</button>
                ... start the maze
+               </span>
               </p>      
             </div>
             <div id="maze0" class="step" data-x="7900" data-y="6000" data-rotate-z="-90">
@@ -861,10 +923,13 @@ Host:localhost:8080
     &lt;link href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/" rel="maze" /&gt;
 &lt;/cell&gt;</code>
                </pre>  
-               <p data-jmpress="appear">
+               <p>
+               <code>rel="east"</code>
+               <span data-jmpress="appear">
                  <i class="fa fa-long-arrow-right fa-3x text1"></i>
                  <span id="mazestep0"><i class="fa fa-user"></i></span><i class="fa fa-arrow-right"></i>
                    ... move to the right (east)
+                 </span>
                 </p>                
             </div>
             <div id="maze1" class="step" data-x="9000" data-y="6000" data-rotate-z="-90">
@@ -877,10 +942,13 @@ Host:localhost:8080
     &lt;link href="http://cornmaze-grund.rhcloud.com/maze/five-by-five/" rel="maze" /&gt;
 &lt;/cell&gt;</code>
                </pre>  
-               <p data-jmpress="appear">
+               <p>
+               <code>rel="east"</code>, <code>rel="west"</code> 
+               <span data-jmpress="appear">
                  <i class="fa fa-long-arrow-right fa-3x text1"></i>
                  <span id="mazestep1old"><i class="fa fa-arrow-left"></i></span><span id="mazestep1"> <i class="fa fa-user"></i></span><i class="fa fa-arrow-right"></i>
                  ... move to the left(west) <em>OR</em> right (east)
+                </span>
                 </p>                
             </div>
 
@@ -944,10 +1012,14 @@ Host:localhost:8080
             <rect x="65" y="100" width="10" height="200" stroke="black"/>
 
             <path d="M75,110 l370,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
-            <text x="100" y="95">POST openSlotRequest</text>
+            <text x="100" y="95" class="request">POST
+             <tspan class="body"> openSlotRequest</tspan>
+            </text>
 
             <path d="M75,250 l370,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
-            <text x="100" y="235">POST appointmentRequest</text>
+            <text x="100" y="235" class="request">POST
+             <tspan class="body">appointmentRequest</tspan>
+            </text>
         </g>
         <g class="server" fill="green" stroke="green" transform="translate(150,0)">
             <rect x="530" y="10" width="100" height="50" stroke="black"/>
@@ -956,13 +1028,13 @@ Host:localhost:8080
             <line x1="580" y1="60" x2="580" y2="310" stroke-dasharray="10,5" stroke="black"/>
             <rect x="575" y="100" width="10" height="200" stroke="black"/>
 
-            <text x="310" y="120">/appointmentService</text>
+            <text x="310" y="120" class="resource">/appointmentService</text>
             <path d="M575,150 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
-            <text x="200" y="175">openSlotList</text>
+            <text x="200" y="175" class="body">openSlotList</text>
 
-            <text x="310" y="260">/appointmentService</text>
+            <text x="310" y="260" class="resource">/appointmentService</text>
             <path d="M575,290 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
-            <text x="200" y="315">appointment</text>            
+            <text x="200" y="315" class="body">appointment</text>            
         </g>
 </svg>                  
             </div>                 
@@ -1050,10 +1122,14 @@ Host:localhost:8080
             <rect x="65" y="100" width="10" height="200" stroke="black"/>
 
             <path d="M75,110 l420,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
-            <text x="100" y="95">POST openSlotRequest</text>
+            <text x="100" y="95" class="request">POST
+              <tspan class="body">openSlotRequest</tspan>
+            </text>
 
             <path d="M75,250 l480,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
-            <text x="100" y="235">POST appointmentRequest</text>
+            <text x="100" y="235" class="request">POST
+             <tspan class="body">appointmentRequest</tspan>
+            </text>
         </g>
         <g class="server" fill="green" stroke="green" transform="translate(150,0)">
             <rect x="530" y="10" width="100" height="50" stroke="black"/>
@@ -1062,13 +1138,13 @@ Host:localhost:8080
             <line x1="580" y1="60" x2="580" y2="310" stroke-dasharray="10,5" stroke="black"/>
             <rect x="575" y="100" width="10" height="200" stroke="black"/>
 
-            <text x="360" y="120">/doctors/mjones</text>
+            <text x="360" y="120" class="resource">/doctors/mjones</text>
             <path d="M575,150 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
-            <text x="200" y="175">openSlotList</text>
+            <text x="200" y="175" class="body">openSlotList</text>
 
-            <text x="420" y="260">/slots/1234</text>
+            <text x="420" y="260" class="resource">/slots/1234</text>
             <path d="M575,290 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
-            <text x="200" y="315">appointment</text>            
+            <text x="200" y="315" class="body">appointment</text>
         </g>
 </svg>  
                 <!--img src='./img/level1sequence.png' alt='sequence diagramm for level 1' title='sequence diagramm for level 1'/-->
@@ -1124,10 +1200,14 @@ Host:localhost:8080
             <rect x="65" y="100" width="10" height="230" stroke="black"/>
 
             <path d="M75,110 l360,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
-            <text x="100" y="95">GET date=20100104&amp;status=open</text>
+            <text x="100" y="95" class="request">GET 
+             <tspan class="resource">date=20100104&amp;status=open</tspan>
+            </text>
 
             <path d="M75,270 l480,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
-            <text x="100" y="255">POST appointmentRequest</text>
+            <text x="100" y="255" class="request">POST 
+             <tspan class="body">appointmentRequest</tspan>
+            </text>
         </g>
         <g class="server" fill="green" stroke="green" transform="translate(150,0)">
             <rect x="530" y="10" width="100" height="50" stroke="black"/>
@@ -1136,16 +1216,19 @@ Host:localhost:8080
             <line x1="580" y1="60" x2="580" y2="340" stroke-dasharray="10,5" stroke="black"/>
             <rect x="575" y="100" width="10" height="230" stroke="black"/>
 
-            <text x="300" y="120">/doctors/mjones/slots</text>
+            <text x="300" y="120" class="resource">/doctors/mjones/slots</text>
             <path d="M575,150 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
-            <text x="150" y="175">200 OK
-                <tspan x="150" y="200">openSlotList</tspan>
+            <text x="150" y="175" class="statuscode">200
+                <tspan class="request">OK</tspan>
+                <tspan x="150" y="200" class="body">openSlotList</tspan>
             </text>
 
-            <text x="420" y="280">/slots/1234</text>
+            <text x="420" y="280" class="resource">/slots/1234</text>
             <path d="M575,310 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
-            <text x="150" y="335">201 Created
-                <tspan x="150" y="360">Location /slots/1234/appointment</tspan>
+            <text x="150" y="335" class="statuscode">201
+                <tspan class="request">Created</tspan>
+                <tspan x="150" y="360" class="statuscode">Location</tspan>
+                <tspan class="resource">/slots/1234/appointment</tspan>
             </text>            
         </g>
 </svg>
@@ -1233,10 +1316,14 @@ Location: slots/1234/appointment
             <rect x="65" y="100" width="10" height="260" stroke="black"/>
 
             <path d="M75,110 l360,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
-            <text x="100" y="95">GET date=20100104&amp;status=open</text>
+            <text x="100" y="90" class="request">GET 
+             <tspan class="resource">date=20100104&amp;status=open</tspan>
+            </text>
 
             <path d="M75,300 l480,0 0,10 10,-10 -10,-10 0,10" stroke-width="3"/>
-            <text x="100" y="285">POST appointmentRequest</text>
+            <text x="100" y="290" class="request">POST
+             <tspan class="body">appointmentRequest</tspan>
+            </text>
         </g>
         <g class="server" fill="green" stroke="green" transform="translate(150,0)">
             <rect x="530" y="10" width="100" height="50" stroke="black"/>
@@ -1245,18 +1332,24 @@ Location: slots/1234/appointment
             <line x1="580" y1="60" x2="580" y2="370" stroke-dasharray="10,5" stroke="black"/>
             <rect x="575" y="100" width="10" height="260" stroke="black"/>
 
-            <text x="300" y="120">/doctors/mjones/slots</text>
+            <text x="300" y="120" class="resource">/doctors/mjones/slots</text>
             <path d="M575,150 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
-            <text x="150" y="175">200 OK
-                <tspan x="150" y="200">openSlotList</tspan>
-                <tspan x="150" y="230">... link rel="linkrels/slot/book"</tspan>
-                <tspan x="190" y="255"> uri="/slots/1234"</tspan>
+            <text x="150" y="175" class="request">200
+                <tspan class=""> OK
+                <tspan x="150" y="200" class="body">openSlotList</tspan>
+                <tspan x="150" y="230" class="body">... link 
+                <tspan class="statuscode">rel=</tspan>
+                <tspan class="resource">"linkrels/slot/book"</tspan>
+                <tspan x="190" y="255" class="statuscode">uri=</tspan>
+                <tspan class="resource">"/slots/1234"</tspan>
             </text>
 
-            <text x="420" y="310">/slots/1234</text>
+            <text x="420" y="310" class="resource">/slots/1234</text>
             <path d="M575,340 l-635,0 0,10 -10,-10 10,-10 0,10" stroke-width="3"/>
-            <text x="150" y="365">201 Created
-                <tspan x="150" y="390">Location /slots/1234/appointment</tspan>
+            <text x="150" y="365" class="statuscode">201
+                <tspan class="request">Created</tspan>
+                <tspan x="150" y="390" class="statuscode">Location</tspan>
+                <tspan class="resource">/slots/1234/appointment</tspan>
             </text>            
         </g>
 </svg>
@@ -1584,7 +1677,52 @@ Location: slots/1234/appointment
 
             <div id="dapexamplestatemachine" class="step text-center" data-x="6000" data-z="-2000" data-rotate-y="90" data-view-port-zoomable="10" data-view-port-max-scale="4">
                 <header class="text1"><i class="fa-gears fa"></i> application state machine</header>
-                <img src="./img/applicationstatemachine.svg" alt="procurement application state machine" title="procurement application state machine"-->
+                <svg width="800" height="300">
+                  <defs>                      
+                      <rect id="appstep" x="70" y="175" rx="20" ry="20" width="100" height="50"
+                        fill="white" stroke="black"/>
+                       <marker id="pf1"
+                          viewBox="0 0 10 10" refX="0" refY="5"
+                          markerUnits="strokeWidth"
+                          markerWidth="15" markerHeight="15"
+                          orient="auto">
+                          <path d="M 0,0 l 10,5 l -10,5 z" />
+                        </marker>
+                        <line id="arrow" marker-end="url(#pf1)" stroke="black"
+                            x1="20" y1="200" x2="57" y2="200"/>                      
+                  </defs>
+      
+                  <circle id="start" r="10" cx="15" cy="200" fill="black"/>                    
+                  <use xlink:href="#arrow"/> 
+                  <text x="25" y="190">request</text>
+                  <use xlink:href="#appstep"/>
+                  <text x="80" y="205">request quote</text>
+                  <use xlink:href="#arrow" x="150"/> 
+                  <text x="175" y="190">order</text>
+                  <use xlink:href="#appstep" x="150"/>
+                  <text x="230" y="205">goods ordered</text>
+                  <use xlink:href="#arrow" x="300"/> 
+                  <text x="325" y="190">confirm</text>
+                  <use xlink:href="#appstep" x="300"/>
+                  <text x="375" y="205">order confirmed</text>
+                  <use xlink:href="#arrow" x="450"/> 
+                  <rect x="535" y="185" width="20" height="20" fill="white" stroke="black" transform="rotate(45,535,185)"/>
+                  <line x1="545" y1="195" x2="605" y2="160" stroke="black" marker-end="url(#pf1)"/>
+                  <text x="560" y="170">pay</text>
+                  <line x1="545" y1="205" x2="605" y2="240" stroke="black" marker-end="url(#pf1)"/>
+                  <text x="540" y="240">cancel</text>
+                  <use xlink:href="#appstep" x="550" y="-50"/>
+                  <text x="655" y="155">paid</text>
+                  <line x2="760" y2="185" x1="720" y1="150" stroke="black" marker-end="url(#pf1)"/>
+                  <use xlink:href="#appstep" x="550" y="50"/>
+                  <text x="630" y="255">order canceled</text>
+                  <line x2="760" y2="215" x1="720" y1="250" stroke="black" marker-end="url(#pf1)"/>
+                  <g id="end">
+                   <circle r="10" cx="780" cy="200" fill="none" stroke="black"/>
+                   <circle r="12" cx="780" cy="200" fill="none" stroke="black"/>
+                  </g>                 
+                </svg>
+                <!--img src="./img/applicationstatemachine.svg" alt="procurement application state machine" title="procurement application state machine"-->
             </div>
 
             <div id="dapexampleresources" class="step" data-x="6000" data-y="700" data-z="-2000" data-rotate-y="270" data-view-port-zoomable="10" data-view-port-max-scale="4">
@@ -1599,12 +1737,83 @@ Location: slots/1234/appointment
                     </ul>
                 </div>
                  <span class="box pull-left">&nbsp;</span>
-                <p><code>quote</code><br/>
-                    <img src="./img/quote-lifecycle.svg" alt="resource quote lifecycle" title="resource quote lifecycle"/>
+                <p>
+                    <code>quote</code>
+                    <br/>
+                    <svg height="150" width="240">
+                        <defs>                                           
+                            <marker id="pf1"
+                              viewBox="0 0 10 10" refX="0" refY="5"
+                              markerUnits="strokeWidth"
+                              markerWidth="15" markerHeight="15"
+                              orient="auto" fill="black">
+                              <path d="M 0,0 l 10,5 l -10,5 z" />
+                            </marker>                        
+                        <g id="quotestates">
+                        <circle id="start" r="10" cx="15" cy="50" fill="black"/>
+                        <path d="M25,45 A50,10 0 0,1 60,35" fill="none" stroke="black" marker-end="url(#pf1)"/>
+                        <text x="30" y="20">reopen</text>
+                        <path d="M25,55 A50,10 0 0,0 60,65" fill="none" stroke="black" marker-end="url(#pf1)"/>
+                        <text x="30" y="80">request</text>
+                        <rect id="step" x="70" y="25" rx="20" ry="20" width="100" height="50"
+                        fill="white" stroke="black"/>
+                        <text x="100" y="55" class="state">open</text>
+                        <path d="M100,75 A10,20 0 0,0 140,90" fill="none" stroke="black" marker-end="url(#pf1)"/>
+                        <text x="110" y="110">edit</text>
+                        <line x1="170" y1="50" x2="195" y2="50" stroke="black" marker-end="url(#pf1)"/>
+                        <text x="175" y="40">confirm</text>
+                        <g id="end">
+                          <circle r="10" cx="220" cy="50" fill="none" stroke="black"/>
+                          <circle r="12" cx="220" cy="50" fill="none" stroke="black"/>
+                        </g>   
+                        </g>
+                        </defs>
+                        <use xlink:href="#quotestates"/>
+                    </svg>
+                    <!--img src="./img/quote-lifecycle.svg" alt="resource quote lifecycle" title="resource quote lifecycle"/-->
                 </p><br/>
                 
                 <p data-jmpress="fade after 1ms #resourceorder" id="orderlifecycle"><code>order</code><br/>
-                    <img src="./img/order-lifecycle.svg" alt="resource order lifecycle" title="resource order lifecycle"/>
+                <svg width="400">
+                    <defs>                                           
+                        <marker id="pf1"
+                          viewBox="0 0 10 10" refX="0" refY="5"
+                          markerUnits="strokeWidth"
+                          markerWidth="15" markerHeight="15"
+                          orient="auto" fill="black">
+                          <path d="M 0,0 l 10,5 l -10,5 z" />
+                        </marker>                        
+                        <rect id="step" x="70" y="35" rx="20" ry="20" width="100" height="50"
+                            fill="white" stroke="black"/>                           
+                        <g id="orderstates">
+                       <circle id="start" r="10" cx="15" cy="60" fill="black"/>
+                       <line x1="25" y1="60" x2="55" y2="60" marker-end="url(#pf1)" stroke="black"/>
+                       <text x="25" y="50">confirm</text>
+                       <use xlink:href="#step" y="10"/>
+                       <text x="95" y="65" class="state">active</text>
+                       <line x1="165" y1="40" x2="205" y2="25" marker-end="url(#pf1)" stroke="black"/>
+                       <text x="175" y="20">pay</text>
+                       <line x1="165" y1="80" x2="205" y2="105" marker-end="url(#pf1)" stroke="black"/>
+                       <text x="155" y="110">cancel</text>
+                       <use xlink:href="#step" x="150" y="-25"/>
+                       <text x="250" y="30" class="state">paid</text>
+                       <use xlink:href="#step" x="150" y="55"/>
+                       <text x="235" y="110" class="state">canceled</text>
+                       <line x1="320" y1="20" x2="355" y2="50" marker-end="url(#pf1)" stroke="black"/>
+                       <text x="340" y="30">archive</text>
+                       <line x1="320" y1="100" x2="355" y2="70" marker-end="url(#pf1)" stroke="black"/>
+                       <text x="300" y="70">archive</text>
+                       <path d="M320,110 A40,30 0 0,0 375,85" fill="none" stroke="black" marker-end="url(#pf1)"/>
+                       <text x="340" y="130">reopen</text>
+                       <g id="end">
+                          <circle r="10" cx="380" cy="60" fill="none" stroke="black"/>
+                          <circle r="12" cx="380" cy="60" fill="none" stroke="black"/>
+                       </g>   
+                    </g>
+                    </defs>
+                    <use xlink:href="#orderstates"/>
+                </svg>
+                    <!--img src="./img/order-lifecycle.svg" alt="resource order lifecycle" title="resource order lifecycle"/-->
                 </p>                                
                 <p data-jmpress="fade">...and how about transitions ?</p>
                 <br clear="all"/>
@@ -1612,7 +1821,10 @@ Location: slots/1234/appointment
 
             <div id="dapexamplerelations" class="step" data-x="6000"  data-z="-3000" data-rotate-y="270">
                 <header class="text-center"><span class="text3"><i class="fa fa-cubes"></i> associate resources</span> and <span class="text4"><i class="fa fa-users"></i> link relations</span></header>
-                <img src="./img/quote-lifecycle.svg" alt="resource quote lifecycle" title="resource quote lifecycle" class="pull-left"/>                  
+                <svg class="pull-left">
+                  <use xlink:href="#quotestates"/>
+                </svg>
+                <!--img src="./img/quote-lifecycle.svg" alt="resource quote lifecycle" title="resource quote lifecycle" class="pull-left"/-->
                 <dl>
                  <dt>quote</dt>
                  <dd>
@@ -1630,7 +1842,10 @@ Location: slots/1234/appointment
                  </dd>
                 </dl>   
                 <br clear="all"/>
-                <img src="./img/order-lifecycle.svg" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/>            
+                <svg width="400" class="pull-left">
+                  <use xlink:href="#orderstates"/>
+                </svg>
+                <!--img src="./img/order-lifecycle.svg" alt="resource order lifecycle" title="resource order lifecycle" class="pull-left"/-->
                 <dl> 
                   <dt>order</dt>
                   <dd>
