@@ -624,10 +624,15 @@ table { font-size: 24px; }
 }
 .text5 {
     color: rgb(204,204,204);
+    fill: rgb(204,204,204);
+    stroke: rgb(204,204,204);
 }
 .text6 {
     color: rgb(127,127,127);
+    fill: rgb(127,127,127);
+    stroke: rgb(127,127,127);
 }
+
 ul.agenda , ol.agenda {
     list-style: none; 
     counter-reset: li;
