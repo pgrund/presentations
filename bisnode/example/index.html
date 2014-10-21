@@ -61,36 +61,47 @@
 
                     <path d="M255,200 l-105,10 a100,100 0 1,0 205,0 z"/>
                     
-                    <circle cx="255" cy="200" r="30" fill="white" stroke="khaki"stroke-width="7"/>
+                    <circle cx="255" cy="200" r="30" fill="white" stroke="khaki" stroke-width="10"/>
                     <text x="190" y="170">?</text>                  
                     <text x="290" y="170">!</text>  
                     <text x="200" y="270" class="action bold text-uppercase">action</text>
 
+                    <g id="prints">
+                        <use xlink:href="#shoeprint"/>                    
+                        <use xlink:href="#shoeprint" transform="rotate(15,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(30,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(45,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(60,255,205)"/>                    
+                        <use xlink:href="#shoeprint" transform="rotate(75,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(90,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(105,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(120,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(135,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(150,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(165,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(180,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(195,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(210,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(225,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(240,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(255,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(270,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(285,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(300,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(315,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(330,255,205)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(345,255,205)"/>
+                        <animateTransform
+                             attributeName="transform"
+                             begin="3s"
+                             dur="20s"
+                             type="rotate"
+                             from="0 255 205"
+                             to="360 255 205"
+                             repeatCount="indefinite" />
+                    </g>
                     
-                    <use xlink:href="#shoeprint"/>                    
-                    <use xlink:href="#shoeprint" transform="rotate(15,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(30,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(45,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(60,255,205)"/>                    
-                    <use xlink:href="#shoeprint" transform="rotate(75,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(90,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(105,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(120,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(135,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(150,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(165,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(180,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(195,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(210,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(225,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(240,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(255,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(285,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(300,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(315,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(330,255,205)"/>
-                    <use xlink:href="#shoeprint" transform="rotate(345,255,205)"/>
-
+                    <rect x="90" y="185" width="55" height="30" fill="white"/>
                     <text x="90" y="200" class="start text-uppercase">start</text>
                     <text x="90" y="215" class="finish text-uppercase">finish</text>
 
@@ -202,25 +213,73 @@
                     <div>to the point</div>
                     <div>of incapacity</div>                
                   </div>
-            </div>
-            <div>
-                <span class="fa-stack">
-                    <i class="fa fa-stack-2x fa-circle text2"></i>
-                    <i class="fa fa-stack-1x fa-laptop white"></i>    
-                </span>
-                <span class="fa-stack">
-                    <i class="fa fa-stack-2x fa-circle text3"></i>
-                    <i class="fa fa-stack-1x fa-laptop white"></i>    
-                </span>
-                <span class="fa-stack">
-                    <i class="fa fa-stack-2x fa-circle text9"></i>
-                    <i class="fa fa-stack-1x fa-laptop white"></i>    
-                </span>
-                <span class="fa-stack">
-                    <i class="fa fa-stack-2x fa-circle text1"></i>
-                    <i class="fa fa-stack-1x fa-laptop white"></i>    
-                </span>
-            </div>
+            </div>  
+            <br class="clearfix"/>
+            <div id="laptops"></div>          
+            <script type="text/javascript">
+              var ele = $("#laptops");
+              var c = Array("text2", "text3", "text5", "text1");
+              for(var i=0; i<45*8; i++) {               
+                ele.append("<span class='fa-stack'><i class='fa fa-stack-2x fa-circle "+
+                    c[Math.floor(Math.random()*c.length)]
+                    +"'></i><i class='fa fa-stack-1x fa-laptop white'></i></span>");
+              }
+            </script>
+            <svg>
+                <defs>
+                 <marker id="point1" markerWidth="8" markerHeight="8" refx="5" refy="5">
+                    <circle cx="5" cy="5" r="1" class="text2"/>
+                 </marker>
+                 <marker id="point2" markerWidth="8" markerHeight="8" refx="5" refy="5">
+                    <circle cx="5" cy="5" r="1" class="text3"/>
+                 </marker>
+                 <marker id="point3" markerWidth="8" markerHeight="8" refx="5" refy="5">
+                    <circle cx="5" cy="5" r="1" class="text5"/>
+                 </marker>
+                 <marker id="point4" markerWidth="8" markerHeight="8" refx="5" refy="5">
+                    <circle cx="5" cy="5" r="1" class="text1"/>
+                 </marker>
+                 <marker id="point5" markerWidth="8" markerHeight="8" refx="5" refy="5">
+                    <circle cx="5" cy="5" r="1" class="text4"/>
+                 </marker>
+                </defs>
+                <text x="0" y="380" class="fa fa-5x text1">&#xf182;</text>
+                <text x="125" y="380" class="fa fa-5x text1">&#xf182;</text>
+                <text x="250" y="380" class="fa fa-5x text1">&#xf182;</text>
+                <text x="375" y="380" class="fa fa-5x text1">&#xf183;</text>
+                <text x="500" y="380" class="fa fa-5x text1">&#xf183;</text>
+
+                <g class="text2" stroke-width="2">
+                 <path d="M10,10 l0,130 q0,10 10,10 t35,0 q10,0 10,10 T65,250" marker-start="url(#point1)" marker-end="url(#point1)" fill="none"/>
+                 <path d="M20,10 l0,100 q0,10 10,10 t125,0 q10,0 10,10 T165,250" marker-start="url(#point1)" marker-end="url(#point1)" fill="none"/>
+                 <path d="M30,10 l0,120 q0,10 10,10 t515,0 q10,0 10,10 T565,250" marker-start="url(#point1)" marker-end="url(#point1)" fill="none"/>
+                 <path d="M40,10 l0,110 q0,10 10,10 t250,0 q10,0 10,10 T310,250" marker-start="url(#point1)" marker-end="url(#point1)" fill="none"/>
+                </g>
+                <g class="text3" stroke-width="2">
+                    <path d="M150,10 l0,90 q0,10 -10,10 t-75,0 q-10,0 -10,10 T55,250" marker-start="url(#point2)" marker-end="url(#point2)" fill="none"/>
+                    <path d="M160,10 l0,105 q0,10 10,10 t250,0 q10,0 10,10 T430,250" marker-start="url(#point2)" marker-end="url(#point2)" fill="none"/>
+                    <path d="M170,10 l0,130 q0,10 10,10 t365,0 q10,0 10,10 T555,250" marker-start="url(#point2)" marker-end="url(#point2)" fill="none"/>
+                    <path d="M180,10 l0,90 q0,10 10,10 t95,0 q10,0 10,10 T295,250" marker-start="url(#point2)" marker-end="url(#point2)" fill="none"/>
+                </g>
+                <g class="text5" stroke-width="2">
+                    <path d="M300,10 l0,140 q0,10 -10,10 t-235,0 q-10,0 -10,10 T45,250" marker-start="url(#point3)" marker-end="url(#point3)" fill="none"/>
+                    <path d="M310,10 l0,100 q0,10 10,10 t90,0 q10,0 10,10 T420,250" marker-start="url(#point3)" marker-end="url(#point3)" fill="none"/>
+                    <path d="M320,10 l0,85 q0,10 -10,10 t-125,0 q-10,0 -10,10 T175,250" marker-start="url(#point3)" marker-end="url(#point3)" fill="none"/>
+                </g>
+                <g class="text1" stroke-width="2">
+                    <path d="M450,10 l0,112 q0,10 -10,10 t-150,0 q-10,0 -10,10 T280,250" marker-start="url(#point4)" marker-end="url(#point4)" fill="none"/>
+                    <path d="M460,10 l0,112 q0,10 10,10 t65,0 q10,0 10,10 T545,250" marker-start="url(#point4)" marker-end="url(#point4)" fill="none"/>
+                    <path d="M460,10 l0,112 q0,10 10,10 t65,0 q10,0 10,10 T545,250" marker-start="url(#point4)" marker-end="url(#point4)" fill="none"/>
+                    <path d="M470,10 l0,95 q0,10 -10,10 t-265,0 q-10,0 -10,10 T185,250" marker-start="url(#point4)" marker-end="url(#point4)" fill="none"/>
+                    <path d="M480,10 l0,135 q0,10 -10,10 t-60,0 q-10,0 -10,10 T400,250" marker-start="url(#point4)" marker-end="url(#point4)" fill="none"/>
+                </g>
+                <g class="text4" stroke-width="2">
+                    <path d="M600,10 l0,65 q0,10 -10,10 t-385,0 q-10,0 -10,10 T195,250" marker-start="url(#point5)" marker-end="url(#point5)" fill="none"/>
+                    <path d="M610,10 l0,75 q0,10 -10,10 t-555,0 q-10,0 -10,10 T35,250" marker-start="url(#point5)" marker-end="url(#point5)" fill="none"/>
+                    <path d="M620,10 l0,85 q0,10 -10,10 t-190,0 q-10,0 -10,10 T410,250" marker-start="url(#point5)" marker-end="url(#point5)" fill="none"/>
+                    <path d="M630,10 l0,95 q0,10 -10,10 t-75,0 q-10,0 -10,10 T535,250" marker-start="url(#point5)" marker-end="url(#point5)" fill="none"/>
+                </g>
+            </svg>
             <footer></footer>
          </div>
          <div id="answers" class="step image chapter lightgreen" data-x="3500">
@@ -231,7 +290,7 @@
              <header class="akzent4trans"><p class="leading">Our expertise</p>
                 Turning data<br/>
                 into decision support.</header>
-             <footer></footer>
+             <foot"er></footer>
          </div>
          <div id="we" class="step slide" data-x="3500" data-y="1000" data-z="-1000" data-rotate-y="90">
             <div id="graphSmart">
@@ -429,7 +488,8 @@
                 </g>
                 <g class="text1">
                     <circle cx="750" cy="510" r="5"/>
-                    <path d="M750,510 l0 70 -690 0 690 0 0 -70 z"
+                    
+                    <path d="M750,510 l0 65 q-5,5 -5,5 t-525 0 525 0 q5,-5 5,-5 t0 -65"
                         stroke-width="4" class="akzent1trans"/>
                     <text x="760" y="520">Marketing</text>
                 </g>
@@ -441,30 +501,127 @@
                  <script>
                    $('#numbers').highcharts({
                         chart: {
-                            type: 'column'
+                            type: 'column',
+                            height: 300
+                        },                        
+                        legend: {
+                           enabled: false
                         },
                         title: {
-                            text: 'the numbers'
+                            text: ''
                         },
                         xAxis: {
-                            categories: ['2008', '2009', '2010', '2011', '2012']
-                        },
+                            categories: ['2008', '2009', '2010', '2011', '2012'],
+                            type: "category",
+                            labels: {
+                              style: {
+                                color: "blue",
+                                fontWeight: "bolder"   
+                                }
+                            }
+                        },               
+                        yAxis: {
+                            labels: {
+                                enabled: false
+                            },
+                            title: '',
+                            gridLineWidth: 0
+                        }, 
                         plotOptions: {
                             series: {
                                 stacking: 'normal'
                             }
                         },
+                        tooltip: {
+                             formatter: function () {
+                                var valueY =  '';
+                                if(this.series.index == 0) {
+                                    valueY = this.point.y + " (mio)"
+                                } else {
+                                    valueY = (this.point.y / 10) + "%"
+                                };
+                                return '<b>' + this.series.name + '</b><br/>' +
+                                    valueY ;
+                            }
+                        },
                         series: [
-                        {          
-                            data: [120, 120, 120, 100, 130]
-                        }, {
-                            data: [530, 565, 520, 504, 460]
+                        {
+                            data: [530, 565, 520, 504, 460],
+                            name: 'revenue',
+                            color: "darkblue",
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'center',
+                                x: 4,
+                                y: 10,
+                                formatter : function() {
+                                    return this.y + " million";
+                                },
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif',
+                                    textShadow: '0 0 3px black'
+                                }
+                            }   
+                        },
+                        {   
+                            data: [120, 120, 120, 100, 130],
+                            name: 'profit',
+                            dataLabels: {
+                                enabled: true,
+                                color: '#FFFFFF',
+                                align: 'center',
+                                formatter: function() {
+                                    return (this.y / 10) + "%";
+                                }
+                            }
                         }]
                     });
              </script>
+             <div class="bigtext">
+                <div class="text4 text-uppercase bold">the numbers</div>
+             </div>
+             <table id="numberstable" class="text-uppercase">
+                 <thead>
+                     <tr>
+                         <th></th>
+                         <th>2008</th>
+                         <th>2009</th>
+                         <th>2010</th>
+                         <th>2011</th>
+                         <th>2012</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <th>revenue<br/>(in million euro)</th>
+                         <td>530</td>
+                         <td>565</td>
+                         <td>520</td>
+                         <td>504</td>
+                         <td>460</td>
+                     </tr>
+                     <tr>
+                         <th>operating profit</th>
+                         <td>12%</td>
+                         <td>12%</td>
+                         <td>12%</td>
+                         <td>10%</td>
+                         <td>13%</td>
+                     </tr>
+                 </tbody>
+             </table>
              <footer></footer>
          </div>
          <div id="fact4" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-5500">
+             <svg>
+                 
+             </svg>
+             <div class="bigtext">
+                 <span class="text4 text-uppercase bold">our customers</span>
+             </div>
              <footer></footer>
          </div>
          <div id="fact5" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-7000">

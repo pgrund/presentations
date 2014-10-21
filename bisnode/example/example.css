@@ -84,6 +84,21 @@
 .white {
 	color: white;
 }
+#laptops {
+	width: 640px;	
+	line-height:0.5em;
+	position:relative;
+	left: 230px;
+}
+#laptops span {
+	font-size:7px;
+}
+#percentages svg {
+	position:relative;
+	left: 230px;
+	width:640px;
+	height:500px;
+}
 #welist {	
 	width: 400px;
 	color: whitesmoke;
@@ -277,6 +292,7 @@
 }
 #people {
 	padding-left: 50px;
+	width:105%;
 }
 #employee {
 	width: 80%;
@@ -289,6 +305,25 @@
 	width: 1024px;
 	height: 600px;
 }
+#numberstable {
+	border:none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	width: 100%;
+	font-size: 16px;
+}
+#numberstable>thead, 
+#numberstable>tbody{
+	border-top: solid black;
+	border-bottom: solid black;
+	color: black;
+}
+#numberstable>thead>tr,
+#numberstable>thead>tr>th {
+	background: none;
+	color: black;
+} 
 .slide {
 	-webkit-box-shadow: 10px 10px 5px darkgray;
 	-moz-box-shadow: 10px 10px 5px darkgray;
