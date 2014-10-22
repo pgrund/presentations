@@ -81,6 +81,14 @@
 	font-size:150px;
 	float: left;
 }
+
+#usplist {
+	padding: 10px;
+	color: black;
+}
+#germany3 header {
+	text-transform: none;	
+}
 .white {
 	color: white;
 }
@@ -305,22 +313,25 @@
 	width: 1024px;
 	height: 600px;
 }
-#numberstable {
+#numberstable, #regionstable {
 	border:none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	width: 100%;
 	font-size: 16px;
+	position: relative;
 }
-#numberstable>thead, 
-#numberstable>tbody{
+#numberstable>thead, #regionstable>thead
+#numberstable>tbody, #regionstable>tbody{
 	border-top: solid black;
 	border-bottom: solid black;
 	color: black;
 }
 #numberstable>thead>tr,
-#numberstable>thead>tr>th {
+#numberstable>thead>tr>th,
+#regionstable>thead>tr,
+#regionstable>thead>tr>th  {
 	background: none;
 	color: black;
 } 
