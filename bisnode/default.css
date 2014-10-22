@@ -633,6 +633,21 @@ table { font-size: 24px; }
     stroke: rgb(127,127,127);
 }
 
+.fa-6x {
+    font-size: 6em;
+}
+.fa-8x{
+    font-size: 8em;
+}
+.fa-10x{
+    font-size: 8em;
+}
+.fa-1o{
+    font-size:0.75em;
+}
+.fa-2o{
+    font-size:0.5em;
+}
 ul.agenda , ol.agenda {
     list-style: none; 
     counter-reset: li;
