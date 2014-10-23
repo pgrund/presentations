@@ -10,23 +10,27 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta http-equiv="expires" content="0">
 
-	<script type="text/javascript" src="../impress/jquery.js"></script>
-	<script type="text/javascript" src="../impress/jmpress.custom.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../jmpress/jmpress.all.min.js"></script>
 	<script type="text/javascript">
 		var notesUrl = false;
+		var PREFIX = "jmpress-presentation-";
 		window.addEventListener("message", function(event) {
-			var json = JSON.parse(event.data);
+			if(typeof event.data !== "string" || event.data.indexOf(PREFIX) !== 0) {
+				return;
+			}
+			var json = JSON.parse(event.data.slice(PREFIX.length));
 			switch(json.type) {
 			case "afterInit":
-				event.source.postMessage(JSON.stringify({type:"listen"}), "*");
+				event.source.postMessage(PREFIX + JSON.stringify({type:"listen"}), "*");
 				break;
 			case "select":
-				window.opener.postMessage(JSON.stringify(json), "*");
-				if(notesUrl)
+				window.opener.postMessage(PREFIX + JSON.stringify(json), "*");
+				if(notesUrl && /[a-z0-9\-]+/i.test(json.targetId))
 					$("#notesframe").attr("src", notesUrl+"#"+json.targetId);
 				break;
 			case "url":
-				event.source.postMessage(JSON.stringify({type:"ok"}), "*");
+				event.source.postMessage(PREFIX + JSON.stringify({type:"ok"}), "*");
 				$("#frame").attr("src", json.url);
 				notesUrl = json.notesUrl || notesUrl;
 				if(notesUrl)
@@ -47,7 +51,7 @@
 		}
 		#frame {
 			position: relative;
-			height: 50%;
+			height: 75%;
 			padding: 0px;
 			margin-top: 2%;
 			margin-bottom: 1%;
@@ -57,7 +61,7 @@
 		}
 		#notesframe {
 			position: relative;
-			height: 40%;
+			height: 25%;
 			padding: 0px;
 			margin-top: 1%;
 			margin-bottom: 0px;
@@ -68,6 +72,7 @@
 	</style>
 </head>
 <body>
+ 
 	<iframe id="frame" src="javascript:document.write('waiting for presentation message...');" style=""></iframe>
 	<iframe id="notesframe" src="javascript:document.write('waiting for presentation message...');" style=""></iframe>
 </body>
