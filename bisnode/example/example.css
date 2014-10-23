@@ -211,6 +211,7 @@
 #lefttext {
 	height: 100%;
 }
+
 #front, #side {
 	position:relative;
 	width: 300px;
@@ -249,7 +250,7 @@
 	top:-530px;
 }
 #side {	
-	top:-510px;
+	top:-520px;
 	left:569px;
 	width:100px;	
 	height:518px;
@@ -262,7 +263,8 @@
 #box {	
 	position:relative;
 	top:250px;
-	text-shadow: 1px 1px 2px #000;		
+	text-shadow: 1px 1px 2px #000;	
+	perspective: 1200px;	
 }
 
 .decisionText>em {
@@ -302,6 +304,11 @@
 	padding-left: 50px;
 	width:105%;
 }
+#regionMap{
+	width:200px;
+	height:200px;
+}
+
 #employee {
 	width: 80%;
 	margin-left: -40px;
@@ -334,7 +341,31 @@
 #regionstable>thead>tr>th  {
 	background: none;
 	color: black;
-} 
+}
+#germany3>div:first-child, 
+#germany2>div:first-child {
+	height:70%;
+}
+
+#germany2 div.left,
+#germany3 div.left{
+  width: 35%;
+}
+
+#germany2 div.right ,
+#germany3 div.right {	
+	padding-left:10px;
+	width:62%;		
+}
+
+#usplist dd, #usplist dt {
+	font-size: 20px;
+	line-height: 28px;
+}
+#brandlist img {
+    width: auto;
+    max-height: 50px;
+}
 .slide {
 	-webkit-box-shadow: 10px 10px 5px darkgray;
 	-moz-box-shadow: 10px 10px 5px darkgray;

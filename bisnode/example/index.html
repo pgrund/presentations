@@ -15,11 +15,22 @@
         <link href="./example.css" rel="stylesheet"/>
         
 
-        <script src="../../impress/jquery.js" type="text/javascript"></script>
-        <script src="../../highchart/js/highcharts.js"></script>
-        <script src="../../highchart/js/modules/data.js"></script>
-        <script src="../../highchart/js/modules/exporting.js"></script>
-
+        <script class="jquery" src="../../impress/jquery.js" type="text/javascript"></script>
+        <!--
+        <script src="http://code.highcharts.com/maps/highmaps.js"></script>
+        <script src="http://code.highcharts.com/maps/modules/data.js"></script>
+        <script src="http://code.highcharts.com/mapdata/custom/europe.js"></script>
+        -->
+        <script class="highcharts" src="../../highchart/js/highcharts.js"></script>
+        <script class="highcharts" src="../../highchart/js/modules/data.js"></script>
+        <script class="highcharts" src="../../highchart/js/modules/exporting.js"></script>        
+        <!--
+            ########### remote #############
+            <script class="highcharts" src="http://code.highcharts.com/highcharts.js"></script>
+            <script class="highcharts" src="http://code.highcharts.com/modules/data.js"></script>
+            <script class="highcharts" src="http://code.highcharts.com/modules/exporting.js"></script>
+      
+        -->
         <script src="../../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../jmpress/bigtext.js" type="text/javascript"></script>
 
@@ -35,10 +46,15 @@
 	<body>
 	 
 	 <div id="impress">
-	 	<div id="start" class="step image title">
-		 	<header class="akzent3trans">make a smart decision.</header>
-		 	<footer></footer>
-		 </div>
+        <div id="start" class="step image title">
+            <header class="akzent3trans">make a smart decision.</header>
+            <footer></footer>
+        </div>
+        <div id="intromovie" class="step" data-y="-1000">            
+             <div id="ytplayer">
+                    <a class="visible-print-block" href="http://www.youtube-nocookie.com/embed/cj-cnEMu5uE">see Youtube</a>
+              </div>
+        </div>	 	
 		 <div id="questions" class="step image" data-y="1000">
 		 	<header class="akzent3trans">
 		 		<p class="leading">The way we see it</p>
@@ -391,12 +407,13 @@
                  <div>                                 
                    <span class="text4"><i class="fa fa-male"></i> 54%&nbsp;</span>
                    <span class="text3">&nbsp;<i class="fa fa-female"></i> 46%</span>
-                 </div>
-
-                 <br/><br/>
+                 </div>                 
+                 <img id="regionMap" src="img/map_of_Europe.svg"/>   
+                 <!-- div id="regionMap"></div-->              
                  <span class="bold">10<span class="text-lowercase">x</span></span>
              </div>
              <div id="people"></div>
+            
              <script>
                var ele = $('#people');
                for(var j=0 ; j< 162; j++) {
@@ -405,6 +422,67 @@
                for (var i = 0; i < 138; i++) {
                     ele.append("<i class='fa fa-female fa-fw text3'></i>");               
                }
+               /*
+               $(function () {    
+    $('#regionMap').highcharts('Map', {
+        chart: {
+            spacing: [0, 0, 0, 0],
+            width: 190
+        },
+        exporting: {
+            enabled:false
+        },
+        title : {
+            text : ''
+        },
+
+        legend: {
+            enabled: false
+        },
+
+        plotOptions: {
+            map: {
+                allAreas: false,
+                joinBy: ['iso-a2', 'code'],
+                dataLabels: {
+                    enabled: false,
+                    format: null,
+                    style: {
+                        fontWeight: 'bold'
+                    }
+                },
+                mapData: Highcharts.maps['custom/europe'],
+                tooltip: {
+                    headerFormat: '',
+                    pointFormat: '{point.name}: <b>{series.name}</b>'
+                }
+
+            }
+        },
+
+        series : [{
+            name: 'Nordic',
+            data: $.map(['EE', 'NO', 'SE', 'FI', 'DK'], function (code) {
+                return { code: code };
+            })
+        }, {
+            name: 'BeNeFra',
+            data: $.map(['BE', 'NE', 'FR'], function (code) {
+                return { code: code };
+            })
+        }, {
+            name: 'DACH',
+            data: $.map(['DE', 'AT', 'CH'], function (code) {
+                return { code: code };
+            })
+        }, {
+            name: 'Central',
+            data: $.map(['PL','HU','SK','CZ','BA','HR','RS'], function (code) {
+                return { code: code };
+            })
+        }]
+    });
+});*/
              </script>
              <footer></footer>
          </div>
@@ -501,8 +579,41 @@
              <footer></footer>
          </div>
          <div id="fact3" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-4000">
-             <div id="numbers"></div>
-                 <script>
+             <div id="numbers"></div>                 
+             <div class="bigtext">
+                <div class="text4 text-uppercase bold">the numbers</div>
+             </div>
+             <table id="numberstable" class="text-uppercase">
+                 <thead>
+                     <tr>
+                         <th></th>
+                         <th>2008</th>
+                         <th>2009</th>
+                         <th>2010</th>
+                         <th>2011</th>
+                         <th>2012</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <th>revenue<br/>(in million euro)</th>
+                         <td>530</td>
+                         <td>565</td>
+                         <td>520</td>
+                         <td>504</td>
+                         <td>460</td>
+                     </tr>
+                     <tr>
+                         <th>operating profit</th>
+                         <td>12%</td>
+                         <td>12%</td>
+                         <td>12%</td>
+                         <td>10%</td>
+                         <td>13%</td>
+                     </tr>
+                 </tbody>
+             </table>
+             <script>
                    $('#numbers').highcharts({
                         chart: {
                             type: 'column',
@@ -514,6 +625,9 @@
                         title: {
                             text: ''
                         },
+                      /*  data: {
+                            table: document.getElementById('numberstable')
+                        },*/
                         xAxis: {
                             categories: ['2008', '2009', '2010', '2011', '2012'],
                             type: "category",
@@ -549,7 +663,7 @@
                             }
                         },
                         series: [
-                        {
+                        { 
                             data: [530, 565, 520, 504, 460],
                             name: 'revenue',
                             color: "darkblue",
@@ -570,7 +684,7 @@
                                 }
                             }   
                         },
-                        {   
+                        {  
                             data: [120, 120, 120, 100, 130],
                             name: 'profit',
                             dataLabels: {
@@ -584,49 +698,18 @@
                         }]
                     });
              </script>
-             <div class="bigtext">
-                <div class="text4 text-uppercase bold">the numbers</div>
-             </div>
-             <table id="numberstable" class="text-uppercase">
-                 <thead>
-                     <tr>
-                         <th></th>
-                         <th>2008</th>
-                         <th>2009</th>
-                         <th>2010</th>
-                         <th>2011</th>
-                         <th>2012</th>
-                     </tr>
-                 </thead>
-                 <tbody>
-                     <tr>
-                         <th>revenue<br/>(in million euro)</th>
-                         <td>530</td>
-                         <td>565</td>
-                         <td>520</td>
-                         <td>504</td>
-                         <td>460</td>
-                     </tr>
-                     <tr>
-                         <th>operating profit</th>
-                         <td>12%</td>
-                         <td>12%</td>
-                         <td>12%</td>
-                         <td>10%</td>
-                         <td>13%</td>
-                     </tr>
-                 </tbody>
-             </table>
              <footer></footer>
          </div>
-         <div id="fact4" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-5500">
+         <div id="fact4" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-5500">             
              <svg width="800" height="375">
-                 <use xlink:href="#group" x="50" y="50" fill="lightgray"/>
+                 <use xlink:href="#group" x="50" y="50" class="akzent5trans" stroke="white"/>
                  <text x="100" y="200" class="text4">
                     <tspan class="bold fa-2x">172 300</tspan>
                     <tspan x="115" y="240" class="text-uppercase">customers</tspan>
-                 </text>
-                 <circle r="140" cx="535" cy="190" fill="lightgray"/>
+                 </text>                
+                
+                 <image height="300" width="400" x="340" y="50" xlink:href="img/map_of_Europe.svg"/>
+                 <circle r="140" cx="535" cy="190" class="akzent5trans"/>
                  <text x="500" y="200" class="text4">
                     <tspan class="bold fa-2x">19</tspan>
                     <tspan x="450" y="240" class="text-uppercase">countries</tspan>
@@ -638,7 +721,7 @@
              <footer></footer>
          </div>
          <div id="fact5" class="step slide" data-x="5000" data-y="1000" data-rotate-y="90" data-z="-7000">
-             <div id="regions"></div> 
+             <div id="regions" style="position:relative"></div> 
              <div class="bigtext block" style="position:relative">
                  <span class="text4 text-uppercase bold">our regions</span>
              </div>
@@ -671,7 +754,7 @@
                         <td>3</td>
                         <td>6</td>
                     </tr>
-                    <tr id="number">
+                    <tr>
                         <th>Number of customers</th>
                         <td>102300</td>
                         <td>22600</td>
@@ -700,42 +783,47 @@
                         pie: {
                             size: 250,
                             innerSize: 150,
-                            colors: ['rgb(57,187,236)', 'rgba(57,187,236,0.5)', 'rgb(204,204,204)', 'rgba(57,187,236,0.3)', 'rgba(204,204,204,0.3)'],
+                            colors: ['rgb(76,151,221)', 'rgba(76,151,221,0.5)', 'rgb(204,204,204)', 'rgba(76,151,221,0.3)', 'rgba(204,204,204,0.3)'],
                             dataLabels: {
                                 enabled: false
                             },
-                            center: [170,200],
                             allowPointSelect: true,
+                            slicedOffset: 40,
                             cursor: 'pointer',
-                            showsInLegend: true
+                            showsInLegend: true,
+                            tooltip: {
+                                headerFormat: '<span style="font-size: 20px;color:rgb(76,151,221)">{point.key}</span><br/>',
+                                pointFormat: '<span style="color:{series.color}">{series.color}</span> {series.name}: <b>{point.y}</b><br/>'
+                            }
                         }            
-                    },                    
+                    },   
+
                     series:[
-                        {center: [400,200]},
-                        {center: [630,200]}
+                        {center: [120,100]},
+                        {center: [350,100]},
+                        {center: [580,100]}
                 ]    
 
             }, function (chart) { // on complete
 
-        chart.renderer.text('REVENUE', 150,235)            
+        chart.renderer.text('REVENUE', 160,195)            
             .css({
-                color: 'rgb(57,187,236)',
+                color: 'rgb(76,151,221)',
                 fontSize: '20px'
             })           
             .add();
-        chart.renderer.text('OPERATING<br/>PROFIT', 380,230) 
+        chart.renderer.text('OPERATING<br/>  PROFIT', 380,185) 
             .css({
-                color: 'rgb(57,187,236)',
+                color: 'rgb(76,151,221)',
                 fontSize: '20px'
             })           
             .add();
-        chart.renderer.text('NUMBER OF<br/>CUSTOMERS', 610,230) 
+        chart.renderer.text('NUMBER OF<br/>CUSTOMERS', 610,185) 
             .css({
-                color: 'rgb(57,187,236)',
+                color: 'rgb(76,151,221)',
                 fontSize: '20px'
             })           
             .add();
-        console.log(chart.series);
     });            
               });
              </script>            
@@ -763,31 +851,74 @@
                <text x="410" y="190" class="fa-5x bold">13,600</text>
                <text x="550" y="250" class="bold">customers</text>
               </g>
-               <text x="80" y="450" class="fa-5x bold akzent4trans" stroke="none">Germany</text>
+               <text x="80" y="450" class="fa-5x bold text4trans" stroke="none">Germany</text>
             </svg>
              <footer></footer>
          </div>         
          <div id="germany2" class="step slide" data-x="6500" data-y="1000" data-z="-2500" data-rotate-y="90">
+           <div>                    
+                <div class="akzent4trans note left text-center">
+                 <p>
+                    <span class="fa-2x">450</span> employees<br/>
+                    <span class="fa-2x">&nbsp;&nbsp;4</span> locations
+                 </p>   
+                    <hr/>
+                 <p class="text-left">Know-how & </p>
+                 <p class="fa-2x">Supply</p>
+                </div>
+                <div id="brandlist" class="right">
+                <p class="akzent5trans text-center">
+                    <img style="width:150px" src="./img/hoppenstedt_credit_check.png" alt="Hoppenstedt CreditCheck"/><br/>
+                    <img src="./img/hoppenstedt_lift_360.png" alt="Hoppenstedt Lift360"/><br/>
+                    <img src="./img/dnb.png" alt="Dun &amp; Bradstreet"/><br/>
+                    <svg height="30px" width="100%">
+                      <text x="10" y="10" fill="darkgray" class="fa" transform="translate(80,20),scale(10,2)">&#xf107;</text>
+                    </svg>
+                    <img src="./img/bisnode.png" alt="Bisnode"/>
+                    <br/>
+                    &nbsp;
+                </p>
+                 <div class="akzent4 note text-uppercase">   
+                    <p>A TOTAL OF 240 years of experiance. <br/>
+                    Now United in one Brand.</p>
+                    <hr/>
+                 </div>
+                </div>
+            </div>
+            <br class="clearfix"/>
+            <div class="bigtext">
+                 <span class="text4trans text-uppercase bold">Germany</span>
+            </div>     
              <footer></footer>
          </div>
-         <div id="germany3" class="step slide" data-x="6500" data-y="1000" data-z="-4000" data-rotate-y="90">            
-            <dl id="usplist" class="akzent5trans pull-right">
-               <dt>Access to the world's largest business database</dt>
-               <dd>Data on more than 200 million companies</dd> 
-               <dt>All German companies</dt>
-               <dd>Data on 4.7 million companies</dd>
-               <dt>Decision-makers at 1st and 2nd levels of management</dt>
-               <dd>Information on 1.6 million managers</dd>
-               <dt>Access to B2B addresses in entire Europe</dt>
-               <dd>Data on more than 25 million European companies</dd>
-               <dt>Corporate linkages</dt>
-               <dd>Information on 800,000 corporate linkages</dd>
-               <dt>World's largest pool of payment experiences</dt>
-               <dd>Access to the world's largest pool of B"B payment experiences</dd>
-               <dt>Service-oriented</dt>
-               <dd>according to customers' rating</dd>
-            </dl>
-            <span class="akzent4">BISNODE - USPs</span>
+         <div id="germany3" class="step slide" data-x="6500" data-y="1000" data-z="-4000" data-rotate-y="90"> 
+            <div>                    
+                <div class="akzent4 note left">
+                 <p><strong>BISNODE - USP</strong>s<hr/></p>
+                </div>
+                <div id="usplist" class="right akzent5trans">
+                 <dl>
+                   <dt>Access to the world's largest business database</dt>
+                   <dd>Data on more than 200 million companies</dd> 
+                   <dt>All German companies</dt>
+                   <dd>Data on 4.7 million companies</dd>
+                   <dt>Decision-makers at 1st and 2nd levels of management</dt>
+                   <dd>Information on 1.6 million managers</dd>
+                   <dt>Access to B2B addresses in entire Europe</dt>
+                   <dd>Data on more than 25 million European companies</dd>
+                   <dt>Corporate linkages</dt>
+                   <dd>Information on 800,000 corporate linkages</dd>
+                   <dt>World's largest pool of payment experiences</dt>
+                   <dd>Access to the world's largest pool of B2B payment experiences</dd>
+                   <dt>Service-oriented</dt>
+                   <dd>according to customers' rating</dd>
+                 </dl>                           
+                </div>
+            </div>
+            <br class="clearfix"/>
+            <div class="bigtext">
+                 <span class="text4trans text-uppercase bold">Germany</span>
+            </div>     
             <footer></footer>
          </div>     
          <div id="germany" class="step image chapter lightgreen" data-x="8000">
@@ -797,6 +928,22 @@
 	 </div>
 
 	 <script type="text/javascript">
+          // Load the IFrame Player API code asynchronously.
+          var tag = document.createElement('script');
+          tag.src = "https://www.youtube.com/player_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // Replace the 'ytplayer' element with an <iframe> and
+          // YouTube player after the API code downloads.
+          var player;
+          function onYouTubePlayerAPIReady() {
+            player = new YT.Player('ytplayer', {
+              height: '720',
+              width: '960',
+              videoId: 'cj-cnEMu5uE'
+            });
+          }
       
         $.jmpress('register', 'example', function() {
             
@@ -827,8 +974,7 @@
  
         });
         // start the presentation!
-        $('#impress').jmpress('example');
-       
+        $('#impress').jmpress('example');      
      </script>
 	</body>
 </html>
