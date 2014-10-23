@@ -4,14 +4,9 @@
 <ul>
 <?php
 foreach (glob("*/index.html") as $filename) {
-    $folder = substr($filename, 0,strpos($filename, "/"));
-?>
-  <li>
-    <a href="./<?=$filename?>"><?=$folder?></a>
-   </li>
-<?php
-}
-?>
+    $folder = substr($filename, 0, strpos($filename, '/'));
+    echo "<li><a href='./$filename'>$folder</a></li>";
+}?>
 </ul>
 </body>
 </html>
