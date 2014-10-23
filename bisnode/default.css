@@ -592,6 +592,7 @@ table { font-size: 24px; }
 }
 .akzent5trans {
     background-color: rgba(204,204,204, 0.7);
+     fill: rgba(204,204,204, 0.7);
 }
 .akzent6 {
     background-color: rgb(127,127,127);
@@ -621,6 +622,11 @@ table { font-size: 24px; }
     color: rgb(57,187,236);
     fill: rgb(57,187,236);
     stroke: rgb(57,187,236);
+}
+.text4trans {    
+    color: rgba(57,187,236, 0.3);    
+    fill: rgba(57,187,236, 0.3);
+    stroke: rgba(57,187,236, 0.3);
 }
 .text5 {
     color: rgb(204,204,204);
@@ -661,6 +667,32 @@ ul.agenda li , ol.agenda li{
         background-color: rgb(242,242,242);
         border-top-right-radius: 130px 50px;
         border-bottom-right-radius: 130px 50px ;
+}
+.note {
+  position: relative;  
+  padding: 10px;    
+  color: #fff;  
+}
+.note:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-width: 20px 20px 0 0;
+  border-style: solid;
+  border-color: red  #fff;
+}
+.akzent4:before {
+    border-color: rgb(36,122,154) #fff;
+}
+.akzent4trans:before {
+    border-color: rgb(57,187,236) #fff;
+}
+.note>hr {
+    width:95%;
+    height:3px;
+    color:#fff;
+    background-color: #fff;
 }
 
 .todo {
