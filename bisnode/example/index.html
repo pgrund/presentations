@@ -596,24 +596,31 @@
                  </thead>
                  <tbody>
                      <tr>
-                         <th>revenue<br/>(in million euro)</th>
-                         <td>530</td>
-                         <td>565</td>
-                         <td>520</td>
-                         <td>504</td>
-                         <td>460</td>
+                         <th>revenue<br/>(in 10 million euro)</th>
+                         <td>53</td>
+                         <td>56.5</td>
+                         <td>52</td>
+                         <td>50.4</td>
+                         <td>46</td>
                      </tr>
                      <tr>
-                         <th>operating profit</th>
-                         <td>12%</td>
-                         <td>12%</td>
-                         <td>12%</td>
-                         <td>10%</td>
-                         <td>13%</td>
+                         <th>operating profit<br/>(in %)</th>
+                         <td>12</td>
+                         <td>12</td>
+                         <td>12</td>
+                         <td>10</td>
+                         <td>13</td>
                      </tr>
                  </tbody>
              </table>
              <script>
+                   var revenueFormatter = function(value) {
+                     return (value *10) + " million";
+                   };
+                   var profitFormatter = function(value) {
+                     return value + "%";
+                   };
+
                    $('#numbers').highcharts({
                         chart: {
                             type: 'column',
@@ -625,11 +632,12 @@
                         title: {
                             text: ''
                         },
-                      /*  data: {
-                            table: document.getElementById('numberstable')
-                        },*/
+                        data: {
+                            table: document.getElementById('numberstable'),
+                            switchRowsAndColumns: true                    
+                        },
                         xAxis: {
-                            categories: ['2008', '2009', '2010', '2011', '2012'],
+                            /*categories: ['2008', '2009', '2010', '2011', '2012'],*/
                             type: "category",
                             labels: {
                               style: {
@@ -648,24 +656,22 @@
                         plotOptions: {
                             series: {
                                 stacking: 'normal'
-                            }
+                            }                            
                         },
                         tooltip: {
                              formatter: function () {
                                 var valueY =  '';
                                 if(this.series.index == 0) {
-                                    valueY = this.point.y + " (mio)"
+                                    valueY = revenueFormatter(this.point.y)
                                 } else {
-                                    valueY = (this.point.y / 10) + "%"
+                                    valueY = profitFormatter(this.point.y)
                                 };
-                                return '<b>' + this.series.name + '</b><br/>' +
+                                return '<b>' + this.series.name.split("<br>")[0] + '</b><br/>' +
                                     valueY ;
                             }
                         },
                         series: [
                         { 
-                            data: [530, 565, 520, 504, 460],
-                            name: 'revenue',
                             color: "darkblue",
                             dataLabels: {
                                 enabled: true,
@@ -675,7 +681,7 @@
                                 x: 4,
                                 y: 10,
                                 formatter : function() {
-                                    return this.y + " million";
+                                    return revenueFormatter(this.point.y);
                                 },
                                 style: {
                                     fontSize: '13px',
@@ -685,14 +691,12 @@
                             }   
                         },
                         {  
-                            data: [120, 120, 120, 100, 130],
-                            name: 'profit',
                             dataLabels: {
                                 enabled: true,
                                 color: '#FFFFFF',
                                 align: 'center',
                                 formatter: function() {
-                                    return (this.y / 10) + "%";
+                                    return profitFormatter(this.y);
                                 }
                             }
                         }]
@@ -949,7 +953,7 @@
         $.jmpress('register', 'example', function() {
             
             var jmpress = this;
-            // our main configurationk
+            // our main configuration
             var config = { 
                 viewPort: {    
                     width: 1300,
