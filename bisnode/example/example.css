@@ -53,6 +53,13 @@
 	background-image: url("./img/notes.jpg");
 }
 
+#bisnoderegions {
+	position:absolute;
+	top: -60px;
+	right: 90px;
+	width: 500px;
+	height: 500px;
+}
 #provider {
 	background-image: url("./img/meeting2.jpg");
 }
