@@ -18,13 +18,13 @@
         <link href="../highlight/styles/github.css" rel="stylesheet"/>
 
         <script type="text/javascript" src="../impress/jquery.js"></script>
-        <script src="../impress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../jmpress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="../impress/bootstrap.min.js"></script>       
+        <script src="../jmpress/bootstrap.min.js"></script>       
         <script src="../highlight/highlight.pack.js"></script>        
                 
         <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>
-        <script type="text/javascript" src="../jmpress/plugins/presentation-mode.js"></script>
+        <script type="text/javascript" src="../jmpress/plugins/jmpress.presentation-mode.js"></script>
         <script type="text/javascript" src="../jmpress/plugins/presentations.jmpress.js"></script>
 
         <title>RESTful HTTP</title> 
@@ -1984,8 +1984,9 @@ Location: slots/1234/appointment
                 },
                 presentationMode: {
                   use: true,
-                  url: "./presentation-screen.html", 
-                  notesUrl: "./index.notes.html"
+                  url: "../presentation-screen.html", 
+                  // url relative to presentation screen
+                  notesUrl: "./RESTFulHTTP/index.notes.html"
                 },
                 presentations: {
                     print: {
