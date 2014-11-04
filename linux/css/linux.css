@@ -21,11 +21,11 @@ body{
     border-image: url(../../bisnode/img/code-paper.png) 30 86 35 91 fill repeat;
 }
 
-#backslashwarning {    
+div.alert-warning {    
     border: solid thick darkred;
     border-radius: 10px;
 }
-#backslashwarning>header{     
+.alert-warning>header{     
     color:white;
     text-shadow: 2px 2px 4px #000000;
     background-color: darkred;
