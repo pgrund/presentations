@@ -1033,6 +1033,153 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                 </table>
                 <footer></footer>
             </div>
+            <div id="variablesexpansion1" class="step slide" data-x="7500" data-y="0" data-z="500" data-rotate-y="90">
+                <header>variables expansion</header>
+                <dl>
+                    <dt><code>${!PARAMETER}</code></dt>                    
+                    <dd><em>indirection</em>, use the <em>value</em> as <em>name of parameter</em></dd>
+                    <dt><code>${#PARAMETER}</code></dt>
+                    <dd>length of parameters value</dd>
+                </dl>
+                <pre class="left"><code class="bash">$ export TEST=JAVA_HOME
+$ echo $TEST
+JAVA_HOME
+$ echo $JAVA_HOME
+/opt/java/default
+$ echo <em>${!TEST}</em>
+/opt/java/default</code></pre>
+                <pre class="right"><code class="bash">$ echo <em>${#JAVA_HOME}</em>
+17
+                </code></pre>
+                <footer></footer>
+            </div>
+            <div id="variablesexpansion2" class="step slide" data-x="7500" data-y="0" data-z="-1000" data-rotate-y="90">
+                <header>Case modification</header>
+                <dl>                    
+                    <dt><code>${PARAMETER^}</code>, <code>${PARAMETER^^}</code></dt>
+                    <dd>modifies characters of parameter to <em>uppercase</em></dd>
+                    <dt><code>${PARAMETER,}</code>, <code>${PARAMETER,,}</code></dt>
+                    <dd>modifies characters of parameter to <em>lowercase</em></dd>
+                    <dt><code>${PARAMETER~}</code>, <code>${PARAMETER~~}</code></dt>
+                    <dd><em>reversing</em> the current case of parameter characters</dd>
+                </dl>
+                <p>Using double-form (<code>^^</code>, <code>,,</code>, <code>~~</code>) causes replacement of <em>all</em> characters, single-form (<code>^</code>, <code>,</code>, <code>~</code>) only <em>first</em> character</p>
+                <pre class="left"><code class="bash">$ echo $USER
+grund
+$ echo <em>${USER^}</em>
+<em>G</em>rund</code></pre>
+                <pre class="right"><code class="bash">$ echo <em>${USER^^}</em>
+<em>GRUND</em></code></pre>
+                <footer></footer>
+            </div>
+            <div id="variablesexpansion3" class="step slide" data-x="7500" data-y="0" data-z="-2500" data-rotate-y="90">
+                <header>Substring removal</header>
+                <dl>
+                    <dt><code>${PARAMETER#PATTERN}</code>, <code>${PARAMETER##PATTERN}</code></dt>
+                    <dd>removes specified pattern (see <a href="#/regex">matching</a>) from the <em>beginning</em></dd>
+                    <dt><code>${PARAMETER%PATTERN}</code>, <code>${PARAMETER%%PATTERN}</code></dt>
+                    <dd>removes specified pattern (see <a href="#/regex">matching</a>) from the <em>end</em></dd>
+                </dl>
+                <p> single form (<code>#</code>, <code>%</code>) removes <em>shortest</em> text matching, double form (<code>##</code>, <code>%%</code>) removes <em>longest matching</em></p>
+                <pre><code class="bash">$ export MYSTRING="Be liberal in what you accept, and conservative in what you send"
+$ echo <em>${MYSTRING#* }</em>
+liberal in what you accept, and conservative in what you send
+$ echo <em>${MYSTRING##* }</em>
+send</code></pre>
+                <footer></footer>
+            </div>
+            <div id="variablesexpansion4" class="step slide" data-x="7510" data-y="0" data-z="-4000" data-rotate-y="90">
+                <header>Substring offset</header>
+                <dl>
+                    <dt><code>${PARAMETER:OFFSET}</code>, <code>${PARAMETER:OFFSET:LENGTH}</code></dt>
+                    <dd>expand only <em>part</em> of parameter's value, given a position to <em>start</em> and an optional <em>length</em>
+                    </dd>
+                    <dd>If <code>LENGTH</code> is omitted, the parameter will be <em>expanded up to the end of the string</em></dd>
+                    <dd>If <code>LENGTH</code> is negative, it's taken as a second offset into the string, <em>counting from the end of the string</em></dd>
+                    <dd><code>OFFSET</code> and <code>LENGTH</code> can be arithmetic expression</dd>                    
+                </dl>               
+                <pre class="left"><code class="bash">$ echo ${MYSTRING<em>:34</em>}
+conservative in what you send
+$ echo ${MYSTRING<em>:34:13</em>}
+conservative</code></pre>
+                <pre class="right"><code class="bash">$ echo ${MYSTRING<em>: -13:5</em>}
+what
+$ echo ${MYSTRING<em>:(7/2):7</em>}
+liberal</code></pre>
+                <footer></footer>
+            </div>
+            <div id="offsetwarning" class="step alert alert-warning" role="alert" data-x="7500" data-y="0" data-z="-4000" data-rotate-y="270">               
+                  <header>
+                   <span class="fa-stack fa-3x pull-right">
+                        <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+                        <i class="fa fa-warning fa-stack-1x text0"></i>
+                    </span>Warning!
+                  </header>
+                  <p>
+                    The <code>OFFSET</code> starts at index <em>0</em>, not at <em>1</em>!<br/>
+                    When using a <em>negative offset</em> you need to separate the (negative) number from the colon: <code>${MYSTRING:<em> -10</em>:5}</code>, <code>${MYSTRING:<em>(-10)</em>:5}</code>.
+                  </p>
+                </div>
+            <div id="variablesexpansion5" class="step slide" data-x="7500" data-y="0" data-z="-5500" data-rotate-y="90">
+                <header>Search and replace</header>
+                <dl>
+                  <dt><code>${PARAMETER/PATTERN/STRING}</code>, <code>${PARAMETER//PATTERN/STRING}</code></dt>
+                  <dd>replace a substring <a href="#/regex">matched by pattern</a></dd>
+                  <dd>single-form (<code>/</code>) replace <em>first occurrence</em>, double-form (<code>//</code>) replace <em>all occurrences</em>.</dd>
+                  <dd>if <code>STRING</code> is ommitted, matched pattern will be <em>removed</em></dd>
+                </dl>
+                <pre><code class="bash">$ echo ${MYSTRING<em>/in/by</em>}
+Be liberal <em>by</em> what you accept, and conservative <em>in</em> what you send
+$ echo ${MYSTRING<em>//you</em>}
+Be liberal in what accept, and conservative in what send</code></pre>
+                <pre class="left"><code class="bash">$ export FILE=test.xml.xml
+$ echo ${FILE<em>//.xml/.korr</em>}
+test<em>.korr.korr</em></code></pre>
+                <pre class="right"><code class="bash">$ echo ${FILE<em>/%.xml/.korr</em>}
+test.xml<em>.korr</em></code></pre>
+                <footer></footer>
+            </div>
+            <div id="variablesexpansion6" class="step slide" data-x="7500" data-y="0" data-z="-7000" data-rotate-y="90">
+                <header>Default / Alternate values</header>
+                <div class="clearfix">
+                <dl class="left">
+                    <dt><code>${PARAMETER:-WORD}</code>, <code>${PARAMETER-WORD}</code></dt>
+                    <dd><em>use</em> a default value, if <em>not set</em> or <em>null</em></dd>
+                    <dt><code>${PARAMETER:=WORD}</code>, <code>${PARAMETER=WORD}</code></dt>
+                    <dd><em>assign</em> a default value, if <em>not set</em> or <em>null</em></dd>
+                </dl>
+                <dl class="right">
+                    <dt><code>${PARAMETER:+WORD}</code>, <code>${PARAMETER+WORD}</code></dt>
+                    <dd>if <em>set</em> or <em>not empty</em>, displays an <em>alternate text</em></dd>
+                </dl>
+                </div>
+                
+                <p>ommitting the colon, default value will only be assign if <code>PARAMETER</code> was <em>unset</em></p>
+                <pre><code class="bash">$ read -p "enter gender: " GENDER;\ 
+ echo "Your gender is <em>${GENDER:-a secret}</em>"
+enter gender:
+Your gender is <em>a secret</em>
+...
+$ echo $GENDER
+<em>&nbsp;</em>
+</code></pre>
+                <footer></footer>
+            </div>
+             <div id="variablesexpansion7" class="step slide" data-x="7500" data-y="0" data-z="-8500" data-rotate-y="90">
+                <header>Display errors</header>
+                <dl>
+                    <dt><code>${PARAMETER:?WORD}</code>, <code>${PARAMETER?WORD}</code></dt>
+                    <dd>If the parameter <code>PARAMETER</code> is set/non-null, this form will simply expand it</dd>
+                    <dd>Otherwise, the expansion of <code>WORD</code> will be used as appendix for an error message</dd>
+                </dl>
+                <pre><code class="bash">$ echo "The unset parameter is: <em>${p_unset?not set}</em>"
+<em>bash: p_unset: not set</em>
+...
+$ export p_unset=true
+$ echo "The unset parameter is: <em>${p_unset?not set}</em>"
+The unset parameter is: <em>true</em></code></pre>
+                <footer></footer>
+            </div>
             <div id="wildcards" class="step slide" data-x="7500" data-y="1000" data-z="-1000" data-rotate-y="90">
                 <header>Wildcards</header>
                 <blockquote>... placeholders for <em>characters</em>. All files matching wildcard will be used as list input for command.</blockquote>
