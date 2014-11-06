@@ -71,11 +71,10 @@ function play(evt) {
   }
 }
 
-function stop(evt) { 
-  console.log(evt.target);   
+function stop(evt) {  
   $('#play').data('status', 'play')
     .removeClass("fa-pause").addClass("fa-play");
-  timer.pause();  
+  if(timer)timer.pause();  
   vt.Clear();
 }
 
