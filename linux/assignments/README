@@ -1,0 +1,32 @@
+All assignments have been recorded.
+
+Record
+======
+'''
+script -t 2>assignment.timing assignment
+'''
+
+creates two files
+- ''' assignment.timing '''
+   timing instructions for replay (how fast what is typed,...)
+- ''' assignment '''
+   text from terminal
+
+
+Replay
+=====
+'''
+scriptreplay assignment.timing assignment
+'''
+
+In order to share this recoding in a live manner, use a fifo file :-D
+
+'''
+mkfifo assignment.fifo
+
+scriptreplay assignment.timing assignment > assignment.fifo &
+'''
+
+from other terminal/user, just 
+''' cat assignment.fifo '''
+

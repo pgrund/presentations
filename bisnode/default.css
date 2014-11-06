@@ -32,23 +32,15 @@ body{
 #break {     
   top: 30%;
 }
-#break .modal-header {
+.modal-dialog>.modal-header {
     background-color: black;
     color: white;
     text-shadow: 2px 2px darkgray;    
     min-width: 400px;   
 }
-#break .modal-header button {
+.modal-dialog>.modal-header button {
     color:white;
 }
-
-#break .modal-content {
-/*    background-image: url(./img/break.png);    
-    background-size: cover;
-    */
-    
-}
-
 
 #break .modal-content {
 background-image: url(./img/break-switching.png);

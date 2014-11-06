@@ -1,0 +1,136 @@
+Script started on Wed 05 Nov 2014 10:10:00 AM CET
+\e[31mgrund\e[0m \e[1;34m~/assignments\e[0m \e[1;32m$\e[0m \e[1;37mpasswd
+Changing password for grund.
+Old Password: 
+New Password: 
+Reenter New Password: 
+Password changed.
+[0;32mgrund[m [1;34m~/assignments[m [1;32m$[m [1;37mman passwd
+Man: find all matching manual pages
+ * passwd (1)
+   passwd (5)
+   passwd (1ssl)
+Man: What manual page do you want?
+Man: 1
+7[?47h
+passwd(1)                                                                      passwd(1)[m
+[m
+[m
+[m
+[1mNAME[0m[m
+       passwd - change user password[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mpasswd [22m[[1m-f[22m|[1m-g[22m|[1m-s[22m|[1m-k[22m[[1m-q[22m]] [[4mname[24m][m
+       [1mpasswd [22m[[1m-D [4m[22mbinddn[24m][[1m-n [4m[22mmin[24m][[1m-x [4m[22mmax[24m][[1m-w [4m[22mwarn[24m][[1m-i [4m[22minact[24m] [4maccount[0m[m
+       [1mpasswd [22m[[1m-D [4m[22mbinddn[24m] {[1m-l[22m|[1m-u[22m|[1m-d[22m|[1m-S[22m[[1m-a[22m]|[1m-e[22m} [4mname[0m[m
+       [1mpasswd [22m--bioapi [[4maccount[24m][m
+       [1mpasswd [22m--stdin [[4maccount[24m][m
+[m
+[1mDESCRIPTION[0m[m
+       [1mpasswd [22mchanges passwords for user and group accounts.  While an administrator may[m
+       change the password for any account or group, a normal user is  only  allowed  to[m
+       change  the password for their own account.  [1mpasswd [22malso changes account informa-[m
+       tion, such as the full name of the user, their login shell, password expiry dates[m
+       and intervals or disable an account.[m
+[m
+       [1mpasswd  [22mis  written  to  work  through  the [1mPAM [22mAPI.  Essentially, it initializes[m
+       itself as a "passwd"  service  and  utilizes  configured  [4m"password"[24m  modules  to[m
+       authenticate and then update a user's password.[m
+[7m Manual page passwd(1) line 1[27m[K
+[K[m
+       A sample [4m/etc/pam.d/passwd[24m file might look like this:[m
+[m
+              #%PAM-1.0[m
+              auth      required  pam_unix2.so    nullok[m
+              account   required  pam_unix2.so[m
+              password  required  pam_pwcheck.so  nullok[m
+              password  required  pam_unix2.so    nullok \[m
+                                    use_first_pass use_authtok[m
+              session   required  pam_unix2.so[m
+[m
+[m
+   [1mPassword Changes[0m[m
+       If  an old password is present, the user is first promted for it and the password[m
+       is compared agaisnt the stored one. This can be changed, depending which PAM mod-[m
+       ules are used.  An administrator is permitted to bypass this step so that forgot-[m
+       ten passwords may be changed.[m
+[m
+       After the user is authenticated, password aging information are checked to see if[m
+       the  user is permitted to change their password at this time. Else [1mpasswd [22mrefuses[m
+       to change the password.[m
+[m
+       The user is then prompted for a replacement password.  Care must be taken to  not[m
+       include  special control characters or characters, which are not available on all[m
+[7m Manual page passwd(1) line 25[27m[K
+[K       keyboards.[m
+[m
+       If the password is accepted, [1mpasswd [22mwill prompt  again  and  compare  the  second[m
+       entry  against  the  first.   Both  entries are require to match in order for the[m
+       password to be changed.[m
+[m
+[1mOPTIONS[0m[m
+       [1m-f     [22mChange the finger (gecos) information. This are the users fullname, office[m
+              room  number,  office phone number and home phone number. This information[m
+              is stored in the [4m/etc/passwd[24m file and typically printed by  [1mfinger[4m[22m(1)[24m  and[m
+              similiar programs.[m
+[m
+       [1m-g     [22mWith this option, the password for the named group will be changed.[m
+[m
+       [1m-s     [22mThis option is used to change the user login shell. A normal user may only[m
+              change the login shell for their own account, the super  user  may  change[m
+              the login shell for any account.[m
+[m
+       [1m-k     [22mKeep  non-expired authentication tokens. The password will only be changed[m
+              if it is expired.[m
+[m
+       [1m-q     [22mTry to be quiet. This option can only be used with [1m-k[22m.[m
+[m
+[m
+[7m Manual page passwd(1) line 49[27m[K
+[K[2J[?47l8[0;32mgrund[m [1;34m~/assignments[m [1;32m$[m [1;37mwhoami
+grund
+[0;32mgrund[m [1;34m~/assignments[m [1;32m$[m [1;37mwhoami ami[C[C i[C
+[0;32mgrund[m [1;34m~/assignments[m [1;32m$[m [1;37mgroups
+users root dialout video training1
+[0;32mgrund[m [1;34m~/assignments[m [1;32m$[m [1;37mid
+uid=1003(grund) gid=100(users) groups=100(users),0(root),16(dialout),33(video),1002(training1)
+[0;32mgrund[m [1;34m~/assignments[m [1;32m$[m [1;37mman id
+Man: find all matching manual pages
+ * id (1)
+   id (1p)
+Man: What manual page do you want?
+Man: 1
+7[?47h
+ID(1)                                 User Commands                                ID(1)[m
+[m
+[m
+[m
+[1mNAME[0m[m
+       id - print real and effective user and group IDs[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mid [22m[[4mOPTION[24m]... [[4mUSERNAME[24m][m
+[m
+[1mDESCRIPTION[0m[m
+       Print  user  and  group information for the specified USERNAME, or (when USERNAME[m
+       omitted) for the current user.[m
+[m
+       [1m-a     [22mignore, for compatibility with other versions[m
+[m
+       [1m-Z[22m, [1m--context[0m[m
+              print only the security context of the current user[m
+[m
+       [1m-g[22m, [1m--group[0m[m
+              print only the effective group ID[m
+[m
+       [1m-G[22m, [1m--groups[0m[m
+              print all group IDs[m
+[7m Manual page id(1) line 1[27m[K
+[K[2J[?47l8[0;32mgrund[m [1;34m~/assignments[m [1;32m$[m [1;37mwho
+root     tty1         2014-06-26 14:15
+grund    pts/0        2014-11-05 09:25 (10.49.97.51)
+grund    pts/1        2014-11-05 09:41 (10.49.97.51)
+[0;32mgrund[m [1;34m~/assignments[m [1;32m$[m [1;37mexit
+
+Script done on Wed 05 Nov 2014 10:11:29 AM CET

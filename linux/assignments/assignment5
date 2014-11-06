@@ -1,0 +1,16 @@
+Script started on Wed 05 Nov 2014 09:31:00 AM CET
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mecho $figure
+
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mecho $figure"$figure[C[C[C[C[C[C[C"
+
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mecho "$figure"[1P$figure"'$figure"[C[C[C[C[C[C[C[C[K'
+$figure
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mecho '$figure'[1P$figure'\$figure'[C[C[C[C[C[C[C[C[K
+$figure
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mecho \$figure'$figure'[1P$figure'`$figure'[C[C[C[C[C[C[C[C[K`
+
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mecho "Welcome Mr/Mrs $USER to out[Kr training, today is `date`"
+Welcome Mr/Mrs grund to our training, today is Wed Nov  5 09:32:07 CET 2014
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mexit
+
+Script done on Wed 05 Nov 2014 09:32:12 AM CET

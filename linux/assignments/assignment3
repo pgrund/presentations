@@ -1,0 +1,309 @@
+Script started on Wed 05 Nov 2014 09:10:39 AM CET
+biadmin@YU-PROD-DEVOPS-01:~> cp /home/grund/asterix/ .
+cp: omitting directory `/home/grund/asterix/'
+biadmin@YU-PROD-DEVOPS-01:~> man cp
+Man: find all matching manual pages
+ * cp (1)
+   cp (1p)
+Man: What manual page do you want?
+Man: 1
+7[?47hCP(1)                                   User Commands                                   CP(1)[m
+[m
+[m
+[m
+[1mNAME[0m[m
+       cp - copy files and directories[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mcp [22m[[4mOPTION[24m]... [[4m-T[24m] [4mSOURCE[24m [4mDEST[0m[m
+       [1mcp [22m[[4mOPTION[24m]... [4mSOURCE[24m... [4mDIRECTORY[0m[m
+       [1mcp [22m[[4mOPTION[24m]... [4m-t[24m [4mDIRECTORY[24m [4mSOURCE[24m...[m
+[m
+[1mDESCRIPTION[0m[m
+       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-a[22m, [1m--archive[0m[m
+              same as [1m-dR --preserve[22m=[4mall[0m[m
+[m
+       [1m--attributes-only[0m[m
+              don't copy the file data, just the attributes[m
+[m
+       [1m--backup[22m[=[4mCONTROL[24m][m
+              make a backup of each existing destination file[m
+[m
+       [1m-b     [22mlike [1m--backup [22mbut does not accept an argument[m
+[7m Manual page cp(1) line 1[27m[K[K[m
+       [1m--copy-contents[0m[m
+              copy contents of special files when recursive[m
+[m
+       [1m-d     [22msame as [1m--no-dereference --preserve[22m=[4mlinks[0m[m
+[m
+       [1m-f[22m, [1m--force[0m[m
+              if  an  existing  destination  file  cannot  be opened, remove it and try again[m
+              (redundant if the [1m-n [22moption is used)[m
+[m
+       [1m-i[22m, [1m--interactive[0m[m
+              prompt before overwrite (overrides a previous [1m-n [22moption)[m
+[m
+       [1m-H     [22mfollow command-line symbolic links in SOURCE[m
+[m
+       [1m-l[22m, [1m--link[0m[m
+              link files instead of copying[m
+[m
+       [1m-L[22m, [1m--dereference[0m[m
+              always follow symbolic links in SOURCE[m
+[m
+       [1m-n[22m, [1m--no-clobber[0m[m
+              do not overwrite an existing file (overrides a previous [1m-i [22moption)[m
+[m
+       [1m-P[22m, [1m--no-dereference[0m[m
+              never follow symbolic links in SOURCE[m
+[m
+[7m Manual page cp(1) line 28[27m[K[K       [1m-p     [22msame as [1m--preserve[22m=[4mmode[24m,ownership,timestamps[m
+[m
+       [1m--preserve[22m[=[4mATTR_LIST[24m][m
+              preserve the specified attributes (default: mode,ownership,timestamps), if pos-[m
+              sible additional attributes: context, links, xattr, all[m
+[m
+       [1m--no-preserve[22m=[4mATTR_LIST[0m[m
+              don't preserve the specified attributes[m
+[m
+       [1m--parents[0m[m
+              use full source file name under DIRECTORY[m
+[m
+       [1m-R[22m, [1m-r[22m, [1m--recursive[0m[m
+              copy directories recursively[m
+[m
+       [1m--reflink[22m[=[4mWHEN[24m][m
+              control clone/CoW copies. See below[m
+[m
+       [1m--remove-destination[0m[m
+              remove  each  existing  destination file before attempting to open it (contrast[m
+              with [1m--force[22m)[m
+[m
+       [1m--sparse[22m=[4mWHEN[0m[m
+              control creation of sparse files. See below[m
+[m
+       [1m--strip-trailing-slashes[0m[m
+              remove any trailing slashes from each SOURCE argument[m
+[7m Manual page cp(1) line 55[27m[K[K[2J[?47l8biadmin@YU-PROD-DEVOPS-01:~> man cpcp /home/grund/asterix/ .[1@-[1@r[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+biadmin@YU-PROD-DEVOPS-01:~> ls -al
+total 100
+drwxr-xr-x 12 biadmin biadmin   4096 Nov  5 09:11 .
+drwxr-xr-x 17 root    root      4096 Aug 27 13:45 ..
+-rw-r--r--  1 biadmin biadmin      0 Nov  5 09:10 asignment3
+-rw-r--r--  1 biadmin biadmin    910 Nov  5 09:11 assignment3.timing
+drwxr-xr-x  2 biadmin biadmin   4096 Nov  5 09:11 asterix
+-rw-------  1 biadmin biadmin   2487 Nov  5 09:10 .bash_history
+-rw-r--r--  1 biadmin biadmin   1177 Nov 22  2012 .bashrc
+drwxr-xr-x  2 biadmin biadmin   4096 Nov 22  2012 bin
+drwxr-xr-x  4 biadmin biadmin   4096 Sep 24 10:13 deployment
+-rw-r--r--  1 biadmin biadmin   1637 Nov 22  2012 .emacs
+drwxr-xr-x  2 biadmin biadmin   4096 Nov 22  2012 .fonts
+-rw-r--r--  1 biadmin biadmin    861 Nov 22  2012 .inputrc
+drwxr-xr-x  2 biadmin biadmin   4096 Nov 22  2012 .mozilla
+-rw-r--r--  1 biadmin biadmin   6043 Nov 22  2012 .muttrc
+drwxr-xr-x  2 biadmin biadmin   4096 Nov  4 14:42 one
+-rw-r--r--  1 biadmin biadmin   1028 Nov 22  2012 .profile
+-rw-------  1 biadmin biadmin      5 Jun 27 09:35 .pyhistory
+drwxr-xr-x  2 biadmin biadmin   4096 Aug 30  2013 .ssh
+drwxr-xr-x  3 biadmin biadmin   4096 Jun 27 09:35 .subversion
+drwxr-xr-x  2 biadmin biadmin   4096 Sep  5 17:15 test
+drwxr--r-x  2 biadmin training1 4096 Nov  4 14:43 two
+-rw-------  1 biadmin biadmin   3830 Sep  5 17:20 .viminfo
+-rw-r--r--  1 biadmin biadmin    849 Nov 22  2012 .vimrc
+-rw-r--r--  1 biadmin biadmin   1940 Nov 22  2012 .xim.template
+-rwxr-xr-x  1 biadmin biadmin   1446 Nov 22  2012 .xinitrc.template
+biadmin@YU-PROD-DEVOPS-01:~> ls -[K-l
+total 32
+-rw-r--r-- 1 biadmin biadmin   4096 Nov  5 09:11 asignment3
+-rw-r--r-- 1 biadmin biadmin   1186 Nov  5 09:11 assignment3.timing
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  5 09:11 asterix
+drwxr-xr-x 2 biadmin biadmin   4096 Nov 22  2012 bin
+drwxr-xr-x 4 biadmin biadmin   4096 Sep 24 10:13 deployment
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  4 14:42 one
+drwxr-xr-x 2 biadmin biadmin   4096 Sep  5 17:15 test
+drwxr--r-x 2 biadmin training1 4096 Nov  4 14:43 two
+biadmin@YU-PROD-DEVOPS-01:~> ls -l asterix/
+total 28
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 asterix_text.bak
+-rw-r--r-- 1 biadmin biadmin 22725 Nov  5 09:11 asterix_text.html
+-rw-r--r-- 1 biadmin biadmin   318 Nov  5 09:11 character_list
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 character_list.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_a.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_b.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_c.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_d.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_e.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_f.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_g.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_h.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_i.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_j.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_k.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_l.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_m.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_n.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_o.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_p.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_q.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_r.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_s.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_t.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_u.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_v.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_w.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_x.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_y.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 test_z.bak
+-rw-r--r-- 1 biadmin biadmin     0 Nov  5 09:11 two.txt
+biadmin@YU-PROD-DEVOPS-01:~> mkdir training
+biadmin@YU-PROD-DEVOPS-01:~> ls -l
+total 36
+-rw-r--r-- 1 biadmin biadmin   4096 Nov  5 09:11 asignment3
+-rw-r--r-- 1 biadmin biadmin   1697 Nov  5 09:11 assignment3.timing
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  5 09:11 asterix
+drwxr-xr-x 2 biadmin biadmin   4096 Nov 22  2012 bin
+drwxr-xr-x 4 biadmin biadmin   4096 Sep 24 10:13 deployment
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  4 14:42 one
+drwxr-xr-x 2 biadmin biadmin   4096 Sep  5 17:15 test
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  5 09:11 training
+drwxr--r-x 2 biadmin training1 4096 Nov  4 14:43 two
+biadmin@YU-PROD-DEVOPS-01:~> chgrp training1 training/
+biadmin@YU-PROD-DEVOPS-01:~> ls -l
+total 40
+-rw-r--r-- 1 biadmin biadmin   8192 Nov  5 09:11 asignment3
+-rw-r--r-- 1 biadmin biadmin   2124 Nov  5 09:11 assignment3.timing
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  5 09:11 asterix
+drwxr-xr-x 2 biadmin biadmin   4096 Nov 22  2012 bin
+drwxr-xr-x 4 biadmin biadmin   4096 Sep 24 10:13 deployment
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  4 14:42 one
+drwxr-xr-x 2 biadmin biadmin   4096 Sep  5 17:15 test
+drwxr-xr-x 2 biadmin training1 4096 Nov  5 09:11 training
+drwxr--r-x 2 biadmin training1 4096 Nov  4 14:43 two
+biadmin@YU-PROD-DEVOPS-01:~> chmod g+r+w training/
+biadmin@YU-PROD-DEVOPS-01:~> ls -l
+total 40
+-rw-r--r-- 1 biadmin biadmin   8192 Nov  5 09:11 asignment3
+-rw-r--r-- 1 biadmin biadmin   2555 Nov  5 09:12 assignment3.timing
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  5 09:11 asterix
+drwxr-xr-x 2 biadmin biadmin   4096 Nov 22  2012 bin
+drwxr-xr-x 4 biadmin biadmin   4096 Sep 24 10:13 deployment
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  4 14:42 one
+drwxr-xr-x 2 biadmin biadmin   4096 Sep  5 17:15 test
+drwxrwxr-x 2 biadmin training1 4096 Nov  5 09:11 training
+drwxr--r-x 2 biadmin training1 4096 Nov  4 14:43 two
+biadmin@YU-PROD-DEVOPS-01:~> ls -lchmod g+r+w training/[1@g
+chmod: invalid mode: `g+rg+w'
+Try `chmod --help' for more information.
+biadmin@YU-PROD-DEVOPS-01:~> chmod g+rg+w training/[1P[1P
+biadmin@YU-PROD-DEVOPS-01:~> chmod g+rw training/[2@g+[C[C[C[C[C[C[C[C[C[C[Cls -l[K
+total 40
+-rw-r--r-- 1 biadmin biadmin   8192 Nov  5 09:11 asignment3
+-rw-r--r-- 1 biadmin biadmin   3051 Nov  5 09:12 assignment3.timing
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  5 09:11 asterix
+drwxr-xr-x 2 biadmin biadmin   4096 Nov 22  2012 bin
+drwxr-xr-x 4 biadmin biadmin   4096 Sep 24 10:13 deployment
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  4 14:42 one
+drwxr-xr-x 2 biadmin biadmin   4096 Sep  5 17:15 test
+drwxrwxr-x 2 biadmin training1 4096 Nov  5 09:11 training
+drwxr--r-x 2 biadmin training1 4096 Nov  4 14:43 two
+biadmin@YU-PROD-DEVOPS-01:~> ls- l[1@ [C[1Pl[C
+total 40
+-rw-r--r-- 1 biadmin biadmin   8192 Nov  5 09:11 asignment3
+-rw-r--r-- 1 biadmin biadmin   3270 Nov  5 09:13 assignment3.timing
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  5 09:11 asterix
+drwxr-xr-x 2 biadmin biadmin   4096 Nov 22  2012 bin
+drwxr-xr-x 4 biadmin biadmin   4096 Sep 24 10:13 deployment
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  4 14:42 one
+drwxr-xr-x 2 biadmin biadmin   4096 Sep  5 17:15 test
+drwxrwxr-x 2 biadmin training1 4096 Nov  5 09:11 training
+drwxr--r-x 2 biadmin training1 4096 Nov  4 14:43 two
+biadmin@YU-PROD-DEVOPS-01:~> ls one/
+file1.txt
+biadmin@YU-PROD-DEVOPS-01:~> cp one/file1.txt /home/grund/training/
+biadmin@YU-PROD-DEVOPS-01:~> ls -l /home/grund/training/
+total 0
+prw-r--r-- 1 grund   users   0 Nov  4 16:06 assignment
+-rw-r--r-- 1 biadmin biadmin 0 Nov  5 09:13 file1.txt
+biadmin@YU-PROD-DEVOPS-01:~> ls -l
+total 40
+-rw-r--r-- 1 biadmin biadmin   8192 Nov  5 09:11 asignment3
+-rw-r--r-- 1 biadmin biadmin   4025 Nov  5 09:14 assignment3.timing
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  5 09:11 asterix
+drwxr-xr-x 2 biadmin biadmin   4096 Nov 22  2012 bin
+drwxr-xr-x 4 biadmin biadmin   4096 Sep 24 10:13 deployment
+drwxr-xr-x 2 biadmin biadmin   4096 Nov  4 14:42 one
+drwxr-xr-x 2 biadmin biadmin   4096 Sep  5 17:15 test
+drwxrwxr-x 2 biadmin training1 4096 Nov  5 09:11 training
+drwxr--r-x 2 biadmin training1 4096 Nov  4 14:43 two
+biadmin@YU-PROD-DEVOPS-01:~> rm -rf two
+biadmin@YU-PROD-DEVOPS-01:~> mkdir two
+biadmin@YU-PROD-DEVOPS-01:~> ls -al
+total 116
+drwxr-xr-x 13 biadmin biadmin   4096 Nov  5 09:14 .
+drwxr-xr-x 17 root    root      4096 Aug 27 13:45 ..
+-rw-r--r--  1 biadmin biadmin   8192 Nov  5 09:11 asignment3
+-rw-r--r--  1 biadmin biadmin   4382 Nov  5 09:14 assignment3.timing
+drwxr-xr-x  2 biadmin biadmin   4096 Nov  5 09:11 asterix
+-rw-------  1 biadmin biadmin   2487 Nov  5 09:10 .bash_history
+-rw-r--r--  1 biadmin biadmin   1177 Nov 22  2012 .bashrc
+drwxr-xr-x  2 biadmin biadmin   4096 Nov 22  2012 bin
+drwxr-xr-x  4 biadmin biadmin   4096 Sep 24 10:13 deployment
+-rw-r--r--  1 biadmin biadmin   1637 Nov 22  2012 .emacs
+drwxr-xr-x  2 biadmin biadmin   4096 Nov 22  2012 .fonts
+-rw-r--r--  1 biadmin biadmin    861 Nov 22  2012 .inputrc
+drwxr-xr-x  2 biadmin biadmin   4096 Nov 22  2012 .mozilla
+-rw-r--r--  1 biadmin biadmin   6043 Nov 22  2012 .muttrc
+drwxr-xr-x  2 biadmin biadmin   4096 Nov  4 14:42 one
+-rw-r--r--  1 biadmin biadmin   1028 Nov 22  2012 .profile
+-rw-------  1 biadmin biadmin      5 Jun 27 09:35 .pyhistory
+drwxr-xr-x  2 biadmin biadmin   4096 Aug 30  2013 .ssh
+drwxr-xr-x  3 biadmin biadmin   4096 Jun 27 09:35 .subversion
+drwxr-xr-x  2 biadmin biadmin   4096 Sep  5 17:15 test
+drwxrwxr-x  2 biadmin training1 4096 Nov  5 09:11 training
+drwxr-xr-x  2 biadmin biadmin   4096 Nov  5 09:14 two
+-rw-------  1 biadmin biadmin   3830 Sep  5 17:20 .viminfo
+-rw-r--r--  1 biadmin biadmin    849 Nov 22  2012 .vimrc
+-rw-r--r--  1 biadmin biadmin   1940 Nov 22  2012 .xim.template
+-rwxr-xr-x  1 biadmin biadmin   1446 Nov 22  2012 .xinitrc.template
+biadmin@YU-PROD-DEVOPS-01:~> ls -l
+total 48
+-rw-r--r-- 1 biadmin biadmin   12288 Nov  5 09:14 asignment3
+-rw-r--r-- 1 biadmin biadmin    4474 Nov  5 09:14 assignment3.timing
+drwxr-xr-x 2 biadmin biadmin    4096 Nov  5 09:11 asterix
+drwxr-xr-x 2 biadmin biadmin    4096 Nov 22  2012 bin
+drwxr-xr-x 4 biadmin biadmin    4096 Sep 24 10:13 deployment
+drwxr-xr-x 2 biadmin biadmin    4096 Nov  4 14:42 one
+drwxr-xr-x 2 biadmin biadmin    4096 Sep  5 17:15 test
+drwxrwxr-x 2 biadmin training1  4096 Nov  5 09:11 training
+drwxr-xr-x 2 biadmin biadmin    4096 Nov  5 09:14 two
+biadmin@YU-PROD-DEVOPS-01:~> chgrp training1 two
+biadmin@YU-PROD-DEVOPS-01:~> ls -l
+total 48
+-rw-r--r-- 1 biadmin biadmin   12288 Nov  5 09:14 asignment3
+-rw-r--r-- 1 biadmin biadmin    4893 Nov  5 09:14 assignment3.timing
+drwxr-xr-x 2 biadmin biadmin    4096 Nov  5 09:11 asterix
+drwxr-xr-x 2 biadmin biadmin    4096 Nov 22  2012 bin
+drwxr-xr-x 4 biadmin biadmin    4096 Sep 24 10:13 deployment
+drwxr-xr-x 2 biadmin biadmin    4096 Nov  4 14:42 one
+drwxr-xr-x 2 biadmin biadmin    4096 Sep  5 17:15 test
+drwxrwxr-x 2 biadmin training1  4096 Nov  5 09:11 training
+drwxr-xr-x 2 biadmin training1  4096 Nov  5 09:14 two
+biadmin@YU-PROD-DEVOPS-01:~> chmod g-x two/
+biadmin@YU-PROD-DEVOPS-01:~> ls -l
+total 48
+-rw-r--r-- 1 biadmin biadmin   12288 Nov  5 09:14 asignment3
+-rw-r--r-- 1 biadmin biadmin    5234 Nov  5 09:15 assignment3.timing
+drwxr-xr-x 2 biadmin biadmin    4096 Nov  5 09:11 asterix
+drwxr-xr-x 2 biadmin biadmin    4096 Nov 22  2012 bin
+drwxr-xr-x 4 biadmin biadmin    4096 Sep 24 10:13 deployment
+drwxr-xr-x 2 biadmin biadmin    4096 Nov  4 14:42 one
+drwxr-xr-x 2 biadmin biadmin    4096 Sep  5 17:15 test
+drwxrwxr-x 2 biadmin training1  4096 Nov  5 09:11 training
+drwxr--r-x 2 biadmin training1  4096 Nov  5 09:14 two
+biadmin@YU-PROD-DEVOPS-01:~> exit
+
+Script done on Wed 05 Nov 2014 09:15:23 AM CET

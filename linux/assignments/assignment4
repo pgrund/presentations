@@ -1,0 +1,1065 @@
+Script started on Wed 05 Nov 2014 09:27:25 AM CET
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mls -l
+total 32
+-rw-r--r-- 1 grund users        5 Aug 26 16:46 alt.txt
+drwxr-xr-x 2 grund users     4096 Nov  5 09:27 assignments
+drwxr-xr-x 2 grund training1 4096 Nov  4 14:57 asterix
+drwxr-xr-x 2 grund users     4096 Nov  4 15:51 bin
+drwxr-xr-x 2 grund users     4096 Nov  5 09:05 one
+-rw-r--r-- 1 grund users     1992 Nov  4 15:57 test
+-rw-r--r-- 1 grund users        0 Nov  4 14:49 test_im_home
+drwxrwxr-x 2 grund training1 4096 Nov  4 16:04 training
+drwxr-xr-x 2 grund users     4096 Nov  5 09:06 two
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mll
+total 336
+drwxr-xr-x 12 grund users       4096 Nov  5 09:07 [0m[01;34m.[0m
+drwxr-xr-x 17 root  root        4096 Aug 27 13:45 [01;34m..[0m
+-rw-r--r--  1 grund users          5 Aug 26 16:46 alt.txt
+drwxr-xr-x  2 grund users       4096 Nov  5 09:27 [01;34massignments[0m
+drwxr-xr-x  2 grund training1   4096 Nov  4 14:57 [01;34masterix[0m
+-rw-------  1 grund users      15748 Nov  5 09:24 .bash_history
+-rw-r--r--  1 grund users       1360 Nov  5 09:00 .bashrc
+drwxr-xr-x  2 grund users       4096 Nov  4 15:51 [01;34mbin[0m
+-rw-r--r--  1 grund users       1637 Jul 25 10:03 .emacs
+drwxr-xr-x  2 grund users       4096 Jul 25 10:03 [01;34m.fonts[0m
+-rw-r--r--  1 grund users      18251 Jul 25 10:03 .gnu-emacs
+-rw-r--r--  1 grund users        861 Jul 25 10:03 .inputrc
+drwxr-xr-x  2 grund users       4096 Jul 25 10:03 [01;34m.mozilla[0m
+-rw-r--r--  1 grund users       6043 Jul 25 10:03 .muttrc
+drwxr-xr-x  2 grund users       4096 Nov  5 09:05 [01;34mone[0m
+-rw-r--r--  1 grund users       1028 Jul 25 10:03 .profile
+-rw-------  1 grund users         10 Jul 25 11:57 .pyhistory
+-rw-------  1 grund users       1024 Nov  4 16:22 .rnd
+drwx------  2 grund users       4096 Sep  1 15:30 [01;34m.ssh[0m
+drwxr-xr-x  3 grund users       4096 Jul 25 11:57 [01;34m.subversion[0m
+-rw-r--r--  1 grund users       1992 Nov  4 15:57 test
+-rw-r--r--  1 grund users          0 Nov  4 14:49 test_im_home
+drwxrwxr-x  2 grund training1   4096 Nov  4 16:04 [01;34mtraining[0m
+drwxr-xr-x  2 grund users       4096 Nov  5 09:06 [01;34mtwo[0m
+-rw-------  1 grund users       6136 Nov  5 09:00 .viminfo
+-rw-r--r--  1 grund users        849 Jul 25 10:03 .vimrc
+-rw-r--r--  1 grund users       1940 Jul 25 10:03 .xim.template
+-rwxr-xr-x  1 grund users       1446 Jul 25 10:03 [01;32m.xinitrc.template[0m
+-rw-r--r--  1 grund users     191738 Aug 26 16:05 .y2log
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mls -a[Kl --color
+total 32
+-rw-r--r-- 1 grund users        5 Aug 26 16:46 alt.txt
+drwxr-xr-x 2 grund users     4096 Nov  5 09:27 [0m[01;34massignments[0m
+drwxr-xr-x 2 grund training1 4096 Nov  4 14:57 [01;34masterix[0m
+drwxr-xr-x 2 grund users     4096 Nov  4 15:51 [01;34mbin[0m
+drwxr-xr-x 2 grund users     4096 Nov  5 09:05 [01;34mone[0m
+-rw-r--r-- 1 grund users     1992 Nov  4 15:57 test
+-rw-r--r-- 1 grund users        0 Nov  4 14:49 test_im_home
+drwxrwxr-x 2 grund training1 4096 Nov  4 16:04 [01;34mtraining[0m
+drwxr-xr-x 2 grund users     4096 Nov  5 09:06 [01;34mtwo[0m
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mls -l *e*
+-rw-r--r-- 1 grund users     1992 Nov  4 15:57 test
+-rw-r--r-- 1 grund users        0 Nov  4 14:49 test_im_home
+
+assignments:
+total 60
+-rw-r--r-- 1 grund users 12512 Nov  5 09:03 assignment1
+-rw-r--r-- 1 grund users  1692 Nov  5 09:03 assignment1.timing
+-rw-r--r-- 1 grund users  3804 Nov  5 09:06 assignment2
+-rw-r--r-- 1 grund users  1972 Nov  5 09:06 assignment2.timing
+-rw-r--r-- 1 grund users 15719 Nov  5 09:18 assignment3
+-rw-r--r-- 1 grund users  5343 Nov  5 09:18 assignment3.timing
+-rw-r--r-- 1 grund users     0 Nov  5 09:27 assignment4
+-rw-r--r-- 1 grund users   754 Nov  5 09:27 assignment4.timing
+-rw-r--r-- 1 grund users  1795 Nov  4 16:01 assignment5
+
+asterix:
+total 28
+-rw-r--r-- 1 grund users         0 Sep  8 13:24 asterix_text.bak
+-rw-r--r-- 1 grund training1 22725 Sep  4 09:12 asterix_text.html
+-rw-r--r-- 1 grund training1   318 Sep  2 09:00 character_list
+-rw-r--r-- 1 grund users         0 Sep  8 13:24 character_list.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_a.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_b.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_c.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_d.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_e.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_f.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_g.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_h.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_i.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_j.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_k.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_l.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_m.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_n.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_o.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_p.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_q.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_r.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_s.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_t.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_u.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_v.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_w.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_x.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_y.bak
+-rw-r--r-- 1 grund users         0 Sep  8 13:28 test_z.bak
+-rw-r--r-- 1 grund users         0 Nov  4 14:52 two.txt
+
+one:
+total 0
+-rw-r--r-- 1 grund users 0 Nov  5 09:05 file1.txt
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mls -l *e*[C[1P[1P *e*[1P*e*[C[C[C
+test  test_im_home
+
+assignments:
+assignment1         assignment2.timing  assignment4
+assignment1.timing  assignment3         assignment4.timing
+assignment2         assignment3.timing  assignment5
+
+asterix:
+asterix_text.bak    test_b.bak  test_g.bak  test_l.bak  test_q.bak  test_v.bak  two.txt
+asterix_text.html   test_c.bak  test_h.bak  test_m.bak  test_r.bak  test_w.bak
+character_list      test_d.bak  test_i.bak  test_n.bak  test_s.bak  test_x.bak
+character_list.bak  test_e.bak  test_j.bak  test_o.bak  test_t.bak  test_y.bak
+test_a.bak          test_f.bak  test_k.bak  test_p.bak  test_u.bak  test_z.bak
+
+one:
+file1.txt
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mls two/
+copied.csv
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mman find
+Man: find all matching manual pages
+ * find (1)
+   find (1p)
+Man: What manual page do you want?
+Man: q1[D[D[D[D[D[3~[3~[3~[C1
+7[?47hFIND(1)                                                                          FIND(1)[m
+[m
+[m
+[m
+[1mNAME[0m[m
+       find - search for files in a directory hierarchy[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mfind [22m[-H] [-L] [-P] [-D debugopts] [-Olevel] [path...] [expression][m
+[m
+[1mDESCRIPTION[0m[m
+       This manual page documents the GNU version of [1mfind[22m.  GNU [1mfind [22msearches the direc-[m
+       tory tree rooted at each given file name by evaluating the given expression  from[m
+       left  to  right,  according  to  the rules of precedence (see section OPERATORS),[m
+       until the outcome is known (the left hand side is false for [4mand[24m operations,  true[m
+       for [4mor[24m), at which point [1mfind [22mmoves on to the next file name.[m
+[m
+       If  you are using [1mfind [22min an environment where security is important (for example[m
+       if you are using it to seach directories that are writable by other  users),  you[m
+       should read the "Security Considerations" chapter of the findutils documentation,[m
+       which is called [1mFinding Files [22mand comes  with  findutils.    That  document  also[m
+       includes  a lot more detail and discussion than this manual page, so you may find[m
+       it a more useful source of information.[m
+[m
+[7m Manual page find(1) line 1[27m[K[K[1mOPTIONS[0m[m
+       The [1m-H[22m, [1m-L [22mand [1m-P [22moptions control the treatment of symbolic links.   Command-line[m
+       arguments  following  these  are  taken to be names of files or directories to be[m
+       examined, up to the first argument that begins with `-', or the argument  `('  or[m
+       `!'.   That  argument  and any following arguments are taken to be the expression[m
+       describing what is to be searched for.  If no paths are given, the current direc-[m
+       tory  is used.  If no expression is given, the expression [1m-print [22mis used (but you[m
+       should probably consider using [1m-print0 [22minstead, anyway).[m
+[m
+       This manual page talks about `options' within the expression list.  These options[m
+       control  the  behaviour of [1mfind [22mbut are specified immediately after the last path[m
+       name.  The five `real' options [1m-H[22m, [1m-L[22m, [1m-P[22m, [1m-D [22mand [1m-O [22mmust appear before the first[m
+       path  name,  if  at  all.   A  double dash [1m-- [22mcan also be used to signal that any[m
+       remaining arguments are not options (though ensuring that all start points  begin[m
+       with  either  `./'  or `/' is generally safer if you use wildcards in the list of[m
+       start points).[m
+[m
+       -P     Never follow symbolic links.  This is the default  behaviour.   When  [1mfind[0m[m
+              examines  or  prints  information a file, and the file is a symbolic link,[m
+              the information used shall be taken from the properties  of  the  symbolic[m
+              link itself.[m
+[m
+[m
+       -L     Follow  symbolic  links.   When  [1mfind [22mexamines or prints information about[m
+[7m Manual page find(1) line 25[27m[K[K              files, the information used shall be taken from the properties of the file[m
+              to  which the link points, not from the link itself (unless it is a broken[m
+              symbolic link or [1mfind [22mis unable to examine the  file  to  which  the  link[m
+              points).   Use  of  this  option implies [1m-noleaf[22m.  If you later use the [1m-P[0m[m
+              option, [1m-noleaf [22mwill still be in effect.  If [1m-L [22mis in effect and [1mfind [22mdis-[m
+              covers  a symbolic link to a subdirectory during its search, the subdirec-[m
+              tory pointed to by the symbolic link will be searched.[m
+[m
+              When the [1m-L [22moption is in effect, the [1m-type  [22mpredicate  will  always  match[m
+              against  the  type  of the file that a symbolic link points to rather than[m
+              the link itself (unless the symbolic link is broken).  Using [1m-L [22mcauses the[m
+              [1m-lname [22mand [1m-ilname [22mpredicates always to return false.[m
+[m
+[m
+       -H     Do  not  follow  symbolic  links, except while processing the command line[m
+              arguments.  When [1mfind [22mexamines or  prints  information  about  files,  the[m
+              information  used  shall be taken from the properties of the symbolic link[m
+              itself.   The only exception to this behaviour is when a file specified on[m
+              the  command  line  is a symbolic link, and the link can be resolved.  For[m
+              that situation, the information used  is  taken  from  whatever  the  link[m
+              points to (that is, the link is followed).  The information about the link[m
+              itself is used as a fallback if the file pointed to by the  symbolic  link[m
+              cannot  be examined.  If [1m-H [22mis in effect and one of the paths specified on[m
+              the command line is a symbolic link to a directory, the contents  of  that[m
+[7m Manual page find(1) line 49[27m[K[K              directory  will  be  examined  (though of course -maxdepth 0 would prevent[m
+              this).[m
+[m
+       If more than one of [1m-H[22m, [1m-L [22mand [1m-P [22mis specified, each overrides  the  others;  the[m
+       last  one  appearing  on the command line takes effect.  Since it is the default,[m
+       the [1m-P [22moption should be considered to be in effect unless  either  [1m-H  [22mor  [1m-L  [22mis[m
+       specified.[m
+[m
+       GNU [1mfind [22mfrequently stats files during the processing of the command line itself,[m
+       before any searching has begun.  These options also affect  how  those  arguments[m
+       are  processed.   Specifically,  there  are  a number of tests that compare files[m
+       listed on the command line against a file we are currently considering.  In  each[m
+       case,  the file specified on the command line will have been examined and some of[m
+       its properties will have been saved.  If the named file is  in  fact  a  symbolic[m
+       link,  and  the  [1m-P [22moption is in effect (or if neither [1m-H [22mnor [1m-L [22mwere specified),[m
+       the information used for the comparison will be taken from the properties of  the[m
+       symbolic  link.   Otherwise, it will be taken from the properties of the file the[m
+       link points to.  If [1mfind [22mcannot follow the  link  (for  example  because  it  has[m
+       insufficient  privileges or the link points to a nonexistent file) the properties[m
+       of the link itself will be used.[m
+[m
+       When the [1m-H [22mor [1m-L options are in effect, any symbolic links listed [22mas  the  argu-[m
+       ment  of  [1m-newer  [22mwill  be dereferenced, and the timestamp will be taken from the[m
+       file to which the symbolic link points.  The same consideration applies to  [1m-new-[0m[m
+[7m Manual page find(1) line 73[27m[K[K       [1merXY[22m, [1m-anewer [22mand [1m-cnewer[22m.[m
+[m
+       The  [1m-follow  [22moption  has  a  similar effect to [1m-L[22m, though it takes effect at the[m
+       point where it appears (that is, if [1m-L [22mis not used but [1m-follow [22mis,  any  symbolic[m
+       links appearing after [1m-follow [22mon the command line will be dereferenced, and those[m
+       before it will not).[m
+[m
+[m
+       -D debugoptions[m
+              Print diagnostic information; this can be  helpful  to  diagnose  problems[m
+              with  why  [1mfind  [22mis  not  doing  what you want.  The list of debug options[m
+              should be comma separated.  Compatibility of  the  debug  options  is  not[m
+              guaranteed  between  releases  of findutils.  For a complete list of valid[m
+              debug options, see the output  of  [1mfind  -D  help[22m.   Valid  debug  options[m
+              include[m
+[m
+              help   Explain the debugging options[m
+[m
+              tree   Show the expression tree in its original and optimised form.[m
+[m
+              stat   Print messages as files are examined with the [1mstat [22mand [1mlstat [22msystem[m
+                     calls.  The [1mfind [22mprogram tries to minimise such calls.[m
+[m
+              opt    Prints diagnostic information relating to the optimisation  of  the[m
+[7m Manual page find(1) line 97[27m[K[K                     expression tree; see the -O option.[m
+[m
+              rates  Prints  a  summary indicating how often each predicate succeeded or[m
+                     failed.[m
+[m
+       -Olevel[m
+              Enables query optimisation.   The [1mfind [22mprogram reorders tests to speed  up[m
+              execution  while  preserving  the overall effect; that is, predicates with[m
+              side effects are not reordered relative to each other.  The  optimisations[m
+              performed at each optimisation level are as follows.[m
+[m
+              0      Equivalent to optimisation level 1.[m
+[m
+              1      This  is the default optimisation level and corresponds to the tra-[m
+                     ditional behaviour.  Expressions are reordered so that tests  based[m
+                     only  on the names of files (for example [1m-name [22mand [1m-regex[22m) are per-[m
+                     formed first.[m
+[m
+              2      Any [1m-type [22mor [1m-xtype [22mtests are performed after any tests based  only[m
+                     on  the  names of files, but before any tests that require informa-[m
+                     tion from the inode.  On many modern versions of Unix,  file  types[m
+                     are  returned  by  [1mreaddir()  [22mand so these predicates are faster to[m
+                     evaluate than predicates which need to stat the file first.[m
+[m
+[7m Manual page find(1) line 121[27m[K[K              3      At this optimisation level, the full cost-based query optimiser  is[m
+                     enabled.   The order of tests is modified so that cheap (i.e. fast)[m
+                     tests are performed first and more  expensive  ones  are  performed[m
+                     later,  if necessary.  Within each cost band, predicates are evalu-[m
+                     ated earlier or later according to whether they are likely to  suc-[m
+                     ceed  or  not.   For [1m-o[22m, predicates which are likely to succeed are[m
+                     evaluated earlier, and for [1m-a[22m, predicates which are likely to  fail[m
+                     are evaluated earlier.[m
+[m
+              The  cost-based optimiser has a fixed idea of how likely any given test is[m
+              to succeed.  In some cases the probability takes account of  the  specific[m
+              nature  of  the test (for example, [1m-type f [22mis assumed to be more likely to[m
+              succeed than [1m-type c[22m).  The cost-based optimiser is currently being evalu-[m
+              ated.    If  it does not actually improve the performance of [1mfind[22m, it will[m
+              be removed again.  Conversely, optimisations that prove  to  be  reliable,[m
+              robust  and  effective  may  be  enabled at lower optimisation levels over[m
+              time.  However, the default behaviour (i.e. optimisation level 1) will not[m
+              be changed in the 4.3.x release series.  The findutils test suite runs all[m
+              the tests on [1mfind [22mat each optimisation level and ensures that  the  result[m
+              is the same.[m
+[m
+[m
+[1mEXPRESSIONS[0m[m
+       The  expression is made up of options (which affect overall operation rather than[m
+[7m Manual page find(1) line 145[27m[K[K       the processing of a specific file, and always return true), tests (which return a[m
+       true  or  false value), and actions (which have side effects and return a true or[m
+       false value), all separated by operators.  [1m-and [22mis assumed where the operator  is[m
+       omitted.[m
+[m
+       If  the  expression contains no actions other than [1m-prune[22m, [1m-print [22mis performed on[m
+       all files for which the expression is true.[m
+[m
+[m
+   [1mOPTIONS[0m[m
+       All options always return true.  Except for [1m-daystart[22m,  [1m-follow  [22mand  [1m-regextype[22m,[m
+       the  options affect all tests, including tests specified before the option.  This[m
+       is because the options are processed when the command line is parsed,  while  the[m
+       tests  don't  do  anything  until files are examined.  The [1m-daystart[22m, [1m-follow [22mand[m
+       [1m-regextype [22moptions are different in this respect, and  have  an  effect  only  on[m
+       tests which appear later in the command line.  Therefore, for clarity, it is best[m
+       to place them at the beginning of the expression.  A warning  is  issued  if  you[m
+       don't do this.[m
+[m
+[m
+       -d     A  synonym for -depth, for compatibility with FreeBSD, NetBSD, MacOS X and[m
+              OpenBSD.[m
+[m
+[m
+[7m Manual page find(1) line 169[27m[K[K       -daystart[m
+              Measure times (for [1m-amin[22m, [1m-atime[22m, [1m-cmin[22m, [1m-ctime[22m, [1m-mmin[22m, and  [1m-mtime[22m)  from[m
+              the  beginning  of  today rather than from 24 hours ago.  This option only[m
+              affects tests which appear later on the command line.[m
+[m
+[m
+       -depth Process each  directory's  contents  before  the  directory  itself.   The[m
+              -delete action also implies [1m-depth[22m.[m
+[m
+[m
+       -follow[m
+              Deprecated;  use  the  [1m-L  [22moption  instead.   Dereference  symbolic links.[m
+              Implies [1m-noleaf[22m.  The [1m-follow [22moption affects only those tests which appear[m
+              after  it on the command line.  Unless the [1m-H [22mor [1m-L [22moption has been speci-[m
+              fied, the position of the [1m-follow [22moption  changes  the  behaviour  of  the[m
+              [1m-newer  [22mpredicate;  any  files  listed  as  the argument of [1m-newer [22mwill be[m
+              dereferenced if they are symbolic links.  The same  consideration  applies[m
+              to  [1m-newerXY[22m,  [1m-anewer  [22mand  [1m-cnewer[22m.  Similarly, the [1m-type [22mpredicate will[m
+              always match against the type of the file that a symbolic link  points  to[m
+              rather  than the link itself.  Using [1m-follow [22mcauses the [1m-lname and -ilname[0m[m
+              predicates always to return false.[m
+[m
+[m
+       -help, --help[m
+[7m Manual page find(1) line 193[27m[K[K              Print a summary of the command-line usage of [1mfind [22mand exit.[m
+[m
+[m
+       -ignore_readdir_race[m
+              Normally, [1mfind [22mwill emit an error message when it fails to  stat  a  file.[m
+              If  you give this option and a file is deleted between the time [1mfind [22mreads[m
+              the name of the file from the directory and the time it tries to stat  the[m
+              file,  no  error  message will be issued.    This also applies to files or[m
+              directories whose names are given on the command line.  This option  takes[m
+              effect  at  the time the command line is read, which means that you cannot[m
+              search one part of the filesystem with this option on and part of it  with[m
+              this  option  off (if you need to do that, you will need to issue two [1mfind[0m[m
+              commands instead, one with the option and one without it).[m
+[m
+[m
+       -maxdepth [4mlevels[0m[m
+              Descend at most [4mlevels[24m (a  non-negative  integer)  levels  of  directories[m
+              below the command line arguments.  [1m-maxdepth 0[0m[m
+               means only apply the tests and actions to the command line arguments.[m
+[m
+[m
+       -mindepth [4mlevels[0m[m
+              Do  not apply any tests or actions at levels less than [4mlevels[24m (a non-nega-[m
+              tive integer).  [1m-mindepth 1 [22mmeans process all  files  except  the  command[m
+[7m Manual page find(1) line 217[27m[K[K              line arguments.[m
+[m
+[m
+       -mount Don't  descend  directories  on  other filesystems.  An alternate name for[m
+              [1m-xdev[22m, for compatibility with some other versions of [1mfind[22m.[m
+[m
+[m
+       -noignore_readdir_race[m
+              Turns off the effect of [1m-ignore_readdir_race[22m.[m
+[m
+[m
+       -noleaf[m
+              Do not optimize by assuming that directories contain 2  fewer  subdirecto-[m
+              ries  than  their  hard  link count.  This option is needed when searching[m
+              filesystems that do not follow the Unix directory-link convention, such as[m
+              CD-ROM  or  MS-DOS filesystems or AFS volume mount points.  Each directory[m
+              on a normal Unix filesystem has at least 2 hard links: its  name  and  its[m
+              `.'   entry.   Additionally,  its subdirectories (if any) each have a `..'[m
+              entry linked to that directory.  When [1mfind [22mis examining a directory, after[m
+              it  has statted 2 fewer subdirectories than the directory's link count, it[m
+              knows that the rest of the entries in the  directory  are  non-directories[m
+              (`leaf' files in the directory tree).  If only the files' names need to be[m
+              examined, there is no need to stat them; this gives a significant increase[m
+              in search speed.[m
+[7m Manual page find(1) line 241[27m[K[K[m
+[m
+       -regextype [4mtype[0m[m
+              Changes  the  regular  expression  syntax understood by [1m-regex [22mand [1m-iregex[0m[m
+              tests which occur later on the command line.  Currently-implemented  types[m
+              are  emacs  (this is the default), posix-awk, posix-basic, posix-egrep and[m
+              posix-extended.[m
+[m
+[m
+       -version, --version[m
+              Print the [1mfind [22mversion number and exit.[m
+[m
+[m
+       -warn, -nowarn[m
+              Turn warning messages on or off.  These warnings apply only to the command[m
+              line  usage,  not  to  any  conditions  that  [1mfind [22mmight encounter when it[m
+              searches directories.  The default behaviour corresponds to [1m-warn [22mif stan-[m
+              dard input is a tty, and to [1m-nowarn [22motherwise.[m
+[m
+[m
+       -xdev  Don't descend directories on other filesystems.[m
+[m
+[m
+   [1mTESTS[0m[m
+[7m Manual page find(1) line 265[27m[K[K       Some tests, for example [1m-newerXY [22mand [1m-samefile[22m, allow comparison between the file[m
+       currently being examined and some reference file specified on the  command  line.[m
+       When these tests are used, the interpretation of the reference file is determined[m
+       by the options [1m-H[22m, [1m-L [22mand [1m-P [22mand any previous [1m-follow[22m, but the reference file  is[m
+       only  examined  once,  at  the time the command line is parsed.  If the reference[m
+       file cannot be examined (for example, the [1mstat[22m(2) system call fails for  it),  an[m
+       error message is issued, and [1mfind [22mexits with a nonzero status.[m
+[m
+       Numeric arguments can be specified as[m
+[m
+       [4m+n[24m     for greater than [4mn[24m,[m
+[m
+       [4m-n[24m     for less than [4mn[24m,[m
+[m
+       [4mn[24m      for exactly [4mn[24m.[m
+[m
+[m
+[m
+       -amin [4mn[0m[m
+              File was last accessed [4mn[24m minutes ago.[m
+[m
+[m
+       -anewer [4mfile[0m[m
+              File was last accessed more recently than [4mfile[24m was modified.  If [4mfile[24m is a[m
+[7m Manual page find(1) line 289[27m[K[K              symbolic link and the [1m-H [22moption or the [1m-L [22moption is in effect, the  access[m
+              time of the file it points to is always used.[m
+[m
+[m
+       -atime [4mn[0m[m
+              File  was  last  accessed  [4mn[24m*24 hours ago.  When find figures out how many[m
+              24-hour periods ago the file was last accessed,  any  fractional  part  is[m
+              ignored,  so to match [1m-atime +1[22m, a file has to have been accessed at least[m
+              [4mtwo[24m days ago.[m
+[m
+[m
+       -cmin [4mn[0m[m
+              File's status was last changed [4mn[24m minutes ago.[m
+[m
+[m
+       -cnewer [4mfile[0m[m
+              File's status was last changed more recently than [4mfile[24m was  modified.   If[m
+              [4mfile[24m  is  a symbolic link and the [1m-H [22moption or the [1m-L [22moption is in effect,[m
+              the status-change time of the file it points to is always used.[m
+[m
+[m
+       -ctime [4mn[0m[m
+              File's status was last changed [4mn[24m*24  hours  ago.   See  the  comments  for[m
+              [1m-atime  [22mto understand how rounding affects the interpretation of file sta-[m
+[7m Manual page find(1) line 313[27m[K[K              tus change times.[m
+[m
+[m
+       -empty File is empty and is either a regular file or a directory.[m
+[m
+[m
+       -executable[m
+              Matches files which are executable and directories  which  are  searchable[m
+              (in a file name resolution sense).  This takes into account access control[m
+              lists and other permissions artefacts which the [1m-perm [22mtest ignores.   This[m
+              test  makes  use of the [1maccess[22m(2) system call, and so can be fooled by NFS[m
+              servers which do UID  mapping  (or  root-squashing),  since  many  systems[m
+              implement  [1maccess[22m(2)  in the client's kernel and so cannot make use of the[m
+              UID mapping information held on the server.  Because this  test  is  based[m
+              only  on  the  result  of the [1maccess[22m(2) system call, there is no guarantee[m
+              that a file for which this test succeeds can actually be executed.[m
+[m
+[m
+       -false Always false.[m
+[m
+[m
+       -fstype [4mtype[0m[m
+              File is on a filesystem of type [4mtype[24m.  The  valid  filesystem  types  vary[m
+              among  different  versions of Unix; an incomplete list of filesystem types[m
+[7m Manual page find(1) line 337[27m[K[K              that are accepted on some version of Unix or another is:  ufs,  4.2,  4.3,[m
+              nfs,  tmp,  mfs, S51K, S52K.  You can use [1m-printf [22mwith the %F directive to[m
+              see the types of your filesystems.[m
+[m
+[m
+       -gid [4mn[24m File's numeric group ID is [4mn[24m.[m
+[m
+[m
+       -group [4mgname[0m[m
+              File belongs to group [4mgname[24m (numeric group ID allowed).[m
+[m
+[m
+       -ilname [4mpattern[0m[m
+              Like [1m-lname[22m, but the match is case insensitive.  If the [1m-L [22moption  or  the[m
+              [1m-follow  [22moption  is in effect, this test returns false unless the symbolic[m
+              link is broken.[m
+[m
+[m
+       -iname [4mpattern[0m[m
+              Like [1m-name[22m, but the match is case insensitive.  For example, the  patterns[m
+              `fo*' and `F??' match the file names `Foo', `FOO', `foo', `fOo', etc.   In[m
+              these patterns, unlike filename expansion by the shell, an initial '.' can[m
+              be  matched  by  `*'.  That is, [1mfind -name *bar [22mwill match the file `.foo-[m
+              bar'.   Please note that you should quote patterns as a matter of  course,[m
+[7m Manual page find(1) line 361[27m[K[K              otherwise the shell will expand any wildcard characters in them.[m
+[m
+[m
+       -inum [4mn[0m[m
+              File  has inode number [4mn[24m.  It is normally easier to use the [1m-samefile [22mtest[m
+              instead.[m
+[m
+[m
+       -ipath [4mpattern[0m[m
+              Behaves in the same way as [1m-iwholename[22m.  This  option  is  deprecated,  so[m
+              please do not use it.[m
+[m
+[m
+       -iregex [4mpattern[0m[m
+              Like [1m-regex[22m, but the match is case insensitive.[m
+[m
+[m
+       -iwholename [4mpattern[0m[m
+              Like [1m-wholename[22m, but the match is case insensitive.[m
+[m
+[m
+       -links [4mn[0m[m
+              File has [4mn[24m links.[m
+[m
+[7m Manual page find(1) line 385[27m[K[K[m
+       -lname [4mpattern[0m[m
+              File  is  a symbolic link whose contents match shell pattern [4mpattern[24m.  The[m
+              metacharacters do not treat `/' or `.' specially.  If the [1m-L [22moption or the[m
+              [1m-follow  [22moption  is in effect, this test returns false unless the symbolic[m
+              link is broken.[m
+[m
+[m
+       -mmin [4mn[0m[m
+              File's data was last modified [4mn[24m minutes ago.[m
+[m
+[m
+       -mtime [4mn[0m[m
+              File's data was last modified [4mn[24m*24 hours ago.  See the comments for [1m-atime[0m[m
+              to understand how rounding affects the interpretation of file modification[m
+              times.[m
+[m
+[m
+       -name [4mpattern[0m[m
+              Base of file name (the path with the leading directories removed)  matches[m
+              shell  pattern  [4mpattern[24m.   The metacharacters (`*', `?', and `[]') match a[m
+              `.' at the start of the base name (this is a  change  in  findutils-4.2.2;[m
+              see  section  STANDARDS CONFORMANCE below).  To ignore a directory and the[m
+              files under it, use [1m-prune[22m; see an example in the  description  of  [1m-path[22m.[m
+[7m Manual page find(1) line 409[27m[K[K              Braces  are  not  recognised  as being special, despite the fact that some[m
+              shells including Bash imbue braces with a special meaning  in  shell  pat-[m
+              terns.   The filename matching is performed with the use of the [1mfnmatch[22m(3)[m
+              library function.   Don't forget to enclose the pattern in quotes in order[m
+              to protect it from expansion by the shell.[m
+[m
+[m
+       -newer [4mfile[0m[m
+              File was modified more recently than [4mfile[24m.  If [4mfile[24m is a symbolic link and[m
+              the [1m-H [22moption or the [1m-L [22moption is in effect, the modification time of  the[m
+              file it points to is always used.[m
+[m
+[m
+       -newerXY [4mreference[0m[m
+              Compares  the timestamp of the current file with [4mreference[24m.  The [4mreference[0m[m
+              argument is normally the name of a file (and one of its timestamps is used[m
+              for  the  comparison)  but  it may also be a string describing an absolute[m
+              time.  [4mX[24m and [4mY[24m are placeholders  for  other  letters,  and  these  letters[m
+              select which time belonging to how [4mreference[24m is used for the comparison.[m
+[m
+              a   The access time of the file [4mreference[0m[m
+              B   The birth time of the file [4mreference[0m[m
+              c   The inode status change time of [4mreference[0m[m
+              m   The modification time of the file [4mreference[0m[m
+[7m Manual page find(1) line 433[27m[K[K              t   [4mreference[24m is interpreted directly as a time[m
+[m
+              Some  combinations  are invalid; for example, it is invalid for [4mX[24m to be [4mt[24m.[m
+              Some combinations are not implemented on all systems; for example [4mB[24m is not[m
+              supported  on all systems.  If an invalid or unsupported combination of [4mXY[0m[m
+              is specified, a fatal error results.  Time specifications are  interpreted[m
+              as  for  the argument to the [1m-d [22moption of GNU [1mdate[22m.  If you try to use the[m
+              birth time of a reference file, and the birth time cannot be determined, a[m
+              fatal  error  message  results.  If you specify a test which refers to the[m
+              birth time of files being examined, this test  will  fail  for  any  files[m
+              where the birth time is unknown.[m
+[m
+[m
+       -nogroup[m
+              No group corresponds to file's numeric group ID.[m
+[m
+[m
+       -nouser[m
+              No user corresponds to file's numeric user ID.[m
+[m
+[m
+       -path [4mpattern[0m[m
+              File  name matches shell pattern [4mpattern[24m.  The metacharacters do not treat[m
+              `/' or `.' specially; so, for example,[m
+[7m Manual page find(1) line 457[27m[K[K                        find . -path "./sr*sc"[m
+              will print an entry for a directory called `./src/misc' (if  one  exists).[m
+              To  ignore  a  whole directory tree, use [1m-prune [22mrather than checking every[m
+              file in the tree.  For example, to skip the directory `src/emacs' and  all[m
+              files  and  directories  under  it, and print the names of the other files[m
+              found, do something like this:[m
+                        find . -path ./src/emacs -prune -o -print[m
+              Note that the pattern match test applies to the whole file name,  starting[m
+              from  one  of  the  start points named on the command line.  It would only[m
+              make sense to use an absolute path name here if the relevant  start  point[m
+              is  also  an absolute path.  This means that this command will never match[m
+              anything:[m
+                        find bar -path /foo/bar/myfile -print[m
+              The predicate [1m-path [22mis also supported by HP-UX  [1mfind  [22mand  will  be  in  a[m
+              forthcoming version of the POSIX standard.[m
+[m
+[m
+       -perm [4mmode[0m[m
+              File's  permission  bits  are  exactly [4mmode[24m (octal or symbolic).  Since an[m
+              exact match is required, if you want to use this form for symbolic  modes,[m
+              you  may  have to specify a rather complex mode string.  For example [1m-perm[0m[m
+              [1mg=w [22mwill only match files which have mode 0020 (that is,  ones  for  which[m
+              group  write  permission  is  the only permission set).  It is more likely[m
+              that you will want to use the `/' or `-' forms, for  example  [1m-perm  -g=w[22m,[m
+[7m Manual page find(1) line 481[27m[K[K              which matches any file with group write permission.  See the [1mEXAMPLES [22msec-[m
+              tion for some illustrative examples.[m
+[m
+[m
+       -perm -[4mmode[0m[m
+              All of the permission bits [4mmode[24m are set for the file.  Symbolic modes  are[m
+              accepted  in this form, and this is usually the way in which would want to[m
+              use them.  You must specify `u', `g' or `o' if you use  a  symbolic  mode.[m
+              See the [1mEXAMPLES [22msection for some illustrative examples.[m
+[m
+[m
+       -perm /[4mmode[0m[m
+              Any  of the permission bits [4mmode[24m are set for the file.  Symbolic modes are[m
+              accepted in this form.  You must specify `u', `g' or `o' if you use a sym-[m
+              bolic  mode.  See the [1mEXAMPLES [22msection for some illustrative examples.  If[m
+              no permission bits in [4mmode[24m are set, this test currently matches no  files.[m
+              However, it will soon be changed to match any file (the idea is to be more[m
+              consistent with the behaviour of [1m-perm -000[22m).[m
+[m
+[m
+       -perm +[4mmode[0m[m
+              Deprecated, old way of searching for files with any of the permission bits[m
+              in  [4mmode[24m  set.   You should use [1m-perm [4m[22m/mode[24m instead. Trying to use the `+'[m
+              syntax with symbolic modes will yield surprising  results.   For  example,[m
+[7m Manual page find(1) line 505[27m[K[K              `+u+x'  is a valid symbolic mode (equivalent to +u,+x, i.e. 0111) and will[m
+              therefore not be evaluated as [1m-perm +[4m[22mmode[24m but instead as  the  exact  mode[m
+              specifier  [1m-perm  [4m[22mmode[24m and so it matches files with exact permissions 0111[m
+              instead of files with any execute bit set.  If you  found  this  paragraph[m
+              confusing,  you're  not  alone  -  just use [1m-perm /[4m[22mmode[24m.  This form of the[m
+              [1m-perm [22mtest is deprecated because  the  POSIX  specification  requires  the[m
+              interpretation  of  a leading `+' as being part of a symbolic mode, and so[m
+              we switched to using `/' instead.[m
+[m
+[m
+       -readable[m
+              Matches files which are readable.  This takes into account access  control[m
+              lists  and other permissions artefacts which the [1m-perm [22mtest ignores.  This[m
+              test makes use of the [1maccess[22m(2) system call, and so can be fooled  by  NFS[m
+              servers  which  do  UID  mapping  (or  root-squashing), since many systems[m
+              implement [1maccess[22m(2) in the client's kernel and so cannot make use  of  the[m
+              UID mapping information held on the server.[m
+[m
+[m
+       -regex [4mpattern[0m[m
+              File  name  matches  regular  expression  [4mpattern[24m.  This is a match on the[m
+              whole path, not a search.  For example, to match a file named  `./fubar3',[m
+              you  can use the regular expression `.*bar.' or `.*b.*3', but not `f.*r3'.[m
+              The regular expressions understood by [1mfind [22mare by  default  Emacs  Regular[m
+[7m Manual page find(1) line 529[27m[K[K[2J[?47l8[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mfind . -type f -name "*E*[K[Ke*"
+./.profile
+./asterix/test_y.bak
+./asterix/character_list
+./asterix/test_w.bak
+./asterix/test_x.bak
+./asterix/test_t.bak
+./asterix/test_g.bak
+./asterix/test_u.bak
+./asterix/test_v.bak
+./asterix/test_p.bak
+./asterix/asterix_text.html
+./asterix/test_b.bak
+./asterix/character_list.bak
+./asterix/test_d.bak
+./asterix/asterix_text.bak
+./asterix/test_i.bak
+./asterix/test_z.bak
+./asterix/test_h.bak
+./asterix/test_c.bak
+./asterix/test_j.bak
+./asterix/test_a.bak
+./asterix/test_e.bak
+./asterix/test_l.bak
+./asterix/test_o.bak
+./asterix/test_k.bak
+./asterix/test_n.bak
+./asterix/test_m.bak
+./asterix/test_s.bak
+./asterix/test_r.bak
+./asterix/test_f.bak
+./asterix/test_q.bak
+./test_im_home
+./two/copied.csv
+./.emacs
+./.gnu-emacs
+./.xim.template
+./one/file1.txt
+./.subversion/servers
+./training/file1.txt
+./.ssh/authorized_keys
+./assignments/assignment1
+./assignments/assignment4.timing
+./assignments/assignment3
+./assignments/assignment4
+./assignments/assignment1.timing
+./assignments/assignment5
+./assignments/assignment3.timing
+./assignments/assignment2
+./assignments/assignment2.timing
+./test
+./.xinitrc.template
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mcd one/
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mll
+total 8
+drwxr-xr-x  2 grund users 4096 Nov  5 09:05 [0m[01;34m.[0m
+drwxr-xr-x 12 grund users 4096 Nov  5 09:07 [01;34m..[0m
+-rw-r--r--  1 grund users    0 Nov  5 09:05 .caution
+-rw-r--r--  1 grund users    0 Nov  5 09:05 file1.txt
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mtouch testa_[A-Z[K[K[KA[Ka-z]
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mll
+total 8
+drwxr-xr-x  2 grund users 4096 Nov  5 09:29 [0m[01;34m.[0m
+drwxr-xr-x 12 grund users 4096 Nov  5 09:07 [01;34m..[0m
+-rw-r--r--  1 grund users    0 Nov  5 09:05 .caution
+-rw-r--r--  1 grund users    0 Nov  5 09:05 file1.txt
+-rw-r--r--  1 grund users    0 Nov  5 09:29 testa_[a-z]
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mrm testa_\[a-z\] 
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mrm testa_\[a-z\] [C[C[C[C[C[C[C[C[C[C[C[C[C[Cll[Ktouch testa_[a-z][C[1P_[a-z][C[1Pa-z]{a-z][C[C[C[C[K}
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mll
+total 8
+drwxr-xr-x  2 grund users 4096 Nov  5 09:29 [0m[01;34m.[0m
+drwxr-xr-x 12 grund users 4096 Nov  5 09:07 [01;34m..[0m
+-rw-r--r--  1 grund users    0 Nov  5 09:05 .caution
+-rw-r--r--  1 grund users    0 Nov  5 09:05 file1.txt
+-rw-r--r--  1 grund users    0 Nov  5 09:29 test_{a-z}
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mrm test_\{a-z\} 
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mrm test_\{a-z\} [C[C[C[C[C[C[C[C[C[C[C[C[C[Cll[Ktouch test_{a-z}[1Pz},z}bz},z}cz},z}dz},z}ez},z}fz},z}gz},z}hz},z}iz},z}jz},z}kz},z}lz},z}mz},z}nz},z}oz},z}pz},z}qz},z}rz},z}sz},z}tz},z}uz},z}vz},z}wz},z}xz},z}yz},z}[Cz}[1P}[C
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mll
+total 8
+drwxr-xr-x  2 grund users 4096 Nov  5 09:30 [0m[01;34m.[0m
+drwxr-xr-x 12 grund users 4096 Nov  5 09:07 [01;34m..[0m
+-rw-r--r--  1 grund users    0 Nov  5 09:05 .caution
+-rw-r--r--  1 grund users    0 Nov  5 09:05 file1.txt
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_a
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_b
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_c
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_d
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_e
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_f
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_g
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_h
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_i
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_j
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_k
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_l
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_m
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_n
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_o
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_p
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_q
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_r
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_s
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_t
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_u
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_v
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_w
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_x
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_y
+-rw-r--r--  1 grund users    0 Nov  5 09:30 test_z
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mlltouch test_{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}{1,2,3,4,5,6
+,7,8,9}
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mll
+total 16
+drwxr-xr-x  2 grund users 12288 Nov  5 09:30 [0m[01;34m.[0m
+drwxr-xr-x 12 grund users  4096 Nov  5 09:07 [01;34m..[0m
+-rw-r--r--  1 grund users     0 Nov  5 09:05 .caution
+-rw-r--r--  1 grund users     0 Nov  5 09:05 file1.txt
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_a
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_a1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_a2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_a3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_a4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_a5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_a6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_a7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_a8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_a9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_b
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_b1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_b2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_b3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_b4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_b5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_b6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_b7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_b8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_b9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_c
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_c1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_c2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_c3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_c4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_c5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_c6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_c7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_c8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_c9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_d
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_d1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_d2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_d3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_d4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_d5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_d6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_d7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_d8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_d9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_e
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_e1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_e2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_e3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_e4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_e5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_e6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_e7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_e8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_e9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_f
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_f1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_f2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_f3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_f4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_f5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_f6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_f7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_f8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_f9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_g
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_g1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_g2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_g3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_g4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_g5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_g6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_g7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_g8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_g9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_h
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_h1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_h2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_h3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_h4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_h5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_h6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_h7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_h8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_h9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_i
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_i1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_i2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_i3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_i4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_i5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_i6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_i7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_i8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_i9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_j
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_j1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_j2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_j3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_j4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_j5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_j6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_j7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_j8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_j9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_k
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_k1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_k2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_k3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_k4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_k5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_k6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_k7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_k8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_k9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_l
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_l1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_l2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_l3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_l4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_l5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_l6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_l7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_l8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_l9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_m
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_m1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_m2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_m3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_m4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_m5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_m6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_m7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_m8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_m9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_n
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_n1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_n2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_n3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_n4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_n5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_n6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_n7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_n8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_n9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_o
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_o1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_o2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_o3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_o4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_o5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_o6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_o7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_o8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_o9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_p
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_p1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_p2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_p3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_p4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_p5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_p6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_p7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_p8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_p9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_q
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_q1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_q2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_q3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_q4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_q5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_q6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_q7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_q8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_q9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_r
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_r1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_r2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_r3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_r4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_r5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_r6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_r7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_r8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_r9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_s
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_s1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_s2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_s3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_s4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_s5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_s6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_s7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_s8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_s9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_t
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_t1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_t2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_t3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_t4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_t5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_t6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_t7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_t8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_t9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_u
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_u1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_u2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_u3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_u4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_u5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_u6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_u7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_u8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_u9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_v
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_v1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_v2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_v3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_v4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_v5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_v6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_v7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_v8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_v9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_w
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_w1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_w2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_w3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_w4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_w5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_w6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_w7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_w8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_w9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_x
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_x1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_x2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_x3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_x4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_x5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_x6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_x7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_x8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_x9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_y
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_y1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_y2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_y3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_y4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_y5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_y6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_y7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_y8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_y9
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_z
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_z1
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_z2
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_z3
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_z4
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_z5
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_z6
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_z7
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_z8
+-rw-r--r--  1 grund users     0 Nov  5 09:30 test_z9
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mexit
+
+Script done on Wed 05 Nov 2014 09:30:30 AM CET

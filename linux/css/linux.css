@@ -41,6 +41,22 @@ div.alert-warning {
     text-shadow: 3px 3px 5px white;
 }
 
+#term pre {
+    padding: 0px;
+    margin: 0px;
+    line-height: normal;
+    border: none;
+    border-radius: 0;    
+}
+#term , #term > div{
+    line-height: normal;
+    font-size: 10px;
+}
+
+#solution .modal-dialog {
+    width: 730px;  
+}
+
 #kernel .akzent2, #kernel .akzent1, #kernel .akzent4 {
     color:white;
     text-shadow: 2px 2px 4px #000000;
