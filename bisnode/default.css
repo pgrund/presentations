@@ -32,6 +32,9 @@ body{
 #break {     
   top: 30%;
 }
+.modal-dialog {
+  min-width: 400px;    
+}
 .modal-dialog>.modal-header {
     background-color: black;
     color: white;
