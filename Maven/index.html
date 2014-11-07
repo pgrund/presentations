@@ -316,8 +316,8 @@
                         </div>
                         <div class="panel-body">
                             <ul class="list-unstyled">    
-                                <li class="text-danger">1.2.3-alpha-2 <span class="glyphicon glyphicon-chevron-right"></span> 1.2.3-alpha-10</li>
-                                <li class="text-success">1.2.3-alpha-02 <span class="glyphicon glyphicon-chevron-left"></span> 1.2.3-alpha-10</li>
+                                <li class="text-danger">1.2.3-alpha-2 <span class="fa fa-chevron-right"></span> 1.2.3-alpha-10</li>
+                                <li class="text-success">1.2.3-alpha-02 <span class="fa fa-chevron-left"></span> 1.2.3-alpha-10</li>
                             </ul>
                         </div>     
                     </div>
@@ -405,7 +405,7 @@
                 <dt>command line</dt>
                 <dd><kbd>mvn ... -DskipTests=true ...</kbd></dd>
             </dl>
-            <p><span class="glyphicon glyphicon-arrow-right"></span> <kbd>mvn help:effective-pom</kbd> .... see <a href="http://maven.apache.org/pom.html" target="_blank">online reference</a> for further details</p>
+            <p><span class="fa fa-arrow-right"></span> <kbd>mvn help:effective-pom</kbd> .... see <a href="http://maven.apache.org/pom.html" target="_blank">online reference</a> for further details</p>
             <footer></footer>
         </div>
         <div id="structure" class="step slide" data-x="3450" data-y="3000" data-z="-500" data-rotate-y="45">               
@@ -777,7 +777,7 @@ com.bisnode.sandbox:project:jar:1.0-SNAPSHOT
             </p>
             <ul>
                 <li>i18n, custom css, add manual pages (<i>apt, docbook, fml, ...</i>)</li>
-                <li>reporting plugins <span class="glyphicon glyphicon-arrow-right"></span> reports
+                <li>reporting plugins <span class="fa fa-arrow-right"></span> reports
                     <ul>
                         <li>javadoc</li>
                         <li>project infos</li>
@@ -956,14 +956,7 @@ com.bisnode.sandbox:project:jar:1.0-SNAPSHOT
     <script src="../jmpress/jquery.awesomeCloud-0.2.js"></script>
 
     <script type="text/javascript">
-        /* ###### printer page ##### */
-        if (!window.location.toString().match(/\?print$/i)) {
-            impress().init();
-        } else {
-            window.print();
-            //self.close();
-        }
-
+       
         /* ###### Date and footer ##### */
         var date = new Date();// document.lastModified;
         var footerDate = "" + date.getFullYear() + "-"
@@ -1032,6 +1025,8 @@ com.bisnode.sandbox:project:jar:1.0-SNAPSHOT
         };
         $("#wordcloud").awesomeCloud(settings);
 
+        $("#impress").jmpress();
+        
     </script>          
 
 </body>
