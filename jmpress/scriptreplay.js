@@ -57,30 +57,39 @@ function play(evt) {
    if (button.data('status') == "play") {
     console.log("play");
     readBlob('typescript', reader_onloadend);
-    button.removeClass("fa-play").addClass("fa-pause");
+    button
+      //.find('i')
+      .removeClass("fa-play").addClass("fa-pause");
   } else if (button.data('status') == "resume") {
     console.log("resume");
     button.data('status', 'pause');
-    button.removeClass("fa-play").addClass("fa-pause");
+    button
+      //.find('i')
+      .removeClass("fa-play").addClass("fa-pause");
     timer.resume();
   } else if (button.data('status') == "pause") {
     console.log("pause");
     button.data('status', 'resume');
-    button.removeClass("fa-pause").addClass("fa-play");
+    button 
+      //.find('i')
+      .removeClass("fa-pause").addClass("fa-play");
     timer.pause();
   }
 }
 
 function stop(evt) {  
-  $('#play').data('status', 'play')
+  $('#play').data('status', 'play') //.find('i')
     .removeClass("fa-pause").addClass("fa-play");
   if(timer)timer.pause();  
   vt.Clear();
+
+  $('#solution').modal('hide');
 }
 
 function run_typescript(typescript_data, timing_data) {
   if (timer) timer.pause();
-  $('#play').data('status', 'pause').removeClass("fa-play").addClass("fa-pause");
+  $('#play').data('status', 'pause')//.find('i')
+    .removeClass("fa-play").addClass("fa-pause");
   var where = 0;
   var linenum = 0;
   var timings = timing_data.split("\n");
@@ -105,7 +114,8 @@ function run_typescript(typescript_data, timing_data) {
           timer = new Timer(me, time*1000*1/speed);
         } else {
           vt.Write(typescript_data.substr(where, typescript_data.length-where));
-          $('#play').data('status', 'play').removeClass("fa-pause").addClass("fa-play");
+          $('#play').data('status', 'play')//.find('i')
+            .removeClass("fa-pause").addClass("fa-play");
         };
         
       }, 0);
