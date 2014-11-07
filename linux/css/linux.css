@@ -52,6 +52,18 @@ div.alert-warning {
     line-height: normal;
     font-size: 10px;
 }
+.modal-dialog>.modal-header {
+    background-color: darkgray;
+    border: solid thin black;
+}
+.modal-dialog {
+    -webkit-box-shadow: 15px 15px 10px 0px whitesmoke;
+    -moz-box-shadow: 15px 15px 10px 0px whitesmoke;
+    box-shadow: 15px 15px 10px 0px whitesmoke;
+}
+#solution .modal-header {
+    text-shadow:2px 2px 2px black;
+}
 #solution .modal-header .close {
     color:white;
     opacity: 1;

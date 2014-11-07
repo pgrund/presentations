@@ -1173,18 +1173,18 @@ test.xml<em>.korr</em></code></pre>
                 <header>Default / Alternate values</header>
                 <div class="clearfix">
                 <dl class="left">
-                    <dt><code>${PARAMETER:-WORD}</code>, <code>${PARAMETER-WORD}</code></dt>
+                    <dt><code>${PARAMETER:-WORD}</code></dt>
                     <dd><em>use</em> a default value, if <em>not set</em> or <em>null</em></dd>
-                    <dt><code>${PARAMETER:=WORD}</code>, <code>${PARAMETER=WORD}</code></dt>
+                    <dt><code>${PARAMETER:=WORD}</code></dt>
                     <dd><em>assign</em> a default value, if <em>not set</em> or <em>null</em></dd>
                 </dl>
                 <dl class="right">
-                    <dt><code>${PARAMETER:+WORD}</code>, <code>${PARAMETER+WORD}</code></dt>
+                    <dt><code>${PARAMETER:+WORD}</code></dt>
                     <dd>if <em>set</em> or <em>not empty</em>, displays an <em>alternate text</em></dd>
                 </dl>
                 </div>
                 
-                <p>ommitting the colon, default value will only be assign if <code>PARAMETER</code> was <em>unset</em></p>
+                <p>ommitting the colon <code>:</code>, default value will only be set if <code>PARAMETER</code> was <em>unset</em></p>
                 <pre><code class="bash">$ read -p "enter gender: " GENDER;\ 
  echo "Your gender is <em>${GENDER:-a secret}</em>"
 enter gender:
@@ -2166,6 +2166,8 @@ Miraculix</code></pre>
         </div>
         	
 <script type="text/javascript">
+          var textCSS = ["text1", "text2", "text3", "text4", "text5", "text6"];
+
           // Load the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
           tag.src = "https://www.youtube.com/player_api";
@@ -2240,11 +2242,11 @@ Miraculix</code></pre>
                $("#assignmentList").append(newEntry);
             });    
             $(this).find('.solve').on("click", function(){
-                var a = "assignment"+$(this).data('assignment');
-                console.log("requesting solution for " + a + " ...")
+                var i = $(this).data('assignment');
+                console.log("requesting solution for assignment #" + i + " ...");
                 $("#solution").modal("show");
-                $("#currentlySolving").text($(this).parent().text());
-                play_file("./assignments/"+a);
+                $("#currentlySolving").text($(this).parent().text()).addClass("text" + (i>6?i-6:i));
+                play_file("./assignments/assignment"+i);
             });
 
         });
