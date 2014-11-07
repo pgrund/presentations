@@ -94,8 +94,14 @@
                                 <li><a href="#/">...</a></li>
                             </ul>
                         </li>
+                        <li class="divider"></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assignments<b class="caret"></b></a>
+                            <ul id="assignmentList" class="dropdown-menu">
+                            </ul>
+                        </li>                        
                     </ul>
-                    <ul class="nav navbar-nav navbar-right fa-lg">
+                    <ul class="nav navbar-nav navbar-right fa-lg">                        
                         <li>
                             <a target="_blank" id="print" title="print">
                                 <i class="fa fa-print"></i>
@@ -105,11 +111,6 @@
                             <a id="breakbutton" title="break">
                                 <i class="fa fa-coffee"></i>
                             </a>                            
-                        </li>
-                        <li>
-                            <a title="solutions" onclick="$('#solution').modal('show');">
-                                <i class="fa fa-lightbulb-o"></i>
-                            </a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -148,16 +149,6 @@
                       <button type="button" class="btn btn-default">
                         <i id="stop" class="fa fa-stop"></i>
                       </button>
-
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                          Assignment ...
-                          <span class="caret"></span>
-                        </button>
-                        <ul id="sample" class="dropdown-menu" role="menu">
-                          
-                        </ul>
-                      </div>
                     </div>
                     <div id="term" class="model-cont"></div>                         
                 </div>
@@ -2232,42 +2223,36 @@ Miraculix</code></pre>
                 hljs.highlightBlock(block);
             });
 
-        });
-        $('#solution').on('hide.bs.modal', function (e) {          
-            $("#stop").click();
-        });   
-        $("#play").on("click", play);
-        $("#stop").on("click", stop);
+            // assginment solution modal
+            $('#solution').on('hide.bs.modal', function (e) {          
+                $("#stop").click();
+            });   
+            $("#play").on("click", play);
+            $("#stop").on("click", stop);
 
-        vt = new jsvt.Terminal();
-        vt.Resize(100, 50);
-        vt.showCursor = false;
-        $("#term").append(vt.display);
+            vt = new jsvt.Terminal();
+            vt.Resize(100, 50);
+            vt.showCursor = false;
+            $("#term").append(vt.display);
 
-        $('#impress .assignment').each(function(idx){                      
-              var newEntry = document.createElement("a");
-              $(newEntry).attr('id', "assignment"+(idx+1))
-                    .attr('role', 'menuitem')
-                    .attr('tabindex','-1')
-                    .attr('href', '#')
-                    .html($(this).children("header").text())
-                    .on('click', function(evt) {                           
-                        play_file("./assignments/"+evt.target.id);
-                        $("#play").data('status','pause');
-                    });
-              var item = document.createElement("li");
-              $(item).attr('role', 'presentation').append(newEntry);
-              $("#sample").append(item);   
-                         
-        });    
-        $('#impress .solve').on("click", function(){
-            var a = "assignment"+$(this).data('assignment');
-            console.log("requesting solution for " + a + " ...")
-            $("#solution").modal("show");
-            $("#" + a).click();
+
+            // dynamically add assignemnt pages to list
+            $(this).find('.assignment').each(function(idx){                      
+              var newEntry = "<li><a id='assignment"+(idx+1)+"' "+
+                        "href='#/"+$(this).attr('id')+"'>"+
+                        $(this).children("header").text() +
+                        "</a></li>";
+               $("#assignmentList").append(newEntry);
+            });    
+            $(this).find('.solve').on("click", function(){
+                var a = "assignment"+$(this).data('assignment');
+                console.log("requesting solution for " + a + " ...")
+                $("#solution").modal("show");
+                play_file("./assignments/"+a);
+            });
 
         });
-
+        
    // start the presentation!
         $('#impress').jmpress('linux');
         </script>    
