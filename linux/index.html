@@ -705,7 +705,7 @@
                     <dd>successor of the <em>bourne shell</em></dd>
                     <dd><em>de-facto standard</em> of all linux distribution</dd>
                     <dt>other shells</dt>
-                    <dd>here are different shells available: Korn shell<a>ksh</a>, c shell <a>csh</a>, bourne shell <a>sh</a>, ...</dd>
+                    <dd>here are different shells available: Korn shell <a>ksh</a>, c shell <a>csh</a>, bourne shell <a>sh</a>, ...</dd>
                 </dl>
                 <footer></footer>
             </div>
@@ -2223,9 +2223,15 @@ Miraculix</code></pre>
                 hljs.highlightBlock(block);
             });
 
+
+            // assignment scriptreplay
+
+            $('#solution').on('hidden.bs.modal', stop);
            
             $("#play").on("click", play);
-            $("#stop").on("click", stop);
+            $("#stop").on("click", function(){
+                $("#solution").modal('hide');
+            });
 
             vt = new jsvt.Terminal();
             vt.Resize(91, 40);
