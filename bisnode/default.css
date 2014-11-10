@@ -35,6 +35,9 @@ body{
 .modal-dialog {
   min-width: 400px;    
 }
+.modal-title , .modal-header .close{
+    text-shadow:2px 2px 2px black;
+}
 .modal-dialog>.modal-header {
     background-color: black;
     color: white;
