@@ -57,38 +57,30 @@ function play(evt) {
    if (button.data('status') == "play") {
     console.log("play");
     readBlob('typescript', reader_onloadend);
-    button
-      //.find('i')
-      .removeClass("fa-play").addClass("fa-pause");
+    button.removeClass("fa-play").addClass("fa-pause");
   } else if (button.data('status') == "resume") {
     console.log("resume");
     button.data('status', 'pause');
-    button
-      //.find('i')
-      .removeClass("fa-play").addClass("fa-pause");
+    button.removeClass("fa-play").addClass("fa-pause");
     timer.resume();
   } else if (button.data('status') == "pause") {
     console.log("pause");
     button.data('status', 'resume');
-    button 
-      //.find('i')
-      .removeClass("fa-pause").addClass("fa-play");
+    button.removeClass("fa-pause").addClass("fa-play");
     timer.pause();
   }
 }
 
-function stop(evt) {  
+function stop(evt) {
   $('#play').data('status', 'play') //.find('i')
     .removeClass("fa-pause").addClass("fa-play");
   if(timer)timer.pause();  
-  vt.Clear();
-
-  $('#solution').modal('hide');
+  vt.Clear();  
 }
 
 function run_typescript(typescript_data, timing_data) {
   if (timer) timer.pause();
-  $('#play').data('status', 'pause')//.find('i')
+  $('#play').data('status', 'pause')
     .removeClass("fa-play").addClass("fa-pause");
   var where = 0;
   var linenum = 0;
