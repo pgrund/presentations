@@ -1,67 +1,58 @@
-Script started on Wed 05 Nov 2014 09:05:07 AM CET
+Script started on Mon 10 Nov 2014 09:08:31 AM CET
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37m# create a new directory one and within this directory a file file1.txt
 [0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mmkdir one
-[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mll
-total 336
-drwxr-xr-x 11 grund users       4096 Nov  5 09:05 [0m[01;34m.[0m
-drwxr-xr-x 17 root  root        4096 Aug 27 13:45 [01;34m..[0m
--rw-r--r--  1 grund users          5 Aug 26 16:46 alt.txt
--rw-r--r--  1 grund users          0 Nov  5 09:05 assignment2
--rw-r--r--  1 grund users        167 Nov  5 09:05 assignment2.timing
-drwxr-xr-x  2 grund users       4096 Nov  5 09:01 [01;34massignments[0m
-drwxr-xr-x  2 grund training1   4096 Nov  4 14:57 [01;34masterix[0m
--rw-------  1 grund users      14475 Nov  5 09:03 .bash_history
--rw-r--r--  1 grund users       1360 Nov  5 09:00 .bashrc
-drwxr-xr-x  2 grund users       4096 Nov  4 15:51 [01;34mbin[0m
--rw-r--r--  1 grund users       1637 Jul 25 10:03 .emacs
-drwxr-xr-x  2 grund users       4096 Jul 25 10:03 [01;34m.fonts[0m
--rw-r--r--  1 grund users      18251 Jul 25 10:03 .gnu-emacs
--rw-r--r--  1 grund users        861 Jul 25 10:03 .inputrc
-drwxr-xr-x  2 grund users       4096 Jul 25 10:03 [01;34m.mozilla[0m
--rw-r--r--  1 grund users       6043 Jul 25 10:03 .muttrc
-drwxr-xr-x  2 grund users       4096 Nov  5 09:05 [01;34mone[0m
--rw-r--r--  1 grund users       1028 Jul 25 10:03 .profile
--rw-------  1 grund users         10 Jul 25 11:57 .pyhistory
--rw-------  1 grund users       1024 Nov  4 16:22 .rnd
-drwx------  2 grund users       4096 Sep  1 15:30 [01;34m.ssh[0m
-drwxr-xr-x  3 grund users       4096 Jul 25 11:57 [01;34m.subversion[0m
--rw-r--r--  1 grund users       1992 Nov  4 15:57 test
--rw-r--r--  1 grund users          0 Nov  4 14:49 test_im_home
-drwxrwxr-x  2 grund training1   4096 Nov  4 16:04 [01;34mtraining[0m
--rw-------  1 grund users       6136 Nov  5 09:00 .viminfo
--rw-r--r--  1 grund users        849 Jul 25 10:03 .vimrc
--rw-r--r--  1 grund users       1940 Jul 25 10:03 .xim.template
--rwxr-xr-x  1 grund users       1446 Jul 25 10:03 [01;32m.xinitrc.template[0m
--rw-r--r--  1 grund users     191738 Aug 26 16:05 .y2log
-[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mll one/
-total 8
-drwxr-xr-x  2 grund users 4096 Nov  5 09:05 [0m[01;34m.[0m
-drwxr-xr-x 11 grund users 4096 Nov  5 09:05 [01;34m..[0m
 [0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mtouch one/file1.txt
-[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mtouch one/file1.txt[C[C[C[C[C[C[C[C[C[C[12Pll one/
-total 8
-drwxr-xr-x  2 grund users 4096 Nov  5 09:05 [0m[01;34m.[0m
-drwxr-xr-x 11 grund users 4096 Nov  5 09:05 [01;34m..[0m
--rw-r--r--  1 grund users    0 Nov  5 09:05 file1.txt
-[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mcd onew[K
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mls -l
+total 32
+-rw-r--r-- 1 grund users        5 Aug 26 16:46 alt.txt
+drwxr-xr-x 2 grund users     4096 Nov  5 10:39 [0m[01;34massignments[0m
+drwxr-xr-x 2 grund training1 4096 Nov  4 14:57 [01;34masterix[0m
+drwxr-xr-x 2 grund users     4096 Nov  4 15:51 [01;34mbin[0m
+drwxr-xr-x 2 grund users     4096 Nov 10 09:08 [01;34mone[0m
+-rw-r--r-- 1 grund users     1992 Nov  4 15:57 test
+-rw-r--r-- 1 grund users        0 Nov  4 14:49 test_im_home
+drwxr-xr-x 2 grund users     4096 Nov  5 10:39 [01;34mtmp[0m
+drwxrwxr-x 2 grund training1 4096 Nov  4 16:04 [01;34mtraining[0m
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mls -l one/
+total 0
+-rw-r--r-- 1 grund users 0 Nov 10 09:08 file1.txt
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37m# change to directory one and create a file named .caution
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mcd one/
 [0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mtouch .caution
-[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mll
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mls -l
+total 0
+-rw-r--r-- 1 grund users 0 Nov 10 09:08 file1.txt
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mls -al
 total 8
-drwxr-xr-x  2 grund users 4096 Nov  5 09:05 [0m[01;34m.[0m
-drwxr-xr-x 11 grund users 4096 Nov  5 09:05 [01;34m..[0m
--rw-r--r--  1 grund users    0 Nov  5 09:05 .caution
--rw-r--r--  1 grund users    0 Nov  5 09:05 file1.txt
-[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mls
-file1.txt
-[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mls -a
-.  ..  .caution  file1.txt
+drwxr-xr-x  2 grund users 4096 Nov 10 09:09 [0m[01;34m.[0m
+drwxr-xr-x 12 grund users 4096 Nov 10 09:08 [01;34m..[0m
+-rw-r--r--  1 grund users    0 Nov 10 09:09 .caution
+-rw-r--r--  1 grund users    0 Nov 10 09:08 file1.txt
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37m# Who is owner of those new created files  What are their timestamps [C[C[1@ [1@?[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C?
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37m#create (without changing directory) a new directory two as sibling to on
+e[A[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37m[C create (without changing directory) a new directory two as sibling to o
+ne[A[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37m[C[C
+[C[C
 [0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mmkdir ../two
-[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mcp file1.txt ../two/copied.csv
-[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mcd ../two
-[0;32mgrund[m [1;34m~/two[m [1;32m$[m [1;37mll
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mcp file1.txt ../two/
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mcp file1.txt ../two/[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K# copy file1.txt with new name copied.csv to the new directory two.
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37m# copy file1.txt with new name copied.csv to the new directory two.[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccp file1.txt ../two/[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccopied.csv
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mcd ..
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mcd two
+[0;32mgrund[m [1;34m~/two[m [1;32m$[m [1;37mls -l
+total 0
+-rw-r--r-- 1 grund users 0 Nov 10 09:10 copied.csv
+-rw-r--r-- 1 grund users 0 Nov 10 09:10 file1.txt
+[0;32mgrund[m [1;34m~/two[m [1;32m$[m [1;37mcd ..
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37m# How can you display the content of .caution ?
+[0;32mgrund[m [1;34m~[m [1;32m$[m [1;37mcd one
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mls -al
 total 8
-drwxr-xr-x  2 grund users 4096 Nov  5 09:06 [0m[01;34m.[0m
-drwxr-xr-x 12 grund users 4096 Nov  5 09:06 [01;34m..[0m
--rw-r--r--  1 grund users    0 Nov  5 09:06 copied.csv
-[0;32mgrund[m [1;34m~/two[m [1;32m$[m [1;37mexit
+drwxr-xr-x  2 grund users 4096 Nov 10 09:09 [0m[01;34m.[0m
+drwxr-xr-x 13 grund users 4096 Nov 10 09:10 [01;34m..[0m
+-rw-r--r--  1 grund users    0 Nov 10 09:09 .caution
+-rw-r--r--  1 grund users    0 Nov 10 09:08 file1.txt
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mcat .caution 
+[0;32mgrund[m [1;34m~/one[m [1;32m$[m [1;37mexit
 
-Script done on Wed 05 Nov 2014 09:06:45 AM CET
+Script done on Mon 10 Nov 2014 09:11:06 AM CET
