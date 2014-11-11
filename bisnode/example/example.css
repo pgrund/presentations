@@ -3,6 +3,11 @@
 /*@import url(http://fonts.googleapis.com/css?family=Lora:400,700|Inconsolata:400,700);*/
 
 
+#playdiv {
+	position:absolute;
+	top: 10px;
+	left: 10px;
+}
 #start {
 	background-image: url("./img/skyscraper.jpg");	
 	background-position: center;

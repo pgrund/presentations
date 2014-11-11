@@ -37,12 +37,15 @@
 	</head>
 	<body>
 	 
+     <div id="playdiv">
+       <i class="fa fa-pause" title="toggle autoplay"></i>
+     </div>
 	 <div id="impress">
         <div id="start" class="step image title">
             <header class="akzent3trans">make a smart decision.</header>
             <footer></footer>
         </div>
-        <div id="intromovie" class="step" data-y="-1000">            
+        <div id="intromovie" class="step" data-y="-1000" data-duration="5000">            
              <div id="ytplayer">
                     <a class="visible-print-block" href="http://www.youtube-nocookie.com/embed/cj-cnEMu5uE">see Youtube</a>
               </div>
@@ -1014,6 +1017,9 @@
                     maxScale: 4,
                     initalScale: 1,
                     zoomable: false                    
+                },
+                duration: {
+                    defaultValue: 5000
                 }                
             };
 
@@ -1030,6 +1036,18 @@
                 hljs.highlightBlock(block);
             });
             $('.bigtext').bigtext();
+
+            $("#playdiv").children(".fa").on("click", function() {
+                if ($(this).hasClass("fa-pause")) {                    
+                    $(jmpress).jmpress("settings").duration.defaultValue = -1;    
+                    $(jmpress).jmpress("reselect");
+                    $(this).removeClass("fa-pause").addClass("fa-play");
+                } else {
+                    $(jmpress).jmpress("settings").duration.defaultValue = 5000;
+                    $(jmpress).jmpress("reselect");
+                    $(this).removeClass("fa-play").addClass("fa-pause");
+                }
+            });
  
         });
         // start the presentation!
