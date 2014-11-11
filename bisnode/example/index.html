@@ -45,7 +45,7 @@
             <header class="akzent3trans">make a smart decision.</header>
             <footer></footer>
         </div>
-        <div id="intromovie" class="step" data-y="-1000" data-duration="5000">            
+        <div id="intromovie" class="step" data-y="-1000" data-duration="-1">
              <div id="ytplayer">
                     <a class="visible-print-block" href="http://www.youtube-nocookie.com/embed/cj-cnEMu5uE">see Youtube</a>
               </div>
@@ -1000,13 +1000,24 @@
           // YouTube player after the API code downloads.
           var player;
           function onYouTubePlayerAPIReady() {
+            console.log("callback received, video is ready to be played ... ");
             player = new YT.Player('ytplayer', {
               height: '720',
               width: '960',
-              videoId: 'cj-cnEMu5uE'
+              videoId: 'cj-cnEMu5uE',
+              events: {
+                'onStateChange': function(event) {
+                    if(event.data === 0) {
+                        console.log("video finished, move on ... ");
+                        // video ended
+                        $("#impress").jmpress("next");
+                    }
+                    return false;
+                }
+              }
             });
-          }
-      
+          };
+
         $.jmpress('register', 'example', function() {
             
             var jmpress = this;
@@ -1036,7 +1047,32 @@
                 hljs.highlightBlock(block);
             });
             $('.bigtext').bigtext();
-
+          
+          $("#intromovie").on("enterStep", function(event){
+            if(player != undefined) {
+              if(player.getPlayerState() === 5) {       
+                // ready for play         
+                player.playVideo();    
+              } else if(player.getPlayerState() === 0 || player.getPlayerState() === -1) {
+                // ready for replay
+                player.seekTo(0, false);
+                player.playVideo();
+              } else {
+                console.log(player);
+              }
+            } else {
+                console.log("not yet loaded ...");                
+                $("#ytplayer").html("<h2 class='text-center'><i class='fa fa-spinner fa-spin fa-2x text1'></i></h2><h2 class='text-center'>loading video ...</h2>");
+            }   
+            return false;
+            
+          }).on("leaveStep", function(event){
+            if(player != undefined) {
+                player.stopVideo();
+            }
+            return false;
+          });
+      
             $("#playdiv").children(".fa").on("click", function() {
                 if ($(this).hasClass("fa-pause")) {                    
                     $(jmpress).jmpress("settings").duration.defaultValue = -1;    
