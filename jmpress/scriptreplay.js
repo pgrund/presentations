@@ -23,12 +23,14 @@ function get_file_contents(filename, callback) {
   } else {
     req = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  //console.log("try to get: " + filename);
+  console.log("try to get: " + filename);  
   req.open("GET", filename, false);
   req.onreadystatechange = function() {
     // status is 0 for local files
     if (req.readyState==4 && ( req.status==200 || req.status==0)) {
       callback(req.responseText);
+    } else {      
+      vt.Write("\x1b[1;31mFile not found: \x1b[1;33m" + filename +"\x1b[0m");
     }
   }
   req.send(null);
