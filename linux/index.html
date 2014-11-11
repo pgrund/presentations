@@ -1680,8 +1680,11 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                     <li>Write the <em>manual pages</em> for <kbd>cat</kbd> into the file <code>help.dat</code>.</li>
                     <li>Extend <code>help.dat</code> by infos about <kbd>echo</kbd>.</li>
                     <li>How many files are in <code>/bin</code> ? Display only the number of files ...</li>
+                    <!-- rm `find ~ -type f -name "*.bak" -print` -->
                     <li>How do you <em>delete</em> all files ending <code>.bak</code> in <code>/home</code> and all subdirectories ?</li>
+                    <!-- rm -i `find ~ -type f -name "*.bak" -print` -->
                     <li>... how about confirming deletion of <em>each file</em> ?</li>
+                    <!-- rm -I `find ~ -type f -name "*.bak" -print` -->
                     <li>... how about confirming deletion <em>only once</em> ?</li>
                 </ol>
             </div>
