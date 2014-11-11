@@ -1263,13 +1263,15 @@ The unset parameter is: <em>true</em></code></pre>
                 <ol>                    
                     <li>list all files containing the letter <code>e</code> in your home directory <code>~</code> and all its subdirectories.</li>
                     <!-- ls *e* displays only files and complete content of subdirectories containing 'e'-->
-                    <!-- find needed: find . -type f -name "*e*"" -->
+                    <!--   ls -1R . | grep ".*e.*[^:]$" -->
+                    <!-- find : find . -type f -name "*e*"" -->
                     <li>change to your <code>~/one</code> directory</li>
                     <li>create new empty files named <code>test_a</code>, <code>test_b</code>, ... <code>test_z</code>.</li>
                     <li>create new empty files named <code>test_a1</code>, <code>test_a2</code>, ... <code>test_z9</code>.</li>
                     <li>delete all files starting with <em>test_p</em>.</li>
                     <li>delete all files ending with <em>3</em>.</li>  
                     <li>copy file <code>test_a9</code> to <code>training</code> directory of <em>all participants containing an <code>e</code></em> in their username as well as <em>rename the file <code>test_a9_&lt;my username&gt;</code></em>, so that we do not get in conflict with other users.</li> 
+                    <!--  t=$(echo /home/*e*/training); cat test_a9 | tee ${t//training/training/test_a9_$USER} > /dev/null -->
                     <!-- scripting needed: for DEST in /home/*/training; do cp -T test_a9 $DEST/test_a9_$USER ;done -->
                     <li>concat all the contents of <code>~/two/copied.csv</code> of <em>all participants</em> and display to standard out</li>
                     <!-- be aware, copied.csv might be empty: cat /home/*/two/copied.csv -->
