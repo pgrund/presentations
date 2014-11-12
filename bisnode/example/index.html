@@ -1009,6 +1009,10 @@
               height: '720',
               width: '960',
               videoId: 'cj-cnEMu5uE',
+              playerVars: {                
+                hl: "en",
+                cc_load_policy: "1"
+              },
               events: {
                 'onStateChange': function(event) {
                     if(event.data === 0) {
@@ -1055,11 +1059,11 @@
           $("#intromovie").on("enterStep", function(event){
             if(player != undefined) {
               if(player.getPlayerState() === 5) {       
-                // ready for play         
+                // ready for play
                 player.playVideo();    
               } else if(player.getPlayerState() === 0 || player.getPlayerState() === -1) {
                 // ready for replay
-                player.seekTo(0, false);
+                player.seekTo(0, false);              
                 player.playVideo();
               } else {
                 console.log(player);
