@@ -161,9 +161,13 @@
                 </header>
             </div>
             <div id="linuxmovie" class="step" data-x="-2200" data-rotate-z="90">
-                <div id="ytplayer">
-                    <a class="visible-print-block" href="http://www.youtube-nocookie.com/embed/YqqkdgE8RpM">see Youtube</a>
+                <div id="ytplayer">                   
                 </div>
+                <p class="visible-print-block text-center"> 
+                    <i class="fa fa-youtube fa-3x"></i><br/>
+                    see video<br/>
+                    <a href="http://www.youtube-nocookie.com/embed/YqqkdgE8RpM"><em>Codename: Linux</em></a>
+                </p>
             </div>
 
             <div id="chaplinux" class="step slide chapter" >
@@ -1071,7 +1075,7 @@ drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
                     <dt><code>${#PARAMETER}</code></dt>
                     <dd>length of parameters value</dd>
                 </dl>
-                <pre class="left"><code class="bash">$ export TEST=JAVA_HOME
+                <pre class="left"><code class="bash">$ TEST=JAVA_HOME
 $ echo $TEST
 JAVA_HOME
 $ echo $JAVA_HOME
@@ -1111,7 +1115,7 @@ $ echo <em>${USER^}</em>
                     <dd>removes specified pattern (see <a href="#/regex">matching</a>) from the <em>end</em></dd>
                 </dl>
                 <p> single form (<code>#</code>, <code>%</code>) removes <em>shortest</em> text matching, double form (<code>##</code>, <code>%%</code>) removes <em>longest matching</em></p>
-                <pre><code class="bash">$ export MYSTRING="Be liberal in what you accept, and conservative in what you send"
+                <pre><code class="bash">$ MYSTRING="Be liberal in what you accept, and conservative in what you send"
 $ echo <em>${MYSTRING#* }</em>
 liberal in what you accept, and conservative in what you send
 $ echo <em>${MYSTRING##* }</em>
@@ -1162,7 +1166,7 @@ liberal</code></pre>
 Be liberal <em>by</em> what you accept, and conservative <em>in</em> what you send
 $ echo ${MYSTRING<em>//you</em>}
 Be liberal in what accept, and conservative in what send</code></pre>
-                <pre class="left"><code class="bash">$ export FILE=test.xml.xml
+                <pre class="left"><code class="bash">$ FILE=test.xml.xml
 $ echo ${FILE<em>//.xml/.korr</em>}
 test<em>.korr.korr</em></code></pre>
                 <pre class="right"><code class="bash">$ echo ${FILE<em>/%.xml/.korr</em>}
@@ -1828,13 +1832,13 @@ drwxrwxrw<em>t</em> ... tmp
                 <dl>
                     <dt>cat</dt>
                     <dd>display content, <em>no navigation</em></dd>
-                    <dd><kbd>cat &lt;file&gt;</kbd></dd>
+                    <dd class="text-center"><kbd>cat &lt;file&gt;</kbd></dd>
                     <dt>more</dt>
                     <dd>pagination of content per display height, only <em>forward navigation</em> possible</dd>
-                    <dd><kbd>more &lt;file&gt;</kbd></dd>
+                    <dd class="text-center"><kbd>more &lt;file&gt;</kbd></dd>
                     <dt>less</dt>
                     <dd>pagination of content per display height, navigation in <em>both direction</em></dd>
-                    <dd><kbd>less &lt;file&gt;</kbd></dd>
+                    <dd class="text-center"><kbd>less &lt;file&gt;</kbd></dd>
                 </dl>
                <pre class="left"><code class="bash">$ <em>less</em> help.dat
 $ ls -al | <em>more</em></code></pre>
@@ -1902,7 +1906,7 @@ training1:!:1002:grund,jheydel,blaibach,wengel,mkappelar,rwoelflik,...</code></p
                 <header>regular expression</header>
                 <p>Regular expressions are the <em>default language for pattern matching</em>, used not only by <kbd>grep</kbd>, but many other commands as well (<kbd>sed</kbd>, <kbd>awk</kbd>, ...).<br/>
                 A regular expression may contain <em>meta characters</em>, which broaden or narrow the search term.</p>
-                <table class="table table-condensed">                    
+                <table class="table table-condensed">
                     <caption>basic meta characters</caption>
                     <thead>
                         <tr>
