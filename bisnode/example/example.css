@@ -262,6 +262,7 @@
 
 #front {
 	left: 300px;
+	 -webkit-transform: rotateY(-30deg); 
 	transform: rotateY(-30deg);
 }
 #front .decisionText {	
@@ -272,6 +273,7 @@
 	left:569px;
 	width:100px;	
 	height:518px;
+	 -webkit-transform: rotateY(45deg); 
 	transform: rotateY(45deg);	
 }
 #side>.decisionText {		
@@ -282,6 +284,7 @@
 	position:relative;
 	top:250px;
 	text-shadow: 1px 1px 2px #000;	
+	 -webkit-perspective: 1200px;
 	perspective: 1200px;	
 }
 
