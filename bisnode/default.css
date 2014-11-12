@@ -867,7 +867,7 @@ header .akzent1 {
         opacity: 1.0 !important;
     }
     #final, #print, footer, .under-construction, 
-    .fallback-message {
+    .fallback-message, #break {
         display: none;
     }
 }

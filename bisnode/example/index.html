@@ -17,14 +17,12 @@
 
         <script class="jquery" src="../../jmpress/jquery.js" type="text/javascript"></script>
 
-       <script class="highcharts" src="../../highcharts/highcharts.js"></script>
+        <script class="highcharts" src="../../highcharts/highcharts.js"></script>
         <script class="highcharts" src="../../highcharts/modules/data.js"></script>
         <script class="highcharts" src="../../highcharts/modules/map.js"></script>
         <script class="highcharts" src="../../highcharts/modules/exporting.js"></script>
 
         <script src="../../jmpress/jquery.countdown.js" type="text/javascript"></script>
-                
-        
 
         <script src="../../jmpress/bootstrap.min.js"></script>       
         <script src="../../highlight/highlight.pack.js"></script>        
@@ -33,7 +31,7 @@
         <script type="text/javascript" src="../../jmpress/plugins/presentations.jmpress.js"></script>
 
 		<title>Bisnode Image</title>
-
+        <meta name="author" content="Peter Grund"/>
 	</head>
 	<body>
 	 
@@ -61,7 +59,7 @@
          <div id="action" class="step slide" data-y="1000" data-z="-1000" data-rotate-y="90">
             <svg width="900" height="600">
                 <defs>
-                    <g id="shoeprint" transform="translate(220,90),scale(0.1),rotate(90,250,100)" fill="lightgray">
+                    <g id="shoeprint" transform="translate(220,90),scale(0.1),rotate(90,250,100)" fill="inherit">
                         <path
                            d="m 74.602464,12.753774 c -10.969997,3.887878 -20.656426,6.366973 -34.57123,10.79215 5.455765,69.54683 69.326616,41.819534 34.57123,-10.79215 z M 71.438231,0.13470154 C 71.625067,-9.5285821 71.127219,-18.842525 75.219274,-28.029026 c 4.6484,-9.850659 5.39125,-18.490962 2.81967,-32.796321 -4.67729,-26.019271 -14.56477,-42.241053 -27.91782,-45.803083 -28.48249,-4.2447 -32.01048,24.309246 -32.70088,45.195485 -1.572268,11.688971 8.106701,61.71180093 19.81144,70.1850494 C 48.73402,5.7486058 60.027152,2.8017429 71.438231,0.13470154 z"
                            />
@@ -80,12 +78,13 @@
                     <text x="290" y="170">!</text>  
                     <text x="200" y="270" class="action bold text-uppercase">action</text>
 
-                    <g id="prints">
+                    <g id="prints" fill="lightgray">                       
+                     <!--
                         <use xlink:href="#shoeprint"/>                    
                         <use xlink:href="#shoeprint" transform="rotate(15,255,205)"/>
                         <use xlink:href="#shoeprint" transform="rotate(30,255,205)"/>
                         <use xlink:href="#shoeprint" transform="rotate(45,255,205)"/>
-                        <use xlink:href="#shoeprint" transform="rotate(60,255,205)"/>                    
+                        <use xlink:href="#shoeprint" transform="rotate(60,255,205)"/>
                         <use xlink:href="#shoeprint" transform="rotate(75,255,205)"/>
                         <use xlink:href="#shoeprint" transform="rotate(90,255,205)"/>
                         <use xlink:href="#shoeprint" transform="rotate(105,255,205)"/>
@@ -99,20 +98,25 @@
                         <use xlink:href="#shoeprint" transform="rotate(225,255,205)"/>
                         <use xlink:href="#shoeprint" transform="rotate(240,255,205)"/>
                         <use xlink:href="#shoeprint" transform="rotate(255,255,205)"/>
-                        <use xlink:href="#shoeprint" transform="rotate(270,255,205)"/>
-                        <use xlink:href="#shoeprint" transform="rotate(285,255,205)"/>
-                        <use xlink:href="#shoeprint" transform="rotate(300,255,205)"/>
+                        -->
+                        <use xlink:href="#shoeprint" transform="rotate(270,255,205)" fill="rgba(169,169,169,0.2)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(285,255,205)" fill="rgba(169,169,169,0.5)"/>
+                        <use xlink:href="#shoeprint" transform="rotate(300,255,205)" fill="rgba(169,169,169,1.0)"/>
+                        <!--
                         <use xlink:href="#shoeprint" transform="rotate(315,255,205)"/>
                         <use xlink:href="#shoeprint" transform="rotate(330,255,205)"/>
                         <use xlink:href="#shoeprint" transform="rotate(345,255,205)"/>
+                        -->
                         <animateTransform
+                             id="animateShoes"
                              attributeName="transform"
-                             begin="3s"
+                             begin="2s"
                              dur="20s"
                              type="rotate"
                              from="0 255 205"
                              to="360 255 205"
                              repeatCount="indefinite" />
+                     
                     </g>
                     
                     <rect x="90" y="185" width="55" height="30" fill="white"/>
@@ -1072,8 +1076,8 @@
             }
             return false;
           });
-      
-            $("#playdiv").children(".fa").on("click", function() {
+       
+          $("#playdiv").children(".fa").on("click", function() {
                 if ($(this).hasClass("fa-pause")) {                    
                     $(jmpress).jmpress("settings").duration.defaultValue = -1;    
                     $(jmpress).jmpress("reselect");
@@ -1083,7 +1087,7 @@
                     $(jmpress).jmpress("reselect");
                     $(this).removeClass("fa-play").addClass("fa-pause");
                 }
-            });
+           });
  
         });
         // start the presentation!
