@@ -1,25 +1,99 @@
-Script started on Mon 10 Nov 2014 09:51:09 AM CET
-test@YU-PROD-DEVOPS-01:~> # copy /home/grund/asterix into your home directory
-test@YU-PROD-DEVOPS-01:~> ls -l
-total 4
-drwxr-xr-x 2 test users 4096 Aug 27 11:07 bin
-test@YU-PROD-DEVOPS-01:~> ls /home/grund/asterix/
-asterix_text.bak    test_b.bak  test_g.bak  test_l.bak  test_q.bak  test_v.bak  two.txt
-asterix_text.html   test_c.bak  test_h.bak  test_m.bak  test_r.bak  test_w.bak
-character_list      test_d.bak  test_i.bak  test_n.bak  test_s.bak  test_x.bak
-character_list.bak  test_e.bak  test_j.bak  test_o.bak  test_t.bak  test_y.bak
-test_a.bak          test_f.bak  test_k.bak  test_p.bak  test_u.bak  test_z.bak
-test@YU-PROD-DEVOPS-01:~> cp /home/grund/as
-assignments/ asterix/     
-test@YU-PROD-DEVOPS-01:~> cp /home/grund/asterix/ .
-cp: omitting directory `/home/grund/asterix/'
-test@YU-PROD-DEVOPS-01:~> man cp
+Script started on Fri 14 Nov 2014 11:43:41 AM CET
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;33m# copy /home/grund/asterix into your home directory
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mls -l
+total 12
+drwxr-xr-x 2 test users     4096 Aug 27 11:07 bin
+drwxr-xr-x 2 test users     4096 Nov 10 09:54 one
+drwxr-xr-x 2 test training1 4096 Nov 10 09:54 two
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mls /home/grund/asterix/
+asterix_text.html  character_list  two.txt
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mls /home/grund/asterix/[C[C[C[C[C[C[C[C[C[1@c[1@p[1P[1P /home/grund/asterix/[C[C[C[C[C[C[C[C[C[C[C
+cp: missing destination file operand after `/home/grund/asterix/'
+Try `cp --help' for more information.
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mcp --help
+Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --archive                same as -dR --preserve=all
+      --attributes-only        don't copy the file data, just the attributes
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+      --copy-contents          copy contents of special files when recursive
+  -d                           same as --no-dereference --preserve=links
+  -f, --force                  if an existing destination file cannot be
+                                 opened, remove it and try again (redundant if
+                                 the -n option is used)
+  -i, --interactive            prompt before overwrite (overrides a previous -n
+                                  option)
+  -H                           follow command-line symbolic links in SOURCE
+  -l, --link                   link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber             do not overwrite an existing file (overrides
+                                 a previous -i option)
+  -P, --no-dereference         never follow symbolic links in SOURCE
+  -p                           same as --preserve=mode,ownership,timestamps
+      --preserve[=ATTR_LIST]   preserve the specified attributes (default:
+                                 mode,ownership,timestamps), if possible
+                                 additional attributes: context, links, xattr,
+                                 all
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --parents                use full source file name under DIRECTORY
+  -R, -r, --recursive          copy directories recursively
+      --reflink[=WHEN]         control clone/CoW copies. See below
+      --remove-destination     remove each existing destination file before
+                                 attempting to open it (contrast with --force)
+      --sparse=WHEN            control creation of sparse files. See below
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -s, --symbolic-link          make symbolic links instead of copying
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -x, --one-file-system        stay on this file system
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, sparse SOURCE files are detected by a crude heuristic and the
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST
+file whenever the SOURCE file contains a long enough sequence of zero bytes.
+Use --sparse=never to inhibit creation of sparse files.
+
+When --reflink[=always] is specified, perform a lightweight copy, where the
+data blocks are copied only when modified.  If this is not possible the copy
+fails, or if --reflink=auto is specified, fall back to a standard copy.
+
+The backup suffix is `~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+As a special case, cp makes a backup of SOURCE when the force and backup
+options are given and SOURCE and DEST are the same name for an existing,
+regular file.
+
+Report cp bugs to bug-coreutils@gnu.org
+GNU coreutils home page: <http://www.gnu.org/software/coreutils/>
+General help using GNU software: <http://www.gnu.org/gethelp/>
+For complete documentation, run: info coreutils 'cp invocation'
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mcp --help[1@m[1@a[1@n[1@ [C[C[C[C[C[C[C[C[C[K[K[K[K[K[K
 Man: find all matching manual pages
  * cp (1)
    cp (1p)
 Man: What manual page do you want?
 Man: 1
-7[?47hCP(1)                               User Commands                               CP(1)[m
+7[?47hCP(1)                              User Commands                             CP(1)[m
 [m
 [m
 [m
@@ -53,11 +127,11 @@ Man: 1
        [1m-d     [22msame as [1m--no-dereference --preserve[22m=[4mlinks[0m[m
 [m
        [1m-f[22m, [1m--force[0m[m
-              if  an  existing  destination  file cannot be opened, remove it and try[m
+              if  an existing destination file cannot be opened, remove it and try[m
               again (redundant if the [1m-n [22moption is used)[m
 [m
-[7m Manual page cp(1) line 1[27m[K[K       [1m-i[22m, [1m--interactive[0m[m
-              prompt before overwrite (overrides a previous [1m-n [22moption)[m
+       [1m-i[22m, [1m--interactive[0m[m
+[7m Manual page cp(1) line 1[27m[K[K [KESCESC[K[[[K66[K~~[K              prompt before overwrite (overrides a previous [1m-n [22moption)[m
 [m
        [1m-H     [22mfollow command-line symbolic links in SOURCE[m
 [m
@@ -76,8 +150,9 @@ Man: 1
        [1m-p     [22msame as [1m--preserve[22m=[4mmode[24m,ownership,timestamps[m
 [m
        [1m--preserve[22m[=[4mATTR_LIST[24m][m
-              preserve the specified attributes (default: mode,ownership,timestamps),[m
-              if possible additional attributes: context, links, xattr, all[m
+              preserve the specified  attributes  (default:  mode,ownership,times-[m
+[7m Manual page cp(1) line 21[27m[K[K [KESCESC[K[[[K66[K~~[K              tamps),  if  possible  additional attributes: context, links, xattr,[m
+              all[m
 [m
        [1m--no-preserve[22m=[4mATTR_LIST[0m[m
               don't preserve the specified attributes[m
@@ -92,106 +167,68 @@ Man: 1
               control clone/CoW copies. See below[m
 [m
        [1m--remove-destination[0m[m
-              remove  each  existing  destination  file  before attempting to open it[m
-[7m Manual page cp(1) line 38[27m[K[K[2J[?47l8test@YU-PROD-DEVOPS-01:~> man cpcp /home/grund/asterix/ .[C[C[C[1@ [1@-[1@R[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-test@YU-PROD-DEVOPS-01:~> ls -l
-total 8
-drwxr-xr-x 2 test users 4096 Nov 10 09:51 asterix
-drwxr-xr-x 2 test users 4096 Aug 27 11:07 bin
-test@YU-PROD-DEVOPS-01:~> ls -l asterix/
+              remove each existing destination file before attempting to  open  it[m
+              (contrast with [1m--force[22m)[m
+[m
+       [1m--sparse[22m=[4mWHEN[0m[m
+[7m Manual page cp(1) line 41[27m[K[K[2J[?47l[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mman cp cp --help/home/grund/asterix/[C[C[C[C[C[C[C[C[Cls[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-/home/grund/asterix/[C[C[C[C[C[C[C[C[C[C[C[C[CR/home/grund/asterix/[C[C[C[C[C[C[C[C[C[C[C[C[C[C /home/grund/asterix/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C .
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mls -l
+total 16
+drwxr-xr-x 2 test users     4096 Nov 14 11:44 asterix
+drwxr-xr-x 2 test users     4096 Aug 27 11:07 bin
+drwxr-xr-x 2 test users     4096 Nov 10 09:54 one
+drwxr-xr-x 2 test training1 4096 Nov 10 09:54 two
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mls -l asterix/
 total 28
--rw-r--r-- 1 test users     0 Nov 10 09:51 asterix_text.bak
--rw-r--r-- 1 test users 22725 Nov 10 09:51 asterix_text.html
--rw-r--r-- 1 test users   318 Nov 10 09:51 character_list
--rw-r--r-- 1 test users     0 Nov 10 09:51 character_list.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_a.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_b.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_c.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_d.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_e.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_f.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_g.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_h.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_i.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_j.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_k.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_l.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_m.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_n.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_o.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_p.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_q.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_r.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_s.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_t.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_u.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_v.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_w.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_x.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_y.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 test_z.bak
--rw-r--r-- 1 test users     0 Nov 10 09:51 two.txt
-test@YU-PROD-DEVOPS-01:~> ls -l
-total 8
-drwxr-xr-x 2 test users 4096 Nov 10 09:51 asterix
-drwxr-xr-x 2 test users 4096 Aug 27 11:07 bin
-test@YU-PROD-DEVOPS-01:~> # create a new directory training in your home directory
-test@YU-PROD-DEVOPS-01:~> mkdir training
-test@YU-PROD-DEVOPS-01:~> ls -l
-total 12
-drwxr-xr-x 2 test users 4096 Nov 10 09:51 asterix
-drwxr-xr-x 2 test users 4096 Aug 27 11:07 bin
-drwxr-xr-x 2 test users 4096 Nov 10 09:52 training
-test@YU-PROD-DEVOPS-01:~> # grant read, and write access for this new directory to all 
-participants
-test@YU-PROD-DEVOPS-01:~> lds [K[K[K[Kchgrp training/[K1 training/
-test@YU-PROD-DEVOPS-01:~> ls -l
-total 12
-drwxr-xr-x 2 test users     4096 Nov 10 09:51 asterix
+-rw-r--r-- 1 test users 22725 Nov 14 11:44 asterix_text.html
+-rw-r--r-- 1 test users   318 Nov 14 11:44 character_list
+-rw-r--r-- 1 test users     0 Nov 14 11:44 two.txt
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;33m# create a new directory training in your home directory
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mmkdir training
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mls -l
+total 20
+drwxr-xr-x 2 test users     4096 Nov 14 11:44 asterix
 drwxr-xr-x 2 test users     4096 Aug 27 11:07 bin
-drwxr-xr-x 2 test training1 4096 Nov 10 09:52 training
-test@YU-PROD-DEVOPS-01:~> chmod [K[K[K[Kmod g+w training/
-test@YU-PROD-DEVOPS-01:~> ls -l
-total 12
-drwxr-xr-x 2 test users     4096 Nov 10 09:51 asterix
+drwxr-xr-x 2 test users     4096 Nov 10 09:54 one
+drwxr-xr-x 2 test users     4096 Nov 14 11:44 training
+drwxr-xr-x 2 test training1 4096 Nov 10 09:54 two
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;33m# grant read, and write access for this new directory to all participants
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mchgrp training1 training
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mchmod g+w training/
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mls -l
+total 20
+drwxr-xr-x 2 test users     4096 Nov 14 11:44 asterix
 drwxr-xr-x 2 test users     4096 Aug 27 11:07 bin
-drwxrwxr-x 2 test training1 4096 Nov 10 09:52 training
-test@YU-PROD-DEVOPS-01:~> # copy file ~/one/file1.txt to the training directory of your
- left neighbor
-test@YU-PROD-DEVOPS-01:~> # leftneighbor = grund[C[C[1@ [C[C[C[C[C[C[C[C[C[1P grund> grund> grund[C[C[C[C[C[C
-test@YU-PROD-DEVOPS-01:~> cp on[K[K[K ./on[K[K[K[K[K[K[Ktouch oinefile[1P[1P[1P[1P[1P oinefile[1Poinefile[1Pinefile[1Pnefile[1Pefile[1Pfile[1Pile[1Ple[1Pe[Kmkdir one
-test@YU-PROD-DEVOPS-01:~> touch one/file1.txt
-test@YU-PROD-DEVOPS-01:~> ls one/
-file1.txt
-test@YU-PROD-DEVOPS-01:~> cp one/file1.txt /home/grund/training/
-test@YU-PROD-DEVOPS-01:~> # How does the access rights (ls -l) of the copied file look 
-like?
-test@YU-PROD-DEVOPS-01:~> ls -l /home/grund/training/
+drwxr-xr-x 2 test users     4096 Nov 10 09:54 one
+drwxrwxr-x 2 test training1 4096 Nov 14 11:44 training
+drwxr-xr-x 2 test training1 4096 Nov 10 09:54 two
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;33m# copy file ~/one/file1.txt to the training directory of your left neighbor
+[A
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mleftNeighboir[K[Kr=grund[C"grund[C[C[C[C[C"
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mecho $leftNeighbor 
+grund
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mcp ~/one/file1.txt /home/$leftNeigh[K[K[K[K[K[K[K[K[K[Kgrund/training/
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mls -l /home/grund/training/
 total 0
 prw-r--r-- 1 grund users 0 Nov  4 16:06 assignment
--rw-r--r-- 1 test  users 0 Nov 10 09:54 file1.txt
-test@YU-PROD-DEVOPS-01:~> ls -l
-total 16
-drwxr-xr-x 2 test users     4096 Nov 10 09:51 asterix
-drwxr-xr-x 2 test users     4096 Aug 27 11:07 bin
-drwxr-xr-x 2 test users     4096 Nov 10 09:54 one
-drwxrwxr-x 2 test training1 4096 Nov 10 09:52 training
-test@YU-PROD-DEVOPS-01:~> mkdir two
-test@YU-PROD-DEVOPS-01:~> ls -l
+-rw-r--r-- 1 test  users 0 Nov 14 11:46 file1.txt
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;33mgrant all participant of the course read access to your ~/two directory[1@#[1@ 
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mls -l
 total 20
-drwxr-xr-x 2 test users     4096 Nov 10 09:51 asterix
+drwxr-xr-x 2 test users     4096 Nov 14 11:44 asterix
 drwxr-xr-x 2 test users     4096 Aug 27 11:07 bin
 drwxr-xr-x 2 test users     4096 Nov 10 09:54 one
-drwxrwxr-x 2 test training1 4096 Nov 10 09:52 training
-drwxr-xr-x 2 test users     4096 Nov 10 09:54 two
-test@YU-PROD-DEVOPS-01:~> chgrp training/[K1 two
-test@YU-PROD-DEVOPS-01:~> ls -l
-total 20
-drwxr-xr-x 2 test users     4096 Nov 10 09:51 asterix
-drwxr-xr-x 2 test users     4096 Aug 27 11:07 bin
-drwxr-xr-x 2 test users     4096 Nov 10 09:54 one
-drwxrwxr-x 2 test training1 4096 Nov 10 09:52 training
+drwxrwxr-x 2 test training1 4096 Nov 14 11:44 training
 drwxr-xr-x 2 test training1 4096 Nov 10 09:54 two
-test@YU-PROD-DEVOPS-01:~> exit
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mchmod +[Kg+r[K[K[K[K[K[K[Kgrp training1 two
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mchmod g+r two
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mls -l
+total 20
+drwxr-xr-x 2 test users     4096 Nov 14 11:44 asterix
+drwxr-xr-x 2 test users     4096 Aug 27 11:07 bin
+drwxr-xr-x 2 test users     4096 Nov 10 09:54 one
+drwxrwxr-x 2 test training1 4096 Nov 14 11:44 training
+drwxr-xr-x 2 test training1 4096 Nov 10 09:54 two
+[0;32mtest[m [1;34m~[m [1;32m$[m [1;37mexit
 
-Script done on Mon 10 Nov 2014 09:55:09 AM CET
+Script done on Fri 14 Nov 2014 11:47:55 AM CET
