@@ -12,14 +12,6 @@ body{
     counter-reset: slideIdx;
 }
 
-.step.assignment {   
-    border-style: solid; 
-	border-width: 30px 86px 35px 91px;
-    -moz-border-image: url(../../bisnode/img/code-paper.png) 30 86 35 91 repeat;
-    -webkit-border-image: url(../../bisnode/img/code-paper.png) 30 86 35 91 repeat;
-    -o-border-image: url(../../bisnode/img/code-paper.png) 30 86 35 91 repeat;
-    border-image: url(../../bisnode/img/code-paper.png) 30 86 35 91 fill repeat;
-}
 
 div.alert-warning {    
     border: solid thick darkred;
@@ -137,11 +129,6 @@ table.table {
     .tab-pane {
         page-break-inside: avoid; 
     }    
-    .step.assignment {
-        border: solid thin black;
-        border-radius: 10px;
-        padding: 50px;
-    }
     #solution, #ytplayer {
         display: none;
     }

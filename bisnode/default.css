@@ -549,6 +549,15 @@ table { font-size: 24px; }
   z-index: -1;   
 }
 
+.step.assignment {   
+    border-style: solid; 
+    border-width: 30px 86px 35px 91px;
+    -moz-border-image: url(./img/code-paper.png) 30 86 35 91 repeat;
+    -webkit-border-image: url(./img/code-paper.png) 30 86 35 91 repeat;
+    -o-border-image: url(./img/code-paper.png) 30 86 35 91 repeat;
+    border-image: url(./img/code-paper.png) 30 86 35 91 fill repeat;
+}
+
 /* ======= new Bisnode design ===== */
 
 .hintergrund1 {
@@ -862,6 +871,11 @@ header .akzent1 {
         max-width: 100%;
     }
 
+    .step.assignment {
+        border: solid thin black;
+        border-radius: 10px;
+        padding: 50px;
+    }
     .tab-content > .tab-pane {
         display: block !important; 
         opacity: 1.0 !important;
