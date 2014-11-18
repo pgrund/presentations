@@ -1,0 +1,36 @@
+@import url(../../bisnode/default.css);
+
+.image header .lead {
+	text-transform: none;
+	text-align: right;
+	font-style: italic;
+	font-size: smaller;
+}
+.assignment>header {
+    padding: 10px;
+    font-family: 'Rock Salt', cursive;
+    text-shadow: 3px 3px 5px white;
+}
+
+#start {
+	background-image: url("../img/excel-2013.jpg");
+}
+#interface {
+	background-image: url("../img/startup.png");
+}
+
+#workbooks {
+	background-image: url("../img/empty_workbook.png");
+}
+
+#cells {
+	background-image: url("../img/cells_workbook.png");
+}
+
+#worksheets {
+	background-image: url("../img/worksheets.png");
+}
+
+#pagelayout {
+	background-image: url("../img/page_layout.png");
+}

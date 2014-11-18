@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+        <meta charset="utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="expires" content="0">
+        
+        <link rel="stylesheet" href="../jmpress/bootstrap.min.css" />
+        <link rel="stylesheet" href="../font-awesome-4.2.0/css/font-awesome.css"/>
+
+        <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
+        
+        
+        <link href="./css/excel.css" rel="stylesheet" />
+     
+
+        <script type="text/javascript" src="../jmpress/jquery.js"></script>
+        <script src="../jmpress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../jmpress/bootstrap.min.js"></script>       
+        <script src="../highlight/highlight.pack.js"></script>        
+        
+        <script type="text/javascript" src="../jmpress/jmpress.js"></script>           
+        <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>   
+
+        <script type="text/javascript" src="../jmpress/plugins/presentations.jmpress.js"></script>
+
+        <title>Excel Introduction</title>                 
+        <meta name="author" content="Peter Grund"/>        
+        
+    </head>
+	<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">                    
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>   
+                    <a href="#/start" class="navbar-brand"><i class="fa fa-lg fa-home" title="Excel"></i></a>
+                </div>                
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Excel Basics<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/interface">Getting Started</a></li>
+                                <li>
+                                	<a href="#/workbooks">Workbooks</a>
+                                	<a href="#/cells">Cells, Rows and Columns</a>
+                                	<a href="#/worksheets">Worksheets</a>
+                                	<a href="#/pagelayout">Page Layout</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formulas and Functions<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/formulas">Formulas</a></li>
+                                <li><a href="#/cellrefs">Cell References</a></li>
+                                <li><a href="#/functions">Functions</a></li>
+                            </ul>
+                        </li>                        
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Working with Data<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/freezing">Freezing Pane</a></li>
+                                <li><a href="#/sorting">Sorting, Filtering</a></li>
+                                <li><a href="#/grouping">Grouping</a></li>
+                                <li><a href="#/tables">Tables</a></li>
+                                <li><a href="#/charts">Charts</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Doing More<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/tracking">Tracking</a></li>
+                                <li><a href="#/conditional">Conditional Formatting</a></li>
+                                <li><a href="#/pivot">Pivot Table</a></li>
+                                <li><a href="#/whatif">What-If Analysis</a></li>
+                            </ul>
+                        </li>
+<!--
+                        <li class="divider"></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assignments<b class="caret"></b></a>
+                            <ul id="assignmentList" class="dropdown-menu">
+                            </ul>
+                        </li>                        
+-->
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right fa-lg">                        
+                        <li>
+                            <a target="_blank" id="print" title="print">
+                                <i class="fa fa-print"></i>
+                            </a>
+                        </li>                       
+                        <li>
+                            <a id="breakbutton" title="break">
+                                <i class="fa fa-coffee"></i>
+                            </a>                            
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="https://github.com/pgrund/presentations" title="source">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>                        
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div id="break" class="modal fade" data-show="false" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-header">                   
+                    <button class="close btn" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title">Break</h3>
+                </div>
+                <div class="modal-content">
+                    <div id="counter"></div>
+                </div>
+            </div>
+        </div>
+
+
+	<div id="impress">
+
+		<div id="start" class="step image title" data-y="-1000">
+			<footer class="black"></footer>
+		</div>
+
+		<!-- #############################################
+			             E X C E L  B A S I C S 
+		     ############################################# -->
+
+		<div id="basics" class="step slide chapter lightgreen" data-x="-1000" data-rotate-y="-90">
+			<header>Excel Basics</header>
+			<footer></footer>
+		</div>
+
+		<!--
+			http://www.gcflearnfree.org/excel2013/4/full
+		-->
+		<div id="interface" class="step image">
+			<header class="akzent1trans">
+				Getting to know Excel			
+			</header>
+			<footer class="black">
+			 <p class="text-right">
+			   <a href="#/interfaceAssignment"><i class="fa fa-lightbulb-o"></i> asssignment 1</a>
+			 </p>
+			</footer>
+			
+		</div>
+		<div id="ribbon" class="step slide" data-z="-750" data-rotate-y="90">
+			<header>Ribbon</header>
+			<ul>
+				<li>carousel ribbon</li>
+				<li>minimize/maximize</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="quickaccess" class="step slide" data-z="-2000" data-rotate-y="90">
+			<header>Quick Access Toolbar</header>
+			<ul>
+				<li>default entries</li>
+				<li>add new entries</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="backstage" class="step slide" data-z="-3250" data-rotate-y="90">
+			<header>Backstage View</header>
+			<p>list bullets ...</p>
+			<footer></footer>
+		</div>
+		<div id="worksheet" class="step slide" data-z="-4500" data-rotate-y="90">
+			<header>Worksheet View</header>
+			<ul>
+				<li>normal</li>
+				<li>page layout</li>
+				<li>page break</li>
+			</ul>
+			<p>carousel different views</p>
+			<footer></footer>
+		</div>
+		<div id="interfaceAssignment" class="step assignment" data-y="500" data-rotate-x="-90">
+			<header class="akzent1">
+				<i class="fa fa-cog fa-spin"></i> 
+				Assignment #1
+			</header>
+			<ol>
+				<li>Open Excel 2013.</li>
+				<li>Click through <em>all of the tabs</em>, and <em>review the commands</em> on the Ribbon.</li>
+				<li>Try <em>minimizing and maximizing</em> the Ribbon.</li>
+				<li><em>Add a command</em> to the Quick Access Toolbar.</li>
+				<li>Navigate to Backstage view, and <em>open your Account settings</em>.</li>
+				<li>Try <em>switching worksheet views</em>.</li>
+				<li>Close Excel (you do not have to save the workbook).</li>
+			</ol>
+		</div>
+
+		<!--
+		  http://www.gcflearnfree.org/excel2013/5/full
+		  http://www.gcflearnfree.org/excel2013/6/full
+		  -->
+		<div id="workbooks" class="step image" data-x="1500">
+			<header class="akzent2trans">Workbooks</header>
+			<footer class="black">
+			 <p class="text-right">
+			   <a href="#/workbooksAssignment"><i class="fa fa-lightbulb-o"></i> asssignment 2</a>
+			 </p>
+			</footer>
+		</div>
+		<div id="createopen" class="step slide" data-x="1500" data-z="-750" data-rotate-y="90">
+			<header>Create and Open</header>
+			<ul>
+				<li>create</li>
+				<li>open</li>
+				<li>pin</li>
+			</ul>
+			<footer></footer>
+		</div>
+		
+		<div id="templates" class="step slide" data-x="1500" data-z="-2000" data-rotate-y="90">
+			<header>Using Templates</header>
+			<footer></footer>
+		</div>
+
+		<div id="compatibilitymode" class="step slide" data-x="1500" data-z="-3250" data-rotate-y="90">
+			<header>Compatibility Mode</header>
+			<ul>
+				<li>limits</li>
+				<li>convert</li>
+			</ul>
+			<footer></footer>
+		</div>
+
+		<div id="saving" class="step slide" data-x="1500" data-z="-4500" data-rotate-y="90">
+			<header>Save A Workbook</header>
+			<ul>
+				<li>save, save as</li>
+				<li>copy</li>
+				<li>default save location</li>
+				<li>autorecover</li>
+			</ul>
+			<footer></footer>
+		</div>
+
+		<div id="exporting" class="step slide" data-x="1500" data-z="-5750" data-rotate-y="90">
+			<header>Export A Workbook</header>
+			<ul>
+				<li>pdf export</li>
+				<li>other file types</li>
+			</ul>
+			<footer></footer>
+		</div>
+
+		<div id="sharing" class="step slide" data-x="1500" data-z="-7000" data-rotate-y="90">
+			<header>Sharing A Workbook</header>
+			onedrive
+			<footer></footer>
+		</div>
+		<div id="workbooksAssignment" class="step assignment" data-x="1500" data-y="-500" data-rotate-x="90">
+			<header class="akzent2">
+				<i class="fa fa-cog fa-spin"></i>
+				Assignment #2
+			</header>
+			<ol>
+				<li>Create a <em>new, blank</em> workbook.</li>
+				<li>Open an <em>existing workbook</em> from your computer.</li>
+				<li><em>Pin</em> a folder to Backstage view.</li>
+				<li>Create a new workbook <em>using a template</em>.</li>
+				<li>Use the Save command to <em>save the workbook to your desktop</em>.</li>
+				<li>Save the workbook to <em>OneDrive</em> and <em>invite someone</em> else to view it.</li>
+				<li>Export the workbook as a <em>PDF</em> file.</li>
+			</ol>
+		</div>
+		<!--
+		 	http://www.gcflearnfree.org/excel2013/7/full
+		 	http://www.gcflearnfree.org/excel2013/8/full
+		 	http://www.gcflearnfree.org/excel2013/9/full
+		-->
+		<div id="cells" class="step image" data-x="3000">
+			<header class="akzent3trans">Cells, Rows and Columns</header>
+			<footer class="black">
+			 <p class="text-right">
+			   <a href="#/cellsAssignment1"><i class="fa fa-lightbulb-o"></i> asssignment 3a</a>
+			   <a href="#/cellsAssignment2"><i class="fa fa-lightbulb-o"></i> asssignment 3b</a>
+			   <a href="#/cellsAssignment3"><i class="fa fa-lightbulb-o"></i> asssignment 3c</a>
+			 </p>
+			</footer>
+		</div>
+		<div id="celladdress" class="step slide" data-x="3000" data-z="-750" data-rotate-y="90">
+			<header>Cells Adressing</header>
+			<ul>
+				<li>rows</li>
+				<li>columns</li>
+				<li>select</li>
+				<li>ranges</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="cellcontent" class="step slide" data-x="3000" data-z="-2000" data-rotate-y="90">
+			<header>Cell Content</header>
+			<ul>
+				<li>text</li>
+				<li>formatting</li>
+				<li>formulas/functions</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="workingcontent" class="step slide" data-x="3000" data-z="-3250" data-rotate-y="90">
+			<header>Working With Content</header>
+			<ul>
+				<li>insert/delete</li>
+				<li>copy/paste</li>
+				<li>cut</li>
+				<li>more paste options</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="contenthelpers" class="step slide" data-x="3000" data-z="-4500" data-rotate-y="90">
+			<header>Tricks for Content</header>
+			<ul>
+				<li>drag and drop</li>
+				<li>fill handle</li>
+				<li>flashfill</li>		
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="findandreplace1" class="step slide" data-x="3000" data-z="-5750" data-rotate-y="90">
+			<header>Find Content</header>
+			<ul>
+				<li>dialog</li>
+				<li>find next, find all</li>				
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="findandreplace2" class="step slide" data-x="3000" data-z="-7000" data-rotate-y="90">
+			<header>Replace Content</header>
+			<ul>
+				<li>replace</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="cellsAssignment1" class="step assignment" data-x="3000" data-y="500" data-z="-7000" data-rotate-x="-90">
+			<header class="akzent3">
+				<i class="fa fa-cog fa-spin"></i>
+				Assignment #3a
+			</header>
+			<ol>
+				<li><em>Open</em> an existing <code>Assignment 3a</code> workbook.</li>
+				<li><em>Select cell D3</em>. Notice how the cell address appears in the <em>Name box</em> and its content appears in both the cell and the <em>Formula bar</em>.</li>
+				<li><em>Select</em> a cell, and try <em>inserting text and numbers</em>.</li>
+				<li><em>Delete</em> a cell, and note how the cells below <em>shift up</em> to fill in its place.</li>
+				<li><em>Cut</em> cells <em>D4:D6</em> and <em>paste</em> them to <em>E4:E6</em>.</li>
+				<li>Try <em>dragging and dropping</em> some cells to other parts of the worksheet.</li>
+				<li>Use the <em>fill handle</em> to continue the <em>series of dates</em> across <em>row 3</em>.</li>
+				<li>Use the <em>Find feature</em> to locate name <em>"Lewis"</em>.</li>
+			</ol>
+		</div>
+		<div id="columnrow" class="step slide" data-x="3000" data-z="-8250" data-rotate-y="90">
+			<header>Columns And Rows</header>
+			<ul>
+				<li>column width, row height</li>
+				<li>auto height/width</li>
+				<li>insert,delete, move</li>
+				<li>hide, unhide</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="wrapmerge" class="step slide" data-x="3000" data-z="-9500" data-rotate-y="90">
+			<header>Content Manipulation</header		
+			<ul>
+				<li>wrap text</li>
+				<li>merge content</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="cellsAssignment2" class="step assignment" data-x="3000" data-y="500" data-z="-9500" data-rotate-x="-90">
+			<header class="akzent3">
+				<i class="fa fa-cog fa-spin"></i>
+				Assignment #3b
+			</header>
+			<ol>
+				<li>Open an existing <code>Assignment 3b</code> Workbook.</li>
+				<li>Modify the <em>width of the column</em> that contains the <em>players' first names</em>.</li>
+				<li><em>Insert a column</em> between column <code>A</code> and column <code>B</code>, then <em>insert a row</em> between row <code>3</code> and row <code>4</code>.</li>
+				<li><em>Delete</em> a column or a row.</li>
+				<li><em>Move</em> a column or row.</li>
+				<li><em>Wrap</em> the text in the column that contains <em>street addresses</em>.</li>
+				<li><em>Merge</em> the cells in the <em>title</em> row using the <em>Merge &amp Center</em> command (cell range <code>A1:E1</code>).</li>
+			</ol>
+		</div>
+		<div id="fontchange" class="step slide" data-x="3000" data-rotate-y="90" data-z="-10750">
+			<header>Formatting Cells - Font</header>
+			<ul>
+				<li>font style</li>
+				<li>font size</li>
+				<li>font color</li>
+				<li>bold, italic, underline</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="textalign" class="step slide" data-x="3000" data-rotate-y="90" data-z="-12000">
+			<header>Formatting Cells - Text Alignment</header>
+			<ul>
+				<li>horizontal</li>
+				<li>vertical</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="borderfill" class="step slide" data-x="3000" data-rotate-y="90" data-z="-13250">
+			<header>Formatting Cells - Border/Fill</header>
+			<ul>
+				<li>cell border</li>
+				<li>cell fill color</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="styles" class="step slide" data-x="3000" data-rotate-y="90" data-z="-14500">
+			<header>Formatting Cells - Styles</header>
+			<ul>
+				<li>predefined styles</li>
+				<li>text and number formatting</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="cellsAssignment3" class="step assignment" data-x="3000" data-y="500" data-z="-14500" data-rotate-x="-90">
+			<header class="akzent3">
+				<i class="fa fa-cog fa-spin"></i>
+				Assignment #3c
+			</header>
+			<ol>
+				<li>Open an existing <code>Assignment 3c</code> Workbook.</li>
+				<li>Select a cell and <em>change</em> the <em>font style, size, and color</em> of cell <code>A3</code> to <em>Verdana</em> font style, size <em>16</em>, with a font color of <em>green</em>.</li>
+				<li>Apply <em>bold</em> to the text in cell range <code>A4:C4</code>.</li>
+				<li>Try changing the <em>vertical and horizontal text alignment</em> for some cells.</li>
+				<li>Add a <em>border</em> to the header cells in in row <code>4</code>.</li>
+				<li>Add a <em>fill color</em> to row <code>4</code>.</li>
+				<li>Change the <em>date formatting</em> in cell range <code>D4:H4</code> to <em>Long Date</em>.</li>
+			</ol>
+		</div>
+
+		<div id="worksheets" class="step image" data-x="4500">
+			<header class="akzent4trans">Worksheets</header>
+			<footer>
+			 <p class="text-right">
+			   <a href="#/worksheetsAssignment"><i class="fa fa-lightbulb-o"></i> asssignment 4</a>
+			 </p>
+			</footer>
+		</div>
+		<div id="crudsheets" class="step slide" data-x="4500" data-rotate-y="90" data-z="-750">
+			<header>Handling Worksheets</header>
+			<ul>
+				<li>rename</li>
+				<li>insert</li>
+				<li>delete</li>
+				<li>copy</li>
+				<li>move</li>
+				<li>colorize</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="groupsheets" class="step slide" data-x="4500" data-rotate-y="90" data-z="-2000">
+			<header>Grouping Worksheets</header>
+			<ul>
+				<li>group</li>
+				<li>ungroup</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="worksheetsAssignment" class="step assignment" data-x="4500" data-y="-500" data-rotate-x="90">
+			<header class="akzent4">
+				<i class="fa fa-cog fa-spin"></i>
+				Assignment #4
+			</header>
+			<ol>
+				<li>Open existing <code>Assignment 4</code> Workbook.</li>
+				<li><em>Insert</em> a <em>new worksheet</em> and title the new worksheet <em>April</em>.</li>
+				<li><em>Delete</em> the blank worksheet named <code>Sheet 4</code>.</li>
+				<li><em>Move</em> a worksheet.</li>
+				<li><em>Copy</em> a worksheet.</li>
+				<li><em>Group</em> the <code>January</code> and <code>March</code> worksheets together. Try entering new content in the January worksheet and then notice how it appears in the March worksheet.</li>
+			</ol>
+		</div>
+		<div id="pagelayout" class="step image" data-x="6000">
+			<header class="akzent5trans">Page Layout</header>
+			<footer class="black">
+			 <p class="text-right">
+			   <a href="#/pagelayoutAssignment"><i class="fa fa-lightbulb-o"></i> asssignment</a>
+			 </p>
+			</footer>
+		</div>
+		<div id="orientmargin" class="step slide" data-x="6000" data-rotate-y="90" data-z="-750">
+			<header>Orientation And Margins</header>
+			<ul>
+				<li>orientation</li>
+				<li>margins</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="titles" class="step slide" data-x="6000" data-rotate-y="90" data-z="-2000">
+			<header>Print Titles</header>
+			<footer></footer>
+		</div>
+		<div id="breakfooterheader" class="step slide" data-x="6000" data-rotate-y="90" data-z="-3250">
+			<header>Header And Footer</header>
+			<ul>
+				<li>page break</li>
+				<li>header</li>
+				<li>footer</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="pagelayoutAssignment" class="step assignment" data-x="6000" data-y="500" data-rotate-x="-90">
+			<header class="akzent5">
+				<i class="fa fa-cog fa-spin"></i>
+				Assignment #5
+			</header>
+			<ol>
+				<li>Open existing <code>Assignment 5</code> Workbook.</li>
+				<li>Change the page orientation to <em>Landscape</em>.</li>
+				<li>Try modifying the <em>margins</em> of a worksheet.</li>
+				<li>Use the <em>Print Titles</em> command to make row <code>1</code> of the <code>Schedule</code> worksheet appear at the top of every page.</li>
+				<li>Insert a <em>page break</em> between rows <code>19</code> and <code>20</code> on the <code>Schedule</code> worksheet.</li>
+				<li>Navigate to Page Layout view and <em>insert a header or footer</em>.</li>
+			</ol>
+		</div>
+
+		<!-- #############################################
+			   F O R M U L A S  A N D  F U N C T I O N S
+		     ############################################# -->
+
+		<div id="fandf" class="step slide chapter green" data-x="-1000" data-y="1500" data-rotate-y="90">
+			<header>Formulas and Functions</header>
+			<footer></footer>
+		</div>
+
+		<div id="formulas" class="step image" data-y="1500" data-x="-2000">
+			<header class="akzent1trans">Formulas</header>
+			<footer>
+			 <p class="text-right">
+			   <a href="#/formulasAssignment"><i class="fa fa-lightbulb-o"></i> asssignment</a>
+			 </p>
+			</footer>
+		</div>
+		<div id="formulasAssignment" class="step assignment" data-y="2000" data-x="-2000" data-rotate-x="-90">
+			<header class="akzent1">
+				<i class="fa fa-cog fa-spin"></i>
+				Assignment #6
+			</header>
+			<ol></ol>
+		</div>
+
+		<div id="cellrefs" class="step image" data-y="1500" data-x="-3500">
+			<header class="akzent2trans">Cell References</header>
+			<footer>
+				<p class="text-right"><a href="#/cellrefsAssignment"><i class="fa fa-lightbulb-o">assignment</i></a></p>
+			</footer>
+		</div>
+		<div id="cellrefsAssignment" class="step assignment" data-y="1000" data-x="-3500" data-rotate-x="90">
+			<header class="akzent2">
+				<i class="fa fa-cog fa-spin"></i>
+				Assignment #7
+			</header>
+			<ol></ol>
+		</div>
+
+		<div id="functions" class="step image" data-y="1500" data-x="-5000">
+			<header class="akzent3trans">Functions</header>
+			<footer>
+				<p class="text-right"><a href="#/functionsAssignment"><i class="fa fa-lightbulb-o">assignment</i></a></p>
+			</footer>
+		</div>
+		<div id="functionsAssignment" class="step assignment" data-x="-5000" data-y="2000" data-rotate-x="-90">
+			<header class="akzent3">
+				<i class="fa fa-cog fa-spin"></i>
+				Assignment #8
+			</header>
+			<ol></ol>
+		</div>
+	
+		<!-- #############################################
+			      W O R K I N G  W I T H  D A T A
+		     ############################################# -->
+
+		<div id="workingdata" class="step slide chapter orange" data-x="-1000" data-y="3000" data-rotate-y="-90">
+			<header>Working With Data</header>
+			<footer></footer>
+		</div>
+
+		<div id="freezing" class="step image" data-y="3000" data-x="0">
+			<header class="akzent1trans">Freezing Pane</header>
+			<footer>
+				<p class="text-right">
+					<a href="#/freezingAssignment">
+						<i class="fa fa-lightbulb-o"></i>
+						assignment
+					</a>
+				</p>
+			</footer>
+		</div>
+		<div id="freezingAssignment" class="step assignment" data-x="0" data-y="3500" data-rotate-x="-90">
+			<header class="akzent1"><i class="fa fa-cog fa-spin"></i>Assignment #9</header>
+		</div>		
+
+		<div id="sorting" class="step image" data-y="3000" data-x="1500">
+			<header class="akzent2trans">Sorting, Filtering</header>
+			<footer>
+				<p class="text-right">
+					<a href="#/sortingAssignment">
+						<i class="fa fa-lightbulb-o"></i>assignment
+					</a>
+				</p>
+			</footer>
+		</div>
+		<div id="sortingAssignment" class="step assignment" data-x="1500" data-y="2500" data-rotate-x="90">
+			<header class="akzent2"><i class="fa fa-cog fa-spin"></i>Assignment #10</header>
+		</div>
+	
+		<div id="grouping" class="step image" data-y="3000" data-x="3000">
+			<header class="akzent3trans">Grouping</header>
+			<footer>
+				<p class="text-right">
+					<a href="#/groupingAssignment">
+						<i class="fa fa-lightbulb-o"></i>assignment
+					</a>
+				</p>
+			</footer>
+		</div>
+		<div id="groupingAssignment" class="step assignment" data-x="3000" data-y="3500" data-rotate-x="-90">
+			<header class="akzent3"><i class="fa fa-cog fa-spin"></i>Assignment #11</header>
+		</div>
+
+		<div id="tables" class="step image" data-y="3000" data-x="4500">
+			<header class="akzent4trans">Tables</header>
+			<footer>
+				<p class="text-right">
+					<a href="#/tablesAssignment">
+						<i class="fa fa-lightbulb-o"></i>assignment
+					</a>
+				</p>
+			</footer>
+		</div>
+		<div id="tablesAssignment" class="step assignment" data-x="4500" data-y="2500" data-rotate-x="90">
+			<header class="akzent4"><i class="fa fa-cog fa-spin"></i>Assignment #12</header>
+		</div>
+		
+		<div id="charts" class="step image" data-y="3000" data-x="6000">
+			<header class="akzent5trans">Charts</header>
+			<footer>
+				<p class="text-right">
+					<a href="#/chartsAssignment">
+						<i class="fa fa-lightbulb-o"></i>assignment
+					</a>
+				</p>
+			</footer>
+		</div>
+		<div id="chartsAssignment" class="step assignment" data-x="6000" data-y="3500" data-rotate-x="-90">
+			<header class="akzent5"><i class="fa fa-cog fa-spin"></i>Assignment #13</header>
+		</div>
+		
+		<!-- #############################################
+			             D O I N G  M O R E
+		     ############################################# -->
+
+		<div id="doingmore" class="step slide chapter blue" data-x="-1000" data-y="4000" data-rotate-y="90">
+			<header>Doing More</header>
+			<footer></footer>
+		</div>
+		
+		<div id="tracking" class="step image" data-y="4000" data-x="-2000">
+			<header class="akzent1trans">Tracking</header>
+			<footer class="black">
+				<p class="text-right">
+					<a href="#/trackingAssignment"><i class="fa fa-lightbulb-o"></i> assignment</a>
+				</p>
+			</footer>
+		</div>
+		<div id="trackingAssignment" class="step assignment" data-x="-2000" data-y="4500" data-rotate-x="-90">
+			<header class="akzent1"><i class="fa fa-cog fa-spin"></i>Assignment #14</header>
+		</div>
+
+		<div id="conditional" class="step image" data-y="4000" data-x="-3500">
+			<header class="akzent2trans">Conditional Formatting</header>
+			<footer class="black">
+				<p class="text-right">
+					<a href="#/conditionalAssignment"><i class="fa fa-lightbulb-o"></i> assignment</a>
+				</p>
+			</footer>
+		</div>
+		<div id="conditionalAssignment" class="step assignment" data-x="-3500" data-y="3000" data-rotate-x="90">
+			<header class="akzent2"><i class="fa fa-cog fa-spin"></i>Assignment #15</header>
+		</div>
+
+		<div id="pivot" class="step image" data-y="4000" data-x="-5000">
+			<header class="akzent3trans">Pivot Table</header>
+			<footer class="black">
+				<p class="text-right">
+					<a href="#/pivotAssignment"><i class="fa fa-lightbulb-o"></i> assignment</a>
+				</p>
+			</footer>
+		</div>
+		<div id="pivotAssignment" class="step assignment" data-x="-5000" data-y="4500" data-rotate-x="-90">
+			<header class="akzent3"><i class="fa fa-cog fa-spin"></i>Assignment #15</header>
+		</div>
+
+		<div id="whatif" class="step image" data-y="4000" data-x="-6500">
+			<header class="akzent4trans">What-If Analysis</header>
+			<footer class="black">
+				<p class="text-right">
+					<a href="#/whatifAssignment"><i class="fa fa-lightbulb-o"></i> assignment</a>
+				</p>
+			</footer>
+		</div>
+		<div id="whatifAssignment" class="step assignment" data-x="-6500" data-y="3000" data-rotate-x="90">
+			<header class="akzent4"><i class="fa fa-cog fa-spin"></i>Assignment #16</header>
+		</div>
+
+
+		<div id="final" data-x="5000" data-y="2000" data-z="10000" class="step"></div>
+	</div>
+	<!--
+	
+	Workbook
+	open:
+		pin
+		compatibility mode
+	save/save as:
+		to computer by default .. 
+		(pdf) export
+	share:
+		onedrive
+		email
+		lync präsentaton
+
+
+	  cells
+		falsh fill, autofill
+
+	
+	  bedingte formatierung
+	  diagramme
+
+	  formeln
+	    relative vs absolute references (b6,$b$6)
+	    
+
+	  sverweis
+	  array funktion <kbd>Ctrl-Shift+Enter</kbd>
+
+	  pivot
+	  -->
+	  <script type="text/javascript">
+          
+/*
+          // Load the IFrame Player API code asynchronously.
+          var tag = document.createElement('script');
+          tag.src = "https://www.youtube.com/player_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // Replace the 'ytplayer' element with an <iframe> and
+          // YouTube player after the API code downloads.
+          var player;
+          function onYouTubePlayerAPIReady() {
+            player = new YT.Player('ytplayer', {
+              height: '720',
+              width: '960',
+              videoId: 'YqqkdgE8RpM'
+            });
+          }
+*/
+        $.jmpress('register', 'excel', function() {
+            
+            var jmpress = this;
+            // our main configuration
+            var config = { 
+                viewPort: {  
+                    height: 1024,                 
+                    maxScale: 4,
+                    initalScale: 1,
+                    zoomable: false
+                    
+                },
+                /*presentationMode: {
+                  use: false,
+                  url: "./presentation-screen.html", 
+                  notesUrl: "./index.notes.html"
+                },*/
+                presentations: {
+                    print: {
+                        button: "print"
+                    }
+                }
+            };
+
+            // enable ESC to toggle jmpress
+            $(this).jmpress('toggle', 27, config, true);
+            // enable break button
+            $(this).jmpress('break', config);
+            // enable print button
+            $(this).jmpress('print', config);
+            // enable footer date appending
+            $(this).jmpress('footerHandling');
+
+
+        });
+        
+   // start the presentation!
+        $('#impress').jmpress('excel');
+        </script>    
+	</body>
+</html>
