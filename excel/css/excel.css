@@ -12,6 +12,11 @@
     text-shadow: 3px 3px 5px white;
 }
 
+.fa-excel{
+	content: url("../img/Microsoft_Excel_Logo.svg");
+    width: 30px;
+    height: 30px;    
+}
 #start {
 	background-image: url("../img/excel-2013.jpg");
 }
