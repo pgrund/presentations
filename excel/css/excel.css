@@ -11,31 +11,86 @@
     font-family: 'Rock Salt', cursive;
     text-shadow: 3px 3px 5px white;
 }
-
-.fa-excel{
-	content: url("../img/Microsoft_Excel_Logo.svg");
+.image > header {
+	 box-shadow: 10px 10px 5px #888888;
+}
+.fa-excel{	
     width: 30px;
     height: 30px;    
 }
+.step.image::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-size: cover;	
+	z-index: -1;
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);       
+}
+
 #start {
 	background-image: url("../img/excel-2013.jpg");
 }
-#interface {
+#interface::before {
 	background-image: url("../img/startup.png");
 }
 
-#workbooks {
+#workbooks::before {
 	background-image: url("../img/empty_workbook.png");
 }
 
-#cells {
+#cells::before {
 	background-image: url("../img/cells_workbook.png");
 }
 
-#worksheets {
+#worksheets::before {
 	background-image: url("../img/worksheets.png");
 }
 
-#pagelayout {
+#pagelayout::before {
 	background-image: url("../img/page_layout.png");
+}
+#formulas::before {
+	background-image: url("../img/relative_formula.png");	
+}
+#cellrefs::before {
+	background-image: url("../img/cell_references.png");
+}
+
+#functions::before {
+	background-image: url("../img/functions.png");
+}
+
+#freezing::before {
+	background-image: url("../img/freezing.png");
+}
+#sorting::before {
+	background-image: url("../img/sort_filter.png");
+}
+#grouping::before {
+	background-image: url("../img/grouping.png");
+}
+#tables::before {
+	background-image: url("../img/tables.png");
+}
+#charts::before {
+	background-image: url("../img/charts.png");
+}
+#tracking::before{
+	background-image: url("../img/tracking.png");	
+}
+#conditional::before{
+	background-image: url("../img/conditional.png");	
+}
+#pivot::before{
+	background-image: url("../img/pivot.png");	
+}
+#whatif::before {
+	background-image: url("../img/whatifanalysis.png");	
 }
