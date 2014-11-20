@@ -603,7 +603,7 @@
 			 </p>
 			</footer>
 		</div>
-		<div id="fomulabasic" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-750">
+		<div id="formulabasic" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-750">
 			<header>Grundlagen</header>
 			<ul>
 				<li>Formeln start mit <code>=</code></li>
@@ -703,6 +703,30 @@
 				<p class="text-right"><a href="#/cellrefsAssignment"><i class="fa fa-lightbulb-o"> Aufgabe 7</i></a></p>
 			</footer>
 		</div>
+
+		<div id="relref" class="step slide" data-x="-3500" data-y="1500" data-rotate-y="90" data-z="-750">
+			<header>Relative Referenzen</header>
+			<ul>
+				<li>standard</li>
+				<li>autom Anpassungen beim kopieren/füllen</li>	
+				<li>auch mit Point-Und-Klick</li>			
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="absref" class="step slide" data-x="-3500" data-y="1500" data-rotate-y="90" data-z="-2000">
+			<header>Absolute Referenzen</header>
+			<ul>
+				<li>explizit ändern <code>$</code></li>
+				<li>Bezug bleibt beim kopieren/füllen identisch</li>
+			</ul>
+			<footer></footer>
+		</div>
+		
+		<sheetsref class="step slide" data-x="-3500" data-y="1500" data-rotate-y="90" data-z="-3250">
+			<header>Referenzen zwischen Arbeitsblätter</header>
+			<footer></footer>
+		</sheetsref>
+
 		<div id="cellrefsAssignment" class="step assignment" data-y="1000" data-x="-3500" data-rotate-x="90">
 			<header class="akzent2">
 				<i class="fa fa-cog fa-spin"></i>
@@ -725,6 +749,33 @@
 				<p class="text-right"><a href="#/functionsAssignment"><i class="fa fa-lightbulb-o"> Aufgabe 8</i></a></p>
 			</footer>
 		</div>
+
+		<div id="functiongeneral" class="step slide" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-750">
+			<header>Funktionen Allgemein</header>
+			<ul>
+				<li>Definition</li>
+				<li>Teile einer Funktion</li>
+				<li>Funktionsargumente</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="functioninsert" class="step slide" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-2000">
+			<header>Funktionen Erstellen</header>
+			<ul>
+				<li>auto vervollständigen</li>
+				<li>AutoSumme</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="functionlib" class="step slide" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-3250">
+			<header>Funktionsbibliothek</header>
+			<footer></footer>
+		</div>
+		<div id="functioncommand" class="step slide" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-4500">
+			<header>Funktion Einfügen Befehl</header>
+			<footer></footer>
+		</div>
+
 		<div id="functionsAssignment" class="step assignment" data-x="-5000" data-y="2000" data-rotate-x="-90">
 			<header class="akzent3">
 				<i class="fa fa-cog fa-spin"></i>
@@ -733,7 +784,7 @@
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code>Assignment 8</code>.</li>
 				<li>Nutzen sie die <code>SUMME</code> Funktion um in der Zelle <code>B16</code> die Gesamtanzahl der bestellten Artikel zu ermitteln.</li>
-				<li>Nutzen sie den <em>Summen Befehl</em> um die <code>MAX</code> Funktion in Zelle <code>B23</code> einzutragen. Benutzen sie die Zellen <code>D3:D15</code> als Argument um <em>den teuersten Artikel</em> zu bestimmen.</li>
+				<li>Nutzen sie den <em>AutoSumme Befehl</em> um die <code>MAX</code> Funktion in Zelle <code>B23</code> einzutragen. Benutzen sie die Zellen <code>D3:D15</code> als Argument um <em>den teuersten Artikel</em> zu bestimmen.</li>
 				<li>Durchstöbern sie die <em>Funktionsbibliothek</em>, benutzen sie den <em>Funktion einfügen</em> Befehl um nach verschiedenen Funktionsarten zu suchen.</li>
 			</ol>
 		</div>
@@ -758,6 +809,18 @@
 				</p>
 			</footer>
 		</div>
+		<div id="freeze" class="step slide" data-x="0" data-y="3000" data-rotate-y="90" data-z="-750">
+			<header>Spalten und Reihen Fixieren</header>
+			<footer></footer>
+		</div>
+		<div id="windows" class="step slide" data-x="0" data-y="3000" data-rotate-y="90" data-z="-2000">
+			<header>Fenster</header>
+			<ul>
+				<li>neues Fenster</li>
+				<li>teilen</li>
+			</ul>
+			<footer></footer>
+		</div>
 		<div id="freezingAssignment" class="step assignment" data-x="0" data-y="3500" data-rotate-x="-90">
 			<header class="akzent1"><i class="fa fa-cog fa-spin"></i>Aufgabe #9</header>
 			<ol>
@@ -781,11 +844,23 @@
 				</p>
 			</footer>
 		</div>		
-		<div id="sort" class="step slide" data-x="1500" data-y="3000" data-z="-750" data-rotate-y="90">
+		<div id="sort1" class="step slide" data-x="1500" data-y="3000" data-z="-750" data-rotate-y="90">
 			<header>Sortieren</header>
+			<ul>
+				<li>Arbeitsblatt vs Zellen</li>
+				<li>Nach Formaten sortieren</li>				
+				<li>mehrere Ebenen</li>
+			</ul>
 			<footer></footer>
 		</div>
-		<div id="sortingAssignment" class="step assignment" data-x="1500" data-y="3500" data-z="-750" data-rotate-x="-90">
+		<div id="sort2" class="step slide" data-x="1500" data-y="3000" data-z="-2000" data-rotate-y="90">
+			<header>Sortieren</header>
+			<ul>
+				<li>nach Benutzerdefinierter Liste sortieren</li>				
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="sortingAssignment" class="step assignment" data-x="1500" data-y="3500" data-z="-2000" data-rotate-x="-90">
 			<header class="akzent2"><i class="fa fa-cog fa-spin"></i>Aufgabe #10a</header>
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code>Assignment 10a</code>.</li>
@@ -796,11 +871,26 @@
 				<li>Ändern sie die <em>Sortierreihenfolge</em> der Ebenen nach T-Shirt Größe (Spalte <code>D</code>), Homeroom # (Spalte <code>A</code>), und Nachname (Spalte <code>C</code>).</li>
 			</ol>
 		</div>
-		<div id="filter" class="step slide" data-x="1500" data-y="3000" data-z="-2000" data-rotate-y="90">
+		<div id="filter1" class="step slide" data-x="1500" data-y="3000" data-z="-3250" data-rotate-y="90">
 			<header>Filtern</header>
+			<ul>
+				<li>verwenden</li>
+				<li>mehrere Filter</li>
+				<li>Filter löschen</li>
+			</ul>
 			<footer></footer>
 		</div>
-		<div id="filteringAssignment" class="step assignment" data-x="1500" data-y="3500" data-z="-2000" data-rotate-x="-90">
+		<div id="filter2" class="step slide" data-x="1500" data-y="3000" data-z="-4500" data-rotate-y="90">
+			<header>Filtern - Fortgeschritten</header>
+			<ul>
+				<li>Suchfilter</li>
+				<li>Textfilter</li>
+				<li>Zahlenfilter</li>
+				<li>Datumsfilter</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="filteringAssignment" class="step assignment" data-x="1500" data-y="3500" data-z="-4500" data-rotate-x="-90">
 			<header class="akzent2"><i class="fa fa-cog fa-spin"></i>Aufgabe #10b</header>
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code>Assignment 10b</code>.</li>
