@@ -33,7 +33,20 @@
 	-ms-filter: blur(5px);
 	filter: blur(5px);       
 }
+tr, td {
+	border-collapse: collapse;
+	border: solid thin black;
+}
+td.cell {
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	color: black;
+	text-shadow: 3px 3px 5px darkgray;
 
+}
+#op>thead>tr>td, #op>thead>tr>th,
+#op>tbody>tr>td, #op>tbody>tr>th {
+	text-align: center;
+}
 #start {
 	background-image: url("../img/excel-2013.jpg");
 }
