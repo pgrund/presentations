@@ -387,7 +387,7 @@
 				<li><em>Löschen</em> sie eine Zelle. Achten sie darauf wie die Zellen darunter <em>sich nach oben verschieben</em> um den freien Platz auszufüllen.</li>
 				<li><em>Schneiden</em> sie die Zellen <code>D4:D6</code> <em>aus</em> und <em>fügen</em> sie sie in <code>E4:E6</code> <em>ein</em>.</li>
 				<li><em>Ziehen</em> sie einige Zellen auf eine andere Stelle im Arbeitsblatt.</li>
-				<li>Benutzen sie den <em>fill handle</em> um eine <em>Datumsserie</em> in <em>Zeile 3</em> fortzuführen.</li>
+				<li>Benutzen sie den <em>fill handle</em> um eine <em>Datumserie</em> in <em>Zeile 3</em> fortzuführen.</li>
 				<li>Benutzen sie den <em>Finden Dialog</em> um den Namen <em>"Lewis"</em> zu entdecken.</li>
 			</ol>
 		</div>
@@ -672,7 +672,7 @@
 			</ul>
 			<footer></footer>
 		</div>
-		<div id="complexFormulas" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="5750">
+		<div id="complexFormulas" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-5750">
 			<header>Komplexere Formeln</header>
 			Klammern, Ausführungsreihenfolge der Operatoren
 			<footer></footer>
@@ -769,10 +769,16 @@
 		</div>
 		<div id="functionlib" class="step slide" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-3250">
 			<header>Funktionsbibliothek</header>
+			<p>carousel der befehle</p>
 			<footer></footer>
 		</div>
 		<div id="functioncommand" class="step slide" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-4500">
 			<header>Funktion Einfügen Befehl</header>
+			<ul>
+				<li>suchen</li>
+				<li>auswählen</li>
+				<li>argumente</li>
+			</ul>
 			<footer></footer>
 		</div>
 
@@ -912,12 +918,25 @@
 				<p class="text-right">
 					<a href="#/groupingAssignment"><i class="fa fa-lightbulb-o"></i> Aufgabe 11</a>
 				</p>
-				<ol>
-					
-				</ol>
 			</footer>
 		</div>
-		<div id="groupingAssignment" class="step assignment" data-x="3000" data-y="3500" data-rotate-x="-90">
+		<div id="group" class="step slide" data-x="3000" data-y="3000" data-rotate-y="90" data-z="-750">
+			<header>Reihen Und Spalten Gruppieren</header>
+			<ul>
+				<li>gruppieren</li>
+				<li>anzeigen, verstecken</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="subtotal" class="step slide" data-x="3000" data-y="3000" data-rotate-y="90" data-z="-2000">
+			<header>Teilergebnisse</header>
+			<footer></footer>
+		</div>
+		<div id="grouplevel" class="step slide" data-x="3000" data-y="3000" data-rotate-y="90" data-z="-3250">
+			<header>Gruppen Ebenen</header>
+			<footer></footer>
+		</div>
+		<div id="groupingAssignment" class="step assignment" data-x="3000" data-y="3500" data-z="-3250" data-rotate-x="-90">
 			<header class="akzent3"><i class="fa fa-cog fa-spin"></i>Aufgabe #11</header>
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code>Assignment 11</code>.</li>
@@ -940,7 +959,29 @@
 				</p>
 			</footer>
 		</div>
-		<div id="tablesAssignment" class="step assignment" data-x="4500" data-y="2500" data-rotate-x="90">
+		<div id="createtable" class="step slide" data-x="4500" data-y="3000" data-rotate-y="90" data-z="-750">
+			<header>Tabellen erstellen</header>
+			<p>aus Daten</p>
+			<footer></footer>
+		</div>
+		<div id="modifytable" class="step slide" data-x="4500" data-y="3000" data-rotate-y="90" data-z="-2000">
+			<header>Tabellen editieren</header>
+			<ul>
+				<li>Zeilen/Spalten hinzufügen</li>
+				<li>Löschen</li>				
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="tablestyle" class="step slide" data-x="4500" data-y="3000" data-rotate-y="90" data-z="-3250">
+			<header>Tabellen Formatvorlagen</header>
+				<ul>
+					<li>Tabellenformatvorlagen auswählen</li>
+					<li>Stiloptionen ändern</li>
+				</ul>	
+			<footer></footer>
+		</div>		
+		
+		<div id="tablesAssignment" class="step assignment" data-x="4500" data-y="2500" data-z="-3250" data-rotate-x="90">
 			<header class="akzent4"><i class="fa fa-cog fa-spin"></i>Aufgabe #12</header>
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code>Assignment 12</code>.</li>
@@ -964,18 +1005,141 @@
 				</p>
 			</footer>
 		</div>
-		<div id="charts1" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-750">
-			<header>Diagramme</header>
+		<div id="chartsgeneral" class="step" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-750">			
+			<header class="text-uppercase">Diagrammtypen</header>
+			<div id="carousel-charttypes" class="carousel slide" data-interval="7000">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-charttypes" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="1"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="2"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="3"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="4"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="5"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="6"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+				   <img src="./img/chart_type_1.png"/>
+			       <div class="carousel-caption">			      
+				    <p class="lead">Excel hat eine Vielzahl von Diagrammtypen, jeder Typ mit eigenen Vor- und Nachteilen.</p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/chart_type_2.png"/>
+			       <div class="carousel-caption">				    
+			       	<h2 class="akzent1">Säulendiagramme</h2>
+				    <p class="lead">
+				    	Die Darstellung von Daten in vertikalen Balken kann mit vielen Daten verwedent werden.<br/>
+						Dieser Diagrammtyp wird oft benutzt um<br/>
+						<em>Daten zu vergleichen</em>.
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/chart_type_3.png"/>
+			       <div class="carousel-caption">		
+			        <h2 class="akzent2">Liniendiagramme</h2>		    
+				    <p class="lead">Liniendiagramme sind hervorragend für <em>Trendanalysen</em>.<br/>
+				    Die einzelne Datenpunkte sind mit Linien verbunden, was es erleichtert wachsende oder schrumpfende Datenreihen über die Zeitachse zu verfolgen.</p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/chart_type_4.png"/>
+			       <div class="carousel-caption">				    
+			        <h2 class="akzent3">Kuchendiagramme</h2>
+				    <p class="lead">Kuchendiagramme erleichtern den <em>Vergleich von Verhältnissen</em>.<br/>
+				     Jeder Datenwert wird als Abschnitt dargestellt, so ist es einfach zu erkennen welcher Datenwert wieviel Prozent des Gesamten ausmacht.</p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/chart_type_5.png"/>
+			       <div class="carousel-caption">	
+			       	<h2 class="akzent4">Balkendiagramme</h2>			    
+				    <p class="lead">Balkendiagramme entsprechen Säulendiagrammen, sie benutzen lediglich horizontale statt vertikale Balken.</p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/chart_type_6.png"/>
+			       <div class="carousel-caption">	
+			        <h2 class="akzent5">Flächendiagramme</h2>			    
+				    <p class="lead">Flächendiagramme sind ähnlich zu Liniendiagramme, lediglich die Fläche unterhalb der Linie ausgefüllt  wird.</p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/chart_type_7.png"/>
+			       <div class="carousel-caption">		
+			        <h2 class="akzent6">Oberflächendiagramme</h2>		    
+				    <p class="lead">Oberflächendiagramme erlauben ihnen die Darstellung der Daten über eine 3D Fläche hinweg.<br/>
+				    Sie eignen sich am besten für <em>viele Daten</em> und erlauben <em>viele Informationen gleichzeitig</em> darzustelle.</p>
+				  </div>
+			    </div>
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-charttypes" role="button" data-slide="prev">
+			    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+			    <span class="sr-only">Vorheriges</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-charttypes" role="button" data-slide="next">
+			    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+			    <span class="sr-only">Nächstes</span>
+			  </a>
+			</div>
+		</div>
+		<div id="chartread" class="step" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-2000">			
+			<header class="text-uppercase">Diagramme Lesen</header>
+			<div id="readitcanvas">
+				<img id="readit" src="./img/charts_read.png"/>
+				<i id="legend" class="fa fa-circle-o text1"></i>
+				<i id="title" class="fa fa-circle-o text2"></i>				
+				<i id="dataseries" class="fa fa-circle-o text3"></i>
+				<i id="verticalaxis" class="fa fa-circle-o text4"></i>
+				<i id="horizontalaxis" class="fa fa-circle-o text5"></i>
+				<div id="legendtext" class="readittext">
+					<h2 class="akzent1">Legende</h2>
+					<p>Die Legende gibt an <em>welche Datenreihe welcher Farbe</em> im Diagramm zugeordnet ist.</p>
+				</div>
+				<div id="titletext" class="readittext">
+					<h2 class="akzent2">Diagrammtitel</h2>
+					<p>Der Titel des Diagramms, sollte <em>kurz und beschreibend</em> sein.</p>
+				</div>
+				<div id="dataseriestext" class="readittext">
+					<h2 class="akzent3">Datenreihen</h2>
+					<p>Die Datenreihen bestehen aus den relevanten Datenpunkten im Diagramm</p>
+				</div>
+				<div id="verticalaxistext" class="readittext">
+					<h2 class="akzent4">Vertikale Achse</h2>
+					<p>Die vertikale Achse (auch <em>y-Achse</em> genannt) ist der vertikale Anteil des Diagramms.</p>
+				</div>
+				<div id="horizontalaxistext" class="readittext">
+					<h2 class="akzent5">Horizontale Achse</h2>
+					<p>Die horizontale Achse (auch <em>x-Achse</em> genannt ist der horizontale Anteil des Diagramms.</p>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+		<div id="chartcreate" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-3250">
+			<header>Diagramme Anlegen / Verschieben</header>
 			<ul>
-				<li>Diagrammtypen(carousel)</li>
-				<li>einfügen</li>
-				<li>Layout und Stil</li>
-				<li>Weitere Optionen</li>
-				<li>Diagramme verschieben</li>
+				<li>anlegen</li>
+				<li>verschieben</li>								
 			</ul>
 			<footer></footer>
 		</div>
-		<div id="chartsAssignment1" class="step assignment" data-x="6000" data-y="3500" data-z="-750" data-rotate-x="-90">
+		<div id="chartlayout" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-4500">
+			<header>Layout und Stil von Diagrammen</header>
+			<ul>
+				<li>Layout und Stil</li>
+				<li>Weitere Optionen</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="chartsAssignment1" class="step assignment" data-x="6000" data-y="3500" data-z="-4500" data-rotate-x="-90">
 			<header class="akzent5"><i class="fa fa-cog fa-spin"></i>Aufgabe #13a</header>
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code>Assignment 13a</code>.</li>
@@ -985,17 +1149,23 @@
 				<li><em>Verschieben</em> sie das Diagramm auf ein neues Arbeitsblatt <code>Book Sales Data: 2008-2012</code>.</li>
 			</ol>
 		</div>
-		<div id="sparklines" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-2000">
+		<div id="sparklines" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-5750">
 			<header>Sparklines</header>
 			<ul>
 				<li>Warum überhaupt ?</li>
 				<li>Typen</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="sparklinesmodify" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-7000">
+			<header>Sparklines Ändern</header>
+			<ul>
 				<li>erzeugen, ändern (Markierungen, Stil, ...)</li>
 				<li>vergleichbare Darstellung</li>
 			</ul>
 			<footer></footer>
 		</div>
-		<div id="chartsAssignment2" class="step assignment" data-x="6000" data-y="3500" data-z="-2000" data-rotate-x="-90">
+		<div id="chartsAssignment2" class="step assignment" data-x="6000" data-y="3500" data-z="-7000" data-rotate-x="-90">
 			<header class="akzent5"><i class="fa fa-cog fa-spin"></i>Aufgabe #13b</header>
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code>Assignment 13b</code>.</li>
@@ -1175,6 +1345,23 @@
         
    // start the presentation!
         $('#impress').jmpress('excel');
+
+        $("#chartsgeneral").on("enterStep", function(event){        	
+        	$(this).children(".carousel").each( function() {        		
+        		$(this).carousel({
+        			interval: 7000
+        		});
+        	});
+        	return false;
+        });
+        $("#readitcanvas>i").hover(function() {
+        		var text = "#" + $(this).attr('id')+"text";
+        		$(text).show();
+        	},
+        	function() {
+        		var text = "#" + $(this).attr('id')+"text";
+        		$(text).hide();
+        });
         </script>    
 	</body>
 </html>

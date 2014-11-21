@@ -107,3 +107,131 @@ td.cell {
 #whatif::before {
 	background-image: url("../img/whatifanalysis.png");	
 }
+
+.carousel a.left, .carousel a.right {
+	width: 100px;
+	vertical-align: middle;
+}
+.carousel .item {
+	height:600px;
+}
+.carousel-control i {
+	position:relative;
+	top: 300px;
+	font-size: 4em;
+}
+a.carousel-control.left, a.carousel-control.right{
+	color: lightgray;
+	text-shadow: 5px 5px 7px black;	
+	background: none;
+}
+a.carousel-control.left{	
+	background: -moz-linear-gradient(left,  rgba(189,207,49,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(189,207,49,1)), 
+			color-stop(100%,rgba(189,207,49,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(189,207,49,1) 0%,rgba(189,207,49,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(189,207,49,1) 0%,rgba(189,207,49,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(189,207,49,1) 0%,rgba(189,207,49,0) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(189,207,49,1) 0%,rgba(189,207,49,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+a.carousel-control.right{	
+	background: rgba(189,207,49,0);
+	background: -moz-linear-gradient(left, rgba(189,207,49,0) 0%, rgba(189,207,49,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(189,207,49,0)), color-stop(100%, rgba(189,207,49,1)));
+	background: -webkit-linear-gradient(left, rgba(189,207,49,0) 0%, rgba(189,207,49,1) 100%);
+	background: -o-linear-gradient(left, rgba(189,207,49,0) 0%, rgba(189,207,49,1) 100%);
+	background: -ms-linear-gradient(left, rgba(189,207,49,0) 0%, rgba(189,207,49,1) 100%);
+	background: linear-gradient(to right, rgba(189,207,49,0) 0%, rgba(189,207,49,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdcf31', endColorstr='#bdcf31', GradientType=1 );
+}
+.carousel-indicators>li {
+	text-indent: 0px;
+}
+.carousel-caption p {
+	color:darkgray;
+}
+.carousel-indicators>li::before {	
+	color: whitesmoke;
+	font-family: 'FontAwesome';
+ 	font-size: 18px;  	
+	content: '\f10c'; 
+	text-shadow: 2px 2px 3px black;	
+}
+.carousel-indicators>li.active::before {
+	color: rgb(189,207,49);
+	content: '\f111';
+}
+#readit {
+ /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 900px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+}
+#readitcanvas>i.fa{
+	position:absolute;
+	font-size:2em;
+}
+#readitcanvas>i.fa-circle-o:hover:before {	
+	content: '\f111';
+	font-size: larger;
+}
+#legend {
+	right: 10px;
+	bottom: 280px;
+}
+#title {
+	top: 10px;
+	left: 450px;
+}
+#dataseries {
+	left: 220px;
+	top: 250px;
+}
+#verticalaxis {
+	left: 0px;
+	top: 150px;
+}
+#horizontalaxis {
+	left: 200px;
+	bottom: 5px;
+}
+.readittext {
+ 	position:absolute; 	
+ 	display: none;
+ 	width: 50%;
+ 	background: white; 	
+ 	margin:10px;
+ 	padding:10px;
+ 	border: solid thin black;
+ 	border-radius: 10px;
+ }
+.readittext h2 {
+	padding: 10px;
+	text-align: center;
+	color:white;
+	text-shadow: 2px 2px 3px black;	
+}
+#legendtext {
+	top: 300px;
+	right: 80px;
+}
+#titletext {
+	top: 100px;
+	left: 200px;
+}
+#dataseriestext {
+	top: 200px;
+ 	left: 300px;
+}
+#verticalaxistext {
+	top: 100px;
+	left: 75px;	
+}
+#horizontalaxistext {
+	bottom: 50px;
+ 	left: 250px;
+}
