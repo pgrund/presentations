@@ -171,11 +171,11 @@ a.carousel-control.right{
   width: 100%;
   height: auto;
 }
-#readitcanvas>i.fa{
+.canvas>i.fa{
 	position:absolute;
 	font-size:2em;
 }
-#readitcanvas>i.fa-circle-o:hover:before {	
+.canvas>i.fa-circle-o:hover:before {	
 	content: '\f111';
 	font-size: larger;
 }
@@ -199,7 +199,7 @@ a.carousel-control.right{
 	left: 200px;
 	bottom: 5px;
 }
-.readittext {
+.overviewtext {
  	position:absolute; 	
  	display: none;
  	width: 50%;
@@ -209,7 +209,7 @@ a.carousel-control.right{
  	border: solid thin black;
  	border-radius: 10px;
  }
-.readittext h2 {
+.overviewtext h2 {
 	padding: 10px;
 	text-align: center;
 	color:white;
@@ -234,4 +234,40 @@ a.carousel-control.right{
 #horizontalaxistext {
 	bottom: 50px;
  	left: 250px;
+}
+#quickaccess {
+	top: 20px;
+	left: 150px;
+}
+#myaccount {
+	top: 50px;
+	right: -40px;
+}
+#ribbon {
+	top: 50px;
+	right: 200px;
+}
+#commands {
+	top: 120px;
+	left: 260px;
+}
+#namebox {
+	top: 180px;
+	left: 20px;
+}
+#formulabar {
+	top: 180px;
+	left: 300px;
+}
+#column {
+	top: 210px;
+	left: 560px;
+}
+#row {
+	top: 240px;
+	left: -10px;
+}
+#cell {
+	top: 240px;
+	left: 500px;
 }
