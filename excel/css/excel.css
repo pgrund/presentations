@@ -235,39 +235,107 @@ a.carousel-control.right{
 	bottom: 50px;
  	left: 250px;
 }
-#quickaccess {
+#ifquickaccess {
 	top: 20px;
 	left: 150px;
 }
-#myaccount {
+#ifmyaccount {
 	top: 50px;
 	right: -40px;
 }
-#ribbon {
+#ifribbon {
 	top: 50px;
 	right: 200px;
 }
-#commands {
+#ifcommands {
 	top: 120px;
 	left: 260px;
 }
-#namebox {
+#ifnamebox {
 	top: 180px;
 	left: 20px;
 }
-#formulabar {
+#ifformulabar {
 	top: 180px;
 	left: 300px;
 }
-#column {
+#ifcolumn {
 	top: 210px;
 	left: 560px;
 }
-#row {
+#ifrow {
 	top: 240px;
 	left: -10px;
 }
-#cell {
+#ifcell {
 	top: 240px;
 	left: 500px;
+}
+#ifworksheets {
+	bottom: 10px;
+	left: 70px;
+}
+#ifviews {
+	bottom: -20px;
+	right: 200px;
+}
+#ifzoom {
+	bottom: -20px;
+	right: 80px;
+}
+#ifscrollbars {
+	bottom: 20px;
+	right: -60px;
+}
+#ifquickaccesstext {
+	top: 10px;
+	left: 220px;
+}
+#ifmyaccounttext {
+	top: 20px;
+	right: 30px;
+}
+#ifribbontext {
+	top: 20px;
+	right: 260px;
+}
+#ifcommandstext {
+	top: 90px;
+	left: 330px;
+}
+#ifnameboxtext {
+	top: 160px;
+	left: 80px;
+}
+#ifformulabartext {
+	top: 160px;
+	left: 360px;
+}
+#ifcolumntext {
+	top: 190px;
+	left: 620px;
+}
+#ifrowtext {
+	top: 220px;
+	left: 50px;
+}
+#ifcelltext {
+	top: 220px;
+	left: 560px;
+}
+#ifworksheetstext {
+	bottom: -20px;
+	left: 140px;
+}
+#ifviewstext {
+	bottom: -40px;
+	right: 260px;
+}
+#ifzoomtext {
+	bottom: -40px;
+	right: 140px;
+}
+#ifscrollbarstext {
+	bottom: 0px;
+	right: 0px;
 }
