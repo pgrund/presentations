@@ -227,12 +227,100 @@
 				</div>
 			</div>
 		</div>
-		<div id="ribbon" class="step slide" data-z="-2000" data-rotate-y="90">
-			<header>Menüband</header>
-			<ul>
-				<li>carousel ribbon</li>
-				<li>minimize/maximize</li>
-			</ul>
+		<div id="ribbon" class="step" data-z="-2000" data-rotate-y="90">
+			<header class="text-uppercase">Menüband</header>
+
+			<div id="carousel-ribbon" class="carousel slide" data-interval="7000">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-ribbon" data-slide-to="0" class="active" title="Start"></li>
+			    <li data-target="#carousel-ribbon" data-slide-to="1" title="Einfügen"></li>
+			    <li data-target="#carousel-ribbon" data-slide-to="2" title="Seitenlayout"></li>
+			    <li data-target="#carousel-ribbon" data-slide-to="3" title="Formeln"></li>
+			    <li data-target="#carousel-ribbon" data-slide-to="4" title="Daten"></li>
+			    <li data-target="#carousel-ribbon" data-slide-to="5" title="Überprüfen"></li>
+			    <li data-target="#carousel-ribbon" data-slide-to="5" title="Ansicht"></li>
+			    <li data-target="#carousel-ribbon" data-slide-to="5" title="Entwicklertools"></li>
+			    <li data-target="#carousel-ribbon" data-slide-to="5" title="Tabellen Entwurf"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">			   
+			    <div class="item active">
+			       <img src="./img/ribbon_start.png"/>
+			       <div class="carousel-caption">				    
+			       	<h2 class="akzent1">Start Menü</h2>
+				    <p class="lead">...</p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/ribbon_insert.png"/>
+			       <div class="carousel-caption">		
+			        <h2 class="akzent2">Einfügen Menü</h2>
+				    <p class="lead">...</p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/ribbon_pagelayout.png"/>
+			       <div class="carousel-caption">				    
+			       <h2 class="akzent3">Seitenlayout Menü</h2>
+				    <p class="lead">...</p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/ribbon_formula.png"/>
+			       <div class="carousel-caption">	
+			       	<h2 class="akzent4">Formeln Menü</h2>
+				    <p class="lead">...</p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/ribbon_data.png"/>
+			       <div class="carousel-caption">	
+			       <h2 class="akzent5">Daten Menü</h2>
+				    <p class="lead">...</p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/ribbon_review.png"/>
+			       <div class="carousel-caption">		
+			       <h2 class="akzent6">Überprüfen Menü</h2>
+				    <p class="lead">...</p>
+				  </div>				  
+			    </div>
+			    <div class="item">
+			       <img src="./img/ribbon_view.png"/>
+			       <div class="carousel-caption">		
+			       <h2 class="akzent1">Ansicht Menü</h2>
+				    <p class="lead">...</p>
+				  </div>				  
+			    </div>			  
+			    <div class="item">
+			       <img src="./img/ribbon_devtools.png"/>
+			       <div class="carousel-caption">		
+			       <h2 class="akzent3">Entwicklertools Menü</h2>
+				    <p class="lead">...</p>
+				  </div>				  
+			    </div>
+			    <div class="item">
+			       <img src="./img/ribbon_design.png"/>
+			       <div class="carousel-caption">		
+			       <h2 class="akzent4">Tabellen Entwurf Menü</h2>
+				    <p class="lead">...</p>
+				  </div>				  
+			    </div>
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-ribbon" role="button" data-slide="prev">
+			    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+			    <span class="sr-only">Vorheriges</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-ribbon" role="button" data-slide="next">
+			    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+			    <span class="sr-only">Nächstes</span>
+			  </a>
+			</div>			
 			<footer></footer>
 		</div>
 		<div id="quickaccess" class="step slide" data-z="-3250" data-rotate-y="90">
@@ -1082,13 +1170,13 @@
 			<div id="carousel-charttypes" class="carousel slide" data-interval="7000">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
-			    <li data-target="#carousel-charttypes" data-slide-to="0" class="active"></li>
-			    <li data-target="#carousel-charttypes" data-slide-to="1"></li>
-			    <li data-target="#carousel-charttypes" data-slide-to="2"></li>
-			    <li data-target="#carousel-charttypes" data-slide-to="3"></li>
-			    <li data-target="#carousel-charttypes" data-slide-to="4"></li>
-			    <li data-target="#carousel-charttypes" data-slide-to="5"></li>
-			    <li data-target="#carousel-charttypes" data-slide-to="6"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="0" class="active" title="Übersicht der Diagramme"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="1" title="Säulendiagramme"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="2" title="Liniendiagramme"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="3" title="Kuchendiagramme"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="4" title="Balkendiagramme"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="5" title="Flächendiagramme"></li>
+			    <li data-target="#carousel-charttypes" data-slide-to="6" title="Oberflächendiagramme"></li>
 			  </ol>
 
 			  <!-- Wrapper for slides -->

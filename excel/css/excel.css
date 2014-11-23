@@ -151,16 +151,33 @@ a.carousel-control.right{
 .carousel-caption p {
 	color:darkgray;
 }
+.carousel-indicators>li[title]:hover:after {
+	color: white;
+	content: attr(title);
+  	padding: 4px 8px;
+  	position: absolute;
+  	left: 80px;
+  	top: 80px;
+  	white-space: nowrap;
+  	z-index: 20px;
+  	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+  	border-radius: 5px;
+  	-moz-box-shadow: 0px 0px 4px #222;
+  	-webkit-box-shadow: 0px 0px 4px #222;
+  	box-shadow: 0px 0px 4px #222;
+	text-shadow: 2px 2px 3px black;
+	background-color: rgb(189,207,49);
+}
 .carousel-indicators>li::before {	
-	color: whitesmoke;
+	color: rgb(189,207,49);
 	font-family: 'FontAwesome';
  	font-size: 18px;  	
-	content: '\f10c'; 
+	content: '\f111';
 	text-shadow: 2px 2px 3px black;	
 }
 .carousel-indicators>li.active::before {
-	color: rgb(189,207,49);
-	content: '\f111';
+	content: '\f10c';	
 }
 #readit {
  /* Set rules to fill background */
@@ -338,4 +355,9 @@ a.carousel-control.right{
 #ifscrollbarstext {
 	bottom: 0px;
 	right: 0px;
+}
+#carousel-ribbon, #carousel-ribbon .carousel-inner,
+#carousel-ribbon .carousel-inner .item {
+	width:1024px;
+	height: 300px;
 }
