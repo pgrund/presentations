@@ -397,7 +397,7 @@ a.carousel-control.right{
 	color:white;	
 	text-align: left;
 }
-#backstagemenu>li.backstage a {
+#backstagemenu>li a {
 	padding:7px;
 	padding-left:17px;
 	background-color: #666;
@@ -409,13 +409,14 @@ a.carousel-control.right{
 #backstagemenu>li.backstage-top>span {
 	margin:10px;
 }
-#backstagemenu>li.backstage a:hover {
+#backstagemenu>li a:hover {
 	background-color: darkgreen;
 } 
 #backstagemenu li.backstage-top:hover {	
 	color: darkseagreen;
 }
-#backstagemenu li.backstage.active a:focus {
+#backstagemenu li.active a,
+#backstagemenu li.active a:focus {
 	background-color: darkseagreen;
 	width:100%;
 	border:none;

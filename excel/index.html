@@ -366,47 +366,47 @@
 			<header class="text-uppercase">Backstage Ansicht</header>		
 			<div role="tabpanel">
 			  <ul id="backstagemenu" class="nav nav-pills nav-stacked" role="tablist">			  	
-				<li class="backstage-top" title="Zurück zu Excel ...">
+				<li role="presentation" class="backstage-top" title="Zurück zu Excel ...">
 					<span class="fa-stack fa-lg">
 						<i class="fa fa-circle-thin fa-stack-2x"></i>	
 						<i class="fa fa-arrow-left fa-stack-1x"></i>	
 					</span>
 				</li>				
-				<li role="presentation" class="backstage active selected">
+				<li role="presentation" class="active">
 					<a href="#bsinfo" aria-controls="info" role="tab" data-toggle="tab">Informationen</a>
 				</li>
-				<li class="backstage"> 
+				<li role="presentation"> 
 					<a href="#bsnew" aria-controls="new" role="tab" data-toggle="tab">Neu</a>
 				</li>
-				<li class="backstage">
+				<li role="presentation">
 					<a href="#bsopen" aria-controls="open" role="tab" data-toggle="tab">Öffnen</a>
 				</li>
-				<li class="backstage">
+				<li role="presentation">
 					<a href="#bssaveas" aria-controls="saveas" role="tab" data-toggle="tab">Speichern</a>
 				</li>
-				<li class="backstage">
+				<li role="presentation">
 					<a href="#bssaveas" aria-controls="saveas" role="tab" data-toggle="tab">Speichern unter</a>
 				</li>
-				<li class="backstage">
+				<li role="presentation">
 					<a href="#bsprint" aria-controls="print" role="tab" data-toggle="tab">Drucken</a>
 				</li>
-				<li class="backstage">
+				<li role="presentation">
 					<a href="#bsshare" aria-controls="share" role="tab" data-toggle="tab">Freigeben</a>
 				</li>
-				<li class="backstage">
+				<li role="presentation">
 					<a href="#bsexport" aria-controls="export" role="tab" data-toggle="tab">Exportieren</a>
 				</li>
-				<li class="backstage">
+				<li role="presentation">
 					<a href="#bsclose" aria-controls="close" role="tab" data-toggle="tab">Schließen</a>
 				</li>	
 				<li class="backstage-top"></li>
-				<li class="backstage">
+				<li role="presentation">
 					<a href="#bsaccount" aria-controls="account" role="tab" data-toggle="tab">Konto</a>
 				</li>
-				<li class="backstage">
+				<li role="presentation">
 					<a href="#bsoptions" aria-controls="options" role="tab" data-toggle="tab">Optionen</a>
 				</li>
-				<li class="backstage">
+				<li role="presentation">
 					<a href="#bsaddins" aria-controls="addins" role="tab" data-toggle="tab">Add-Ins</a>
 				</li>
 				<li class="backstage-top"></li>				
@@ -1769,7 +1769,7 @@
         	function() {
         		var text = "#" + $(this).attr('id')+"text";
         		$(text).hide();
-        });        
+        });     
         </script>    
 	</body>
 </html>
