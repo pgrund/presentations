@@ -153,23 +153,27 @@ a.carousel-control.right{
 }
 .carousel-indicators>li[title]:hover:after {
 	color: rgb(189,207,49);
+	background-color: whitesmoke;
+
 	content: attr(title);
+
   	padding: 4px 8px;
+  	
   	position: absolute;
   	width:80%;
   	left: 50px;
   	bottom: 30px;
+
   	white-space: nowrap;
+
   	z-index: 20px;
-  	-moz-border-radius: 5px;
-  	-webkit-border-radius: 5px;
-  	border-radius: 5px;
-  	-moz-box-shadow: 0px 0px 4px rgb(189,207,49);
-  	-webkit-box-shadow: 0px 0px 4px rgb(189,207,49);
-  	box-shadow: 0px 0px 4px rgb(189,207,49);
+  	
 	text-shadow: 2px 2px 3px black;
-	border-color: rgb(189,207,49);
-	background-color: whitesmoke;
+
+	border-color: black;
+	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+  	border-radius: 5px;  	
 }
 .carousel-indicators>li::before {	
 	color: rgb(189,207,49);
@@ -374,4 +378,7 @@ a.carousel-control.right{
 	margin-top: 20px;
 	min-height:35%;
 	min-width:auto;
+}
+#carousel-ribbon .carousel-inner .item .carousel-caption {
+	top: 35%;
 }
