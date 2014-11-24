@@ -352,30 +352,168 @@
 			    <i class="fa fa-chevron-right" aria-hidden="true"></i>
 			    <span class="sr-only">Nächstes</span>
 			  </a>
-			</div>			
+			</div>
 			<footer></footer>
 		</div>
 		<div id="quickaccess" class="step slide" data-z="-3250" data-rotate-y="90">
 			<header>Leiste für den Schnellzugriff</header>
-			<ul>
-				<li>default entries</li>
-				<li>add new entries</li>
-			</ul>
+			<img src="./img/quickaccess_menu.png" alt="" class="right"/>
+			<p>Gleich über dem Menüband befindet sich die Leiste für den Schnellzugriff. Im Standard sind die Befehle <em>Speichern</em>, <em>Rückgängig</em> und <em>Wiederherstellen</em> verfügbar.</p>
+			<p>Weitere Befehle können einfach über <em><i class="fa fa-eject fa-rotate-180"></i> Symbolleiste für den Schnellzugriff anpassen</em> hinzugefügt werden.</p>
 			<footer></footer>
 		</div>
 		<div id="backstage" class="step slide" data-z="-4500" data-rotate-y="90">
-			<header>Backstage Ansicht</header>
-			<p>list bullets ...</p>
+			<header class="text-uppercase">Backstage Ansicht</header>		
+			<div role="tabpanel">
+			  <ul id="backstagemenu" class="nav nav-pills nav-stacked" role="tablist">			  	
+				<li class="backstage-top" title="Zurück zu Excel ...">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle-thin fa-stack-2x"></i>	
+						<i class="fa fa-arrow-left fa-stack-1x"></i>	
+					</span>
+				</li>				
+				<li role="presentation" class="backstage active selected">
+					<a href="#bsinfo" aria-controls="info" role="tab" data-toggle="tab">Informationen</a>
+				</li>
+				<li class="backstage"> 
+					<a href="#bsnew" aria-controls="new" role="tab" data-toggle="tab">Neu</a>
+				</li>
+				<li class="backstage">
+					<a href="#bsopen" aria-controls="open" role="tab" data-toggle="tab">Öffnen</a>
+				</li>
+				<li class="backstage">
+					<a href="#bssaveas" aria-controls="saveas" role="tab" data-toggle="tab">Speichern</a>
+				</li>
+				<li class="backstage">
+					<a href="#bssaveas" aria-controls="saveas" role="tab" data-toggle="tab">Speichern unter</a>
+				</li>
+				<li class="backstage">
+					<a href="#bsprint" aria-controls="print" role="tab" data-toggle="tab">Drucken</a>
+				</li>
+				<li class="backstage">
+					<a href="#bsshare" aria-controls="share" role="tab" data-toggle="tab">Freigeben</a>
+				</li>
+				<li class="backstage">
+					<a href="#bsexport" aria-controls="export" role="tab" data-toggle="tab">Exportieren</a>
+				</li>
+				<li class="backstage">
+					<a href="#bsclose" aria-controls="close" role="tab" data-toggle="tab">Schließen</a>
+				</li>	
+				<li class="backstage-top"></li>
+				<li class="backstage">
+					<a href="#bsaccount" aria-controls="account" role="tab" data-toggle="tab">Konto</a>
+				</li>
+				<li class="backstage">
+					<a href="#bsoptions" aria-controls="options" role="tab" data-toggle="tab">Optionen</a>
+				</li>
+				<li class="backstage">
+					<a href="#bsaddins" aria-controls="addins" role="tab" data-toggle="tab">Add-Ins</a>
+				</li>
+				<li class="backstage-top"></li>				
+			  </ul>
+			  <div id="backstagedescription" class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="bsinfo">
+			      <ul class="whitetrans">
+			    	<li>Standard beim Zugang zu der Backstage Ansicht.</li>
+					<li>Beinhaltet Informationen zu der <em>aktuellen Arbeitsmappe</em>.</li>
+					<li>Hier kann man auch die Arbeitsmappe <em>schützen</em>, <em>überprüfen</em> oder sogar ihre <em>Versionen verwalten</em>.</li>
+				  </ul>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="bsnew">
+			    	<p class="whitetrans">Hier können sie eine <em>neue, leere Arbeitsmappe</em> erstellen, oder aber von einer der vielen <em>Vorlagen</em> aus starten.</p>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="bsopen">
+			    	<p class="whitetrans">Hier können sie <em>zuletzt verwendete Arbeitsmappen</em> öffnen, als auch Arbeitsmappen von <em>OneDrive</em> oder anderen <em>Webspeichern</em>.<br/>
+			    	Die zuletzt verwendeten Arbeitsmappen werden jeweils aufgelistet.</p>
+			    </div>			    
+			    <div role="tabpanel" class="tab-pane" id="bssaveas">
+			    	<p class="whitetrans">Nutzen sie <em>Speichern</em> und <em>Speichern unter</em> um die aktuelle Arbeitsmappe auf ihrem <em>Computer</em>, in <em>OneDrive</em> oder auch auf anderen Webspeichern zu speichern.<br/>
+			    	Die Orte der letzten Speicherungen, werden aufgelistet.</p>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="bsprint">
+			    	<p class="whitetrans">Hier können sie <em>Druck Einstellungen</em> vornehmen, sowie die Arbeitsmappe <em>drucken</em>.<br/>
+			    	Eine <em>Druckvorschau</em> der Arbeitsmappe ist hier ebenfalls möglich.</p>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="bsshare">
+			    	<p class="whitetrans">Auf diesem reiter können sie andere <em>Nutzer einladen</em> und ihre Arbeitsmappe mit anderen <em>Nutzern teilen</em>.<br/>
+			    	Ein <em>Emailversand</em> kann direkt angestossen werden, als auch - falls Lync installiert ist - eine <em>Realtime Kollaboration</em>.</p>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="bsexport">
+			    	<p class="whitetrans">Die Arbeitsmappe kann in <em>andere Formate exportiert</em> werden.<br/>
+			    	 Zur Auswahl stehen neben <em>PDF</em> und <em>älteren Excel Formaten</em> auch textbasierte Formate wie <em>CSV</em> ...</p>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="bsclose">
+			    	<p>Hier schliessen sie die aktuelle Arbeitsmappe.</p>
+			    	<p class="lead">( Kein Dialog )</p>
+
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="bsaccount">
+			    	<p class="whitetrans">Hier können sie auf ihr <em>Microsoft Konto</em> zugreifen.<br/>
+					Allgemeine <em>Designs</em>, und <em>Hintergründe</em> können angepasst werden, als auch das <em>Verlassen</em> des Microsoft Kontos.</p>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="bsoptions">
+			    	<p class="whitetrans">Hier werden verchiedene <em>Excel Optionen</em> verwaltet.<br/>
+			    	So können sie hier besipielsweise <em>AutoWiederherstellung</em> oder <em>Sparcheinstellungen</em> konfigurieren.</p>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="bsaddins">
+			    	<p>Über eine Dropdown-Liste finden sie <em>weitere Optionen</em> nach <em>Add-Ins</em> gruppiert.</p>
+			    </div>
+			  </div>
+			</div>
+			
 			<footer></footer>
 		</div>
-		<div id="worksheet" class="step slide" data-z="-5750" data-rotate-y="90">
-			<header>Arbeitsblatt Ansicht</header>
-			<ul>
-				<li>normal</li>
-				<li>page layout</li>
-				<li>page break</li>
-			</ul>
-			<p>carousel different views</p>
+		<div id="worksheet" class="step" data-z="-5750" data-rotate-y="90">
+			<header class="text-uppercase">Arbeitsblatt Ansicht</header>
+			<div id="carousel-worksheet" class="carousel slide" data-interval="7000">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-worksheet" data-slide-to="0" class="active" title="Normal"></li>
+			    <li data-target="#carousel-worksheet" data-slide-to="1" title="Seitenlayout"></li>
+			    <li data-target="#carousel-worksheet" data-slide-to="2" title="Umbruchvorschau"></li>			   
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">			   
+			    <div class="item active">
+			       <img src="./img/worksheetview_normal.png"/>
+			       <div class="carousel-caption whitetrans">			    
+			       	<h2 class="akzent1">Normale Ansicht</h2>
+				    <p class="text0">
+						Standard Ansicht für alle Arbeitsblätter in Excel.
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/worksheetview_pagelayout.png"/>
+			       <div class="carousel-caption whitetrans">		
+			        <h2 class="akzent2">Seitenlayout Ansicht</h2>
+				    <p>
+				    	Hilft zeigt ihnen wie sich das Arbeitsblatt beim <em>Drucken</em> darstellt. In dieser Ansicht können sie auch <em>Kopf- und Fußzeilen</em> hinzufügen.
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/worksheetview_printpreview.png"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent3">Umbruchvorschau Ansicht</h2>
+				    <p>
+				    	Diese Ansicht erleichtert das Setzen von <em>Seitenumbrüchen</em> in der Arbeitsmappe, dies ist insbesondere hilfreich wenn <em>viele Daten</em> gedruckt werden.
+				    </p>
+				  </div>
+			    </div>			  
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-worksheet" role="button" data-slide="prev">
+			    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+			    <span class="sr-only">Vorheriges</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-worksheet" role="button" data-slide="next">
+			    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+			    <span class="sr-only">Nächstes</span>
+			  </a>
+			</div>			
 			<footer></footer>
 		</div>
 		<div id="interfaceAssignment" class="step assignment" data-y="500" data-rotate-x="-90">
@@ -1631,7 +1769,7 @@
         	function() {
         		var text = "#" + $(this).attr('id')+"text";
         		$(text).hide();
-        });
+        });        
         </script>    
 	</body>
 </html>
