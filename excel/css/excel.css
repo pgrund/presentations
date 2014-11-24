@@ -152,22 +152,24 @@ a.carousel-control.right{
 	color:darkgray;
 }
 .carousel-indicators>li[title]:hover:after {
-	color: white;
+	color: rgb(189,207,49);
 	content: attr(title);
   	padding: 4px 8px;
   	position: absolute;
-  	left: 80px;
-  	top: 80px;
+  	width:80%;
+  	left: 50px;
+  	bottom: 30px;
   	white-space: nowrap;
   	z-index: 20px;
   	-moz-border-radius: 5px;
   	-webkit-border-radius: 5px;
   	border-radius: 5px;
-  	-moz-box-shadow: 0px 0px 4px #222;
-  	-webkit-box-shadow: 0px 0px 4px #222;
-  	box-shadow: 0px 0px 4px #222;
+  	-moz-box-shadow: 0px 0px 4px rgb(189,207,49);
+  	-webkit-box-shadow: 0px 0px 4px rgb(189,207,49);
+  	box-shadow: 0px 0px 4px rgb(189,207,49);
 	text-shadow: 2px 2px 3px black;
-	background-color: rgb(189,207,49);
+	border-color: rgb(189,207,49);
+	background-color: whitesmoke;
 }
 .carousel-indicators>li::before {	
 	color: rgb(189,207,49);
@@ -356,8 +358,20 @@ a.carousel-control.right{
 	bottom: 0px;
 	right: 0px;
 }
-#carousel-ribbon, #carousel-ribbon .carousel-inner,
+#carousel-ribbon{
+	min-height: 300px;
+	min-width:1024px;
+}
+#carousel-ribbon a {
+	min-height: 300px;
+}
+#carousel-ribbon .carousel-inner,
 #carousel-ribbon .carousel-inner .item {
-	width:1024px;
-	height: 300px;
+	width:100%;
+	min-height: 300px;
+}
+#carousel-ribbon .carousel-inner .item img {
+	margin-top: 20px;
+	min-height:35%;
+	min-width:auto;
 }
