@@ -188,6 +188,31 @@ a.carousel-control.right{
 .carousel-indicators>li.active::before {
 	content: '\f10c';	
 }
+#carousel-worksheet>ol.carousel-indicators {
+	background-image: url("../img/worksheetview_button.png");
+	background-color: rgba(245,245,245,0.5);
+	background-repeat: no-repeat;
+	background-position: 50% center;
+}
+#carousel-worksheet>.carousel-indicators>li {
+	width:27px;
+	height:20px;
+	padding:10px;
+	padding-right:20px;
+	border:none;
+	border-radius:0;
+	
+}
+#carousel-worksheet>.carousel-indicators>li.active{
+   background-color:  rgba(143,188,143,0.5);
+}
+#carousel-worksheet>.carousel-indicators>li::before,
+#carousel-worksheet>.carousel-indicators>li::after {
+	content:"";
+	border:none;
+	border-radius:0;
+}
+
 #readit {
  /* Set rules to fill background */
   min-height: 100%;
@@ -514,3 +539,24 @@ div.alert-warning {
 	color:whitesmoke;
 	text-shadow: 2px 2px 3px black;
 }
+#documentinspector li[title]:hover:after {
+	color: black;
+	background-color: whitesmoke;
+	
+	content: attr(title);
+	font-family:'Courier New', Arial;
+
+	position:absolute;
+	top: 70px;
+	right: 50px;
+
+	width:420px;
+	min-height:200px;
+
+  	z-index: 20px;
+  	padding: 15px;	
+
+	border: solid thin black;
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	border-radius: 10px;  	
