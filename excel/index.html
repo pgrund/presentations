@@ -121,6 +121,7 @@
 	<div id="impress">
 
 		<div id="start" class="step image title" data-y="-1000">
+			<header class="visible-print-block">Excel 2013</header>
 			<footer class="black"></footer>
 		</div>
 
@@ -349,15 +350,15 @@
 		</div>
 		<div id="quickaccess" class="step slide" data-z="-3250" data-rotate-y="90">
 			<header>Leiste für den Schnellzugriff</header>
-			<img src="./img/quickaccess_menu.png" alt="" class="right"/>
-			<p>Gleich über dem Menüband befindet sich die Leiste für den Schnellzugriff. Im Standard sind die Befehle <em>Speichern</em>, <em>Rückgängig</em> und <em>Wiederherstellen</em> verfügbar.</p>
+			<img src="./img/quickaccess_menu.png" alt="Schnellzugriff" class="right"/>
+			<p class="left">Gleich über dem Menüband befindet sich die Leiste für den Schnellzugriff. Im Standard sind die Befehle <em>Speichern</em>, <em>Rückgängig</em> und <em>Wiederherstellen</em> verfügbar.</p>
 			<p>Weitere Befehle können einfach über <em><i class="fa fa-eject fa-rotate-180"></i> Symbolleiste für den Schnellzugriff anpassen</em> hinzugefügt werden.</p>
 			<footer></footer>
 		</div>
 		<div id="backstage" class="step slide" data-z="-4500" data-rotate-y="90">
 			<header class="text-uppercase">Backstage Ansicht</header>		
 			<div role="tabpanel">
-			  <ul id="backstagemenu" class="nav nav-pills nav-stacked" role="tablist">			  	
+			  <ul id="backstagemenu" class="nav nav-pills nav-stacked hidden-print" role="tablist">			  	
 				<li role="presentation" class="backstage-top" title="Zurück zu Excel ...">
 					<span class="fa-stack fa-lg">
 						<i class="fa fa-circle-thin fa-stack-2x"></i>	
@@ -405,50 +406,61 @@
 			  </ul>
 			  <div id="backstagedescription" class="tab-content">
 			    <div role="tabpanel" class="tab-pane active" id="bsinfo">
-			      <ul class="whitetrans">
+			      <h2 class="visible-print">Information</h2>
+			      <ul class="whitetrans">			      	
 			    	<li>Standard beim Zugang zu der Backstage Ansicht.</li>
 					<li>Beinhaltet Informationen zu der <em>aktuellen Arbeitsmappe</em>.</li>
 					<li>Hier kann man auch die Arbeitsmappe <em>schützen</em>, <em>überprüfen</em> oder sogar ihre <em>Versionen verwalten</em>.</li>
 				  </ul>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="bsnew">
+			    	<h2 class="visible-print">Neu</h2>
 			    	<p class="whitetrans">Hier können sie eine <em>neue, leere Arbeitsmappe</em> erstellen, oder aber von einer der vielen <em>Vorlagen</em> aus starten.</p>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="bsopen">
+			    	<h2 class="visible-print">Öffnen</h2>
 			    	<p class="whitetrans">Hier können sie <em>zuletzt verwendete Arbeitsmappen</em> öffnen, als auch Arbeitsmappen von <em>OneDrive</em> oder anderen <em>Webspeichern</em>.<br/>
 			    	Die zuletzt verwendeten Arbeitsmappen werden jeweils aufgelistet.</p>
 			    </div>			    
 			    <div role="tabpanel" class="tab-pane" id="bssaveas">
+			    	<h2 class="visible-print">Speichern / Speichern unter</h2>
 			    	<p class="whitetrans">Nutzen sie <em>Speichern</em> und <em>Speichern unter</em> um die aktuelle Arbeitsmappe auf ihrem <em>Computer</em>, in <em>OneDrive</em> oder auch auf anderen Webspeichern zu speichern.<br/>
 			    	Die Orte der letzten Speicherungen, werden aufgelistet.</p>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="bsprint">
+			    	<h2 class="visible-print">Drucken</h2>
 			    	<p class="whitetrans">Hier können sie <em>Druck Einstellungen</em> vornehmen, sowie die Arbeitsmappe <em>drucken</em>.<br/>
 			    	Eine <em>Druckvorschau</em> der Arbeitsmappe ist hier ebenfalls möglich.</p>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="bsshare">
+			    	<h2 class="visible-print">Freigeben</h2>
 			    	<p class="whitetrans">Auf diesem Reiter können sie andere <em>Nutzer einladen</em> und ihre Arbeitsmappe mit anderen <em>Nutzern teilen</em>.<br/>
 			    	Ein <em>Emailversand</em> kann direkt angestoßen werden, als auch - falls Lync installiert ist - eine <em>Realtime Kollaboration</em>.</p>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="bsexport">
+			    	<h2 class="visible-print">Exportieren</h2>
 			    	<p class="whitetrans">Die Arbeitsmappe kann in <em>andere Formate exportiert</em> werden.<br/>
 			    	 Zur Auswahl stehen neben <em>PDF</em> und <em>älteren Excel Formaten</em> auch textbasierte Formate wie <em>CSV</em> ...</p>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="bsclose">
-			    	<p>Hier schließen sie die aktuelle Arbeitsmappe.</p>
-			    	<p class="lead">( Kein Dialog )</p>
+			    	<h2 class="visible-print">Schließen</h2>
+			    	<p class="whitetrans">Hier schließen sie die aktuelle Arbeitsmappe.<br/>
+			    	<span class="lead">( Kein Dialog )</span></p>
 
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="bsaccount">
+			    	<h2 class="visible-print">Konto</h2>
 			    	<p class="whitetrans">Hier können sie auf ihr <em>Microsoft Konto</em> zugreifen.<br/>
 					Allgemeine <em>Designs</em>, und <em>Hintergründe</em> können angepasst werden, als auch das <em>Verlassen</em> des Microsoft Kontos.</p>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="bsoptions">
+			    	<h2 class="visible-print">Optionen</h2>
 			    	<p class="whitetrans">Hier werden verschiedene <em>Excel Optionen</em> verwaltet.<br/>
 			    	So können sie hier beispielsweise <em>AutoWiederherstellung</em> oder <em>Spracheinstellungen</em> konfigurieren.</p>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="bsaddins">
-			    	<p>Über eine Dropdown-Liste finden sie <em>weitere Optionen</em> nach <em>Add-Ins</em> gruppiert.</p>
+			    	<h2 class="visible-print">Add-Ins</h2>
+			    	<p class="whitetrans">Über eine Dropdown-Liste finden sie <em>weitere Optionen</em> nach <em>Add-Ins</em> gruppiert.</p>
 			    </div>
 			  </div>
 			</div>
@@ -699,24 +711,47 @@
 		</div>
 		<div id="celladdress" class="step slide" data-x="3000" data-z="-750" data-rotate-y="90">
 			<header>Zellen Adressieren</header>
-			<ul>
-				<li>rows</li>
-				<li>columns</li>
-				<li>select</li>
-				<li>ranges</li>
-			</ul>
+			<p>
+			Jedes Rechteck auf dem Arbeitsblatt ist eine <emm>Zelle</emm> - der Grundbaustein von Excel. Sie wird <em>adressiert</em> über ihre Spalte ( Buchstaben: <code>A</code>, <code>B</code>, ... ) und ihre Zeile ( Zahlen: <code>1</code>, <code>2</code>, ... ).<br/>			
+			Um eine Zelle <em>auszuwählen</em> genügt ein <em>Klick mit der Maus</em> in die Zelle, mit den <em>Pfeiltasten</em> ist eine Auswahl ebenfalls möglich.</p>	
+			<img id="imgcelladdress" src="./img/cell_address.png" alt="Zellen Adressen" class="pull-right"/>		
+			<dl>
+				<dt>Orientierung</dt>
+				<dd>Sowohl die Spalte als auch die Zeile für die ausgewählte Zelle wird <em>hervorgehoben</em>.</dd>
+				<dt>Namen</dt>
+				<dd>Im <em>Namenfeld</em> taucht der <em>Name</em> (oder auch Adresse) der Zelle auf.</dd>
+			</dl>
+			<p>Die erste Zelle des Arbeitsblattes links oben hat somit den Namen: <code>A1</code>.</p>			
 			<footer></footer>
 		</div>
-		<div id="cellcontent" class="step slide" data-x="3000" data-z="-2000" data-rotate-y="90">
+		<div id="celladressing1" class="step slide" data-x="3000" data-rotate-y="90" data-z="-2000">
+			<header>Bereiche von Zellen</header>	
+			<div class="clearfix">
+				<p class="right">
+				Es können auch <em>mehrere Zelle gleichzeitig ausgewählt</em> werden, man spricht dann von einem <em>Zellenbereich</em>.<br/>
+				Die Auswahl erfolgt entweder mit der <em>Maus</em> bei gedrückter <em>linker Maustaste</em>, oder mit bei zusammenhängenden Zellen bei gedrückter <em>Hochstelltaste</em> (Shift) mit den <em>Pfeiltasten</em>.<br/>
+				In beiden Fällen kann man <em>während der Auswahl</em> im Namenfeld <em>die Anzahl der Zeilen und Spalten</em> sehen.</p>
+				<img src="./img/cell_address2.png" alt="" class="left"/>
+			</div>					
+			<p>Zellbereiche werden mit <em>Start- und Endpunkt</em> adressiert: <code>B1:C6</code>.</p>
+			<footer></footer>
+		</div>
+		<div id="cellcontent" class="step slide" data-x="3000" data-z="-3250" data-rotate-y="90">
 			<header>Zellinhalte</header>
-			<ul>
-				<li>text</li>
-				<li>formatting</li>
-				<li>formulas/functions</li>
-			</ul>
+			<p>Alle Informationen einer Arbeitsmappe werden in Zellen gespeichert, folgende unterschiedliche Inhalte sind möglich:</p>
+
+			<dl>
+				<dt>Text</dt>
+				<dd>Zellen können Texte enthalten, wie <em>Buchstaben</em>, <em>Zahlen</em> und <em>Datumsangaben</em>.</dd>				
+				<dt>Format Eigenschaften</dt>
+				<img src="./img/cell_content.png" alt="Inhalte von Zellen" class="pull-right"/>
+				<dd>Zellen können Format Eigenschaften enthalten, welche die <em>Darstellung</em> von Buchstaben, Zahlen und Datumsangaben beeinflussen (Prozent, Hintergrundfarbe, ...).</dd>
+				<dt>Formeln und Funktionen</dt>
+				<dd>Zellen können Formeln und Funktion beinhalten, welche Werte <em>berechnen</em>.</dd>
+			</dl>
 			<footer></footer>
 		</div>
-		<div id="workingcontent" class="step slide" data-x="3000" data-z="-3250" data-rotate-y="90">
+		<div id="workingcontent" class="step slide" data-x="3000" data-z="-4500" data-rotate-y="90">
 			<header>Inhalte bearbeiten</header>
 			<ul>
 				<li>insert/delete</li>

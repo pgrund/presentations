@@ -560,3 +560,76 @@ div.alert-warning {
 	-moz-border-radius: 10px;
   	-webkit-border-radius: 10px;
   	border-radius: 10px;  	
+}
+#imgcelladdress {	
+	padding-left: 20px;
+	max-width:40%;
+	height:auto;
+}
+
+@media print { 
+	.canvas>i {
+		display: none;
+	}
+	.canvas {		
+		page-break-after: always;
+	}
+	.canvas .overviewtext p {		
+		page-break-inside: avoid; 
+	}
+	.carousel-indicators {
+		display:none;		
+	}
+	.carousel-inner,
+	.carousel-inner .item {
+		display: block;	
+		width:100%;
+		min-height: 300px;	
+	}
+	.carousel-control {
+		display: none;
+	}
+	.carousel-caption {
+		top: 35%;
+	}
+
+	.right, .left {
+        width: 100%;
+    }
+    #backstagedescription {
+    	position:relative;
+    	top: 0px;
+    	left: 0px;
+    }    
+	#backstagedescription>div {
+		position:relative;
+		top: 0px;
+		width: 80%;
+	}
+	#backstagedescription>div::before {
+		position:relative;
+	}
+    .whitetrans{
+    	display:block;    
+    }
+    .tab-pane {
+        page-break-inside: avoid; 
+    }    
+    .overviewtext h2 {
+    	padding: 0px;
+    }
+
+    #ifquickaccesstext, #ifmyaccounttext, #ifribbontext,
+    #ifcommandstext, #ifnameboxtext, #ifformulabartext,
+    #ifcolumntext, #ifrowtext, #ifcelltext, #ifworksheetstext,
+    #ifviewstext, #ifzoomtext, #ifscrollbarstext {	
+    	display:block;
+    	position:relative;
+		left: 0px;
+		top: 0px;
+		right: auto;
+		bottom: auto;
+		width: 80%;
+		border: none;
+	}
+}
