@@ -484,3 +484,33 @@ a.carousel-control.right{
 	position:relative;
 	top: 100px;
 }
+div.alert-warning {    
+    border: solid thick darkred;
+    border-radius: 10px;
+}
+.alert-warning>header{     
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
+    background-color: darkred;
+    text-align: center;
+}
+.alert-info {
+	border-radius: 10px;
+}
+.white {
+	color: white;
+}
+#exportoptions {
+	max-width: 45%;
+	height: auto;
+}
+#reviewdialog {
+	max-width: 45%;
+	height: auto;
+	padding-right: 20px;
+}
+#documentinspector li {
+	font-size: smaller;
+	color:whitesmoke;
+	text-shadow: 2px 2px 3px black;
+}

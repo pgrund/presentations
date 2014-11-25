@@ -82,14 +82,6 @@
                                 <li><a href="#/whatif">Was-Wäre-Wenn Analysen</a></li>
                             </ul>
                         </li>
-<!--
-                        <li class="divider"></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assignments<b class="caret"></b></a>
-                            <ul id="assignmentList" class="dropdown-menu">
-                            </ul>
-                        </li>                        
--->
                     </ul>
                     <ul class="nav navbar-nav navbar-right fa-lg">                        
                         <li>
@@ -546,77 +538,130 @@
 		</div>
 		<div id="createopen" class="step slide" data-x="1500" data-z="-750" data-rotate-y="90">
 			<header>Erzeugen und Öffnen</header>
-			<ul>
-				<li>create</li>
-				<li>open</li>
-				<li>pin</li>
-			</ul>
+			<dl class="dl-horizontal">
+				<dt>Erzeugen</dt>
+				<dd>Über die <a href="#/backstage">Backstage Ansicht</a> läßt sich bequem eine <em>neue Arbeitsmappe</em> erzeugen. Hierbei habe sie die Auswahl zwischen einer <em>neuen, leeren</em> Arbeitsmappe oder sie bedienen sich an den <em>Vorlagen</em> für verschiedene Anlässe. Für die Vorlagen gibt es sowohl <em>Vorschau</em> als auch <em>zusätzliche Infromationen</em>.</dd>
+				<dt>Öffnen</dt>
+				<dd>Auch das öffnen vorhandener Arbeitsmappen ist über die <a href="#/backstage">Backstage Ansicht</a> gelöst, egal ob von der <em>lokalen Festplatte</em> oder von einem <em>Webspeicher</em> (OneDrive, ... )</dd>
+				<dt>Anheften</dt>
+				<dd>Falls sie öfters mit <em>derselben Arbeitsmappe</em> arbeiten, können sie die Arbeitsmappe an an die Backstage Ansicht <em>anheften <i class="fa fa-thumb-tack fa-rotate-90"></i></em> .</dd>
+			</dl>
+			
 			<footer></footer>
-		</div>
-		
-		<div id="templates" class="step slide" data-x="1500" data-z="-2000" data-rotate-y="90">
-			<header>Vorlagen</header>
-			<footer></footer>
-		</div>
-
-		<div id="compatibilitymode" class="step slide" data-x="1500" data-z="-3250" data-rotate-y="90">
+		</div>	
+		<div id="compatibilitymode" class="step slide" data-x="1500" data-z="-2000" data-rotate-y="90">
 			<header>Kompatibilitätsmodus</header>
-			<ul>
-				<li>limits</li>
-				<li>convert</li>
-			</ul>
+			<p>Manchmal müssen sie mit Arbeitsmappen arbeiten, die <em>in einer früheren Excelversion</em> erstellt wurden (Bsp: Excel 2003 oder excel 2010). Diese werden im <em>Kompatibilitätsmodus</em> geöffnet.</p>
+			<img src="./img/compatibility_example.png" alt="Kompatibilitätsmodus: Einschränkungen" class="pull-right"/>
+			<dl>
+				<dt>Einschränkungen</dt>
+				<dd>
+				Einige Funktionen von Excel stehen nicht zur Verfügung und werden <em>ausgegraut</em>.</dd>
+				<dt>Konvertieren</dt>
+				<dd>
+				
+				Für die Konvertierung einer Arbeitsmappe zum Excel 2013 Format, findet sich auf der <em>Informationseite</em> der <a href="#/backstage">Backstage Ansicht</a> eine eigene Schaltfläche : <img src="./img/compatibility_convert.png" alt="Kompatibilitätsmodus: konvertieren"/>.</dd>
+			</dl>
 			<footer></footer>
 		</div>
 
-		<div id="saving" class="step slide" data-x="1500" data-z="-4500" data-rotate-y="90">
+		<div id="saving" class="step slide" data-x="1500" data-z="-3250" data-rotate-y="90">
 			<header>Arbeitsmappen Speichern</header>
-			<ul>
-				<li>save, save as</li>
-				<li>copy</li>
-				<li>default save location</li>
-				<li>autorecover</li>
-			</ul>
+			<p><em>Speichern</em> und <em>Speicher unter</em> funktionieren in vielerlei Hinsicht ähnlich. Während das reguläre Speichern jede Änderungen sichert, erstellt Speichern unter eine <em>Kopie</em> der Arbeitsmappe.</p>
+			<p>Der <em>standardmäßige Speicherort</em> kann auf der Optionenseite der <a href="#/backstage">Backstage Ansicht</a> ausgewählt werden (lokaler Standardspeicherort).</p>
+			<p>
+			<img src="./img/auto_recover.png" alt="Automatische Widerherstellung" class="pull-right"/>
+			Die <em>Dokumentwiederherstellung</em> ermöglicht das Wiederherstellen von Änderungen (nach einem Absturz oder Beenden ohne zu speichern). Dafür speichert Excel in regelmäßigen Abständen (alle 10min) Änderungen in temporäre Dateien.</p>
 			<footer></footer>
 		</div>
+			
+		<div id="savewarning" class="step alert alert-warning" role="alert" data-x="1490" data-z="-3250" data-rotate-y="-90">
+			  <header> <span class="fa-stack fa-lg pull-right">
+                  <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+                  <i class="fa fa-warning fa-stack-1x whitewhite"></i>
+                </span> Achtung!</header> 
+                <p>
+                    <em>Frühes</em> und <em>wiederkehrendes Speichern</em> sind die besten Helfer um Datenverlust zu vermeiden.
+                </p>
+              
+		</div>
 
-		<div id="exporting" class="step slide" data-x="1500" data-z="-5750" data-rotate-y="90">
+		<div id="exporting" class="step slide" data-x="1500" data-z="-4500" data-rotate-y="90">
 			<header>Arbeitsmappen Exportieren</header>
-			<ul>
-				<li>pdf export</li>
-				<li>other file types</li>
-			</ul>
+			<p>Excel bietet den Export in mehrere Formate an (PDF, Excel 2003, CSV, ... ). Die Exportfunktion findet sich in der <a href="#/backstage">Backstage Ansicht</a>.<br/>
+			Am häufigsten wird wohl der <em>PDF-Export</em> Verwendung finden.</p>
+			
+			<div class="alert alert-info">
+				<img id="exportoptions" src="./img/export_options.png" alt="Optionen beim PDF Export" class="pull-right"/>				
+				Standardmäßig exportiert Excel <em>lediglich das aktive Arbeitsblatt</em>.<br class="clearfix"/>
+				Um die gesamte Arbeitsmappe zu exportieren sind Anpassungen an den <em>Optionen</em> nötig.
+			</div>
+
+			<p>Vor dem  PDF Export sollte auch immer das <a href="#/pagelayout">Seitenlayout</a> und die <em>Druckansicht</em> geprüft werden.</p>
 			<footer></footer>
 		</div>
 
 		<!--
 			http://www.gcflearnfree.org/excel2013/25/full
 		-->
-		<div id="finalize1" class="step slide" data-x="1500" data-rotate-y="90" data-z="-7000">
-			<header>Finalisieren</header>
-			<ul>
-				<li>Rechtschreibprüfung</li>				
-			</ul>
+		<div id="finalize1" class="step slide" data-x="1500" data-rotate-y="90" data-z="-5750">
+			<header>Rechtschreibprüfung</header>
+			<p>Auf dem Menüband <em>Überprüfen</em> öffnet der Befehl <em>Rechtschreibprüfung</em> den entsprechenden Dialog.<br/>			
+			Für jeden gefundenen Fehler bietet Excel einen <em>Vorschlag</em> an der durch <em>Ändern</em> übernommen werden kann.</p>
+			<p><em>"Fehler"</em> können auf unertschiedliche Arten behandelt werden:</p>
+			<img id="reviewdialog" src="./img/review_dialog.png" alt="Dialog zur Rechtschreibprüfung" class="pull-left"/>
+			<dl>
+				<dt>Einmal ignorieren</dt>
+				<dd>Überspringt das Wort ohne weitere Änderungen vorzunehmen</dd>
+				<dt>Alle ignorieren</dt>
+				<dd>Überspringt das Wort ohne Änderungen und <em>alle weiteren Vorkommen</em> des Wortes im Arbeitsblatt</dd>
+				<dt>Zum Wörterbuch hinzufügen</dt>
+				<dd>Nimmt das Wort in das <em>Wörterbuch auf</em>, es taucht danach nie mehr als Fehler auf.</dd>
+			</dl>
 			<footer></footer>
 		</div>
 
-		<div id="finalize2" class="step slide" data-x="1500" data-rotate-y="90" data-z="-8250">
-			<header>Finalisieren</header>
-			<ul>
-				<li>Auf Probleme prüfen</li>
+		<div id="finalize2" class="step slide" data-x="1500" data-rotate-y="90" data-z="-7000">
+			<header>Auf Probleme überprüfen</header>
+			<img src="./img/document_inspect.png" alt="Dokument auf Fehler überprüfen" class="pull-right"/>
+			<p>Auf der <a href="#/backstage">Backstage Ansicht</a> erlaubt der Dialog <em>Dokumentprüfung</em> das aktuelle Dokument zu untersuchen und zu bereinigen.</p>
+			<br/>
+			<p>Dabei werden folgende Elemente geprüft:</p>
+			<ul id="documentinspector" class="list-inline item">
+				<li class="akzent1trans" title="Prüft das Dokument auf Kommentare und Freihandanmerkungen">Kommentare und Anmerkungen</li>
+				<li class="akzent2trans" title="Prüft auf ausgeblendete Metadaten oder persönliche Informationen die im Dokument gespeichert sind">Dokumenteigenschaften und persönliche Informationen</li>
+				<li class="akzent3trans" title="Überprüft das Datenmodell auf eingebettete Daten, die auf den Blättern möglicherweise nihct angezeigt werden">Datenmodell</li>
+				<li class="akzent4trans" title="Überprüft auf Dokumenttext gespeicherte Inhalts-Apps">Inhalts-Apps</li>
+				<li class="akzent5trans" title="Überprüft auf im Dokument gespeicherte Aufgabenbereich-Apps">Aufgabenbereich-Apps</li>
+				<li class="akzent6trans" title="Überprüft auf Pivot Tabellen, Povit Charts, Cubeformeln, Datenschnitte und Zeitachsen, die Daten enthalten können, die auf Blättern nihct sichtbar sind">Pivot Tabellen, Pivot Charts, Cubeformeln, Datenschnitte und Zeitachsen</li>
+				<li class="akzent1trans" title="Überprüft auf eingebettete Dokumente, die Informationen enthalten können, die in der Datei nicht sichtbar sind">Eingebettete Dokumente</li>
+				<li class="akzent2trans" title="Überprüft auf Makros, Formulare und ActiveX-Steuerelemente">Makros, Formulare und ActiveX-Steuerelemente</li>
+				<li class="akzent3trans" title="Überprüft auf Verknüpfungen mit anderen Dateien, die Daten enthalten können, die auf den Blättern nicht sichtbar sind">Verknüpfungen mit anderen Dateien</li>
+				<li class="akzent4trans" title="Überprüft auf benutzerdefinierte XML-Daten, die mit diesem Dokument gespeichert sind">Benutzerdefinierte XML-Daten</li>
+				<li class="akzent5trans" title="Prüft die Arbeitsmappe auf Informationen in Kopf- und Fußzeilen">Kopf- und Fußzeilen</li>
+				<li class="akzent6trans" title="Prüft die Arbeitsmappe auf ausgeblendete Zeilen und Spalten">Ausgeblendete Zeilen und Spalten</li>
+				<li class="akzent1trans" title="Prüft die Arbeitsmappe auf ausgeblendete Arbeitsblätter">Ausgeblendete Arbeitsblätter</li>
+				<li class="akzent2trans" title="Prüft die Arbeitsmappe auf nicht sichtbare Objekte, weil sie nicht sichtbar formatiert wurden. Objekte, die von anderen Objekten verdeckt werden, zählen nicht hierzu">Nicht sichtbarer Inhalt</li>
 			</ul>
 			<footer></footer>
 		</div>
-		<div id="finalize3" class="step slide" data-x="1500" data-rotate-y="90" data-z="-9500">
-			<header>Finalisieren</header>
-			<ul>
-				<li>Arbeitsmappe schützen (abgeschlossen)</li>
-			</ul>
+		<div id="finalize3" class="step slide" data-x="1500" data-rotate-y="90" data-z="-8250">
+			<header>Arbeitsmappe schützen</header>
+			<p>Auf der <a href="#/backstage">Backstage Ansicht</a> findet sich unter Informationen der Menüpunkt <em>Arbeitsmappe schützen</em>.<br/>
+			Dieser Punkt steuert welche Arten von Änderungen andere Personen an dieser Arbeitsmappe vornehmen dürfen.</p>
+			<p>
+			Bsp: <em>Als abgeschlossen kennzeichnen</em><br/>
+			Bestätigen sie zweimal die Dialogbox und achten sie auf den Hinweis am oberen Rand des Arbeistblattes.
+			</p>
+			<img src="./img/final_hint.png" alt="Hinweis abgeschlossen"/>
 			<footer></footer>
 		</div>
 
-		<div id="sharing" class="step slide" data-x="1500" data-z="-10750" data-rotate-y="90">
+		<div id="sharing" class="step slide" data-x="1500" data-z="-9500" data-rotate-y="90">
 			<header>Arbeitsmappen Teilen</header>
-			onedrive
+			<p>Um gemeinsam an einer Datei zu arbeiten, kann man die Datei als <em>Email Anhang</em> versenden. Dadurch erzeugt man aber viele <em>verschiedene Versionen derselben Datei</em>, was zu Organisationsaufwand führt.<br/>
+			Teilen heißt eigentlich <em>anderen Personen Zugriff auf diese Datei zu gewähren</em>. Dies erlaubt allen Zugriffsberechtigten <em>an derselben Datei</em> zu arbeiten ohne mehrere Versionen zu organisieren.</p>
+			<div class="alert alert-info">Vorraussetzung: Datei ist in OneDrive gespeichert</div>
 			<footer></footer>
 		</div>
 		<div id="workbooksAssignment" class="step assignment" data-x="1500" data-y="-500" data-rotate-x="90">
