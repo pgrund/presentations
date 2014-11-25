@@ -539,11 +539,11 @@ div.alert-warning {
 	color:whitesmoke;
 	text-shadow: 2px 2px 3px black;
 }
-#documentinspector li[title]:hover:after {
+#documentinspector li[tooltip]:hover:after {
 	color: black;
 	background-color: whitesmoke;
 	
-	content: attr(title);
+	content: attr(tooltip);
 	font-family:'Courier New', Arial;
 
 	position:absolute;
