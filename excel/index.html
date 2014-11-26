@@ -228,7 +228,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="ribbon" class="step" data-z="-2000" data-rotate-y="90">
+		<div id="ribbon" class="step" data-z="-2100" data-rotate-y="90">
 			<header class="text-uppercase">Menüband</header>
 
 			<div id="carousel-ribbon" class="carousel slide" data-interval="7000">
@@ -579,7 +579,7 @@
 
 		<div id="saving" class="step slide" data-x="1500" data-z="-3250" data-rotate-y="90">
 			<header>Arbeitsmappen Speichern</header>
-			<p><em>Speichern</em> und <em>Speicher unter</em> funktionieren in vielerlei Hinsicht ähnlich. Während das reguläre Speichern jede Änderungen sichert, erstellt Speichern unter eine <em>Kopie</em> der Arbeitsmappe.</p>
+			<p><em>Speichern</em> und <em>Speicher unter</em> funktionieren in vielerlei Hinsicht ähnlich. Während das reguläre Speichern jede Änderungen sichert, erstellt "Speichern unter" eine <em>Kopie</em> der Arbeitsmappe.</p>
 			<p>Der <em>standardmäßige Speicherort</em> kann auf der Optionen Seite der <a href="#/backstage">Backstage Ansicht</a> ausgewählt werden (lokaler Standardspeicherort).</p>
 			<p>
 			<img src="./img/auto_recover.png" alt="Automatische Widerherstellung" class="pull-right"/>
@@ -619,7 +619,7 @@
 		<div id="finalize1" class="step slide" data-x="1500" data-rotate-y="90" data-z="-5750">
 			<header>Rechtschreibprüfung</header>
 			<p>Auf dem Menüband <em>Überprüfen</em> öffnet der Befehl <em>Rechtschreibprüfung</em> den entsprechenden Dialog.<br/>			
-			Für jeden gefundenen Fehler bietet Excel einen <em>Vorschlag</em> an der durch <em>Ändern</em> übernommen werden kann.</p>
+			Für jeden gefundenen Fehler bietet Excel einen <em>Vorschlag</em> an, welcher durch <em>Ändern</em> übernommen werden kann.</p>
 			<p><em>"Fehler"</em> können auf unterschiedliche Arten behandelt werden:</p>
 			<img id="reviewdialog" src="./img/review_dialog.png" alt="Dialog zur Rechtschreibprüfung" class="pull-left"/>
 			<dl>
@@ -741,50 +741,52 @@
 			<p>Alle Informationen einer Arbeitsmappe werden in Zellen gespeichert, folgende unterschiedliche Inhalte sind möglich:</p>
 
 			<dl>
-				<dt>Text</dt>
+				<dt class="text1"><i class="fa fa-file-text-o"></i> Text</dt>
 				<dd>Zellen können Texte enthalten, wie <em>Buchstaben</em>, <em>Zahlen</em> und <em>Datumsangaben</em>.</dd>				
-				<dt>Format Eigenschaften</dt>
+				<dt class="text2"><i class="fa fa-align-center"></i> Format Eigenschaften</dt>
 				<img src="./img/cell_content.png" alt="Inhalte von Zellen" class="pull-right"/>
 				<dd>Zellen können Format Eigenschaften enthalten, welche die <em>Darstellung</em> von Buchstaben, Zahlen und Datumsangaben beeinflussen (Prozent, Hintergrundfarbe, ...).</dd>
-				<dt>Formeln und Funktionen</dt>
+				<dt class="text3"><i class="fa fa-bar-chart"></i> Formeln und Funktionen</dt>
 				<dd>Zellen können Formeln und Funktion beinhalten, welche Werte <em>berechnen</em>.</dd>
 			</dl>
 			<footer></footer>
 		</div>
 		<div id="workingcontent" class="step slide" data-x="3000" data-z="-4500" data-rotate-y="90">
 			<header>Inhalte bearbeiten</header>
+			<p>Voraussetzung ist immer eine <em>ausgewählte Zelle</em>, bzw. ein <em>Zellbereich</em>...</p>
 			<ul>
-				<li>insert/delete</li>
-				<li>copy/paste</li>
-				<li>cut</li>
-				<li>more paste options</li>
+				<li>in der <em>Bearbeitungsleiste</em> Text einfügen oder einfach <em>direkt tippen</em></li>
+				<li>Im <a href="#/ribbon">Menüband > Start</a> finden sich Funktionen für das <em>Einfügen</em>, <em>Ausschneiden</em> von Inhalten</li>
+				<li><em>Löschen</em> von Zellen ist ebenfalls über das <a href="#/ribbon">Menüband > Start</a> möglich, beim Löschen von Zellen <em>wandern die Zellen darunter nach oben</em>.</li>
+				<li>Über den <em>Kopieren</em> Befehl des <a href="#/ribbon">Menübandes</a>, oder auch <kbd>Strg+C</kbd> wird der ausgewählte Zellinhalt kopiert. Ein <em>gestricheltes Rechteck</em>zeigt die kopierte Zelle an.</li>
+				<li>Zellinhalte <em>Einfügen</em> gelingt ebenfalls über das <a href="#/ribbon">Menüband</a>, oder auch <kbd>Strg+V</kbd>.</li>
+				<li><em>Weitere Einfüge Operationen</em> (Werte, Formeln, Grafiken, ...) sind über den <em>ausklappbaren</em> Befehl Einfügen möglich.</li>
 			</ul>
 			<footer></footer>
 		</div>
-		<div id="contenthelpers" class="step slide" data-x="3000" data-z="-4500" data-rotate-y="90">
-			<header>Nützliche Tipps</header>
-			<ul>
-				<li>drag and drop</li>
-				<li>fill handle</li>
-				<li>flashfill</li>		
-			</ul>
+		<div id="contenthelpers" class="step slide" data-x="3000" data-z="-5750" data-rotate-y="90">
+			<header>Nützliche Tipps</header>			
+			<dl>
+				<dt>Drag &amp; Drop</dt>
+				<dd>Um Zellen zu <em>verschieben</em>, einfach am Rande des ausgewählten Bereiches (grünes Rechteck) mit gedrückter  Maustaste (Mauszeiger wird zu vier Pfeilen) die Maus auf die Stelle ziehen, wo eingefügt werden soll.</dd>
+				<img src="./img/flashfill.png" alt="Blitzvorschau" class="pull-right"/>
+				<dt>Datenreihe ausfüllen (Fill Handle)</dt>
+				<dd>Eignet sich besonders um <em>aneinandergrenzende Zellen</em> zu befüllen. Mit der Maus an die <em>rechte untere Ecke</em> des ausgewählten Zellbereiches navigieren, und mit <em>gedrückter Maustaste</em> ziehen.</dd>
+				<dt>Blitzvorschau (Flash Fill)</dt>		
+				<dd>Excel kann auch den Inhalt aufgrund bestehender Daten <em>erraten</em>. Gehen sie analog zum <em>Datenreihen ausfüllen</em> vor. Nutzen sie die <em>Auto-Ausfülloptionen</em> um auf Blitzvorschau zu wechseln.</dd>
+			</dl>
+
 			<footer></footer>
 		</div>
-		<div id="findandreplace1" class="step slide" data-x="3000" data-z="-5750" data-rotate-y="90">
-			<header>Inhalte suchen</header>
-			<ul>
-				<li>dialog</li>
-				<li>find next, find all</li>				
-			</ul>
+		<div id="findandreplace" class="step slide" data-x="3000" data-z="-7000" data-rotate-y="90">
+			<header>Inhalte suchen und ersetzen</header>
+			<p>
+			Excel bietet auch einen Dialog zum <em>suchen und ersetzen</em> an <a href="#/ribbon">Menüband > Start</a> <i class="fa fa-binoculars fa-lg"></i>.<br/>
+			Hier kann nach <em>Formatierungen</em>, <em>Werten</em>, <em>Textinhalten</em>, etc. im Arbeitsblatt oder auch in der gesamten Arbeitsmappe gesucht werden.</p>
+			<img src="./img/search_and_replace.png" alt="Suchen und Ersetzen Dialog"/>
 			<footer></footer>
 		</div>
-		<div id="findandreplace2" class="step slide" data-x="3000" data-z="-7000" data-rotate-y="90">
-			<header>Inhalte ersetzen</header>
-			<ul>
-				<li>replace</li>
-			</ul>
-			<footer></footer>
-		</div>
+		
 		<div id="cellsAssignment1" class="step assignment" data-x="3000" data-y="500" data-z="-7000" data-rotate-x="-90">
 			<header class="akzent3">
 				<i class="fa fa-cog fa-spin"></i>
@@ -1849,7 +1851,7 @@
         	function() {
         		var text = "#" + $(this).attr('id')+"text";
         		$(text).hide();
-        });     
+        });        
         </script>    
 	</body>
 </html>

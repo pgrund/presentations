@@ -390,9 +390,9 @@ a.carousel-control.right{
 	bottom: 0px;
 	right: 0px;
 }
-#carousel-ribbon{
+#ribbon{
 	min-height: 300px;
-	min-width:1024px;
+	width:1500px;
 }
 #carousel-ribbon a {
 	min-height: 300px;
@@ -565,6 +565,10 @@ div.alert-warning {
 	padding-left: 20px;
 	max-width:40%;
 	height:auto;
+}
+
+#cellcontent dl>dd {
+	padding-left: 10px;
 }
 
 @media print { 
