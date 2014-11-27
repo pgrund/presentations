@@ -433,9 +433,9 @@ a.carousel-control.right{
 #carousel-textalignment.carousel a {
 	min-height: 300px;
 }
-#carousel-textalignment.carousel .carousel-inner,
 #carousel-textalignment.carousel .carousel-inner>.item {	
-	height: 300px;
+	min-height: 300px;
+	height: auto;	
 }
 #carousel-textalignment.carousel .carousel-inner .item img {
 	margin-top: 20px;
@@ -711,6 +711,11 @@ div.alert-warning {
 		display: block;	
 		width:100%;
 		min-height: 300px;	
+		height:auto;
+		page-break-inside: avoid; 
+	}
+	#carousel-textalignment>.carousel-inner>.item{
+		min-height:300px;		
 	}
 	.carousel-control {
 		display: none;
