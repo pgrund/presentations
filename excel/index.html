@@ -469,7 +469,7 @@
 		</div>
 		<div id="worksheet" class="step" data-z="-5750" data-rotate-y="90">
 			<header class="text-uppercase">Arbeitsblatt Ansicht</header>
-			<div id="carousel-worksheet" class="carousel slide" data-interval="7000">
+			<div id="carousel-worksheet" class="carousel slide carousel-overlay" data-interval="7000">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
 			    <li data-target="#carousel-worksheet" data-slide-to="0" class="active" title="Normal"></li>
@@ -604,6 +604,7 @@
 			Am häufigsten wird wohl der <em>PDF-Export</em> Verwendung finden.</p>
 			
 			<div class="alert alert-info">
+				<header>Info</header>
 				<img id="exportoptions" src="./img/export_options.png" alt="Optionen beim PDF Export" class="pull-right"/>				
 				Standardmäßig exportiert Excel <em>lediglich das aktive Arbeitsblatt</em>.<br class="clearfix"/>
 				Um die gesamte Arbeitsmappe zu exportieren sind Anpassungen an den <em>Optionen</em> nötig.
@@ -666,14 +667,20 @@
 			Bestätigen sie zweimal die Dialogbox und achten sie auf den Hinweis am oberen Rand des Arbeitsblattes.
 			</p>
 			<img src="./img/final_hint.png" alt="Hinweis abgeschlossen"/>
+			<br/>
+			<br/>
+			<br/>
+			<p class="lead">Weitere Alternativen zum Schützen der Arbeitsmappe reichen über <em>mit Kennwort verschlüsseln</em>, <em>Tabellen-</em> oder <em>Struktur schützen</em> und <em>digitalen Signaturen</em> bis hin zu <em>Einschränkungen des Zugriff</em> über <em>Rechteserver</em>.</p>
 			<footer></footer>
 		</div>
 
 		<div id="sharing" class="step slide" data-x="1500" data-z="-9500" data-rotate-y="90">
-			<header>Arbeitsmappen Teilen</header>
+			<header>Arbeitsmappen Freigeben</header>
 			<p>Um gemeinsam an einer Datei zu arbeiten, kann man die Datei als <em>Email Anhang</em> versenden. Dadurch erzeugt man aber viele <em>verschiedene Versionen derselben Datei</em>, was zu Organisationsaufwand führt.<br/>
 			Teilen heißt eigentlich <em>anderen Personen Zugriff auf diese Datei zu gewähren</em>. Dies erlaubt allen Zugriffsberechtigten <em>an derselben Datei</em> zu arbeiten ohne mehrere Versionen zu organisieren.</p>
-			<div class="alert alert-info">Voraussetzung: Datei ist in OneDrive <i class="fa fa-cloud"></i> gespeichert</div>
+			<div class="alert alert-info">
+			<header>Voraussetzung</header>
+			<p>Datei ist in OneDrive <i class="fa fa-cloud"></i> gespeichert</p></div>
 			<footer></footer>
 		</div>
 		<div id="workbooksAssignment" class="step assignment" data-x="1500" data-y="-500" data-rotate-x="90">
@@ -753,11 +760,14 @@
 		</div>
 		<div id="workingcontent" class="step slide" data-x="3000" data-z="-4500" data-rotate-y="90">
 			<header>Inhalte bearbeiten</header>
-			<p>Voraussetzung ist immer eine <em>ausgewählte Zelle</em>, bzw. ein <em>Zellbereich</em>...</p>
+			<p>Voraussetzung ist immer eine <em>ausgewählte Zelle</em>, bzw. ein <em>Zellbereich</em>...</p>			
 			<ul>
 				<li>in der <em>Bearbeitungsleiste</em> Text einfügen oder einfach <em>direkt tippen</em></li>
-				<li>Im <a href="#/ribbon">Menüband > Start</a> finden sich Funktionen für das <em>Einfügen</em>, <em>Ausschneiden</em> von Inhalten</li>
-				<li><em>Löschen</em> von Zellen ist ebenfalls über das <a href="#/ribbon">Menüband > Start</a> möglich, beim Löschen von Zellen <em>wandern die Zellen darunter nach oben</em>.</li>
+				<li>
+					<div class="ribbon-home-image pull-right" id="rowscol0"></div>
+					Im <a href="#/ribbon">Menüband</a> finden sich Funktionen für das <em>Einfügen</em>, <em>Ausschneiden</em> von Inhalten
+				</li>
+				<li><em>Löschen</em> von Zellen ist ebenfalls über das <a href="#/ribbon">Menüband</a> möglich, beim Löschen von Zellen <em>wandern die Zellen darunter nach oben</em>.</li>
 				<li>Über den <em>Kopieren</em> Befehl des <a href="#/ribbon">Menübandes</a>, oder auch <kbd>Strg+C</kbd> wird der ausgewählte Zellinhalt kopiert. Ein <em>gestricheltes Rechteck</em>zeigt die kopierte Zelle an.</li>
 				<li>Zellinhalte <em>Einfügen</em> gelingt ebenfalls über das <a href="#/ribbon">Menüband</a>, oder auch <kbd>Strg+V</kbd>.</li>
 				<li><em>Weitere Einfüge Operationen</em> (Werte, Formeln, Grafiken, ...) sind über den <em>ausklappbaren</em> Befehl Einfügen möglich.</li>
@@ -805,23 +815,60 @@
 		</div>
 		<div id="columnrow" class="step slide" data-x="3000" data-z="-8250" data-rotate-y="90">
 			<header>Reihen und Spalten</header>
-			<ul>
-				<li>column width, row height</li>
-				<li>auto height/width</li>
-				<li>insert,delete, move</li>
-				<li>hide, unhide</li>
-			</ul>
+			<dl>				
+				<dt>Höhe und Breite anpassen</dt>
+				<dd class="clearfix">					
+					Navigieren sie mit der Maus über die <em>Spaltengrenze</em> innerhalb der Kopfzeile, aus dem <code class="cursorcell">Kreuz</code> wird ein <code class="cursore-resize">Doppelpfeil links-rechts</code>. Nun kann mit gedrückter Maustaste die Breite der Spalte angepasst werden.<br/>
+					Analog für die <em>Zeilengrenze</em>, hier wird aus dem <code class="cursorcell">Kreuz</code> ein  <code class="cursorn-resize">Doppelpfeil oben-unten</code>.<br/>
+					Ein <em>Doppelklick</em> auf die Zeilen-/Spaltengrenze führt zur <em>automatischen Anpassung</em> der Höhe bzw. Breite.
+				</dd>
+				<dt>Einfügen, Löschen</dt>
+				<dd class="clearfix">
+					<div class="ribbon-home-image pull-left" id="rowscol1"></div>
+					Wählen sie die Kopfspalte der <em>Zeile</em> aus, <em>unter</em> der sie die neue Zeile einfügen möchten, bzw. die Kopfzeile der <em>Spalte</em> auf deren <em>rechten</em> Seite die neue Spalte eingefügt werden soll. Nutzen sie den Befehl <em>Zellen Einfügen</em>.<br/>
+					Zum <em>Löschen</em> selektieren sie die gewünschte Spalte/Zeile und nutzen sie den Befehl <em>Zellen Löschen</em>.
+				</dd>				
+			</dl>
 			<footer></footer>
 		</div>
-		<div id="wrapmerge" class="step slide" data-x="3000" data-z="-9500" data-rotate-y="90">
+		<div id="deletewarning" class="step alert alert-warning" data-x="2950" data-rotate-y="-90" data-z="-8250">
+			<header>
+			 	<span class="fa-stack fa-lg pull-right">
+                  <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+                  <i class="fa fa-warning fa-stack-1x whitewhite"></i>
+                </span> 
+				Zellen löschen vs. Inhalte löschen
+			</header>
+			<ul>
+				<li>Beim <em>Löschen von Inhalten</em> bleiben die Zellen erhalten, lediglich der Inhalt (Text, Formeln, ... ) wird gelöscht.</li>
+				<li>Beim <em>Löschen von Zellen</em>, gehen die kompletten Zellen <em>inklusive Inhalte</em> verloren und Excel zieht die Zellen darunter nach oben</li>
+			</ul>
+		</div>
+		<div id="columnrow2" class="step slide" data-x="3000" data-rotate-y="90" data-z="-9500">
+			<header>Reihen und Spalten</header>
+			<dl>
+				<dt>Verschieben</dt>
+				<dd>Das Verschieben kann zum einen über <a href="#/workingcontent">Inhalte bearbeiten</a> erfolgen, indem einfach die <em>komplette Spalte</em> bzw. die <em> komplette Zeile</em> markiert wird, oder aber durch <em>Drag &amp; Drop</em> der markierten Zellen (vgl. <a href="#/workingcontent">Inhalte bearbeiten</a>).</dd>
+				<dt>Ausblenden, Einblenden</dt>
+				<dd>Bei der Selektion der kompletten Zeile/Spalte erscheinen im <em>Kontextmenü</em> (rechte Maustaste) die Optionen <em>Ausblenden</em> und <em>Einblenden</em>.<br/>
+				Diese Funktion blendet komplette Spalten oder Zeilen aus, bzw. stellt sie wieder her.</dd>
+			</dl>
+			<footer></footer>
+		</div>
+		<div id="wrapmerge" class="step slide" data-x="3000" data-z="-10750" data-rotate-y="90">
 			<header>Zellinhalte bearbeiten</header		
-			<ul>
-				<li>wrap text</li>
-				<li>merge content</li>
-			</ul>
+			<dl>
+				<dt>Zeilenumbruch</dt>
+				<dd>Um innerhalb einer Zelle einen <em>Zeilenumbrüche</em> zu ermöglichen, kann der Befehl <em>Zeilenumbruch</em> verwendet werden.<br/>
+				Hier wird der Inhalt der Zelle mehrmals umgebrochen, wie die <em>Breite der Zelle</em> vorgibt.</dd>
+				<div id="rowscol2" class="ribbon-home-image pull-right"></div>
+				<dt>Verbinden und zentrieren</dt>
+				<dd>Mehrere <em>benachbarte leere Zellen</em> zu einer großen Zelle <em>zusammenführen</em> erfolgt über den Befehl <em>Verbinden</em>.<br/>
+				Im erweiterten Menü können diese Verbindungen wieder <em>aufgelöst</em> werden.</dd>
+			</dl>
 			<footer></footer>
 		</div>
-		<div id="cellsAssignment2" class="step assignment" data-x="3000" data-y="500" data-z="-9500" data-rotate-x="-90">
+		<div id="cellsAssignment2" class="step assignment" data-x="3000" data-y="500" data-z="-10750" data-rotate-x="-90">
 			<header class="akzent3">
 				<i class="fa fa-cog fa-spin"></i>
 				Aufgabe #3b
@@ -836,41 +883,140 @@
 				<li><em>Führen</em> sie die Zellen der <code>Titel</code> Zeile <em>zusammen</em>, indem sie den <em>Zusammenführen &amp; Zentrieren</em> Befehl ausführen (Zellen <code>A1:E1</code>).</li>
 			</ol>
 		</div>
-		<div id="fontchange" class="step slide" data-x="3000" data-rotate-y="90" data-z="-10750">
+		<div id="fontchange" class="step slide" data-x="3000" data-rotate-y="90" data-z="-12000">
 			<header>Zellen Formatieren - Schriftart</header>
-			<ul>
-				<li>font style</li>
-				<li>font size</li>
-				<li>font color</li>
-				<li>bold, italic, underline</li>
-			</ul>
+			<div id="rowscol3" class="ribbon-home-image pull-left"></div>
+			<p>Insbesondere bei <em>großen Datenmengen</em> ist die Darstellung des Inhaltes entscheidend, daher kann auf dem <a href="#/ribbon">Menüband Start</a> (Befehlsgruppe <em>Schriftart</em>) für die selektierten Zellen folgendes geändert werden:</p>
+			
+			<dl>
+				<dt>Schriftart ändern</dt>
+				<dd>Excel bietet eine Vielzahl an unterschiedlichen Schriften an. Die Auswahl erfolgt über eine <em>Dropdownliste</em>.</dd>
+				<dt>Schriftgröße ändern</dt>
+				<dd>Die Schriftgröße kann zum einen über eine <em>Zahl</em> (Dropdownliste bzw. Eingabe) als auch über die Schaltflächen <em>Schriftgrad vergrößern</em> bzw. <em>Schriftgrad verkleinern</em> skaliert werden.</dd>
+				<dt>Farben, Fett, Kursiv, Unterstrichen, ...</dt>
+				<dd>Weitere Eigenschaften können ebenfalls über diese Befehlsgruppe gesteuert werden. Der <em>kleine Pfeil <i class="fa fa-sort-desc"></i></em> öffnet einen kleinen Dialog für die Auswahl.</dd>
+			</dl>			
 			<footer></footer>
 		</div>
-		<div id="textalign" class="step slide" data-x="3000" data-rotate-y="90" data-z="-12000">
+		<div id="textalign" class="step" data-x="3000" data-rotate-y="90" data-z="-13250">
 			<header>Zellen Formatieren - Ausrichtung</header>
-			<ul>
-				<li>horizontal</li>
-				<li>vertical</li>
-			</ul>
+			<div id="carousel-textalignment" class="carousel slide carousel-overlay" data-interval="7000">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-textalignment" data-slide-to="0" class="active" title="Linksbündig"></li>			    
+			    <li data-target="#carousel-textalignment" data-slide-to="1" title="Zentriert"></li>
+			    <li data-target="#carousel-textalignment" data-slide-to="2" title="Rechtsbündig"></li>
+			    <li data-target="#carousel-textalignment" data-slide-to="3" title="Oben"></li>
+			    <li data-target="#carousel-textalignment" data-slide-to="4" title="Zentriert"></li>
+			    <li data-target="#carousel-textalignment" data-slide-to="5" title="Unten"></li>			   
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">			   
+			    <div class="item active">
+			       <img src="./img/textalign_left.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">			    
+			       	<h2 class="akzent1">Linksbündig Ausrichten</h2>
+				    <p class="text0">
+						Der Inhalt wird an der <em>linken Seite</em> der Zelle ausgerichtet.
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/textalign_center.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">		
+			        <h2 class="akzent2">Zentrieren</h2>
+				    <p>
+				    	Der Inhalt wird <em>zu gleichen Anteilen</em> <em>links und rechts</em> an den Zellenrändern ausgerichtet.
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/textalign_right.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent3">Rechtsbündig Ausrichten</h2>
+				    <p>
+				    	Der Inhalt wird an der <em>rechten Seite</em> der Zelle ausgerichtet.
+				    </p>
+				  </div>
+			    </div>	
+			     <div class="item">
+			       <img src="./img/textalign_top.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent3">Oben Ausrichten</h2>
+				    <p>
+				    	Der Inhalt wird an der <em>oberen Seite</em> der Zelle ausgerichtet.
+				    </p>
+				  </div>
+			    </div>	
+			     <div class="item">
+			       <img src="./img/textalign_middle.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent3">Zentriert Ausrichten</h2>
+				    <p>
+				    		Der Inhalt wird <em>zu gleichen Anteilen</em> <em>oben und unten</em> an den Zellenrändern ausgerichtet.
+				    </p>
+				  </div>
+			    </div>	
+			     <div class="item">
+			       <img src="./img/textalign_bottom.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent3">Unten Ausrichten</h2>
+				    <p>
+				    	Der Inhalt wird an der <em>unteren Seite</em> der Zelle ausgerichtet.
+				    </p>
+				  </div>
+			    </div>			  
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-textalignment" role="button" data-slide="prev">
+			    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+			    <span class="sr-only">Vorheriges</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-textalignment" role="button" data-slide="next">
+			    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+			    <span class="sr-only">Nächstes</span>
+			  </a>
+			</div>			
 			<footer></footer>
 		</div>
-		<div id="borderfill" class="step slide" data-x="3000" data-rotate-y="90" data-z="-13250">
+		<div id="borderfill" class="step slide" data-x="3000" data-rotate-y="90" data-z="-14500">
 			<header>Zellen Formatieren - Ränder und Farben</header>
-			<ul>
-				<li>cell border</li>
-				<li>cell fill color</li>
-			</ul>
+			<img src="./img/border_menu.png" alt="Menü für Ränder" class="pull-right"/>
+			<p>Ränder und Farben erlauben es <em>klar definierte Grenzen</em> für <em>unterschiedliche Bereiche</em> innerhalb des Arbeitsblattes zu ziehen.</p>
+			<p class="lead">Beispiel: Kopfzeilen vom Rest der Daten optisch trennen</p>
+			<dl>
+				<dt>Rahmenlinien</dt>
+				<dd>Über den <i class="fa fa-sort-desc"></i> Pfeil am <em>Rahmenlinien</em> Befehl, gelangt man in das erweiterte Menü, wo für die selektierten definiert werden kann welche Ränder greifen (oben, unten, links, rechts, mittig, ...), als auch Farbe, Linienstil, etc.</dd>
+				<dt>Füllfarbe</dt>
+				<dd>Analog zu den Rahmenlinien kann die <em>Füllfarbe</em> für die selektierten Zellen direkt gesetzt oder über das Aufklappmenü die einzelnen Eigenschaften konfiguriert werden.</dd>
+			</dl>
 			<footer></footer>
 		</div>
-		<div id="styles" class="step slide" data-x="3000" data-rotate-y="90" data-z="-14500">
+		<div id="styles" class="step slide" data-x="3000" data-rotate-y="90" data-z="-15750">
 			<header>Zellen Formatieren - Stil</header>
-			<ul>
-				<li>predefined styles</li>
-				<li>text and number formatting</li>
-			</ul>
+			<img id="numberformatmenu" src="./img/numberformat_menu.png" 
+				alt="Zahlenformat Menü" class="pull-right"/>
+			<div id="rowscol4" class="ribbon-home-image pull-left"></div>
+			<p>Anstatt manuell Zellen zu formatieren, bietet Excel vordefinierte <em>Zellenformatvorlagen</em> an. Im Aufklappmenü können die ausgewählten Vorlagen direkt angewendet werden.</p>
+			
+			<p>Eine weitere Stärke von Excel ist das <em>Formatieren</em> von Texten und Zahlen. Anstatt alle Zelleninhalte gleich darzustellen, können unterschiedliche Formate gewählt werden um <em>Datumsangaben</em>, <em>Zeiten</em>, <em>Dezimalzahlen</em>, <em>Prozentangaben</em>. <em>Währungen</em>, ...<br/>
+			Zugang zu den Funktionen bietet das Aufklappmenü beim <em>Zahlenformat</em>.
+			</p>			
 			<footer></footer>
 		</div>
-		<div id="cellsAssignment3" class="step assignment" data-x="3000" data-y="500" data-z="-14500" data-rotate-x="-90">
+		<div id="formatinfo" class="step alert alert-warning" data-x="2950" data-rotate-y="-90" data-z="-15750">
+				<header>
+					<span class="fa-stack fa-lg pull-right">
+	                  <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+	                  <i class="fa fa-warning fa-stack-1x whitewhite"></i>
+	                </span> 
+					Achtung!
+				</header>
+				<p>Das Anwenden von Formatvorlagen <em>überschreibt</em> alle bisherigen Formatierungen der Zelle.</p>
+			</div>
+		<div id="cellsAssignment3" class="step assignment" data-x="3000" data-y="500" data-z="-15750" data-rotate-x="-90">
 			<header class="akzent3">
 				<i class="fa fa-cog fa-spin"></i>
 				Aufgabe #3c
@@ -899,22 +1045,31 @@
 		</div>
 		<div id="crudsheets" class="step slide" data-x="4500" data-rotate-y="90" data-z="-750">
 			<header>Arbeiten mit Arbeitsblättern</header>
-			<ul>
-				<li>rename</li>
-				<li>insert</li>
-				<li>delete</li>
-				<li>copy</li>
-				<li>move</li>
-				<li>colorize</li>
-			</ul>
+			<img src="./img/worksheet_menu.png" alt="Kontextmenü Arbeitsblatt" class="pull-right"/>
+			<p class="lead">
+			Mehrere Arbeitsblätter helfen bei großen Datenmengen besser zu <em>strukturieren</em>.Zugang zu den Funktionen erhalten sie mit einem <em>Rechtsklick</em> auf den Namen des Arbeitsblattes über das <em>Kontextmenü</em>.
+			</p>
+			<dl>
+				<dt>Neues Arbeitsblatt</dt>
+				<dd>Der Befehl <em>Neues Blatt</em> 
+					<span class="fa-stack menu-select">
+						<i class="fa fa-circle-o fa-stack-2x"></i>
+						<i class="fa fa-stack-1x fa-plus"></i>
+					</span>
+				fügt ein neues Arbeitsblatt an.</dd>
+				<dt>Umbenennen</dt>
+				<dd>Umbenennen des Arbeitsblattes über das <em>Kontextmenü</em>, oder durch <em>Doppelklick</em> auf den Namen.</dd>
+				<dt>Verschieben oder Kopieren</dt>
+				<dd>Durch <em>Ziehen bei gedrückter Maustaste</em> kann die Reihenfolge verändert werden. Das Kontextmenü bietet unter dem Punkt <em>Verschieben oder kopieren</em> ebenfalls diese Möglichkeit über einen Dialog. Zum <em>Kopieren</em> muss das Auswahlkästchen <em><label><input type="checkbox"/> Kopie erstellen</label></em> markiert sein.</dd>
+			</dl>			
 			<footer></footer>
 		</div>
 		<div id="groupsheets" class="step slide" data-x="4500" data-rotate-y="90" data-z="-2000">
 			<header>Arbeitsblätter Gruppieren</header>
-			<ul>
-				<li>group</li>
-				<li>ungroup</li>
-			</ul>
+			<p>Wenn sie mit <em>mehreren Arbeitsblätter gleichzeitig</em> arbeiten, können sie Arbeitsblätter <em>gruppieren</em>. Dadurch werden Änderungen in <em>allen gruppierten Arbeitsblättern parallel</em> vorgenommen.</p>
+			<p>Um Arbeitsblätter zu gruppieren, klicken sie mit der <em>Maus</em> bei gedrückter <kbd>Strg</kbd>-Taste auf die Namen der zu gruppierenden Arbeitsblätter.<br/>
+			Die Gruppierung können sie jederzeit durch die Auswahl eines <em>nicht der Gruppe zugehörigen</em> Arbeitsblattes aufheben, oder auch über das Kontextmenü <em>Gruppierung aufheben</em>.</p>
+			<img src="./img/worksheet_grouping.png" alt="Arbeitsblätter gruppieren" class="center-block"/>
 			<footer></footer>
 		</div>
 		<div id="worksheetsAssignment" class="step assignment" data-x="4500" data-y="-500" data-rotate-x="90">
@@ -945,34 +1100,56 @@
 		</div>
 		<div id="orientmargin" class="step slide" data-x="6000" data-rotate-y="90" data-z="-750">
 			<header>Ausrichtung und Ränder</header>
-			<ul>
-				<li>orientation</li>
-				<li>margins</li>
-			</ul>
+			<p class="lead">Beim Arbeiten am Seitenlayout wird empfohlen die <a href="#/worksheet">Seitenlayout Ansicht</a> zu wählen, um Änderungen sofort nachzuvollziehen.</p>
+			<div id="ws0" class="ribbon-pagelayout-image pull-right"></div>
+			<dl>
+				<dt>Ausrichtung</dt>
+				<dd>Über den Befehl <em>Ausrichtung</em> kann einfach zwischen <em>Hochformat</em> und <em>Querformat</em> gewechselt werden.<br/>
+				Hochformat bei vielen Zeilen, Querformat bei vielen Spalten.</dd>
+				<dt>Seitenränder</dt>
+				<dd>Der Befehl <em>Seitenränder</em> lässt über ein Auswahlmenü das schnelle Ändern der einzelnen Rändern zu. Eine <em>Vorauswahl an Rändern</em> ist direkt anwendbar, für <em>benutzerdefinierte Ränder</em> findet sich ein Dialogfenster.</dd>
+			</dl>
 			<footer></footer>
 		</div>
 		<div id="titles" class="step slide" data-x="6000" data-rotate-y="90" data-z="-2000">
 			<header>Titel Mitdrucken</header>
+			<p>Bei <em>mehrseitigem Drucken</em> möchte man oft die Titelzeile / Titelspalte auf jeder Druckseite haben. Excel bietet mit dem Befehl <em>Drucktitel</em> diese Möglichkeit an.<br/>
+			Beim angezeigten Dialog können wir unter dem Begriff <em>Drucktitel</em> die Zeilen bzw. Spalten angeben, welche auf jeder Seite mitgedruckt werden sollen.<br/>
+			Über eine einfache <em>Auswahl an Zellbereichen</em> werden diese definiert.</p>
+			<header>Seitenumbrüche</header>
+			<p>Um Seitenumbrüche einzufügen oder zu bearbeiten, empfiehlt sich die <a href="#/worksheet">Umbruchvorschau Ansicht</a>. Hier kann einfach über <em>Drag &amp; Drop</em> die Umbrüche (blaue Linien) verschoben werden.<br/>
+			Selbstverständlich kann auch über den Befehl <em>Umbrüche</em> ein Seitenumbruch wird <em>unterhalb</em> der selektierten Zeile eingefügt.</p>
 			<footer></footer>
 		</div>
 		<div id="breakfooterheader" class="step slide" data-x="6000" data-rotate-y="90" data-z="-3250">
 			<header>Kopf- Und Fußzeilen</header>
-			<ul>
-				<li>page break</li>
-				<li>header</li>
-				<li>footer</li>
-			</ul>
+			<p>
+				Wir empfehlen bei Bearbeitung von Kopf-und Fußzeilen in die <a href="#/worksheet">Seitenlayout Ansicht</a> zu wechseln.
+			</p>
+			<p>
+				Sobald sie in das Textfeld klicken, erscheint ein das <a href="#/ribbon">Kontextabhängige Menü</a> <em>Kopf- und Fußzeilentools</em>, welches ihnen in erlaubt schnell und einfach <em>variablen Daten des Arbeitsblattes</em> einzufügen.
+			</p>
+			<div class="clearfix">
+				<img id="headerandfooterribbon" src="./img/ribbon_headerandfooter.png" alt="Kontextabhängiges Menüband: Kopf-und Fußzeiletools"></img>
+				<input id="headerandfootertext" type="text" size="50" placeholder="Klicken sie hier um eine Kopf-/Fußzeile hinzuzufügen"></input>				
+			</div>
 			<footer></footer>
 		</div>
-		<div id="print" class="step slide" data-x="6000" data-rotate-y="90" data-z="-4500">
-			<header>Drucken Dialog</header>
-			<ul>
-				<li>zugang</li>
-				<li>Arbeitsmape drucken (inkl. Area)</li>
-				<li>Selektion drucken</li>
-				<li>auf seite darstellen</li>
-				<li>Ränder bearbeiten</li>
-			</ul>
+		<div id="printpage" class="step slide" data-x="6000" data-rotate-y="90" data-z="-4500">
+			<header>Arbeitsmappe Drucken</header>
+			<div class="clearfix">
+				<img src="./img/backstage_print.png" alt="Drucken Dialog in der Backstage Ansicht" class="right"/>
+				<dl>
+					<dt>Drucken Dialog</dt>
+					<dd>Über die <a href="#/backstage">Backstage Ansicht</a> gelangt man zum <em>Drucken</em> Dialog.</dd>
+					<dt>Mappe, Blätter, Auswahl drucken</dt>
+					<dd>Bei den <em>Einstellungen</em> kann man wählen, was genau gedruckt werden soll.</dd>
+					<dt>Druckvorschau</dt>
+					<dd>Eine <em>Druckvorschau</em> wird standardmäßig rechts mit angezeigt. Innerhalb der Vorschau kann man auch die <em>Seitenränder</em> mit der Maus anpassen: Befehl <em>Seitenränder anzeigen</em> rechts unten</dd>
+					<dt>Skalierung</dt>
+					<dd>Die Blätter können für den Druck auch skaliert werden, so z.B. <em>Blatt auf eine Seite</em>, <em>alle Spalten auf eine Seite</em>, <em>alle Zeilen auf eine Seite</em>, ... </dd>
+				</dl>
+			</div>			
 			<footer></footer>
 		</div>
 		<div id="pagelayoutAssignment" class="step assignment" data-x="6000" data-y="500" data-rotate-x="-90">
@@ -1852,6 +2029,13 @@
         		var text = "#" + $(this).attr('id')+"text";
         		$(text).hide();
         });        
+        $("#headerandfootertext").on("focusin", function() {        	        	        	
+        	$("#headerandfooterribbon").show();
+        	return false;
+        }).on("blur", function() {
+        	$("#headerandfooterribbon").hide();        	
+        	return false;
+        });
         </script>    
 	</body>
 </html>
