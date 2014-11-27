@@ -722,8 +722,11 @@ div.alert-warning {
 	}
 	.carousel-caption {
 		top: 35%;
+		left:0px;
+		position:relative;
+		text-align:left;
 	}
-
+	
 	.right, .left {
         width: 100%;
     }
@@ -736,12 +739,18 @@ div.alert-warning {
 		position:relative;
 		top: 0px;
 		width: 80%;
+		height:auto;
+	}
+	#backstagedescription>div>h2,
+	.carousel-caption>h2 {
+		text-decoration: underline;
 	}
 	#backstagedescription>div::before {
 		position:relative;
 	}
-    .whitetrans{
+    .tab-pane .whitetrans{
     	display:block;    
+    	top: 0px;
     }
     .tab-pane {
         page-break-inside: avoid; 
@@ -749,7 +758,9 @@ div.alert-warning {
     .overviewtext h2 {
     	padding: 0px;
     }
-
+	.ribbon-home-image, .ribbon-pagelayout-image {
+		display: none;
+	}
     #ifquickaccesstext, #ifmyaccounttext, #ifribbontext,
     #ifcommandstext, #ifnameboxtext, #ifformulabartext,
     #ifcolumntext, #ifrowtext, #ifcelltext, #ifworksheetstext,
