@@ -714,6 +714,19 @@ th.head {
 .A3.activeCell {
 	border:dotted thick darkgreen;
 }
+.selectMe {
+	text-align: center;
+}
+.selectMe:hover {
+	cursor:pointer;
+}
+#mathorder>code {
+	font-size: 2.5em;
+}
+#mathorder>code>em.result {
+	font-size: 3.5em;
+}
+
 /**
 	starting print media 
 */

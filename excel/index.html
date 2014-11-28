@@ -1316,25 +1316,72 @@
 			</div>
 			<footer></footer>
 		</div>
-		<div id="pointclick" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-3250">
-			<header>Point-Und-Klick Methode</header>
+		<div id="editformula" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-3250">
+			<header>Formeln anlegen und editieren</header>
+			<p>
+				Neue und bestehende Formeln können einfach über die <em>Bearbeitungsleiste</em> verändert werden.
+			</p>
+			<p>
+				Für die Verwendung von Zellreferenzen innerhalb Formeln kann man die <a href="#/celladdress">Adresse der Zelle</a> <em>manuell in der Bearbeitungsleiste</em> eingeben.
+			</p>
+			<p>
+				Alternative ermöglicht Excel die Zelle auch mit der Maus auszuwählen.<br/>
+				Dazu einfach ein <code>=</code> in die Zelle eintragen (markiert Beginn einer Formel) und nun mit der Maus auf die <em>zu referenzierende Zelle</em> klicken.
+			</p>
+			<table align="center">
+			  <thead>
+			  	<tr>
+			  		<th class="head col-md-1"></th>
+			  		<th class="head col-md-2">A</th>
+			  		<th class="head col-md-2">B</th>
+			  		<th class="head col-md-2">C</th>
+			  	</tr>
+			  </thead>
+			  <tbody>			  	
+				<tr>
+					<th class="head">1</th>
+					<td title="A1" class="A1 selectMe">
+						2
+					</td>
+					<td title="B1" class="A2 selectMe">
+						3
+					</td>
+					<td title="C1" id="selectFormula" class="A3 activeCell">
+						<code>=</code>
+					</td>
+				</tr>
+				</tbody>
+				</table>
 			<footer></footer>
 		</div>
-		<div id="editformula" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-4500">
-			<header>Formeln Editieren</header>
-			<ul>
-				<li>Bearbeitungsleiste</li>
-				<li>Point-Und-Klick</li>
-			</ul>
-			<footer></footer>
-		</div>
-		<div id="complexFormulas" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-5750">
+		<div id="complexFormulas" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-4500">
 			<header>Komplexere Formeln</header>
-			Klammern, Ausführungsreihenfolge der Operatoren
+			<div class="left">
+			<p>Eine komplexere Formel hat <em>mehr als einen mathematischen Operator</em>, daher ist die <em>Reihenfolge der Ausführung</em> entscheidend.</p>
+			<p>Ausführungsreihenfolge:</p>
+			<ol>
+				<li>Klammern <code class="text1">( )</code></li>
+				<li>Exponenten berechnen <code class="text2"> ^ </code></li>
+				<li>Multiplikation und Division <code class="text3">* /</code></li>
+				<li>Addition und Subtraktion <code class="text4">+ -</code></li>
+			</ol>
+			</div>
+			<div class="right">
+			<h2>Beispiel:</h2>
+			<pre id="mathorder">
+				<code>10+<em class="text1">(</em>6-3<em class="text1">)</em>/2^2*4-1</code>
+				<code data-jmpress="zoom" title="Klammern">10+<em class="text1">3</em><em class="text2">/</em>2^2*4-1</code>
+				<code data-jmpress="zoom" title="Exponenten">10+3/<em class="text2">4</em><em class="text3">*</em>4-1</code>
+				<code data-jmpress="zoom" title="Multiplikation/Division">10+<em class="text3">0.75*</em>4-1</code>
+				<code data-jmpress="zoom" title="Multiplikation/Division">10+<em class="text3">3</em><em class="text4">-</em>1</code>
+				<code data-jmpress="zoom" title="Addition/Subtraktion"><em class="text4">13-</em>1</code>
+				<code data-jmpress="zoom" title="Addition/Subtraktion"><em class="text4 result">12</em></code>
+			</pre>
+			</div>
 			<footer></footer>
 		</div>
 
-		<div id="formulasAssignment" class="step assignment" data-y="2000" data-x="-2000" data-rotate-x="-90">
+		<div id="formulasAssignment" class="step assignment" data-y="2000" data-x="-2000" data-rotate-x="-90" data-z="-4500">
 			<header class="akzent1">
 				<i class="fa fa-cog fa-spin"></i>
 				Assignment #6
@@ -2120,6 +2167,11 @@
         		});        		
         		$(ele).removeClass("activeCell");
         	});
+        });
+        $(".selectMe").click(function() {
+        	$(".selectMe").removeClass("activeCell");
+        	$("#selectFormula").text("="+$(this).attr('title'));
+        	$(this).addClass("activeCell");
         });
         </script>    
 	</body>
