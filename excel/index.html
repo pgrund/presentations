@@ -1194,11 +1194,18 @@
 		</div>
 		<div id="formulabasic" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-750">
 			<header>Grundlagen</header>
-			<ul>
-				<li>Formeln start mit <code>=</code></li>
-				<li>Zellreferenzen</li>
-				<li>'live' update</li>
-			</ul>
+			<p>
+				Eines der mächtigsten Feature in Excel ist die Möglichkeit mit Hilfe von <em>Formeln</em> <em>numerische Informationen</em> zu berechnen.<br/>
+				Excel unterstützt die Basis Rechenarten.
+			</p>
+			<p>
+				Alle Formeln - und auch Funktionen - starten mit einem <code>=</code>, denn die Zelle <em>ist gleich</em> der Formel und dem errechneten Wert.
+			</p>
+			<p>
+				Excel kann auch andere Zellen <em>referenzieren</em>, d.h. statt eines <em>konkreten Wertes</em>, den Wert <em>einer anderen Zelle</em>.<br/>
+				Dies erfolgt über die <a href="#/celladdress">Adresse der Zelle</a>. Formeln mit Zellreferenzen <em>aktualisieren sich</em> analog zu der geänderten Referenz.
+			</p>
+			<footer></footer>
 		</div>
 		<div id="mathoperators" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-2000">
 			<header>Operatoren</header>
@@ -1247,6 +1254,66 @@
 				</tr>
 			  </tbody>
 			</table>
+			<div class="text-center">
+				<h2>Beispiel:</h2>
+			
+			<table id="mathexample" align="center">
+			  <thead>
+			  	<tr>
+			  		<th class="head col-md-1"></th>
+			  		<th class="head col-md-2">A</th>
+			  		<th class="head col-md-2">B</th>
+			  		<th class="head col-md-2">C</th>
+			  	</tr>
+			  </thead>
+			  <tbody>			  	
+				<tr>
+					<th class="head">1</th>
+					<td title="A1" id="A1" class="A1">
+						2
+					</td>
+					<td title="B1" class="mathexample">
+						<code>
+							=<span class="A1">A1</span>+<span class="A2">A2</span>
+						</code>
+					</td>
+					<td title="C1" class="mathexample">
+						<code>
+							=<span class="A2">A2</span>-<span class="A1">A1</span>
+						</code>
+					</td>
+				</tr>
+				<tr>
+					<th class="head">2</th>
+					<td title="A2" class="A2" id="A2">
+						3
+					</td>
+					<td title="B2" class="mathexample">
+						<code>
+							=<span class="A2">A2</span>*<span class="A1">A1</span>
+						</code>
+					</td>
+					<td title="C2" class="mathexample">
+						<code>
+							=<span class="A3">A3</span>/<span class="A2">A2</span>
+						</code>
+					</td>
+				</tr>
+				<tr>
+					<th class="head">3</th>					
+					<td title="A3" class="A3" id="A3">
+						6
+					</td>
+					<td title="B3" class="mathexample">
+						<code>
+							=<span class="A2">A2</span>^<span class="A1">A1</span>
+						</code>
+					</td>
+					<td title="C3">&nbsp;</td>
+				</tr>
+			  </tbody>
+			</table>
+			</div>
 			<footer></footer>
 		</div>
 		<div id="pointclick" class="step slide" data-x="-2000" data-y="1500" data-rotate-y="90" data-z="-3250">
@@ -2037,6 +2104,22 @@
         }).on("blur", function() {
         	$("#headerandfooterribbon").hide();        	
         	return false;
+        });
+        $(".mathexample").hover(function() {
+        	$(this).find("span").each(function(idx, ele) {
+        		$.each(ele.className.split(' '), function(){
+        			$("#"+this).addClass("activeCell");
+        		});        		
+        		$(ele).addClass("activeCell");
+        	});
+        	return false;
+        }, function() {
+        	$(this).find("span").each(function(idx, ele) {
+        		$.each(ele.className.split(' '), function(){
+        			$("#"+this).removeClass("activeCell");
+        		});        		
+        		$(ele).removeClass("activeCell");
+        	});
         });
         </script>    
 	</body>

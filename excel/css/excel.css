@@ -690,6 +690,30 @@ div.alert-warning {
 	top: 0px;
 	margin-bottom:20px;
 }
+
+th.head {
+	background-color: lightgray;
+	color:black;
+	border:solid thin black;
+}
+#mathexample td,
+#mathexample th {
+	text-align:center;
+	width: 110px;
+}
+.activeCell {
+	margin:5px;
+	padding:0px 5px 0px 5px;
+}
+.A1.activeCell {
+	border:dotted thick red;
+}
+.A2.activeCell {
+	border:dotted thick blue;	
+}
+.A3.activeCell {
+	border:dotted thick darkgreen;
+}
 /**
 	starting print media 
 */
@@ -773,5 +797,8 @@ div.alert-warning {
 		bottom: auto;
 		width: 80%;
 		border: none;
+	}
+	#headerandfooterribbon {
+		display:block;
 	}
 }
