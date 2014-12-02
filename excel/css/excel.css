@@ -727,6 +727,7 @@ table.exceltable {
 .activeCell {
 	margin:5px;
 	padding:0px 5px 0px 5px;
+	font-weight: bold;
 }
 span.A1.activeCell {
 	border:none;

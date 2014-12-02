@@ -945,7 +945,7 @@
 			     <div class="item">
 			       <img src="./img/textalign_top.png" class="center-block"/>
 			       <div class="carousel-caption whitetrans">
-			       <h2 class="akzent3">Oben Ausrichten</h2>
+			       <h2 class="akzent4">Oben Ausrichten</h2>
 				    <p>
 				    	Der Inhalt wird an der <em>oberen Seite</em> der Zelle ausgerichtet.
 				    </p>
@@ -954,7 +954,7 @@
 			     <div class="item">
 			       <img src="./img/textalign_middle.png" class="center-block"/>
 			       <div class="carousel-caption whitetrans">
-			       <h2 class="akzent3">Zentriert Ausrichten</h2>
+			       <h2 class="akzent5">Zentriert Ausrichten</h2>
 				    <p>
 				    		Der Inhalt wird <em>zu gleichen Anteilen</em> <em>oben und unten</em> an den Zellenrändern ausgerichtet.
 				    </p>
@@ -963,7 +963,7 @@
 			     <div class="item">
 			       <img src="./img/textalign_bottom.png" class="center-block"/>
 			       <div class="carousel-caption whitetrans">
-			       <h2 class="akzent3">Unten Ausrichten</h2>
+			       <h2 class="akzent6">Unten Ausrichten</h2>
 				    <p>
 				    	Der Inhalt wird an der <em>unteren Seite</em> der Zelle ausgerichtet.
 				    </p>
@@ -1274,15 +1274,11 @@
 					<td title="A1" id="A1" class="A1">
 						2
 					</td>
-					<td title="B1" class="mathexample">
-						<code>
-							=<span class="A1">A1</span>+<span class="A2">A2</span>
-						</code>
+					<td title="B1" class="mathexample formula">						
+						=<span class="A1">A1</span>+<span class="A2">A2</span>						
 					</td>
-					<td title="C1" class="mathexample">
-						<code>
-							=<span class="A2">A2</span>-<span class="A1">A1</span>
-						</code>
+					<td title="C1" class="mathexample formula">						
+						=<span class="A2">A2</span>-<span class="A1">A1</span>						
 					</td>
 				</tr>
 				<tr>
@@ -1290,15 +1286,11 @@
 					<td title="A2" class="A2" id="A2">
 						3
 					</td>
-					<td title="B2" class="mathexample">
-						<code>
+					<td title="B2" class="mathexample formula">
 							=<span class="A2">A2</span>*<span class="A1">A1</span>
-						</code>
 					</td>
-					<td title="C2" class="mathexample">
-						<code>
-							=<span class="A3">A3</span>/<span class="A2">A2</span>
-						</code>
+					<td title="C2" class="mathexample formula">
+						=<span class="A3">A3</span>/<span class="A2">A2</span>
 					</td>
 				</tr>
 				<tr>
@@ -1306,10 +1298,8 @@
 					<td title="A3" class="A3" id="A3">
 						6
 					</td>
-					<td title="B3" class="mathexample">
-						<code>
-							=<span class="A2">A2</span>^<span class="A1">A1</span>
-						</code>
+					<td title="B3" class="mathexample formula">
+						=<span class="A2">A2</span>^<span class="A1">A1</span>
 					</td>
 					<td title="C3">&nbsp;</td>
 				</tr>
@@ -1348,8 +1338,8 @@
 					<td title="B1" class="A2 selectMe">
 						3
 					</td>
-					<td title="C1" id="selectFormula" class="A3 activeCell">
-						<code>=</code>
+					<td title="C1" id="selectFormula" class="formula A3 activeCell">
+						=
 					</td>
 				</tr>
 				</tbody>
@@ -1449,15 +1439,15 @@
 					<tr>	
 						<th>1</th>
 						<td>...</td>
-						<td>
-							<code>=A1+B1</code>
+						<td class="formula">
+							=A1+B1
 						</td>
 					</tr>
 					<tr>
 						<th>2</th>
 						<td>...</td>
-						<td>
-							<code>=A2+B2</code>
+						<td class="formula">
+							<span data-jmpress="appear">=A2+B2</span>
 						</td>
 					</tr>
 				</tbody>
@@ -1778,7 +1768,7 @@
 		</div>
 
 		<div id="readfunctions" class="step image" data-y="1500" data-x="-8000">
-			<header class="akzent5trans">Quiz<br/>Formeln Lesen</header>
+			<header class="akzent1trans">Quiz<br/>Formeln Lesen</header>
 			<footer></footer>
 		</div>
 		
@@ -2991,7 +2981,7 @@
         });
         $(".selectMe").click(function() {
         	$(".selectMe").removeClass("activeCell");
-        	$("#selectFormula").text("="+$(this).attr('title'));
+        	$("#selectFormula").html("=<span class='"+this.className+" activeCell'>"+$(this).attr('title')+"</span>");
         	$(this).addClass("activeCell");
         });
         $(".solve>li").click(function() {
