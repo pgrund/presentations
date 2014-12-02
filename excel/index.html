@@ -61,6 +61,8 @@
                                 <li><a href="#/formulas">Formeln</a></li>
                                 <li><a href="#/cellrefs">Zellbezüge</a></li>
                                 <li><a href="#/functions">Funktionen</a></li>
+                                <li><a href="#/checkingfunctions">Formeln überprüfen</a></li>
+                                <li><a href="#/readfunctions">Formeln lesen (Quiz)</a></li>
                             </ul>
                         </li>                        
                          <li class="dropdown">
@@ -803,7 +805,7 @@
 				Aufgabe #3a
 			</header>
 			<ol>
-				<li><em>Öffnen</em> sie die Arbeitsmappe <code>Assignment 3a</code>.</li>
+				<li><em>Öffnen</em> sie die Arbeitsmappe <code><a href="./assignments/Assignment3a_Workbook.xlsx" target="_blank">Assignment 3a</a></code>.</li>
 				<li><em>Selektieren</em> sie Zelle <code>D3</code>. Achten sie wie die Adresse der Zelle in der <em>Namenfeld</em> erscheint und der Inhalt sowohl in der Zelle als auch in der <em>FBearbeitungsleiste</em> erscheint.</li>
 				<li><em>Selektieren</em> sie eine Zelle und versuchen sie <em>Text und Zahlen</em> einzufügen.</li>
 				<li><em>Löschen</em> sie eine Zelle. Achten sie darauf wie die Zellen darunter <em>sich nach oben verschieben</em> um den freien Platz auszufüllen.</li>
@@ -874,7 +876,7 @@
 				Aufgabe #3b
 			</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 3b</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment3b_Workbook.xlsx" target="_blank">Assignment 3b</a></code>.</li>
 				<li>Ändern sie die <em>Breite der Spalte</em> welche den <em>Vornamen der Spieler</em> enthält.</li>
 				<li><em>Fügen sie eine Spalte</em> zwischen Spalte <code>A</code> und Spalte <code>B</code> ein, danach <em>fügen sie eine Zeile</em> zwischen Zeile <code>3</code> und Zeile <code>4</code>ein.</li>
 				<li><em>Löschen</em> sie eine Spalte oder eine Zeile.</li>
@@ -1022,7 +1024,7 @@
 				Aufgabe #3c
 			</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 3c</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment3c_Workbook.xlsx" target="_blank">Assignment 3c</a></code>.</li>
 				<li>Wählen sie die Zelle <code>A3</code> aus und <em>ändern</em> sie <em>Schriftart, Größe, und Farbe</em> der Zelle auf Schriftart <em>Verdana</em>, Größe <em>16</em>, Farbe der Schrift auf <em>grün</em>.</li>
 				<li>Heben sie den Text in Zelle <code>A4:C4</code> <em>fett</em> hervor.</li>
 				<li>Ändern sie die <em>vertikale und horizontale Ausrichtung</em> des Textes für einige Zellen.</li>
@@ -1078,7 +1080,7 @@
 				Aufgabe #4
 			</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 4</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment4_Workbook.xlsx" target="_blank">Assignment 4</a></code>.</li>
 				<li><em>Fügen</em> sie ein <em>neues Arbeitsblatt</em> ein und benennen sie das neue Arbeitsblatt <em>April</em>.</li>
 				<li><em>Löschen</em> sie das leere Arbeitsblatt mit Namen <code>Sheet 4</code>.</li>
 				<li><em>Verschieben</em> sie ein Arbeitsblatt.</li>
@@ -1158,7 +1160,7 @@
 				Assignment #5
 			</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 5</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment5_Workbook.xlsx" target="_blank">Assignment 5</a></code>.</li>
 				<li>Ändern sie die Seitenausrichtung auf <em>Querformat</em>.</li>
 				<li>Ändern sie die <em>Seitenränder</em> eines Arbeitblattes.</li>
 				<li>Nutzen sie den <em>Druck Titel</em> Befehl um Zeile <code>1</code> auf dem Arbeitsblatt <code>Schedule</code> als erstes auf jeder Seite anzuzeigen.</li>
@@ -1257,7 +1259,7 @@
 			<div class="text-center">
 				<h2>Beispiel:</h2>
 			
-			<table id="mathexample" align="center">
+			<table id="mathexample" class="exceltable">
 			  <thead>
 			  	<tr>
 			  		<th class="head col-md-1"></th>
@@ -1328,7 +1330,7 @@
 				Alternative ermöglicht Excel die Zelle auch mit der Maus auszuwählen.<br/>
 				Dazu einfach ein <code>=</code> in die Zelle eintragen (markiert Beginn einer Formel) und nun mit der Maus auf die <em>zu referenzierende Zelle</em> klicken.
 			</p>
-			<table align="center">
+			<table class="exceltable">
 			  <thead>
 			  	<tr>
 			  		<th class="head col-md-1"></th>
@@ -1359,22 +1361,45 @@
 			<div class="left">
 			<p>Eine komplexere Formel hat <em>mehr als einen mathematischen Operator</em>, daher ist die <em>Reihenfolge der Ausführung</em> entscheidend.</p>
 			<p>Ausführungsreihenfolge:</p>
-			<ol>
-				<li>Klammern <code class="text1">( )</code></li>
-				<li>Exponenten berechnen <code class="text2"> ^ </code></li>
-				<li>Multiplikation und Division <code class="text3">* /</code></li>
-				<li>Addition und Subtraktion <code class="text4">+ -</code></li>
+			<ol class="fa-ul">
+				<li>
+					<span class="fa-stack fa-li text1">
+						<i class="fa fa-circle-o fa-stack-2x"></i>
+						<span class="fa-stack-1x">1</span>
+					</span>Klammern <code class="text1">( )</code>
+				</li>
+				<li>
+					<span class="fa-stack fa-li text2">
+						<i class="fa fa-circle-o fa-stack-2x"></i>
+						<span class="fa-stack-1x">2</span>
+					</span>
+					Exponenten berechnen <code class="text2"> ^ </code>
+				</li>
+				<li>
+					<span class="fa-stack fa-li text3">
+						<i class="fa fa-circle-o fa-stack-2x"></i>
+						<span class="fa-stack-1x">3</span>
+					</span>
+					Multiplikation, Division <code class="text3">* /</code>
+				</li>
+				<li>
+					<span class="fa-stack fa-li text4">
+						<i class="fa fa-circle-o fa-stack-2x"></i>
+						<span class="fa-stack-1x">4</span>
+					</span>
+					Addition, Subtraktion <code class="text4">+ -</code>
+				</li>
 			</ol>
 			</div>
 			<div class="right">
 			<h2>Beispiel:</h2>
 			<pre id="mathorder">
-				<code>10+<em class="text1">(</em>6-3<em class="text1">)</em>/2^2*4-1</code>
-				<code data-jmpress="zoom" title="Klammern">10+<em class="text1">3</em><em class="text2">/</em>2^2*4-1</code>
-				<code data-jmpress="zoom" title="Exponenten">10+3/<em class="text2">4</em><em class="text3">*</em>4-1</code>
-				<code data-jmpress="zoom" title="Multiplikation/Division">10+<em class="text3">0.75*</em>4-1</code>
-				<code data-jmpress="zoom" title="Multiplikation/Division">10+<em class="text3">3</em><em class="text4">-</em>1</code>
-				<code data-jmpress="zoom" title="Addition/Subtraktion"><em class="text4">13-</em>1</code>
+				<code>10+<em class="text1">(6-3)</em>/2^2*4-1</code>
+				<code data-jmpress="zoom" title="Klammern">10+<em class="text1">3</em>/<em class="text2">2^2</em>*4-1</code>
+				<code data-jmpress="zoom" title="Exponenten">10+<em class="text3">3/</em><em class="text2">4</em>*4-1</code>
+				<code data-jmpress="zoom" title="Multiplikation/Division">10+<em class="text3">0.75*4</em>-1</code>
+				<code data-jmpress="zoom" title="Multiplikation/Division"><em class="text4">10+</em><em class="text3">3</em>-1</code>
+				<code data-jmpress="zoom" title="Addition/Subtraktion"><em class="text4">13-1</em></code>
 				<code data-jmpress="zoom" title="Addition/Subtraktion"><em class="text4 result">12</em></code>
 			</pre>
 			</div>
@@ -1387,7 +1412,7 @@
 				Assignment #6
 			</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 6</code>. Öffnen sie Arbeitsblatt <code>Sheet1</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment6_Workbook.xlsx" target="_blank">Assignment 6</a></code>. Öffnen sie Arbeitsblatt <code>Sheet1</code>.</li>
 				<li>Erzeugen sie in Zelle <code>B4</code> eine <em>einfache Additionsformel</em> welche die Summe (<code>Total Budget</code>) berechnet.</li>
 				<li>Ändern sie den Wert der Zelle <code>B2</code> auf <code>$2,000</code>. Achten sie darauf, wie die Formel in der Zelle <code>B4</code> das Ergebnis <em>neu berechnet</em>.</li>
 				<li>Erzeugen sie in der Zelle <code>G5</code> mit der <em>Point-And-Click</em> Methode eine Formel, welche die Gesamtkosten(<code>Total Cost</code>) der Servietten(<code>napkins</code>) ermittelt. Multiplizieren sie dazu den Einzelpreis(<code>price per unit</code>) mit der Menge(<code>quantity</code>).</li>
@@ -1409,24 +1434,84 @@
 
 		<div id="relref" class="step slide" data-x="-3500" data-y="1500" data-rotate-y="90" data-z="-750">
 			<header>Relative Referenzen</header>
-			<ul>
-				<li>standard</li>
-				<li>autom Anpassungen beim kopieren/füllen</li>	
-				<li>auch mit Point-Und-Klick</li>			
-			</ul>
+			<p>Standardmäßig sind Referenzen <em>relative</em>, d.h. wenn sie in Zellen kopiert werden, <em>ändern</em> sie <em>ihre Bezugszellen</em> relative zu der neuen Position.</p>
+			<p>Beispiel:<br/>
+			Wenn die Formel <code>=A1+B1</code> aus der ersten Zeile in die zweite Zeile kopiert wird, ändert sich die Formel zu <code>=A2+B2</code></p>
+			<table class="exceltable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>...</th>
+						<th>C</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>	
+						<th>1</th>
+						<td>...</td>
+						<td>
+							<code>=A1+B1</code>
+						</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>...</td>
+						<td>
+							<code>=A2+B2</code>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br/><br/>
+			<p>Beim bearbeiten oder kopieren sind selbstverständlich <a href="#/editFormula">Point-und-Klick</a> und <a href="#/contenthelpers">Fill-Handle</a> verfügbar.</p>
 			<footer></footer>
 		</div>
 		<div id="absref" class="step slide" data-x="-3500" data-y="1500" data-rotate-y="90" data-z="-2000">
 			<header>Absolute Referenzen</header>
-			<ul>
-				<li>explizit ändern <code>$</code></li>
-				<li>Bezug bleibt beim kopieren/füllen identisch</li>
-			</ul>
+			<p>Im Gegensatz zu <a href="#/relref">relativen Referenzen</a> ändern absolute Referenzen nicht ihre <em>Zellbezüge</em> beim kopieren.<br/>
+			Absolute Referenzen werden benutzt um in einer Referenz die Zeile und/oder Spalte <em>konstant</em> zu halten.</p>
+			<p>Eine absolute Referenz wird durch ein <em>Dollarzeichen</em> <code>$</code> ausgezeichnet.</p>
+			<table>
+				<thead>
+					<tr>
+						<th class="col-md-2 text-center">Format</th>
+						<th class="col-md-5">Beschreibung</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="text-center">
+							<code>$A$2</code>
+						</th>
+						<td><em>Zeile und Spalte</em> ändern sich nicht beim Kopieren</td>
+					</tr>
+					<tr>
+						<th class="text-center">
+							<code>A$2</code>
+						</th>
+						<td><em>Zeile</em> ändert sich nicht beim Kopieren</td>
+					</tr>
+					<tr>
+						<th class="text-center">
+							<code>$A2</code>
+						</th>
+						<td><em>Spalte</em> ändert sich nicht beim Kopieren</td>
+					</tr>
+				</tbody>
+			</table>
 			<footer></footer>
 		</div>
 		
 		<sheetsref class="step slide" data-x="-3500" data-y="1500" data-rotate-y="90" data-z="-3250">
 			<header>Referenzen zwischen Arbeitsblätter</header>
+			<p>Excel erlaubt das referenzieren von <em>jeder Zelle</em> auf <em>jedem Arbeitsblatt</em>.</p>
+			<p>Um eine Zelle <em>eines anderen Arbeitsblattes</em> zu referenzieren, muss lediglich der <em>Name des Arbeitsblattes</em> gefolgt von einem <em>Ausrufezeichen <code>!</code></em> der Zelladresse vorangestellt werden.</p>
+			<p>Beispiel:<br/>
+			 Zelle <code>A1</code> auf dem Arbeitsblatt <code>Sheet1</code> <i class="fa fa-long-arrow-right"></i> <code>Sheet1!A1</code></p>
+			 <div class="alert alert-info">
+			 	<header>Info</header>
+			 	<p>Wenn der <em>Name des Arbeitsblattes</em> ein <em>Leerzeichen</em> enthält, so muss zwingend der Name in <em>einfache Anführungszeichen <code>'...'</code></em> eingeschlossen werden.</p>
+			 </div>
 			<footer></footer>
 		</sheetsref>
 
@@ -1436,7 +1521,7 @@
 				Assignment #7
 			</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 7</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment7_Workbook.xlsx" target="_blank">Assignment 7</a></code>.</li>
 				<li>Erzeugen sie eine Formel mit <em>relativen Referenzen</em>. Benutzen sie den <em>fill handle</em> um die Formeln in Zellen <code>E4</code> bis <code>E14</code> auszufüllen. Ein Doppel-Klick auf eine Zelle zeigt die kopierte Formel und die relative Referenz.</li>
 				<li>Erzeugen sie eine Formel mit <em>absoluten Referenzen</em>. <em>Korrigieren</em> sie die Formel in Zelle <code>D4</code>, so dass die Steuer (<code>tax rate</code>) in Zelle <code>E2</code> als absolute referenz gilt. Nutzen sie dann erneut den <em>fill handle</em> um die Formeln in den Zellen <code>D4</code> bis <code>D14</code> auszufüllen.</li>
 				<li>Legen sie eine <em>Zellenreferenz</em> in Zelle <code>B3</code> auf dem Arbeitsblatt <code>Catering Invoice</code> and, welche auf Zelle <code>E15</code> auf dem Arbeitsblatt <code>Menu Order</code> verweist.</li>
@@ -1455,49 +1540,792 @@
 
 		<div id="functiongeneral" class="step slide" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-750">
 			<header>Funktionen Allgemein</header>
-			<ul>
-				<li>Definition</li>
-				<li>Teile einer Funktion</li>
-				<li>Funktionsargumente</li>
-			</ul>
+			<blockquote>Funktionen sind <em>vordefinierte Formeln</em>, welche spezielle Werte in bestimmter Reihenfolge berechnen.</blockquote>
+			<p>Die Syntax einer Formel <code>=SUM(A1:K34)</code> besteht aus:</p>
+			<dl>
+				<dt>Ist-Gleich Symbol <code>=</code></dt>
+				<dd>weist den Inhalt als Formel aus</dd>
+				<dt>Formelname <code>SUM</code></dt>
+				<dd>eindeutiger Name innerhalb der Funktionsbibliothek von Excel</dd>
+				<dt>Formelargumente <code>A1:K34</code></dt>
+				<dd>ein oder mehrere Argumente, welche in die Berechnung mit einbezogen werden sollen</dd>
+				<dd>Argumente können <em>einzelne</em> Zellen oder ganze <em>Zellbereiche</em> umfassen und müssen in <em>geschweiften Klammern</em> stehen</dd>
+				<dd>Mehrere Argumente sind durch <em>Semikolon</em> voneinander getrennt</dd>
+			</dl>
 			<footer></footer>
 		</div>
 		<div id="functioninsert" class="step slide" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-2000">
-			<header>Funktionen Erstellen</header>
-			<ul>
-				<li>auto vervollständigen</li>
-				<li>AutoSumme</li>
-			</ul>
-			<footer></footer>
-		</div>
-		<div id="functionlib" class="step slide" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-3250">
-			<header>Funktionsbibliothek</header>
-			<p>carousel der befehle</p>
-			<footer></footer>
-		</div>
-		<div id="functioncommand" class="step slide" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-4500">
-			<header>Funktion Einfügen Befehl</header>
-			<ul>
-				<li>suchen</li>
-				<li>auswählen</li>
-				<li>argumente</li>
-			</ul>
-			<footer></footer>
-		</div>
+			<header>Funktionen Benutzen</header>
+			<p>Excel bietet eine Vielzahl an unterschiedlichen Funktionen, die bekanntesten sind:</p>
+			<dl class="dl-horizontal">
+				<dt>SUMME</dt>
+				<dd><em>addiert</em> alle <em>Zellwerte</em> der Argumente</dd>
+				<dt>MITTELWERT</dt>
+				<dd>ermittelt den <em>Durchschnitt/Mittelwert</em> der übergebenen Zellwerte</dd>
+				<dt>ANZAHL</dt>
+				<dd><em>zählt</em> die Anzahl an Zellen</dd>
+				<dt>MAX</dt>
+				<dd>ermittelt den <em>höchsten Wert</em> eines Zellbereiches</dd>
+				<dt>MIN</dt>
+				<dd>ermittelt den <em>niedrigsten Wert</em> eines Zellbereiches</dd>
+			</dl>
+			<p>Excel schlägt während der Eingabe der Funktion in der Bearbeitungsleiste  potentielle Vervollständigungen des Funktionsnamens vor.</p>
+			
+			<div id="f01" class="ribbon-formula-image pull-left"></div>
+			<p>Über den Befehl <em>AutoSumme</em> im <em>Menüband Formeln</em> können über eine Auswahlliste oft verwendete Funktionen schnell eingefügt werden.</p>
 
+			<footer></footer>
+		</div>
+		<div id="functionlib" class="step" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-3250">
+			<header class="text-uppercase">Funktionsbibliothek</header>
+			<div id="carousel-function" class="carousel slide" data-interval="7000">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-function" data-slide-to="0" class="active" title="Funktion Einfügen"></li>			    
+			    <li data-target="#carousel-function" data-slide-to="1" title="AutoSumme"></li>
+			    <li data-target="#carousel-function" data-slide-to="2" title="Zuletzt verwendet"></li>
+			    <li data-target="#carousel-function" data-slide-to="3" title="Finanzmathematik"></li>
+			    <li data-target="#carousel-function" data-slide-to="4" title="Logisch"></li>
+			    <li data-target="#carousel-function" data-slide-to="5" title="Text"></li>	
+			    <li data-target="#carousel-function" data-slide-to="6" title="Datum und Uhrzeit"></li>
+			    <li data-target="#carousel-function" data-slide-to="7" title="Nachschlagen und Verweisen"></li>
+			    <li data-target="#carousel-function" data-slide-to="8" title="Mathematik und Trigonometrie"></li>
+			    <li data-target="#carousel-function" data-slide-to="9" title="Mehr Funktionen"></li>			    
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">			   
+			    <div class="item active">
+			       <img src="./img/insert_function_dialog.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">			    
+			       	<h2 class="akzent1">Funktion Einfügen</h2>
+				    <p>
+						Wenn sie Probleme haben die richtige Funktion zu finden, hilft ihnen der <em>Funktion einfügen</em> Dialog Funktionen mit Hilfe von Schlüsselwörtern zu finden.
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/formula_autosum.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">		
+			        <h2 class="akzent2">AutoSumme</h2>
+				    <p>
+				    	Schnellzugriff auf häufig verwendete Funktionen wie <em>Summe</em>, <em>Mittelwert</em> oder <em>Anzahl</em> ...
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/formula_recently_used.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent3">Zuletzt verwendet</h2>
+				    <p>
+				    	Die Liste der von ihnen zuletzt verwendeten Funktionen
+				    </p>
+				  </div>
+			    </div>	
+			     <div class="item">
+			       <img src="./img/formula_financial.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent4">Finanzmathematik</h2>
+				    <p>
+				    	Diese Kategorie gruppiert verschiedene finanzmathematische Funktionen, wie <em>anteilige lineare Abschreibung</em> ...
+				    </p>
+				  </div>
+			    </div>	
+			     <div class="item">
+			       <img src="./img/formula_logical.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent5">Logisch</h2>
+				    <p>
+				    	Kategorie um Argumente selbst oder auf eine Bedingung zu prüfen. Z.B. <em>WENN</em> ...
+				    </p>
+				  </div>
+			    </div>	
+			     <div class="item">
+			       <img src="./img/formula_text.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent6">Text</h2>
+				    <p>
+				    	In der Text Kategorie finden sich Funktionen für die Textbearbeitung wieder. So finden sich Funktionen für die Konvertierung in <em>Kleinschreibung</em> oder <em>Ersetzen-Funktionen</em>.
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/formula_date_time.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent1">Datum und Uhrzeit</h2>
+				    <p>
+				    	Für das Arbeiten mit Datums- und Zeitwerten sind hier Funktionen gruppiert.
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/formula_lookup_reference.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent2">Nachschlagen und Verweisen</h2>
+				    <p>
+				    	Funktionen für das Auffinden von Zellen und Verknüpfungen sind in dieser Kategorie beheimatet.
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/formula_math_trigonometry.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent3">Mathematik und Trigonometrie</h2>
+				    <p>
+				    	In dieser Kategorie finden sich die Funktionen für die Bearbeitung von <em>numerischen Werten</em> wieder. So finden sich hier Funktionen fpr das runden, die Zahl PI, ...
+				    </p>
+				  </div>
+			    </div>
+			    <div class="item">
+			       <img src="./img/formula_more.png" class="center-block"/>
+			       <div class="carousel-caption whitetrans">
+			       <h2 class="akzent4">Mehr Funktionen</h2>
+				    <p>
+				    	Unter dieser Kategorie verbergen sich weitere Unterkategorien wie Statistik, Web, etc.
+				    </p>
+				  </div>
+			    </div>
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-function" role="button" data-slide="prev">
+			    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+			    <span class="sr-only">Vorheriges</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-function" role="button" data-slide="next">
+			    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+			    <span class="sr-only">Nächstes</span>
+			  </a>
+			</div>		
+			<footer></footer>
+		</div>		
 		<div id="functionsAssignment" class="step assignment" data-x="-5000" data-y="2000" data-rotate-x="-90">
 			<header class="akzent3">
 				<i class="fa fa-cog fa-spin"></i>
 				Assignment #8
 			</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 8</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment8_Workbook.xlsx" target="_blank">Assignment 8</a></code>.</li>
 				<li>Nutzen sie die <code>SUMME</code> Funktion um in der Zelle <code>B16</code> die Gesamtanzahl der bestellten Artikel zu ermitteln.</li>
 				<li>Nutzen sie den <em>AutoSumme Befehl</em> um die <code>MAX</code> Funktion in Zelle <code>B23</code> einzutragen. Benutzen sie die Zellen <code>D3:D15</code> als Argument um <em>den teuersten Artikel</em> zu bestimmen.</li>
 				<li>Durchstöbern sie die <em>Funktionsbibliothek</em>, benutzen sie den <em>Funktion einfügen</em> Befehl um nach verschiedenen Funktionsarten zu suchen.</li>
 			</ol>
 		</div>
+
+		<!-- 
+			http://www.gcflearnfree.org/excelformulas/7/full
+		-->
+		<div id="checkingfunctions" class="step image" data-y="1500" data-x="-6500">
+			<header class="akzent4trans">Funktionen Überprüfen</header>
+			<footer class="black"></footer>
+		</div>
+
+		<div class="step slide" data-x="-6500" data-y="1500" data-rotate-y="90" data-z="-750">
+			<blockquote>
+			Die größte Stärke von Excel ist die Verwendung von Formeln.<br/>
+			Formeln können neue Werte berechnen, Daten analysieren und vieles mehr.<br/>
+			Doch Formeln haben auch eine Schattenseite:<br/>
+			<em>Selbst ein kleiner Fehler bei der Eingabe der Formel kann ein falsches Ergebnis liefern.</em>
+			</blockquote>
+			
+			<p data-jmpress="expand">
+			Noch schlimmer, Excel <em>zeigt nicht immer an ob eine Formel falsch</em> ist.<br/>
+			Im Normalfall macht Excel einfach weiter und liefert die <em>falschen Ergebnisse</em>.
+			</p>
+			<footer></footer>
+		</div>
+		<div class="step"  data-x="-6550" data-y="1500" data-rotate-y="-90" data-z="-750">
+		  <div class="alert alert-warning">
+			<header>
+					<span class="fa-stack fa-lg pull-right">
+	                  <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+	                  <i class="fa fa-warning fa-stack-1x whitewhite"></i>
+	                </span> 
+					Achtung!
+				</header>
+			Es obliegt ihnen, bei der Eingabe der Formeln diese sorgfältig zu prüfen.
+		  </div>		
+		  <p data-jmpress="expand">Daher haben wir eine <em>kleine Checkliste</em> zusammengestellt um ihnen bei der <em>Prüfung</em> ihrer Formeln zu helfen.<br/>
+			Diese Hinweise werden nicht jedes auftretendes Problem lösen aber sie helfen dabei die <em>Ursachen vieler wiederkehrender Fehler</em> zu erkennen ... </p>
+		</div>
+		<div id="checkfunctions1" class="step slide" data-x="-6500" data-y="1500" data-rotate-y="90" data-z="-2000">
+			<header>Referenzen prüfen</header>
+			<p>Viele Formeln benutzen Zellreferenzen. Bei einem <em>Doppelklick</em> auf die Zelle zeigt Excel farblich hervorgehoben die benutzten Referenzen an.</p>
+			<header>Referenzen Durcheinander</header>
+			<p>Oft werden die richtigen Referenzen, aber in <em>falscher Reihenfolge</em> in der Argumenten Liste benutzt.<br/>
+			<code>=A1-B1</code> anstatt <code>=B1-A1</code></p>
+			<footer></footer>
+		</div>
+		<div id="checkfunctions2" class="step slide" data-x="-6500" data-y="1500" data-rotate-y="90" data-z="-3250">
+			<header>Aufbrechen in kleinere Formeln</header>
+			<p>Wenn eine Formel schwierig zu überprüfen ist, ist sie <em>zu groß</em>. Brechen sie sie in <em>mehrere kleinere Formeln</em> mit <em>Zwischenergebnissen</em> auf.<br/>
+			Dies erleichtert das Überprüfen und das schnelle Auffinden von Fehlern.</p>
+			<header>Grobes Schätzen</header>
+			<p><em>Schätzen</em> sie das zu erwartende Ergebnis grob ab. Falls das Ergebnis der Formel <em>viel größer oder kleiner</em> als der geschätzte Wert ist, deutet dies auf einen Fehler in ihrer Formel hin.</p>
+			<header>Argumente prüfen</header>
+			<p>Achten sie auf <em>Pflichtfelder</em> bei Funktionen. Excel weist hier einen Fehler der Funktionssyntax <code>#NAME?</code> aus. Beim Eingeben der Formel unterstützt sie Excel mit einer kleinen Hinweisbox, welche auch Pflichtfelder anzeigt.</p>
+			<footer></footer>
+		</div>
+		<div id="checkfunctions3" class="step slide" data-x="-6500" data-y="1500" data-rotate-y="90" data-z="-4500">
+			<header>Reihenfolge der Operationen</header>
+			<p>Excel verwendet stets die mathematische <a href="#/complexFormulas">Reihenfolge der Ausführung</a>. Gehen sie die Formel <em>Schritt für Schritt</em> durch und prüfen sie die korrekte <em>Ausführungsreihenfolge</em> ihrer Formel. </p>
+			<header>Formeln anzeigen</header>
+			<div id="f02" class="ribbon-formula-image pull-left"></div>
+			<p>Oft besteht die erste Herausforderung der sie gegenüberstehen, im <em>Auffinden von Formeln</em> in der Arbeitsmappe.<br/>
+			Excel erlaubt ihnen über den Befehl <em>Formeln anzeigen</em> Formeln <em>anstatt der resultierenden Werte</em> anzuzeigen.</p>
+			<p class="lead text-right"><i class="fa fa-lightbulb-o"></i> Tipp: <kbd>Alt+M+F</kbd> als Tastaturkürzel</p>
+			<footer></footer>
+		</div>
+
+		<div id="readfunctions" class="step image" data-y="1500" data-x="-8000">
+			<header class="akzent5trans">Quiz<br/>Formeln Lesen</header>
+			<footer class="black"></footer>
+		</div>
+		
+		<div id="readfunctionsex1" class="step slide" data-x="-8000" data-y="1500" data-rotate-y="90" data-z="-750">
+			<header>Was macht diese Formel ?</header>
+			<ol class="solve">
+				<li class="correct">Die Lagerkosten vom Gesamtbudget abziehen</li>
+				<li class="wrong">Die Lagerkosten mit dem Gesamtbudget multiplizieren </li>
+				<li class="wrong">Findet das durchschnittliche Gesamt Budget</li>
+				<li class="wrong">Das Gesamtbudget von den Lagerkosten abziehen</li>
+			</ol>
+
+			<table class="exceltable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>Lagerkosten</td>
+						<td class="A1 activeCell">€ 1.200,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>Gesamt Budget</td>
+						<td class="A2 activeCell">€ 4.500,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Gesamt Rest</td>
+						<td>=<span class="A2 activeCell">B2</span>-<span class="A1 activeCell">B1</span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<footer></footer>
+		</div>
+
+		<div id="readfunctions2" class="step slide" data-x="-8000" data-y="1500" data-rotate-y="90" data-z="-2000">
+			<header>Warum wird hier die <code>MAX</code> Funktion benutzt ?</header>
+			<ol class="solve">
+				<li class="wrong">Die Gesamt-Strecke zu ermitteln</li>
+				<li class="wrong">Die durchschnittliche Strecke zu ermitteln</li>
+				<li class="correct">Die längste Strecke zu ermitteln</li>
+				<li class="wrong">Die kürzeste Strecke zu ermitteln</li>
+			</ol>
+			<table class="exceltable">
+				<thead>
+					<tr>
+						<th class="col-md-1"></th>
+						<th class="col-md-2">A</th>
+						<th class="col-md-1">B</th>
+						<th class="col-md-1">C</th>
+						<th class="col-md-1">D</th>
+						<th class="col-md-2">E</th>
+						<th class="col-md-2">F</th>
+						<th class="col-md-1">G</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>Datum</td>
+						<td>Strecke</td>
+						<td>Zeit (Min)</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>05.01.2014</td>
+						<td class="A1 activeCell">3,2</td>
+						<td>35</td>
+						<td></td>
+						<td>Bestmarke</td>
+						<td><code>=MAX(<span class="A1 activeCell">B2:B6</span>)</code></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>10.01.2014</td>
+						<td class="A1 activeCell">8</td>
+						<td>90</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>11.01.2014</td>
+						<td class="A1 activeCell">4,7</td>
+						<td>45</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>16.01.2014</td>
+						<td class="A1 activeCell">2</td>
+						<td>17</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>20.01.2014</td>
+						<td class="A1 activeCell">5,1</td>
+						<td>65</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<footer></footer>
+		</div>
 	
+		<div id="readfunctions3" class="step slide" data-x="-8000" data-y="1500" data-rotate-y="90" data-z="-3250">
+			<header>Was ist an dieser Formel falsch ?</header>
+			<ol class="solve">
+				<li class="wrong">Es sollte eine Subtraktion anstelle einer Addition benutzt werden</li>
+				<li class="correct">Ohne Klammern wird die Multiplikation zu früh ausgeführt</li>
+				<li class="wrong">Nichts. Die Formel stimmt.</li>
+				<li class="wrong">Es sollte eine Division anstelle einer Multiplikation benutzt werden</li>
+			</ol>
+			<table class="exceltable">
+				<thead>
+					<tr>
+						<th class="col-md-1"></th>
+						<th class="col-md-1">A</th>
+						<th class="col-md-1">B</th>
+						<th class="col-md-1">C</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>Artikel</td>
+						<td>Preis</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>Soda</td>
+						<td class="A1 activeCell">€ 1,99</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Pizza XS</td>
+						<td class="A2 activeCell">€ 13,89</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>Pizzabrot</td>
+						<td class="A3 activeCell">€ 3,29</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>Trinkgeld</td>
+						<td>=<span class="A1 activeCell">B2</span>+<span class="A2 activeCell">B3</span>+<span class="A3 activeCell">B4</span>* 0.2</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>Gesamt</td>
+						<td>€ 35,71</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<footer></footer>
+		</div>
+
+		<div id="readfunctions4" class="step slide" data-x="-8000" data-y="1500" data-rotate-y="90" data-z="-4500">
+			<header>Was macht die <code>SUMME</code> Funktion in dieser Formel ?</header>
+			<ol class="solve">
+				<li class="wrong">Den höchsten Wert des Bereiches <code>B3:E3</code> finden</li>
+				<li class="wrong">Die Werte der Zellen in Spalte <code>B</code> multiplizieren</li>
+				<li class="wrong">Die Anzahl der Zellen in Reihe <code>3</code> zählen</li>
+				<li class="correct">Die Werte des Bereiches <code>B3:E3</code> aufaddieren</li>
+			</ol>
+			<table class="exceltable">
+				<thead>
+					<tr>
+						<th class="col-md-1"></th>
+						<th class="col-md-2">A</th>
+						<th class="col-md-1">B</th>
+						<th class="col-md-1">C</th>
+						<th class="col-md-1">D</th>
+						<th class="col-md-1">E</th>
+						<th class="col-md-1">F</th>
+						<th class="col-md-1">G</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td colspan="6">Quartalszahlen Verkauf</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>Verkäufer</td>
+						<td>1. Quartal</td>
+						<td>2. Quartal</td>
+						<td>3. Quartal</td>
+						<td>4. Quartal</td>
+						<td>Gesamt</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Grund, Peter</td>
+						<td class="A1 activeCell">€ 8.690,00</td>
+						<td class="A1 activeCell">€ 557,00</td>
+						<td class="A1 activeCell">€ 3.863,00</td>
+						<td class="A1 activeCell">€ 1.117,00</td>
+						<td class="A2 activeCell">
+							<code>
+							=SUMME(<span class="A1 activeCell">B3:E3</span>)
+							</code>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>Grabenstein, Jens</td>
+						<td>€ 18.749,00</td>
+						<td>€ 1.042,00</td>
+						<td>€ 9.355,00</td>
+						<td>€ 1.100,00</td>
+						<td>€ 30.246,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>Heil, Michael</td>
+						<td>€ 8.046,00</td>
+						<td>€ 3.072,00</td>
+						<td>€ 6.702,00</td>
+						<td>€ 1.100,00</td>
+						<td>€ 18.920,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>Wilhelm, Bettina</td>
+						<td>€ 20.114,00</td>
+						<td>€ 3.755,00</td>
+						<td>€ 4.415,00</td>
+						<td>€ 1.089,00</td>
+						<td>€ 29.373,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td>Martinez, Soluna</td>
+						<td>€ 10.733,00</td>
+						<td>€ 3.152,00</td>
+						<td>€ 11.601,00</td>
+						<td>€ 1.122,00</td>
+						<td>€ 26.608,00</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<footer></footer>
+		</div>
+		<div id="readfunctions5" class="step slide" data-x="-8000" data-y="1500" data-rotate-y="90" data-z="-6000">
+			<header>Was passiert in dieser Formel als erstes ?</header>
+			<ol class="solve">
+				<li class="wrong">Die Werte in <code>C2:C4</code> werden von den Werten in <code>B2:B4</code> subtrahiert</li>
+				<li class="correct">Die <code>SUMME</code> Funktionen werden berechnet</li>
+			</ol>
+			<table class="exceltable">
+				<thead>
+					<tr>
+						<th class="col-md-1"></th>
+						<th class="col-md-2">A</th>
+						<th class="col-md-1">B</th>
+						<th class="col-md-1">C</th>
+						<th class="col-md-1">D</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td></td>
+						<td>Einnahmen</td>
+						<td>Ausgaben</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>Januar</td>
+						<td class="A1 activeCell">€ 20.000,00</td>
+						<td class="A2 activeCell">€ 14.000,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Februar</td>
+						<td class="A1 activeCell">€ 17.000,00</td>
+						<td class="A2 activeCell">€ 15.000,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>März</td>
+						<td class="A1 activeCell">€ 18.000,00</td>
+						<td class="A2 activeCell">€ 13.000,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>Einnahmen Netto<br/>(Vierteljährlich)</td>
+						<td>
+							<code>
+								=SUMME(<span class="A1 activeCell">B2:B4</span>)-SUMME(<span class="A2 activeCell">C2:C4</span>)
+							</code>
+						</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th></th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<footer></footer>
+		</div>
+		<div id="readfunctions6" class="step slide" data-x="-8000" data-y="1500" data-rotate-y="90" data-z="-7250">
+			<header>Was passiert in dieser Formel als erstes ?</header>
+			<ol class="solve">
+				<li class="correct">Die <code>SUMME</code> Funktion addiert die Werte in <code>B2:B4</code> auf</li>
+				<li class="wrong">Jeder Wert in <code>B2:B4</code> wird mit <code>E1</code> multipliziert</li>
+			</ol>
+			<table class="exceltable">
+				<thead>
+					<tr>
+						<th class="col-md-1"></th>
+						<th class="col-md-2">A</th>
+						<th class="col-md-1">B</th>
+						<th class="col-md-1">C</th>
+						<th class="col-md-1">D</th>
+						<th class="col-md-1">E</th>
+						<th class="col-md-1">F</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>Artikel</td>
+						<td>Preis</td>
+						<td></td>
+						<td>Steuersatz:</td>
+						<td class="A2 activeCell">7,50%</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>Mixer</td>
+						<td class="A1 activeCell">€ 7,99</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Eierkocher</td>
+						<td class="A1 activeCell">€ 4,75</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>Putzstation</td>
+						<td class="A1 activeCell">€ 9,20</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>Steuer</td>
+						<td>
+							<code>
+								=SUMME(<span class="A1 activeCell">B2:B4</span>)* <span class="A2 activeCell">E1</span>
+							</code>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>Gesamt</td>
+						<td>€ 23,59</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<footer></footer>
+		</div>
+	    <div id="readfunctions7" class="step slide" data-x="-8000" data-y="1500" data-rotate-y="90" data-z="-8500">
+			<header>Welche Funktion wird zuerst ausgeführt ?</header>
+			<ol class="solve">
+				<li class="wrong"><code>WENN</code></li>
+				<li class="correct"><code>SUMME</code></li>
+			</ol>
+			<table class="exceltable">
+				<thead>
+					<tr>
+						<th class="col-md-1"></th>
+						<th class="col-md-2">A</th>
+						<th class="col-md-1">B</th>
+						<th class="col-md-1">C</th>
+						<th class="col-md-1">D</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>Vorname</td>
+						<td>Nachname</td>
+						<td>Spende</td>						
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>Jens</td>
+						<td>Grabenstein</td>
+						<td class="A1 activeCell">€ 120,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Peter</td>
+						<td>Grund</td>
+						<td class="A1 activeCell">€ 75,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>Heil</td>
+						<td>Michael</td>
+						<td class="A1 activeCell">€ 300,00</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>Spendenziel erreicht ?</td>
+						<td>
+							<code>
+								=WENN(SUMME(<span class="A1 activeCell">C2:C4</span>)>500;"Ja";"Nein")
+							</code>
+						</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<footer></footer>
+		</div>
+		
 		<!-- #############################################
 			      W O R K I N G  W I T H  D A T A
 		     ############################################# -->
@@ -1533,7 +2361,7 @@
 		<div id="freezingAssignment" class="step assignment" data-x="0" data-y="3500" data-rotate-x="-90">
 			<header class="akzent1"><i class="fa fa-cog fa-spin"></i>Aufgabe #9</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 9</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment9_Workbook.xlsx" target="_blank">Assignment 9</a></code>.</li>
 				<li><em>Fixieren</em> sie die ersten zwei Zeilen (Zeile <code>1</code> und Zeile <code>2</code>).</li>
 				<li>Öffnen sie ein <em>neues Fenster</em> der aktuellen Arbeitsmappe.</li>
 				<li>Nutzen sie den <em>Teilen</em> Befehl um ihr Arbeitsblatt in mehrere Bereiche zu teilen.</li>
@@ -1572,7 +2400,7 @@
 		<div id="sortingAssignment" class="step assignment" data-x="1500" data-y="3500" data-z="-2000" data-rotate-x="-90">
 			<header class="akzent2"><i class="fa fa-cog fa-spin"></i>Aufgabe #10a</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 10a</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment10a_Workbook.xlsx" target="_blank">Assignment 10a</a></code>.</li>
 				<li><em>Sortieren</em> sie das Arbeitsblatt nach <code>Homeroom #</code> (Spalte <code>A</code>) auf- oder absteigend.</li>
 				<li>Sortieren sie die Zellen <code>G3:H7</code> von groß nach klein nach der Anzahl der <code>Orders</code> (Spalte <code>H</code>).</li>
 				<li>Fügen sie die <em>Hintergrundfrabe</em> der Zelle in Spalte <code>E</code> als zweite <em>ebene für die Sortierung</em> ein.</li>
@@ -1602,7 +2430,7 @@
 		<div id="filteringAssignment" class="step assignment" data-x="1500" data-y="3500" data-z="-4500" data-rotate-x="-90">
 			<header class="akzent2"><i class="fa fa-cog fa-spin"></i>Aufgabe #10b</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 10b</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment10b_Workbook.xlsx" target="_blank">Assignment 10b</a></code>.</li>
 				<li>Filtern sie Spalte <code>B</code> <code>Type</code>, dass lediglich <em>Laptops und Kameras</em> angezeigt werden.</li>
 				<li>Suchen sie mit Hilfe eines <em>Such-Filter</em> alle Produkten von <code>EDI</code> in Spalte <code>C</code> <code>Equipment Detail</code>.</li>
 				<li><em>Löschen</em> sie beide Filter.</li>
@@ -1642,7 +2470,7 @@
 		<div id="groupingAssignment" class="step assignment" data-x="3000" data-y="3500" data-z="-3250" data-rotate-x="-90">
 			<header class="akzent3"><i class="fa fa-cog fa-spin"></i>Aufgabe #11</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 11</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment11_Workbook.xlsx" target="_blank">Assignment 11</a></code>.</li>
 				<li>Gruppieren sie die <em>Spalten</em> <code>D</code> und <code>E</code>.</li>
 				<li>Nutzen sie die Schaltflächen <em>Detail einblenden</em> bzw. <em>Detail ausblenden</em> um die Gruppe zu öffnen bzw. zu schließen.</li>
 				<li>Heben sie die Gruppiereung der Spalten <code>D</code> und <code>E</code>auf.</li>
@@ -1687,7 +2515,7 @@
 		<div id="tablesAssignment" class="step assignment" data-x="4500" data-y="2500" data-z="-3250" data-rotate-x="90">
 			<header class="akzent4"><i class="fa fa-cog fa-spin"></i>Aufgabe #12</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 12</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment12_Workbook.xlsx" target="_blank">Assignment 12</a></code>.</li>
 				<li>Formatieren sie die Zellen <code>A2:E13</code> als <em>Tabelle</em>.</li>
 				<li><em>Fügen</em> sie eine Zeile oder eine Spalte der Tabelle <em>hinzu</em>.</li>
 				<li>Wählen sie eine <em>Tabellenformatvorlage</em> für die selektierte Tabelle aus.</li>
@@ -1845,7 +2673,7 @@
 		<div id="chartsAssignment1" class="step assignment" data-x="6000" data-y="3500" data-z="-4500" data-rotate-x="-90">
 			<header class="akzent6"><i class="fa fa-cog fa-spin"></i>Aufgabe #13a</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 13a</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment13a_Workbook.xlsx" target="_blank">Assignment 13a</a></code>.</li>
 				<li>Erstellen sie mit den Daten des Arbeitsblattes ein <em>Diagramm</em>, nutzen sie dafür die Zellen <code>A1:F6</code> als Diagrammdatenbereich.</li>
 				<li>Ändern sie das <em>Layout des Diagrammes</em>, nutzen sie hierfür das Schenllayout <code>Layout 8</code>.</li>
 				<li>Wenden sie eine <em>Diagrammformatvorlage</em> an.</li>
@@ -1871,7 +2699,7 @@
 		<div id="chartsAssignment2" class="step assignment" data-x="6000" data-y="3500" data-z="-7000" data-rotate-x="-90">
 			<header class="akzent6"><i class="fa fa-cog fa-spin"></i>Aufgabe #13b</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 13b</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment13b_Workbook.xlsx" target="_blank">Assignment 13b</a></code>.</li>
 				<li>Erzeugen sie eine <em>Sparkline</em> für den ersten Verkäufer in Zeile <code>3</code>.</li>
 				<li>Benutzen sie den <em>fill handle</em> um Sparklines für alle weiteren Zeilen zu erzeugen</li>
 				<li>Setzen sie <em>Markierungen</em> für <em>Höchstpunkt</em> und <em>Tiefpunkt</em>.</li>
@@ -1921,7 +2749,7 @@
 		<div id="trackingAssignment" class="step assignment" data-x="-2000" data-y="4500" data-rotate-x="-90">
 			<header class="akzent1"><i class="fa fa-cog fa-spin"></i>Aufgabe #14</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 14</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment14_Workbook.xlsx" target="_blank">Assignment 14</a></code>.</li>
 				<li>Aktivieren sie <em>Änderungen nachverfolgen</em>.</li>
 				<li><em>Löschen</em> sie Zellen, <em>fügen sie weitere hinzu</em> oder <em>editieren</em> sie den Inhalt in mehreren Zellen. Achten sie auf die <em>Hervorhebung</em> der geänderten Zellen.</li>
 				<li><em>Nehmen</em> sie alle Änderungen <em>an</em>, dann <em>deaktivieren</em> sie die Nachverfolgung.</li>
@@ -1954,7 +2782,7 @@
 		<div id="conditionalAssignment" class="step assignment" data-x="-3500" data-y="3000" data-rotate-x="90">
 			<header class="akzent2"><i class="fa fa-cog fa-spin"></i>Aufgabe #15</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 15</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment15_Workbook.xlsx" target="_blank">Assignment 15</a></code>.</li>
 				<li>Fügen sie den Verkaufsdaten (Zellen <code>B3:G23</code>) eine <em>bedingte Formatierung</em>sregel hinzu: alle Zellen deren Wert <em>größer <code>$9000</code></em> ist, sollen ein <span class="akzent2trans">grüne Füllung</span> erhalten.</li>
 				<li>Fügen sie eine <em>Vorlage (Datenbalken, Farbskalen, Symbolsätze)</em> als <em>weitere Regel</em> denselben Zellen hinzu.</li>
 				<li><em>Löschen</em> sie alle bedingte Formatierungsregeln vom Arbeitsblatt.</li>
@@ -2005,7 +2833,7 @@
 		<div id="pivotAssignment" class="step assignment" data-x="-5000" data-y="4500" data-rotate-x="-90">
 			<header class="akzent3"><i class="fa fa-cog fa-spin"></i>Aufgabe #16</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 16</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment16_Workbook.xlsx" target="_blank">Assignment 16</a></code>.</li>
 				<li>erzeugen sie mit den Daten der Arbeitsmappe eine <em>Pivot Tabelle</em>.</li>
 				<li><em>Spielen</em> sie mit den verschiedenen Feldern in den Bereichen <code>Zeilen</code> und <code>Spalten</code>.</li>
 				<li>Filtern sie den Bericht mit einem <em>Datenschnitt</em>.</li>
@@ -2048,7 +2876,7 @@
 		<div id="whatifAssignment" class="step assignment" data-x="-6500" data-y="3000" data-rotate-x="90">
 			<header class="akzent4"><i class="fa fa-cog fa-spin"></i>Aufgabe #17</header>
 			<ol>
-				<li>Öffnen sie die Arbeitsmappe <code>Assignment 17</code>.</li>
+				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment17_Workbook.xlsx" target="_blank">Assignment 17</a></code>.</li>
 				<li>Gehen sie auf das Arbeitsblatt <code>History Class</code>.</li>
 				<li>Nutzen sie die <em>Zielwertsuche</em> um herauszufinden <em>wieviel Punkte</em> sie im <code>Test 3</code> schreiben müssen <em>um im Gesamtergebnis einen Mittelwert von <code>90</code></em> zu erlangen.</li>
 			</ol>
@@ -2156,6 +2984,7 @@
         	$(this).find("span").each(function(idx, ele) {
         		$.each(ele.className.split(' '), function(){
         			$("#"+this).addClass("activeCell");
+        			console.log($("#"+this));
         		});        		
         		$(ele).addClass("activeCell");
         	});
@@ -2172,6 +3001,9 @@
         	$(".selectMe").removeClass("activeCell");
         	$("#selectFormula").text("="+$(this).attr('title'));
         	$(this).addClass("activeCell");
+        });
+        $(".solve>li").click(function() {
+        	$(this).addClass("selected");
         });
         </script>    
 	</body>

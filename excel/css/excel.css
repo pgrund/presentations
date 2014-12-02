@@ -107,6 +107,12 @@ td.cell {
 #whatif::before {
 	background-image: url("../img/whatifanalysis.png");	
 }
+#checkingfunctions::before {
+	background-image: url("../img/formula_error.png");
+}
+#readfunctions::before {
+	background-image: url("../../bisnode/example/img/umbrella.jpg");
+}
 
 .carousel a.left, .carousel a.right {
 	width: 100px;
@@ -539,6 +545,9 @@ a.carousel-control.right{
 #bsoptions::before {	
 	background-image: url("../img/backstage_options.png");
 }
+.white {	
+	color: rgb(245,245,245);	
+}
 .whitetrans {
 	background-color: rgba(245,245,245,0.7);	
 }
@@ -630,6 +639,11 @@ div.alert-warning {
 	background-image: url("../img/ribbon_start.png");
 	margin:10px;
 }
+.ribbon-formula-image {
+	display:block;
+	background-image: url("../img/ribbon_formula.png");
+	margin:10px;
+}
 #rowscol0 {	
 	width:100px;
 	height:90px;	
@@ -690,26 +704,43 @@ div.alert-warning {
 	top: 0px;
 	margin-bottom:20px;
 }
-
-th.head {
-	background-color: lightgray;
-	color:black;
+table.exceltable>thead>tr>th,
+table.exceltable>thead>tr>td,
+table.exceltable>tbody>tr>th:nth-child(1) {
+	background-color: lightgray; 
+	color:black ;
 	border:solid thin black;
 }
-#mathexample td,
-#mathexample th {
+.exceltable td, 
+.exceltable th {
 	text-align:center;
 	width: 110px;
+}
+table.exceltable {
+	margin-left: auto;
+	margin-right: auto;
 }
 .activeCell {
 	margin:5px;
 	padding:0px 5px 0px 5px;
 }
+span.A1.activeCell {
+	border:none;
+	color:blue;
+}
+span.A2.activeCell {
+	border:none;
+	color:red;
+}
+span.A3.activeCell {
+	border:none;
+	color:darkgreen;
+}
 .A1.activeCell {
-	border:dotted thick red;
+	border:dotted thick blue;
 }
 .A2.activeCell {
-	border:dotted thick blue;	
+	border:dotted thick red;	
 }
 .A3.activeCell {
 	border:dotted thick darkgreen;
@@ -726,7 +757,51 @@ th.head {
 #mathorder>code>em.result {
 	font-size: 3.5em;
 }
-
+#f01 {
+	width: 100px;
+	height: 90px;
+	background-position: -55px -55px;
+}
+#f02 {
+	width: 110px;
+	height:90px;
+	background-position: -820px -55px;
+}
+.solve {
+	list-style: none;
+}
+.solve>li::before {
+	font-family: 'FontAwesome';
+	content: '\f096';
+	padding-right:10px;
+	padding-left:5px;
+}
+.solve>li.correct.selected::before {
+	color: darkgreen;
+	text-shadow: 2px 2px 3px white;
+	content:'\f046';
+}
+.solve>li.wrong.selected::before {
+	color: red;
+	text-shadow: 2px 2px 3px white;
+	content:'\f05e'
+} 
+.solve>li:hover:before {
+	content:'\f046';
+} 
+.solve>li:hover {
+	color:black
+}
+.solve>li.selected {
+	color:white;
+	text-shadow: 2px 2px 3px black;
+}
+.solve>li.correct.selected {
+	background-color: rgba(189,207,49,0.7);
+}
+.solve>li.wrong.selected {
+	background-color: rgba(191,13,49, 0.7);
+}
 /**
 	starting print media 
 */
@@ -795,7 +870,7 @@ th.head {
     .overviewtext h2 {
     	padding: 0px;
     }
-	.ribbon-home-image, .ribbon-pagelayout-image {
+	.ribbon-home-image, .ribbon-pagelayout-image, .ribbon-formula-image {
 		display: none;
 	}
     #ifquickaccesstext, #ifmyaccounttext, #ifribbontext,
