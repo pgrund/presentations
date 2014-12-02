@@ -720,6 +720,10 @@ table.exceltable {
 	margin-left: auto;
 	margin-right: auto;
 }
+.exceltable td.formula,
+.exceltable th.formula {
+	font-family: "Courier New", Arial;
+}
 .activeCell {
 	margin:5px;
 	padding:0px 5px 0px 5px;

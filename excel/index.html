@@ -1816,7 +1816,7 @@
 					<tr>
 						<th>3</th>
 						<td>Gesamt Rest</td>
-						<td>=<span class="A2 activeCell">B2</span>-<span class="A1 activeCell">B1</span></td>
+						<td class="formula">=<span class="A2 activeCell">B2</span>-<span class="A1 activeCell">B1</span></td>
 						<td></td>
 					</tr>
 					<tr>
@@ -1869,7 +1869,7 @@
 						<td>35</td>
 						<td></td>
 						<td>Bestmarke</td>
-						<td><code>=MAX(<span class="A1 activeCell">B2:B6</span>)</code></td>
+						<td class="formula">=MAX(<span class="A1 activeCell">B2:B6</span>)</td>
 						<td></td>
 					</tr>
 					<tr>
@@ -1972,7 +1972,7 @@
 					<tr>
 						<th>5</th>
 						<td>Trinkgeld</td>
-						<td>=<span class="A1 activeCell">B2</span>+<span class="A2 activeCell">B3</span>+<span class="A3 activeCell">B4</span>* 0.2</td>
+						<td class="formula">=<span class="A1 activeCell">B2</span>+<span class="A2 activeCell">B3</span>+<span class="A3 activeCell">B4</span>* 0.2</td>
 						<td></td>
 					</tr>
 					<tr>
@@ -2036,10 +2036,8 @@
 						<td class="A1 activeCell">€ 557,00</td>
 						<td class="A1 activeCell">€ 3.863,00</td>
 						<td class="A1 activeCell">€ 1.117,00</td>
-						<td class="A2 activeCell">
-							<code>
+						<td class="formula">
 							=SUMME(<span class="A1 activeCell">B3:E3</span>)
-							</code>
 						</td>
 						<td></td>
 					</tr>
@@ -2142,10 +2140,8 @@
 					<tr>
 						<th>6</th>
 						<td>Einnahmen Netto<br/>(Vierteljährlich)</td>
-						<td>
-							<code>
+						<td class="formula">
 								=SUMME(<span class="A1 activeCell">B2:B4</span>)-SUMME(<span class="A2 activeCell">C2:C4</span>)
-							</code>
 						</td>
 						<td></td>
 						<td></td>
@@ -2219,10 +2215,8 @@
 					<tr>
 						<th>5</th>
 						<td>Steuer</td>
-						<td>
-							<code>
-								=SUMME(<span class="A1 activeCell">B2:B4</span>)* <span class="A2 activeCell">E1</span>
-							</code>
+						<td class="formula">
+							=SUMME(<span class="A1 activeCell">B2:B4</span>)* <span class="A2 activeCell">E1</span>
 						</td>
 						<td></td>
 						<td></td>
@@ -2306,10 +2300,8 @@
 					<tr>
 						<th>6</th>
 						<td>Spendenziel erreicht ?</td>
-						<td>
-							<code>
+						<td class="formula">
 								=WENN(SUMME(<span class="A1 activeCell">C2:C4</span>)>500;"Ja";"Nein")
-							</code>
 						</td>
 						<td></td>
 						<td></td>
@@ -3004,7 +2996,7 @@
         });
         $(".solve>li").click(function() {
         	$(this).addClass("selected");
-        });
+        });       
         </script>    
 	</body>
 </html>
