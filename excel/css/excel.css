@@ -644,6 +644,11 @@ div.alert-warning {
 	background-image: url("../img/ribbon_formula.png");
 	margin:10px;
 }
+.ribbon-view-image {
+	display:block;
+	background-image: url("../img/ribbon_view.png");
+	margin:10px;
+}
 #rowscol0 {	
 	width:100px;
 	height:90px;	
@@ -675,6 +680,16 @@ div.alert-warning {
   width: 400px;
   height:120px;	
   background-position: -140px -30px;	
+}
+#freeze01 {
+  width: 110px;
+  height: 80px;	
+  background-position: -710px -55px;		
+}
+#split01 {
+  width: 310px;
+  height: 90px;	
+  background-position: -710px -55px;		
 }
 .alert-info>header {
 	background-color: rgb(57,187,236);
@@ -807,6 +822,25 @@ span.A3.activeCell {
 .solve>li.wrong.selected {
 	background-color: rgba(191,13,49, 0.7);
 }
+
+ol.item {
+	counter-reset: itemcounter;
+}
+ol.item>li {
+	list-style-type: none;
+}
+ol.item li:before {
+	counter-increment: itemcounter;
+	content: counter(itemcounter) ". ";		
+	text-shadow: 2px 2px 3px black;
+
+	background-color: lightgray;
+	
+	border-radius: 50%;
+	
+	margin-right:5px;
+	padding-left: 5px;
+}
 /**
 	starting print media 
 */
@@ -875,8 +909,9 @@ span.A3.activeCell {
     .overviewtext h2 {
     	padding: 0px;
     }
-	.ribbon-home-image, .ribbon-pagelayout-image, .ribbon-formula-image {
-		display: none;
+	.ribbon-home-image, .ribbon-pagelayout-image, 
+	.ribbon-formula-image, .ribbon-view-image {
+		display: none;		
 	}
     #ifquickaccesstext, #ifmyaccounttext, #ifribbontext,
     #ifcommandstext, #ifnameboxtext, #ifformulabartext,
