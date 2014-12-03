@@ -850,14 +850,55 @@ ol.item>li {
 ol.item li:before {
 	counter-increment: itemcounter;
 	content: counter(itemcounter) ". ";		
+	
 	text-shadow: 2px 2px 3px black;
-
-	background-color: lightgray;
 	
 	border-radius: 50%;
 	
 	margin-right:5px;
 	padding-left: 5px;
+}
+ol.item li:nth-child(1):before{
+  color:white;
+  background-color: rgb(189,207,49);
+}
+ol.item li:nth-child(2):before {    
+   color:white;
+   background-color: rgb(54,111,54);
+}
+ol.item li:nth-child(3):before {
+   color:white;
+   background-color: rgb(251,195,17);
+}
+ol.item li:nth-child(4):before{
+   color:white;
+   background-color:rgb(57,187,236);
+}
+ol.item li:nth-child(5):before{
+   color:white;
+   background-color: rgb(204,204,204);
+}
+ol.item li:nth-child(6):before{
+   color:white;
+   background-color:rgb(127,127,127);
+}
+
+#filter01 {
+	margin-right:40px;
+	height: 75px;
+	width: 170px;
+	background-position: -420px -55px;
+}
+#sortfilterimg {
+	max-width: 40%;
+	margin-right: 40px;
+}
+#filternumberimg {
+	max-width:40%;
+	margin-left:10px;
+}
+#filtersearch {
+	margin:10px;
 }
 /**
 	starting print media 

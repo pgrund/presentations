@@ -2420,24 +2420,50 @@
 		</div>
 		<div id="filter1" class="step slide" data-x="1500" data-y="3000" data-z="-3250" data-rotate-y="90">
 			<header>Filtern</header>
-			<ul>
-				<li>verwenden</li>
-				<li>mehrere Filter</li>
-				<li>Filter löschen</li>
-			</ul>
+			<p class="lead">Bei vielen Daten helfen <em>Filter</em> dabei die Darstellung der Daten auf dem Arbeitsblatt <em>einzugrenzen</em>.</p>			
+			<div id="filter01" class="ribbon-data-image pull-right"></div>
+			<ol class="item">
+				<li>Um Filter erfolgreich zu verwenden, sollten ihre Daten eine <em>Kopfzeile mit Spaltenüberschriften</em> enthalten</li>
+				<li>				
+				Wählen sie auf dem <a href="#/ribbon">Menüband Daten</a> den Befehl <em>Filtern</em></li>				
+				<li>	
+				<img id="sortfilterimg" src="./img/sort_filter.png" class="pull-left" alt="Sortieren und Filtern"/>			
+				In jeder Zelle der Kopfzeile erscheint ein <em>Pfeil <i class="fa fa-toggle-down"></i></em> für die Auswahl des <em>Filtern Menüs</em></li>
+				<li>				
+				Wählen sie nun die <em>Kontrollkästchen</em> aus, nach denen sie filtern möchten</li>				
+				<li>Alle <em>nicht betroffenen Zeilen</em> werden zwischenzeitlich ausgeblendet.</li>
+				<li>Um alle Filter zu <em>löschen</em>, einfach den Befehl <em>Filtern</em> erneut wählen</li>
+			</ol>
 			<footer></footer>
 		</div>
 		<div id="filter2" class="step slide" data-x="1500" data-y="3000" data-z="-4500" data-rotate-y="90">
-			<header>Filtern - Fortgeschritten</header>
-			<ul>
-				<li>Suchfilter</li>
-				<li>Textfilter</li>
-				<li>Zahlenfilter</li>
-				<li>Datumsfilter</li>
-			</ul>
+			<header>Fortgeschrittenes Filtern - Text</header>
+			<p class="lead">Neben den Standardfiltern bietet Excel einige Funktionen an, um die Daten weiter einzuschränken</p>
+			<img id="filtersearch" src="./img/filter_search.png" alt="Suchfilter Auswahl" class="pull-left"/>
+			<dl>
+				<dt>Suchfilter</dt>				
+				<dd>Dieser Filter schhränkt die Auswahl weiter ein auf das <em>Vorkommen von Inhalten (Text, Zahl, ...)</em> in den Zellwerten.</dd>
+				<dd>Sowohl ein Eintrag im <em>>Suchfeld</em> als auch das <em>Kontrollkästchen</em> müssen gesetzt sein</dd>
+				<dt>Textfilter</dt>
+				<dd>Nach speziellen Texteigenschaften wie <em>enthält</em>, <em>beginnt mit</em>, ... können hier gefiltert werden</dd>
+				<dd>Ein Dialog erleichtert die Benutzung und bietet natürlich weitere Möglichkeiten für <em>benutzerdefinierte Textfilter</em></dd>				
+			</dl>
 			<footer></footer>
 		</div>
-		<div id="filteringAssignment" class="step assignment" data-x="1500" data-y="3500" data-z="-4500" data-rotate-x="-90">
+		<div id="filter3" class="step slide" data-x="1500" data-y="3000" data-z="-5750" data-rotate-y="90">
+			<header>Fortgeschrittenes Filtern - Zahl und Datum</header>
+			<p class="lead">Excel erkennt bereits das Format der Spalte und bietet davon abhängige Flteroptionen an</p>
+			<img src="./img/filter_number.png" alt="Zahlenfilter" id="filternumberimg" class="pull-right"/>
+			<dl>
+				<dt>Zahlenfilter</dt>
+				<dd>Das erweiterte Menü der Zahlenfilter bietet Auswahl von <em>Bereichen</em> an, wie <em>größer als ...</em>, <em>kleiner als ...</em>, <em>zwischen</em> an als auch fortgeschrittenere Funktionen wie <em>Top 10 ...</em> oder <em>Unter dem Durchschnitt</em></dd>
+				<dt>Datumsfilter</dt>
+				<dd>Neben der <em>Drilldown-Funktion</em> des Standardfilters für Datumswerte (Jahr, Monat, Tag) bietet das erweiterte Menü Filter wie <em>Heute</em>, <em>diese Woche</em>, <em>alles bis heute</em>, <em>ab einem Datum</em>, etc. an</dd>
+				<dd></dd>
+			</dl>
+			<footer></footer>	
+		</div>
+		<div id="filteringAssignment" class="step assignment" data-x="1500" data-y="3500" data-z="-5750" data-rotate-x="-90">
 			<header class="akzent2"><i class="fa fa-cog fa-spin"></i>Aufgabe #10b</header>
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment10b_Workbook.xlsx" target="_blank">Assignment 10b</a></code>.</li>
