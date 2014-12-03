@@ -985,7 +985,7 @@
 		</div>
 		<div id="borderfill" class="step slide" data-x="3000" data-rotate-y="90" data-z="-14500">
 			<header>Zellen Formatieren - Ränder und Farben</header>
-			<img src="./img/border_menu.png" alt="Menü für Ränder" class="pull-right"/>
+			<img id="bordermenuimg" src="./img/border_menu.png" alt="Menü für Ränder" class="pull-right"/>
 			<p>Ränder und Farben erlauben es <em>klar definierte Grenzen</em> für <em>unterschiedliche Bereiche</em> innerhalb des Arbeitsblattes zu ziehen.</p>
 			<p class="lead">Beispiel: Kopfzeilen vom Rest der Daten optisch trennen</p>
 			<dl>
@@ -2489,18 +2489,41 @@
 		</div>
 		<div id="group" class="step slide" data-x="3000" data-y="3000" data-rotate-y="90" data-z="-750">
 			<header>Reihen Und Spalten Gruppieren</header>
-			<ul>
-				<li>gruppieren</li>
-				<li>anzeigen, verstecken</li>
-			</ul>
+			<p class="lead">Arbeitsblätter mit viel Inhalt können schnell überfüllt und schwer lesbar werden. Excel erlaubt zu <em>gruppieren</em> um Gruppeninhalte zu verbergen/anzuzeigen und sogar <em>Teilergebnisse</em> zu liefern.</p>
+			<div id="groupimgbg" class="ribbon-data-image pull-left"></div>
+			<ol class="item">
+				<li>Wählen sie die Spalten/Zeilen aus, welche sie gruppieren möchten</li>
+				<li>Nutzen sie im <a href="#/ribbon">Menüband Daten</a> den Befehl <em>Gruppieren</em></li>
+				<li>Die gruppierten Zellen können über <em><i class="fa fa-plus-square-o"></i> sichtbar</em> und über <em><i class="fa fa-minus-square-o"></i> versteckt</em> werden</li>
+				<li>Um eine Gruppierung <em>aufzuheben</em>, die gruppierten Zeilen/Spalten auswählen und den Befehl <em>Gruppierung aufheben</em> auswählen</li>
+			</ol>
 			<footer></footer>
 		</div>
 		<div id="subtotal" class="step slide" data-x="3000" data-y="3000" data-rotate-y="90" data-z="-2000">
-			<header>Teilergebnisse</header>
+			<header>Teilergebnisse</header>			
+			<p class="lead">Der Befehl <em>Teilergebnisse</em> erzeugt Gruppen und nutzt gängige Funktionen um ihre Daten zu <em>verdichten</em>.</p>
+			<img src="./img/grouping_subtotal_dialog.png" class="pull-right" alt="Dialog für Teilergebnisse"/>
+			<ol class="item">
+				<li><em>Sortieren</em> sie zuerst ihr Arbeitsblatt nach jenen Daten, die sie verdichten möchten</li>
+				<li>Nutzen sie aus dem <a href="#/ribbon">Menüband</a> den Befehl <em>Teilergebnisse</em></li>
+				<li>Wählen sie im Dialog für Teilergebnisse für <em>Gruppieren nach</em> jenes Feld, für welches sie Teilergebnisse wünschen</li>
+				<li>In <em>Unter Verwendung von</em> wählen sie die Funktion für das Verdichten aus</li>
+				<li>In <em>Teilergebnis addieren zu</em> wählen sie die Spalte, wo das Teilergebnis geschrieben werden soll</li>				
+			</ol>
 			<footer></footer>
 		</div>
 		<div id="grouplevel" class="step slide" data-x="3000" data-y="3000" data-rotate-y="90" data-z="-3250">
 			<header>Gruppen Ebenen</header>
+			<p>Bei Gruppierungen wie z.B. bei Teilergebnissen wird das Arbeitsblatt in mehrere <em>Ebenen unterteilt</em>.</p>
+			<p>Diese Ebenen sind <em>links oben</em> im Arbeitsblatt sichtbar und werden durch <span class="fa fa-stack fa-1o">
+				<i class="fa fa-stack-2x fa-square-o"></i>
+				<span class="fa-stack-1x fa-1o">1</span>
+				</span>, <span class="fa fa-stack fa-1o">
+				<i class="fa fa-stack-2x fa-square-o"></i>
+				<span class="fa-stack-1x fa-1o">2</span>
+			</span> dargestellt.</p>
+			<p>Ein <em>Klick</em> auf die Zahl, öffnet bzw. schließt <em>alle Gruppen</em> dieser Ebene.</p>
+			<p>Im Gegensatz dazu schließt das <i class="fa fa-minus-square-o"></i> bzw. öffnet das <i class="fa fa-plus-square-o"></i> nur <em>eine Gruppe</em> einer bestimmten Ebenen</p>
 			<footer></footer>
 		</div>
 		<div id="groupingAssignment" class="step assignment" data-x="3000" data-y="3500" data-z="-3250" data-rotate-x="-90">
@@ -2509,9 +2532,9 @@
 				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment11_Workbook.xlsx" target="_blank">Assignment 11</a></code>.</li>
 				<li>Gruppieren sie die <em>Spalten</em> <code>D</code> und <code>E</code>.</li>
 				<li>Nutzen sie die Schaltflächen <em>Detail einblenden</em> bzw. <em>Detail ausblenden</em> um die Gruppe zu öffnen bzw. zu schließen.</li>
-				<li>Heben sie die Gruppiereung der Spalten <code>D</code> und <code>E</code>auf.</li>
+				<li>Heben sie die Gruppierung der Spalten <code>D</code> und <code>E</code>auf.</li>
 				<li>Fügen sie in das Arbeitsblatt <em>Teilergebnisse</em> für die T-Shirt Größe ein.</li>
-				<li>Entfernen sie das Teilergbenis vom Arbeitsblatt.</li>
+				<li>Entfernen sie das Teilergebnis vom Arbeitsblatt.</li>
 			</ol>
 		</div>
 
@@ -2591,7 +2614,7 @@
 			    <div class="item active">
 				   <img src="./img/chart_type_1.png"/>
 			       <div class="carousel-caption">			      
-				    <p class="lead">Excel hat eine Vielzahl von Diagrammtypen, jeder Typ mit eigenen Vor- und Nachteilen.</p>
+				    <p class="lead">Excel hat eine Vielzahl von Diagrammtypen, jeder Typ hat seine eigenen Vor- und Nachteilen.</p>
 				  </div>
 			    </div>
 			    <div class="item">
