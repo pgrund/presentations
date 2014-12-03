@@ -649,6 +649,11 @@ div.alert-warning {
 	background-image: url("../img/ribbon_view.png");
 	margin:10px;
 }
+.ribbon-data-image {
+	display:block;
+	background-image: url("../img/ribbon_data.png");
+	margin:10px;
+}
 #rowscol0 {	
 	width:100px;
 	height:90px;	
@@ -690,6 +695,19 @@ div.alert-warning {
   width: 310px;
   height: 90px;	
   background-position: -710px -55px;		
+}
+#data01 {
+  width: 80px;
+  height: 65px;	
+  background-position: -340px -55px;			
+}
+#sortingdialogimg {
+	max-width: 40%;
+	margin-right: 9px;
+}
+#sortingcustomlistdialog {
+	max-width: 50%;
+	margin-left:10px;
 }
 .alert-info>header {
 	background-color: rgb(57,187,236);
@@ -878,7 +896,7 @@ ol.item li:before {
 		text-align:left;
 	}
 	
-	.right, .left {
+	.right, .left, .pull-left, .pull-right {
         width: 100%;
     }
     #backstagedescription {
@@ -910,7 +928,7 @@ ol.item li:before {
     	padding: 0px;
     }
 	.ribbon-home-image, .ribbon-pagelayout-image, 
-	.ribbon-formula-image, .ribbon-view-image {
+	.ribbon-formula-image, .ribbon-view-image, .ribbon-data-image {
 		display: none;		
 	}
     #ifquickaccesstext, #ifmyaccounttext, #ifribbontext,

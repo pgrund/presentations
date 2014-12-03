@@ -62,7 +62,7 @@
                                 <li><a href="#/cellrefs">Zellbezüge</a></li>
                                 <li><a href="#/functions">Funktionen</a></li>
                                 <li><a href="#/checkingfunctions">Formeln überprüfen</a></li>
-                                <li><a href="#/readfunctions">Formeln lesen (Quiz)</a></li>
+                                <li><a href="#/readfunctions">Formeln lesen <i class="fa fa-question-circle text5"></i></a></li>
                             </ul>
                         </li>                        
                          <li class="dropdown">
@@ -1768,7 +1768,10 @@
 		</div>
 
 		<div id="readfunctions" class="step image" data-y="1500" data-x="-8000">
-			<header class="akzent1trans">Quiz<br/>Formeln Lesen</header>
+			<header class="akzent1trans">
+				Quiz<br/>
+				Formeln Lesen
+			</header>
 			<footer></footer>
 		</div>
 		
@@ -2378,18 +2381,30 @@
 		</div>		
 		<div id="sort1" class="step slide" data-x="1500" data-y="3000" data-z="-750" data-rotate-y="90">
 			<header>Sortieren</header>
-			<ul>
-				<li>Arbeitsblatt vs Zellen</li>
-				<li>Nach Formaten sortieren</li>				
-				<li>mehrere Ebenen</li>
-			</ul>
+			<div id="data01" class="ribbon-data-image pull-right"></div>
+			<p>Umso mehr Inhalt einem Arbeitsblatt hinzugefügt wird, desto wichtiger wird die <em>Organisation dieser Informationen</em>.</p>
+			<img id="sortingdialogimg" src="./img/sorting_dialog.png" alt="Sortieren Dialog" class="pull-left"/>
+			<dl>
+				<dt>Arbeitsblatt sortieren</dt>
+				<dd>Excel kann das <em>gesamte Arbeitsblatt</em> sortieren, dabei bleiben die Zeilenbeziehungen erhalten. Selektieren sie eine Zell in der <em>gewünschten Spalte</em> und wählen sie im <a href="#/ribbon">Menüband Daten</a> den Befehl <em>Sortieren</em>.
+				</dd>
+				<dt>Zellbereich sortieren</dt>
+				<dd>Dagegen wird beim sortieren eines <em>Zellbereiches</em> ausschließlich der markierte Bereich sortiert, Beziehungen <em>außerhalb der Selektion</em> gehen verloren.</dd>
+				<dt>Nach Farbe sortieren</dt>
+				<dd>Anstatt nach Werten, kann auch nach Farben (Textfarbe, Hintergrundfarbe) sortiert werden. In dem <em>Sortieren</em> Dialog ist diese Option im Auswahlmenü verfügbar.</dd>
+			</dl>			
 			<footer></footer>
 		</div>
 		<div id="sort2" class="step slide" data-x="1500" data-y="3000" data-z="-2000" data-rotate-y="90">
 			<header>Sortieren</header>
-			<ul>
-				<li>nach Benutzerdefinierter Liste sortieren</li>				
-			</ul>
+			<dl>
+				<dt>Auf mehreren Ebenen sortieren</dt>
+				<dd>Mehrere Ebenen können im Dialog <em>Sortieren</em> ebenfalls hinzugefügt werden. Mit Ebenen sind Sortierungen möglich wie <code>...<em>zuerst</em> nach Datum, <em>dann</em> nach Kundenummer</code></dd>
+				<img id="sortingcustomlistdialog" src="./img/sorting_customlist_dialog.png" alt="Dialog für Benutzerdefinierte Listen" class="pull-right"/>
+				<dt>Benutzerdefinierte Liste</dt>
+				<dd>Excel erlaubt zusätzlich das Sortieren nach einer <em>benutzerdefinierten Liste</em>.<br/>
+				Wählen sie im <em>Sortieren Dialog</em> bei der Reihenfolge den Punkt <em>Benutzerdefinierte Liste ...</em> aus. In einem weiteren Dialog können sie nun aus bestehenden Listen (Wochentag, etc.) oder einer eigenen wählen.</dd>
+			</dl>
 			<footer></footer>
 		</div>
 		<div id="sortingAssignment" class="step assignment" data-x="1500" data-y="3500" data-z="-2000" data-rotate-x="-90">
