@@ -753,27 +753,27 @@ ul.list-unstyled li::before , ol.list-unstyled li::before {
 }
 
 .item li:nth-child(1):before, .item dt:nth-of-type(1) , .agenda li:nth-child(1):after,
-.item li:nth-child(1)>i:before{
+.item li:nth-child(1)>i.fa-li:before{
    color: rgb(189,207,49);
 }
 .item li:nth-child(2):before, .item dt:nth-of-type(2), .agenda li:nth-child(2):after,
-.item li:nth-child(2)>i:before {    
+.item li:nth-child(2)>i.fa-li:before {    
     color: rgb(54,111,54);
 }
 .item li:nth-child(3):before, .item dt:nth-of-type(3), .agenda li:nth-child(3):after,
-.item li:nth-child(3)>i:before {
+.item li:nth-child(3)>i.fa-li:before {
     color: rgb(251,195,17);
 }
 .item li:nth-child(4):before, .item dt:nth-of-type(4), .agenda li:nth-child(4):after,
-.item li:nth-child(4)>i:before {
+.item li:nth-child(4)>i.fa-li:before {
     color:rgb(57,187,236);
 }
 .item li:nth-child(5):before, .item dt:nth-of-type(5), .agenda li:nth-child(5):after,
-.item li:nth-child(5)>i:before {
+.item li:nth-child(5)>i.fa-li:before {
     color: rgb(204,204,204);
 }
 .item li:nth-child(6):before, .item dt:nth-of-type(6), .agenda li:nth-child(6):after,
-.item li:nth-child(6)>i:before {
+.item li:nth-child(6)>i.fa-li:before {
     color:rgb(127,127,127);
 }
 
