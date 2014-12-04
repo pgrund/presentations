@@ -41,7 +41,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>   
-                    <a href="#/start" class="navbar-brand"><img src="./img/Microsoft_Excel_Logo.svg" class="fa-excel" title="Excel"/></a>
+                    <a href="#/home" class="navbar-brand"><img src="./img/Microsoft_Excel_Logo.svg" class="fa-excel" title="Excel"/></a>
                 </div>                
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav">
@@ -96,6 +96,7 @@
                                 <i class="fa fa-coffee"></i>
                             </a>                            
                         </li>
+                        
                         <li class="divider"></li>
                         <li>
                             <a href="https://github.com/pgrund/presentations" title="source">
@@ -118,11 +119,17 @@
                 </div>
             </div>
         </div>
+	
+	
 
+	<div id="impress" class="not-supported">
 
-	<div id="impress">
+		<div class="fallback-message alert alert-warning">			
+		    <p>Ihr Browser <b>unterstützt nicht die benötigten Funktionen (CSS 3D)</b> für diese Präsentation.</p>
+	    	<p>Für beste Leistung nutzen sie bitte eine aktuelle Version von <b>Chrome</b>, <b>Safari</b> oder <b>Firefox</b>.</p>
+		</div>
 
-		<div id="start" class="step image title" data-y="-1000">
+		<div id="home" class="step image title" data-y="-1000">
 			<header class="visible-print-block">Excel 2013</header>
 			<footer class="black"></footer>
 		</div>
@@ -2550,12 +2557,28 @@
 			</footer>
 		</div>
 		<div id="createtable" class="step slide" data-x="4500" data-y="3000" data-rotate-y="90" data-z="-750">
-			<header>Tabellen erstellen</header>
-			<p>aus Daten</p>
+			<header>Tabellen erstellen</header>			
+			<p>Tabellen formatieren die Daten in ihrem Arbeitsblatt, sie beeinflussen die <em>Darstellung</em> und <em>Organisation</em>.</p>
+			<div id="table01" class="ribbon-home-image pull-left"></div>
+			<ol class="item">
+				<li>Selektieren sie den <em>Zellbereich der bestehenden Daten</em> für die Tabelle</li>
+				<li>Wählen sie im <a href="#/ribbon">Menüband Start</a> den Befehl <em>als Tabelle formatieren</em></li>
+				<li>
+				<img src="./img/cell_content.png" class="pull-right" alt="formatierte Tabelle"/>
+				Wählen sie im Auswahlmenü eine <em>Formatierung</em></li>
+				<li>Prüfen sie im <em>Bestätigungsdialog</em> die Zelladressen, ein <em>Kontrollkästchen</em> gibt an ob <em>Kopfzeilen</em> existieren.</li>
+				<li>Tabellen haben standardmäßig <em>Filter</em> für alle Spalten aktiviert</li>
+			</ol>
 			<footer></footer>
 		</div>
 		<div id="modifytable" class="step slide" data-x="4500" data-y="3000" data-rotate-y="90" data-z="-2000">
 			<header>Tabellen editieren</header>
+			<dl>
+				<dt>hinzufügen</dt>
+				<dd>Wenn sie eine weitere Zeile hinzufügen möchten, <em>tragen</em> sie ihre Daten einfach in der <em>ersten Zeile unterhalb</em> bzw. <em>der ersten Spalte rechts neben</em> der Tabelle ein. Excel erweitert die Tabelle automatisch.</dd>
+				<dd>Alternativ können sie einfach mit <em>gedrückter Maustaste</em> die <em>rechte unteren Ecke der Tabelle</em> ziehen. Die Tabelle wird auf den neuen Bereich erweitert.</dd>
+				<dd>Eine Verkleinerung ist ebenfalls möglich mit dieser Vorgehensweise, allerdings können nur <em>leere Zellen</em> entfernt werden.</dd>
+			</dl>
 			<ul>
 				<li>Zeilen/Spalten hinzufügen</li>
 				<li>Löschen</li>				
