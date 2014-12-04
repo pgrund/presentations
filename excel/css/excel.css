@@ -625,7 +625,7 @@ div.alert-warning {
 	max-width:420px;
 	min-height:50px;
 
-  	z-index: 20px;
+  	z-index: 20px
   	padding: 15px;	
 
 }
@@ -636,7 +636,7 @@ div.alert-warning {
 	right: 50px;
 
 	width:420px;
-	min-height:200px;
+	min-height:00px;
 
   	z-index: 20px;
   	padding: 15px;	
@@ -661,35 +661,33 @@ div.alert-warning {
 .cursorn-resize {
 	cursor: n-resize;
 }
-.ribbon-pagelayout-image {
+
+.ribbon-home-image, .ribbon-formula-image,
+.ribbon-view-image, .ribbon-data-image ,
+.ribbon-design-image, .ribbon-pagelayout-image {
 	display:block;
-	background-image: url("../img/ribbon_pagelayout.png");
 	margin:10px;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
 }
-.ribbon-home-image {
-	display:block;
+.ribbon-pagelayout-image {	
+	background-image: url("../img/ribbon_pagelayout.png");	
+}
+.ribbon-home-image {	
 	background-image: url("../img/ribbon_start.png");
-	margin:10px;
 }
-.ribbon-formula-image {
-	display:block;
+.ribbon-formula-image {	
 	background-image: url("../img/ribbon_formula.png");
-	margin:10px;
 }
 .ribbon-view-image {
-	display:block;
 	background-image: url("../img/ribbon_view.png");
-	margin:10px;
 }
 .ribbon-data-image {
-	display:block;
 	background-image: url("../img/ribbon_data.png");
-	margin:10px;
 }
 .ribbon-design-image {
-	display:block;
 	background-image: url("../img/ribbon_design.png");
-	margin:10px;	
 }
 #rowscol0 {	
 	width:100px;
