@@ -2758,20 +2758,23 @@
 			
 			
 		</div>
-		<div id="chartcreate" class="step slide under-construction" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-3250">
-			<header>Diagramme Anlegen / Verschieben</header>
-			<ul>
-				<li>anlegen</li>
-				<li>verschieben</li>								
-			</ul>
+		<div id="chartcreate" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-3250">
+			<header>Diagramm Anlegen</header>			
+			<div id="charts01" class="ribbon-insert-image pull-left"></div>
+			<p>Selektieren sie den <em>Zellbereich</em> der darzustellenden Daten, inklusive <em>Spaltenüberschriften</em> und <em>Zeilennamen</em>.</p>			
+			<p>Wählen sie im <a href="#/ribbon">Menüband Einfügen</a> unter <em>Diagramme</em> den entsprechenden Typ. Excel bietet unter dem Befehl <em>Empfohlene Diagramme</em> eine Vorauswahl für die selektierten Daten.</p>
+			<header>Diagramm Verschieben</header>
+			<div id="charts02" class="ribbon-charts-image pull-right"></div>
+			<p>Ein neues Diagramms, fügt Excel standardmäßig dem aktuellen Arbeitsblatt hinzu. Wollen sie das Diagramm z.B. <em>auf einem eigenen Arbeitsblatt</em> verschieben, wählen sie im <a href="#/ribbon">Menüband</a> den Befehl <em>Diagramm verschieben Ort</em>. Im folgenden Dialog können sie ein <em>anderes Arbeitsblatt</em> oder auch ein <em>eigenes neues Arbeitsblatt</em> auswählen.</p>
 			<footer></footer>
 		</div>
-		<div id="chartlayout" class="step slide under-construction" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-4500">
+		<div id="chartlayout" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-4500">
 			<header>Layout und Stil von Diagrammen</header>
-			<ul>
-				<li>Layout und Stil</li>
-				<li>Weitere Optionen</li>
-			</ul>
+			<p>Excel erlaubt einzelne <em>Diagrammelemente</em> einfach über den Befehl <em>Diagrammelement hinzufügen</em> zu editieren oder auch neue hinzuzufügen. Über ein <em>erweiterbares Auswahlmenü</em> können viele einzelne Eigenschaften an/aus geschaltet werden.</p>
+			<p><em>Schnelllayout</em> bietet eine vordefinierte Auswahl an Layouts für ihren Diagrammtyp.</p>
+			<div id="charts03" class="ribbon-charts-image"></div>
+			<p>Sie können auch direkt eine vordefinierte <em>Diagrammvorlage</em> anwenden.</p>
+			<p>Weitere Optionen bieten das <em>Ändern des <a href="#/chartsgeneral">Diagrammtyps</a></em> oder das <em>Wechseln von Zeile/Spalte</em>.</p>
 			<footer></footer>
 		</div>
 		<div id="chartsAssignment1" class="step assignment" data-x="6000" data-y="3500" data-z="-4500" data-rotate-x="-90">
@@ -2784,23 +2787,49 @@
 				<li><em>Verschieben</em> sie das Diagramm auf ein neues Arbeitsblatt <code>Book Sales Data: 2008-2012</code>.</li>
 			</ol>
 		</div>
-		<div id="sparklines" class="step slide under-construction" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-5750">
+		<div id="sparklines" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-5750">
 			<header>Sparklines</header>
-			<ul>
-				<li>Warum überhaupt ?</li>
-				<li>Typen</li>
-			</ul>
+			<p class="lead">Sparklines erlauben insbesondere bei <em>großen Datenmengen</em> und vielen Datenserien <em>Beziehungen und Trends</em> der einzelnen Serie zu verfolgen, ohne sich in der Vielzahl der Serien zu verlieren.</p>
+			<img id="sparklinesvscharts" src="./img/sparklines_charts.png" alt="Diagramme versus Sparklines" class="center-block"/>
+			<p><em>Sparklines</em> sind für Situationen wo sie eine <em>klare Übersicht</em> der Daten auf einen Blick benötigen aber <em>nicht alle Funktionalitäten</em> eines Diagramms benötigen.</p>
+			<p>Diagramme andererseits passen hervorragend zu <em>detaillierten Ansichten</em> und eignen sich oftmals besser zum <em>Vergleichen</em> von verschiedenen Serien.</p>
 			<footer></footer>
 		</div>
-		<div id="sparklinesmodify" class="step slide under-construction" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-7000">
-			<header>Sparklines Ändern</header>
-			<ul>
-				<li>erzeugen, ändern (Markierungen, Stil, ...)</li>
-				<li>vergleichbare Darstellung</li>
-			</ul>
+		<div id="sparklinesinsert" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-7000">
+			<header>Sparklines Einfügen</header>
+			<div id="spark01" class="ribbon-insert-image pull-left"></div>
+			<p>Grundsätzlich haben sie <em>eine Sparkline für eine Zeile</em>.</p>
+			<p class="lead">Es hat sich analog zu Formeln als praktisch erwiesen zunächst <em>eine Sparkline zu erstellen</em> und danach mit der <em>Auto-Vervollständigung</em> die Sparkline zu kopieren.</p>
+			<img id="sparkdialog" src="./img/sparklines_dialog.png" alt="Dialog Sparklines erstellen" class="pull-right"/>
+			<ol class="item">
+				<li>Selektieren sie die Zellen der Quelldaten der Serie</li>
+				<li>Wählen sie im <a href="#/ribbon">Menüband Einfügen</a> eine der drei Typ-Möglichkeiten</li>
+				<li>
+				Daraufhin erscheint der Dialog <em>Sparklines erstellen</em>, das Feld <em>Datenbereich</em> beinhaltet bereits die ausgewählten Zellen.</li>
+				<li>Wählen sie nun im Feld <em>Positionsbereich</em> jene Zelle aus, welcher die Sparkline hinzugefügt werden soll.</li>
+			</ol>
 			<footer></footer>
 		</div>
-		<div id="chartsAssignment2" class="step assignment" data-x="6000" data-y="3500" data-z="-7000" data-rotate-x="-90">
+		<div id="sparklinesmodify" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-8250">
+			<header>Sparklines Ändern</header>			
+			<p>Einzelne Datenpunkte als <em>Markierungen</em> hervorgehoben werden. Excel erlaubt über <em>Kontrollkästchen</em> im <a href="#/ribbon">kontextabhängigen Menüband</a> die De-/Aktivierung. So kann z.B. einfach der <em>Höchstpunkt</em> und der <em>Tiefpunkt</em> der Serie hervorgehoben werden.</p>
+			<img id="sparklineribbon" src="./img/ribbon_sparkline_design.png" alt="Kontextabhängiges Menüband: Sparklinetools Entwurf"/>
+			<p><em>Layoutanpassungen</em> (Sparklinefarbe, Datenpunktfarbe) können einzeln vorgenommen werden, oder sie wenden eine der vielen <em>vordefinierten Formatvorlagen</em> an.</p>
+			<footer></footer>
+		</div>
+		<div id="sparklinesdisplay" class="step slide" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-9500">
+			<header>Sparklines Anzeigebereich</header>
+			<p>Im Normalfall wird die Anzeige jeder Sparkline <em>abhängig vom Minimum/Maximum der Serie</em> skaliert. Dies erschwert die <em>Vergleichbarkeit</em> mit anderen Sparklines.</p>
+			<div id="spark02" class="ribbon-spark-image pull-left"></div>
+			<ol class="item">
+				<li>Selektieren sie alle Zellen der Sparkline Gruppe</li>
+				<li>Wählen sie im <a href="#/ribbon">Menüband</a> den Befehl <em>Achse</em></li>
+				<li>Setzen sie bei <em>Optionen für Minimalwert</em> den Haken bei <em>Identisch für alle Sparklines</em></li>
+				<li>Analog für den Maximalwert, setzen sie bei <em>Optionen für Maximalwert</em> den Haken bei <em>Identisch für alle Sparklines</em></li>
+			</ol>
+			<footer></footer>
+		</div>
+		<div id="chartsAssignment2" class="step assignment" data-x="6000" data-y="3500" data-z="-9500" data-rotate-x="-90">
 			<header class="akzent6"><i class="fa fa-cog fa-spin"></i>Aufgabe #13b</header>
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment13b_Workbook.xlsx" target="_blank">Assignment 13b</a></code>.</li>

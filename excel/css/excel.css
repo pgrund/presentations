@@ -31,7 +31,9 @@
     text-shadow: 3px 3px 5px white;
 }
 .image > header {
-	 box-shadow: 10px 10px 5px #888888;
+	-moz-box-shadow: 10px 10px 5px #888888;
+	-webkit-box-shadow: 10px 10px 5px #888888;
+	box-shadow: 10px 10px 5px #888888;
 }
 .fa-excel{	
     width: 30px;
@@ -664,7 +666,9 @@ div.alert-warning {
 
 .ribbon-home-image, .ribbon-formula-image,
 .ribbon-view-image, .ribbon-data-image ,
-.ribbon-design-image, .ribbon-pagelayout-image {
+.ribbon-design-image, .ribbon-pagelayout-image,
+.ribbon-insert-image, .ribbon-charts-image,
+.ribbon-spark-image {
 	display:block;
 	margin:10px;
 	-moz-box-shadow: 10px 10px 5px #888;
@@ -688,6 +692,15 @@ div.alert-warning {
 }
 .ribbon-design-image {
 	background-image: url("../img/ribbon_design.png");
+}
+.ribbon-insert-image {
+	background-image: url("../img/ribbon_insert.png");
+}
+.ribbon-charts-image {
+	background-image: url("../img/ribbon_charts_design.png");
+}
+.ribbon-spark-image {
+	background-image: url("../img/ribbon_sparkline_design.png")
 }
 #rowscol0 {	
 	width:100px;
@@ -994,6 +1007,48 @@ ol.item li:nth-child(6):before,
 	width: 400px;
 	background-position: -610px -60px;	
 }
+#charts01 {
+	height: 85px;
+	width: 240px;
+	background-position: -390px -60px;
+	margin-right: 40px;
+}
+#charts02 {
+	height: 90px;
+	width: 80px;
+	background-position: -930px 0px;	
+}
+#charts03{
+	height:90px;
+	width: 690px;
+	background-position: -240px 0px;
+}
+#sparklinesvscharts {
+	max-height:250px;
+}
+#spark01 {
+	height: 90px;
+	width: 150px;
+	background-position:-730px -55px;
+}
+#spark02 {
+	height: 90px;
+	width: 200px;
+	background-position:-890px -55px;
+	margin-right: 40px;
+}
+#sparkdialog{
+	max-width: 40%;
+	height: auto;
+}
+#sparklineribbon {
+	max-width:900px;
+	height: auto;
+	margin-bottom: 30px;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+}
 /**
 	starting print media 
 */
@@ -1073,7 +1128,8 @@ ol.item li:nth-child(6):before,
     }
 	.ribbon-home-image, .ribbon-pagelayout-image, 
 	.ribbon-formula-image, .ribbon-view-image, .ribbon-data-image,
-	.ribbon-design-image {
+	.ribbon-design-image, .ribbon-insert-image, .ribbon-charts-image,
+	.ribbon-spark-image {
 		display: none;		
 	}
     #ifquickaccesstext, #ifmyaccounttext, #ifribbontext,
