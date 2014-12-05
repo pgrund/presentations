@@ -2861,22 +2861,50 @@
 				</p>
 			</footer>
 		</div>
-		<div id="tracking1" class="step slide under-construction" data-x="-2000" data-y="4000" data-rotate-y="90" data-z="-750">
-			<header>Änderungen Aktivieren</header>
-			<p>Grundlagen, anschalten</p>
+		<div id="tracking1" class="step slide" data-x="-2000" data-y="4000" data-rotate-y="90" data-z="-750">
+			<header>Änderungen</header>			
+			<p>Excel kann viele Änderungen des Arbeitsblattes <em>erfassen</em>, wie Veränderungen in Zellen, Rechtschreibkorrekturen, Kommentare, etc. und erleichtert somit das <em>gemeinsame Arbeiten</em> an einer Arbeitsmappe.</p>
+			<div id="tracking01" class="ribbon-review-image pull-left"></div>
+			<p>Um die Änderungsverfolgung zu aktivieren, wählen sie im <a href="#/ribbon">Menüband Überprüfen</a> den Befehl <em>Änderungen nachverfolgen</em>.</p>
+			<img src="./img/tracking.png" alt="Beispiel einer Änderungsverfolgung" class="right"/>
+			<p>Bei aktivierter Änderungsverfolgung wird jede veränderte Zelle mit einem <em>Rahmen</em> und mit einem <em>Kommentar der Änderungen</em> markiert, welcher beim Überfahren mit der Maus dargestellt wird.</p>
 			<footer></footer>
 		</div>
-		<div id="tracking2" class="step slide under-construction" data-x="-2000" data-y="4000" data-rotate-y="90" data-z="-2000">
-			<header>Änderungen Auflisten</header>
-			<p>Änderungen auf separatem Blatt listen</p>
+		<div class="step alert alert-warning" data-x="-2050" data-y="4000" data-rotate-y="-90" data-z="-750">
+			<header>Achtung</header>
+			<p>Sie können <em>Änderungen verfolgen</em> nicht für eine Arbeitsmappe mit <em>Tabellen</em> benutzen.<br/>
+			Um dennoch die Änderungen zu verfolgen, müssen sie zuerst die Tabelle in einen <a href="#/modifytable">Zellbereich konvertieren</a>.</p>
+		</div>
+		<div id="tracking2" class="step slide" data-x="-2000" data-y="4000" data-rotate-y="90" data-z="-2000">
+			<header>Änderungen Auflisten</header>			
+			<p>Excel erlaubt Änderungen auf einem separatem Arbeitsblatt <em>Änderungsverlauf</em> aufzulisten. Dieser Verlauf listet in <em>tabellarischer Form</em> für jede Änderung unterschiedliche Daten (inkl. alter und den neuer Wert).</p>
+			<img id="trackinglist" src="./img/tracking_changes_list.png" alt="Änderungsverlauf Arbeitsblatt" class="center-block"/>
+		    <p>Um dieses zusätzliche Blatt zu nutzen, entweder beim initialen Dialog <em>Änderungen hervorheben</em> oder auch nachträglich durch erneute Auswahl der Befehle <em>Änderungen nachverfolgen <i class="fa fa-caret-down"></i></em>, <em>Änderungen hervorheben ...</em>, das Kontrollkästchen <label class="checkboxlabel">
+			<i class="fa fa-square-o"></i> Änderungen auf einem neuen Arbeitsblatt protokollieren</label> aktivieren.</p>
 			<footer></footer>
 		</div>
-		<div id="tracking3" class="step slide under-construction" data-x="-2000" data-y="4000" data-rotate-y="90" data-z="-3250">
+		<div id="tracking3" class="step slide" data-x="-2000" data-y="4000" data-rotate-y="90" data-z="-3250">
 			<header>Änderungen Annehmen oder Ablehnen</header>
+			<p>Änderungen sind eigentlich nur <em>vorgeschlagene Änderungen</em> um sie permanent zu übernehmen, muss der Eigentümer sie <em>annehmen</em> bzw. <em>ablehnen</em> um die Vorschläge zu verwerfen.</p>
+			<ol class="item">
+				<li>Über das <a href="#/ribbon">Menüband Überprüfen</a> klicken sie den Befehl <em>Änderungen nachverfolgen</em> und wählen sie <em>Änderungen annehmen/ablehnen</em>.</li>
+				<li>Im Dialog <em>Änderungen zur Überprüfung auswählen</em> können sie die zu prüfenden Änderungen auf <em>Datum</em>, <em>Autor</em> und <em>Zellbereich</em> eingrenzen. Im Normalfall sollten die Voreinstellungen <em>Noch nicht überprüft</em> und <em>Jeder</em> genügen.</li>
+				<li>Im darauffolgenden Dialog <em>Änderungen annehmen oder ablehnen</em> kann jede einzelne Änderung geprüft und über die Schaltflächen <em>angenommen oder abgelehnt</em> werden.</li>
+			</ol>
 			<footer></footer>
 		</div>
-		<div id="comments" class="step slide under-construction" data-x="-2000" data-y="4000" data-rotate-y="90" data-z="-4500">
+		<div class="step alert alert-info" data-x="-2050" data-y="4000" data-rotate-y="-90" data-z="-3250">
+			<header>Achtung</header>
+			<p>Die Änderungsverfolgung <em>muss explizit beendet</em> werden. Nach dem Annehmen/Ablehnen bleibt der Verfolgungsstatus erhalten.</p>
+			<p>Um keine Änderungen weiter zu verfolgen, selektieren sie im Dialog <em>Änderungen hervorheben</em> <label class="checkboxlabel">
+			<i class="fa fa-check-square-o"></i> Änderungen während der Eingabe protokollieren.</label>.</p>
+		</div>
+		<div id="comments" class="step slide" data-x="-2000" data-y="4000" data-rotate-y="90" data-z="-4500">
 			<header>Kommentare</header>
+			<p>Wenn auch oft im Zusammenhang mit <em>Änderungen verfolgen</em> benutzt, so sind Kommentare nicht davon abhängig und können eigenständig benutzt werden.</p>
+			<div id="tracking02" class="ribbon-review-image pull-left"></div>
+			<p>Über das <a href="#/ribbon">Menüband Überprüfen</a> finden sie alle Befehle für Kommentare für die jeweils <em>aktuell ausgewählte Zelle</em>.</p>
+			<p>Ein kleines <em>rotes Dreieck</em> <i class="fa fa-caret-up fa-rotate-45 text-danger"></i> am oberen linken Rand der Zelle, weist auf ein Kommentar hin. Beim Selektieren der Zelle, oder beim Überfahren mit der Maus, erscheint der Kommentar.</p>
 			<footer></footer>
 		</div>
 		<div id="trackingAssignment" class="step assignment" data-x="-2000" data-y="4500" data-rotate-x="-90">
@@ -3137,7 +3165,17 @@
         });
         $(".solve>li").click(function() {
         	$(this).addClass("selected");
-        });       
+        }); 
+        $(".checkboxlabel").click(function(){
+        	$(this).find("i").each(function() {
+        		if(this.className.indexOf("fa-square-o")>=0) {
+        			$(this).removeClass("fa-square-o").addClass("fa-check-square-o");
+        		} else {
+        			$(this).addClass("fa-square-o").removeClass("fa-check-square-o");
+        		}
+        		
+        	});
+        });    
         </script>    
 	</body>
 </html>

@@ -668,7 +668,7 @@ div.alert-warning {
 .ribbon-view-image, .ribbon-data-image ,
 .ribbon-design-image, .ribbon-pagelayout-image,
 .ribbon-insert-image, .ribbon-charts-image,
-.ribbon-spark-image {
+.ribbon-spark-image,.ribbon-review-image {
 	display:block;
 	margin:10px;
 	-moz-box-shadow: 10px 10px 5px #888;
@@ -701,6 +701,9 @@ div.alert-warning {
 }
 .ribbon-spark-image {
 	background-image: url("../img/ribbon_sparkline_design.png")
+}
+.ribbon-review-image {
+	background-image: url("../img/ribbon_review.png");
 }
 #rowscol0 {	
 	width:100px;
@@ -1049,6 +1052,41 @@ ol.item li:nth-child(6):before,
 	-webkit-box-shadow: 10px 10px 5px #888;
 	box-shadow: 10px 10px 5px #888;
 }
+#tracking01 {
+	width: 235px;
+	height: 80px;
+	background-position: -935px -55px;
+	margin-right: 40px;
+}
+.checkboxlabel {
+	cursor: pointer;
+	font-size: smaller;
+	font-weight: lighter;
+	color:black;
+	background-color: whitesmoke;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+}
+#trackinglist {
+	margin-bottom:10px;
+}
+#tracking02 {
+	width: 440px;
+	height: 90px;
+	background-position: -280px -55px;
+	margin-right: 40px;
+
+}
+.fa-rotate-45 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 /**
 	starting print media 
 */
@@ -1129,7 +1167,7 @@ ol.item li:nth-child(6):before,
 	.ribbon-home-image, .ribbon-pagelayout-image, 
 	.ribbon-formula-image, .ribbon-view-image, .ribbon-data-image,
 	.ribbon-design-image, .ribbon-insert-image, .ribbon-charts-image,
-	.ribbon-spark-image {
+	.ribbon-spark-image, .ribbon-review-image {
 		display: none;		
 	}
     #ifquickaccesstext, #ifmyaccounttext, #ifribbontext,
