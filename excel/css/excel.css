@@ -1122,7 +1122,15 @@ table th.filter:after {
 	height: 90px;
 	background-position: -565px -55px;
 }
-
+#whatif01 {
+	width: 170px;
+	height: 70px;
+	background-position: -780px -55px;	
+	margin-left: 30px;
+}
+#goalseekdialog {
+	margin-left: 30px;
+}
 /**
 	starting print media 
 */

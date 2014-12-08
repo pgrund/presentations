@@ -3423,11 +3423,30 @@
 			<footer></footer>
 		</div>
 		<div id="whatifgoalseek1solution" class="step slide" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-3250">
-			
+			<header>Zielwertsuche - Beispiel 1: Lösung</header>
+			<ol class="item">
+				<li>Selektieren sie die Zelle des <em>Zielwertes</em>: <code>B7</code><br/>
+				Bedenken sie, diese Zelle muss eine <em>Formel oder Funktion</em> enthalten.</li>
+				<li>
+				<div id="whatif01" class="ribbon-data-image pull-right"></div>
+				Wählen sie vom <a href="#/ribbon">Menüband Daten</a> den Befehl <em>Was-wäre-wenn-Analyse</em> und danach <em>Zielwertsuche</em></li>
+				<li>Der Dialog <em>Zielwertsuche</em> erscheint, mit 3 Feldern: 
+				<dl id="goalseekdialog" class="dl-horizontal">
+					<dt>Zielzelle</dt>
+					<dd>Jene <em>Zelle</em>, die das <em>gewünschte Ergebnis</em> enthält : <code>B7</code></dd>
+					<dt>Zielwert</dt>
+					<dd>Das <em>gewünschte Ergebnis</em> als Wert: <code>70</code></dd>
+					<dt>Veränderbare<br/>Zelle</dt>
+					<dd>In dieser <em>Zelle</em> versucht die Zielwertsuche einen <em>gültigen Wert</em> zu ermitteln welcher das gewünschte Ergebnis liefert: <code>B6</code></dd>
+				</dl>
+				</li>
+				<li>Im Dialog können sie verfolgen, wie durch <em>Iterationen</em> eine Lösung gesucht wird. Wird ein Ergebnis gefunden, kann dies dauerhaft mit <em>OK</em> übernommen werden.</li>
+			</ol>
+			<footer></footer>
 		</div>
 		<div id="whatifgoalseek2" class="step slide" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-4500">
 			<header>Zielwertsuche - Beispiel 2</header>
-			<p>Wie viele Personen kann ich einladen ?</p>
+			<p>Wie viele Personen kann ich einladen, einem Budget von <em>500 €</em> gegeben ?</p>
 			<table class="exceltable table table-striped">
 				<thead>
 					<th></th>
@@ -3467,8 +3486,15 @@
 						<td></td>
 					</tr>
 				</tbody>
-			</table>
-			<p>... mit einem Budget von <em>500 €</em> ...</p>
+			</table>	
+			<div data-jmpress="fade">				
+				<ul class="item fa-ul pull-left">
+					<li><i class="fa fa-question-circle fa-li"></i> Zielzelle</li>
+					<li><i class="fa fa-question-circle fa-li"></i> Zielwert</li>
+					<li><i class="fa fa-question-circle fa-li"></i> Veränderbare Zelle</li>
+				</ul>
+				<img id="goalseekdialog" data-jmpress="fade" src="./img/goalseek_dialog.png" alt="Dialog Zielwertsuche"/>
+			</div>
 			<footer></footer>
 		</div>		
 		<div id="whatifAssignment" class="step assignment" data-x="-6500" data-y="3000" data-rotate-x="90">
