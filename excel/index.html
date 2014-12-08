@@ -3343,26 +3343,134 @@
 				</p>
 			</footer>
 		</div>
-		<div id="whatifgeneral" class="step slide under-construction" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-750">
+		<div id="whatifgeneral" class="step slide" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-750">
 			<header>Allgemein</header>
+			<p class="lead">Die Was-Wäre-Wenn Analysen ermöglichen ihnen mit den Daten zu <em>experimentieren</em> und Fragen zu beantworten, selbst wenn die Daten <em>nicht vollständig</em> sind.</p>
+			<dl>
+				<dt>Zielwertsuche</dt>
+				<dd>Wenn sie in Excel eine Formel verwenden, berechnen sie ein Ergebnis auf Basis mehrere Eingabewerten. Die Zielwertsuche verfolgt den konträren Weg, sie geben das <em>gewünschte Ergebnis</em> vor und Excel berechnet die nötigen <em>Eingabewerte</em> für dieses Ergebnis.</dd>
+				<dt>Szenario</dt>
+				<dd>Szenarien erlauben das gleichzeitige <em>Ersetzen von mehreren Zellinhalten</em> (bis zu 32). Dadurch können sehr einfach mehrere Szenarien miteinander verglichen werden (<a href="https://www.controllingportal.de/Fachinfo/Excel-Tipps/Mit-dem-Szenario-Manager-in-MS-Excel-Szenarien-anlegen-und-verwalten.html">weiterführendes Beispiel</a>).</dd>
+				<dt>Datentabelle</dt>
+				<dd>Datentabellen erlauben es ihnen <em>eine oder zwei Variablen einer Formel</em> mit <em>beliebig vielen Werten zu ersetzen</em> und zeigt die Ergebnisse in tabellarischer Form an (<a href="https://support.office.com/en-us/article/Calculate-multiple-results-by-using-a-data-table-e95e2487-6ca6-4413-ad12-77542a5ea50b?ui=en-US&rs=en-US&ad=US">weiterführendes Beispiel</a>).</dd>
+			</dl>
 			<footer></footer>
 		</div>
-		<div id="whatifgoalseek1" class="step slide under-construction" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-2000">
+		<div id="whatifgoalseek1" class="step slide" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-2000">
 			<header>Zielwertsuche - Beispiel 1</header>
+			<p>Wie viele Punkte muss ich im letzten Test schreiben ?</p>			
+			<table class="exceltable table table-condensed">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="akzent1trans">
+						<th>1</th>
+						<td>Aufgabe</td>
+						<td>Punkte</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>Test 1</td>
+						<td class="A1 activeCell">58</td>
+						<td></td>
+					</tr>
+					<tr class="success">
+						<th>3</th>
+						<td>Hausaufgabe 1</td>
+						<td class="A1 activeCell">70</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>Test 2</td>
+						<td class="A1 activeCell">72</td>
+						<td></td>
+					</tr>
+					<tr class="success">
+						<th>5</th>
+						<td>Hausaufgabe 2</td>
+						<td class="A1 activeCell">60</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>Test 3</td>
+						<td class="A1 activeCell"></td>
+						<td></td>
+					</tr>
+					<tr class="akzent2trans">
+						<th>7</th>
+						<td>Finale Punktzahl</td>
+						<td class="formula">=MITTELWERT(<span class="A1 activeCell">B2:B6</span>)</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<p> ... um zu bestehen ist ein Schnitt von <em>mind. 70 Punkten</em> erforderlich ...</p>
 			<footer></footer>
 		</div>
-		<div id="whatifgoalseek2" class="step slide under-construction" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-3250">
+		<div id="whatifgoalseek1solution" class="step slide" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-3250">
+			
+		</div>
+		<div id="whatifgoalseek2" class="step slide" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-4500">
 			<header>Zielwertsuche - Beispiel 2</header>
+			<p>Wie viele Personen kann ich einladen ?</p>
+			<table class="exceltable table table-striped">
+				<thead>
+					<th></th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+				</thead>
+				<tbody>
+					<tr class="info">
+						<th>1</th>
+						<td>Reservierung</td>
+						<td class="A1 activeCell">230,00 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>Preis pro Person</td>
+						<td class="A2 activeCell">14,50 €</td>
+						<td></td>
+					</tr>
+					<tr class="info">
+						<th>3</th>
+						<td>Anzahl Gäste</td>
+						<td class="A3 activeCell"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>Gesamtkosten</td>
+						<td class="formula">=<span class="A1 activeCell">B1</span>+<span class="A2 activeCell">B2</span>*<span class="A3 activeCell">B3</span></td>
+						<td></td>
+					</tr>
+					<tr class="info">
+						<th>5</th>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<p>... mit einem Budget von <em>500 €</em> ...</p>
 			<footer></footer>
-		</div>
-		<div id="whatifscenarios" class="step slide under-construction" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-4500">
-			<header>Szenarien</header>
-			<footer></footer>
-		</div>
-		<div id="whatifdatatables" class="step slide under-construction" data-x="-6500" data-y="4000" data-rotate-y="90" data-z="-5750">
-			<header>Datentabellen</header>
-			<footer></footer>
-		</div>
+		</div>		
 		<div id="whatifAssignment" class="step assignment" data-x="-6500" data-y="3000" data-rotate-x="90">
 			<header class="akzent4"><i class="fa fa-cog fa-spin"></i>Aufgabe #17</header>
 			<ol>
