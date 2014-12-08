@@ -1091,6 +1091,24 @@ ol.item li:nth-child(6):before,
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+#cond01 {
+	width: 160px;
+	height: 90px;
+	background-position: -570px -55px;
+	margin-right: 40px;
+}
+#conddropdown {
+	max-height:40%;
+}
+table th.filter:after {
+	font-family: "FontAwesome";
+	content:'\f150';
+	padding-left: 20px;
+	padding-right: 10px;
+}
+#pivottablefields {
+	max-width:45%;
+}
 /**
 	starting print media 
 */

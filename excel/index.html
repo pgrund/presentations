@@ -2930,14 +2930,40 @@
 				</p>
 			</footer>
 		</div>
-		<div id="conditional1" class="step slide under-construction" data-x="-3500" data-y="4000" data-rotate-y="90" data-z="-750">
-			<header>Formatierungsregel anlegen</header>
-			<p>Grundlagen, anlegen, löschen</p>
+		<div id="conditional1" class="step slide" data-x="-3500" data-y="4000" data-rotate-y="90" data-z="-750">
+			<header>Formatierungsregeln</header>
+			<p>Ähnlich wie Diagramme und Sparklines erlaubt die bedingte Formatierung einen raschen Überblick über große Datenmengen. Dabei werden die ausgewählten Zellen <em>anhand von Regeln</em> auf den Wert ihres Zellinhaltes <em>formatiert</em>.</p>
+			<div id="cond01" class="ribbon-home-image pull-left"></div>
+			<ol class="item">
+				<li>Wählen sie die Zellen der Daten aus</li>
+				<li>Wählen sie auf dem <a href="#/ribbon">Menüband Start</a> den Befehl <em>Bedingte Formatierung</em></li>
+				<li>Wählen sie aus der vorhandenen Auswahl die gewünschte Regel (z.B. <em>Regeln zum Hervorheben von Zellen</em> <i class="fa fa-chevron-right"></i> <em>Größer als ...</em> )</li>
+				<li>Im folgenden Dialog werden Konfigurationen der Regel (Schwellwert, Farbe, ..) abgefragt</li>
+				
+			</ol>			
 			<footer></footer>
 		</div>
-		<div id="conditional2" class="step slide under-construction" data-x="-3500" data-y="4000" data-rotate-y="90" data-z="-2000">
+		<div id="conditional2" class="step slide" data-x="-3500" data-y="4000" data-rotate-y="90" data-z="-2000">
+			<header>Regeln verwalten</header>
+			<img id="conddropdown" src="./img/conditional_dropdown.png" alt="Auswahlmenü Bedingte Formatierung" class="pull-right">
+			<ul class="list-unstyled">
+				<li>Es können auch <em>mehrere Formatierungsregeln</em> auf den gleichen Zellbereich angewandt werden, wiederholen sie dazu einfach die Schritte auf der vorherigen Folie.</li>
+				<li>Um Formatierungen zu löschen nutzen sie den Befehl <em>Regeln löschen</em> im Auswahlmenü <em>Bedingte Formatierung</em>. Hier können sie alle Formatierungsregeln des Arbeitsblattes, der Tabelle oder auch nur der aktuellen Auswahl löschen.</li>
+				<li>Einzelne Regeln können sie unter <em>Regeln verwalten ...</em> löschen. Hier können sie auch einzelne Regeln editieren oder für den gleichen Zellbereich neu anlegen</li>
+			</ul>
+			<footer></footer>
+		</div>
+		<div id="conditional3" class="step slide" data-x="-3500" data-y="4000" data-rotate-y="90" data-z="-3250">
 			<header>Design Vorlagen</header>
-			<p>Datenbalken, Farbskalen, Symbolsätze</p>
+			<p>Excel bietet mehrere <em>vordefinierte Formatvorlagen</em> für die bedingte Formatierung an, diese werden in drei Kategorien eingeteilt:</p>
+			<dl>
+				<dt>Datenbalken</dt>
+				<dd>Jeder Zelle werden <em>horizontale Balken</em> als Hintergrund hinzugefügt, ähnlich wie Balkendiagramme.</dd>
+				<dt>Farbskalen</dt>
+				<dd>Jeder Zelle wird eine <em>Hintergrundfarbe</em> abhängig von dem Zellinhalt zugewiesen. Die Skalen nutzen 4 unterschiedliche Stufen.</dd>
+				<dt>Symbolsätze</dt>
+				<dd>Jeder Zelle wird ein <em>Symbol</em> zugeordnet, abhängig vom Inhalt. Hier gibt es unterschiedliche Skalen-Modelle mit 3, 4 oder 5 Stufen.</dd>
+			</dl>
 			<footer></footer>
 		</div>
 		<div id="conditionalAssignment" class="step assignment" data-x="-3500" data-y="3000" data-rotate-x="90">
@@ -2961,14 +2987,265 @@
 				</p>
 			</footer>
 		</div>
-		<div id="pivotwhy" class="step slide under-construction" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-750">
+		<div id="pivotwhy" class="step slide" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-750">
 			<header>Antworten auf Fragen</header>
-			<p>Warum Pivot ?</p>
+			<p>Pivot Tabellen erlauben große Datenmengen übersichtlich zusammenzufassen und auf verschiedene Art und Weise zu manipulieren. </p>
+			<p>Sie können die Daten leicht <em>neu arrangieren</em> und <em>"drehen"</em> die Daten um sie <em>aus mehreren Blickwinkeln</em> zu betrachten.</p>
+			<p>Pivot Tabellen erlauben dadurch <em>unterschiedliche Fragen</em> schnell und einfach zu beantworten, ohne dabei <em>viel Aufwand</em> für die Neuberechnung durch Formeln oder Umsortieren der Daten zu leisten.</p>
 			<footer></footer>
 		</div>
-		<div id="pivotcreate" class="step slide under-construction" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-2000">
+		<div  id="pivotex1" class="step" data-x="-5050" data-y="4000" data-rotate-y="-90" data-z="-750">
+			<header>Beispiel:</header>
+			<p data-jmpress="fade" class="text-center">Was ist der Umsatz pro Verkäufer?</p>			
+			<table class="exceltable whitetrans">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+						<th>D</th>
+						<th>E</th>
+						<th>F</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="akzent1">
+						<th>1</th>
+						<td>Verkäufer</td>
+						<td>Region</td>
+						<td>Konto</td>
+						<td>Umsatz</td>
+						<td>Monat</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>Albertson, Kathy</td>
+						<td>Osten</td>
+						<td>29386</td>
+						<td>€ 925,00</td>
+						<td>Januar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Albertson, Kathy</td>
+						<td>Osten</td>
+						<td>74830</td>
+						<td>€ 875,00</td>
+						<td>Februar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>Albertson, Kathy</td>
+						<td>Osten</td>
+						<td>90099</td>
+						<td>€ 500,00</td>
+						<td>Februar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>Albertson, Kathy</td>
+						<td>Osten</td>
+						<td>74830</td>
+						<td>€ 350,00</td>
+						<td>März</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>Brennan, Michael</td>
+						<td>Westen</td>
+						<td>82853</td>
+						<td>€ 400,00</td>
+						<td>Januar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td>Brennan, Michael</td>
+						<td>Westen</td>
+						<td>72949</td>
+						<td>€ 850,00</td>
+						<td>Januar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<td>Brennan, Michael</td>
+						<td>Westen</td>
+						<td>90044</td>
+						<td>€ 1.500,00</td>
+						<td>Januar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<td>Brennan, Michael</td>
+						<td>Westen</td>
+						<td>82853</td>
+						<td>€ 550,00</td>
+						<td>Februar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>10</th>
+						<td>Brennan, Michael</td>
+						<td>Westen</td>
+						<td>72949</td>
+						<td>€ 400,00</td>
+						<td>März</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>11</th>
+						<td>Davis, William</td>
+						<td>Süden</td>
+						<td>55223</td>
+						<td>€ 235,00</td>
+						<td>Februar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>12</th>
+						<td>Davis, William</td>
+						<td>Süden</td>
+						<td>10354</td>
+						<td>€ 850,00</td>
+						<td>Januar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>13</th>
+						<td>Davis, William</td>
+						<td>Süden</td>
+						<td>50192</td>
+						<td>€ 600,00</td>
+						<td>März</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>14</th>
+						<td>Davis, William</td>
+						<td>Süden</td>
+						<td>27589</td>
+						<td>€ 250,00</td>
+						<td>Januar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>15</th>
+						<td>Dumlao, Richard</td>
+						<td>Westen</td>
+						<td>67275</td>
+						<td>€ 400,00</td>
+						<td>Januar</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>16</th>
+						<td>...</td>
+						<td>...</td>
+						<td>...</td>
+						<td>...</td>
+						<td>...</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>			
+		</div>
+		<div id="pivotex2" class="step" data-x="-5050" data-y="3500" data-rotate-y="-90" data-rotate-z="90" data-z="-750">
+			<header>Umsatz pro Verkäufer</header>
+			<table class="whitetrans">
+				<thead>
+					<tr class="akzent2">
+						<th class="filter">Zeilenbeschriftungen </th>
+						<th>Summe von Umsatz</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Albertson, Kathy</td>
+						<td>€ 2.650,00</td>
+					</tr>
+					<tr>
+						<td>Brennan, Michael</td>
+						<td>€ 3.700,00</td>
+					</tr>
+					<tr>
+						<td>Davis, William</td>
+						<td>€ 1.935,00</td>
+					</tr>
+					<tr>
+						<td>Dumlao, Richard</td>
+						<td>€ 1.490,00</td>
+					</tr>
+					<tr>
+						<td>Flores, Tia</td>
+						<td>€ 4.565,00</td>
+					</tr>
+					<tr>
+						<td>Post, Melissa</td>
+						<td>€ 1.690,00</td>
+					</tr>
+					<tr>
+						<td>Thompson, Shannon</td>
+						<td>€ 3.160,00</td>
+					</tr>
+					<tr>
+						<td>Walters, Chris</td>
+						<td>€ 4.375,00</td>
+					</tr>
+					<tr class="akzent2 white">
+						<th>Gesamtergebnis</th>
+						<th>€ 23.565,00</th>
+					</tr>
+				</tbody>
+			</table>			
+			<br/>
+			<div data-jmpress="fade">
+			<header>Umsatz pro Monat</header>
+			<table class="whitetrans">
+				<thead>
+					<tr class="akzent2">
+						<th class="filter">Zeilenbeschriftungen</th>
+						<th>Summe von Umsatz</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Januar</td>
+						<td>€ 9.090,00</td>
+					</tr>
+					<tr>
+						<td>Februar</td>
+						<td>€ 9.160,00</td>
+					</tr>
+					<tr>
+						<td>März</td>
+						<td>€ 5.315,00</td>
+					</tr>
+					<tr class="akzent2 white">
+						<th>Gesamtergebnis</th>
+						<th>€ 23.565,00</th>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
+		<div id="pivotcreate" class="step slide" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-2000">
 			<header>Pivottabellen erzeugen</header>
-			<p>anlegen, löschen</p>
+			<img id="pivottablefields" src="./img/pivot_table_fields.png" alt="Leere Pivottabelle mit Felderauswahl" class="pull-right"/>
+			<ol class="item">
+				<li>Wählen sie die Tabelle oder den Zellbereich als Datenbasis aus (inklusive Spaltenüberschriften)</li>
+				<li>Auf dem <a href="#/ribbon">Menüband Einfügen</a> wählen sie den Befehl <em>PivotTable</em></li>
+				<li>Im folgenden Dialog können sie den Datenbereichen auswählen sowie den Bereich welcher die Pivot Tabelle beinhalten soll.</li>
+				<li>Eine <em>leere Pivot Tabelle</em> und die Felderauswahl erscheinen.</li>
+				<li>Selektieren sie über die <em>Auswahlkästchen</em> jene Felder, die sie der Pivottabelle hinzufügen möchten</li>
+			</ol>
 			<footer></footer>
 		</div>
 		<div id="pivotdata" class="step slide under-construction" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-3250">
