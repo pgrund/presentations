@@ -587,7 +587,7 @@ div.alert-warning {
     border-radius: 10px;
 }
 div.alert-info {
-	border: solid thick blue;
+	border: solid thick darkcyan;
     border-radius: 10px;	
 }
 .alert-warning>header{     
