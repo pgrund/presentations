@@ -1131,6 +1131,38 @@ table th.filter:after {
 #goalseekdialog {
 	margin-left: 30px;
 }
+table.alignexample {
+	width: 800px;
+
+}
+table.alignexample td {
+	font-size: smaller;
+	height: 80px;
+}
+table.alignexample td:nth-child(1) {
+	width:40px;
+}
+table.alignexample.text-left td {
+	text-align: left;
+}
+table.alignexample.text-center td {
+	text-align: center;
+}
+table.alignexample.text-right td {
+	text-align: right;
+}
+table.alignexample.text-top td {
+	text-align: center;
+	vertical-align: top;
+}
+table.alignexample.text-bottom td {
+	text-align: center;
+	vertical-align: bottom;
+}
+table.alignexample.text-middle td {
+	text-align: center;
+	vertical-align: middle;
+}
 /**
 	starting print media 
 */
