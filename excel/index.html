@@ -125,6 +125,13 @@
 	<div id="impress" class="not-supported">
 
 		<div class="fallback-message alert alert-warning">			
+			<header>
+				<span class="fa-stack fa-lg pull-right">
+                  <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+                  <i class="fa fa-warning fa-stack-1x whitewhite"></i>
+                </span>
+                Achtung
+            </header>
 		    <p>Ihr Browser <b>unterstützt nicht die benötigten Funktionen (CSS 3D)</b> für diese Präsentation.</p>
 	    	<p>Für beste Leistung nutzen sie bitte eine aktuelle Version von <b>Chrome</b>, <b>Safari</b> oder <b>Firefox</b>.</p>
 		</div>
@@ -2990,13 +2997,17 @@
 		<div id="pivotwhy" class="step slide" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-750">
 			<header>Antworten auf Fragen</header>
 			<p>Pivot Tabellen erlauben große Datenmengen übersichtlich zusammenzufassen und auf verschiedene Art und Weise zu manipulieren. </p>
-			<p>Sie können die Daten leicht <em>neu arrangieren</em> und <em>"drehen"</em> die Daten um sie <em>aus mehreren Blickwinkeln</em> zu betrachten.</p>
-			<p>Pivot Tabellen erlauben dadurch <em>unterschiedliche Fragen</em> schnell und einfach zu beantworten, ohne dabei <em>viel Aufwand</em> für die Neuberechnung durch Formeln oder Umsortieren der Daten zu leisten.</p>
+				
+			<div class="left">
+				<p>Sie können die Daten leicht <em>neu arrangieren</em> und <em>"drehen"</em> die Daten um sie <em>aus mehreren Blickwinkeln</em> zu betrachten.</p>
+				<p>Pivot Tabellen erlauben dadurch <em>unterschiedliche Fragen</em> schnell und einfach zu beantworten, ohne dabei <em>viel Aufwand</em> für die Neuberechnung durch Formeln oder Umsortieren der Daten zu leisten.</p>
+			</div>
+			<img src="../bisnode/example/img/skyscraper.jpg" alt="Fragen , Fragen, Fragen, ..." class="right"/>
 			<footer></footer>
 		</div>
 		<div  id="pivotex1" class="step" data-x="-5050" data-y="4000" data-rotate-y="-90" data-z="-750">
 			<header>Beispiel:</header>
-			<p data-jmpress="fade" class="text-center">Was ist der Umsatz pro Verkäufer?</p>			
+			<p data-jmpress="fade" class="text-center akzent3">Was ist der Umsatz pro Verkäufer?</p>			
 			<table class="exceltable whitetrans">
 				<thead>
 					<tr>
@@ -3024,7 +3035,7 @@
 						<td>Albertson, Kathy</td>
 						<td>Osten</td>
 						<td>29386</td>
-						<td>€ 925,00</td>
+						<td>925,00 €</td>
 						<td>Januar</td>
 						<td></td>
 					</tr>
@@ -3033,7 +3044,7 @@
 						<td>Albertson, Kathy</td>
 						<td>Osten</td>
 						<td>74830</td>
-						<td>€ 875,00</td>
+						<td>875,00 €</td>
 						<td>Februar</td>
 						<td></td>
 					</tr>
@@ -3042,7 +3053,7 @@
 						<td>Albertson, Kathy</td>
 						<td>Osten</td>
 						<td>90099</td>
-						<td>€ 500,00</td>
+						<td>500,00 €</td>
 						<td>Februar</td>
 						<td></td>
 					</tr>
@@ -3051,7 +3062,7 @@
 						<td>Albertson, Kathy</td>
 						<td>Osten</td>
 						<td>74830</td>
-						<td>€ 350,00</td>
+						<td>350,00 €</td>
 						<td>März</td>
 						<td></td>
 					</tr>
@@ -3060,7 +3071,7 @@
 						<td>Brennan, Michael</td>
 						<td>Westen</td>
 						<td>82853</td>
-						<td>€ 400,00</td>
+						<td>400,00 €</td>
 						<td>Januar</td>
 						<td></td>
 					</tr>
@@ -3069,7 +3080,7 @@
 						<td>Brennan, Michael</td>
 						<td>Westen</td>
 						<td>72949</td>
-						<td>€ 850,00</td>
+						<td>850,00 €</td>
 						<td>Januar</td>
 						<td></td>
 					</tr>
@@ -3078,7 +3089,7 @@
 						<td>Brennan, Michael</td>
 						<td>Westen</td>
 						<td>90044</td>
-						<td>€ 1.500,00</td>
+						<td>1.500,00 €</td>
 						<td>Januar</td>
 						<td></td>
 					</tr>
@@ -3087,7 +3098,7 @@
 						<td>Brennan, Michael</td>
 						<td>Westen</td>
 						<td>82853</td>
-						<td>€ 550,00</td>
+						<td>550,00 €</td>
 						<td>Februar</td>
 						<td></td>
 					</tr>
@@ -3096,7 +3107,7 @@
 						<td>Brennan, Michael</td>
 						<td>Westen</td>
 						<td>72949</td>
-						<td>€ 400,00</td>
+						<td>400,00 €</td>
 						<td>März</td>
 						<td></td>
 					</tr>
@@ -3105,7 +3116,7 @@
 						<td>Davis, William</td>
 						<td>Süden</td>
 						<td>55223</td>
-						<td>€ 235,00</td>
+						<td>235,00 €</td>
 						<td>Februar</td>
 						<td></td>
 					</tr>
@@ -3114,7 +3125,7 @@
 						<td>Davis, William</td>
 						<td>Süden</td>
 						<td>10354</td>
-						<td>€ 850,00</td>
+						<td>850,00 €</td>
 						<td>Januar</td>
 						<td></td>
 					</tr>
@@ -3123,7 +3134,7 @@
 						<td>Davis, William</td>
 						<td>Süden</td>
 						<td>50192</td>
-						<td>€ 600,00</td>
+						<td>600,00 €</td>
 						<td>März</td>
 						<td></td>
 					</tr>
@@ -3132,7 +3143,7 @@
 						<td>Davis, William</td>
 						<td>Süden</td>
 						<td>27589</td>
-						<td>€ 250,00</td>
+						<td>250,00 €</td>
 						<td>Januar</td>
 						<td></td>
 					</tr>
@@ -3141,7 +3152,7 @@
 						<td>Dumlao, Richard</td>
 						<td>Westen</td>
 						<td>67275</td>
-						<td>€ 400,00</td>
+						<td>400,00 €</td>
 						<td>Januar</td>
 						<td></td>
 					</tr>
@@ -3158,7 +3169,7 @@
 			</table>			
 		</div>
 		<div id="pivotex2" class="step" data-x="-5050" data-y="3500" data-rotate-y="-90" data-rotate-z="90" data-z="-750">
-			<header>Umsatz pro Verkäufer</header>
+			<header><span class="akzent3">Umsatz pro Verkäufer</span></header>
 			<table class="whitetrans">
 				<thead>
 					<tr class="akzent2">
@@ -3169,45 +3180,45 @@
 				<tbody>
 					<tr>
 						<td>Albertson, Kathy</td>
-						<td>€ 2.650,00</td>
+						<td>2.650,00 €</td>
 					</tr>
 					<tr>
 						<td>Brennan, Michael</td>
-						<td>€ 3.700,00</td>
+						<td>3.700,00 €</td>
 					</tr>
 					<tr>
 						<td>Davis, William</td>
-						<td>€ 1.935,00</td>
+						<td>1.935,00 €</td>
 					</tr>
 					<tr>
 						<td>Dumlao, Richard</td>
-						<td>€ 1.490,00</td>
+						<td>1.490,00 €</td>
 					</tr>
 					<tr>
 						<td>Flores, Tia</td>
-						<td>€ 4.565,00</td>
+						<td>4.565,00 €</td>
 					</tr>
 					<tr>
 						<td>Post, Melissa</td>
-						<td>€ 1.690,00</td>
+						<td>1.690,00 €</td>
 					</tr>
 					<tr>
 						<td>Thompson, Shannon</td>
-						<td>€ 3.160,00</td>
+						<td>3.160,00 €</td>
 					</tr>
 					<tr>
 						<td>Walters, Chris</td>
-						<td>€ 4.375,00</td>
+						<td>4.375,00 €</td>
 					</tr>
 					<tr class="akzent2 white">
 						<th>Gesamtergebnis</th>
-						<th>€ 23.565,00</th>
+						<th>23.565,00 €</th>
 					</tr>
 				</tbody>
 			</table>			
 			<br/>
 			<div data-jmpress="fade">
-			<header>Umsatz pro Monat</header>
+			<header><span class="akzent4">Umsatz pro Monat</span></header>
 			<table class="whitetrans">
 				<thead>
 					<tr class="akzent2">
@@ -3218,19 +3229,19 @@
 				<tbody>
 					<tr>
 						<td>Januar</td>
-						<td>€ 9.090,00</td>
+						<td>9.090,00 €</td>
 					</tr>
 					<tr>
 						<td>Februar</td>
-						<td>€ 9.160,00</td>
+						<td>9.160,00 €</td>
 					</tr>
 					<tr>
 						<td>März</td>
-						<td>€ 5.315,00</td>
+						<td>5.315,00 €</td>
 					</tr>
 					<tr class="akzent2 white">
 						<th>Gesamtergebnis</th>
-						<th>€ 23.565,00</th>
+						<th>23.565,00 €</th>
 					</tr>
 				</tbody>
 			</table>
@@ -3240,32 +3251,73 @@
 			<header>Pivottabellen erzeugen</header>
 			<img id="pivottablefields" src="./img/pivot_table_fields.png" alt="Leere Pivottabelle mit Felderauswahl" class="pull-right"/>
 			<ol class="item">
-				<li>Wählen sie die Tabelle oder den Zellbereich als Datenbasis aus (inklusive Spaltenüberschriften)</li>
+				<li>Wählen sie die Tabelle oder den Zellbereich als Datenbasis aus (inklusive Spaltenüberschriften), im Beispiel: Wählen sie irgendeine Zelle innerhalb der Tabelle</li>
 				<li>Auf dem <a href="#/ribbon">Menüband Einfügen</a> wählen sie den Befehl <em>PivotTable</em></li>
 				<li>Im folgenden Dialog können sie den Datenbereichen auswählen sowie den Bereich welcher die Pivot Tabelle beinhalten soll.</li>
-				<li>Eine <em>leere Pivot Tabelle</em> und die Felderauswahl erscheinen.</li>
-				<li>Selektieren sie über die <em>Auswahlkästchen</em> jene Felder, die sie der Pivottabelle hinzufügen möchten</li>
+				<li>Eine <em>leere Pivot Tabelle</em> und die Auswahl der Felder erscheint.</li>
+				<li>Selektieren sie über die <em>Auswahlkästchen</em> jene Felder, die sie der Pivot Tabelle hinzufügen möchten</li>
 			</ol>
 			<footer></footer>
 		</div>
-		<div id="pivotdata" class="step slide under-construction" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-3250">
-			<header>Daten der Pivottabelle</header>
-			<ul>
-				<li>Zeilen ändern</li>
-				<li>Spalten hinzufügen</li>
-			</ul>
+		<div id="pivotcreate2" class="step slide" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-3250">
+			<header>Felder hinzufügen</header>
+			<img id="pivotfieldselect" src="./img/pivot_fields_selected.png" alt="Felder auswahl bei Pivot Tabellen" class="pull-left"/>
+			<p>Ein Feld ist einfach eine <em>Spaltenüberschrift</em> der Quelldaten, es repräsentiert die zugehörige Spalte.</p>
+			<p>Wenn sie das <em>Kontrollkästchen</em> auswählen, fügt Excel das Feld abhängig des Typs einer der Bereiche <em>Zeilen</em> oder <em>Werte</em> hinzu. Besser steuern können sie über <em>Drag &amp; Drop</em>, indem sie das Feld in eines der Bereiche <em>ziehen</em>.</p>
+			<p class="lead">Beispiel: Ziehen sie <em>Verkäufer</em> in den Bereich <em>Zeilen</em> und <em>Umsatz</em> in den Bereich <em>Werte</em>.</p>			
+			<p>Die Zeilen lassen sich analog zu einer Tabelle <em>filtern</em>: 
+			<span class="akzent4trans text0">&nbsp;Zeilenbeschriftungen <i class="fa fa-1o fa-caret-square-o-down"></i>&nbsp;</span>.</p>
 			<footer></footer>
 		</div>
-		<div id="pivotfilter" class="step slide under-construction" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-4500">
+		<div id="pivotdata" class="step slide" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-4500">
+			<header>Daten der Pivot Tabelle</header>
+			<p>Um die Pivot Daten zu "<em>drehen</em>" um andere Fragen zu beantworten, gilt es die Zeilen zu ändern.</p>
+			<ol class="item">
+				<li>Ziehen sie existierende Zeilenfelder mit der <em>Maus</em> <em>aus</em> dem Bereich <em>Zeilen</em></li>
+				<li>Ziehen sie neue Felder mit der <em>Maus</em> <em>in</em> den Bereich <em>Zeilen</em></li>
+				<li>Die Pivot Tabelle aktualisiert sich selbstständig</li>
+			</ol>
+			<p class="lead">Beispiel: Ziehen sie <em>Verkäufer</em> aus dem Bereich <em>Zeile</em>heraus und fügen sie das Feld <em>Monat</em> durch ziehen in den Bereich <em>Zeilen</em> hinzu.</p>
+			<p>Mehrdimensionale Aussagen lassen sich durch mehrere <em>Spalten</em> darstellen.</p>
+			<ol class="item">
+				<li>Ziehen sie ein Feld in den Bereich <em>Spalten</em>.</li>
+				<li>Die Pivot Tabelle fügt eine <em>neue Spalte pro Spaltenwert</em> ein und summiert die Zwischenergebnisse auf.</li>				
+			</ol>
+			<p class="lead">Beispiel: Ziehen sie das Feld <em>Region</em> in den Bereich <em>Spalten</em>.</p>
+			
+			<footer></footer>
+		</div>
+		<div id="pivotfilter" class="step slide" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-5750">
 			<header>Filter Hinzufügen</header>
+			<p>Wenn sie die Daten der Pivot Tabelle einschränken möchten, so können sie einen <em>Filter</em> via <em>Drag &amp; Drop</em> hinzufügen (<span class="lead">Beispiel: Verkäufer</span>).</p>
+			<p>Oberhalb der Pivot Tabelle erscheint ein Filterelement. Über die <em>Auswahlliste <i class="fa fa-caret-square-o-down"></i></em> können sie <em>einzelne Werte</em> auswählen, oder mit dem Kontrollkästchen  <label class="checkboxlabel">
+			<i class="fa fa-square-o"></i> Mehrere Elemente auswählen</label> auch <em>mehrere Werte</em> auswählen</p>
+			<img src="./img/pivot_fields_filter.png" alt="Pivot Tabelle: Filter"/>
 			<footer></footer>
 		</div>
-		<div id="pivotslicer" class="step slide under-construction" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-5750">
+		<div id="pivotslicer" class="step slide" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-7000">
 			<header>Datenschnitt einfügen</header>
+			<p>Datenschnitte sind prinzipiell <em>Filter</em>, jedoch schneller und einfacher zu bedienen.</p>
+			<img src="./img/pivot_slicer.png" alt="Pivot Tabellen: Datenschnitte" class="pull-right"/>
+			<ol class="item">
+				<li>Wählen sie eine beliebige Zelle in der Pivot Tabelle</li>
+				<li>Im <a href="#/ribbon">Menüband</a> Pivottable-Tools <i class="fa fa-chevron-right"></i> Analysieren wählen sie <em>Datenschnitt Einfügen.</em></li>
+				<li>Wählen sie im darauffolgenden Dialog das <em>gewünschte Feld</em> zum Filtern aus.</li>
+				<li>Der Datenschnitt erscheint, ausgewählte <em>Filterwerte</em> werden <em>blau hervorgehoben</em>.</li>
+			</ol>
+			<p>Datenschnitte können frei auf dem Arbeitsblatt <em>verschoben</em> werden, außerdem bietet Excel verschiedene <em>Datenschnitt Optionen</em> über das <a href="#/ribbon">Menüband</a> an.</p>
 			<footer></footer>
 		</div>
-		<div id="pivotcharts" class="step slide under-construction" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-7000">
+		<div id="pivotcharts" class="step slide" data-x="-5000" data-y="4000" data-rotate-y="90" data-z="-8250">
 			<header>PivotChart</header>
+			<p>PivotCharts sind reguläre <a href="#/charts">Diagramme</a>, sie stellen lediglich die Daten der Pivot Tabelle dar.</p>
+			<div id="pivotchartimg" class="ribbon-insert-image pull-right"></div>
+			<ol class="item">
+				<li>Wählen sie eine beliebige Zelle in der Pivot Tabelle</li>
+				<li>Der Befehl <em>PivotChart</em> auf dem <a href="#/ribbon">Menüband Einfügen</a> öffnet den Dialog für die Diagrammanlage.</li>
+				<li>Wählen sie im Dialog den gewünschten <a href="#/chartsgeneral">Diagrammtyp</a> und den <em>Stil</em></li>
+				<li>Beobachten sie wie sich das Diagramm automatisch ändert, wenn sie die Daten der Pivot Tabelle mit <em>Filter</em> oder <em>Datenschnitte</em> eingrenzen.</li>
+			</ol>
 			<footer></footer>
 		</div>
 		<div id="pivotAssignment" class="step assignment" data-x="-5000" data-y="4500" data-rotate-x="-90">

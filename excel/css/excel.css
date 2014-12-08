@@ -5,19 +5,22 @@
 }
 
 .fallback-message {
-	display:none;
-	width:100%;
-	height:100%;
+	display:none;	
 }
 
 .not-supported>.fallback-message,
-.not-supported>.fallback-message>p{
+.not-supported>.fallback-message>header{
 	display:block;
-	color:inherit;
 }
-.not-supported>.fallback-message p *
- {
-	display:inline-block;		
+.not-supported>.fallback-message *,
+.not-supported>.fallback-message>p>* ,
+.not-supported>.fallback-message>header>* {
+	display:inline-block;
+}
+
+.not-supported>.fallback-message>p {
+	display: block;
+	color: black;
 }
 .image header .lead {
 	text-transform: none;
@@ -1109,6 +1112,16 @@ table th.filter:after {
 #pivottablefields {
 	max-width:45%;
 }
+#pivotfieldselect {	
+	margin-right: 20px;
+	max-height: 500px;
+}
+#pivotchartimg {
+	width: 65px;
+	height: 90px;
+	background-position: -565px -55px;
+}
+
 /**
 	starting print media 
 */
