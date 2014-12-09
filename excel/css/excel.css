@@ -738,6 +738,7 @@ div.alert-info {
 	width: 160px;
 	height:85px;	
 	background-position: -568px -60px;
+	margin-right:20px;
 }
 #ws0 {
   width: 400px;
@@ -805,6 +806,10 @@ table.exceltable>tbody>tr>th:nth-child(1) {
 .exceltable td, 
 .exceltable th {
 	text-align:center;
+}
+table.text-center {
+	margin-right: auto;
+	margin-left: auto;
 }
 table.exceltable {
 	margin-left: auto;
@@ -1095,6 +1100,12 @@ ol.item li:nth-child(6):before,
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+#findandreplaceimg {
+	width: 75px;
+	height: 80px;
+	background-position: -945px -55px;
+	margin-right: 20px;
+}
 #cond01 {
 	width: 160px;
 	height: 90px;
@@ -1111,7 +1122,7 @@ table th.filter:after {
 	padding-right: 10px;
 }
 #pivottablefields {
-	max-width:45%;
+	max-width:42%;
 }
 #pivotfieldselect {	
 	margin-right: 20px;
@@ -1232,7 +1243,7 @@ table.alignexample.text-middle td {
 	}
     .tab-pane .whitetrans{
     	display:block;    
-    	top: 0px;
+    	top: 0pfinadx;
     }
     .tab-pane {
         page-break-inside: avoid; 
