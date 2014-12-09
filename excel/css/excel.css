@@ -1243,7 +1243,7 @@ table.alignexample.text-middle td {
 	}
     .tab-pane .whitetrans{
     	display:block;    
-    	top: 0pfinadx;
+    	top: 0px;
     }
     .tab-pane {
         page-break-inside: avoid; 
