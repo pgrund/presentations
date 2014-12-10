@@ -32,7 +32,7 @@
         
     </head>
 	<body>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav id="navigation" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">                    
@@ -124,16 +124,17 @@
 
 	<div id="impress" class="not-supported">
 
-		<div class="fallback-message alert alert-warning">			
+		<div id="fallback" class="fallback-message alert alert-warning">			
 			<header>
 				<span class="fa-stack fa-lg pull-right">
                   <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
-                  <i class="fa fa-warning fa-stack-1x whitewhite"></i>
+                  <i class="fa fa-warning fa-stack-1x white"></i>
                 </span>
                 Achtung
             </header>
-		    <p>Ihr Browser <b>unterstützt nicht die benötigten Funktionen (CSS 3D)</b> für diese Präsentation.</p>
+            <p>Ihr Browser <b>unterstützt nicht die benötigten Funktionen (CSS 3D)</b> für diese Präsentation.</p>
 	    	<p>Für beste Leistung nutzen sie bitte eine aktuelle Version von <b>Chrome</b>, <b>Safari</b> oder <b>Firefox</b>.</p>
+	    	<p id="errormsg" class="text-danger lead"></p>		    
 		</div>
 
 		<div id="home" class="step image title" data-y="-1000">
@@ -3571,7 +3572,7 @@
 					<tr class="info">
 						<th>5</th>
 						<td></td>
-						<td></td>
+						-<td></td>
 						<td></td>
 					</tr>
 				</tbody>
@@ -3612,6 +3613,15 @@
 
 	  -->
 	  <script type="text/javascript">
+	  	window.onerror = function(msg, url, line) {	  	
+    		if(! document.getElementById("impress").className.indexOf("not-supported")>=0) {
+    			document.getElementById("impress").className = "not-supported";
+    		}
+    		$("#navigation").hide();
+    		$("#errormsg").text('Fehler: ' + msg + 
+	                       ' Script: ' + url + 
+	                       ' Zeile: ' + line);	        
+		};
           
 /*
           // Load the IFrame Player API code asynchronously.
@@ -3664,10 +3674,10 @@
             // enable footer date appending
             $(this).jmpress('footerHandling');
 
-
         });
         
    // start the presentation!
+   	   		
         $('#impress').jmpress('excel');
 
         $("#chartsgeneral").on("enterStep", function(event){        	
@@ -3728,6 +3738,7 @@
         		
         	});
         });    
+    
         </script>    
 	</body>
 </html>

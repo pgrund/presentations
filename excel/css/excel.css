@@ -6,11 +6,17 @@
 
 .fallback-message {
 	display:none;	
+	position:fixed;
+	left:10px;	
+	top:50px;
 }
 
 .not-supported>.fallback-message,
 .not-supported>.fallback-message>header{
-	display:block;
+	display:block;	
+}
+#fallback header{
+	background-color: darkred;
 }
 .not-supported>.fallback-message *,
 .not-supported>.fallback-message>p>* ,
