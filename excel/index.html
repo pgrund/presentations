@@ -248,7 +248,7 @@
 		<div id="ribbon" class="step" data-z="-2100" data-rotate-y="90">
 			<header class="text-uppercase">Menüband</header>
 
-			<div id="carousel-ribbon" class="carousel slide" data-interval="7000">
+			<div id="carousel-ribbon" class="carousel slide">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
 			    <li data-target="#carousel-ribbon" data-slide-to="0" class="active" title="Start"></li>
@@ -486,7 +486,7 @@
 		</div>
 		<div id="worksheet" class="step" data-z="-5750" data-rotate-y="90">
 			<header class="text-uppercase">Arbeitsblatt Ansicht</header>
-			<div id="carousel-worksheet" class="carousel slide carousel-overlay" data-interval="7000">
+			<div id="carousel-worksheet" class="carousel slide carousel-overlay">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
 			    <li data-target="#carousel-worksheet" data-slide-to="0" class="active" title="Normal"></li>
@@ -933,7 +933,7 @@
 		</div>
 		<div id="textalign" class="step" data-x="3000" data-rotate-y="90" data-z="-13250">
 			<header>Zellen Formatieren - Ausrichtung</header>
-			<div id="carousel-textalignment" class="carousel slide carousel-overlay" data-interval="7000">
+			<div id="carousel-textalignment" class="carousel slide carousel-overlay">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
 			    <li data-target="#carousel-textalignment" data-slide-to="0" class="active" title="Linksbündig"></li>			    
@@ -1665,7 +1665,7 @@
 		</div>
 		<div id="functionlib" class="step" data-x="-5000" data-y="1500" data-rotate-y="90" data-z="-3250">
 			<header class="text-uppercase">Funktionsbibliothek</header>
-			<div id="carousel-function" class="carousel slide" data-interval="7000">
+			<div id="carousel-function" class="carousel slide">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
 			    <li data-target="#carousel-function" data-slide-to="0" class="active" title="Funktion Einfügen"></li>			    
@@ -2732,7 +2732,7 @@
 		</div>
 		<div id="chartsgeneral" class="step" data-x="6000" data-y="3000" data-rotate-y="90" data-z="-750">			
 			<header class="text-uppercase">Diagrammtypen</header>
-			<div id="carousel-charttypes" class="carousel slide" data-interval="7000">
+			<div id="carousel-charttypes" class="carousel slide">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
 			    <li data-target="#carousel-charttypes" data-slide-to="0" class="active" title="Übersicht der Diagramme"></li>
@@ -3680,14 +3680,22 @@
    	   		
         $('#impress').jmpress('excel');
 
-        $("#chartsgeneral").on("enterStep", function(event){        	
+        // start all carousel on entering slide and stop them on leaving slide
+		$(".carousel.slide").parent().on("enterStep", function(event){          	
         	$(this).children(".carousel").each( function() {        		
         		$(this).carousel({
         			interval: 7000
         		});
-        	});
+        	})
         	return false;
-        });
+        }).on("leaveStep", function(event) {
+    		$(this).children(".carousel").each( function() {        	
+    			$(this).carousel('pause');
+    		});	
+    		return false;
+    	});
+        
+        // show and hide elements on hover
         $(".canvas>i").hover(function() {
         		var text = "#" + $(this).attr('id')+"text";
         		$(text).show();
@@ -3696,6 +3704,7 @@
         		var text = "#" + $(this).attr('id')+"text";
         		$(text).hide();
         });        
+        // show and hide elemnts on focus, blur
         $("#headerandfootertext").on("focusin", function() {        	        	        	
         	$("#headerandfooterribbon").show();
         	return false;
@@ -3703,6 +3712,7 @@
         	$("#headerandfooterribbon").hide();        	
         	return false;
         });
+        // formatting on hover
         $(".mathexample").hover(function() {
         	$(this).find("span").each(function(idx, ele) {
         		$.each(ele.className.split(' '), function(){
@@ -3725,6 +3735,7 @@
         	$("#selectFormula").html("=<span class='"+this.className+" activeCell'>"+$(this).attr('title')+"</span>");
         	$(this).addClass("activeCell");
         });
+        
         $(".solve>li").click(function() {
         	$(this).addClass("selected");
         }); 
