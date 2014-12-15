@@ -4301,14 +4301,231 @@
 			 Könntest du so etwas auch für die Versandoptionen machen ?
 			</p>			
 		</div>
-		<div id="invoice4result" class="step assignment" data-x="4250" data-y="5500" data-z="-4000" data-rotate-y="180">
+
+		<div id="invoice4a" class="step" data-x="4250" data-y="5500" data-rotate-y="90" data-z="-750">
+			<p>Die <a href="./assignments/invoice_moreshipping_practice.xlsx">Arbeitsmappe</a> sieht ähnlich zu den vorherigen aus. Es gibt das neue Arbeitsblatt <em>Versand</em> mit den Versandoptionen und Kosten, sowie das Blatt <em>Steuer</em> wo der Steuersatz ausgelagert wurde ...</p>
+			<table class="exceltable table invoicetable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+						<th>D</th>
+						<th>E</th>
+						<th>F</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th class="akzent2">Produkt ID</th>
+						<th class="akzent2">Produkt Name</th>
+						<th class="akzent2">Einzelpreis</th>
+						<th class="akzent2">Anzahl</th>
+						<th class="akzent2">Teilergebnis</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>WIR7893</td>
+						<td>Schneebesen</td>
+						<td>17,95 €</td>
+						<td>1</td>
+						<td>17,95 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>COP7882</td>
+						<td>12" Kupferpfanne</td>
+						<td>89,79 €</td>
+						<td>1</td>
+						<td>89,79 €</td>
+						<td></td>
+					</tr>				
+					<tr>
+						<th>4</th>
+						<th colspan="4" class="text-right">Steuer</th>
+						<td>8,08 €</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>5</th>
+						<th colspan="4" class="text-right akzent2trans">Zwischenergebnis</th>
+						<td>115,82 €</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>6</th>
+						<th colspan="4" class="text-right">Versandoption</th>
+						<td>3-Tage</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<th colspan="4" class="text-right akzent2trans">Versandkosten</th>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<th colspan="4" class="text-right">Rabatt</th>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<th colspan="4" class="text-right akzent2trans">Gesamtkosten</th>
+						<td>115,82 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>10</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="invoice4b" class="step slide" data-x="4250" data-y="5500" data-rotate-y="90" data-z="-2000">
+			<header>Was gibt es zu tun ?</header>
+			<p>Wir wollen die <em>Versandoption</em> in Zelle <code>E6</code> nutzen um die <em>Versandkosten</em> in Zelle <code>E7</code> einzutragen. Dies gelingt mir der <code>SVERWEIS</code> Funktion ...</p>
+			<ol class="item">
+				<li>In Zelle <code>E7</code> tragen sie den Beginn der Formel ein: <code>=SVERWEIS(</code></li>
+				<li>... als nächstes die Argumente. Das erste Argument sagt <em>wonach</em> wie suchen: <code>E6</code></li>
+				<li>Das zweite Argument gibt an <em>wo</em> gesucht wird: <code>Versand!A2:B10</code> ... ein paar extra Zeilen falls mehr Optionen hinzu kommen.</li>
+				<li>Die Kosten stehen in der Spalte <code>B</code>, also müssen wir <code>2</code> als Spaltenindex eintragen.</li>
+				<li>Da wir eine exakte Übereinstimmung wünschen, müssen wir als letzten Parameter <code>FALSCH</code> angeben.</li>
+			</ol>
+			<p class="text-center">
+				<code>=SVERWEIS( E6; Versand!A2:B10; 2; FALSCH)</code>
+			</p>
+			<footer></footer>
+		</div>
+		<div id="invoice4c" class="step assignment" data-x="4250" data-y="5500" data-rotate-y="90" data-z="-3250">
+			<div class="clearfix">
+				<img id="invoicemanny4b" src="./img/manny_4.png" alt="" class="pull-left"/>
+				<blockquote class="akzent5trans">					
+					Klasse !!! ... Aber mir fällt gerade wieder ein, dass wir immer noch den <em>kostenlosen Versand</em> bei Bestellungen <em>über 100,00 €</em> anbieten.
+				</blockquote>					
+				<p class="lead">Bei einem Bestellwert von mindestens für 100,00 € erhält der Kunde einen <em>Rabatt</em> in Höhe des <em>Standard Versandes 5,99 €</em>.</p>
+				<p class="text-center akzent5trans">
+				 Vielleicht kannst du einfach die <code>WENN</code> Funktion
+				 von einer vorherigen Version entsprechend anpassen ?
+				</p>				
+			</div>
+		</div>
+		<div id="invoice4d" class="step slide" data-x="4250" data-y="5500" data-rotate-y="90" data-z="-4500">
+			<header>Rabatt mit der <code>WENN</code> Funktion</header>
+			<p>Dieses Mal nutzen wir die <code>WENN</code> Funktion um bei einer Bestellung <em>über 100 €</em> eine <em>Gutschrift in Höhe von 5,99 € (Standardversand)</em> zu gewähren. Das heißt, der Standardversand ist kostenlos und alle anderen bekommen einen Rabatt.</p>
+			<ol class="item">
+				<li>Als erstes überprüfen wir den Wert des <em>Zwischenergebnis</em>:<br/> <code>=WENN( <em>E5>=100</em></code></li>
+				<li>Falls de Bedingung zutrifft (<code>WAHR</code>) geben wir eine Gutschrift:<br/><code>=WENN( E5>=100; <em>-5,99</em></code></li>
+				<li>Ansonsten (<code>FALSCH</code>) <code>0</code>:<br/>
+				<code>=WENN( E5>=100; -5,99; <em>0</em>)</code></li>
+			</ol>
+			<footer></footer>
+		</div>
+		<div id="invoice4e" class="step" data-x="4250" data-y="5500" data-rotate-y="90" data-z="-5750">		
+			<table id="invoice4table" class="exceltable table invoicetable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+						<th>D</th>
+						<th>E</th>
+						<th>F</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th class="akzent2">Produkt ID</th>
+						<th class="akzent2">Produkt Name</th>
+						<th class="akzent2">Einzelpreis</th>
+						<th class="akzent2">Anzahl</th>
+						<th class="akzent2">Teilergebnis</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>WIR7893</td>
+						<td>Schneebesen</td>
+						<td>17,95 €</td>
+						<td>1</td>
+						<td>17,95 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>COP7882</td>
+						<td>12" Kupferpfanne</td>
+						<td>89,79 €</td>
+						<td>1</td>
+						<td>89,79 €</td>
+						<td></td>
+					</tr>				
+					<tr>
+						<th>4</th>
+						<th colspan="4" class="text-right">Steuer</th>
+						<td>8,08 €</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>5</th>
+						<th colspan="4" class="text-right akzent2trans">Zwischenergebnis</th>
+						<td>115,82 €</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>6</th>
+						<th colspan="4" class="text-right">Versandoption</th>
+						<td>3-Tage</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<th colspan="4" class="text-right akzent2trans">Versandkosten</th>
+						<td class="formula" title="=SVERWEIS(E6;Versand!A2:B10;2;FALSCH)">9,99 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<th colspan="4" class="text-right">Rabatt</th>
+						<td class="formula" title="=WENN(E5>=100;-5,99;0)">-5,99 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<th colspan="4" class="text-right akzent2trans">Gesamtkosten</th>
+						<td>115,82 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>10</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="invoice4result" class="step assignment" data-x="4250" data-y="5500" data-z="-6500" data-rotate-y="180">
 			<div class="clearfix">
 			<img id="invoicemanny4a" src="./img/manny_1.png" alt="" class="pull-left"/>
 				<blockquote class="akzent5trans">					
 					Perfekt !!! Danke ... für alles !<br/>
 					Ich weiß nicht was wir ohne dich tun würden ...
 				</blockquote>	
-				<p>Ich weiß deine Mithilfe sehr zu schätzen - unsere Rechnungen laufen wie ein wohl geölte Maschinerie.</p>
+				<p>Ich weiß deine Mithilfe sehr zu schätzen - unsere Rechnungen laufen wie eine wohl geölte Maschinerie.</p>
 			</div>
 		</div>
 
@@ -4325,7 +4542,105 @@
 			 Kannst du das reparieren ? Das ist das letzte Mal, versprochen ...
 			</p>			
 		</div>
-
+		<div id="invoice5a" class="step" data-x="5500" data-y="5500" data-rotate-y="90" data-z="-750">	
+			<p>Die komplette <a href="./assignments/invoice_datavalidation_practice.xlsx">Arbeitsmappe</a> ähnelt sehr stark den vorherigen.</p>	
+			<table id="invoice5table" class="exceltable table invoicetable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+						<th>D</th>
+						<th>E</th>
+						<th>F</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th class="akzent2">Produkt ID</th>
+						<th class="akzent2">Produkt Name</th>
+						<th class="akzent2">Einzelpreis</th>
+						<th class="akzent2">Anzahl</th>
+						<th class="akzent2">Teilergebnis</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>CAN7884</td>
+						<td>Dosenöffner</td>
+						<td>6,49 €</td>
+						<td>1</td>
+						<td>6,49 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>SLO7881</td>
+						<td>Löffel</td>
+						<td>4,50 €</td>
+						<td>1</td>
+						<td>4,50 €</td>
+						<td></td>
+					</tr>				
+					<tr>
+						<th>4</th>
+						<th colspan="4" class="text-right">Steuer</th>
+						<td>0,82 €</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>5</th>
+						<th colspan="4" class="text-right akzent2trans">Zwischenergebnis</th>
+						<td>11,81 €</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>6</th>
+						<th colspan="4" class="text-right">Versandoption</th>
+						<td class="text-danger">Standrd</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<th colspan="4" class="text-right akzent2trans">Versandkosten</th>
+						<td class="text-danger">#NV</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<th colspan="4" class="text-right">Rabatt</th>
+						<td>-  €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<th colspan="4" class="text-right akzent2trans">Gesamtkosten</th>
+						<td class="text-danger">#NV</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>10</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="invoice5b" class="step slide" data-x="5500" data-y="5500" data-rotate-y="90" data-z="-2000">	
+			<header>Datenüberprüfung</header>
+			<p>Mit dem Befehl <em>Datenüberprüfung</em> können wir <em>einschränken, welche Werte der Nutzer eingeben darf</em>. Um die Benutzung weiter zu vereinfachen, können wir ihm sogar ein <em>Aufklappmenü</em> anzeigen.</p>
+			<ol class="item">
+				<li>Selektieren sie die Zelle für die Versandkosten: <code>E6</code></li>
+				<li>Wählen sie im <a href="#/ribbon">Menüband Daten</a> den Befehl <em>Datenüberprüfung</em></li>
+				<li>Im Dialog, wählen sie bei <em>Zulassen</em> die Auswahl <em>Liste</em> aus und für Quelle die Zellen der gültigen Optionen auf dem Arbeitsblatt <em>Versand</em>: <code>=Versand!$A$2:$A$15</code></li>
+				<li>Optional können sie unter den <em>Reitern</em> weitere Meldungen anzeigen (Fehler, Eingabe, ...)</li>
+			</ol>
+		</div>
 		<div id="invoice5result" class="step assignment" data-x="5500" data-y="5500" data-z="-4000" data-rotate-y="180">
 			<div class="clearfix">
 			<img id="invoicemanny5a" src="./img/manny_8.png" alt="" class="pull-left"/>
@@ -4341,16 +4656,9 @@
 		<div id="final" data-x="5000" data-y="2000" data-z="10000" class="step"></div>
 	</div>
 	<!--
-	
-	share:
-		email
-		lync präsentaton
 
  duplikate entfernen
        http://www.gcflearnfree.org/excelformulas
-
-	  sverweis
-	  array funktion <kbd>Ctrl-Shift+Enter</kbd>
 
 	  -->
 	  <script type="text/javascript">
@@ -4493,6 +4801,16 @@
         	});  
         }).click(function() {
         	$("#second").text("4,99 €");
+        });
+
+        $("#invoice4table>tbody>tr>td.formula").hover(function(){
+        	var tmp = $(this).attr('title');
+        	$(this).attr('title', $(this).html());
+        	$(this).html(tmp);
+        },function(){
+        	var tmp = $(this).attr('title');
+        	$(this).attr('title', $(this).html());
+        	$(this).html(tmp);
         });
     
         </script>    
