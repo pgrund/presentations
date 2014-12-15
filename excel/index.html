@@ -86,7 +86,7 @@
                         </li>
                         <li class="divider"></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Szenarien ...<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Szenario<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#/exampleinvoice1">Rechnungen (<code>WENN</code>)</a></li>
                                 <li><a href="#/exampleinvoice2">Rechnungen (<code>SVERWEIS</code>)</a></li>
@@ -4131,7 +4131,7 @@
 					Spitze !!!<br/>
 					Das spart der Rechnungsabteilung jede Menge Zeit.
 				</blockquote>	
-				<p>Du bist wirklich ein Ass für solche Dinge. Vielen Dank ... </p>
+				<p>Du bist wirklich ein Ass in solchen Dinge. Vielen Dank ... </p>
 			</div>
 		</div>
 	
@@ -4149,33 +4149,188 @@
 			 Kannst du dir das bitte einmal anschauen ?
 			</p>			
 		</div>
+		<div id="invoice3a" class="step" data-x="3000" data-y="5500" data-rotate-y="90" data-z="-750">
+			<p>Im <a href="./assignments/invoice_fix_vlookup.xlsx">Arbeitsblatt</a> erkennt man schnell die Fehler ...</p>
+			<table class="exceltable table invoicetable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+						<th>D</th>
+						<th>E</th>
+						<th>F</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th class="akzent2">Produkt ID</th>
+						<th class="akzent2">Produkt Name</th>
+						<th class="akzent2">Einzelpreis</th>
+						<th class="akzent2">Anzahl</th>
+						<th class="akzent2">Teilergebnis</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>RAM7890</td>
+						<td>Auflaufform</td>
+						<td>11,89 €</td>
+						<td></td>
+						<td>- €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>ZES7891</td>
+						<td class="text-danger">#NV</td>
+						<td class="text-danger">#NV</td>
+						<td></td>
+						<td class="text-danger">#NV</td>
+						<td></td>
+					</tr>				
+					<tr>
+						<th>4</th>
+						<th colspan="4" class="text-right">Steuer</th>
+						<td class="text-danger">#NV</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>5</th>
+						<th colspan="4" class="text-right akzent2trans">Zwischenergebnis</th>
+						<td class="text-danger">#NV</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>6</th>
+						<th colspan="4" class="text-right">Versand</th>
+						<td class="text-danger">#NV</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<th colspan="4" class="text-right akzent2trans">Gesamtkosten</th>
+						<td class="text-danger">#NV</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<p>In <em>Zeile 2</em> scheint alles noch zu funktionieren, in <em>Zeile 3</em> stimmt etwas nicht.<br/>
+			Alle anderen Formeln <em>die sich auf Zeile 3 beziehen</em> haben auch Probleme.</p>
+		</div>
+		<div id="invoice3b" class="step slide" data-x="3000" data-y="5500" data-rotate-y="90" data-z="-2000">
+			<header>Was müssen wir reparieren ?</header>
+			<ul class="item fa-ul">
+				<li>
+					<i class="fa fa-li fa-check-square-o"></i> Wir wissen, dass ein paar neue Produkte hinzugefügt wurden
+				</li>
+				<li>
+					<i class="fa fa-li fa-check-square-o"></i> Wenn wir uns das <em>Arbeitsblatt Produkte</em> anschauen, erkennen wir dass die Daten im Zellbereich <code>A2:C16</code> liegen.</li>	
+				<li>					
+					<i class="fa fa-li fa-square-o"></i>
+					Aber die <code>SVERWEIS</code> Formel auf dem <em>Arbeitsblatt Rechnung</em> in der Zelle <code>B3</code> berücksichtigt lediglich den Zellbereich <code>A2:C13</code> </li>
+			</ul>
+			<p class="text-center" id="vlookupbroken">
+				<i class="fa fa-2x fa-flash text-danger"></i> 
+				<code>=SVERWEIS( A2; <span class="C2 activeCell">Produkte!A2:C13</span>; 3; FALSCH)</code>
+				<i class="fa fa-2x fa-flash text-danger"></i> 
+			</p>
+
+			<p>Die Formel sucht also nicht in allen möglichen Zellen, daher findet sie die <em>Schürze (ZES7891)</em> nicht. Auch die <em>Reibe</em> oder den <em>Schneebesen</em> findet sie nicht.</p>
+
+			<p class="akzent1trans note">
+				<span class="fa-stack">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-lightbulb-o fa-stack-1x"></i>
+				</span>
+				Wir müssen also das <em>zweite Argument</em> der Formel anpassen.
+			</p>
+			<footer></footer>
+		</div>
+		<div id="invoice3c" class="step slide" data-x="3000" data-y="5500" data-rotate-y="90" data-z="-3250">
+			<header>Tabelle</header>
+			<p>Wir könnten nun einfach den <em>Zellbereich erweitern</em> (<code>A2:C16</code>), damit verschieben wir das Problem aber nur bis auf das nächste Mal. Eleganter und sicherer ist die Verwendung von <a href="#/tables">Tabellen</a>, dadurch werden neue Daten automatisch integriert.</p>
+			<ol class="item">
+				<li>Selektieren sie alle Spalten und Zeilen auf dem Arbeitsblatt <em>Produkte</em> mit Daten</li>
+				<div id="tableinsert" class="ribbon-insert-image pull-left"></div> 
+				<li>Wählen sie im <a href="#/ribbon">Menüband Einfügen</a> den Befehl Tabelle</li>
+				<div id="tablename" class="ribbon-design-image pull-right"></div>
+				<li>Vergeben sie nun einen <em>Namen</em> für die Tabelle  (z.B. <code>ProdukteListe</code>)</li>
+				<li>Gehen sie zurück auf das Arbeitsblatt <em>Rechnung</em> um die Formel anzupassen</li>
+				<li>Anstatt einen <em>Zellbereich</em> können wir einfach den <em>Namen der Tabelle</em> angeben:
+				<code>=SVERWEIS( A2; <span class="C2 activeCell">ProdukteListe</span>; 3; FALSCH)</code></li>
+			</ol>
+			
+			<footer></footer>
+		</div>
+		<div id="invoice3result" class="step assignment" data-x="3000" data-y="5500" data-z="-4000" data-rotate-y="180">
+			<div class="clearfix">
+			<img id="invoicemanny3a" src="./img/manny_1.png" alt="" class="pull-left"/>
+				<blockquote class="akzent3trans">					
+					Es funktioniert wieder? Fantastisch !!!
+				</blockquote>	
+				<p>Ich hätte es mir ja denken können, dass zusätzliche Produkte zu Problemen für die Formel führen. Aber toll das dies in Zukunft nicht mehr passieren kann ...</p>
+			</div>
+		</div>
 
 		<div id="exampleinvoice4" class="step assignment" data-y="5500" data-x="4250">
 			<div class="clearfix">
 			<img id="invoicemanny4" src="./img/manny_3.png" alt="" class="pull-left"/>
-			<blockquote class="akzent4trans">
-				Ich weiß, ich weiß ... immer wieder was neues. Wir fangen an neue Versandoptionen einzupflegen.
+			<blockquote class="akzent5trans">
+				Ich weiß, ich weiß ... immer wieder was neues.<br/>
+				Wir fangen an Versandoptionen einzupflegen.
 			</blockquote>
 			<p class="lead">
-			Ich habe alle Optionen in ein neues Arbeitsblatt eingetragen. Ich erinnerte mich du hast die <code>SVERWEIS</code> Formel benutzt um Produktname und Produktpreis nachzuschlagen.</p>
+			Ich habe alle Optionen in ein neues Arbeitsblatt eingetragen. Du hast doch die <code>SVERWEIS</code> Formel benutzt um Produktname und Produktpreis nachzuschlagen, richtig ?</p>
 			</div>
-			<p class="text-center akzent4trans">
+			<p class="text-center akzent5trans">
 			 Könntest du so etwas auch für die Versandoptionen machen ?
 			</p>			
+		</div>
+		<div id="invoice4result" class="step assignment" data-x="4250" data-y="5500" data-z="-4000" data-rotate-y="180">
+			<div class="clearfix">
+			<img id="invoicemanny4a" src="./img/manny_1.png" alt="" class="pull-left"/>
+				<blockquote class="akzent5trans">					
+					Perfekt !!! Danke ... für alles !<br/>
+					Ich weiß nicht was wir ohne dich tun würden ...
+				</blockquote>	
+				<p>Ich weiß deine Mithilfe sehr zu schätzen - unsere Rechnungen laufen wie ein wohl geölte Maschinerie.</p>
+			</div>
 		</div>
 
 		<div id="exampleinvoice5" class="step assignment" data-y="5500" data-x="5500">
 			<div class="clearfix">
 			<img id="invoicemanny5" src="./img/manny_7.png" alt="" class="pull-left"/>
-			<blockquote class="akzent5trans">
+			<blockquote class="akzent6trans">
 				Oh hallo, ähem  ... wir haben ein Problem mit der neuen <code>SVERWEIS</code> Formel für die Versandoptionen die du uns gemacht hast.
 			</blockquote>
 			<p class="lead">
 			Wenn wir nicht den <em>genauen Namen</em> der Versandoption eintragen, bricht die Formel mit einem Fehler ab.</p>
 			</div>
-			<p class="text-center akzent5trans">
+			<p class="text-center akzent6trans">
 			 Kannst du das reparieren ? Das ist das letzte Mal, versprochen ...
 			</p>			
+		</div>
+
+		<div id="invoice5result" class="step assignment" data-x="5500" data-y="5500" data-z="-4000" data-rotate-y="180">
+			<div class="clearfix">
+			<img id="invoicemanny5a" src="./img/manny_8.png" alt="" class="pull-left"/>
+				<blockquote class="akzent6trans">					
+					Menschenskind  !!!<br/>
+					Ich wusste gar nicht, dass dies in Excel überhaupt möglich ist ...
+				</blockquote>	
+				<p class="lead">Weißt du, es ist schon beeindruckend was diese Arbeitsmappe mittlerweile alles kann. So manch andere Firmen geben dafür jede Menge Geld aus, aber du hast da etwas mächtiges geschaffen, nur mit ein paar cleveren Excel-Formeln.</p>
+			</div>
 		</div>
 
 

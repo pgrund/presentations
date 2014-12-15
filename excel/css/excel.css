@@ -1240,16 +1240,25 @@ table.alignexample.text-middle td {
 	margin-top: -80px;
 }
 #invoicemanny2a {
-	margin-top: -100px;
+	margin-top: -180px;
 }
 #invoicemanny3 {
 	margin-top: -180px;
 }
+#invoicemanny3a {
+	margin-top: -120px;
+}
 #invoicemanny4 {
 	margin-top: -110px;
 }
+#invoicemanny4a {
+	margin-top: -120px;
+}
 #invoicemanny5 {
 	margin-top: -130px;
+}
+#invoicemanny5a {
+	margin-top: -100px;
 }
 
 #vlookup1 {
@@ -1259,6 +1268,24 @@ table.alignexample.text-middle td {
 #vlookuptable tr>td,
 #vlookuptable tr>th{
 	font-size: 0.8em;
+}
+#vlookupbroken {
+	border: solid thick orange;
+	-moz-border-radius: 25px;
+  	-webkit-border-radius: 25px;
+  	border-radius: 25px;  
+}
+#tableinsert {
+	width: 40px;
+	height: 60px;
+	background-position: -135px -50px;
+	margin-right: 40px;
+	margin-left:-30px;
+}
+#tablename {
+	width: 150px;
+	height: 85px;
+	background-position: -5px -60px;
 }
 /**
 	starting print media 
