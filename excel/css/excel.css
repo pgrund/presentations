@@ -840,6 +840,12 @@ table.exceltable {
 .exceltable th.formula {
 	font-family: "Courier New", Arial;
 }
+.exceltable td.dropdown:after,
+.exceltable th.dropdown:after {
+	content:'  \f150';
+	font-family: "FontAwesome";
+	color:darkgray;
+}
 .activeCell {
 	margin:5px;
 	padding:0px 5px 0px 5px;
@@ -1289,6 +1295,24 @@ table.alignexample.text-middle td {
 	width: 150px;
 	height: 85px;
 	background-position: -5px -60px;
+}
+#datavalidationdialog {
+	max-width: 40%;
+}
+#shippingoptionsdropdown {
+	display:none;
+
+	position:absolute;
+	right:200px;
+	bottom: 100px;
+
+	padding: 10px;
+
+	background:whitesmoke;
+	border: solid thin black;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
 }
 /**
 	starting print media 
