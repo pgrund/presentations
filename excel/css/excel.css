@@ -15,9 +15,7 @@
 .not-supported>.fallback-message>header{
 	display:block;	
 }
-#fallback header{
-	background-color: darkred;
-}
+
 .not-supported>.fallback-message *,
 .not-supported>.fallback-message>p>* ,
 .not-supported>.fallback-message>header>* {
@@ -809,6 +807,21 @@ table.exceltable>tbody>tr>th:nth-child(1) {
 	color:black ;
 	border:solid thin black;
 }
+table.exceltable>thead>tr>th.selected,
+table.exceltable>thead>tr>td.selected,
+table.exceltable>tbody>tr>th:nth-child(1).selected {
+	background-color: darkgray;
+}
+table.exceltable>thead>tr>th.selected,
+table.exceltable>thead>tr>td.selected {
+	border-bottom: solid thick darkgreen;
+}
+table.exceltable>tbody>tr>th:nth-child(1).selected {
+	border-right: solid thick darkgreen !important;
+}
+table.exceltable>tbody>tr>td.selected {
+	border: solid thick darkgreen !important;
+}
 .exceltable td, 
 .exceltable th {
 	text-align:center;
@@ -832,11 +845,15 @@ table.exceltable {
 	padding:0px 5px 0px 5px;
 	font-weight: bold;
 }
-span.A1.activeCell {
+span.A1.activeCell,
+span.B1.activeCell,
+span.C1.activeCell {
 	border:none;
 	color:blue;
 }
-span.A2.activeCell {
+span.A2.activeCell,
+span.B2.activeCell,
+span.C2.activeCell {
 	border:none;
 	color:red;
 }
@@ -844,10 +861,12 @@ span.A3.activeCell {
 	border:none;
 	color:darkgreen;
 }
-.A1.activeCell {
+.A1.activeCell, .B1.activeCell,
+.C1.activeCell {
 	border:dotted thick blue;
 }
-.A2.activeCell {
+.A2.activeCell,.B2.activeCell,
+.C2.activeCell {
 	border:dotted thick red;	
 }
 .A3.activeCell {
@@ -1180,6 +1199,67 @@ table.alignexample.text-middle td {
 	text-align: center;
 	vertical-align: middle;
 }
+.table tr>td.text-right,
+.table tr>th.text-right {
+	text-align: right;
+}
+.assignment blockquote {
+	color: whitesmoke;
+	text-shadow: 2px 2px 3px black;
+	font-size: 1em;
+}
+.invoicetable {
+	background-color: white;
+}
+.invoicetable tr>td,
+.invoicetable tbody>tr>th  {
+	border: solid thin darkgray;
+}
+.invoicetable>tbody>tr>th.akzent2 {
+	color:whitesmoke;
+}
+.invoicetable tr>*.bt{
+	border-top: solid thick;
+}
+.invoicetable tr>*.bl{
+	border-left: solid thick;
+}
+.invoicetable tr>*.br {
+	border-right: solid thick;
+}
+.invoicetable tr>*.bb{
+	border-bottom: solid thick;
+}
+#invoicemanny1 {
+	margin-top: -60px;
+}
+#invoicemanny1a{
+	margin-top: -100px;
+}
+#invoicemanny2 {
+	margin-top: -80px;
+}
+#invoicemanny2a {
+	margin-top: -100px;
+}
+#invoicemanny3 {
+	margin-top: -180px;
+}
+#invoicemanny4 {
+	margin-top: -110px;
+}
+#invoicemanny5 {
+	margin-top: -130px;
+}
+
+#vlookup1 {
+	margin-left:10px;
+	max-height: 40%;
+}
+#vlookuptable tr>td,
+#vlookuptable tr>th{
+	font-size: 0.8em;
+}
 /**
 	starting print media 
 */
@@ -1203,7 +1283,7 @@ table.alignexample.text-middle td {
 		min-height: 300px;	
 		height:auto;
 		page-break-inside: avoid; 
-	}
+	}<
 	#carousel-textalignment>.carousel-inner>.item{
 		min-height:300px;		
 	}

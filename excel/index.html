@@ -84,6 +84,16 @@
                                 <li><a href="#/whatif">Was-Wäre-Wenn Analysen</a></li>
                             </ul>
                         </li>
+                        <li class="divider"></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Szenarien ...<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/exampleinvoice1">Rechnungen (<code>WENN</code>)</a></li>
+                                <li><a href="#/exampleinvoice2">Rechnungen (<code>SVERWEIS</code>)</a></li>
+                                <li><a href="#/exampleinvoice3">Rechnungen (mehr Optionen)</a></li>
+                                <li><a href="#/exampleinvoice4">Rechnungen (Datenüberprüfung)</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right fa-lg">                        
                         <li>
@@ -3596,6 +3606,578 @@
 			</ol>
 		</div>
 
+		<!--
+		-->
+
+		<div id="examples" class="step slide chapter gray" data-x="-1000" data-y="5500" data-rotate-y="90">
+			<header>Szenarien</header>
+			<footer></footer>
+		</div>
+		
+
+<!--
+			http://www.gcflearnfree.org/excel2013/28/full
+		-->
+		<div id="exampleinvoice1" class="step assignment" data-y="5500" data-x="500">
+			<div class="clearfix">
+			<img id="invoicemanny1" src="./img/manny_1.png" alt="" class="pull-left"/>
+			<blockquote class="akzent1trans">
+				Hallo !!! Ich habe gehört du bist gut in Excel, kann ich dich um einen kleinen Gefallen bitten ?
+			</blockquote>
+			<p class="lead">
+			Du weißt wahrscheinlich schon, dass wir momentan <em>5,99 €</em> berechnen für den <em>Versand</em> unserer Produkte ?
+			Nun, wir wollen einen <em>kostenlosen Versand</em> anbieten, wenn die Bestellmenge einen <em>Mindestwert von 100 €</em> besitzt.</p>
+			</div>
+			<p class="text-center akzent1trans">
+			Könntest du unsere Rechnungsvorlage so anpassen, dass dies automatisch berechnet wird ?
+			</p>			
+		</div>
+
+		<div id="invoice1a" class="step" data-x="500" data-y="5500" data-rotate-y="90" data-z="-750">
+			<header>Das <a href="./assignemnts/invoice_freeship_practice.xlsx">Arbeitsblatt</a> ...</header>
+			<table class="exceltable table invoicetable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+						<th>D</th>
+						<th>E</th>
+						<th>F</th>
+						<th>G</th>
+						<th>H</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th class="akzent2">Produkt ID</th>
+						<th class="akzent2">Einzelpreis</th>
+						<th class="akzent2">Anzahl</th>
+						<th class="akzent2">Teilergebnis</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>4095</td>
+						<td>12,99 €</td>
+						<td>2</td>
+						<td>25,98 €</td>
+						<td></td>
+						<th class="text-right bt bl">Steuersatz</th>
+						<td class="bt br">7,5%</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>3427</td>
+						<td>13,00 €</td>
+						<td>2</td>
+						<td>26,00 €</td>
+						<td></td>
+						<th class="text-right bb bl">Versandkosten</th>
+						<td class="bb br">5,99 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>3653</td>
+						<td>45,99 €</td>
+						<td>1</td>
+						<td>45,99 €</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<th colspan="3" class="text-right">Steuer</th>
+						<td>7,35 €</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<th colspan="3" class="text-right akzent2trans">Zwischenergebnis</th>
+						<td>105,32 €</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<th colspan="3" class="text-right">Versand</th>
+						<td>5,99 €</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<th colspan="3" class="text-right akzent2trans">Gesamtkosten</th>
+						<td>111,31 €</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="invoice1b" class="step slide" data-x="500" data-y="5500" data-rotate-y="90" data-z="-2000">
+			<header>Die <code>WENN</code> Funktion</header>
+			<blockquote>
+				... <em>wenn</em> die Bestellmenge einen Mindestwert von 100 € besitzt.
+			</blockquote>
+			<p>Die <code>WENN</code> Funktion bietet genau diese Möglichkeit. Sie <em>prüft den Wert</em> einer Zelle auf eine <em>Bedingung</em> und gibt <em>zwei unterschiedliche Ergebnisse</em> zurück.</p>
+			<p>In unserem Fall prüft sie den <em>Bestellwert</em> und liefert entweder <em>0,00 €</em> (Wert &lt; 100 €) oder <em>5,99 €</em> (Wert ist &ge; 100€ ) als Ergebnis.</p>
+
+			<p>Die <code>WENN</code> Funktion hat <em>drei Parameter</em>:</p>
+			<dl class="dl-horizontal">
+				<dt>Bedingung</dt>
+				<dd>Was soll geprüft werden ? <em>Bestellwert &ge; 100€</em></dd>
+				<dt><code>WAHR</code> Zweig</dt>
+				<dd>Ergebnis bei erfolgreicher Prüfung: <em>0,00 €</em></dd>
+				<dt><code>FALSCH</code> Zweig</dt>
+				<dd>Ergebnis bei gescheiterter Prüfung: <em>5,99 €</em></dd>
+			</dl>
+			<footer></footer>
+		</div>
+		<div id="invoice1c" class="step" data-x="500" data-y="5500" data-rotate-y="90" data-z="-3250">
+			<p class="text-center">
+				<code class="mathexample">=WENN( <span title="Bedingung" class="B1">D6</span>>=100 ; <span title="WAHR Zweig">0</span> ; <span title="FALSCH Zweig" class="B2">$G$3</span> )</code>
+			</p>
+			<table class="exceltable table invoicetable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+						<th class="selected">D</th>
+						<th>E</th>
+						<th>F</th>
+						<th>G</th>
+						<th>H</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th class="akzent2">Produkt ID</th>
+						<th class="akzent2">Einzelpreis</th>
+						<th class="akzent2">Anzahl</th>
+						<th class="akzent2">Teilergebnis</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>4095</td>
+						<td>12,99 €</td>
+						<td>2</td>
+						<td>25,98 €</td>
+						<td></td>
+						<th class="text-right bt bl">Steuersatz</th>
+						<td class="bt br">7,5%</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>3427</td>
+						<td>13,00 €</td>
+						<td>2</td>
+						<td>26,00 €</td>
+						<td></td>
+						<th class="text-right bb bl">Versandkosten</th>
+						<td id="B2" class="B2 bb br">5,99 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>3653</td>
+						<td>45,99 €</td>
+						<td>1</td>
+						<td>45,99 €</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<th colspan="3" class="text-right">Steuer</th>
+						<td>7,35 €</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<th colspan="3" class="text-right akzent2trans">Zwischenergebnis</th>
+						<td id="B1" class="B1">105,32 €</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th class="selected">7</th>
+						<th colspan="3" class="text-right">Versand</th>
+						<td class="selected">0,00 €</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<th colspan="3" class="text-right akzent2trans">Gesamtkosten</th>
+						<td>111,31 €</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>		
+		</div>
+		<div id="invoice1result" class="step assignment" data-x="500" data-y="5500" data-z="-4000" data-rotate-y="180">
+			<div class="clearfix">
+			<img id="invoicemanny1a" src="./img/manny_3.png" alt="" class="pull-left"/>
+				<blockquote class="akzent1trans">					
+					Klasse !!!<br/>
+					Vielen herzlichen Dank !!!
+				</blockquote>	
+				<p>Diese Automatisation macht alles viel, viel einfacher. Wenn ich wieder komplizierte Arbeitsblätter habe, darf ich doch sicher wieder auf dich zukommen ... </p>
+			</div>
+		</div>
+
+		<div id="exampleinvoice2" class="step assignment" data-y="5500" data-x="1750">
+			<div class="clearfix">
+			<img id="invoicemanny2" src="./img/manny_5.png" alt="" class="pull-left"/>
+			<blockquote class="akzent2trans">
+				Hallo !!!  ... du hast bei der Versandformel so toll geholfen, da hoffe ich du kannst uns auch hier weiterhelfen.
+			</blockquote>
+			<p class="lead">
+			Zur Zeit verarbeiten wir eine Menge mehr Rechnungen. Es wird lästig den <em>Produktnamen</em> und den <em>Preis</em> immer wieder vom Arbeitsblatt <em>Produkte</em> anhand der <em>Produkt ID</em> nachzuschlagen und einzutragen.</p>
+			</div>
+			<p class="text-center akzent2trans">
+			 Weißt du zufällig ob so etwas auch automatisch geht ?
+			</p>			
+		</div>
+		<div id="invoice2a" class="step" data-x="1750" data-y="5500" data-rotate-y="90" data-z="-750">
+			<header>Die <a href="./assignemnts/invoice_vlookup_practice.xlsx">Arbeitsmappe</a> mit den Arbeitsblättern <em>Rechnung</em> und <em>Produkte</em> ...</header>
+			<table class="exceltable table invoicetable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+						<th>D</th>
+						<th>E</th>
+						<th>F</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th class="akzent2">Produkt ID</th>
+						<th class="akzent2">Produkt Name</th>
+						<th class="akzent2">Einzelpreis</th>
+						<th class="akzent2">Anzahl</th>
+						<th class="akzent2">Teilergebnis</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>MEA7879</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>- €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>GAR7883</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>- €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>CHE7888</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>- €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<th colspan="4" class="text-right">Steuer</th>
+						<td>0,00 €</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>6</th>
+						<th colspan="4" class="text-right akzent2trans">Zwischenergebnis</th>
+						<td>0,00 €</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>7</th>
+						<th colspan="4" class="text-right">Versand</th>
+						<td>5,99 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<th colspan="4" class="text-right akzent2trans">Gesamtkosten</th>
+						<td>0,00 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="invoice2b" class="step slide" data-x="1750" data-y="5500" data-rotate-y="90" data-z="-2000">
+			<header>Die <code>SVERWEIS</code> Funktion</header>
+			<blockquote>... anhand der Produkt ID <em>nachzuschlagen und einzutragen</em>.</blockquote>
+			<img id="vlookup1" src="./img/vlookup_products.png" alt="SVERWEIS auf dem Arbeitsblatt Produkte" class="pull-right"/>
+			<p>Die <code>SVERWEIS</code> Funktion sucht innerhalb der <em>Spalte</em> nach der <em>Produkt ID</em> von oben nach unten. Wenn es die ID findet, wird der <em>Produkt Name</em> und der <em>Einzelpreis</em> wie er <em>in der gefundenen Zeile</em> steht zurückgegeben.</p>
+			<code>SVERWEIS(<em>Kriterium</em>; <em>Matrix</em>; <em>Spaltenindex</em>; <em>Ähnlich</em>)</code>
+			<dl class="dl-horizontal">
+				<dt>Suchkriterium</dt>
+				<dd>Wonach suchen wir ? <code>MES7887</code></dd>
+				<dt>Matrix</dt>
+				<dd>Wo soll gesucht werden ? Im <a href="#/celladressing1">Zellbereich</a> <code>Produkte!A2:C13</code></dd>
+				<dt>Spaltenindex</dt>
+				<dd>Welche Spalte sollen wir zurückgeben ? relativ zum Bereich der Matrix: <code>2</code></dd>
+				<dt>Ähnlich/Exakt</dt>				
+				<dd>Sollen wir ähnliche Treffer zulassen, oder eine exakte Übereinstimmung? exakt: <code>FALSCH</code></dd>
+			</dl>
+			<footer></footer>
+		</div>
+		<div id="invoice2c" class="step" data-x="1750" data-y="5500" data-rotate-y="90" data-z="-3250">
+			<p class="text-center" >
+				<code class="mathexample" id="vlookupfirst">=SVERWEIS( <span class="C1">A2</span>; <span class="C2 C3 C4 C5 C6 C7">Produkte!A2:C13</span>; <span class="A3">2</span>; FALSCH)</code>
+			</p>			
+			<p class="text-center">
+				<code class="mathexample" id="vlookupsecond" >=SVERWEIS( <span class="C1">A2</span>; <span class="C2 C3 C4 C5 C6 C7">Produkte!A2:C13</span>; <span class="A3">3</span>; FALSCH)</code>
+			</p>
+			<table id="vlookuptable" class="vlookup exceltable table invoicetable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th class="first">B</th>
+						<th class="second">C</th>
+						<th>D</th>
+						<th>E</th>
+						<th>F</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th class="akzent2">Produkt ID</th>
+						<th class="akzent2">Produkt Name</th>
+						<th class="akzent2">Einzelpreis</th>
+						<th class="akzent2">Anzahl</th>
+						<th class="akzent2">Teilergebnis</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th class="first second">2</th>
+						<td id="C1" class="C1">MEA7879</td>
+						<td id="first" class="first"></td>
+						<td id="second" class="second"></td>
+						<td></td>
+						<td>- €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>GAR7883</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>- €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>CHE7888</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>- €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<th colspan="4" class="text-right">Steuer</th>
+						<td>0,00 €</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>6</th>
+						<th colspan="4" class="text-right akzent2trans">Zwischenergebnis</th>
+						<td>0,00 €</td>
+						<td></td>						
+					</tr>
+					<tr>
+						<th>7</th>
+						<th colspan="4" class="text-right">Versand</th>
+						<td>5,99 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<th colspan="4" class="text-right akzent2trans">Gesamtkosten</th>
+						<td>0,00 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>		
+
+			<div id="productslookup">
+				<table class="vlookup exceltable table invoicetable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>A</th>
+						<th>B</th>
+						<th>C</th>
+						<th>D</th>					
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th class="akzent2">Produkt ID</th>
+						<th class="akzent2">Produkt Name</th>
+						<th class="akzent2">Produkt Preis</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th class="first second">2</th>
+						<td id="C2" class="C2">MEA7879</td>
+						<td id="C3" class="first C2">Messbecher</td>
+						<td id="C4" class="second C2">4,99 €</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td id="C5" class="C2">LAD7890</td>
+						<td id="C6" class="C2">Schöpfkelle</td>
+						<td id="C7" class="C2">7,25 €</td>
+						<td></td>						
+					</tr>
+					</tbody>
+				</table>
+			</div>	
+		</div>
+		<div id="invoice2result" class="step assignment" data-x="1750" data-y="5500" data-z="-4000" data-rotate-y="180">
+			<div class="clearfix">
+			<img id="invoicemanny2a" src="./img/manny_2.png" alt="" class="pull-left"/>
+				<blockquote class="akzent2trans">					
+					Spitze !!!<br/>
+					Das spart der Rechnungsabteilung jede Menge Zeit.
+				</blockquote>	
+				<p>Du bist wirklich ein Ass für solche Dinge. Vielen Dank ... </p>
+			</div>
+		</div>
+	
+		<div id="exampleinvoice3" class="step assignment" data-y="5500" data-x="3000">
+			<div class="clearfix">
+			<img id="invoicemanny3" src="./img/manny_6.png" alt="" class="pull-left"/>
+			<blockquote class="akzent3trans">
+				Hallo, ich bin es wieder ... <br/>
+				ich glaube ich habe die <code>SVERWEIS</code> Formel von dir kaputt gemacht.
+			</blockquote>
+			<p class="lead">
+			Ich habe ein paar neue Produkte eingetragen aber nun kann die <code>SVERWEIS</code> Formel diese Daten nicht finden.</p>
+			</div>
+			<p class="text-center akzent3trans">
+			 Kannst du dir das bitte einmal anschauen ?
+			</p>			
+		</div>
+
+		<div id="exampleinvoice4" class="step assignment" data-y="5500" data-x="4250">
+			<div class="clearfix">
+			<img id="invoicemanny4" src="./img/manny_3.png" alt="" class="pull-left"/>
+			<blockquote class="akzent4trans">
+				Ich weiß, ich weiß ... immer wieder was neues. Wir fangen an neue Versandoptionen einzupflegen.
+			</blockquote>
+			<p class="lead">
+			Ich habe alle Optionen in ein neues Arbeitsblatt eingetragen. Ich erinnerte mich du hast die <code>SVERWEIS</code> Formel benutzt um Produktname und Produktpreis nachzuschlagen.</p>
+			</div>
+			<p class="text-center akzent4trans">
+			 Könntest du so etwas auch für die Versandoptionen machen ?
+			</p>			
+		</div>
+
+		<div id="exampleinvoice5" class="step assignment" data-y="5500" data-x="5500">
+			<div class="clearfix">
+			<img id="invoicemanny5" src="./img/manny_7.png" alt="" class="pull-left"/>
+			<blockquote class="akzent5trans">
+				Oh hallo, ähem  ... wir haben ein Problem mit der neuen <code>SVERWEIS</code> Formel für die Versandoptionen die du uns gemacht hast.
+			</blockquote>
+			<p class="lead">
+			Wenn wir nicht den <em>genauen Namen</em> der Versandoption eintragen, bricht die Formel mit einem Fehler ab.</p>
+			</div>
+			<p class="text-center akzent5trans">
+			 Kannst du das reparieren ? Das ist das letzte Mal, versprochen ...
+			</p>			
+		</div>
+
 
 		<div id="final" data-x="5000" data-y="2000" data-z="10000" class="step"></div>
 	</div>
@@ -3623,24 +4205,6 @@
 	                       ' Zeile: ' + line);	        
 		};
           
-/*
-          // Load the IFrame Player API code asynchronously.
-          var tag = document.createElement('script');
-          tag.src = "https://www.youtube.com/player_api";
-          var firstScriptTag = document.getElementsByTagName('script')[0];
-          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-          // Replace the 'ytplayer' element with an <iframe> and
-          // YouTube player after the API code downloads.
-          var player;
-          function onYouTubePlayerAPIReady() {
-            player = new YT.Player('ytplayer', {
-              height: '720',
-              width: '960',
-              videoId: 'YqqkdgE8RpM'
-            });
-          }
-*/
         $.jmpress('register', 'excel', function() {
             
             var jmpress = this;
@@ -3716,8 +4280,7 @@
         $(".mathexample").hover(function() {
         	$(this).find("span").each(function(idx, ele) {
         		$.each(ele.className.split(' '), function(){
-        			$("#"+this).addClass("activeCell");
-        			console.log($("#"+this));
+        			$("#"+this).addClass("activeCell");        			
         		});        		
         		$(ele).addClass("activeCell");
         	});
@@ -3749,6 +4312,29 @@
         		
         	});
         });    
+
+        $("#vlookupfirst").hover(function(){        	
+        	$("table.vlookup").find(".first").each(function() {
+        		$(this).addClass("selected");
+        	});        	
+        }, function(){
+        	$("table.vlookup").find(".first").each(function() {
+        		$(this).removeClass("selected");
+        	}); 
+        }).click(function() {
+        	$("#first").text("Messbecher");
+        });;
+        $("#vlookupsecond").hover(function(){
+        	$("table.vlookup").find(".second").each(function() {
+        		$(this).addClass("selected");
+        	});  
+        }, function(){
+        	$("table.vlookup").find(".second").each(function() {
+        		$(this).removeClass("selected");
+        	});  
+        }).click(function() {
+        	$("#second").text("4,99 €");
+        });
     
         </script>    
 	</body>
