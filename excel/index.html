@@ -4259,16 +4259,19 @@
 		</div>
 		<div id="invoice3c" class="step slide" data-x="3000" data-y="5500" data-rotate-y="90" data-z="-3250">
 			<header>Tabelle</header>
-			<p>Wir könnten nun einfach den <em>Zellbereich erweitern</em> (<code>A2:C16</code>), damit verschieben wir das Problem aber nur bis auf das nächste Mal. Eleganter und sicherer ist die Verwendung von <a href="#/tables">Tabellen</a>, dadurch werden neue Daten automatisch integriert.</p>
+			<p class="lead">Wir könnten nun einfach den <em>Zellbereich erweitern</em> (<code>A2:C16</code>), damit verschieben wir das Problem aber nur bis auf das nächste Mal. Eleganter und sicherer ist die Verwendung von <a href="#/tables">Tabellen</a>, dadurch werden neue Daten automatisch integriert.</p>
 			<ol class="item">
-				<li>Selektieren sie alle Spalten und Zeilen auf dem Arbeitsblatt <em>Produkte</em> mit Daten</li>
+				<li>Selektieren sie alle Spalten und Zeilen auf dem Arbeitsblatt <em>Produkte</em> mit Daten
+					<div id="tablename" class="ribbon-design-image pull-right"></div>
+				</li>
+				<li>
 				<div id="tableinsert" class="ribbon-insert-image pull-left"></div> 
-				<li>Wählen sie im <a href="#/ribbon">Menüband Einfügen</a> den Befehl Tabelle</li>
-				<div id="tablename" class="ribbon-design-image pull-right"></div>
+				Wählen sie im <a href="#/ribbon">Menüband Einfügen</a> den Befehl Tabelle</li>				
 				<li>Vergeben sie nun einen <em>Namen</em> für die Tabelle  (z.B. <code>ProdukteListe</code>)</li>
 				<li>Gehen sie zurück auf das Arbeitsblatt <em>Rechnung</em> um die Formel anzupassen</li>
 				<li>Anstatt einen <em>Zellbereich</em> können wir einfach den <em>Namen der Tabelle</em> angeben:
 				<code>=SVERWEIS( A2; <span class="C2 activeCell">ProdukteListe</span>; 3; FALSCH)</code></li>
+				<li>Kopieren sie die Formeln</li>
 			</ol>
 			
 			<footer></footer>
