@@ -817,10 +817,10 @@ table.exceltable>thead>tr>td.selected {
 	border-bottom: solid thick darkgreen;
 }
 table.exceltable>tbody>tr>th:nth-child(1).selected {
-	border-right: solid thick darkgreen !important;
+	border-right: solid thick darkgreen;
 }
 table.exceltable>tbody>tr>td.selected {
-	border: solid thick darkgreen !important;
+	border: solid thick darkgreen;
 }
 .exceltable td, 
 .exceltable th {
