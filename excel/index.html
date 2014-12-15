@@ -4480,25 +4480,25 @@
 					<tr>
 						<th>5</th>
 						<th colspan="4" class="text-right akzent2trans">Zwischenergebnis</th>
-						<td>115,82 €</td>
+						<td id="D2" class="A2">115,82 €</td>
 						<td></td>						
 					</tr>
 					<tr>
 						<th>6</th>
 						<th colspan="4" class="text-right">Versandoption</th>
-						<td>3-Tage</td>
+						<td id="D1"class="A1">3-Tage</td>
 						<td></td>
 					</tr>
 					<tr>
 						<th>7</th>
 						<th colspan="4" class="text-right akzent2trans">Versandkosten</th>
-						<td class="formula" title="=SVERWEIS(E6;Versand!A2:B10;2;FALSCH)">9,99 €</td>
+						<td class="mathexample formula" title="9,99 €"><code>=SVERWEIS(<span class='A1 D1 activeCell'>E6</span>;<span class='A2 activeCell'>Versand!A2:B10</span>;<span class='A3 activeCell'>2</span>; FALSCH)</code></td>
 						<td></td>
 					</tr>
 					<tr>
 						<th>8</th>
 						<th colspan="4" class="text-right">Rabatt</th>
-						<td class="formula" title="=WENN(E5>=100;-5,99;0)">-5,99 €</td>
+						<td class="mathexample formula" title="-5,99 €"><code>=WENN(<span class='D2 A2 activeCell'>E5</span>>=100; -5,99; 0)</code></td>
 						<td></td>
 					</tr>
 					<tr>
@@ -4699,7 +4699,13 @@
 					<tr>
 						<th>6</th>
 						<th colspan="4" class="text-right">Versandoption</th>
-						<td id="shippingoptions" class="dropdown">Standard</td>
+						<td>
+							<select id="shippingoptions" class="form-control">
+								<option value="5,99 €">Standard</option>
+								<option value="9,99 €">3-Tage</option>
+								<option value="13,99 €">2-Tage</option>
+							</select>
+						</td>
 						<td></td>
 					</tr>
 					<tr>
@@ -4729,14 +4735,7 @@
 						<td></td>
 					</tr>
 				</tbody>
-			</table>
-			<div id="shippingoptionsdropdown">
-				<ul class="list-unstyled">
-					<li>Standard</li>
-					<li>3-Tage</li>
-					<li>2-Tage</li>
-				</ul>
-			</div>
+			</table>			
 		</div>
 		<div id="invoice5result" class="step assignment" data-x="6500" data-y="5500" data-z="-4000" data-rotate-y="180">
 			<div class="clearfix">
@@ -4900,19 +4899,17 @@
         	$("#second").text("4,99 €");
         });
 
-        $("#invoice4table>tbody>tr>td.formula").hover(function(){
-        	var tmp = $(this).attr('title');
-        	$(this).attr('title', $(this).html());
-        	$(this).html(tmp);
-        },function(){
-        	var tmp = $(this).attr('title');
-        	$(this).attr('title', $(this).html());
-        	$(this).html(tmp);
+        $("#invoice4table>tbody>tr>td.formula").click(function(){        	
+        	$(this).find("span").each(function() {
+        	  $.each(this.className.split(' '), function() {
+	    		$("#"+this).removeClass("activeCell");
+    		  })
+        	});
+        	var tmp = $(this).text();
+        	$(this).html($(this).attr('title'));
+        	$(this).attr('title', tmp);       	
         });
-    	$(".exceltable .dropdown").click(function() {
-    		var drop = "#" + $(this).attr('id') + "dropdown";
-    		$(drop).toggle();
-    	})
+
         </script>    
 	</body>
 </html>

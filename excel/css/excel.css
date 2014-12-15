@@ -1299,20 +1299,12 @@ table.alignexample.text-middle td {
 #datavalidationdialog {
 	max-width: 40%;
 }
-#shippingoptionsdropdown {
-	display:none;
-
-	position:absolute;
-	right:200px;
-	bottom: 100px;
-
-	padding: 10px;
-
-	background:whitesmoke;
-	border: solid thin black;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
+#shippingoptions, #shippingoptions:focus  {
+	border: none;
+	box-shadow: none;
+	font-size: 1em;
+	margin: 0px;
+	padding: 0px;
 }
 /**
 	starting print media 
