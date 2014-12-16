@@ -1405,4 +1405,27 @@ table.alignexample.text-middle td {
 	#headerandfooterribbon {
 		display:block;
 	}
+	.exxceltable.invoicetable {
+		max-width: 800px;
+		height:auto;
+	}
+	#invoicemanny1, #invoicemanny1a,
+	#invoicemanny2, #invoicemanny2a,
+	#invoicemanny3, #invoicemanny3a,
+	#invoicemanny4, #invoicemanny4a, #invoicemanny4b, 
+	#invoicemanny5, #invoicemanny5a {
+		margin-top: 0px;
+	}
+	#invoice4table {
+		font-size: 0.8em;
+	}
+	.note:before {
+		border:none;
+	}
+	.note {
+		border: solid thin black;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		border-radius: 20px;
+	}
 }
