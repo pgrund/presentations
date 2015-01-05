@@ -1814,7 +1814,7 @@
 			http://www.gcflearnfree.org/excelformulas/7/full
 		-->
 		<div id="checkingfunctions" class="step image" data-y="1500" data-x="-6500">
-			<header class="akzent4trans">Funktionen Überprüfen</header>
+			<header class="akzent4trans">Formeln Überprüfen</header>
 			<footer class="black"></footer>
 		</div>
 
@@ -2519,11 +2519,11 @@
 			<header class="akzent2"><i class="fa fa-cog fa-spin"></i>Aufgabe #10a</header>
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment10a_Workbook.xlsx" target="_blank">Assignment 10a</a></code>.</li>
-				<li><em>Sortieren</em> sie das Arbeitsblatt nach <code>Homeroom #</code> (Spalte <code>A</code>) auf- oder absteigend.</li>
+				<li><em>Sortieren</em> sie das Arbeitsblatt nach <code>Zimmer #</code> (Spalte <code>A</code>) auf- oder absteigend.</li>
 				<li>Sortieren sie die Zellen <code>G3:H7</code> von groß nach klein nach der Anzahl der <code>Orders</code> (Spalte <code>H</code>).</li>
 				<li>Fügen sie die <em>Hintergrundfrabe</em> der Zelle in Spalte <code>E</code> als zweite <em>ebene für die Sortierung</em> ein.</li>
 				<li>Fügen sie eine weitere ebene der Sortierung ein. Nutzen sie eine <em>Benutzerdefinierte Liste</em> um die T-Shirt Größe (Spale <code>D</code>) nach <em>Small, Medium, Large, X-Large</em> zu sortieren.</li>
-				<li>Ändern sie die <em>Sortierreihenfolge</em> der Ebenen nach T-Shirt Größe (Spalte <code>D</code>), Homeroom # (Spalte <code>A</code>), und Nachname (Spalte <code>C</code>).</li>
+				<li>Ändern sie die <em>Sortierreihenfolge</em> der Ebenen nach T-Shirt Größe (Spalte <code>D</code>), Zimmer # (Spalte <code>A</code>), und Nachname (Spalte <code>C</code>).</li>
 			</ol>
 		</div>
 		<div id="filter1" class="step slide" data-x="1500" data-y="3000" data-z="-3250" data-rotate-y="90">
@@ -2575,12 +2575,12 @@
 			<header class="akzent2"><i class="fa fa-cog fa-spin"></i>Aufgabe #10b</header>
 			<ol>
 				<li>Öffnen sie die Arbeitsmappe <code><a href="./assignments/Assignment10b_Workbook.xlsx" target="_blank">Assignment 10b</a></code>.</li>
-				<li>Filtern sie Spalte <code>B</code> <code>Type</code>, dass lediglich <em>Laptops und Kameras</em> angezeigt werden.</li>
+				<li>Filtern sie Spalte <code>B</code> <code>Typ</code>, dass lediglich <em>Laptops und Kameras</em> angezeigt werden.</li>
 				<li>Suchen sie mit Hilfe eines <em>Such-Filter</em> alle Produkten von <code>EDI</code> in Spalte <code>C</code> <code>Beschreibung</code>.</li>
 				<li><em>Löschen</em> sie beide Filter.</li>
 				<li>Nutzen sie den <em>Textfilter</em> um Daten anzuzeigen, welche <em>nicht</em> das Wort <code>Saris</code> <em>enthalten</em>.</li>
 				<li>Nutzen sie den <em>Datumsfilter</em> um lediglich Artikel anzuzeigen, die im <em>September 2013</em>  ausgecheckt (Spalte <code>D</code>) wurden.</li>
-				<li>Nutzen sie den <em>Zahlenfilter</em> um alle Einträge mit einer <code>ID#</code> <em>kleiner als 3000</em> anzuzeigen.</li>
+				<li>Nutzen sie den <em>Zahlenfilter</em> um alle Einträge mit einer <code>ID #</code> <em>kleiner als 3000</em> anzuzeigen.</li>
 			</ol>
 		</div>
 	
@@ -3583,7 +3583,7 @@
 					<tr class="info">
 						<th>5</th>
 						<td></td>
-						-<td></td>
+						<td></td>
 						<td></td>
 					</tr>
 				</tbody>
@@ -3606,9 +3606,6 @@
 				<li>Nutzen sie die <em>Zielwertsuche</em> um herauszufinden <em>wie viel Punkte</em> sie im <code>Test 3</code> schreiben müssen <em>um im Gesamtergebnis einen Mittelwert von <code>90</code></em> zu erlangen.</li>
 			</ol>
 		</div>
-
-		<!--
-		-->
 
 		<div id="examples" class="step slide chapter gray" data-x="-1000" data-y="5500" data-rotate-y="90">
 			<header>Szenario</header>
@@ -4435,8 +4432,8 @@
 			<header>Rabatt mit der <code>WENN</code> Funktion</header>
 			<p>Dieses Mal nutzen wir die <code>WENN</code> Funktion um bei einer Bestellung <em>über 100 €</em> eine <em>Gutschrift in Höhe von 5,99 € (Standardversand)</em> zu gewähren. Das heißt, der Standardversand ist kostenlos und alle anderen bekommen einen Rabatt.</p>
 			<ol class="item">
-				<li>Als erstes überprüfen wir den Wert des <em>Zwischenergebnis</em>:<br/> <code>=WENN( <em>E5>=100</em></code></li>
-				<li>Falls de Bedingung zutrifft (<code>WAHR</code>) geben wir eine Gutschrift:<br/><code>=WENN( E5>=100; <em>-5,99</em></code></li>
+				<li>Als erstes überprüfen wir den Wert des <em>Zwischenergebnis</em>:<br/> <code>=WENN( <em>E5>=100</em> )</code></li>
+				<li>Falls de Bedingung zutrifft (<code>WAHR</code>) geben wir eine Gutschrift:<br/><code>=WENN( E5>=100; <em>-5,99</em> )</code></li>
 				<li>Ansonsten (<code>FALSCH</code>) <code>0</code>:<br/>
 				<code>=WENN( E5>=100; -5,99; <em>0</em>)</code></li>
 			</ol>
@@ -4724,7 +4721,7 @@
 					<tr>
 						<th>7</th>
 						<th colspan="4" class="text-right akzent2trans">Versandkosten</th>
-						<td>5,99 €</td>
+						<td id="invoice5shipping">5,99 €</td>
 						<td></td>
 					</tr>
 					<tr>
@@ -4736,7 +4733,7 @@
 					<tr>
 						<th>9</th>
 						<th colspan="4" class="text-right akzent2trans">Gesamtkosten</th>
-						<td>17,80 €</td>
+						<td id="invoice5sum">17,80 €</td>
 						<td></td>
 					</tr>
 					<tr>
@@ -4922,6 +4919,13 @@
         	var tmp = $(this).text();
         	$(this).html($(this).attr('title'));
         	$(this).attr('title', tmp);       	
+        });
+
+        $("#shippingoptions").change(function() {
+        	var costs = $(this).find("option:selected").attr("value");
+        	$("#invoice5shipping").text(costs);
+        	var sum = parseFloat(costs.slice(0,-2).replace(",",".")) + 11.81;        	
+        	$("#invoice5sum").text(sum.toFixed(2).replace(".",",") + " €");
         });
 
         </script>    
