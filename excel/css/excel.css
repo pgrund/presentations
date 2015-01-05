@@ -272,7 +272,8 @@ a.carousel-control.right{
 	font-size:2em;
 }
 .canvas>i.fa-circle-o:hover:before {	
-	content: '\f111';
+	/*content: '\f05a';*/
+	content: '\f192';
 	font-size: larger;
 }
 #legend {
