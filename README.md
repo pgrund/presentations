@@ -19,4 +19,4 @@ Presentations using jimpress.js
 
 #license
 
-this code is licensed under [MIT License](./License.txt)
+this code is licensed under [MIT License](./License)
