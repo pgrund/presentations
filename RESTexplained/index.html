@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
 
         <meta charset="utf-8" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name=s"apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="expires" content="0">
+        
+        <link rel="stylesheet" href="../font-awesome-4.2.0/css/font-awesome.css"/>
 
         <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
+        <link href="../jmpress/animate-animations.css" rel="stylesheet"/>
 
         <!-- own stylesheet, bases on impress.js -->
         <link href="./css/rest-explain.css" rel="stylesheet" />               
 
         <title>How Raf explained REST to me</title> 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <script type="text/javascript" src="../jmpress/jquery.js"></script>
         <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>
+
+        <script type="text/javascript" src="../jmpress/plugins/presentations.jmpress.js"></script>
        
         <!--  optional meta tag for presentation date -->
         <!--meta name="date" content="2013-01-01"/-->      
     </head>
     <body>
-
+        <div id="buttons">            
+            <a href="#title"><i class="fa fa-home"></i></a>
+            <i id="print" class="fa fa-print"></i>
+        </div>
         <div id="impress">
             <div id="title" class="title step" data-x="-100" data-y="-200">
                 <header>How <span id="ryan">Raf</span> explained REST to <span id="wife">me</span></header>
@@ -213,17 +223,51 @@
             </div>  
             <div id="final" class="step" data-y="1000" data-z="10000">
                 <blockquote>
-                    <img id="thanks" src="./img/thankyou.jpg" alt="Thank you" title="Thank you"/>
-                    <br/>
+                    <div data-jmpress="hinge">
+                      <i class="fa fa-smile-o"></i>
+                      <p class="title">Thank you !</p>
+                    </div>
+                    <!--img id="thanks" src="./img/thankyou.jpg" alt="Thank you" title="Thank you" data-jmpress="hinge"/-->
+                    
                     <small>based on <a href="http://tomayko.com/" target="_blank">Ryan Tomayko</a>s writing <a href="http://tomayko.com/writings/rest-to-my-wife">How I explained REST to my wife</a></small>
                 </blockquote>             
             </div>   
         </div>       
 
         <script type="text/javascript">
-        $(function() {
-            $('#impress').jmpress();
-        });
+        
+            $.jmpress('register', 'explained', function() {
+            
+                var jmpress = this;
+                // our main configuration
+                var config = { 
+                    viewPort: {  
+                        height: 1024,                 
+                        maxScale: 4,
+                        initalScale: 1,
+                        zoomable: false
+                        
+                    },
+                    /*presentationMode: {
+                      use: false,
+                      url: "./presentation-screen.html", 
+                      notesUrl: "./index.notes.html"
+                    },*/
+                    presentations: {
+                        print: {
+                            button: "print"
+                        }
+                    }
+                };
+
+                // enable ESC to toggle jmpress
+                $(this).jmpress('toggle', 27, config, true);
+                // enable print button
+                $(this).jmpress('print', config);
+                
+            });
+            $('#impress').jmpress('explained');
+        
         </script>
      </body>
 </html>

@@ -8,7 +8,6 @@ body{
     text-shadow: 1px 1px 2px #000;
 
     counter-reset: slideIdx;
- 
 
     background-image: url(../img/red-talking.png), url(../img/green-talking.png);    
     background-repeat: no-repeat;
@@ -157,26 +156,52 @@ body{
 	width: 0px;
 	height: 0px;
 	left: 33px;
-        bottom: -43px;
+    bottom: -43px;
         
-        border: 25px solid;
-        border-color: #fff transparent transparent #fff;
+    border: 25px solid;
+    border-color: #fff transparent transparent #fff;
 }
 
 #final {
   text-align: center;
   color:lightgrey;
   background-color: black;
-  height: 500px;
+
+  height:auto;
 }
 #final a {
     color:white;
 }
+#final p.title {
+    color: white;
+    text-shadow: 2px 2px 3px orange;
+    font-size: 3em;
+}
+#final i.fa-smile-o {
+  font-size: 12em;
+  color: orange;
+  text-shadow: 2px 2px 3px white;
+}
 
+#buttons i {
+    z-index: 200;
+
+    color:darkgray;
+}
+#buttons i:hover {
+    cursor: pointer;
+}
 
 @media print {    
+
+    #buttons {
+        display: none;
+    }
+    body {
+        background-image: none;
+    }
     
-     a[href]:after { 
+    a[href]:after { 
         content: " (" attr(href) ")"; 
     }
     
@@ -197,7 +222,7 @@ body{
         position: relative;
         top: 0;
     } 
-    .speech, .speech:before, .speech:after {
+    .speech:before, .speech:after {
         border-top: none;
         border-bottom: none;
         border-left: none;
@@ -205,7 +230,21 @@ body{
         width: 100%;
         border-color: none;
     }
+
+    .speech {
+        width: 100%;
+    }
     
+    #title {
+        page-break-after: always;
+        height:auto;
+    }
+    #title header {
+        margin-top: 45%;
+
+        font-size: 2em;
+    }
+
     .step {
         page-break-after: auto;
         page-break-before: auto;
@@ -215,6 +254,9 @@ body{
         width:100%;
         height:auto;   
         background-color: gray;
+
+        opacity: 1.0; 
+        z-index: 99;
     }
     .title > header {
         margin: 10px;
