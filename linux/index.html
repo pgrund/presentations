@@ -1893,7 +1893,7 @@ $ ls -al | <em>more</em></code></pre>
                 <footer></footer>
             </div>
             <div id="grepexample1" class="step" data-x="-5200" data-y="2000" data-z="-500" data-rotate-y="-90" data-rotate-x="45">
-                <header>simple examples</header>            
+                <header class="text-uppercase">simple examples</header>            
                 <p>Is user <code>grund</code> currently on the system ?</p>
                 <pre><code class="bash">$ who | grep grund
 grund    pts/0        2014-08-27 08:49 (...)</code></pre>
@@ -2067,7 +2067,7 @@ training1:!:1002:grund,jheydel,blaibach,wengel,mkappelar,rwoelflik,...</code></p
             </table>
             </div> 
             <div id="grepexample2" class="step" data-x="-5200" data-y="2500" data-rotate-y="-90" data-rotate-x="45">
-                    <header>more examples</header>
+                    <header class="text-uppercase">more examples</header>
                     <p>find <code>passwd</code> entry for user <code>grund</code>:</p>
                     <pre><code class="bash">$ grep '^grund:' /etc/passwd
 grund:x:1003:100:grund:/home/grund:/bin/bash</code></pre>
@@ -2096,13 +2096,67 @@ Miraculix</code></pre>
                   
             <div id="sed" class="step slide under-construction" data-x="-6000" data-y="2000" data-rotate-x="67">
                 <header>search and replace</header> 
-                <dl>
-                    <dt>sed</dt>
-                    <dd><em>s</em>tream <em>ed</em>itor: editor useable as filter syntax common to <a href="#/grep">grep</a> or <a href="#/vi">vi</a>.</dd>
-                    <dd>without a <em>file</em> parameter, sed processes standard input, output goes to standard out.</dd>
-                    <dd>If more than one expression argument is passed to sed, sed works from left to right.</dd>
-                    <dd><kbd>sed -e 'expression 1' &lt; -e 'expression 2' ... &gt; &lt; file &gt;</kbd></dd>
+                <!-- 
+                    http://www.grymoire.com/Unix/Sed.html
+                -->
+                <dl class="dl-horizontal">
+                    <dt>sed </dt>
+                    <dd>batch oriented <em>s</em>tream <em>ed</em>itor usable as filter (without a <em>file</em> parameter it processes standard input and outputs to standard out)</dd>
+                    <dd>syntax common to <a href="#/grep">grep</a> or <a href="#/vi">vi</a></dd>
+                    <dd>sed uses several commands, most important and useful for search and replace: <em><code>s</code> - substitute</em>
+                    </dd>
                 </dl>
+
+                <p>examples for search and replace:</p>
+                <dl>
+                    <dt><kbd>sed 's/abc/def/g' alle_gallier</kbd></dt>
+                    <dd><em>all occurrences</em> of string <em>abc</em> gets replaced by <em>def</em> in file <em>alle_gallier</em></dd>
+                    <dt><kbd>ls -l | sed 's/xr/XR/'</kbd></dt>
+                    <dd><em>first occurrence</em> of string <em>xr</em> gets replaced by <em>XR</em> in long listing of current directory</dd>
+                </dl>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="col-sm-2">command</th>                            
+                            <th class="col-sm-4">example</th>
+                            <th class="col-sm-6">description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><em>s</em>ubstitute</td>
+                            <td>
+                                <kbd>sed 's/abc/def/g' file</kbd>
+                            </td>
+                            <td class="linebreak"><em>all occurrences</em> of string <em>abc</em> gets replaced by <em>def</em> in file <em>file</em></td>
+                        </tr>
+                        <tr>
+                            <td><code>i</code>nsert line before</td>
+                            <td></td>
+                            <td class="linebreak"></td>
+                        </tr>
+                        <tr>
+                            <td><code>a</code>dd line after</td>
+                            <td></td>
+                            <td class="linebreak"></td>
+                        </tr>
+                        <tr>
+                            <td><code>c</code>hange line</td>
+                            <td></td>
+                            <td class="linebreak"></td>
+                        </tr>
+                        <tr>
+                            <td><code>d</code>elete line</td>
+                            <td></td>
+                            <td class="linebreak"></td>
+                        </tr>
+                        <tr>
+                            <td><code>y</code> transform</td>
+                            <td></td>
+                            <td class="linebreak"></td>
+                        </tr>
+                    </tbody>
+                </table>
                 <footer></footer>
             </div>
             <div id="tr" class="step slide under-construction" data-x="-7500" data-y="2000" data-rotate-x="90">

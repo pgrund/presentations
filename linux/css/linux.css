@@ -115,6 +115,9 @@ table.table {
     min-width: 100px;
 }
 
+table.table td.linebreak {
+    white-space: pre-line;
+}
 @media print {
 
     .right, .left {
