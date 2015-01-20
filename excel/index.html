@@ -32,9 +32,9 @@
         
     </head>
 	<body>
-	<nav id="navigation" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
+	<nav id="navigation" class="navbar navbar-inverse navbar-fixed-top hidden-print" role="navigation">
+            <div class="container-fluid hidden-print">
+                <div class="navbar-header hidden-print">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">                    
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
@@ -46,7 +46,7 @@
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Grundlagen<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle hidden-print" data-toggle="dropdown">Grundlagen<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#/interface">Excel Kennenlernen</a></li>
                                 <li><a href="#/workbooks">Arbeitsmappen</a></li>
@@ -56,7 +56,7 @@
                             </ul>
                         </li>
                          <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formeln und Funktionen<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle hidden-print" data-toggle="dropdown">Formeln und Funktionen<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#/formulas">Formeln</a></li>
                                 <li><a href="#/cellrefs">Zellbezüge</a></li>
@@ -66,7 +66,7 @@
                             </ul>
                         </li>                        
                          <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Arbeiten mit Daten<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle hidden-print" data-toggle="dropdown">Arbeiten mit Daten<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#/freezing">Fenster Fixieren</a></li>
                                 <li><a href="#/sorting">Sortieren und Filtern</a></li>
@@ -76,7 +76,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Noch Mehr ...<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle hidden-print" data-toggle="dropdown">Noch Mehr ...<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#/tracking">Änderungen verfolgen</a></li>
                                 <li><a href="#/conditional">Bedingte Formatierung</a></li>
@@ -86,7 +86,7 @@
                         </li>
                         <li class="divider"></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Szenario<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle hidden-print" data-toggle="dropdown">Szenario<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#/exampleinvoice1">Rechnungen (<code>WENN</code>)</a></li>
                                 <li><a href="#/exampleinvoice2">Rechnungen (<code>SVERWEIS</code>)</a></li>
@@ -98,19 +98,19 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right fa-lg">                        
                         <li>
-                            <a target="_blank" id="print" title="print">
+                            <a target="_blank" id="print" title="print" class="hidden-print">
                                 <i class="fa fa-print"></i>
                             </a>
                         </li>                       
                         <li>
-                            <a id="breakbutton" title="break">
+                            <a id="breakbutton" title="break" class="hidden-print">
                                 <i class="fa fa-coffee"></i>
                             </a>                            
                         </li>
                         
                         <li class="divider"></li>
                         <li>
-                            <a href="https://github.com/pgrund/presentations" title="source">
+                            <a href="https://github.com/pgrund/presentations" title="source" class="hidden-print">
                                 <i class="fa fa-github"></i>
                             </a>
                         </li>                        
@@ -139,6 +139,7 @@
 			<header>Achtung</header>
             <p>Ihr Browser <b>unterstützt nicht die benötigten Funktionen (CSS 3D)</b> für diese Präsentation.</p>
 	    	<p>Für beste Leistung nutzen sie bitte eine aktuelle Version von <b>Chrome</b>, <b>Safari</b> oder <b>Firefox</b>.</p>	    	
+	    	<a href="javascript:$('#impress').jmpress('deinit');window.print();">Druckansicht</a>
 	    	<p id="errormsg" class="text-danger lead"></p>		    
 		</div>
 
@@ -1593,7 +1594,7 @@
 			<footer></footer>
 		</div>
 		
-		<sheetsref class="step slide" data-x="-3500" data-y="1500" data-rotate-y="90" data-z="-3250">
+		<div id="sheetsref" class="step slide" data-x="-3500" data-y="1500" data-rotate-y="90" data-z="-3250">
 			<header>Referenzen zwischen Arbeitsblätter</header>
 			<p>Excel erlaubt das referenzieren von <em>jeder Zelle</em> auf <em>jedem Arbeitsblatt</em>.</p>
 			<p>Um eine Zelle <em>eines anderen Arbeitsblattes</em> zu referenzieren, muss lediglich der <em>Name des Arbeitsblattes</em> gefolgt von einem <em>Ausrufezeichen <code>!</code></em> der Zelladresse vorangestellt werden.</p>
@@ -1604,7 +1605,7 @@
 			 	<p>Wenn der <em>Name des Arbeitsblattes</em> ein <em>Leerzeichen</em> enthält, so muss zwingend der Name in <em>einfache Anführungszeichen <code>'...'</code></em> eingeschlossen werden.</p>
 			 </div>
 			<footer></footer>
-		</sheetsref>
+		</div>
 
 		<div id="cellrefsAssignment" class="step assignment" data-y="1000" data-x="-3500" data-rotate-x="90">
 			<header class="akzent2">

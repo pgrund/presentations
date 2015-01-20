@@ -1,8 +1,6 @@
 @import url(../../bisnode/default.css);
 
-.not-supported * {
-	display: none;
-}
+
 
 .fallback-message {
 	display:none;	
@@ -14,8 +12,12 @@
 .not-supported>.fallback-message,
 .not-supported>.fallback-message>header{
 	display:block;	
+	z-index: 300;
 }
 
+.not-supported>.fallback-message>a {
+	display:block;
+}
 footer>span.breadcrumb {
 	background: none;
 	line-height: inherit;
@@ -1332,6 +1334,10 @@ table.alignexample.text-middle td {
 	starting print media 
 */
 @media print { 
+
+	.not-supported>.fallback-message {
+		display: none;
+	}
 
 	.canvas>i {
 		display: none;
