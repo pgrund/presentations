@@ -95,6 +95,9 @@
                                 <li><a href="#/exampleinvoice5">Rechnungen (Datenüberprüfung)</a></li>
                             </ul>
                         </li>
+                        <li>
+                        	<a target="_blank" href="https://support.office.com/de-de/article/Tastenkombinationen-in-Excel-6a4319ef-8ea9-45d1-bd98-f238bf953ba6">Tastenkombinationen</a>
+                        	</li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right fa-lg">                        
                         <li>
@@ -4923,9 +4926,13 @@
         });
 
 		$(".slide footer").each(function() {
-			var currChapter = $(this).parent().prevAll(".image").first().prevAll(".chapter").first().children('header').first().text().trim();
-			var currSubChapter = $(this).parent().prevAll(".image").first().children('header').first().text().trim();
-			$(this).append("<span class='breadcrumb footerSubChapter'>"+currSubChapter +"</span><i class='fa fa-chevron-left'></i><span class='breadcrumb footerChapter'>" + currChapter +"</span>");
+			var chapter = $(this).parent().prevAll(".chapter").first();			
+			var currChapter = $(chapter).children('header').first().text().trim();		
+			var currSubChapter = $(this).parent().prevUntil($(chapter), ".image").first().children('header').first().text().trim().replace(/(\r\n|\n|\r)/gm,":");
+			if(currSubChapter) {
+				$(this).append("<span class='breadcrumb footerSubChapter'>"+currSubChapter +"  <i class='fa fa-chevron-left'></i></span>");	
+			}
+			$(this).append("<span class='breadcrumb footerChapter'>" + currChapter +"</span>");
         });
         </script>    
 	</body>
