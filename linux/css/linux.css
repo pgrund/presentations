@@ -89,6 +89,10 @@ div.alert-warning {
     border: 1px solid #000;
     border-radius: 10px;
 }
+
+.item>dt.text4 {
+    color: rgb(57,187,236);
+}
 table.iopic {
     border: none;
     box-shadow: none;
@@ -118,6 +122,14 @@ table.table {
 table.table td.linebreak {
     white-space: pre-line;
 }
+
+dl.right>dd>dl>dt {
+    max-width: 60px;
+}
+dl.right>dd>dl>dd {
+    margin-left: 80px;
+}
+
 @media print {
 
     .right, .left {

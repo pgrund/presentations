@@ -1695,7 +1695,7 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
             <div id="config" class="step slide" data-x="7500" data-y="5000">
                 <header>My configuration</header>
                 <p>setting shell options during initialization time</p>
-                <dl class="item">
+                <dl class="item left">
                     <dt>/etc/profile</dt>
                     <dd>
                         global file, read first for <a>bash</a> and <a>sh</a>
@@ -1707,6 +1707,24 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                     <dt>$HOME/.bashrc</dt>
                     <dd>custom properties for <em>specific</em> user</dd>
                     <dd>run for all shells (including subshells)</dd>
+                </dl>
+                <dl class="item right">
+                    <dt class="text4">bash prompt variables</dt>
+                    <dd>variables defining look of bash prompt
+                        <dl class="dl-horizontal">
+                        <dt>PS1</dt>
+                        <dd>default interactive prompt</dd>                        
+                        <dt>PS2</dt>
+                        <dd>continuation interactive prompt</dd>
+                        <dt>PS3</dt>
+                        <dd>propmt of select loop inside script</dd>
+                        <dt>PS4</dt>
+                        <dd>prompt for script in debug mode</dd>
+                        </dl>
+                    </dd>
+                    <dd>additionally <code>PROMPT_COMMAND</code> is being executed right before PS1
+                    </dd>
+                    <dd class="lead"><a href="http://www.thegeekstuff.com/2008/09/bash-shell-ps1-10-examples-to-make-your-linux-prompt-like-angelina-jolie/" target="_blank">examples of playing with PS1</a></dd>
                 </dl>
                 <footer></footer>
             </div>
@@ -1730,7 +1748,9 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                             Can you do it in a <em>single commandline</em> <i class="fa fa-lg fa-question-circle"></i>
                         </span>
                     </li>            
-                    <li data-jmpress="appear after 1s prev">How to set a global variable <code>JAVA_HOME</code> to directory of <kbd>java</kbd> installation (<code>/usr/java/default</code>), for <em>all users</em> ?</li>       
+                    <li data-jmpress="appear">How to set a global variable <code>JAVA_HOME</code> to directory of <kbd>java</kbd> installation (<code>/usr/java/default</code>), for <em>all users</em> ?</li>       
+                    <li data-jmpress="appear">Set your bash prompt temporarily to <code>[<span class="text1">username@hostname</span>:<span class="text3">~/CurrentWorkingDirectory</span>]$ </code>
+<!--PS1="[\u@\h:\w]\$ --></li>
                 </ol>
             </div>
             <div id="admin" class="step slide" data-x="10500" data-y="1000">
