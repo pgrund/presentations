@@ -1696,9 +1696,9 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                 <header>My configuration</header>
                 <p>setting shell options during initialization time</p>
                 <dl class="item left">
-                    <dt>/etc/profile</dt>
+                    <dt>/etc/profile, /etc/bash.bashrc</dt>
                     <dd>
-                        global file, read first for <a>bash</a> and <a>sh</a>
+                        global files, read first for <a>bash</a> and <a>sh</a>
                     </dd>
                     <dd>for <em>all</em> users, managed by system administrator</dd>
                     <dt>$HOME/.profile</dt>
@@ -1728,6 +1728,14 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                 </dl>
                 <footer></footer>
             </div>
+            <!--
+            <div id="alias" class="step slide">
+                <header>Alias</header>
+                alias - zeigt alle an
+                \ - verhindert alias ausführung
+                <footer></footer>
+            </div>
+            -->
             <div id="assignmentConfig" class="step assignment" data-x="9000" data-y="3000" data-z="-5000p>" data-rotate-x="90">
                 <header class="akzent1"><i class="fa fa-cog fa-lg fa-spin solve" data-assignment="7"></i> Assignment #7</header>
                 <p class="lead">... configure your own bash ...</p>
