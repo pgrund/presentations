@@ -18,14 +18,7 @@
 .not-supported>.fallback-message>a {
 	display:block;
 }
-footer>span.breadcrumb {
-	background: none;
-	line-height: inherit;
-	font-size: larger;	
-	text-shadow: 2px 2px whitesmoke;
-}
 
-}
 .not-supported>.fallback-message *,
 .not-supported>.fallback-message>p>*,
 .not-supported>.fallback-message>header>* {
