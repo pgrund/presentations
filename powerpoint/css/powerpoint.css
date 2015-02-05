@@ -1,0 +1,68 @@
+@import url(../../bisnode/default.css);
+
+
+
+.fallback-message {
+	display:none;	
+	position:fixed;
+	left:10px;	
+	top:50px;
+}
+
+.not-supported>.fallback-message,
+.not-supported>.fallback-message>header{
+	display:block;	
+	z-index: 300;
+}
+
+.not-supported>.fallback-message>a {
+	display:block;
+}
+footer>span.breadcrumb {
+	background: none;
+	line-height: inherit;
+	font-size: larger;	
+	text-shadow: 2px 2px whitesmoke;
+}
+
+}
+.not-supported>.fallback-message *,
+.not-supported>.fallback-message>p>*,
+.not-supported>.fallback-message>header>* {
+	display:inline-block;
+}
+.not-supported>.fallback-message>p>b,
+.not-supported>.fallback-message>header>b{
+	display: inline;
+}
+
+.not-supported .alert-warning {
+	color: darkred !important;	
+}
+.not-supported>.fallback-message>header {
+	color: black !important;
+	
+	font-weight: bold;
+}
+.not-supported>.fallback-message>p {
+	display: block;
+	color: black;
+}
+
+.fa-powerpoint{	
+    width: 30px;
+    height: 30px;    
+}
+
+#home {
+	background-image: url("../img/powerpoint2013.png");
+}
+/**
+	starting print media 
+*/
+@media print { 
+
+	.not-supported>.fallback-message {
+		display: none;
+	}
+}
