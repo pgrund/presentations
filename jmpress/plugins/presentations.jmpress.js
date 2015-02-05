@@ -25,7 +25,12 @@
         meta: {
             footerselect: ".slide footer",
             date: "meta[name=date]",
-            authors: "meta[name=author]"
+            authors: "meta[name=author]",
+            footerbreadcrumb: true
+        },
+        carousel: {
+            select: ".carousel.slide",
+            interval: 7000
         }
 	};
 
@@ -121,8 +126,48 @@
                 }).get().join(", ");
         if(authors != "") {
             $(f).attr("data-author", authors);
-            console.log("footer:author set to '" + $(".slide footer").attr("data-author")+"'");
+            ;console.log("footer:author set to '" + $(".slide footer").attr("data-author")+"'");
         }
+
+        var breadcrumbenabled = $(jmpress).jmpress("settings").presentations.meta.footerbreadcrumb;
+        if(breadcrumbenabled) {
+          $( document ).ready(function() {
+             $(f).each(function() {
+                var chapter = $(this).parent().prevAll(".chapter").first();         
+                var currChapter = $(chapter).children('header').first().text().trim();      
+                var currSubChapter = $(this).parent().prevUntil($(chapter), ".image").first().children('header').first().text().trim().replace(/(\r\n|\n|\r)/gm,":");
+                if(currSubChapter) {
+                    $(this).append("<span class='breadcrumb footerSubChapter'>"+currSubChapter +"  <i class='fa fa-chevron-left'></i></span>"); 
+                }
+                $(this).append("<span class='breadcrumb footerChapter'>" + currChapter +"</span>");
+            });
+          });
+        };
+        
+    });
+
+    $.jmpress("register" , "carousel", function(){
+        var jmpress = this;
+
+        var i = $(jmpress).jmpress("settings").presentations.carousel.interval;
+        var c = $($(jmpress).jmpress("settings").presentations.carousel.select);
+
+        console.log(i);
+
+        // start all carousel on entering slide and stop them on leaving slide
+        $(c).parent().on("enterStep", function(event){              
+            $(this).children(".carousel").each( function() {                
+                $(this).carousel({
+                    interval: i
+                });
+            })
+            return false;
+        }).on("leaveStep", function(event) {
+            $(this).children(".carousel").each( function() {            
+                $(this).carousel('pause');
+            }); 
+            return false;
+        });
         
     });
 

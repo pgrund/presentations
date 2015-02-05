@@ -292,28 +292,14 @@
             $(this).jmpress('print', config);
             // enable footer date appending
             $(this).jmpress('footerHandling');
+            $(this).jmpress('carousel');
 
         });
         
    // start the presentation!
             
         $('#impress').jmpress('powerpoint');
-
-        // start all carousel on entering slide and stop them on leaving slide
-        $(".carousel.slide").parent().on("enterStep", function(event){              
-            $(this).children(".carousel").each( function() {                
-                $(this).carousel({
-                    interval: 7000
-                });
-            })
-            return false;
-        }).on("leaveStep", function(event) {
-            $(this).children(".carousel").each( function() {            
-                $(this).carousel('pause');
-            }); 
-            return false;
-        });
-        
+ 
         // show and hide elements on hover
         $(".canvas>i").hover(function() {
                 var text = "#" + $(this).attr('id')+"text";
@@ -336,16 +322,7 @@
                 }
                 
             });
-        });    
-        $(".slide footer").each(function() {
-            var chapter = $(this).parent().prevAll(".chapter").first();         
-            var currChapter = $(chapter).children('header').first().text().trim();      
-            var currSubChapter = $(this).parent().prevUntil($(chapter), ".image").first().children('header').first().text().trim().replace(/(\r\n|\n|\r)/gm,":");
-            if(currSubChapter) {
-                $(this).append("<span class='breadcrumb footerSubChapter'>"+currSubChapter +"  <i class='fa fa-chevron-left'></i></span>"); 
-            }
-            $(this).append("<span class='breadcrumb footerChapter'>" + currChapter +"</span>");
-        });
+        });           
         </script>    
     </body>
 </html>
