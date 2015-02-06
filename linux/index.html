@@ -720,14 +720,14 @@
                     <dd>modern terminal emulator are capable of <em>copy &amp; paste</em> using the mouse:
                     </dd>
                     <dd>left button <i class="fa fa-arrow-right"></i> mark,</dd>
-                    <dd>right button <i class="fa fa-arrow-right"></i> content menu() insert, copy)</dd>
+                    <dd>right button <i class="fa fa-arrow-right"></i> content menu(insert, copy, ...)</dd>
                     <dt>history</dt>
                     <dd>bash saves all commands in a <em>history list</em></dd>
                     <dd>arrow up <i class="fa fa-arrow-circle-o-up"></i> and arrow down <i class="fa fa-arrow-circle-o-down"></i> navigate through the list</dd>
                     <dd><em>recursive search</em> is available via <kbd>ctrl+shift+r</kbd></dd>
                     <dt>completion</dt>
                     <dd>start typing a command and hit <kbd>tab</kbd>, the bash will try to expand the input until no unique solution is present</dd>
-                    <dd>then hit <kbd>tab</kbd> twice to get a list of all available completions</dd>
+                    <dd>then hit <kbd>tab</kbd> <em>twice</em> to get a list of all available completions</dd>
                     <dt>display</dt>
                     <dd><kbd>echo</kbd> prints to standard out, very usefull for variables, pipes, ...</dd>
                     <dd><kbd>cat</kbd> prints content of file to standard out ...</dd>
@@ -1727,16 +1727,24 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                     <dd class="lead"><a href="http://www.thegeekstuff.com/2008/09/bash-shell-ps1-10-examples-to-make-your-linux-prompt-like-angelina-jolie/" target="_blank">examples of playing with PS1</a></dd>
                 </dl>
                 <footer></footer>
-            </div>
-            <!--
-            <div id="alias" class="step slide">
+            </div>            
+            <div id="alias" class="step slide" data-x="9000" data-y="5000">
                 <header>Alias</header>
-                alias - zeigt alle an
-                \ - verhindert alias ausführung
+                <blockquote>... essentially nothing more than a <em>keyboard shortcut</em>, an abbreviation, a means of <em>avoiding typing</em> a long command sequence.</blockquote>
+                <dl class="dl-horizontal">
+                    <dt><kbd>alias <em>[name=command]</em></kbd></dt>
+                    <dd>sets <em>name</em> as abbreviation of <em>command</em></dd>
+                    <dd>without parameter, shows <em>all current aliases</em></dd>
+                    <dt><kbd>unalias <em>[name]</em></kbd></dt>
+                    <dd>unset alias for <em>name</em></dd>
+                </dl>
+                <pre><code>alias lm='ls -l | more'
+alias rm='rm -i'</code></pre>
+                <p>prepending <em>\</em> to a command ignores execution of alias</p>                
                 <footer></footer>
             </div>
-            -->
-            <div id="assignmentConfig" class="step assignment" data-x="9000" data-y="3000" data-z="-5000p>" data-rotate-x="90">
+            
+            <div id="assignmentConfig" class="step assignment" data-x="9000" data-y="3000" data-z="-5000" data-rotate-y="90">
                 <header class="akzent1"><i class="fa fa-cog fa-lg fa-spin solve" data-assignment="7"></i> Assignment #7</header>
                 <p class="lead">... configure your own bash ...</p>
                 <ol>
@@ -1759,6 +1767,7 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                     <li data-jmpress="appear">How to set a global variable <code>JAVA_HOME</code> to directory of <kbd>java</kbd> installation (<code>/usr/java/default</code>), for <em>all users</em> ?</li>       
                     <li data-jmpress="appear">Set your bash prompt temporarily to <code>[<span class="text1">username@hostname</span>:<span class="text3">~/CurrentWorkingDirectory</span>]$ </code>
 <!--PS1="[\u@\h:\w]\$ --></li>
+                    <li>Set an alias for <kbd>ls</kbd> command, to display results in colors.</li>
                 </ol>
             </div>
             <div id="admin" class="step slide" data-x="10500" data-y="1000">

@@ -130,6 +130,12 @@ dl.right>dd>dl>dd {
     margin-left: 80px;
 }
 
+#alias dl.dl-horizontal>dt {
+    width:250px;
+}
+#alias dl.dl-horizontal>dd {
+    margin-left:270px;
+}
 @media print {
 
     .right, .left {
