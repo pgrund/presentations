@@ -57,6 +57,113 @@ footer>span.breadcrumb {
 #home {
 	background-image: url("../img/powerpoint2013.png");
 }
+.image header .lead {
+	text-transform: none;
+	text-align: right;
+	font-style: italic;
+	font-size: smaller;
+}
+.assignment>header {
+    padding: 10px;
+    font-family: 'Rock Salt', cursive;
+    text-shadow: 3px 3px 5px white;
+}
+.image > header {
+	-moz-box-shadow: 10px 10px 5px #888888;
+	-webkit-box-shadow: 10px 10px 5px #888888;
+	box-shadow: 10px 10px 5px #888888;
+}
+#quiz>header {
+	width: 55%;
+	height: auto;
+	margin-top: 450px;
+}
+.step.image::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-size: cover;	
+	z-index: -1;
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);       
+}
+#quiz::before {
+	background-image: url("../../bisnode/example/img/umbrella.jpg");
+}
+.step.slide.quiz {
+	width: 15%;
+	-moz-border-radius: 50%;
+  	-webkit-border-radius: 50%;
+  	border-radius: 50%;    	
+  	border-style: solid;
+  	border-width: medium;
+}
+.quiz::after {
+	content: '\f128';
+
+    font-family: 'FontAwesome';
+    font-size: 512px;
+	
+	color: white;
+
+	position:absolute;
+	z-index: -200;
+	top: 0;
+	left: 30%;
+}
+.step.slide.quiz:nth-of-type(5n-3) {
+    background-color: rgba(189,207,49, 0.4);
+    border-color: rgb(189,207,49)
+}
+.step.slide.quiz:nth-of-type(5n-3)::after {
+	text-shadow: 5px 5px rgba(189,207,49,0.4);
+}
+
+.step.slide.quiz:nth-of-type(5n-2) {
+    background-color: rgba(54,111,54, 0.4);
+    border-color: rgb(54,111,54);
+}
+.step.slide.quiz:nth-of-type(5n-2)::after {
+	text-shadow: 5px 5px rgba(54,111,54,0.4);
+}
+
+.step.slide.quiz:nth-of-type(5n-1) {
+    background-color: rgba(251,195,17, 0.4);
+    border-color: rgb(251,195,17);
+}
+.step.slide.quiz:nth-of-type(5n-1)::after {
+	text-shadow: 5px 5px rgba(251,195,17, 0.4);
+}
+ 
+.step.slide.quiz:nth-of-type(5n) {
+    background-color: rgba(57,187,236, 0.4);
+    border-color: rgb(57,187,236);
+}
+.step.slide.quiz:nth-of-type(5n)::after {
+	text-shadow: 5px 5px rgba(57,187,236, 0.4);
+}
+
+.step.slide.quiz:nth-of-type(5n+1) {
+    background-color: rgba(127,127,127, 0.4);
+    border-color: rgb(127,127,127);
+}
+.step.slide.quiz:nth-of-type(5n+1)::after {
+	text-shadow: 5px 5px rgba(127,127,127,0.4);
+}
+.step.slide.quiz>header {
+	margin-top: 150px;
+	text-align: center;
+}
+.step.slide.quiz>ol.solve  {
+	margin-left:20%;
+	margin-right:auto;
+}
 /**
 	starting print media 
 */
