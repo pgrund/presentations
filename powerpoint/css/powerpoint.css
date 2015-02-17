@@ -73,6 +73,19 @@ footer>span.breadcrumb {
 	-webkit-box-shadow: 10px 10px 5px #888888;
 	box-shadow: 10px 10px 5px #888888;
 }
+
+.solve>li.correct.selected {
+    background: none;
+    color: darkgreen;
+}
+.solve>li.wrong.selected {
+    background: none;
+    color: red;
+}
+.solve>li.selected {
+	text-shadow: 2px 2px 3px white;
+	font-weight: bolder;
+}
 #quiz>header {
 	width: 55%;
 	height: auto;
@@ -156,5 +169,8 @@ footer>span.breadcrumb {
 
 	.not-supported>.fallback-message {
 		display: none;
+	}
+	.step.slide.quiz {
+		border:none;
 	}
 }
