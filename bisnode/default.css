@@ -417,6 +417,10 @@ blockquote.none:before {
 
 }
 
+.chapter.image header {
+    height: auto;    
+}
+
 .image header {
     text-transform: uppercase;
     color: white;
@@ -901,6 +905,41 @@ a.carousel-control.right{
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;     
+}
+.solve {
+    list-style: none;
+}
+.solve>li::before {
+    font-family: 'FontAwesome';
+    content: '\f096';
+    padding-right:10px;
+    padding-left:5px;
+}
+.solve>li.correct.selected::before {
+    color: darkgreen;
+    text-shadow: 2px 2px 3px white;
+    content:'\f046';
+}
+.solve>li.wrong.selected::before {
+    color: red;
+    text-shadow: 2px 2px 3px white;
+    content:'\f05e'
+} 
+.solve>li:hover:before {
+    content:'\f046';
+} 
+.solve>li:hover {
+    color:black
+}
+.solve>li.selected {
+    color:white;
+    text-shadow: 2px 2px 3px black;
+}
+.solve>li.correct.selected {
+    background-color: rgba(189,207,49,0.7);
+}
+.solve>li.wrong.selected {
+    background-color: rgba(191,13,49, 0.7);
 }
 /* ==== print styles =======================================================
    Print styles.

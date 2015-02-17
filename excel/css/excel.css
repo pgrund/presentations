@@ -42,41 +42,12 @@
 	display: block;
 	color: black;
 }
-.image header .lead {
-	text-transform: none;
-	text-align: right;
-	font-style: italic;
-	font-size: smaller;
-}
-.assignment>header {
-    padding: 10px;
-    font-family: 'Rock Salt', cursive;
-    text-shadow: 3px 3px 5px white;
-}
-.image > header {
-	-moz-box-shadow: 10px 10px 5px #888888;
-	-webkit-box-shadow: 10px 10px 5px #888888;
-	box-shadow: 10px 10px 5px #888888;
-}
 .fa-excel{	
     width: 30px;
     height: 30px;    
 }
-.step.image::before {
-	content: "";
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	right: 0;
-	background-size: cover;	
-	z-index: -1;
-	-webkit-filter: blur(2px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-	filter: blur(5px);       
-}
+
+
 tr, td {
 	border-collapse: collapse;
 	border: solid thin black;
