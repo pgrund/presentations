@@ -373,6 +373,21 @@ blockquote.none:before {
     background-size: 100% 100%; 
 
 }
+.step.image::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-size: cover; 
+    z-index: -1;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);       
+}
 .image footer {
     
     position: absolute;
@@ -417,9 +432,6 @@ blockquote.none:before {
 
 }
 
-.chapter.image header {
-    height: auto;    
-}
 
 .image header {
     text-transform: uppercase;
