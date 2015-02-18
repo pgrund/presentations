@@ -74,6 +74,9 @@ footer>span.breadcrumb {
 	box-shadow: 10px 10px 5px #888888;
 }
 
+.solve {
+	min-height: 500px;
+}
 .solve>li.correct.selected {
     background: none;
     color: darkgreen;
@@ -86,6 +89,23 @@ footer>span.breadcrumb {
 	text-shadow: 2px 2px 3px white;
 	font-weight: bolder;
 }
+
+#gettoknow::before {
+	background-image: url("../img/startup.png");
+}
+#presentations::before {
+	background-image: url("../img/presentations.png");
+}
+#slides::before {
+	background-image: url("../img/slides.png");
+}
+#texts::before {
+	background-image: url("../img/texts.png");
+}
+#themes::before {
+	background-image: url("../img/themes.png");
+}
+
 #quiz>header {
 	width: 55%;
 	height: auto;
@@ -110,10 +130,24 @@ footer>span.breadcrumb {
 	
 	color: white;
 
-	position:absolute;
+	position:relative;
+	display:block;
+	
+	width: 100%;
+	text-align: center;
+	
+	margin:-800px auto 30px;
+	
 	z-index: -200;
-	top: 0;
-	left: 30%;
+	
+}
+.quiz.active.correct::after {
+	content: '\f087';/*'\f164';*/
+	color:rgba(55,114,0,0.4);	
+}
+.quiz.active.wrong::after {
+	content: '\f088';/*'\f165';*/
+	color:rgba(255,0,0,0.4);
 }
 .step.slide.quiz:nth-of-type(5n-3) {
     background-color: rgba(189,207,49, 0.4);
@@ -161,6 +195,11 @@ footer>span.breadcrumb {
 .step.slide.quiz>ol.solve  {
 	margin-left:20%;
 	margin-right:auto;
+}
+
+.step.slide.quiz.active {
+ -webkit-box-reflect:below 5px -webkit-gradient(linear, left top, left bottom, from(transparent),color-stop(.85, transparent), to(rgba(255,255,255,0.3)));
+ border-style: outset;
 }
 /**
 	starting print media 
