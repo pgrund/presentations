@@ -133,13 +133,17 @@
         if(breadcrumbenabled) {
           $( document ).ready(function() {
              $(f).each(function() {
-                var chapter = $(this).parent().prevAll(".chapter").first();         
-                var currChapter = $(chapter).children('header').first().text().trim();      
-                var currSubChapter = $(this).parent().prevUntil($(chapter), ".image").first().children('header').first().text().trim().replace(/(\r\n|\n|\r)/gm,":");
-                if(currSubChapter) {
-                    $(this).append("<span class='breadcrumb footerSubChapter'>"+currSubChapter +"  <i class='fa fa-chevron-left'></i></span>"); 
-                }
-                $(this).append("<span class='breadcrumb footerChapter'>" + currChapter +"</span>");
+                if(!$(this).parent().hasClass("chapter")) {
+                    
+                    // only on not chapter slides
+                    var chapter = $(this).parent().prevAll(".chapter").first();                             
+                    var currChapter = $(chapter).children('header').first().text().trim();      
+                    var currSubChapter = $(this).parent().prevUntil($(chapter), ".image").first().children('header').first().text().trim().replace(/(\r\n|\n|\r)/gm,":");
+                    if(currSubChapter) {
+                        $(this).append("<span class='breadcrumb footerSubChapter'>"+currSubChapter +"  <i class='fa fa-chevron-left'></i></span>"); 
+                    }
+                    $(this).append("<span class='breadcrumb footerChapter'>" + currChapter +"</span>");
+                };
             });
           });
         };
