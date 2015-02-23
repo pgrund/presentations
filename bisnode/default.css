@@ -1,7 +1,7 @@
 /*
   --- BISNODE impress.js stylesheet
 */
-
+@import url(./bisnode-icomoon.css);
 
 body{
     width:100%;
@@ -665,6 +665,12 @@ table { font-size: 24px; }
     fill: rgb(127,127,127);
     stroke: rgb(127,127,127);
 }
+.white {
+    color:white;
+}
+.black {
+    color:black;
+}
 
 .fa-6x {
     font-size: 6em;
@@ -685,6 +691,7 @@ ul.agenda , ol.agenda {
     list-style: none; 
     counter-reset: li;
 }
+
 ul.agenda li , ol.agenda li{
         height: 48px;
         width: 90%;
@@ -694,6 +701,7 @@ ul.agenda li , ol.agenda li{
         background-color: rgb(242,242,242);
         border-top-right-radius: 130px 50px;
         border-bottom-right-radius: 130px 50px ;
+        vertical-align: middle;
 }
 .note {
   position: relative;  
@@ -733,38 +741,65 @@ ul.agenda li , ol.agenda li{
     color:whitesmoke;
 }
 
+.agenda.item.fa-ul>li>.fa-li {
+    font-size: 62px;    
+    left:-0.75em;
+    margin-top: -.25em;
+    margin-right: -0.75em;
+}
+ol.agenda.item.fa-ul>li>.fa-li:after {
+    content:counter(li); 
+    color:white; 
+
+    text-shadow: 3px 3px 5px black;
+    font-size:0.3em;
+
+    position:relative;
+    left:-1.75em;
+    top:-1.25em;
+
+}
+.agenda.fa-ul>li:before {
+    content:"";
+}
+
 ul.agenda li::before, ol.agenda li::before {
   
-  font-family: 'FontAwesome';
-  font-size: 32px;
-  content: '\f0c8';
+  display:inline-block;
+  position: relative;
+  top:20px;
+  left: 0px;
 
-  margin: -10px 5px 0 -15px;
-  
+  font-family: 'bisnode-icomoon';
+  font-size: 62px;
+  content: '\e603';
+
   width: 50px;
   height: 53px;
 
-  margin-right: 5px;
+  margin-right: 20px;
   margin-left: -20px;
-  display: inline-block;
+  margin-top: -40px;
 
+  
   text-align: center; 
+
 }
 ol.agenda li::before {
    content: counter(li);      
 }
-ul.agenda li::after , ol.agenda li::after {
-    
-  font-family: 'FontAwesome';
-  font-size: 48px;
-  content: '\f101';
+ul.agenda li::after , ol.agenda li::after {    
   
-  margin: -10px 0px -45px 0px;
+  font-family: 'bisnode-icomoon';
+  font-size: 44px;
+  content: '\e604';
+  
+  margin: -7px 0px -45px 0px;
   float:right;
   
   width: 55px;
   height: 53px;
-  display: inline;er
+  display: inline;
   
 }
 
@@ -773,27 +808,27 @@ ul.list-unstyled li::before , ol.list-unstyled li::before {
 }
 
 .item li:nth-child(1):before, .item dt:nth-of-type(1) , .agenda li:nth-child(1):after,
-.item li:nth-child(1)>i.fa-li:before{
+.item li:nth-child(1)>i.fa-li:before, .agenda li:nth-child(1) .fa-li {
    color: rgb(189,207,49);
 }
 .item li:nth-child(2):before, .item dt:nth-of-type(2), .agenda li:nth-child(2):after,
-.item li:nth-child(2)>i.fa-li:before {    
+.item li:nth-child(2)>i.fa-li:before, .agenda li:nth-child(1) .fa-li {    
     color: rgb(54,111,54);
 }
 .item li:nth-child(3):before, .item dt:nth-of-type(3), .agenda li:nth-child(3):after,
-.item li:nth-child(3)>i.fa-li:before {
+.item li:nth-child(3)>i.fa-li:before, .agenda li:nth-child(1) .fa-li {
     color: rgb(251,195,17);
 }
 .item li:nth-child(4):before, .item dt:nth-of-type(4), .agenda li:nth-child(4):after,
-.item li:nth-child(4)>i.fa-li:before {
+.item li:nth-child(4)>i.fa-li:before, .agenda li:nth-child(1) .fa-li {
     color:rgb(57,187,236);
 }
 .item li:nth-child(5):before, .item dt:nth-of-type(5), .agenda li:nth-child(5):after,
-.item li:nth-child(5)>i.fa-li:before {
+.item li:nth-child(5)>i.fa-li:before, .agenda li:nth-child(1) .fa-li {
     color: rgb(204,204,204);
 }
 .item li:nth-child(6):before, .item dt:nth-of-type(6), .agenda li:nth-child(6):after,
-.item li:nth-child(6)>i.fa-li:before {
+.item li:nth-child(6)>i.fa-li:before, .agenda li:nth-child(1) .fa-li {
     color:rgb(127,127,127);
 }
 
