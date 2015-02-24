@@ -1293,7 +1293,7 @@ The unset parameter is: <em>true</em></code></pre>
                     
                 <ol class="agenda item fa-ul">
                     <li><i class="fa-li bi-badge"></i><em>seperate</em> command line to words</li>
-                    <li><i class="fa-li bi-badge"></i><em>substitute</em> command line</li>
+                    <li class="select"><i class="fa-li bi-badge"></i><em>substitute</em> command line</li>
                     <li><i class="fa-li bi-badge"></i><em>redirection</em> of input and output streams</li>
                     <li><i class="fa-li bi-badge"></i><em>search</em> for command  (type and place)</li>
                     <li><i class="fa-li bi-badge"></i><em>execute</em> the command</li>
@@ -1477,14 +1477,15 @@ one plus one: 2</code></pre>
                 <p class="lead">... how does the bash substitute ?</p>
                 <ol>
                     <li>print to standard out the string <code>$figure</code>:<pre><code>$ echo <em>...</em>
-$figure</code></pre></li>
-                    <li data-jmpress="zoom">
-                        <span class="text1">
+$figure</code></pre><ul>
+                        <li data-jmpress="zoom after 5s step">
+                            <span class="text1">
                             What is the difference between <code>"$figure"</code>, <code>`$figure`</code> and <code>'$figure'</code> if used as parameter 
                             <i class="fa fa-lg fa-question-circle"></i>
-                        </span>
-                    </li>
-                    <li data-jmpress="appear after 2s prev">
+                            </span>
+                        </li>
+                    </ul></li>
+                    <li>
                         create an <code>echo</code> command line, which <em>welcomes you</em> on the command line as well as  the <em>current date</em>. Use variables, so that the command line <em>run on your neighbors shell</em> outputs the right username ...
                         <pre><code>$ echo <em>...</em>
 Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:02:46</em></code></pre>
@@ -1691,11 +1692,13 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                     <li>Extend <code>help.dat</code> by infos about <kbd>echo</kbd>.</li>
                     <li>How many files are in <code>/bin</code> ? Display only the number of files ...</li>
                     <!-- rm `find ~ -type f -name "*.bak" -print` -->
-                    <li>How do you <em>delete</em> all files ending <code>.bak</code> in <code>/home</code> and all subdirectories ?</li>
-                    <!-- rm -i `find ~ -type f -name "*.bak" -print` -->
-                    <li>... how about confirming deletion of <em>each file</em> ?</li>
-                    <!-- rm -I `find ~ -type f -name "*.bak" -print` -->
-                    <li>... how about confirming deletion <em>only once</em> ?</li>
+                    <li>How do you <em>delete</em> all files ending <code>.bak</code> in <code>/home</code> and all subdirectories ?
+                    <ul>
+                        <!-- rm -i `find ~ -type f -name "*.bak" -print` -->
+                        <li>... how about confirming deletion of <em>each file</em> ?</li>
+                        <!-- rm -I `find ~ -type f -name "*.bak" -print` -->
+                        <li>... how about confirming deletion <em>only once</em> ?</li>
+                    </ul></li>
                 </ol>
             </div>
             <div id="config" class="step slide" data-x="7500" data-y="5000">
@@ -1723,7 +1726,7 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                         <dt>PS2</dt>
                         <dd>continuation interactive prompt</dd>
                         <dt>PS3</dt>
-                        <dd>propmt of select loop inside script</dd>
+                        <dd>prompt of select loop inside script</dd>
                         <dt>PS4</dt>
                         <dd>prompt for script in debug mode</dd>
                         </dl>
@@ -1754,24 +1757,27 @@ alias rm='rm -i'</code></pre>
                 <header class="akzent1"><i class="fa fa-cog fa-lg fa-spin solve" data-assignment="7"></i> Assignment #7</header>
                 <p class="lead">... configure your own bash ...</p>
                 <ol>
-                    <li>append <code>alias cp='cp -i'</code> and <code>alias rm='rm -i'</code> to end of <code>~/.bashrc</code></li>
-                     <li data-jmpress="zoom">
+                    <li>append <code>alias cp='cp -i'</code> and <code>alias rm='rm -i'</code> to end of <code>~/.bashrc</code>
+                     <ul>
+                       <li data-jmpress="zoom after 3s step">
                         <span class="text1">
                             What impact does this have on <code>cp</code> and <code>rm</code> in current shell <i class="fa fa-lg fa-question-circle"></i>
                         </span>                        
-                    </li>
-                    <li data-jmpress="zoom after 3s prev">
+                       </li>
+                       <li data-jmpress="zoom after 3s prev">
                         <span class="text2">
                             ... in the next login shell <i class="fa fa-lg fa-question-circle"></i> ... in the next subshell <i class="fa fa-lg fa-question-circle"></i>
                         </span>
-                    </li>
-                    <li data-jmpress="zoom after 3s prev">
+                       </li>
+                       <li data-jmpress="zoom after 3s prev">
                         <span class="text3">
                             Can you do it in a <em>single commandline</em> <i class="fa fa-lg fa-question-circle"></i>
                         </span>
+                       </li>
+                       </ul>
                     </li>            
-                    <li data-jmpress="appear">How to set a global variable <code>JAVA_HOME</code> to directory of <kbd>java</kbd> installation (<code>/usr/java/default</code>), for <em>all users</em> ?</li>       
-                    <li data-jmpress="appear">Set your bash prompt temporarily to <code>[<span class="text1">username@hostname</span>:<span class="text3">~/CurrentWorkingDirectory</span>]$ </code>
+                    <li>How to set a global variable <code>JAVA_HOME</code> to directory of <kbd>java</kbd> installation (<code>/usr/java/default</code>), for <em>all users</em> ?</li>       
+                    <li>Set your bash prompt temporarily to <code>[<span class="text1">username@hostname</span>:<span class="text3">~/CurrentWorkingDirectory</span>]$ </code>
 <!--PS1="[\u@\h:\w]\$ --></li>
                     <li>Set an alias for <kbd>ls</kbd> command, to display results in colors.</li>
                 </ol>

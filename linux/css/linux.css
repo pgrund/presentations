@@ -136,6 +136,12 @@ dl.right>dd>dl>dd {
 #alias dl.dl-horizontal>dd {
     margin-left:270px;
 }
+
+.agenda>li.select:hover {
+    background-color: rgb(201,201,201);
+    color:black;
+    text-shadow: 3px 3px 5px whitesmoke;
+}
 @media print {
 
     .right, .left {
