@@ -13,6 +13,9 @@ body{
 
     counter-reset: slideIdx;
 }
+.vjs-control-bar {
+    font-size: 26px;
+}
 
 .right {
     float: right;
