@@ -79,7 +79,8 @@
                 
                 if(c){
                     c.html("");
-                    c.countdown({
+                    c.countdown(
+                        {
                         step: 5,
                         format: 'mm:ss',
                         startTime: '05:00',

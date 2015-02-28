@@ -11,8 +11,7 @@ body{
     
     counter-reset: slideIdx;
 }
-
-
+ 
 div.alert-warning {    
     border: solid thick darkred;
     border-radius: 10px;

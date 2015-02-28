@@ -8,23 +8,31 @@
         <meta http-equiv="expires" content="0">
 
         
-        <link rel="stylesheet" href="../jmpress/bootstrap.min.css" />
-        <link rel="stylesheet" href="../font-awesome-4.2.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./bower_components/fontawesome/css/font-awesome.css" />
+        <link href="./bower_components/highlightjs/styles/github.css" rel="stylesheet"/>
+
+        <link href="./bower_components/videojs/dist/video-js/video-js.css" rel="stylesheet">
+        <script src="./bower_components/videojs/dist/video-js/video.js"></script>
+        <script>
+          videojs.options.flash.swf = "./bower_components/videojs/dist/video-js/video-js.swf";
+        </script>  
+
+        <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
+        <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
+        
+        <script src="./bower_components/highlightjs/highlight.pack.js"></script>        
+ 
+        <script src="../jmpress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+
 
         <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
         
-        
         <link href="./css/linux.css" rel="stylesheet" />
-        <link href="../highlight/styles/github.css" rel="stylesheet"/>
-
-        <script type="text/javascript" src="../jmpress/jquery.js"></script>
-        <script src="../jmpress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
-
-        <script src="../jmpress/bootstrap.min.js"></script>       
-        <script src="../highlight/highlight.pack.js"></script>        
         
-        <script type="text/javascript" src="../jmpress/jmpress.js"></script>           
-        <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>        
+
+                       
+        <script type="text/javascript" src="./bower_components/jmpress.all/index.js"></script>        
 
         <script type='text/javascript' src='../jmpress/jsvt.js'></script>
         <script type='text/javascript' src='../jmpress/scriptreplay.js'></script>  
@@ -161,14 +169,19 @@
                 </header>
             </div>
             <div id="linuxmovie" class="step" data-x="-2200" data-rotate-z="90">
-                <div id="ytplayer">                   
-                </div>
-                <p class="visible-print-block text-center"> 
-                    <i class="fa fa-youtube fa-3x"></i><br/>
-                    see video<br/>
-                    <!--a href="http://www.youtube-nocookie.com/embed/YqqkdgE8RpM"><em>Codename: Linux</em></a-->
-                    <a href="https://archive.org/download/codename_gnu_linux/codename_gnu_linux.avi"><em>Codename: Linux</em></a>
-                </p>
+
+              <video id="codename_linux" class="video-js vjs-default-skin"
+                controls preload="auto" width="1024" height="800"
+                poster="http://www.moviepilot.de/files/images/0433/8643/12577.png"
+                data-setup='{"example_option":true}'>
+                    <source src="http://ia600506.us.archive.org/7/items/codename_gnu_linux/codename_gnu_linux_512kb.mp4" type="video/mp4"/>                    
+                    <source src="https://ia600506.us.archive.org/7/items/codename_gnu_linux/codename_gnu_linux.ogv" type="video/ogg"/>
+                    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a><br/>
+                        <a href="https://archive.org/download/codename_gnu_linux/codename_gnu_linux.avi">
+                            <img src="http://www.moviepilot.de/files/images/0433/8643/12577.png" alt="Download"/>
+                        </a>
+                    </p>                    
+              </video>                       
             </div>
 
             <div id="chaplinux" class="step slide chapter" >
@@ -2280,22 +2293,7 @@ Miraculix</code></pre>
 <script type="text/javascript">
           var textCSS = ["text1", "text2", "text3", "text4", "text5", "text6"];
 
-          // Load the IFrame Player API code asynchronously.
-          var tag = document.createElement('script');
-          tag.src = "https://www.youtube.com/player_api";
-          var firstScriptTag = document.getElementsByTagName('script')[0];
-          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-          // Replace the 'ytplayer' element with an <iframe> and
-          // YouTube player after the API code downloads.
-          var player;
-          function onYouTubePlayerAPIReady() {
-            player = new YT.Player('ytplayer', {
-              height: '720',
-              width: '960',
-              videoId: 'YqqkdgE8RpM'
-            });
-          }
+          
 
         $.jmpress('register', 'linux', function() {
             
@@ -2367,6 +2365,27 @@ Miraculix</code></pre>
                 play_file("./assignments/assignment"+i);
             });
 
+        });
+
+        // handle all video js movies on slides ... 
+        $(".step .video-js").each(function() {            
+            var video = videojs(this);
+            video.on("ended", function() {
+                // if video done, goto next step
+                $("#impress").jmpress("next");
+            });            
+            var parentSlide = $(this).parents(".step")[0];
+            if(parentSlide) {
+                $(parentSlide).on("enterStep", function() {
+                // if entering  slide start video
+                video.play();
+                }).on("leaveStep", function() {            
+                    if(!video.ended()){        
+                        // if leaving slide and video is running, stop video        
+                        video.pause();                
+                    }
+                });
+            };            
         });
         
    // start the presentation!

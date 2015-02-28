@@ -30,6 +30,7 @@
         <script type="text/javascript" src="../../jmpress/jmpress.all.js"></script>
         <script type="text/javascript" src="../../jmpress/plugins/presentations.jmpress.js"></script>
 
+        <script type="text/javascript" src="./bower_components/vivus/dist/vivus.min.js"></script>
 		<title>Bisnode Image</title>
         <meta name="author" content="Peter Grund"/>
 	</head>
@@ -243,7 +244,7 @@
                     +"'></i><i class='fa fa-stack-1x fa-laptop white'></i></span>");
               }
             </script>
-            <svg>
+            <svg id="test1">
                 <defs>
                  <marker id="point1" markerWidth="8" markerHeight="8" refx="5" refy="5">
                     <circle cx="5" cy="5" r="1" class="text2"/>
@@ -1093,6 +1094,9 @@
                 }
            });
  
+        });
+        $("#percentages").on("enterStep", function() {
+            new Vivus('test1', {type: 'async', duration: 200}, function(){console.log('done');});
         });
         // start the presentation!
         $('#impress').jmpress('example');      

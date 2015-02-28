@@ -122,6 +122,9 @@ footer>span.breadcrumb {
   	border-style: solid;
   	border-width: medium;
 }
+.step.slide.quiz>header {
+	min-height: 200px;
+}
 .quiz::after {
 	content: '\f128';
 
@@ -136,7 +139,7 @@ footer>span.breadcrumb {
 	width: 100%;
 	text-align: center;
 	
-	margin:-800px auto 30px;
+	margin:-900px auto 30px;
 	
 	z-index: -200;
 	
