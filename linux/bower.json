@@ -25,7 +25,6 @@
     "fontawesome": "~4.3.0",
     "bootstrap": "~3.3.2",
     "highlightjs": "~8.4.0",
-    "plyr": "~1.0.11",
     "videojs": "~4.12.2"
   },
   "resolutions": {
