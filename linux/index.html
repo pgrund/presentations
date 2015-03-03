@@ -13,33 +13,34 @@
         <link href="./bower_components/highlightjs/styles/github.css" rel="stylesheet"/>
 
         <link href="./bower_components/videojs/dist/video-js/video-js.css" rel="stylesheet">
-        <script src="./bower_components/videojs/dist/video-js/video.js"></script>
+        <script src="./bower_components/videojs/dist/video-js/video.js"  type="text/javascript"></script>
         <script>
           videojs.options.flash.swf = "./bower_components/videojs/dist/video-js/video-js.swf";
         </script>  
 
-        <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
-        <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
+        <script src="./bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+        <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script> 
         
-        <script src="./bower_components/highlightjs/highlight.pack.js"></script>        
+        <script src="./bower_components/highlightjs/highlight.pack.js" type="text/javascript"></script>        
  
-        <script src="../jmpress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./bower_components/jquery-countdown/js/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
 
 
        
         <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
         
         <link href="./css/linux.css" rel="stylesheet" />
+        <!--link href="./bower_components/jquery-countdown/css/media.css" rel="stylesheet" /-->
         
 
-       <script type="text/javascript" src="../jmpress/jmpress.all.js"></script> 
+       <script src="./bower_components/jmpress.all/index.js" type="text/javascript"></script> 
                 
               
 
-        <script type='text/javascript' src='../jmpress/jsvt.js'></script>
-        <script type='text/javascript' src='../jmpress/scriptreplay.js'></script>  
+        <script src='./bower_components/jsvt/jsvt.js' type="text/javascript"></script>
+        <script src='../jmpress/scriptreplay.js' type="text/javascript"></script>  
 
-        <script type="text/javascript" src="../jmpress/plugins/presentations.jmpress.js"></script>
+        <script src="../jmpress/plugins/presentations.jmpress.js" type="text/javascript"></script>
 
         <title>Linux Introduction</title> 
         <meta name="date" content="2014-08-27"/>
@@ -2387,7 +2388,18 @@ Miraculix</code></pre>
                         video.pause();                
                     }
                 });
-            };            
+            };   
+            $('#break').on('hidden.bs.modal', function() {
+                if(!video.ended()){        
+                    // if leaving slide and video is running, stop video        
+                    video.play();                
+                }
+            }).on("shown.bs.modal", function() {
+                if(!video.ended()){        
+                    // if leaving slide and video is running, stop video        
+                    video.pause();                
+                }
+            });
         });
         
    // start the presentation!

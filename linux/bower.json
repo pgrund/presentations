@@ -2,7 +2,7 @@
   "name": "linux",
   "version": "1.3.3",
   "homepage": "http://presentations.peter-grund.de/linux",
-  "description": "presentation on linux introduction",
+  "description": "presentation to introduce to linux",
   "main": "index.html",
   "keywords": [
     "linux",
@@ -25,7 +25,10 @@
     "fontawesome": "~4.3.0",
     "bootstrap": "~3.3.2",
     "highlightjs": "~8.4.0",
-    "videojs": "~4.12.2"
+    "videojs": "~4.12.2",
+    "jquery-countdown": "git@github.com:Reflejo/jquery-countdown.git",
+    "jsvt": "git@github.com:krockot/jsvt.git",    
+    "jmpress.all": "https://raw.githubusercontent.com/jmpressjs/dist/master/jmpress.all.js"
   },
   "resolutions": {
     "jquery": ">= 1.9.1"
