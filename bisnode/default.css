@@ -14,7 +14,7 @@ body{
     counter-reset: slideIdx;
 }
 .vjs-control-bar {
-    font-size: 26px;
+    font-size: 18px;
 }
 
 .right {
@@ -33,7 +33,7 @@ body{
 }
 
 #break {     
-  top: 30%;
+  padding-top: 30%;
 }
 .modal-dialog {
   min-width: 400px;    
