@@ -87,7 +87,7 @@
                         timerEnd: function() {
                             b.modal("hide");
                         },
-                        image: "../bisnode/img/digits.png"
+                        image: "./bower_components/jquery-countdown/img/digits.png"
                     });
                 } else {
                     console.warn("counter not found: " + c);
