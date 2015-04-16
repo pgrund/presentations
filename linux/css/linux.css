@@ -17,11 +17,16 @@ div.alert-warning {
     border: solid thick darkred;
     border-radius: 10px;
 }
-.alert-warning>header{     
+.alert>header {
     color:white;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 2px 2px 4px #000000;   
+    text-align: center; 
+}
+.alert-warning>header{        
     background-color: darkred;
-    text-align: center;
+}
+.alert-info>header{  
+    background-color: rgb(57,187,236);
 }
 #folderstructure .nav.hidden-print>li {
    font-size: smaller;
@@ -141,6 +146,15 @@ dl.right>dd>dl>dd {
     background-color: rgb(201,201,201);
     color:black;
     text-shadow: 3px 3px 5px whitesmoke;
+}
+#dontuselist {
+    margin-top: 10px;
+    font-size: 24px;
+    columns:2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style-position: inside;
+    max-height: 80%;
 }
 @media print {
 

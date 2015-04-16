@@ -91,7 +91,11 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bash Scripting<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#/">...</a></li>
+                                <li><a href="#/scriptintro">Definition</a></li>
+                                <li><a href="#/shabang">Sha-Bang</a></li>
+                                <li><a href="#/scriptbasics">Basics</a></li>
+                                <li><a href="#/scripttests">Tests</a></li>
+                                <li><a href="#/scriptloops">Loops</a></li>
                             </ul>
                         </li>
                         <li class="divider"></li>
@@ -2270,7 +2274,51 @@ Miraculix</code></pre>
                 <footer></footer>
             </div>
             <div id="chapScripting" class="step slide chapter lightgray" data-y="4000">
-                <header>Bash Scripting</header>               
+                <header>Bash Scripting</header>  
+                <!-- http://www.tldp.org/LDP/abs/html/index.html -->             
+                <footer></footer>
+            </div>
+            <div id="scriptintro" class="step slide" data-y="4000" data-x="1500">
+                <header>Definition</header>
+                <blockquote>
+                    <p>A shell program, called a <em>script</em>, is an easy-to-use tool for building applications by <em>"gluing together"</em> system calls, tools, utilities, and compiled binaries. Virtually the entire repertoire of <em>UNIX commands, utilities, and tools</em> is available for invocation by a shell script.</p>
+                    <small class="right"><a href="http://www.tldp.org/LDP/abs/html/" target="_blank">Advanced Bash-Scripting Guide</a></small>
+                </blockquote>
+                <br/>
+                <p>Additionally, bash provides for usage within scripts:</p>
+                <ul>
+                    <li>internal shell commands</li>
+                    <li>tests</li>
+                    <li>loops</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="scriptdontuse" class="step alert alert-info" data-y="4000" data-x="2500" data-rotate-y="90">
+                <header>When <em>NOT TO USE</em> shell scripts:</header>
+                <ul id="dontuselist">
+                    <li><em>Resource-intensive</em> tasks, especially where speed is a factor (sorting, hashing, recursion ...)</li>
+                    <li>Procedures involving <em>heavy-duty math</em> operations, especially floating point arithmetic, arbitrary precision calculations, or complex numbers</li>
+                    <li><em>Cross-platform</em> portability required</li>
+                    <li>Complex applications, where <em>structured programming</em> is a necessity (type-checking of variables, function prototypes, etc.)</li>
+                    <li><em>Mission-critical</em> applications upon which you are betting the future of the company</li>
+                    <li>Situations where <em>security</em> is important, where you need to guarantee the integrity of your system and protect against intrusion, cracking, and vandalism</li>
+                    <li>Project consists of subcomponents with <em>interlocking</em> dependencies</li>
+                    <li>Extensive <em>file operations</em> required (Bash is limited to serial file access, and that only in a particularly clumsy and inefficient line-by-line fashion.)</li>
+                    <li>Need native support for <em>multi-dimensional arrays</em></li>
+                    <li>Need <em>data structures</em>, such as linked lists or trees</li>
+                    <li>Need to generate / manipulate <em>graphics or GUIs</em></li>
+                    <li>Need direct access to <em>system hardware</em> or external peripherals</li>
+                    <li>Need <em>port or socket I/O</em></li>
+                    <li>Need to use libraries or interface with legacy code</li>
+                    <li>Proprietary, closed-source applications (Shell scripts put the source code right out in the open for all the world to see.)</li>
+                </ul>               
+            </div>
+            <div id="scriptloops" class="step slide" data-y="4000" data-x="6000">
+                <header><em>For</em> Loop</header>
+                <pre><code class="bash">for SVN_PROJECT in <em title="list directories">*/.svn</em>
+  do 
+    <em title="update svn directory">svn up ${SVN_PROJECT/%.svn/}</em>
+done</code></pre>
                 <footer></footer>
             </div>
 
