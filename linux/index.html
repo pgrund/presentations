@@ -1690,77 +1690,6 @@ $ rm user.dat</code></pre>
                 <footer></footer>
             </div>
 
-
-			<div id="jobcontrol" class="step slide" data-x="7500" data-y="7000" data-rotate-x="120">
-                   <header>Jobs running in background mode</header>
-
-					<ul>
-						<li>
-							Imagine you just started some long running job in your shell and after some 20s you get soooo bored watching it e.g.
-							<pre><code class="bash">$ find / -name '*e*' -type f</code></pre>
-						</li>
-
-						<li data-jmpress="zoom" class="will-zoom do-zoom">
-							What can you do? Just get on with your work while it runs in the background!
-						</li>
-						<li data-jmpress="zoom" class="will-zoom do-zoom">
-							Just type <kbd>[Ctrl]+[z]</kbd>
-							that should return
-							<code>[1]+  Angehalten              find ...</code>
-							then type
-							<pre><code>$ bg %1</code></pre>
-							where <code>%1</code> is the id of the job, that the [Ctrl]+[z] returned
-						</li>
-					</ul>
-
-                   <footer></footer>
-            </div>
-
-            <div id="jobcontrol2" class="step slide" data-x="10500" data-y="7000" data-rotate-x="120" data-rotate-y="30" data-z="1500">
-                   <header>Background jobs</header>
-
-					<ul>
-						<li>
-							But(!) now your job still writes to your terminal!!
-						</li>
-
-						<li data-jmpress="zoom" class="will-zoom do-zoom">
-							better to write it then like that
-							<pre><code>$ find / -name '*e*' -type f >/tmp/files-w-e.log 2>/dev/null</code></pre>
-						</li>
-						<li data-jmpress="zoom" class="will-zoom do-zoom">
-							then <kbd>[Ctrl]+[z]</kbd><pre><code>$ ...
-[2]+  Angehalten find / -name...
-$ bg %2
-</code></pre>
-						</li>
-						<li data-jmpress="zoom" class="will-zoom do-zoom">
-							and yet better: send it to the background when you start it by appending <code>&amp;</code> to the command
-							<pre><code>$ grep -Ri 'error' /var/log >/tmp/errors.txt 2>/dev/null &amp;</code></pre>
-						</li>
-					</ul>
-
-                   <footer></footer>
-            </div>
-
-            <div id="jobcontrol3" class="step slide" data-x="13500" data-y="7000" data-rotate-x="120" data-rotate-y="30" data-z="2500">
-                   <header>Background jobs: handling</header>
-
-					<ul>
-						<li>
-							which jobs are running in the background?
-							<pre><code>$ jobs
-[1]+  Läuft                  find / -name '*e*' 2> /dev/null > /tmp/files-w-e.txt &
-</code></pre>
-						</li>
-						<li data-jmpress="zoom" class="will-zoom do-zoom">
-							get a job to the foreground (e.g. to cancel it with <kbd>[Ctrl]+[c]</kbd>)
-							<pre><code>$ fg %2</code></pre>
-						</li>
-					</ul>
-					<footer></footer>
-			</div>
-
             <div id="xargs" class="step slide" data-x="7500" data-y="4000" data-z="-4500" data-rotate-y="90">
                 <header>Pipe data stream as argument</header>
                 <pre><code class="bash">$ cd /etc/pam.d
@@ -1799,6 +1728,76 @@ chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
                     </ul></li>
                 </ol>
             </div>
+                        <div id="jobcontrol" class="step slide" data-x="7500" data-y="7000" data-rotate-x="120">
+                   <header>Jobs running in background mode</header>
+
+                    <ul>
+                        <li>
+                            Imagine you just started some long running job in your shell and after some 20s you get soooo bored watching it e.g.
+                            <pre><code class="bash">$ find / -name '*e*' -type f</code></pre>
+                        </li>
+
+                        <li data-jmpress="zoom" class="will-zoom do-zoom">
+                            What can you do? Just get on with your work while it runs in the background!
+                        </li>
+                        <li data-jmpress="zoom" class="will-zoom do-zoom">
+                            Just type <kbd>[Ctrl]+[z]</kbd>
+                            that should return
+                            <code>[1]+  Angehalten              find ...</code>
+                            then type
+                            <pre><code>$ bg %1</code></pre>
+                            where <code>%1</code> is the id of the job, that the [Ctrl]+[z] returned
+                        </li>
+                    </ul>
+
+                   <footer></footer>
+            </div>
+
+            <div id="jobcontrol2" class="step slide" data-x="10500" data-y="7000" data-rotate-x="120" data-rotate-y="30" data-z="1500">
+                   <header>Background jobs</header>
+
+                    <ul>
+                        <li>
+                            But(!) now your job still writes to your terminal!!
+                        </li>
+
+                        <li data-jmpress="zoom" class="will-zoom do-zoom">
+                            better to write it then like that
+                            <pre><code>$ find / -name '*e*' -type f >/tmp/files-w-e.log 2>/dev/null</code></pre>
+                        </li>
+                        <li data-jmpress="zoom" class="will-zoom do-zoom">
+                            then <kbd>[Ctrl]+[z]</kbd><pre><code>$ ...
+[2]+  Angehalten find / -name...
+$ bg %2
+</code></pre>
+                        </li>
+                        <li data-jmpress="zoom" class="will-zoom do-zoom">
+                            and yet better: send it to the background when you start it by appending <code>&amp;</code> to the command
+                            <pre><code>$ grep -Ri 'error' /var/log >/tmp/errors.txt 2>/dev/null &amp;</code></pre>
+                        </li>
+                    </ul>
+
+                   <footer></footer>
+            </div>
+
+            <div id="jobcontrol3" class="step slide" data-x="13500" data-y="7000" data-rotate-x="120" data-rotate-y="30" data-z="2500">
+                   <header>Background jobs: handling</header>
+
+                    <ul>
+                        <li>
+                            which jobs are running in the background?
+                            <pre><code>$ jobs
+[1]+  Läuft                  find / -name '*e*' 2> /dev/null > /tmp/files-w-e.txt &
+</code></pre>
+                        </li>
+                        <li data-jmpress="zoom" class="will-zoom do-zoom">
+                            get a job to the foreground (e.g. to cancel it with <kbd>[Ctrl]+[c]</kbd>)
+                            <pre><code>$ fg %2</code></pre>
+                        </li>
+                    </ul>
+                    <footer></footer>
+            </div>
+
             <div id="config" class="step slide" data-x="7500" data-y="5000">
                 <header>My configuration</header>
                 <p>setting shell options during initialization time</p>
